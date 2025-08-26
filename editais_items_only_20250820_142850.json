@@ -1,0 +1,532 @@
+[
+  {
+    "id": "PNCP-ITEMS-ONLY-20250820-000",
+    "pncp_id": "46634598000171-1-000439/2025",
+    "title": "Aviso de Contratação Direta nº 328/2025",
+    "description": "Aviso de Contratação Direta nº 328/2025\nId contratação PNCP: 46634598000171-1-000439/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 20/08/2025\nÓrgão: MUNICIPIO DE TIETE\nLocal: Tietê/SP\nObjeto: óculos de segurança com grau",
+    "organization_name": "MUNICIPIO DE TIETE",
+    "municipality_name": "Tietê",
+    "state_code": "SP",
+    "modality": "Dispensa",
+    "estimated_value": null,
+    "publication_date": "2025-08-20",
+    "objeto": "óculos de segurança com grau",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Aviso de Contratação Direta nº 328/2025\nId contratação PNCP: 46634598000171-1-000439/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 20/08/2025\nÓrgão: MUNICIPIO DE TIETE\nLocal: Tietê/SP\nObjeto: óculos de segurança com grau",
+    "scraped_at": "2025-08-20T14:10:05.422210",
+    "has_details": true,
+    "has_access_button": false,
+    "edital_href": "/editais/46634598000171/2025/439",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nAviso de Contratação Direta nº 328/2025\nÚltima atualização 20/08/2025\n\nLocal: Tietê/SP\n\nÓrgão: MUNICIPIO DE TIETE\n\nUnidade compradora: 1 - PREFEITURA MUNICIPAL DE TIETÊ - SP\n\nModalidade da contratação: Dispensa\n\nAmparo legal: Lei 14.133/2021, Art. 75, II\n\nTipo: Aviso de Contratação Direta\n\nModo de disputa: Dispensa Com Disputa\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 20/08/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 20/08/2025 09:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 25/08/2025 23:59 (horário de Brasília)\n\nId contratação PNCP: 46634598000171-1-000439/2025\n\nFonte: CONAM Consultoria em Administração Municipal\n\nObjeto:\n\nóculos de segurança com grau\n\nInformação complementar:\nA aquisição de óculos de segurança com grau é justificada pela necessidade de proteger a visão de trabalhadores que necessitam de correção visual e atuam em ambientes com riscos de lesões oculares. Essa medida garante a segurança e saúde ocular dos servidores além de promover a inclusão e o desempenho adequado nas atividades laborais. O equipamento será destinado ao servidor Jose Antonio Delfino lotado na Secretaria de Serviços. Receituário foi apresentado no protocolo 4.813/2025.\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 229,00\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nOCULOS DE SEGURANCA COM GRAU\n1\nR$ 229,00\nR$ 229,00\nExibir:\n5\n1-1 de 1 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de ag",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 229.0,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "OCULOS DE SEGURANCA COM GRAU",
+        "quantidade": 1,
+        "valor_unitario": 229.0,
+        "valor_total": 229.0,
+        "raw_data": [
+          "1",
+          "OCULOS DE SEGURANCA COM GRAU",
+          "1",
+          "R$ 229,00",
+          "R$ 229,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 1,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_0_0_655_aviso_dispensa_328.pdf",
+        "filepath": "downloads\\edital_0_0_655_aviso_dispensa_328.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46634598000171/compras/2025/439/arquivos/1",
+        "description": "Fazer download",
+        "size": 199919,
+        "downloaded_at": "2025-08-20T14:10:40.887797"
+      },
+      {
+        "filename": "edital_0_1_840_descritivo_dispensa_328.pdf",
+        "filepath": "downloads\\edital_0_1_840_descritivo_dispensa_328.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46634598000171/compras/2025/439/arquivos/2",
+        "description": "Fazer download",
+        "size": 337054,
+        "downloaded_at": "2025-08-20T14:10:46.056189"
+      },
+      {
+        "filename": "edital_0_2_432_anexo_I_documentos_exigidos.pdf",
+        "filepath": "downloads\\edital_0_2_432_anexo_I_documentos_exigidos.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46634598000171/compras/2025/439/arquivos/3",
+        "description": "Fazer download",
+        "size": 92303,
+        "downloaded_at": "2025-08-20T14:10:51.228521"
+      }
+    ],
+    "downloads_count": 3,
+    "accessed_contratacao": false,
+    "detail_url": "https://pncp.gov.br/app/editais/46634598000171/2025/439"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250820-001",
+    "pncp_id": "44720530000180-1-000034/2025",
+    "title": "Edital nº 023/2025",
+    "description": "Edital nº 023/2025\nId contratação PNCP: 44720530000180-1-000034/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 20/08/2025\nÓrgão: MUNICIPIO DE SANTA MARIA DA SERRA\nLocal: Santa Maria da Serra/SP\nObjeto: Registro de preços de exames de cateterismo e angioplastia",
+    "organization_name": "MUNICIPIO DE SANTA MARIA DA SERRA",
+    "municipality_name": "Santa Maria da Serra",
+    "state_code": "SP",
+    "modality": "Pregão - Eletrônico",
+    "estimated_value": null,
+    "publication_date": "2025-08-20",
+    "objeto": "Registro de preços de exames de cateterismo e angioplastia",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Edital nº 023/2025\nId contratação PNCP: 44720530000180-1-000034/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 20/08/2025\nÓrgão: MUNICIPIO DE SANTA MARIA DA SERRA\nLocal: Santa Maria da Serra/SP\nObjeto: Registro de preços de exames de cateterismo e angioplastia",
+    "scraped_at": "2025-08-20T14:12:59.317679",
+    "has_details": true,
+    "has_access_button": true,
+    "edital_href": "/editais/44720530000180/2025/34",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nEdital nº 023/2025\nAcessar Contratação\nÚltima atualização 20/08/2025\n\nLocal: Santa Maria da Serra/SP\n\nÓrgão: MUNICIPIO DE SANTA MARIA DA SERRA\n\nUnidade compradora: 2 - Prefeitura Municial de Santa Maria da Serra\n\nModalidade da contratação: Pregão - Eletrônico\n\nAmparo legal: Lei 14.133/2021, Art. 28, I\n\nTipo: Edital\n\nModo de disputa: Aberto-Fechado\n\nRegistro de preço: Sim\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 20/08/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 04/08/2025 09:44 (horário de Brasília)\n\nData fim de recebimento de propostas: 08/09/2025 13:15 (horário de Brasília)\n\nId contratação PNCP: 44720530000180-1-000034/2025\n\nFonte: BLL Compras\n\nObjeto:\n\nRegistro de preços de exames de cateterismo e angioplastia\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 325.300,00\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nExame cateterismo\n30\nR$ 2.060,00\nR$ 61.800,00\n2\nExame angioplastia com 1 stent e 1 dia de internação\n15\nR$ 10.100,00\nR$ 151.500,00\n3\nExame angioplastia com 2 stent e 1 dia de internação\n8\nR$ 14.000,00\nR$ 112.000,00\nExibir:\n5\n1-3 de 3 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de agosto de 2021.\n\nO desenvolvimento dessa versão do Portal é um esforço conjunto de construção de uma concepção direta legal, homologado pelos indicados a compor o aludido comitê.\n\nA adequação, fidedignidade e corretude das informações e dos arquivos relativos às contratações disponibilizadas no PNCP por força da Lei nº 14.133/",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 325300.0,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "Exame cateterismo",
+        "quantidade": 30,
+        "valor_unitario": 2060.0,
+        "valor_total": 61800.0,
+        "raw_data": [
+          "1",
+          "Exame cateterismo",
+          "30",
+          "R$ 2.060,00",
+          "R$ 61.800,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "2",
+        "descricao": "Exame angioplastia com 1 stent e 1 dia de internação",
+        "quantidade": 15,
+        "valor_unitario": 10100.0,
+        "valor_total": 151500.0,
+        "raw_data": [
+          "2",
+          "Exame angioplastia com 1 stent e 1 dia de internação",
+          "15",
+          "R$ 10.100,00",
+          "R$ 151.500,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "3",
+        "descricao": "Exame angioplastia com 2 stent e 1 dia de internação",
+        "quantidade": 8,
+        "valor_unitario": 14000.0,
+        "valor_total": 112000.0,
+        "raw_data": [
+          "3",
+          "Exame angioplastia com 2 stent e 1 dia de internação",
+          "8",
+          "R$ 14.000,00",
+          "R$ 112.000,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 3,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_1_0_EDITAL_RETIFICADO__Prego_023_2025__CATETERISMO_E_ANGIOPLASTIA.doc",
+        "filepath": "downloads\\edital_1_0_EDITAL_RETIFICADO__Prego_023_2025__CATETERISMO_E_ANGIOPLASTIA.doc",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/44720530000180/compras/2025/34/arquivos/1",
+        "description": "Fazer download",
+        "size": 1774728,
+        "downloaded_at": "2025-08-20T14:13:35.062567"
+      }
+    ],
+    "downloads_count": 1,
+    "accessed_contratacao": true,
+    "access_button_selector": "button:has-text('Acessar contratação')",
+    "detail_url": "https://pncp.gov.br/app/editais/44720530000180/2025/34"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250820-002",
+    "pncp_id": "56089790000188-1-000203/2025",
+    "title": "Aviso de Contratação Direta nº 90009/2025",
+    "description": "Aviso de Contratação Direta nº 90009/2025\nId contratação PNCP: 56089790000188-1-000203/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 20/08/2025\nÓrgão: SECRETARIA DE INFRAESTRUTURA E MEIO AMBIENTE\nLocal: São Paulo/SP\nObjeto: Contratação de serviços de impressão digital e comunicação visual - banner em lona, visando atender ao 4º Simpósio do Instituto de Pesquisas Ambientais, da Secretaria de Meio Ambiente, Infraestrutura e Logística.",
+    "organization_name": "SECRETARIA DE INFRAESTRUTURA E MEIO AMBIENTE",
+    "municipality_name": "São Paulo",
+    "state_code": "SP",
+    "modality": "Dispensa",
+    "estimated_value": null,
+    "publication_date": "2025-08-20",
+    "objeto": "Contratação de serviços de impressão digital e comunicação visual - banner em lona, visando atender ao 4º Simpósio do Instituto de Pesquisas Ambientais, da Secretaria de Meio Ambiente, Infraestrutura e Logística.",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Aviso de Contratação Direta nº 90009/2025\nId contratação PNCP: 56089790000188-1-000203/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 20/08/2025\nÓrgão: SECRETARIA DE INFRAESTRUTURA E MEIO AMBIENTE\nLocal: São Paulo/SP\nObjeto: Contratação de serviços de impressão digital e comunicação visual - banner em lona, visando atender ao 4º Simpósio do Instituto de Pesquisas Ambientais, da Secretaria de Meio Ambiente, Infraestrutura e Logística.",
+    "scraped_at": "2025-08-20T14:14:48.327111",
+    "has_details": true,
+    "has_access_button": false,
+    "edital_href": "/editais/56089790000188/2025/203",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nAviso de Contratação Direta nº 90009/2025\nÚltima atualização 20/08/2025\n\nLocal: São Paulo/SP\n\nÓrgão: SECRETARIA DE INFRAESTRUTURA E MEIO AMBIENTE\n\nUnidade compradora: 260134 - ESP-INSTITUTO DE PESQUISAS AMBIENTAIS-IPA\n\nModalidade da contratação: Dispensa\n\nAmparo legal: Lei 14.133/2021, Art. 75, II\n\nTipo: Aviso de Contratação Direta\n\nModo de disputa: Dispensa Com Disputa\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 20/08/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 20/08/2025 14:09 (horário de Brasília)\n\nData fim de recebimento de propostas: 25/08/2025 08:59 (horário de Brasília)\n\nId contratação PNCP: 56089790000188-1-000203/2025\n\nFonte: Compras.gov.br\n\nObjeto:\n\nContratação de serviços de impressão digital e comunicação visual - banner em lona, visando atender ao 4º Simpósio do Instituto de Pesquisas Ambientais, da Secretaria de Meio Ambiente, Infraestrutura e Logística.\n\nInformação complementar:\nValor inferior ao limite anual legalmente instituído para dispensa de licitação.\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 0,00\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nGráfico - Confecção Selo / Convite / Impressos / CertificadoEnvelope\n1\nR$ 0,00\nR$ 0,00\nExibir:\n5\n1-1 de 1 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de agosto de 2021.\n\nO desenvolvimento dessa versão do Portal é um esforço conjunto de construção de uma concepção direta legal, homologado pelos indicados a compor o aludido comi",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 0.0,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "Gráfico - Confecção Selo / Convite / Impressos / CertificadoEnvelope",
+        "quantidade": 1,
+        "valor_unitario": 0.0,
+        "valor_total": 0.0,
+        "raw_data": [
+          "1",
+          "Gráfico - Confecção Selo / Convite / Impressos / CertificadoEnvelope",
+          "1",
+          "R$ 0,00",
+          "R$ 0,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 1,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_2_0_Aviso+de+Contratacao+Direta+90007.2025.IPA.pdf",
+        "filepath": "downloads\\edital_2_0_Aviso+de+Contratacao+Direta+90007.2025.IPA.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/56089790000188/compras/2025/203/arquivos/1",
+        "description": "Fazer download",
+        "size": 2093835,
+        "downloaded_at": "2025-08-20T14:15:23.765103"
+      }
+    ],
+    "downloads_count": 1,
+    "accessed_contratacao": false,
+    "detail_url": "https://pncp.gov.br/app/editais/56089790000188/2025/203"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250820-003",
+    "pncp_id": "46634218000107-1-000103/2025",
+    "title": "Edital nº 063/2025",
+    "description": "Edital nº 063/2025\nId contratação PNCP: 46634218000107-1-000103/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 20/08/2025\nÓrgão: MUNICIPIO DE TAQUARITUBA\nLocal: Taquarituba/SP\nObjeto: “Aquisição de uma motocicleta, 0 KM, mínimo de 160 CC, gasolina, ano/modelo 2025, ‘conforme solicitação da Coordenadoria Municipal da Ação Social.\"",
+    "organization_name": "MUNICIPIO DE TAQUARITUBA",
+    "municipality_name": "Taquarituba",
+    "state_code": "SP",
+    "modality": "Pregão - Eletrônico",
+    "estimated_value": null,
+    "publication_date": "2025-08-20",
+    "objeto": "“Aquisição de uma motocicleta, 0 KM, mínimo de 160 CC, gasolina, ano/modelo 2025, ‘conforme solicitação da Coordenadoria Municipal da Ação Social.\"",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Edital nº 063/2025\nId contratação PNCP: 46634218000107-1-000103/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 20/08/2025\nÓrgão: MUNICIPIO DE TAQUARITUBA\nLocal: Taquarituba/SP\nObjeto: “Aquisição de uma motocicleta, 0 KM, mínimo de 160 CC, gasolina, ano/modelo 2025, ‘conforme solicitação da Coordenadoria Municipal da Ação Social.\"",
+    "scraped_at": "2025-08-20T14:16:31.710390",
+    "has_details": true,
+    "has_access_button": false,
+    "edital_href": "/editais/46634218000107/2025/103",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\n Ocorreu um problema ao buscar os dados. Por favor tente mais tarde.\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de agosto de 2021.\n\nO desenvolvimento dessa versão do Portal é um esforço conjunto de construção de uma concepção direta legal, homologado pelos indicados a compor o aludido comitê.\n\nA adequação, fidedignidade e corretude das informações e dos arquivos relativos às contratações disponibilizadas no PNCP por força da Lei nº 14.133/2021 são de estrita responsabilidade dos órgãos e entidades contratantes.\n\nhttps://portaldeservicos.gestao.gov.br\n0800 978 9001\nAGRADECIMENTO AOS PARCEIROS\nTexto destinado a exibição de informações relacionadas à licença de uso.",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": null,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [],
+    "items_count": 0,
+    "files_tab_found": false,
+    "downloaded_files": [],
+    "downloads_count": 0,
+    "accessed_contratacao": false,
+    "detail_url": "https://pncp.gov.br/app/editais/46634218000107/2025/103"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250820-004",
+    "pncp_id": "46634044000174-1-000246/2025",
+    "title": "Aviso de Contratação Direta nº 00099/2025",
+    "description": "Aviso de Contratação Direta nº 00099/2025\nId contratação PNCP: 46634044000174-1-000246/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 20/08/2025\nÓrgão: MUNICIPIO DE SOROCABA\nLocal: Sorocaba/SP\nObjeto: AQUISICAO DE MESA E GAVETEIRO",
+    "organization_name": "MUNICIPIO DE SOROCABA",
+    "municipality_name": "Sorocaba",
+    "state_code": "SP",
+    "modality": "Dispensa",
+    "estimated_value": null,
+    "publication_date": "2025-08-20",
+    "objeto": "AQUISICAO DE MESA E GAVETEIRO",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Aviso de Contratação Direta nº 00099/2025\nId contratação PNCP: 46634044000174-1-000246/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 20/08/2025\nÓrgão: MUNICIPIO DE SOROCABA\nLocal: Sorocaba/SP\nObjeto: AQUISICAO DE MESA E GAVETEIRO",
+    "scraped_at": "2025-08-20T14:17:08.543956",
+    "has_details": true,
+    "has_access_button": false,
+    "edital_href": "/editais/46634044000174/2025/246",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nAviso de Contratação Direta nº 00099/2025\nÚltima atualização 20/08/2025\n\nLocal: Sorocaba/SP\n\nÓrgão: MUNICIPIO DE SOROCABA\n\nUnidade compradora: 1 - Prefeitura Municipal de Sorocaba\n\nModalidade da contratação: Dispensa\n\nAmparo legal: Lei 14.133/2021, Art. 75, II\n\nTipo: Aviso de Contratação Direta\n\nModo de disputa: Dispensa Com Disputa\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 20/08/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 20/08/2025 19:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 26/08/2025 08:45 (horário de Brasília)\n\nId contratação PNCP: 46634044000174-1-000246/2025\n\nFonte: CONAM Consultoria em Administração Municipal\n\nObjeto:\n\nAQUISICAO DE MESA E GAVETEIRO\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 38.528,00\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nMESA RETANGULAR 1200 X 700 X 740 MM -DIMENSAO 1200 X 700 X 740 MM.-TAMPO CONFECCIONADA EM MDP, E REVESTIMENTO EM FILME MELAMINICO TEXTURIZADO DE BAIXA PRESSAO NAS DUAS FACES, DE 25 MM E PAINEL FRONTAL DE 18 MM. ACABAMENTO EM FITA DE BORDO EXTRUDADA EM MATERIAL POLIMERICO E COLADA AO TAMPO E PAINEL, DE NO MINIMO ESPESSURA DE 2.5 MM. PES LATERAIS COM BASE SUPERIOR EM TUBO DE ACO, FORMATO RETANGULAR, COM 1,20MM DE ESPESSURA PARA MAIOR SUSTENTACAO; FURACAONAS EXTREMIDADES PARA FIXACAO DO PE AO TAMPO. COLUNA VERTICAL EM CHAPA DE ACO DOBRADA MEDINDO 665X 200 X 48 MM COM 1,20 MM DE ESPESSURA; ORIFICIONA PARTE SUPERIOR DA COLUNA PARA PASSAGEM DE FIACAO DO TAMPO AO PISO, DEVENDO NA PARTE INFERIOR POSSUIR UM SEMI CIRCULO DE RAIO APROXIMADAMENTE DE30 MM; TAMPA LATERAL REMOVIVEL PARA ACESSO AO CABEAMENTO, EM ACO COM 0,90MM DE ESPESSURA. BASE INFERIOR ESTAMPADA, SEM USO DE PONTEIRAS, MEDINDO 580 X 65 X 25 MM DE ALTURA, COM 1.5 MM DE ESPESSURA; DUAS SAPATAS NIVELADORAS ESTRIADAS, INJETADAS EM POLIPROPILENO DE NO MINI",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 38528.0,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "MESA RETANGULAR 1200 X 700 X 740 MM -DIMENSAO 1200 X 700 X 740 MM.-TAMPO CONFECCIONADA EM MDP, E REVESTIMENTO EM FILME MELAMINICO TEXTURIZADO DE BAIXA PRESSAO NAS DUAS FACES, DE 25 MM E PAINEL FRONTAL DE 18 MM. ACABAMENTO EM FITA DE BORDO EXTRUDADA EM MATERIAL POLIMERICO E COLADA AO TAMPO E PAINEL, DE NO MINIMO ESPESSURA DE 2.5 MM. PES LATERAIS COM BASE SUPERIOR EM TUBO DE ACO, FORMATO RETANGULAR, COM 1,20MM DE ESPESSURA PARA MAIOR SUSTENTACAO; FURACAONAS EXTREMIDADES PARA FIXACAO DO PE AO TAMPO",
+        "quantidade": 28,
+        "valor_unitario": 576.0,
+        "valor_total": 16128.0,
+        "raw_data": [
+          "1",
+          "MESA RETANGULAR 1200 X 700 X 740 MM -DIMENSAO 1200 X 700 X 740 MM.-TAMPO CONFECCIONADA EM MDP, E REVESTIMENTO EM FILME MELAMINICO TEXTURIZADO DE BAIXA PRESSAO NAS DUAS FACES, DE 25 MM E PAINEL FRONTAL DE 18 MM. ACABAMENTO EM FITA DE BORDO EXTRUDADA EM MATERIAL POLIMERICO E COLADA AO TAMPO E PAINEL, DE NO MINIMO ESPESSURA DE 2.5 MM. PES LATERAIS COM BASE SUPERIOR EM TUBO DE ACO, FORMATO RETANGULAR, COM 1,20MM DE ESPESSURA PARA MAIOR SUSTENTACAO; FURACAONAS EXTREMIDADES PARA FIXACAO DO PE AO TAMPO. COLUNA VERTICAL EM CHAPA DE ACO DOBRADA MEDINDO 665X 200 X 48 MM COM 1,20 MM DE ESPESSURA; ORIFICIONA PARTE SUPERIOR DA COLUNA PARA PASSAGEM DE FIACAO DO TAMPO AO PISO, DEVENDO NA PARTE INFERIOR POSSUIR UM SEMI CIRCULO DE RAIO APROXIMADAMENTE DE30 MM; TAMPA LATERAL REMOVIVEL PARA ACESSO AO CABEAMENTO, EM ACO COM 0,90MM DE ESPESSURA. BASE INFERIOR ESTAMPADA, SEM USO DE PONTEIRAS, MEDINDO 580 X 65 X 25 MM DE ALTURA, COM 1.5 MM DE ESPESSURA; DUAS SAPATAS NIVELADORAS ESTRIADAS, INJETADAS EM POLIPROPILENO DE NO MINIMO 30 MM DE DIAMETRO, ROSCA M6 NA COR DA ESTRUTURA; APLICACAO DE REBITESM6 PARA JUNCAO DOS PES AO PAINEL UNICO. TODO O SISTEMA DE FIXACAO POR PARAFUSOS METRICOS E COM INSERTOS METALICOS, OS QUAIS PERMITEM A MONTAGEM EDESMONTAGEM DO MOBILIARIO SEM CAUSAR DANOS AO MESMO, SEM UTILIZACAO DE PARAFUSOS DIRETO NOS PAINEIS DE MDP.",
+          "28",
+          "R$ 576,00",
+          "R$ 16.128,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "2",
+        "descricao": "GAVETEIRO VOLANTE COM 03 GAVETAS: 30CM (L) X 49CM GAVETEIRO VOLANTE COM 03 GAVETAS: 30CM (L) X 49CM(H) X 51CM (P)- DIMENSOES: APROXIMADAMENTE 30 CM (LARGURA) X 49CM (ALTURA) X 51 CM (PROFUNDIDADE).- MATERIAL: ESTRUTURA CONFECCIONADA EM MDF OU MDPDE ALTA RESISTENCIA, COM REVESTIMENTO MELAMINICO DE BAIXA PRESSAO (BP), GARANTINDO DURABILIDADE.- GAVETAS: TRES GAVETAS COM CORREDICAS METALICAS OU TELESCOPICAS.- PUXADORES: EMBUTIDOS OU EXTERNOS, EM MATERIAL RESISTENTE (PVC OU ALUMINIO), COM DESIGN ERGO",
+        "quantidade": 28,
+        "valor_unitario": 800.0,
+        "valor_total": 22400.0,
+        "raw_data": [
+          "2",
+          "GAVETEIRO VOLANTE COM 03 GAVETAS: 30CM (L) X 49CM GAVETEIRO VOLANTE COM 03 GAVETAS: 30CM (L) X 49CM(H) X 51CM (P)- DIMENSOES: APROXIMADAMENTE 30 CM (LARGURA) X 49CM (ALTURA) X 51 CM (PROFUNDIDADE).- MATERIAL: ESTRUTURA CONFECCIONADA EM MDF OU MDPDE ALTA RESISTENCIA, COM REVESTIMENTO MELAMINICO DE BAIXA PRESSAO (BP), GARANTINDO DURABILIDADE.- GAVETAS: TRES GAVETAS COM CORREDICAS METALICAS OU TELESCOPICAS.- PUXADORES: EMBUTIDOS OU EXTERNOS, EM MATERIAL RESISTENTE (PVC OU ALUMINIO), COM DESIGN ERGONOMICO.- FECHAMENTO: SISTEMA DE TRANCA COM CHAVE, PERMITINDO O TRAVAMENTO SIMULTANEO DAS GAVETAS. RODIZIOS:MOVEL EQUIPADO COM QUATRO RODIZIOS DE ALTA RESISTENCIA, PREFERENCIALMENTE EM NYLON OU POLIURETANO.- O PRODUTO DEVE ATENDER AS DIRETRIZES DA ABNT NBR.- GARANTIA: MINIMO DE 12 MESES CONTRA DEFEITOS DEFABRICACAO.- AS MEDIDAS PODERAO TER UMA VARIACAO DE ATE 15% PARA MAIS OU PARA MENOS.",
+          "28",
+          "R$ 800,00",
+          "R$ 22.400,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 2,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_4_0_avisodecompra.cpl.212.2025.pdf",
+        "filepath": "downloads\\edital_4_0_avisodecompra.cpl.212.2025.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46634044000174/compras/2025/246/arquivos/1",
+        "description": "Fazer download",
+        "size": 1002092,
+        "downloaded_at": "2025-08-20T14:17:44.872562"
+      },
+      {
+        "filename": "edital_4_1_11.anexo.xi.tr.cpl.212.2025.pdf",
+        "filepath": "downloads\\edital_4_1_11.anexo.xi.tr.cpl.212.2025.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46634044000174/compras/2025/246/arquivos/2",
+        "description": "Fazer download",
+        "size": 322988,
+        "downloaded_at": "2025-08-20T14:17:50.132802"
+      }
+    ],
+    "downloads_count": 2,
+    "accessed_contratacao": false,
+    "detail_url": "https://pncp.gov.br/app/editais/46634044000174/2025/246"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250820-005",
+    "pncp_id": "45781176000166-1-000892/2025",
+    "title": "Edital nº 7245/2025",
+    "description": "Edital nº 7245/2025\nId contratação PNCP: 45781176000166-1-000892/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 20/08/2025\nÓrgão: MUNICIPIO DE AMERICANA\nLocal: Americana/SP\nObjeto: REGISTRO DE PREÇOS PARA AQUISIÇÃO DE EQUIPAMENTOS DE PROTEÇÃO INDIVIDUAL (EPI) DOS GRUPOS G.1 – CALÇADOS E G.3 – PERNEIRA, NA NORMA REGULAMENTADORA Nº 06 (NR 06), PARA O FORNECIMENTO AOS AGENTES PÚBLICOS DA PREFEITURA MUNICIPAL DE AMERICANA",
+    "organization_name": "MUNICIPIO DE AMERICANA",
+    "municipality_name": "Americana",
+    "state_code": "SP",
+    "modality": "Pregão - Eletrônico",
+    "estimated_value": null,
+    "publication_date": "2025-08-20",
+    "objeto": "REGISTRO DE PREÇOS PARA AQUISIÇÃO DE EQUIPAMENTOS DE PROTEÇÃO INDIVIDUAL (EPI) DOS GRUPOS G.1 – CALÇADOS E G.3 – PERNEIRA, NA NORMA REGULAMENTADORA Nº 06 (NR 06), PARA O FORNECIMENTO AOS AGENTES PÚBLICOS DA PREFEITURA MUNICIPAL DE AMERICANA",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Edital nº 7245/2025\nId contratação PNCP: 45781176000166-1-000892/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 20/08/2025\nÓrgão: MUNICIPIO DE AMERICANA\nLocal: Americana/SP\nObjeto: REGISTRO DE PREÇOS PARA AQUISIÇÃO DE EQUIPAMENTOS DE PROTEÇÃO INDIVIDUAL (EPI) DOS GRUPOS G.1 – CALÇADOS E G.3 – PERNEIRA, NA NORMA REGULAMENTADORA Nº 06 (NR 06), PARA O FORNECIMENTO AOS AGENTES PÚBLICOS DA PREFEITURA MUNICIPAL DE AMERICANA",
+    "scraped_at": "2025-08-20T14:19:58.696394",
+    "has_details": true,
+    "has_access_button": false,
+    "edital_href": "/editais/45781176000166/2025/892",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nEdital nº 7245/2025\nÚltima atualização 20/08/2025\n\nLocal: Americana/SP\n\nÓrgão: MUNICIPIO DE AMERICANA\n\nUnidade compradora: 1 - PREFEITURA MUNICIPAL DE AMERICANA\n\nModalidade da contratação: Pregão - Eletrônico\n\nAmparo legal: Lei 14.133/2021, Art. 28, I\n\nTipo: Edital\n\nModo de disputa: Aberto\n\nRegistro de preço: Sim\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 20/08/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 04/09/2025 07:30 (horário de Brasília)\n\nData fim de recebimento de propostas: 04/09/2025 08:00 (horário de Brasília)\n\nId contratação PNCP: 45781176000166-1-000892/2025\n\nFonte: SMARAPD INFORMATICA LTDA\n\nObjeto:\n\nREGISTRO DE PREÇOS PARA AQUISIÇÃO DE EQUIPAMENTOS DE PROTEÇÃO INDIVIDUAL (EPI) DOS GRUPOS G.1 – CALÇADOS E G.3 – PERNEIRA, NA NORMA REGULAMENTADORA Nº 06 (NR 06), PARA O FORNECIMENTO AOS AGENTES PÚBLICOS DA PREFEITURA MUNICIPAL DE AMERICANA\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 1.156.212,06\nItens\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nCALÇADO TIPO TÊNIS EM EVA COM COLORAÇÃO BRANCA (NUMERAÇÕES VARIADAS)\n1350\nR$ 97,755\nR$ 131.969,25\n2\nCALÇADO TIPO TÊNIS EM EVA COM COLORAÇÃO AZUL/PRETO (NUMERAÇÕES VARIADAS)\n1350\nR$ 97,9475\nR$ 132.229,13\n3\nBOTINA COURO COM BIQUEIRA EM COMPOSITE. CALÇADO DE SEGURANÇA, TIPO BOTINA, MODELO BLATT, FECHAMENTO EM ELÁSTICO LATERAL RECOBERTO EM COURO VAQUETA INTEGRAL, BIQUEIRA (COMPOSITE) SEM COMPONENTES METÁLICOS, DE GÁSPEA INTEIRA (SEM COSTURAS ORNAMENTAIS OU EMENDAS NA GÁSPEA) EM COURO 100% VAQUETA INTEGRAL HIDROFUGADA, COM COSTURADA PELO SISTEMA STROBEL, COM FORRAÇÃOINTERNA DA GÁSPEA EM TECIDO E FORRAÇÃO DO TRASEIRO EM NÃO TECIDO, SI: A BIQUEIRA DO CALÇADO É FEITA DE PLÁSTICO CARBONO, RESISTENTE A IMPACTOS DE ATÉ 200 J E FORÇAS DE TRAÇÃO DE ATÉ 15 KN. ELA CUMPRE A NORMA ABNT NBR ISO 20345:2015, SEM COMPONENTES METÁLICOS, E CONTA COM UMA BORDA PROTETORA PARA EVITAR LESÕE",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 1156212.06,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "CALÇADO TIPO TÊNIS EM EVA COM COLORAÇÃO BRANCA (NUMERAÇÕES VARIADAS)",
+        "quantidade": 1350,
+        "valor_unitario": 97.755,
+        "valor_total": 131969.25,
+        "raw_data": [
+          "1",
+          "CALÇADO TIPO TÊNIS EM EVA COM COLORAÇÃO BRANCA (NUMERAÇÕES VARIADAS)",
+          "1350",
+          "R$ 97,755",
+          "R$ 131.969,25",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "2",
+        "descricao": "CALÇADO TIPO TÊNIS EM EVA COM COLORAÇÃO AZUL/PRETO (NUMERAÇÕES VARIADAS)",
+        "quantidade": 1350,
+        "valor_unitario": 97.9475,
+        "valor_total": 132229.13,
+        "raw_data": [
+          "2",
+          "CALÇADO TIPO TÊNIS EM EVA COM COLORAÇÃO AZUL/PRETO (NUMERAÇÕES VARIADAS)",
+          "1350",
+          "R$ 97,9475",
+          "R$ 132.229,13",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "3",
+        "descricao": "BOTINA COURO COM BIQUEIRA EM COMPOSITE. CALÇADO DE SEGURANÇA, TIPO BOTINA, MODELO BLATT, FECHAMENTO EM ELÁSTICO LATERAL RECOBERTO EM COURO VAQUETA INTEGRAL, BIQUEIRA (COMPOSITE) SEM COMPONENTES METÁLICOS, DE GÁSPEA INTEIRA (SEM COSTURAS ORNAMENTAIS OU EMENDAS NA GÁSPEA) EM COURO 100% VAQUETA INTEGRAL HIDROFUGADA, COM COSTURADA PELO SISTEMA STROBEL, COM FORRAÇÃOINTERNA DA GÁSPEA EM TECIDO E FORRAÇÃO DO TRASEIRO EM NÃO TECIDO, SI: A BIQUEIRA DO CALÇADO É FEITA DE PLÁSTICO CARBONO, RESISTENTE A IMP",
+        "quantidade": 1080,
+        "valor_unitario": 177.34,
+        "valor_total": 191527.2,
+        "raw_data": [
+          "3",
+          "BOTINA COURO COM BIQUEIRA EM COMPOSITE. CALÇADO DE SEGURANÇA, TIPO BOTINA, MODELO BLATT, FECHAMENTO EM ELÁSTICO LATERAL RECOBERTO EM COURO VAQUETA INTEGRAL, BIQUEIRA (COMPOSITE) SEM COMPONENTES METÁLICOS, DE GÁSPEA INTEIRA (SEM COSTURAS ORNAMENTAIS OU EMENDAS NA GÁSPEA) EM COURO 100% VAQUETA INTEGRAL HIDROFUGADA, COM COSTURADA PELO SISTEMA STROBEL, COM FORRAÇÃOINTERNA DA GÁSPEA EM TECIDO E FORRAÇÃO DO TRASEIRO EM NÃO TECIDO, SI: A BIQUEIRA DO CALÇADO É FEITA DE PLÁSTICO CARBONO, RESISTENTE A IMPACTOS DE ATÉ 200 J E FORÇAS DE TRAÇÃO DE ATÉ 15 KN. ELA CUMPRE A NORMA ABNT NBR ISO 20345:2015, SEM COMPONENTES METÁLICOS, E CONTA COM UMA BORDA PROTETORA PARA EVITAR LESÕES NAS UNHAS. PALMILHA EM TECIDO DE FIBRAS CURTAS, DE ALTA ABSORÇÃO E DISPERSÃO DE SUOR , SOLADO BIDENSIDADE INJETADO DIRETAMENTE NO CABEDAL POR TECNOLOGIA DE VASO FECHADO E TERMO CONTROLADO, UTILIZANDO ALMA PLÁSTICA EM POLIPROPILENO FUNDIDA ENTRE O SOLADO E O CABEDAL NA REGIÃO DO SALTO DO CALÇADO, SALTO DE 15MM, COM ÂNGULO DE 90 A 95 GRAUS, LAUDO DE 14KV. CARIMBO DO C.A., MARCA DO FABRICANTE E SEMANA E ANO DE FABRICAÇÃO ESTAMPADOS NO CABEDAL E DATA DE FABRICAÇÃO/ MÊS ANO EQUIVALENTE, ESTAMPADA NO SOLADO DO CALÇADO DE FORMA INDELÉVEL",
+          "1080",
+          "R$ 177,34",
+          "R$ 191.527,20",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "4",
+        "descricao": "BOTINA DE SEGURANÇA PARA ELETRICISTA COM BIQUEIRA COMPOSITE CONFECCIONADA EM COURO TAMANHO 35 AO 45",
+        "quantidade": 1080,
+        "valor_unitario": 157.7833,
+        "valor_total": 170405.96,
+        "raw_data": [
+          "4",
+          "BOTINA DE SEGURANÇA PARA ELETRICISTA COM BIQUEIRA COMPOSITE CONFECCIONADA EM COURO TAMANHO 35 AO 45",
+          "1080",
+          "R$ 157,7833",
+          "R$ 170.405,96",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "5",
+        "descricao": "TÊNIS DE AMARRAR SEM BIQUEIRA. CALÇADO SEGURANÇA PRETO EM VAQUETA RELAX RESISTENTE A ÁGUA (HIDROFUGADA) FORRAÇÃO INTERNO EM TECIDO E FORRAÇÃO DO TRASEIRO EM NÃO TECIDO COM TRATAMENTO BACTERICIDA, COM CADARÇO TRANÇADO EM ALGODÃO OU POLIÉSTER, ILHÓSES ALUMINIO, SOLADO EM PU/BIDENSIDADE INJETADO DIRETO AO CABEDAL, COM ADITIVO ANTI- HIDROLISE, COM UTILIZAÇÃO DE ALMA PLÁSTICA, DESENHO ANTIDERRAPANTE, CANAIS PARA ESCOAMENTO DE ÁGUA E AMORTECEDOR PARA IMPACTOS; OB: BIQUEIRA EM POLIPROPILENO, ANATÔMICA,",
+        "quantidade": 350,
+        "valor_unitario": 148.3,
+        "valor_total": 51905.0,
+        "raw_data": [
+          "5",
+          "TÊNIS DE AMARRAR SEM BIQUEIRA. CALÇADO SEGURANÇA PRETO EM VAQUETA RELAX RESISTENTE A ÁGUA (HIDROFUGADA) FORRAÇÃO INTERNO EM TECIDO E FORRAÇÃO DO TRASEIRO EM NÃO TECIDO COM TRATAMENTO BACTERICIDA, COM CADARÇO TRANÇADO EM ALGODÃO OU POLIÉSTER, ILHÓSES ALUMINIO, SOLADO EM PU/BIDENSIDADE INJETADO DIRETO AO CABEDAL, COM ADITIVO ANTI- HIDROLISE, COM UTILIZAÇÃO DE ALMA PLÁSTICA, DESENHO ANTIDERRAPANTE, CANAIS PARA ESCOAMENTO DE ÁGUA E AMORTECEDOR PARA IMPACTOS; OB: BIQUEIRA EM POLIPROPILENO, ANATÔMICA, SOMENTE PARA REFORÇO FRONTAL, MANTÉM A ESTRUTURA NA REGIÃO DO BICO.PALMILHA DE CONSTRUÇÃO EM TECIDO DE FIBRAS CURTAS, DE ALTA ABSORÇÃO E DISPERSÃO DE SUOR (SISTEMA STROBELL); SOBRE-PALMILHA ANATÔMICA DE CONFORTO, FABRICADA EM EVA. COM TRATAMENTO BACTERICIDA E FUNGICIDA, COM PERFUROS NA REGIÃO DO DORSO DO PÉ, TESTADA E APROVADA PELA NBR, ISO 20344.",
+          "350",
+          "R$ 148,30",
+          "R$ 51.905,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 5,
+    "files_tab_found": false,
+    "downloaded_files": [],
+    "downloads_count": 0,
+    "accessed_contratacao": false,
+    "detail_url": "https://pncp.gov.br/app/editais/45781176000166/2025/892"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250820-006",
+    "pncp_id": "45281144000100-1-000178/2025",
+    "title": "Edital nº 87/2025",
+    "description": "Edital nº 87/2025\nId contratação PNCP: 45281144000100-1-000178/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 20/08/2025\nÓrgão: MUNICIPIO DE ITAPIRA\nLocal: Itapira/SP\nObjeto: CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA INSTALAÇÃO DE SISTEMA DE COMBATE E PREVENÇÃO DE INCÊNDIOS, COM FORNECIMENTO DE MATERIAL E MÃO DE OBRA, DA EMEB PROFESSORA GILMERY VASCONCELOS PEREIRA ULBRICHT, NESTE MUNICÍPIO",
+    "organization_name": "MUNICIPIO DE ITAPIRA",
+    "municipality_name": "Itapira",
+    "state_code": "SP",
+    "modality": "Pregão - Eletrônico",
+    "estimated_value": null,
+    "publication_date": "2025-08-20",
+    "objeto": "CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA INSTALAÇÃO DE SISTEMA DE COMBATE E PREVENÇÃO DE INCÊNDIOS, COM FORNECIMENTO DE MATERIAL E MÃO DE OBRA, DA EMEB PROFESSORA GILMERY VASCONCELOS PEREIRA ULBRICHT, NESTE MUNICÍPIO",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Edital nº 87/2025\nId contratação PNCP: 45281144000100-1-000178/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 20/08/2025\nÓrgão: MUNICIPIO DE ITAPIRA\nLocal: Itapira/SP\nObjeto: CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA INSTALAÇÃO DE SISTEMA DE COMBATE E PREVENÇÃO DE INCÊNDIOS, COM FORNECIMENTO DE MATERIAL E MÃO DE OBRA, DA EMEB PROFESSORA GILMERY VASCONCELOS PEREIRA ULBRICHT, NESTE MUNICÍPIO",
+    "scraped_at": "2025-08-20T14:26:03.380575",
+    "has_details": true,
+    "has_access_button": false,
+    "edital_href": "/editais/45281144000100/2025/178",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nEdital nº 87/2025\nÚltima atualização 20/08/2025\n\nLocal: Itapira/SP\n\nÓrgão: MUNICIPIO DE ITAPIRA\n\nUnidade compradora: 2 - Prefeitura Municipal de Itapira\n\nModalidade da contratação: Pregão - Eletrônico\n\nAmparo legal: Lei 14.133/2021, Art. 28, I\n\nTipo: Edital\n\nModo de disputa: Aberto\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 20/08/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 20/08/2025 08:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 09/09/2025 07:59 (horário de Brasília)\n\nId contratação PNCP: 45281144000100-1-000178/2025\n\nFonte: Fiorilli Software\n\nObjeto:\n\nCONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA INSTALAÇÃO DE SISTEMA DE COMBATE E PREVENÇÃO DE INCÊNDIOS, COM FORNECIMENTO DE MATERIAL E MÃO DE OBRA, DA EMEB PROFESSORA GILMERY VASCONCELOS PEREIRA ULBRICHT, NESTE MUNICÍPIO\n\nInformação complementar:\nCONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA INSTALAÇÃO DE SISTEMA DE COMBATE E PREVENÇÃO DE INCÊNDIOS, COM FORNECIMENTO DE MATERIAL E MÃO DE OBRA, DA EMEB PROFESSORA GILMERY VASCONCELOS PEREIRA ULBRICHT, NESTE MUNICÍPIO\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 125.807,16\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nLOTE 001\n1\nR$ 125.807,16\nR$ 125.807,16\nExibir:\n5\n1-1 de 1 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de agosto de 2021.\n\nO desenvolvimento dessa versão do Portal é um esforço conjunto de construção de uma concepção direta legal, homologado pelos indicados a compor o",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 125807.16,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "LOTE 001",
+        "quantidade": 1,
+        "valor_unitario": 125807.16,
+        "valor_total": 125807.16,
+        "raw_data": [
+          "1",
+          "LOTE 001",
+          "1",
+          "R$ 125.807,16",
+          "R$ 125.807,16",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 1,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_6_0_Edital.pdf",
+        "filepath": "downloads\\edital_6_0_Edital.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/45281144000100/compras/2025/178/arquivos/1",
+        "description": "Fazer download",
+        "size": 1036834,
+        "downloaded_at": "2025-08-20T14:26:38.824281"
+      },
+      {
+        "filename": "edital_6_1_TERMO_DE_REFERENCIA.pdf",
+        "filepath": "downloads\\edital_6_1_TERMO_DE_REFERENCIA.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/45281144000100/compras/2025/178/arquivos/2",
+        "description": "Fazer download",
+        "size": 563630,
+        "downloaded_at": "2025-08-20T14:26:44.043836"
+      }
+    ],
+    "downloads_count": 2,
+    "accessed_contratacao": false,
+    "detail_url": "https://pncp.gov.br/app/editais/45281144000100/2025/178"
+  }
+]

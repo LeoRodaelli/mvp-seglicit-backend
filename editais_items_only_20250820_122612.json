@@ -1,0 +1,187 @@
+[
+  {
+    "id": "PNCP-ITEMS-ONLY-20250820-000",
+    "pncp_id": "05652348000187-1-000025/2025",
+    "title": "Aviso de Contratação Direta nº 90021/2025",
+    "description": "Aviso de Contratação Direta nº 90021/2025\nId contratação PNCP: 05652348000187-1-000025/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 20/08/2025\nÓrgão: SUBPREFEITURA SANTANA/TUCURUVI\nLocal: São Paulo/SP\nObjeto: Material de Informática - Descrição exata no Aviso de Dispensa de Licitação",
+    "organization_name": "SUBPREFEITURA SANTANA/TUCURUVI",
+    "municipality_name": "São Paulo",
+    "state_code": "SP",
+    "modality": "Dispensa",
+    "estimated_value": null,
+    "publication_date": "2025-08-20",
+    "objeto": "Material de Informática - Descrição exata no Aviso de Dispensa de Licitação",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Aviso de Contratação Direta nº 90021/2025\nId contratação PNCP: 05652348000187-1-000025/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 20/08/2025\nÓrgão: SUBPREFEITURA SANTANA/TUCURUVI\nLocal: São Paulo/SP\nObjeto: Material de Informática - Descrição exata no Aviso de Dispensa de Licitação",
+    "scraped_at": "2025-08-20T12:18:11.056375",
+    "has_details": true,
+    "has_access_button": false,
+    "edital_href": "/editais/05652348000187/2025/25",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nAviso de Contratação Direta nº 90021/2025\nÚltima atualização 20/08/2025\n\nLocal: São Paulo/SP\n\nÓrgão: SUBPREFEITURA SANTANA/TUCURUVI\n\nUnidade compradora: 925088 - PMSP - SUBPREFEITURA SANTANA/TUCURUVI\n\nModalidade da contratação: Dispensa\n\nAmparo legal: Lei 14.133/2021, Art. 75, II\n\nTipo: Aviso de Contratação Direta\n\nModo de disputa: Dispensa Com Disputa\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 20/08/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 20/08/2025 12:08 (horário de Brasília)\n\nData fim de recebimento de propostas: 25/08/2025 07:59 (horário de Brasília)\n\nId contratação PNCP: 05652348000187-1-000025/2025\n\nFonte: Compras.gov.br\n\nObjeto:\n\nMaterial de Informática - Descrição exata no Aviso de Dispensa de Licitação\n\nInformação complementar:\nPara utilização na manutenção dos computadores.\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 2.990,83\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nFiltro linha\n15\nR$ 31,97\nR$ 479,55\n2\nUnidade disco\n6\nR$ 193,39\nR$ 1.160,34\n3\nConector cabo par trançado\n20\nR$ 8,30\nR$ 166,00\n4\nAdaptador eletrônico\n18\nR$ 65,83\nR$ 1.184,94\nExibir:\n5\n1-4 de 4 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de agosto de 2021.\n\nO desenvolvimento dessa versão do Portal é um esforço conjunto de construção de uma concepção direta legal, homologado pelos indicados a compor o aludido comitê.\n\nA adequação, fidedignidade e corretude das informações e dos arquivos relativos às contrataçõe",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 2990.83,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "Filtro linha",
+        "quantidade": 15,
+        "valor_unitario": 31.97,
+        "valor_total": 479.55,
+        "raw_data": [
+          "1",
+          "Filtro linha",
+          "15",
+          "R$ 31,97",
+          "R$ 479,55",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "2",
+        "descricao": "Unidade disco",
+        "quantidade": 6,
+        "valor_unitario": 193.39,
+        "valor_total": 1160.34,
+        "raw_data": [
+          "2",
+          "Unidade disco",
+          "6",
+          "R$ 193,39",
+          "R$ 1.160,34",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "3",
+        "descricao": "Conector cabo par trançado",
+        "quantidade": 20,
+        "valor_unitario": 8.3,
+        "valor_total": 166.0,
+        "raw_data": [
+          "3",
+          "Conector cabo par trançado",
+          "20",
+          "R$ 8,30",
+          "R$ 166,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "4",
+        "descricao": "Adaptador eletrônico",
+        "quantidade": 18,
+        "valor_unitario": 65.83,
+        "valor_total": 1184.94,
+        "raw_data": [
+          "4",
+          "Adaptador eletrônico",
+          "18",
+          "R$ 65,83",
+          "R$ 1.184,94",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 4,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_0_0_Aviso+Dispensa+de+Licitacao+90021.pdf",
+        "filepath": "downloads\\edital_0_0_Aviso+Dispensa+de+Licitacao+90021.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/05652348000187/compras/2025/25/arquivos/1",
+        "description": "Fazer download",
+        "size": 269015,
+        "downloaded_at": "2025-08-20T12:18:47.125529"
+      }
+    ],
+    "downloads_count": 1,
+    "accessed_contratacao": false,
+    "detail_url": "https://pncp.gov.br/app/editais/05652348000187/2025/25"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250820-001",
+    "pncp_id": "58993577000121-1-000148/2025",
+    "title": "Edital nº 26/2025",
+    "description": "Edital nº 26/2025\nId contratação PNCP: 58993577000121-1-000148/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 20/08/2025\nÓrgão: MUNICIPIO DE ARACARIGUAMA\nLocal: Araçariguama/SP\nObjeto: Registro de preços para a prestação de serviços periciais, incluso a realização de avaliações médicas, emissão laudos técnicos, constituição de Junta Médica e realização de exame clínico ocupacional, compreendendo exames médicos admissionais, periódicos, de retorno ao trabalho e demissiona...",
+    "organization_name": "MUNICIPIO DE ARACARIGUAMA",
+    "municipality_name": "Araçariguama",
+    "state_code": "SP",
+    "modality": "Pregão - Eletrônico",
+    "estimated_value": null,
+    "publication_date": "2025-08-20",
+    "objeto": "Registro de preços para a prestação de serviços periciais, incluso a realização de avaliações médicas, emissão laudos técnicos, constituição de Junta Médica e realização de exame clínico ocupacional, compreendendo exames médicos admissionais, periódicos, de retorno ao trabalho e demissionais, com profissionais legalmente habilitados, para atendimento das demandas da administração pública municipal relacionadas à saúde funcional de servidores públicos, pelo período de 12 meses",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Edital nº 26/2025\nId contratação PNCP: 58993577000121-1-000148/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 20/08/2025\nÓrgão: MUNICIPIO DE ARACARIGUAMA\nLocal: Araçariguama/SP\nObjeto: Registro de preços para a prestação de serviços periciais, incluso a realização de avaliações médicas, emissão laudos técnicos, constituição de Junta Médica e realização de exame clínico ocupacional, compreendendo exames médicos admissionais, periódicos, de retorno ao trabalho e demissionais, com profissionais legalmente habilitados, para atendimento das demandas da administração pública municipal relacionadas à saúde funcional de servidores públicos, pelo período de 12 meses",
+    "scraped_at": "2025-08-20T12:19:55.485257",
+    "has_details": true,
+    "has_access_button": true,
+    "edital_href": "/editais/58993577000121/2025/148",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nEdital nº 26/2025\nAcessar Contratação\nÚltima atualização 20/08/2025\n\nLocal: Araçariguama/SP\n\nÓrgão: MUNICIPIO DE ARACARIGUAMA\n\nUnidade compradora: 939 - Araçariguama\n\nModalidade da contratação: Pregão - Eletrônico\n\nAmparo legal: Lei 14.133/2021, Art. 28, I\n\nTipo: Edital\n\nModo de disputa: Aberto\n\nRegistro de preço: Sim\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 20/08/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 20/08/2025 14:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 05/09/2025 09:00 (horário de Brasília)\n\nId contratação PNCP: 58993577000121-1-000148/2025\n\nFonte: Instar Tecnologia em Informática\n\nObjeto:\n\nRegistro de preços para a prestação de serviços periciais, incluso a realização de avaliações médicas, emissão laudos técnicos, constituição de Junta Médica e realização de exame clínico ocupacional, compreendendo exames médicos admissionais, periódicos, de retorno ao trabalho e demissionais, com profissionais legalmente habilitados, para atendimento das demandas da administração pública municipal relacionadas à saúde funcional de servidores públicos, pelo período de 12 meses\n\nVALOR TOTAL ESTIMADO DA COMPRA\nSIGILOSO\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nServiços Médicos Pericial realizado por junta Médica, pelo período de 12 meses.\n1000\nSigiloso\nSigiloso\n2\nServiços Médicos para Exame clínico ocupacional: (admissional, periódico, de retorno ao trabalho e demissional), pelo período de 12 meses\n2500\nSigiloso\nSigiloso\nExibir:\n5\n1-2 de 2 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contrat",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": null,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "Serviços Médicos Pericial realizado por junta Médica, pelo período de 12 meses.",
+        "quantidade": 1000,
+        "valor_unitario": "Sigiloso",
+        "valor_total": "Sigiloso",
+        "raw_data": [
+          "1",
+          "Serviços Médicos Pericial realizado por junta Médica, pelo período de 12 meses.",
+          "1000",
+          "Sigiloso",
+          "Sigiloso",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "2",
+        "descricao": "Serviços Médicos para Exame clínico ocupacional: (admissional, periódico, de retorno ao trabalho e demissional), pelo período de 12 meses",
+        "quantidade": 2500,
+        "valor_unitario": "Sigiloso",
+        "valor_total": "Sigiloso",
+        "raw_data": [
+          "2",
+          "Serviços Médicos para Exame clínico ocupacional: (admissional, periódico, de retorno ao trabalho e demissional), pelo período de 12 meses",
+          "2500",
+          "Sigiloso",
+          "Sigiloso",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 2,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_1_0__home_aracarig_public_html_editais_2_-_edtal_pregao_eletronico_n_26-2025_20120312.pdf",
+        "filepath": "downloads\\edital_1_0__home_aracarig_public_html_editais_2_-_edtal_pregao_eletronico_n_26-2025_20120312.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/58993577000121/compras/2025/148/arquivos/1",
+        "description": "Fazer download",
+        "size": 1349246,
+        "downloaded_at": "2025-08-20T12:20:31.361890"
+      }
+    ],
+    "downloads_count": 1,
+    "accessed_contratacao": true,
+    "access_button_selector": "button:has-text('Acessar contratação')",
+    "detail_url": "https://pncp.gov.br/app/editais/58993577000121/2025/148"
+  }
+]

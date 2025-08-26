@@ -1,0 +1,63 @@
+from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
+
+db = SQLAlchemy()
+
+class City(db.Model):
+    __tablename__ = 'cities'
+    
+    id = db.Column(db.Integer, primary_key=True)
+    ibge_code = db.Column(db.String(10), unique=True, nullable=False)
+    name = db.Column(db.String(100), nullable=False)
+    state_code = db.Column(db.String(2), nullable=False)  # Corrigido: removido state_name
+    created_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    
+    def to_dict(self):
+        return {
+            'ibge_code': self.ibge_code,
+            'name': self.name,
+            'state_code': self.state_code,
+            'display_name': f"{self.name} - {self.state_code}"
+        }
+
+class Tender(db.Model):
+    __tablename__ = 'tenders'
+    
+    id = db.Column(db.Integer, primary_key=True)
+    pncp_id = db.Column(db.String(50), unique=True)
+    title = db.Column(db.String(500), nullable=False)
+    description = db.Column(db.Text)
+    organization_name = db.Column(db.String(200))
+    organization_cnpj = db.Column(db.String(20))
+    municipality_name = db.Column(db.String(100))
+    municipality_ibge = db.Column(db.String(10))
+    state_code = db.Column(db.String(2))
+    publication_date = db.Column(db.Date)
+    update_date = db.Column(db.DateTime)
+    status = db.Column(db.String(50))
+    modality = db.Column(db.String(100))
+    estimated_value = db.Column(db.Float)
+    source_url = db.Column(db.String(500))
+    data_source = db.Column(db.String(20))
+    created_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'pncp_id': self.pncp_id,
+            'title': self.title,
+            'description': self.description,
+            'organization_name': self.organization_name,
+            'organization_cnpj': self.organization_cnpj,
+            'municipality_name': self.municipality_name,
+            'municipality_ibge': self.municipality_ibge,
+            'state_code': self.state_code,
+            'publication_date': self.publication_date.isoformat() if self.publication_date else None,
+            'update_date': self.update_date.isoformat() if self.update_date else None,
+            'status': self.status,
+            'modality': self.modality,
+            'estimated_value': self.estimated_value,
+            'source_url': self.source_url,
+            'data_source': self.data_source,
+            'created_at': self.created_at.isoformat() if self.created_at else None
+        }

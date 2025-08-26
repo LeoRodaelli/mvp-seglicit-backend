@@ -1,0 +1,156 @@
+from flask import Blueprint, request, jsonify
+from models.tender import db, City, Tender
+import logging
+
+# Configurar logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+tender_bp = Blueprint('tender', __name__)
+
+@tender_bp.route('/health', methods=['GET'])
+def health_check():
+    """Endpoint de verificação de saúde"""
+    try:
+        # Verificar conexão com banco
+        tender_count = Tender.query.count()
+        city_count = City.query.count()
+        
+        return jsonify({
+            'status': 'healthy',
+            'database': 'connected',
+            'tenders_count': tender_count,
+            'cities_count': city_count
+        }), 200
+    except Exception as e:
+        logger.error(f"Health check failed: {e}")
+        return jsonify({
+            'status': 'unhealthy',
+            'error': str(e)
+        }), 500
+
+@tender_bp.route('/cities', methods=['GET'])
+def get_cities():
+    """Retorna lista de cidades disponíveis"""
+    try:
+        cities = City.query.all()
+        cities_list = []
+        
+        for city in cities:
+            cities_list.append({
+                'ibge_code': city.ibge_code,
+                'name': city.name,
+                'state_code': city.state_code,
+                'display_name': f"{city.name} - {city.state_code}"
+            })
+        
+        return jsonify(cities_list), 200
+        
+    except Exception as e:
+        logger.error(f"Error fetching cities: {e}")
+        return jsonify({'error': 'Failed to fetch cities'}), 500
+
+@tender_bp.route('/tenders', methods=['GET'])
+def get_tenders():
+    """Retorna lista de licitações com filtros opcionais"""
+    try:
+        # Parâmetros de consulta
+        city_ibge = request.args.get('city_ibge')
+        keyword = request.args.get('keyword')
+        start_date = request.args.get('start_date')
+        end_date = request.args.get('end_date')
+        page = int(request.args.get('page', 1))
+        per_page = int(request.args.get('per_page', 10))
+        
+        # Construir query
+        query = Tender.query
+        
+        # Aplicar filtros
+        if city_ibge:
+            query = query.filter(Tender.municipality_ibge == city_ibge)
+        
+        if keyword:
+            query = query.filter(
+                Tender.title.contains(keyword) | 
+                Tender.description.contains(keyword)
+            )
+        
+        if start_date:
+            query = query.filter(Tender.publication_date >= start_date)
+        
+        if end_date:
+            query = query.filter(Tender.publication_date <= end_date)
+        
+        # Ordenar por data de publicação (mais recentes primeiro)
+        query = query.order_by(Tender.publication_date.desc())
+        
+        # Paginação
+        pagination = query.paginate(
+            page=page, 
+            per_page=per_page, 
+            error_out=False
+        )
+        
+        tenders_list = []
+        for tender in pagination.items:
+            tenders_list.append(tender.to_dict())
+        
+        return jsonify({
+            'tenders': tenders_list,
+            'pagination': {
+                'page': page,
+                'per_page': per_page,
+                'total': pagination.total,
+                'pages': pagination.pages,
+                'has_next': pagination.has_next,
+                'has_prev': pagination.has_prev
+            }
+        }), 200
+        
+    except Exception as e:
+        logger.error(f"Error fetching tenders: {e}")
+        return jsonify({'error': 'Failed to fetch tenders'}), 500
+
+@tender_bp.route('/stats', methods=['GET'])
+def get_stats():
+    """Retorna estatísticas gerais"""
+    try:
+        tender_count = Tender.query.count()
+        city_count = City.query.count()
+        
+        # Estatísticas por fonte
+        pncp_count = Tender.query.filter(Tender.data_source == 'PNCP').count()
+        qd_count = Tender.query.filter(Tender.data_source == 'QUERIDO_DIARIO').count()
+        
+        return jsonify({
+            'total_tenders': tender_count,
+            'total_cities': city_count,
+            'sources': {
+                'PNCP': pncp_count,
+                'QUERIDO_DIARIO': qd_count,
+                'others': tender_count - pncp_count - qd_count
+            }
+        }), 200
+        
+    except Exception as e:
+        logger.error(f"Error getting stats: {e}")
+        return jsonify({
+            'total_tenders': 0,
+            'total_cities': 0,
+            'sources': {'PNCP': 0, 'QUERIDO_DIARIO': 0, 'others': 0}
+        }), 200
+
+@tender_bp.route('/scrape', methods=['POST'])
+def trigger_scrape():
+    """Endpoint para disparar coleta de dados"""
+    try:
+        # Simular processo de scraping
+        return jsonify({
+            'status': 'success',
+            'message': 'Scraping process completed',
+            'collected': 0
+        }), 200
+        
+    except Exception as e:
+        logger.error(f"Error in scraping: {e}")
+        return jsonify({'error': 'Scraping failed'}), 500
