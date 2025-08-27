@@ -1,0 +1,933 @@
+[
+  {
+    "id": "PNCP-ITEMS-ONLY-20250826-000",
+    "pncp_id": "63106843000197-1-000186/2025",
+    "title": "Edital de Chamamento Público nº 108/2025",
+    "description": "Edital de Chamamento Público nº 108/2025\nId contratação PNCP: 63106843000197-1-000186/2025\nModalidade da Contratação: Credenciamento\nÚltima Atualização: 26/08/2025\nÓrgão: CONSELHO REGIONAL DE MEDICINA DO ESTADO DE SAO PAULO\nLocal: São Paulo/SP\nObjeto: Credenciamento de Leiloeiros Oficiais, visando a eventual realização de leilões de bens imóveis e móveis, bem como bens móveis em geral considerados inservíveis pertencentes ao patrimônio do Conselho Regional de Medicina do Estado de São Paulo, par...",
+    "organization_name": "CONSELHO REGIONAL DE MEDICINA DO ESTADO DE SAO PAULO",
+    "municipality_name": "São Paulo",
+    "state_code": "SP",
+    "modality": "Credenciamento",
+    "estimated_value": null,
+    "publication_date": "2025-08-26",
+    "objeto": "Credenciamento de Leiloeiros Oficiais, visando a eventual realização de leilões de bens imóveis e móveis, bem como bens móveis em geral considerados inservíveis pertencentes ao patrimônio do Conselho Regional de Medicina do Estado de São Paulo, para atender as necessidades desta Instituição.",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Edital de Chamamento Público nº 108/2025\nId contratação PNCP: 63106843000197-1-000186/2025\nModalidade da Contratação: Credenciamento\nÚltima Atualização: 26/08/2025\nÓrgão: CONSELHO REGIONAL DE MEDICINA DO ESTADO DE SAO PAULO\nLocal: São Paulo/SP\nObjeto: Credenciamento de Leiloeiros Oficiais, visando a eventual realização de leilões de bens imóveis e móveis, bem como bens móveis em geral considerados inservíveis pertencentes ao patrimônio do Conselho Regional de Medicina do Estado de São Paulo, para atender as necessidades desta Instituição.",
+    "scraped_at": "2025-08-26T20:38:04.742068",
+    "has_details": true,
+    "has_access_button": false,
+    "edital_href": "/editais/63106843000197/2025/186",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nEdital de Chamamento Público nº 108/2025\nÚltima atualização 26/08/2025\n\nLocal: São Paulo/SP\n\nÓrgão: CONSELHO REGIONAL DE MEDICINA DO ESTADO DE SAO PAULO\n\nUnidade compradora: 926310 - CONSELHO REGIONAL DE MEDICINA DE SAO PAULO\n\nModalidade da contratação: Credenciamento\n\nAmparo legal: Lei 14.133/2021, Art. 79, I\n\nTipo: Edital de Chamamento Público\n\nModo de disputa: Não se aplica\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 21/08/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 27/08/2025 08:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 21/08/2030 10:00 (horário de Brasília)\n\nId contratação PNCP: 63106843000197-1-000186/2025\n\nFonte: Compras.gov.br\n\nObjeto:\n\nCredenciamento de Leiloeiros Oficiais, visando a eventual realização de leilões de bens imóveis e móveis, bem como bens móveis em geral considerados inservíveis pertencentes ao patrimônio do Conselho Regional de Medicina do Estado de São Paulo, para atender as necessidades desta Instituição.\n\nInformação complementar:\nConforme especificações constantes no edital e seus anexos.\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 0,00\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nLeiloeiros Leiloeiros\n1\nR$ 0,0001\nR$ 0,0001\nExibir:\n5\n1-1 de 1 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de agosto de 2021.\n\nO desenvolvimento dessa versão do Portal é um esforço conjunto de construção de uma concepção direta legal, homologado pelos indicados ",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 0.0,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "Leiloeiros Leiloeiros",
+        "quantidade": 1,
+        "valor_unitario": 0.0001,
+        "valor_total": 0.0001,
+        "raw_data": [
+          "1",
+          "Leiloeiros Leiloeiros",
+          "1",
+          "R$ 0,0001",
+          "R$ 0,0001",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 1,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_0_0_Edital.pdf",
+        "filepath": "downloads\\edital_0_0_Edital.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/63106843000197/compras/2025/186/arquivos/1",
+        "description": "Fazer download",
+        "size": 569508,
+        "downloaded_at": "2025-08-26T20:38:42.214633"
+      },
+      {
+        "filename": "edital_0_1_Modelos+-+Anexos.docx",
+        "filepath": "downloads\\edital_0_1_Modelos+-+Anexos.docx",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/63106843000197/compras/2025/186/arquivos/2",
+        "description": "Fazer download",
+        "size": 42121,
+        "downloaded_at": "2025-08-26T20:38:47.361246"
+      },
+      {
+        "filename": "edital_0_2_Esclarecimento_1.pdf",
+        "filepath": "downloads\\edital_0_2_Esclarecimento_1.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/63106843000197/compras/2025/186/arquivos/3",
+        "description": "Fazer download",
+        "size": 427547,
+        "downloaded_at": "2025-08-26T20:38:52.531610"
+      },
+      {
+        "filename": "edital_0_3_Esclarecimento_2.pdf",
+        "filepath": "downloads\\edital_0_3_Esclarecimento_2.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/63106843000197/compras/2025/186/arquivos/4",
+        "description": "Fazer download",
+        "size": 423950,
+        "downloaded_at": "2025-08-26T20:38:57.679625"
+      }
+    ],
+    "downloads_count": 4,
+    "accessed_contratacao": false,
+    "detail_url": "https://pncp.gov.br/app/editais/63106843000197/2025/186"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250826-001",
+    "pncp_id": "46392171000104-1-000071/2025",
+    "title": "Edital nº 55/2025",
+    "description": "Edital nº 55/2025\nId contratação PNCP: 46392171000104-1-000071/2025\nModalidade da Contratação: Concorrência - Presencial\nÚltima Atualização: 26/08/2025\nÓrgão: SECRETARIA MUNICIPAL DE INFRAESTRUTURA URBANA E OBRAS\nLocal: São Paulo/SP\nObjeto: Contratação de empresa especializada em engenharia para elaboração de projeto executivo e execução de obras de canalização do córrego ribeirão Água Vermelha e reconstrução de estrutura de transposição no alinhamento da rua José Augusto Lobo, município de São ...",
+    "organization_name": "SECRETARIA MUNICIPAL DE INFRAESTRUTURA URBANA E OBRAS",
+    "municipality_name": "São Paulo",
+    "state_code": "SP",
+    "modality": "Concorrência - Presencial",
+    "estimated_value": null,
+    "publication_date": "2025-08-26",
+    "objeto": "Contratação de empresa especializada em engenharia para elaboração de projeto executivo e execução de obras de canalização do córrego ribeirão Água Vermelha e reconstrução de estrutura de transposição no alinhamento da rua José Augusto Lobo, município de São Paulo - SP.",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Edital nº 55/2025\nId contratação PNCP: 46392171000104-1-000071/2025\nModalidade da Contratação: Concorrência - Presencial\nÚltima Atualização: 26/08/2025\nÓrgão: SECRETARIA MUNICIPAL DE INFRAESTRUTURA URBANA E OBRAS\nLocal: São Paulo/SP\nObjeto: Contratação de empresa especializada em engenharia para elaboração de projeto executivo e execução de obras de canalização do córrego ribeirão Água Vermelha e reconstrução de estrutura de transposição no alinhamento da rua José Augusto Lobo, município de São Paulo - SP.",
+    "scraped_at": "2025-08-26T20:40:05.823079",
+    "has_details": true,
+    "has_access_button": false,
+    "edital_href": "/editais/46392171000104/2025/71",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nEdital nº 55/2025\nÚltima atualização 26/08/2025\n\nLocal: São Paulo/SP\n\nÓrgão: SECRETARIA MUNICIPAL DE INFRAESTRUTURA URBANA E OBRAS\n\nUnidade compradora: 925058 - PMSP - SECRETARIA DE INFRAEST. URBANA E OBRAS\n\nModalidade da contratação: Concorrência - Presencial\n\nAmparo legal: Lei 14.133/2021, Art. 28, II\n\nTipo: Edital\n\nModo de disputa: Aberto\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 26/08/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 27/08/2025 08:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 21/10/2025 10:30 (horário de Brasília)\n\nId contratação PNCP: 46392171000104-1-000071/2025\n\nFonte: Compras.gov.br\n\nJustificativa da Modalidade Presencial:\nPortaria nº 016/2023/SIURB\n\nObjeto:\n\nContratação de empresa especializada em engenharia para elaboração de projeto executivo e execução de obras de canalização do córrego ribeirão Água Vermelha e reconstrução de estrutura de transposição no alinhamento da rua José Augusto Lobo, município de São Paulo - SP.\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 25.736.867,19\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nObras Civis Públicas ( Construção )\n1\nR$ 25.736.867,19\nR$ 25.736.867,19\nExibir:\n5\n1-1 de 1 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de agosto de 2021.\n\nO desenvolvimento dessa versão do Portal é um esforço conjunto de construção de uma concepção direta legal, homologado pelos indicados a compor o aludido comitê.\n\nA adequação",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 25736867.19,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "Obras Civis Públicas ( Construção )",
+        "quantidade": 1,
+        "valor_unitario": 25736867.19,
+        "valor_total": 25736867.19,
+        "raw_data": [
+          "1",
+          "Obras Civis Públicas ( Construção )",
+          "1",
+          "R$ 25.736.867,19",
+          "R$ 25.736.867,19",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 1,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_1_0_92505803900232025000.zip",
+        "filepath": "downloads\\edital_1_0_92505803900232025000.zip",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46392171000104/compras/2025/71/arquivos/1",
+        "description": "Fazer download",
+        "size": 8873270,
+        "downloaded_at": "2025-08-26T20:40:42.204900"
+      }
+    ],
+    "downloads_count": 1,
+    "accessed_contratacao": false,
+    "detail_url": "https://pncp.gov.br/app/editais/46392171000104/2025/71"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250826-002",
+    "pncp_id": "46377800000127-1-003874/2025",
+    "title": "Aviso de Contratação Direta nº 90007/2025",
+    "description": "Aviso de Contratação Direta nº 90007/2025\nId contratação PNCP: 46377800000127-1-003874/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 26/08/2025\nÓrgão: SAO PAULO SECRETARIA DA SEGURANCA PUBLICA\nLocal: São Paulo/SP\nObjeto: Aquisição de material de consumo - artigos de higiene e mesa.",
+    "organization_name": "SAO PAULO SECRETARIA DA SEGURANCA PUBLICA",
+    "municipality_name": "São Paulo",
+    "state_code": "SP",
+    "modality": "Dispensa",
+    "estimated_value": null,
+    "publication_date": "2025-08-26",
+    "objeto": "Aquisição de material de consumo - artigos de higiene e mesa.",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Aviso de Contratação Direta nº 90007/2025\nId contratação PNCP: 46377800000127-1-003874/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 26/08/2025\nÓrgão: SAO PAULO SECRETARIA DA SEGURANCA PUBLICA\nLocal: São Paulo/SP\nObjeto: Aquisição de material de consumo - artigos de higiene e mesa.",
+    "scraped_at": "2025-08-26T20:41:50.693570",
+    "has_details": true,
+    "has_access_button": false,
+    "edital_href": "/editais/46377800000127/2025/3874",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nAviso de Contratação Direta nº 90007/2025\nÚltima atualização 26/08/2025\n\nLocal: São Paulo/SP\n\nÓrgão: SAO PAULO SECRETARIA DA SEGURANCA PUBLICA\n\nUnidade compradora: 180370 - ESP-DEPTO. POLICIA PROTECAO A CIDADANIA-DPPC\n\nModalidade da contratação: Dispensa\n\nAmparo legal: Lei 14.133/2021, Art. 75, II\n\nTipo: Aviso de Contratação Direta\n\nModo de disputa: Dispensa Com Disputa\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 26/08/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 26/08/2025 19:11 (horário de Brasília)\n\nData fim de recebimento de propostas: 01/09/2025 07:59 (horário de Brasília)\n\nId contratação PNCP: 46377800000127-1-003874/2025\n\nFonte: Compras.gov.br\n\nObjeto:\n\nAquisição de material de consumo - artigos de higiene e mesa.\n\nInformação complementar:\nArt. 75º, Inciso II da Lei nº 14.133 de 1º/04/2021.\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 23.439,40\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nGuardanapo De Papel\n300\nR$ 9,98\nR$ 2.994,00\n2\nColher Descartável\n140\nR$ 10,61\nR$ 1.485,40\n3\nToalha De Papel\n1000\nR$ 18,96\nR$ 18.960,00\nExibir:\n5\n1-3 de 3 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de agosto de 2021.\n\nO desenvolvimento dessa versão do Portal é um esforço conjunto de construção de uma concepção direta legal, homologado pelos indicados a compor o aludido comitê.\n\nA adequação, fidedignidade e corretude das informações e dos arquivos relativos às contratações disponibilizadas no PNCP p",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 23439.4,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "Guardanapo De Papel",
+        "quantidade": 300,
+        "valor_unitario": 9.98,
+        "valor_total": 2994.0,
+        "raw_data": [
+          "1",
+          "Guardanapo De Papel",
+          "300",
+          "R$ 9,98",
+          "R$ 2.994,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "2",
+        "descricao": "Colher Descartável",
+        "quantidade": 140,
+        "valor_unitario": 10.61,
+        "valor_total": 1485.4,
+        "raw_data": [
+          "2",
+          "Colher Descartável",
+          "140",
+          "R$ 10,61",
+          "R$ 1.485,40",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "3",
+        "descricao": "Toalha De Papel",
+        "quantidade": 1000,
+        "valor_unitario": 18.96,
+        "valor_total": 18960.0,
+        "raw_data": [
+          "3",
+          "Toalha De Papel",
+          "1000",
+          "R$ 18,96",
+          "R$ 18.960,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 3,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_2_0_AC+E+SEUS+ANEXOS.pdf",
+        "filepath": "downloads\\edital_2_0_AC+E+SEUS+ANEXOS.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46377800000127/compras/2025/3874/arquivos/1",
+        "description": "Fazer download",
+        "size": 1402899,
+        "downloaded_at": "2025-08-26T20:42:26.735416"
+      }
+    ],
+    "downloads_count": 1,
+    "accessed_contratacao": false,
+    "detail_url": "https://pncp.gov.br/app/editais/46377800000127/2025/3874"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250826-003",
+    "pncp_id": "46392171000104-1-000070/2025",
+    "title": "Edital nº 54/2025",
+    "description": "Edital nº 54/2025\nId contratação PNCP: 46392171000104-1-000070/2025\nModalidade da Contratação: Concorrência - Presencial\nÚltima Atualização: 26/08/2025\nÓrgão: SECRETARIA MUNICIPAL DE INFRAESTRUTURA URBANA E OBRAS\nLocal: São Paulo/SP\nObjeto: Contratação de empresa especializada em engenharia para elaboração de projeto executivo e execução de serviços de recuperação e reforço estrutural do Viaduto Único Gallafrio - Lapa - São Paulo – SP",
+    "organization_name": "SECRETARIA MUNICIPAL DE INFRAESTRUTURA URBANA E OBRAS",
+    "municipality_name": "São Paulo",
+    "state_code": "SP",
+    "modality": "Concorrência - Presencial",
+    "estimated_value": null,
+    "publication_date": "2025-08-26",
+    "objeto": "Contratação de empresa especializada em engenharia para elaboração de projeto executivo e execução de serviços de recuperação e reforço estrutural do Viaduto Único Gallafrio - Lapa - São Paulo – SP",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Edital nº 54/2025\nId contratação PNCP: 46392171000104-1-000070/2025\nModalidade da Contratação: Concorrência - Presencial\nÚltima Atualização: 26/08/2025\nÓrgão: SECRETARIA MUNICIPAL DE INFRAESTRUTURA URBANA E OBRAS\nLocal: São Paulo/SP\nObjeto: Contratação de empresa especializada em engenharia para elaboração de projeto executivo e execução de serviços de recuperação e reforço estrutural do Viaduto Único Gallafrio - Lapa - São Paulo – SP",
+    "scraped_at": "2025-08-26T20:43:34.746534",
+    "has_details": true,
+    "has_access_button": false,
+    "edital_href": "/editais/46392171000104/2025/70",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nEdital nº 54/2025\nÚltima atualização 26/08/2025\n\nLocal: São Paulo/SP\n\nÓrgão: SECRETARIA MUNICIPAL DE INFRAESTRUTURA URBANA E OBRAS\n\nUnidade compradora: 925058 - PMSP - SECRETARIA DE INFRAEST. URBANA E OBRAS\n\nModalidade da contratação: Concorrência - Presencial\n\nAmparo legal: Lei 14.133/2021, Art. 28, II\n\nTipo: Edital\n\nModo de disputa: Aberto\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 26/08/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 27/08/2025 08:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 20/10/2025 14:30 (horário de Brasília)\n\nId contratação PNCP: 46392171000104-1-000070/2025\n\nFonte: Compras.gov.br\n\nJustificativa da Modalidade Presencial:\nPortaria nº 016/2023/SIURB\n\nObjeto:\n\nContratação de empresa especializada em engenharia para elaboração de projeto executivo e execução de serviços de recuperação e reforço estrutural do Viaduto Único Gallafrio - Lapa - São Paulo – SP\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 73.278.525,96\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nObras Civis Públicas ( Construção )\n1\nR$ 73.278.525,96\nR$ 73.278.525,96\nExibir:\n5\n1-1 de 1 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de agosto de 2021.\n\nO desenvolvimento dessa versão do Portal é um esforço conjunto de construção de uma concepção direta legal, homologado pelos indicados a compor o aludido comitê.\n\nA adequação, fidedignidade e corretude das informações e dos arquivos relativos às c",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 73278525.96,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "Obras Civis Públicas ( Construção )",
+        "quantidade": 1,
+        "valor_unitario": 73278525.96,
+        "valor_total": 73278525.96,
+        "raw_data": [
+          "1",
+          "Obras Civis Públicas ( Construção )",
+          "1",
+          "R$ 73.278.525,96",
+          "R$ 73.278.525,96",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 1,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_3_0_92505803900282025000.zip",
+        "filepath": "downloads\\edital_3_0_92505803900282025000.zip",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46392171000104/compras/2025/70/arquivos/1",
+        "description": "Fazer download",
+        "size": 503555,
+        "downloaded_at": "2025-08-26T20:44:10.108878"
+      }
+    ],
+    "downloads_count": 1,
+    "accessed_contratacao": false,
+    "detail_url": "https://pncp.gov.br/app/editais/46392171000104/2025/70"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250826-004",
+    "pncp_id": "63025530000104-1-003570/2025",
+    "title": "Aviso de Contratação Direta nº 99596/2025",
+    "description": "Aviso de Contratação Direta nº 99596/2025\nId contratação PNCP: 63025530000104-1-003570/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 26/08/2025\nÓrgão: UNIVERSIDADE DE SAO PAULO\nLocal: São Paulo/SP\nObjeto: Peças de reposição para aparelho de Purificação de Água Milliq",
+    "organization_name": "UNIVERSIDADE DE SAO PAULO",
+    "municipality_name": "São Paulo",
+    "state_code": "SP",
+    "modality": "Dispensa",
+    "estimated_value": null,
+    "publication_date": "2025-08-26",
+    "objeto": "Peças de reposição para aparelho de Purificação de Água Milliq",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Aviso de Contratação Direta nº 99596/2025\nId contratação PNCP: 63025530000104-1-003570/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 26/08/2025\nÓrgão: UNIVERSIDADE DE SAO PAULO\nLocal: São Paulo/SP\nObjeto: Peças de reposição para aparelho de Purificação de Água Milliq",
+    "scraped_at": "2025-08-26T20:45:18.098193",
+    "has_details": true,
+    "has_access_button": false,
+    "edital_href": "/editais/63025530000104/2025/3570",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nAviso de Contratação Direta nº 99596/2025\nÚltima atualização 26/08/2025\n\nLocal: São Paulo/SP\n\nÓrgão: UNIVERSIDADE DE SAO PAULO\n\nUnidade compradora: 102130 - ESP-MUSEU DE ZOOLOGIA - USP\n\nModalidade da contratação: Dispensa\n\nAmparo legal: Lei 14.133/2021, Art. 75, II\n\nTipo: Aviso de Contratação Direta\n\nModo de disputa: Dispensa Com Disputa\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 26/08/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 26/08/2025 18:32 (horário de Brasília)\n\nData fim de recebimento de propostas: 01/09/2025 07:59 (horário de Brasília)\n\nId contratação PNCP: 63025530000104-1-003570/2025\n\nFonte: Compras.gov.br\n\nObjeto:\n\nPeças de reposição para aparelho de Purificação de Água Milliq\n\nInformação complementar:\nValor abaixo de R$ 62.725,59\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 11.048,68\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nPeças E Acessórios Purificador Água\n1\nR$ 3.680,09\nR$ 3.680,09\n2\nPeças E Acessórios Purificador Água\n1\nR$ 3.656,21\nR$ 3.656,21\n3\nPeças E Acessórios Purificador Água\n2\nR$ 1.856,19\nR$ 3.712,38\nExibir:\n5\n1-3 de 3 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de agosto de 2021.\n\nO desenvolvimento dessa versão do Portal é um esforço conjunto de construção de uma concepção direta legal, homologado pelos indicados a compor o aludido comitê.\n\nA adequação, fidedignidade e corretude das informações e dos arquivos relativos às contratações disponibilizadas no PNCP p",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 11048.68,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "Peças E Acessórios Purificador Água",
+        "quantidade": 1,
+        "valor_unitario": 3680.09,
+        "valor_total": 3680.09,
+        "raw_data": [
+          "1",
+          "Peças E Acessórios Purificador Água",
+          "1",
+          "R$ 3.680,09",
+          "R$ 3.680,09",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "2",
+        "descricao": "Peças E Acessórios Purificador Água",
+        "quantidade": 1,
+        "valor_unitario": 3656.21,
+        "valor_total": 3656.21,
+        "raw_data": [
+          "2",
+          "Peças E Acessórios Purificador Água",
+          "1",
+          "R$ 3.656,21",
+          "R$ 3.656,21",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "3",
+        "descricao": "Peças E Acessórios Purificador Água",
+        "quantidade": 2,
+        "valor_unitario": 1856.19,
+        "valor_total": 3712.38,
+        "raw_data": [
+          "3",
+          "Peças E Acessórios Purificador Água",
+          "2",
+          "R$ 1.856,19",
+          "R$ 3.712,38",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 3,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_4_0_ACD+31-2025.pdf",
+        "filepath": "downloads\\edital_4_0_ACD+31-2025.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/63025530000104/compras/2025/3570/arquivos/1",
+        "description": "Fazer download",
+        "size": 1008000,
+        "downloaded_at": "2025-08-26T20:45:54.506729"
+      }
+    ],
+    "downloads_count": 1,
+    "accessed_contratacao": false,
+    "detail_url": "https://pncp.gov.br/app/editais/63025530000104/2025/3570"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250826-005",
+    "pncp_id": "46523163000150-1-000392/2025",
+    "title": "Edital nº 009/2025",
+    "description": "Edital nº 009/2025\nId contratação PNCP: 46523163000150-1-000392/2025\nModalidade da Contratação: Concorrência - Eletrônica\nÚltima Atualização: 26/08/2025\nÓrgão: MUNICIPIO DE MAIRIPORA\nLocal: Mairiporã/SP\nObjeto: CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA EXECUÇÃO DE OBRAS DE DRENAGEM E PAVIMENTAÇÃO NA RUA LAZARO CÂNDIDO DE MORAES NETO, LOTEAMENTO JARDIM BELA VISTA, TERRA PRETA, – MAIRIPORÃ – SÃO PAULO, CONFORME DESCRITO NO TERMO DE REFERÊNCIA.",
+    "organization_name": "MUNICIPIO DE MAIRIPORA",
+    "municipality_name": "Mairiporã",
+    "state_code": "SP",
+    "modality": "Concorrência - Eletrônica",
+    "estimated_value": null,
+    "publication_date": "2025-08-26",
+    "objeto": "CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA EXECUÇÃO DE OBRAS DE DRENAGEM E PAVIMENTAÇÃO NA RUA LAZARO CÂNDIDO DE MORAES NETO, LOTEAMENTO JARDIM BELA VISTA, TERRA PRETA, – MAIRIPORÃ – SÃO PAULO, CONFORME DESCRITO NO TERMO DE REFERÊNCIA.",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Edital nº 009/2025\nId contratação PNCP: 46523163000150-1-000392/2025\nModalidade da Contratação: Concorrência - Eletrônica\nÚltima Atualização: 26/08/2025\nÓrgão: MUNICIPIO DE MAIRIPORA\nLocal: Mairiporã/SP\nObjeto: CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA EXECUÇÃO DE OBRAS DE DRENAGEM E PAVIMENTAÇÃO NA RUA LAZARO CÂNDIDO DE MORAES NETO, LOTEAMENTO JARDIM BELA VISTA, TERRA PRETA, – MAIRIPORÃ – SÃO PAULO, CONFORME DESCRITO NO TERMO DE REFERÊNCIA.",
+    "scraped_at": "2025-08-26T20:47:02.427466",
+    "has_details": true,
+    "has_access_button": true,
+    "edital_href": "/editais/46523163000150/2025/392",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nEdital nº 009/2025\nAcessar Contratação\nÚltima atualização 26/08/2025\n\nLocal: Mairiporã/SP\n\nÓrgão: MUNICIPIO DE MAIRIPORA\n\nUnidade compradora: 1118 - Unidade Única\n\nModalidade da contratação: Concorrência - Eletrônica\n\nAmparo legal: Lei 14.133/2021, Art. 28, II\n\nTipo: Edital\n\nModo de disputa: Aberto-Fechado\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 26/08/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 26/08/2025 18:31 (horário de Brasília)\n\nData fim de recebimento de propostas: 09/09/2025 14:00 (horário de Brasília)\n\nId contratação PNCP: 46523163000150-1-000392/2025\n\nFonte: Licitar Digital - Plataforma de Licitações Online\n\nObjeto:\n\nCONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA EXECUÇÃO DE OBRAS DE DRENAGEM E PAVIMENTAÇÃO NA RUA LAZARO CÂNDIDO DE MORAES NETO, LOTEAMENTO JARDIM BELA VISTA, TERRA PRETA, – MAIRIPORÃ – SÃO PAULO, CONFORME DESCRITO NO TERMO DE REFERÊNCIA.\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 500.162,97\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nCONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA EXECUÇÃO DE OBRAS DE DRENAGEM E PAVIMENTAÇÃO NA RUA LAZARO CÂNDIDO DE MORAES NETO, LOTEAMENTO JARDIM BELA VISTA, TERRA PRETA, – MAIRIPORÃ – SÃO PAULO, CONFORME DESCRITO NO TERMO DE REFERÊNCIA\n1\nR$ 500.162,97\nR$ 500.162,97\nExibir:\n5\n1-1 de 1 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de agosto de 2021.\n\nO desenvolvimento dessa versão do Portal é um esforço conjunto de construção de uma concep",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 500162.97,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA EXECUÇÃO DE OBRAS DE DRENAGEM E PAVIMENTAÇÃO NA RUA LAZARO CÂNDIDO DE MORAES NETO, LOTEAMENTO JARDIM BELA VISTA, TERRA PRETA, – MAIRIPORÃ – SÃO PAULO, CONFORME DESCRITO NO TERMO DE REFERÊNCIA",
+        "quantidade": 1,
+        "valor_unitario": 500162.97,
+        "valor_total": 500162.97,
+        "raw_data": [
+          "1",
+          "CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA EXECUÇÃO DE OBRAS DE DRENAGEM E PAVIMENTAÇÃO NA RUA LAZARO CÂNDIDO DE MORAES NETO, LOTEAMENTO JARDIM BELA VISTA, TERRA PRETA, – MAIRIPORÃ – SÃO PAULO, CONFORME DESCRITO NO TERMO DE REFERÊNCIA",
+          "1",
+          "R$ 500.162,97",
+          "R$ 500.162,97",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 1,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_5_0_EDITAL_CE_0092025__DRENAG_E_PAV_RUA_LAZARO_CANDIDO_DE_MORAES_NETO.pdf",
+        "filepath": "downloads\\edital_5_0_EDITAL_CE_0092025__DRENAG_E_PAV_RUA_LAZARO_CANDIDO_DE_MORAES_NETO.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46523163000150/compras/2025/392/arquivos/1",
+        "description": "Fazer download",
+        "size": 730766,
+        "downloaded_at": "2025-08-26T20:47:37.994791"
+      },
+      {
+        "filename": "edital_5_1_ANEXOS_I_AO_VIII__CE_0092025__DRENAG_E_PAV_RUA_LAZARO_CANDIDO_DE_MORAES_NETO.docx",
+        "filepath": "downloads\\edital_5_1_ANEXOS_I_AO_VIII__CE_0092025__DRENAG_E_PAV_RUA_LAZARO_CANDIDO_DE_MORAES_NETO.docx",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46523163000150/compras/2025/392/arquivos/2",
+        "description": "Fazer download",
+        "size": 115218,
+        "downloaded_at": "2025-08-26T20:47:43.167864"
+      },
+      {
+        "filename": "edital_5_2_ANEXO_IX__TERMO_DE_REFERENCIA_RUA_LAZARO.pdf",
+        "filepath": "downloads\\edital_5_2_ANEXO_IX__TERMO_DE_REFERENCIA_RUA_LAZARO.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46523163000150/compras/2025/392/arquivos/3",
+        "description": "Fazer download",
+        "size": 754680,
+        "downloaded_at": "2025-08-26T20:47:48.326476"
+      },
+      {
+        "filename": "edital_5_3_ANEXO_X__MEMORIAL_DESCRITIVO.pdf",
+        "filepath": "downloads\\edital_5_3_ANEXO_X__MEMORIAL_DESCRITIVO.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46523163000150/compras/2025/392/arquivos/4",
+        "description": "Fazer download",
+        "size": 541353,
+        "downloaded_at": "2025-08-26T20:47:53.457056"
+      },
+      {
+        "filename": "edital_5_4_ANEXO_XI__PLANILHA_ORCAMENTARIA_R_LAZARO.pdf",
+        "filepath": "downloads\\edital_5_4_ANEXO_XI__PLANILHA_ORCAMENTARIA_R_LAZARO.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46523163000150/compras/2025/392/arquivos/5",
+        "description": "Fazer download",
+        "size": 826826,
+        "downloaded_at": "2025-08-26T20:47:58.627953"
+      }
+    ],
+    "downloads_count": 5,
+    "accessed_contratacao": true,
+    "access_button_selector": "button:has-text('Acessar contratação')",
+    "detail_url": "https://pncp.gov.br/app/editais/46523163000150/2025/392"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250826-006",
+    "pncp_id": "46392171000104-1-000069/2025",
+    "title": "Edital nº 53/2025",
+    "description": "Edital nº 53/2025\nId contratação PNCP: 46392171000104-1-000069/2025\nModalidade da Contratação: Concorrência - Presencial\nÚltima Atualização: 26/08/2025\nÓrgão: SECRETARIA MUNICIPAL DE INFRAESTRUTURA URBANA E OBRAS\nLocal: São Paulo/SP\nObjeto: Contratação de empresa especializada em engenharia para elaboração de projeto executivo e execução de serviços de recuperação e reforço estrutural do Viaduto João Moura – localizado no bairro de Pinheiros – São Paulo – SP",
+    "organization_name": "SECRETARIA MUNICIPAL DE INFRAESTRUTURA URBANA E OBRAS",
+    "municipality_name": "São Paulo",
+    "state_code": "SP",
+    "modality": "Concorrência - Presencial",
+    "estimated_value": null,
+    "publication_date": "2025-08-26",
+    "objeto": "Contratação de empresa especializada em engenharia para elaboração de projeto executivo e execução de serviços de recuperação e reforço estrutural do Viaduto João Moura – localizado no bairro de Pinheiros – São Paulo – SP",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Edital nº 53/2025\nId contratação PNCP: 46392171000104-1-000069/2025\nModalidade da Contratação: Concorrência - Presencial\nÚltima Atualização: 26/08/2025\nÓrgão: SECRETARIA MUNICIPAL DE INFRAESTRUTURA URBANA E OBRAS\nLocal: São Paulo/SP\nObjeto: Contratação de empresa especializada em engenharia para elaboração de projeto executivo e execução de serviços de recuperação e reforço estrutural do Viaduto João Moura – localizado no bairro de Pinheiros – São Paulo – SP",
+    "scraped_at": "2025-08-26T20:48:57.236023",
+    "has_details": true,
+    "has_access_button": false,
+    "edital_href": "/editais/46392171000104/2025/69",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nEdital nº 53/2025\nÚltima atualização 26/08/2025\n\nLocal: São Paulo/SP\n\nÓrgão: SECRETARIA MUNICIPAL DE INFRAESTRUTURA URBANA E OBRAS\n\nUnidade compradora: 925058 - PMSP - SECRETARIA DE INFRAEST. URBANA E OBRAS\n\nModalidade da contratação: Concorrência - Presencial\n\nAmparo legal: Lei 14.133/2021, Art. 28, II\n\nTipo: Edital\n\nModo de disputa: Aberto\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 26/08/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 27/08/2025 08:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 20/10/2025 10:30 (horário de Brasília)\n\nId contratação PNCP: 46392171000104-1-000069/2025\n\nFonte: Compras.gov.br\n\nJustificativa da Modalidade Presencial:\nPortaria 016/2023/SIURB\n\nObjeto:\n\nContratação de empresa especializada em engenharia para elaboração de projeto executivo e execução de serviços de recuperação e reforço estrutural do Viaduto João Moura – localizado no bairro de Pinheiros – São Paulo – SP\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 48.414.769,31\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nObras Civis Públicas ( Construção )\n1\nR$ 48.414.769,31\nR$ 48.414.769,31\nExibir:\n5\n1-1 de 1 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de agosto de 2021.\n\nO desenvolvimento dessa versão do Portal é um esforço conjunto de construção de uma concepção direta legal, homologado pelos indicados a compor o aludido comitê.\n\nA adequação, fidedignidade e corretude das informações e dos ar",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 48414769.31,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "Obras Civis Públicas ( Construção )",
+        "quantidade": 1,
+        "valor_unitario": 48414769.31,
+        "valor_total": 48414769.31,
+        "raw_data": [
+          "1",
+          "Obras Civis Públicas ( Construção )",
+          "1",
+          "R$ 48.414.769,31",
+          "R$ 48.414.769,31",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 1,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_6_0_92505803900272025000.zip",
+        "filepath": "downloads\\edital_6_0_92505803900272025000.zip",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46392171000104/compras/2025/69/arquivos/1",
+        "description": "Fazer download",
+        "size": 498469,
+        "downloaded_at": "2025-08-26T20:49:32.698135"
+      }
+    ],
+    "downloads_count": 1,
+    "accessed_contratacao": false,
+    "detail_url": "https://pncp.gov.br/app/editais/46392171000104/2025/69"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250826-007",
+    "pncp_id": "46578514000120-1-000292/2025",
+    "title": "Edital nº 50/2025",
+    "description": "Edital nº 50/2025\nId contratação PNCP: 46578514000120-1-000292/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 26/08/2025\nÓrgão: MUNICIPIO DE PERUIBE\nLocal: Peruíbe/SP\nObjeto: AQUISIÇÃO DE MATERIAIS DE CONSTRUÇÃO, INCLUINDO DIVERSAS FERRAMENTAS MANUAIS E ELÉTRICAS, DESTINADAS À REALIZAÇÃO DE REPAROS, MANUTENÇÕES E PEQUENAS OBRAS NOS PRÓPRIOS MUNICIPAIS.",
+    "organization_name": "MUNICIPIO DE PERUIBE",
+    "municipality_name": "Peruíbe",
+    "state_code": "SP",
+    "modality": "Pregão - Eletrônico",
+    "estimated_value": null,
+    "publication_date": "2025-08-26",
+    "objeto": "AQUISIÇÃO DE MATERIAIS DE CONSTRUÇÃO, INCLUINDO DIVERSAS FERRAMENTAS MANUAIS E ELÉTRICAS, DESTINADAS À REALIZAÇÃO DE REPAROS, MANUTENÇÕES E PEQUENAS OBRAS NOS PRÓPRIOS MUNICIPAIS.",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Edital nº 50/2025\nId contratação PNCP: 46578514000120-1-000292/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 26/08/2025\nÓrgão: MUNICIPIO DE PERUIBE\nLocal: Peruíbe/SP\nObjeto: AQUISIÇÃO DE MATERIAIS DE CONSTRUÇÃO, INCLUINDO DIVERSAS FERRAMENTAS MANUAIS E ELÉTRICAS, DESTINADAS À REALIZAÇÃO DE REPAROS, MANUTENÇÕES E PEQUENAS OBRAS NOS PRÓPRIOS MUNICIPAIS.",
+    "scraped_at": "2025-08-26T20:50:40.625790",
+    "has_details": true,
+    "has_access_button": false,
+    "edital_href": "/editais/46578514000120/2025/292",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nEdital nº 50/2025\nÚltima atualização 26/08/2025\n\nLocal: Peruíbe/SP\n\nÓrgão: MUNICIPIO DE PERUIBE\n\nUnidade compradora: 7.2025 - SECRET.MUN.OBRAS,SERV.INFRAESTRUTURA URB\n\nModalidade da contratação: Pregão - Eletrônico\n\nAmparo legal: Lei 14.133/2021, Art. 28, I\n\nTipo: Edital\n\nModo de disputa: Aberto\n\nRegistro de preço: Sim\n\nFonte orçamentária: Municipal\n\nData de divulgação no PNCP: 26/08/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 26/08/2025 09:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 10/09/2025 09:00 (horário de Brasília)\n\nId contratação PNCP: 46578514000120-1-000292/2025\n\nFonte: GCASPP CONSULTORIA CONTABIL E SISTEMAS LTDA\n\nObjeto:\n\nAQUISIÇÃO DE MATERIAIS DE CONSTRUÇÃO, INCLUINDO DIVERSAS FERRAMENTAS MANUAIS E ELÉTRICAS, DESTINADAS À REALIZAÇÃO DE REPAROS, MANUTENÇÕES E PEQUENAS OBRAS NOS PRÓPRIOS MUNICIPAIS.\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 102.645,89\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nABAFADOR PARA COMBATE A INCÊNDIO\n4\nR$ 106,47\nR$ 425,88\n2\nALAVANCA - Pé De Cabra Aço Construção 3/4 80cm\n12\nR$ 52,95\nR$ 635,40\n3\nALICATE - BICO MEIA CANA CURTO 4.1/2\n20\nR$ 64,27\nR$ 1.285,40\n4\nALICATE - DE CORTE DIAGONAL 6.1/2 - COM CABO ANTI-DESLIZANTE\n18\nR$ 106,74\nR$ 1.921,32\n5\nALICATE - PROFISSIONAL 8' AÇO\n18\nR$ 47,80\nR$ 860,40\nExibir:\n5\n1-5 de 78 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de agosto de 2021.\n\nO desenvolvimento dessa versão do Portal é um esforço conjunto de construção de uma concepção dire",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 102645.89,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "ABAFADOR PARA COMBATE A INCÊNDIO",
+        "quantidade": 4,
+        "valor_unitario": 106.47,
+        "valor_total": 425.88,
+        "raw_data": [
+          "1",
+          "ABAFADOR PARA COMBATE A INCÊNDIO",
+          "4",
+          "R$ 106,47",
+          "R$ 425,88",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "2",
+        "descricao": "ALAVANCA - Pé De Cabra Aço Construção 3/4 80cm",
+        "quantidade": 12,
+        "valor_unitario": 52.95,
+        "valor_total": 635.4,
+        "raw_data": [
+          "2",
+          "ALAVANCA - Pé De Cabra Aço Construção 3/4 80cm",
+          "12",
+          "R$ 52,95",
+          "R$ 635,40",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "3",
+        "descricao": "ALICATE - BICO MEIA CANA CURTO 4.1/2",
+        "quantidade": 20,
+        "valor_unitario": 64.27,
+        "valor_total": 1285.4,
+        "raw_data": [
+          "3",
+          "ALICATE - BICO MEIA CANA CURTO 4.1/2",
+          "20",
+          "R$ 64,27",
+          "R$ 1.285,40",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "4",
+        "descricao": "ALICATE - DE CORTE DIAGONAL 6.1/2 - COM CABO ANTI-DESLIZANTE",
+        "quantidade": 18,
+        "valor_unitario": 106.74,
+        "valor_total": 1921.32,
+        "raw_data": [
+          "4",
+          "ALICATE - DE CORTE DIAGONAL 6.1/2 - COM CABO ANTI-DESLIZANTE",
+          "18",
+          "R$ 106,74",
+          "R$ 1.921,32",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "5",
+        "descricao": "ALICATE - PROFISSIONAL 8' AÇO",
+        "quantidade": 18,
+        "valor_unitario": 47.8,
+        "valor_total": 860.4,
+        "raw_data": [
+          "5",
+          "ALICATE - PROFISSIONAL 8' AÇO",
+          "18",
+          "R$ 47,80",
+          "R$ 860,40",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 5,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_7_0_3280409e70af4f08986eb35912e6adc3AVPE+502025.pdf",
+        "filepath": "downloads\\edital_7_0_3280409e70af4f08986eb35912e6adc3AVPE+502025.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46578514000120/compras/2025/292/arquivos/1",
+        "description": "Fazer download",
+        "size": 273278,
+        "downloaded_at": "2025-08-26T20:51:16.329916"
+      }
+    ],
+    "downloads_count": 1,
+    "accessed_contratacao": false,
+    "detail_url": "https://pncp.gov.br/app/editais/46578514000120/2025/292"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250826-008",
+    "pncp_id": "46578514000120-1-000291/2025",
+    "title": "Edital nº PE 50/2025",
+    "description": "Edital nº PE 50/2025\nId contratação PNCP: 46578514000120-1-000291/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 26/08/2025\nÓrgão: MUNICIPIO DE PERUIBE\nLocal: Peruíbe/SP\nObjeto: REGISTRO DE PREÇOS para AQUISIÇÃO DE MATERIAIS DE CONSTRUÇÃO, INCLUINDO DIVERSAS FERRAMENTAS MANUAIS E ELÉTRICAS",
+    "organization_name": "MUNICIPIO DE PERUIBE",
+    "municipality_name": "Peruíbe",
+    "state_code": "SP",
+    "modality": "Pregão - Eletrônico",
+    "estimated_value": null,
+    "publication_date": "2025-08-26",
+    "objeto": "REGISTRO DE PREÇOS para AQUISIÇÃO DE MATERIAIS DE CONSTRUÇÃO, INCLUINDO DIVERSAS FERRAMENTAS MANUAIS E ELÉTRICAS",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Edital nº PE 50/2025\nId contratação PNCP: 46578514000120-1-000291/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 26/08/2025\nÓrgão: MUNICIPIO DE PERUIBE\nLocal: Peruíbe/SP\nObjeto: REGISTRO DE PREÇOS para AQUISIÇÃO DE MATERIAIS DE CONSTRUÇÃO, INCLUINDO DIVERSAS FERRAMENTAS MANUAIS E ELÉTRICAS",
+    "scraped_at": "2025-08-26T20:52:24.293300",
+    "has_details": true,
+    "has_access_button": true,
+    "edital_href": "/editais/46578514000120/2025/291",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nEdital nº PE 50/2025\nAcessar Contratação\nÚltima atualização 26/08/2025\n\nLocal: Peruíbe/SP\n\nÓrgão: MUNICIPIO DE PERUIBE\n\nUnidade compradora: 210 - Prefeitura Municipal da Estância Balneária de Peruibe - SP\n\nModalidade da contratação: Pregão - Eletrônico\n\nAmparo legal: Lei 14.133/2021, Art. 28, I\n\nTipo: Edital\n\nModo de disputa: Aberto\n\nRegistro de preço: Sim\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 26/08/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 26/08/2025 09:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 10/09/2025 09:00 (horário de Brasília)\n\nId contratação PNCP: 46578514000120-1-000291/2025\n\nFonte: AZ INFORMATICA LTDA\n\nObjeto:\n\nREGISTRO DE PREÇOS para AQUISIÇÃO DE MATERIAIS DE CONSTRUÇÃO, INCLUINDO DIVERSAS FERRAMENTAS MANUAIS E ELÉTRICAS\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 102.645,89\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1920908\nABAFADOR PARA COMBATE A INCÊNDIO\n4\nR$ 106,47\nR$ 425,88\n1920909\nALAVANCA - Pé De Cabra Aço Construção 3/4 80cm\n12\nR$ 52,95\nR$ 635,40\n1920910\nALICATE - BICO MEIA CANA CURTO 4.1/2\n20\nR$ 64,27\nR$ 1.285,40\n1920911\nALICATE - DE CORTE DIAGONAL 6.1/2 - COM CABO ANTI-DESLIZANTE\n18\nR$ 106,74\nR$ 1.921,32\n1920912\nALICATE - PROFISSIONAL 8' AÇO\n18\nR$ 47,80\nR$ 860,40\nExibir:\n5\n1-5 de 78 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de agosto de 2021.\n\nO desenvolvimento dessa versão do Portal é um esforço conjunto de construção de uma concepção direta legal, homologad",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 102645.89,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1920908",
+        "descricao": "ABAFADOR PARA COMBATE A INCÊNDIO",
+        "quantidade": 4,
+        "valor_unitario": 106.47,
+        "valor_total": 425.88,
+        "raw_data": [
+          "1920908",
+          "ABAFADOR PARA COMBATE A INCÊNDIO",
+          "4",
+          "R$ 106,47",
+          "R$ 425,88",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "1920909",
+        "descricao": "ALAVANCA - Pé De Cabra Aço Construção 3/4 80cm",
+        "quantidade": 12,
+        "valor_unitario": 52.95,
+        "valor_total": 635.4,
+        "raw_data": [
+          "1920909",
+          "ALAVANCA - Pé De Cabra Aço Construção 3/4 80cm",
+          "12",
+          "R$ 52,95",
+          "R$ 635,40",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "1920910",
+        "descricao": "ALICATE - BICO MEIA CANA CURTO 4.1/2",
+        "quantidade": 20,
+        "valor_unitario": 64.27,
+        "valor_total": 1285.4,
+        "raw_data": [
+          "1920910",
+          "ALICATE - BICO MEIA CANA CURTO 4.1/2",
+          "20",
+          "R$ 64,27",
+          "R$ 1.285,40",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "1920911",
+        "descricao": "ALICATE - DE CORTE DIAGONAL 6.1/2 - COM CABO ANTI-DESLIZANTE",
+        "quantidade": 18,
+        "valor_unitario": 106.74,
+        "valor_total": 1921.32,
+        "raw_data": [
+          "1920911",
+          "ALICATE - DE CORTE DIAGONAL 6.1/2 - COM CABO ANTI-DESLIZANTE",
+          "18",
+          "R$ 106,74",
+          "R$ 1.921,32",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "1920912",
+        "descricao": "ALICATE - PROFISSIONAL 8' AÇO",
+        "quantidade": 18,
+        "valor_unitario": 47.8,
+        "valor_total": 860.4,
+        "raw_data": [
+          "1920912",
+          "ALICATE - PROFISSIONAL 8' AÇO",
+          "18",
+          "R$ 47,80",
+          "R$ 860,40",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 5,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_8_0_Capa_Licitacao_PE-50_2025.pdf",
+        "filepath": "downloads\\edital_8_0_Capa_Licitacao_PE-50_2025.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46578514000120/compras/2025/291/arquivos/1",
+        "description": "Fazer download",
+        "size": 63505,
+        "downloaded_at": "2025-08-26T20:52:59.907054"
+      },
+      {
+        "filename": "edital_8_1_Edital---PE-50.2025-Assinados.pdf",
+        "filepath": "downloads\\edital_8_1_Edital---PE-50.2025-Assinados.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46578514000120/compras/2025/291/arquivos/2",
+        "description": "Fazer download",
+        "size": 930186,
+        "downloaded_at": "2025-08-26T20:53:05.082307"
+      },
+      {
+        "filename": "edital_8_2_Anexo-1---Termo-de-Referencia---PE-50.2025-Assinado.pdf",
+        "filepath": "downloads\\edital_8_2_Anexo-1---Termo-de-Referencia---PE-50.2025-Assinado.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46578514000120/compras/2025/291/arquivos/3",
+        "description": "Fazer download",
+        "size": 595563,
+        "downloaded_at": "2025-08-26T20:53:10.247649"
+      },
+      {
+        "filename": "edital_8_3_Anexo-2---Modelo-de-Credenciamento---PE-50.2025-Assinado.pdf",
+        "filepath": "downloads\\edital_8_3_Anexo-2---Modelo-de-Credenciamento---PE-50.2025-Assinado.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46578514000120/compras/2025/291/arquivos/4",
+        "description": "Fazer download",
+        "size": 221433,
+        "downloaded_at": "2025-08-26T20:53:15.399952"
+      },
+      {
+        "filename": "edital_8_4_Anexo-3---Declaracoes-diversas---PE-50.2025-Assinados.pdf",
+        "filepath": "downloads\\edital_8_4_Anexo-3---Declaracoes-diversas---PE-50.2025-Assinados.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46578514000120/compras/2025/291/arquivos/5",
+        "description": "Fazer download",
+        "size": 224409,
+        "downloaded_at": "2025-08-26T20:53:20.526074"
+      }
+    ],
+    "downloads_count": 5,
+    "accessed_contratacao": true,
+    "access_button_selector": "button:has-text('Acessar contratação')",
+    "detail_url": "https://pncp.gov.br/app/editais/46578514000120/2025/291"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250826-009",
+    "pncp_id": "39467292000102-1-000053/2025",
+    "title": "Edital nº 27502/2025",
+    "description": "Edital nº 27502/2025\nId contratação PNCP: 39467292000102-1-000053/2025\nModalidade da Contratação: Leilão - Eletrônico\nÚltima Atualização: 26/08/2025\nÓrgão: SECRETARIA DE GESTAO E GOVERNO DIGITAL\nLocal: São Paulo/SP\nObjeto: 4 Imóveis",
+    "organization_name": "SECRETARIA DE GESTAO E GOVERNO DIGITAL",
+    "municipality_name": "São Paulo",
+    "state_code": "SP",
+    "modality": "Leilão - Eletrônico",
+    "estimated_value": null,
+    "publication_date": "2025-08-26",
+    "objeto": "4 Imóveis",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Edital nº 27502/2025\nId contratação PNCP: 39467292000102-1-000053/2025\nModalidade da Contratação: Leilão - Eletrônico\nÚltima Atualização: 26/08/2025\nÓrgão: SECRETARIA DE GESTAO E GOVERNO DIGITAL\nLocal: São Paulo/SP\nObjeto: 4 Imóveis",
+    "scraped_at": "2025-08-26T20:53:39.832007",
+    "has_details": true,
+    "has_access_button": true,
+    "edital_href": "/editais/39467292000102/2025/53",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nEdital nº 27502/2025\nAcessar Contratação\nAcessar Processo Eletrônico\nÚltima atualização 26/08/2025\n\nLocal: São Paulo/SP\n\nÓrgão: SECRETARIA DE GESTAO E GOVERNO DIGITAL\n\nUnidade vendedora: 530103 - ESP-COORDENADORIA DE PATRIMONIO DO ESTADO\n\nModalidade da contratação: Leilão - Eletrônico\n\nAmparo legal: Lei 14.133/2021, Art. 28, IV\n\nTipo: Edital\n\nModo de disputa: Aberto\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 26/08/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de lances: 28/08/2025 09:00 (horário de Brasília)\n\nData fim de recebimento de lances: 28/08/2025 15:00 (horário de Brasília)\n\nId contratação PNCP: 39467292000102-1-000053/2025\n\nFonte: Rigolon Leilões\n\nObjeto:\n\n4 Imóveis\n\nVALOR TOTAL ESTIMADO DO LEILÃO\nR$ 3.139.000,00\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nImóvel urbano, localizado na Rua Marechal Deodoro da Fonseca, nº 553, bairro Centro, município de São Simão/SP. Área de terreno de 415,50m² Frente Principal/Secundária: 12,30m Padrão Construtivo: Casa Padrão Simples - Superior Área construída: 188,48 m² 1 pavimento\n1\nR$ 400.000,00\nR$ 400.000,00\n2\nImóvel urbano, localizado na Avenida Jornalista Roberto Marinho, 1717, bairro Cidade Monções, município de São Paulo/SP. Área de terreno (matrícula): 657,00m² Área remanescente: 348,00m² Padrão Construtivo: Sem benfeitorias\n1\nR$ 2.128.000,00\nR$ 2.128.000,00\n3\nImóvel urbano, localizado na Avenida Brasília, s/nº, bairro Vila Rincão, município de Tanabi/SP Área de terreno de 4.489,00 m² Frente Principal/Secundária: 67,00 m Padrão Construtivo: Prédio antigo em deterioração Área construída: 500,00m² Pavimento : 1\n1\nR$ 366.000,00\nR$ 366.000,00\n4\nImóvel urbano, localizado na Alameda Navarro de Andrade, nº 106, Centro, município de Adamantina/SP. Área de terreno de 448,00 m² Frente Principal/secundária: 14 m Padrão Construtivo: Edificação em alvenaria Área con",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 3139000.0,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "Imóvel urbano, localizado na Rua Marechal Deodoro da Fonseca, nº 553, bairro Centro, município de São Simão/SP. Área de terreno de 415,50m² Frente Principal/Secundária: 12,30m Padrão Construtivo: Casa Padrão Simples - Superior Área construída: 188,48 m² 1 pavimento",
+        "quantidade": 1,
+        "valor_unitario": 400000.0,
+        "valor_total": 400000.0,
+        "raw_data": [
+          "1",
+          "Imóvel urbano, localizado na Rua Marechal Deodoro da Fonseca, nº 553, bairro Centro, município de São Simão/SP. Área de terreno de 415,50m² Frente Principal/Secundária: 12,30m Padrão Construtivo: Casa Padrão Simples - Superior Área construída: 188,48 m² 1 pavimento",
+          "1",
+          "R$ 400.000,00",
+          "R$ 400.000,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "2",
+        "descricao": "Imóvel urbano, localizado na Avenida Jornalista Roberto Marinho, 1717, bairro Cidade Monções, município de São Paulo/SP. Área de terreno (matrícula): 657,00m² Área remanescente: 348,00m² Padrão Construtivo: Sem benfeitorias",
+        "quantidade": 1,
+        "valor_unitario": 2128000.0,
+        "valor_total": 2128000.0,
+        "raw_data": [
+          "2",
+          "Imóvel urbano, localizado na Avenida Jornalista Roberto Marinho, 1717, bairro Cidade Monções, município de São Paulo/SP. Área de terreno (matrícula): 657,00m² Área remanescente: 348,00m² Padrão Construtivo: Sem benfeitorias",
+          "1",
+          "R$ 2.128.000,00",
+          "R$ 2.128.000,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "3",
+        "descricao": "Imóvel urbano, localizado na Avenida Brasília, s/nº, bairro Vila Rincão, município de Tanabi/SP Área de terreno de 4.489,00 m² Frente Principal/Secundária: 67,00 m Padrão Construtivo: Prédio antigo em deterioração Área construída: 500,00m² Pavimento : 1",
+        "quantidade": 1,
+        "valor_unitario": 366000.0,
+        "valor_total": 366000.0,
+        "raw_data": [
+          "3",
+          "Imóvel urbano, localizado na Avenida Brasília, s/nº, bairro Vila Rincão, município de Tanabi/SP Área de terreno de 4.489,00 m² Frente Principal/Secundária: 67,00 m Padrão Construtivo: Prédio antigo em deterioração Área construída: 500,00m² Pavimento : 1",
+          "1",
+          "R$ 366.000,00",
+          "R$ 366.000,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "4",
+        "descricao": "Imóvel urbano, localizado na Alameda Navarro de Andrade, nº 106, Centro, município de Adamantina/SP. Área de terreno de 448,00 m² Frente Principal/secundária: 14 m Padrão Construtivo: Edificação em alvenaria Área construída: 194,22 m² Pavimento : 1",
+        "quantidade": 1,
+        "valor_unitario": 245000.0,
+        "valor_total": 245000.0,
+        "raw_data": [
+          "4",
+          "Imóvel urbano, localizado na Alameda Navarro de Andrade, nº 106, Centro, município de Adamantina/SP. Área de terreno de 448,00 m² Frente Principal/secundária: 14 m Padrão Construtivo: Edificação em alvenaria Área construída: 194,22 m² Pavimento : 1",
+          "1",
+          "R$ 245.000,00",
+          "R$ 245.000,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 4,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_9_0_documento.pdf",
+        "filepath": "downloads\\edital_9_0_documento.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/39467292000102/compras/2025/53/arquivos/1",
+        "description": "Fazer download",
+        "size": 1733383,
+        "downloaded_at": "2025-08-26T20:55:36.619956"
+      }
+    ],
+    "downloads_count": 1,
+    "accessed_contratacao": true,
+    "access_button_selector": "button:has-text('Acessar contratação')",
+    "detail_url": "https://pncp.gov.br/app/editais/39467292000102/2025/53"
+  }
+]

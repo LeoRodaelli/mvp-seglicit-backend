@@ -1409,3 +1409,1783 @@ Call log:
 📸 Arquivos de debug gerados:
 2025-08-20 14:28:50,375 - INFO -    🖼️ debug_*.png (screenshots de cada etapa)
 2025-08-20 14:28:50,376 - INFO -    📁 downloads/ (arquivos baixados)
+2025-08-26 20:37:40,288 - INFO - 🎯 Iniciando PNCP Scraper - APENAS aba 'Itens'
+2025-08-26 20:37:40,289 - INFO - 📊 Extração RESTRITA à aba 'Itens' ativa
+2025-08-26 20:37:40,289 - INFO - 🗂️ Downloads da aba 'Arquivos'
+2025-08-26 20:37:40,290 - INFO - 🧭 Iniciando browser...
+2025-08-26 20:37:42,728 - INFO - ✅ Navegador iniciado com sucesso
+2025-08-26 20:37:42,729 - INFO - 
+============================================================
+2025-08-26 20:37:42,729 - INFO - 🎯 PROCESSANDO EDITAIS - APENAS ABA 'ITENS' - UF: SP
+2025-08-26 20:37:42,730 - INFO - ============================================================
+2025-08-26 20:37:42,730 - INFO - 🚀 Iniciando scraping com extração APENAS da aba 'Itens' para UF: SP
+2025-08-26 20:37:42,730 - INFO - 📊 Aba 'Itens' → APENAS dados da tabela visível
+2025-08-26 20:37:42,730 - INFO - 🗂️ Aba 'Arquivos' → Downloads de arquivos
+2025-08-26 20:37:42,731 - INFO - 🌐 Acessando a página de editais...
+2025-08-26 20:37:49,122 - INFO - 📸 Screenshot inicial salvo
+2025-08-26 20:37:49,122 - INFO - 📍 Selecionando UF: SP...
+2025-08-26 20:37:53,574 - INFO - 📸 Screenshot UF selecionado salvo
+2025-08-26 20:37:53,574 - INFO - 🔎 Clicando no botão Pesquisar...
+2025-08-26 20:37:59,670 - INFO - 📸 Screenshot resultados salvo
+2025-08-26 20:38:02,696 - INFO - 📊 Encontrados 35 editais na página (seletor: a.br-item)
+2025-08-26 20:38:02,696 - INFO - 📊 Processando 10 de 35 editais (limitado)
+2025-08-26 20:38:02,696 - INFO - 
+🔄 Processando edital 1/10
+2025-08-26 20:38:02,697 - INFO - 
+==================================================
+2025-08-26 20:38:02,697 - INFO - 📄 PROCESSANDO EDITAL 1
+2025-08-26 20:38:02,697 - INFO - ==================================================
+2025-08-26 20:38:04,726 - INFO - 📋 Texto do card: Edital de Chamamento Público nº 108/2025
+Id contratação PNCP: 63106843000197-1-000186/2025
+Modalidad...
+2025-08-26 20:38:04,732 - INFO - 🔗 Link do edital: /editais/63106843000197/2025/186
+2025-08-26 20:38:04,940 - INFO - 🖱️ Clicando no edital 1...
+2025-08-26 20:38:10,987 - INFO - 📍 URL atual: https://pncp.gov.br/app/editais/63106843000197/2025/186
+2025-08-26 20:38:10,987 - INFO - 📋 Extraindo informações detalhadas...
+2025-08-26 20:38:13,049 - INFO - 📊 Processando APENAS aba 'Itens' ativa para extrair dados...
+2025-08-26 20:38:13,378 - INFO - 🎯 Garantindo que aba 'Itens' está ativa...
+2025-08-26 20:38:13,385 - INFO - ✅ Aba 'Itens' encontrada! (Seletor: li.tab-item:has-text("Itens"))
+2025-08-26 20:38:13,438 - INFO - 📊 Aba 'Itens' já está ativa
+2025-08-26 20:38:16,664 - INFO - 📊 Extraindo itens APENAS da tabela visível da aba 'Itens'...
+2025-08-26 20:38:19,871 - INFO - 🔍 Testando seletor: div[role="tabpanel"]:not([hidden]) datatable-body-row
+2025-08-26 20:38:21,892 - INFO - 🔍 Testando seletor: div[aria-hidden="false"] datatable-body-row
+2025-08-26 20:38:23,908 - INFO - 🔍 Testando seletor: div.tab-content:not(.d-none) datatable-body-row
+2025-08-26 20:38:25,921 - INFO - 🔍 Testando seletor: div.active datatable-body-row
+2025-08-26 20:38:27,940 - INFO - 🔍 Testando seletor: datatable-body-row:visible
+2025-08-26 20:38:30,038 - INFO - 📊 Encontradas 1 linhas com seletor: datatable-body-row:visible
+2025-08-26 20:38:30,065 - INFO -    ✅ Linha 1 válida: 1
+Leiloeiros Leiloeiros
+1
+R$ 0,0001
+R$ 0,0001...
+2025-08-26 20:38:30,067 - INFO - 📊 Processando 1 linhas válidas da aba 'Itens'
+2025-08-26 20:38:30,206 - INFO -    📋 Item 1: Leiloeiros Leiloeiros...
+2025-08-26 20:38:30,207 - INFO - 📊 Total de itens extraídos da aba 'Itens' ativa: 1
+2025-08-26 20:38:30,207 - INFO - 🗂️ Processando aba 'Arquivos' para downloads...
+2025-08-26 20:38:30,476 - INFO - ✅ Aba 'Arquivos' encontrada! (Seletor: li.tab-item:has-text("Arquivos"))
+2025-08-26 20:38:30,477 - INFO - 🖱️ Clicando na aba 'Arquivos'...
+2025-08-26 20:38:33,785 - INFO - ⬇️ Procurando arquivos para download na aba 'Arquivos'...
+2025-08-26 20:38:37,040 - INFO - 📎 Encontrados 7 links de download (seletor: a.br-button.circle[href*="arquivos"])
+2025-08-26 20:38:37,060 - INFO - ⬇️ Baixando arquivo: Fazer download...
+2025-08-26 20:38:37,512 - INFO - 💾 Arquivo salvo: downloads\edital_0_0_Edital.pdf
+2025-08-26 20:38:42,213 - INFO - 💾 Arquivo salvo: downloads\edital_0_0_Edital.pdf
+2025-08-26 20:38:42,214 - INFO - ✅ Arquivo 1 baixado: edital_0_0_Edital.pdf
+2025-08-26 20:38:42,229 - INFO - ⬇️ Baixando arquivo: Fazer download...
+2025-08-26 20:38:42,597 - INFO - 💾 Arquivo salvo: downloads\edital_0_1_Modelos+-+Anexos.docx
+2025-08-26 20:38:47,360 - INFO - 💾 Arquivo salvo: downloads\edital_0_1_Modelos+-+Anexos.docx
+2025-08-26 20:38:47,361 - INFO - ✅ Arquivo 2 baixado: edital_0_1_Modelos+-+Anexos.docx
+2025-08-26 20:38:47,388 - INFO - ⬇️ Baixando arquivo: Fazer download...
+2025-08-26 20:38:47,721 - INFO - 💾 Arquivo salvo: downloads\edital_0_2_Esclarecimento_1.pdf
+2025-08-26 20:38:52,531 - INFO - 💾 Arquivo salvo: downloads\edital_0_2_Esclarecimento_1.pdf
+2025-08-26 20:38:52,531 - INFO - ✅ Arquivo 3 baixado: edital_0_2_Esclarecimento_1.pdf
+2025-08-26 20:38:52,549 - INFO - ⬇️ Baixando arquivo: Fazer download...
+2025-08-26 20:38:52,830 - INFO - 💾 Arquivo salvo: downloads\edital_0_3_Esclarecimento_2.pdf
+2025-08-26 20:38:57,679 - INFO - 💾 Arquivo salvo: downloads\edital_0_3_Esclarecimento_2.pdf
+2025-08-26 20:38:57,679 - INFO - ✅ Arquivo 4 baixado: edital_0_3_Esclarecimento_2.pdf
+2025-08-26 20:38:57,698 - INFO - ⬇️ Baixando arquivo: Fazer download...
+2025-08-26 20:39:57,736 - WARNING - ⚠️ Erro ao clicar no link de download: Locator.click: Timeout 60000ms exceeded.
+Call log:
+  - waiting for locator("a.br-button.circle[href*=\"arquivos\"]").nth(4)
+    - locator resolved to <a type="button" target="_blank" _ngcontent-noe-c74="" class="br-button circle" aria-label="Fazer download" href="api/orgaos/63106843000197/compras/2025/186/arquivos/0?ignorarExclusao=false">…</a>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    116 × waiting for element to be visible, enabled and stable
+        - element is not visible
+      - retrying click action
+        - waiting 500ms
+
+2025-08-26 20:39:57,737 - INFO - 📊 Total de arquivos baixados da aba 'Arquivos': 4
+2025-08-26 20:39:57,737 - INFO - 🔍 Procurando botão 'Acessar contratação'...
+2025-08-26 20:39:57,770 - INFO - ⚠️ Botão 'Acessar contratação' não encontrado
+2025-08-26 20:39:57,770 - INFO - ✅ Edital 1 processado com sucesso!
+2025-08-26 20:39:57,770 - INFO -    Título: Edital de Chamamento Público nº 108/2025
+2025-08-26 20:39:57,771 - INFO -    Organização: CONSELHO REGIONAL DE MEDICINA DO ESTADO DE SAO PAULO
+2025-08-26 20:39:57,771 - INFO -    Itens na aba Itens: 1
+2025-08-26 20:39:57,771 - INFO -    Arquivos baixados: 4
+2025-08-26 20:39:57,771 - INFO - 🔙 Voltando para lista de editais...
+2025-08-26 20:40:01,774 - INFO - ✅ Edital 1 adicionado à lista
+2025-08-26 20:40:03,786 - INFO - 
+🔄 Processando edital 2/10
+2025-08-26 20:40:03,787 - INFO - 
+==================================================
+2025-08-26 20:40:03,787 - INFO - 📄 PROCESSANDO EDITAL 2
+2025-08-26 20:40:03,787 - INFO - ==================================================
+2025-08-26 20:40:05,817 - INFO - 📋 Texto do card: Edital nº 55/2025
+Id contratação PNCP: 46392171000104-1-000071/2025
+Modalidade da Contratação: Conco...
+2025-08-26 20:40:05,823 - INFO - 🔗 Link do edital: /editais/46392171000104/2025/71
+2025-08-26 20:40:06,011 - INFO - 🖱️ Clicando no edital 2...
+2025-08-26 20:40:10,321 - INFO - 📍 URL atual: https://pncp.gov.br/app/editais/46392171000104/2025/71
+2025-08-26 20:40:10,322 - INFO - 📋 Extraindo informações detalhadas...
+2025-08-26 20:40:12,353 - INFO - 📊 Processando APENAS aba 'Itens' ativa para extrair dados...
+2025-08-26 20:40:12,601 - INFO - 🎯 Garantindo que aba 'Itens' está ativa...
+2025-08-26 20:40:12,607 - INFO - ✅ Aba 'Itens' encontrada! (Seletor: li.tab-item:has-text("Itens"))
+2025-08-26 20:40:12,635 - INFO - 📊 Aba 'Itens' já está ativa
+2025-08-26 20:40:15,868 - INFO - 📊 Extraindo itens APENAS da tabela visível da aba 'Itens'...
+2025-08-26 20:40:19,079 - INFO - 🔍 Testando seletor: div[role="tabpanel"]:not([hidden]) datatable-body-row
+2025-08-26 20:40:21,089 - INFO - 🔍 Testando seletor: div[aria-hidden="false"] datatable-body-row
+2025-08-26 20:40:23,104 - INFO - 🔍 Testando seletor: div.tab-content:not(.d-none) datatable-body-row
+2025-08-26 20:40:25,125 - INFO - 🔍 Testando seletor: div.active datatable-body-row
+2025-08-26 20:40:27,143 - INFO - 🔍 Testando seletor: datatable-body-row:visible
+2025-08-26 20:40:29,355 - INFO - 📊 Encontradas 1 linhas com seletor: datatable-body-row:visible
+2025-08-26 20:40:29,416 - INFO -    ✅ Linha 1 válida: 1
+Obras Civis Públicas ( Construção )
+1
+R$ 25.736....
+2025-08-26 20:40:29,611 - INFO - 📊 Processando 1 linhas válidas da aba 'Itens'
+2025-08-26 20:40:29,838 - INFO -    📋 Item 1: Obras Civis Públicas ( Construção )...
+2025-08-26 20:40:29,839 - INFO - 📊 Total de itens extraídos da aba 'Itens' ativa: 1
+2025-08-26 20:40:29,840 - INFO - 🗂️ Processando aba 'Arquivos' para downloads...
+2025-08-26 20:40:30,126 - INFO - ✅ Aba 'Arquivos' encontrada! (Seletor: li.tab-item:has-text("Arquivos"))
+2025-08-26 20:40:30,126 - INFO - 🖱️ Clicando na aba 'Arquivos'...
+2025-08-26 20:40:33,404 - INFO - ⬇️ Procurando arquivos para download na aba 'Arquivos'...
+2025-08-26 20:40:36,627 - INFO - 📎 Encontrados 2 links de download (seletor: a.br-button.circle[href*="arquivos"])
+2025-08-26 20:40:36,644 - INFO - ⬇️ Baixando arquivo: Fazer download...
+2025-08-26 20:40:38,826 - INFO - 💾 Arquivo salvo: downloads\edital_1_0_92505803900232025000.zip
+2025-08-26 20:40:42,204 - INFO - 💾 Arquivo salvo: downloads\edital_1_0_92505803900232025000.zip
+2025-08-26 20:40:42,204 - INFO - ✅ Arquivo 1 baixado: edital_1_0_92505803900232025000.zip
+2025-08-26 20:40:42,224 - INFO - ⬇️ Baixando arquivo: Fazer download...
+2025-08-26 20:41:42,244 - WARNING - ⚠️ Erro ao clicar no link de download: Locator.click: Timeout 60000ms exceeded.
+Call log:
+  - waiting for locator("a.br-button.circle[href*=\"arquivos\"]").nth(1)
+    - locator resolved to <a type="button" target="_blank" _ngcontent-vgt-c74="" class="br-button circle" aria-label="Fazer download" href="api/orgaos/46392171000104/compras/2025/71/arquivos/0?ignorarExclusao=false">…</a>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    115 × waiting for element to be visible, enabled and stable
+        - element is not visible
+      - retrying click action
+        - waiting 500ms
+
+2025-08-26 20:41:42,244 - INFO - 📊 Total de arquivos baixados da aba 'Arquivos': 1
+2025-08-26 20:41:42,245 - INFO - 🔍 Procurando botão 'Acessar contratação'...
+2025-08-26 20:41:42,276 - INFO - ⚠️ Botão 'Acessar contratação' não encontrado
+2025-08-26 20:41:42,277 - INFO - ✅ Edital 2 processado com sucesso!
+2025-08-26 20:41:42,277 - INFO -    Título: Edital nº 55/2025
+2025-08-26 20:41:42,277 - INFO -    Organização: SECRETARIA MUNICIPAL DE INFRAESTRUTURA URBANA E OBRAS
+2025-08-26 20:41:42,277 - INFO -    Itens na aba Itens: 1
+2025-08-26 20:41:42,278 - INFO -    Arquivos baixados: 1
+2025-08-26 20:41:42,278 - INFO - 🔙 Voltando para lista de editais...
+2025-08-26 20:41:46,157 - INFO - ✅ Edital 2 adicionado à lista
+2025-08-26 20:41:48,166 - INFO - 
+🔄 Processando edital 3/10
+2025-08-26 20:41:48,167 - INFO - 
+==================================================
+2025-08-26 20:41:48,167 - INFO - 📄 PROCESSANDO EDITAL 3
+2025-08-26 20:41:48,167 - INFO - ==================================================
+2025-08-26 20:41:50,680 - INFO - 📋 Texto do card: Aviso de Contratação Direta nº 90007/2025
+Id contratação PNCP: 46377800000127-1-003874/2025
+Modalida...
+2025-08-26 20:41:50,692 - INFO - 🔗 Link do edital: /editais/46377800000127/2025/3874
+2025-08-26 20:41:51,410 - INFO - 🖱️ Clicando no edital 3...
+2025-08-26 20:41:55,841 - INFO - 📍 URL atual: https://pncp.gov.br/app/editais/46377800000127/2025/3874
+2025-08-26 20:41:55,841 - INFO - 📋 Extraindo informações detalhadas...
+2025-08-26 20:41:57,875 - INFO - 📊 Processando APENAS aba 'Itens' ativa para extrair dados...
+2025-08-26 20:41:58,087 - INFO - 🎯 Garantindo que aba 'Itens' está ativa...
+2025-08-26 20:41:58,095 - INFO - ✅ Aba 'Itens' encontrada! (Seletor: li.tab-item:has-text("Itens"))
+2025-08-26 20:41:58,121 - INFO - 📊 Aba 'Itens' já está ativa
+2025-08-26 20:42:01,340 - INFO - 📊 Extraindo itens APENAS da tabela visível da aba 'Itens'...
+2025-08-26 20:42:04,542 - INFO - 🔍 Testando seletor: div[role="tabpanel"]:not([hidden]) datatable-body-row
+2025-08-26 20:42:06,563 - INFO - 🔍 Testando seletor: div[aria-hidden="false"] datatable-body-row
+2025-08-26 20:42:08,579 - INFO - 🔍 Testando seletor: div.tab-content:not(.d-none) datatable-body-row
+2025-08-26 20:42:10,596 - INFO - 🔍 Testando seletor: div.active datatable-body-row
+2025-08-26 20:42:12,618 - INFO - 🔍 Testando seletor: datatable-body-row:visible
+2025-08-26 20:42:14,638 - INFO - 📊 Encontradas 3 linhas com seletor: datatable-body-row:visible
+2025-08-26 20:42:14,650 - INFO -    ✅ Linha 1 válida: 1
+Guardanapo De Papel
+300
+R$ 9,98
+R$ 2.994,00...
+2025-08-26 20:42:14,661 - INFO -    ✅ Linha 2 válida: 2
+Colher Descartável
+140
+R$ 10,61
+R$ 1.485,40...
+2025-08-26 20:42:14,673 - INFO -    ✅ Linha 3 válida: 3
+Toalha De Papel
+1000
+R$ 18,96
+R$ 18.960,00...
+2025-08-26 20:42:14,673 - INFO - 📊 Processando 3 linhas válidas da aba 'Itens'
+2025-08-26 20:42:14,740 - INFO -    📋 Item 1: Guardanapo De Papel...
+2025-08-26 20:42:14,810 - INFO -    📋 Item 2: Colher Descartável...
+2025-08-26 20:42:14,883 - INFO -    📋 Item 3: Toalha De Papel...
+2025-08-26 20:42:14,883 - INFO - 📊 Total de itens extraídos da aba 'Itens' ativa: 3
+2025-08-26 20:42:14,884 - INFO - 🗂️ Processando aba 'Arquivos' para downloads...
+2025-08-26 20:42:15,102 - INFO - ✅ Aba 'Arquivos' encontrada! (Seletor: li.tab-item:has-text("Arquivos"))
+2025-08-26 20:42:15,103 - INFO - 🖱️ Clicando na aba 'Arquivos'...
+2025-08-26 20:42:18,353 - INFO - ⬇️ Procurando arquivos para download na aba 'Arquivos'...
+2025-08-26 20:42:21,546 - INFO - 📎 Encontrados 2 links de download (seletor: a.br-button.circle[href*="arquivos"])
+2025-08-26 20:42:21,561 - INFO - ⬇️ Baixando arquivo: Fazer download...
+2025-08-26 20:42:22,061 - INFO - 💾 Arquivo salvo: downloads\edital_2_0_AC+E+SEUS+ANEXOS.pdf
+2025-08-26 20:42:26,735 - INFO - 💾 Arquivo salvo: downloads\edital_2_0_AC+E+SEUS+ANEXOS.pdf
+2025-08-26 20:42:26,735 - INFO - ✅ Arquivo 1 baixado: edital_2_0_AC+E+SEUS+ANEXOS.pdf
+2025-08-26 20:42:26,751 - INFO - ⬇️ Baixando arquivo: Fazer download...
+2025-08-26 20:43:26,779 - WARNING - ⚠️ Erro ao clicar no link de download: Locator.click: Timeout 60000ms exceeded.
+Call log:
+  - waiting for locator("a.br-button.circle[href*=\"arquivos\"]").nth(1)
+    - locator resolved to <a type="button" target="_blank" _ngcontent-ans-c74="" class="br-button circle" aria-label="Fazer download" href="api/orgaos/46377800000127/compras/2025/3874/arquivos/0?ignorarExclusao=false">…</a>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    116 × waiting for element to be visible, enabled and stable
+        - element is not visible
+      - retrying click action
+        - waiting 500ms
+
+2025-08-26 20:43:26,780 - INFO - 📊 Total de arquivos baixados da aba 'Arquivos': 1
+2025-08-26 20:43:26,780 - INFO - 🔍 Procurando botão 'Acessar contratação'...
+2025-08-26 20:43:26,814 - INFO - ⚠️ Botão 'Acessar contratação' não encontrado
+2025-08-26 20:43:26,814 - INFO - ✅ Edital 3 processado com sucesso!
+2025-08-26 20:43:26,814 - INFO -    Título: Aviso de Contratação Direta nº 90007/2025
+2025-08-26 20:43:26,815 - INFO -    Organização: SAO PAULO SECRETARIA DA SEGURANCA PUBLICA
+2025-08-26 20:43:26,815 - INFO -    Itens na aba Itens: 3
+2025-08-26 20:43:26,815 - INFO -    Arquivos baixados: 1
+2025-08-26 20:43:26,816 - INFO - 🔙 Voltando para lista de editais...
+2025-08-26 20:43:30,707 - INFO - ✅ Edital 3 adicionado à lista
+2025-08-26 20:43:32,714 - INFO - 
+🔄 Processando edital 4/10
+2025-08-26 20:43:32,715 - INFO - 
+==================================================
+2025-08-26 20:43:32,715 - INFO - 📄 PROCESSANDO EDITAL 4
+2025-08-26 20:43:32,715 - INFO - ==================================================
+2025-08-26 20:43:34,741 - INFO - 📋 Texto do card: Edital nº 54/2025
+Id contratação PNCP: 46392171000104-1-000070/2025
+Modalidade da Contratação: Conco...
+2025-08-26 20:43:34,746 - INFO - 🔗 Link do edital: /editais/46392171000104/2025/70
+2025-08-26 20:43:34,942 - INFO - 🖱️ Clicando no edital 4...
+2025-08-26 20:43:39,279 - INFO - 📍 URL atual: https://pncp.gov.br/app/editais/46392171000104/2025/70
+2025-08-26 20:43:39,280 - INFO - 📋 Extraindo informações detalhadas...
+2025-08-26 20:43:41,314 - INFO - 📊 Processando APENAS aba 'Itens' ativa para extrair dados...
+2025-08-26 20:43:41,517 - INFO - 🎯 Garantindo que aba 'Itens' está ativa...
+2025-08-26 20:43:41,522 - INFO - ✅ Aba 'Itens' encontrada! (Seletor: li.tab-item:has-text("Itens"))
+2025-08-26 20:43:41,546 - INFO - 📊 Aba 'Itens' já está ativa
+2025-08-26 20:43:44,750 - INFO - 📊 Extraindo itens APENAS da tabela visível da aba 'Itens'...
+2025-08-26 20:43:47,962 - INFO - 🔍 Testando seletor: div[role="tabpanel"]:not([hidden]) datatable-body-row
+2025-08-26 20:43:49,978 - INFO - 🔍 Testando seletor: div[aria-hidden="false"] datatable-body-row
+2025-08-26 20:43:51,992 - INFO - 🔍 Testando seletor: div.tab-content:not(.d-none) datatable-body-row
+2025-08-26 20:43:54,002 - INFO - 🔍 Testando seletor: div.active datatable-body-row
+2025-08-26 20:43:56,018 - INFO - 🔍 Testando seletor: datatable-body-row:visible
+2025-08-26 20:43:58,032 - INFO - 📊 Encontradas 1 linhas com seletor: datatable-body-row:visible
+2025-08-26 20:43:58,042 - INFO -    ✅ Linha 1 válida: 1
+Obras Civis Públicas ( Construção )
+1
+R$ 73.278....
+2025-08-26 20:43:58,042 - INFO - 📊 Processando 1 linhas válidas da aba 'Itens'
+2025-08-26 20:43:58,112 - INFO -    📋 Item 1: Obras Civis Públicas ( Construção )...
+2025-08-26 20:43:58,112 - INFO - 📊 Total de itens extraídos da aba 'Itens' ativa: 1
+2025-08-26 20:43:58,112 - INFO - 🗂️ Processando aba 'Arquivos' para downloads...
+2025-08-26 20:43:58,320 - INFO - ✅ Aba 'Arquivos' encontrada! (Seletor: li.tab-item:has-text("Arquivos"))
+2025-08-26 20:43:58,321 - INFO - 🖱️ Clicando na aba 'Arquivos'...
+2025-08-26 20:44:01,578 - INFO - ⬇️ Procurando arquivos para download na aba 'Arquivos'...
+2025-08-26 20:44:04,788 - INFO - 📎 Encontrados 2 links de download (seletor: a.br-button.circle[href*="arquivos"])
+2025-08-26 20:44:04,806 - INFO - ⬇️ Baixando arquivo: Fazer download...
+2025-08-26 20:44:05,188 - INFO - 💾 Arquivo salvo: downloads\edital_3_0_92505803900282025000.zip
+2025-08-26 20:44:10,108 - INFO - 💾 Arquivo salvo: downloads\edital_3_0_92505803900282025000.zip
+2025-08-26 20:44:10,108 - INFO - ✅ Arquivo 1 baixado: edital_3_0_92505803900282025000.zip
+2025-08-26 20:44:10,147 - INFO - ⬇️ Baixando arquivo: Fazer download...
+2025-08-26 20:45:10,162 - WARNING - ⚠️ Erro ao clicar no link de download: Locator.click: Timeout 60000ms exceeded.
+Call log:
+  - waiting for locator("a.br-button.circle[href*=\"arquivos\"]").nth(1)
+    - locator resolved to <a type="button" target="_blank" _ngcontent-rqv-c74="" class="br-button circle" aria-label="Fazer download" href="api/orgaos/46392171000104/compras/2025/70/arquivos/0?ignorarExclusao=false">…</a>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    115 × waiting for element to be visible, enabled and stable
+        - element is not visible
+      - retrying click action
+        - waiting 500ms
+
+2025-08-26 20:45:10,163 - INFO - 📊 Total de arquivos baixados da aba 'Arquivos': 1
+2025-08-26 20:45:10,163 - INFO - 🔍 Procurando botão 'Acessar contratação'...
+2025-08-26 20:45:10,191 - INFO - ⚠️ Botão 'Acessar contratação' não encontrado
+2025-08-26 20:45:10,191 - INFO - ✅ Edital 4 processado com sucesso!
+2025-08-26 20:45:10,191 - INFO -    Título: Edital nº 54/2025
+2025-08-26 20:45:10,191 - INFO -    Organização: SECRETARIA MUNICIPAL DE INFRAESTRUTURA URBANA E OBRAS
+2025-08-26 20:45:10,192 - INFO -    Itens na aba Itens: 1
+2025-08-26 20:45:10,192 - INFO -    Arquivos baixados: 1
+2025-08-26 20:45:10,192 - INFO - 🔙 Voltando para lista de editais...
+2025-08-26 20:45:14,040 - INFO - ✅ Edital 4 adicionado à lista
+2025-08-26 20:45:16,054 - INFO - 
+🔄 Processando edital 5/10
+2025-08-26 20:45:16,055 - INFO - 
+==================================================
+2025-08-26 20:45:16,055 - INFO - 📄 PROCESSANDO EDITAL 5
+2025-08-26 20:45:16,055 - INFO - ==================================================
+2025-08-26 20:45:18,093 - INFO - 📋 Texto do card: Aviso de Contratação Direta nº 99596/2025
+Id contratação PNCP: 63025530000104-1-003570/2025
+Modalida...
+2025-08-26 20:45:18,098 - INFO - 🔗 Link do edital: /editais/63025530000104/2025/3570
+2025-08-26 20:45:18,269 - INFO - 🖱️ Clicando no edital 5...
+2025-08-26 20:45:23,202 - INFO - 📍 URL atual: https://pncp.gov.br/app/editais/63025530000104/2025/3570
+2025-08-26 20:45:23,202 - INFO - 📋 Extraindo informações detalhadas...
+2025-08-26 20:45:25,238 - INFO - 📊 Processando APENAS aba 'Itens' ativa para extrair dados...
+2025-08-26 20:45:25,435 - INFO - 🎯 Garantindo que aba 'Itens' está ativa...
+2025-08-26 20:45:25,440 - INFO - ✅ Aba 'Itens' encontrada! (Seletor: li.tab-item:has-text("Itens"))
+2025-08-26 20:45:25,463 - INFO - 📊 Aba 'Itens' já está ativa
+2025-08-26 20:45:28,687 - INFO - 📊 Extraindo itens APENAS da tabela visível da aba 'Itens'...
+2025-08-26 20:45:31,915 - INFO - 🔍 Testando seletor: div[role="tabpanel"]:not([hidden]) datatable-body-row
+2025-08-26 20:45:33,927 - INFO - 🔍 Testando seletor: div[aria-hidden="false"] datatable-body-row
+2025-08-26 20:45:36,016 - INFO - 🔍 Testando seletor: div.tab-content:not(.d-none) datatable-body-row
+2025-08-26 20:45:38,263 - INFO - 🔍 Testando seletor: div.active datatable-body-row
+2025-08-26 20:45:40,284 - INFO - 🔍 Testando seletor: datatable-body-row:visible
+2025-08-26 20:45:42,305 - INFO - 📊 Encontradas 3 linhas com seletor: datatable-body-row:visible
+2025-08-26 20:45:42,319 - INFO -    ✅ Linha 1 válida: 1
+Peças E Acessórios Purificador Água
+1
+R$ 3.680,0...
+2025-08-26 20:45:42,330 - INFO -    ✅ Linha 2 válida: 2
+Peças E Acessórios Purificador Água
+1
+R$ 3.656,2...
+2025-08-26 20:45:42,344 - INFO -    ✅ Linha 3 válida: 3
+Peças E Acessórios Purificador Água
+2
+R$ 1.856,1...
+2025-08-26 20:45:42,344 - INFO - 📊 Processando 3 linhas válidas da aba 'Itens'
+2025-08-26 20:45:42,436 - INFO -    📋 Item 1: Peças E Acessórios Purificador Água...
+2025-08-26 20:45:42,508 - INFO -    📋 Item 2: Peças E Acessórios Purificador Água...
+2025-08-26 20:45:42,582 - INFO -    📋 Item 3: Peças E Acessórios Purificador Água...
+2025-08-26 20:45:42,582 - INFO - 📊 Total de itens extraídos da aba 'Itens' ativa: 3
+2025-08-26 20:45:42,583 - INFO - 🗂️ Processando aba 'Arquivos' para downloads...
+2025-08-26 20:45:42,806 - INFO - ✅ Aba 'Arquivos' encontrada! (Seletor: li.tab-item:has-text("Arquivos"))
+2025-08-26 20:45:42,806 - INFO - 🖱️ Clicando na aba 'Arquivos'...
+2025-08-26 20:45:46,113 - INFO - ⬇️ Procurando arquivos para download na aba 'Arquivos'...
+2025-08-26 20:45:49,330 - INFO - 📎 Encontrados 2 links de download (seletor: a.br-button.circle[href*="arquivos"])
+2025-08-26 20:45:49,346 - INFO - ⬇️ Baixando arquivo: Fazer download...
+2025-08-26 20:45:49,870 - INFO - 💾 Arquivo salvo: downloads\edital_4_0_ACD+31-2025.pdf
+2025-08-26 20:45:54,506 - INFO - 💾 Arquivo salvo: downloads\edital_4_0_ACD+31-2025.pdf
+2025-08-26 20:45:54,506 - INFO - ✅ Arquivo 1 baixado: edital_4_0_ACD+31-2025.pdf
+2025-08-26 20:45:54,522 - INFO - ⬇️ Baixando arquivo: Fazer download...
+2025-08-26 20:46:54,540 - WARNING - ⚠️ Erro ao clicar no link de download: Locator.click: Timeout 60000ms exceeded.
+Call log:
+  - waiting for locator("a.br-button.circle[href*=\"arquivos\"]").nth(1)
+    - locator resolved to <a type="button" target="_blank" _ngcontent-twt-c74="" class="br-button circle" aria-label="Fazer download" href="api/orgaos/63025530000104/compras/2025/3570/arquivos/0?ignorarExclusao=false">…</a>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    115 × waiting for element to be visible, enabled and stable
+        - element is not visible
+      - retrying click action
+        - waiting 500ms
+
+2025-08-26 20:46:54,541 - INFO - 📊 Total de arquivos baixados da aba 'Arquivos': 1
+2025-08-26 20:46:54,541 - INFO - 🔍 Procurando botão 'Acessar contratação'...
+2025-08-26 20:46:54,570 - INFO - ⚠️ Botão 'Acessar contratação' não encontrado
+2025-08-26 20:46:54,570 - INFO - ✅ Edital 5 processado com sucesso!
+2025-08-26 20:46:54,570 - INFO -    Título: Aviso de Contratação Direta nº 99596/2025
+2025-08-26 20:46:54,570 - INFO -    Organização: UNIVERSIDADE DE SAO PAULO
+2025-08-26 20:46:54,571 - INFO -    Itens na aba Itens: 3
+2025-08-26 20:46:54,571 - INFO -    Arquivos baixados: 1
+2025-08-26 20:46:54,571 - INFO - 🔙 Voltando para lista de editais...
+2025-08-26 20:46:58,382 - INFO - ✅ Edital 5 adicionado à lista
+2025-08-26 20:47:00,391 - INFO - 
+🔄 Processando edital 6/10
+2025-08-26 20:47:00,391 - INFO - 
+==================================================
+2025-08-26 20:47:00,392 - INFO - 📄 PROCESSANDO EDITAL 6
+2025-08-26 20:47:00,392 - INFO - ==================================================
+2025-08-26 20:47:02,421 - INFO - 📋 Texto do card: Edital nº 009/2025
+Id contratação PNCP: 46523163000150-1-000392/2025
+Modalidade da Contratação: Conc...
+2025-08-26 20:47:02,427 - INFO - 🔗 Link do edital: /editais/46523163000150/2025/392
+2025-08-26 20:47:02,596 - INFO - 🖱️ Clicando no edital 6...
+2025-08-26 20:47:07,261 - INFO - 📍 URL atual: https://pncp.gov.br/app/editais/46523163000150/2025/392
+2025-08-26 20:47:07,261 - INFO - 📋 Extraindo informações detalhadas...
+2025-08-26 20:47:09,292 - INFO - 📊 Processando APENAS aba 'Itens' ativa para extrair dados...
+2025-08-26 20:47:09,486 - INFO - 🎯 Garantindo que aba 'Itens' está ativa...
+2025-08-26 20:47:09,491 - INFO - ✅ Aba 'Itens' encontrada! (Seletor: li.tab-item:has-text("Itens"))
+2025-08-26 20:47:09,512 - INFO - 📊 Aba 'Itens' já está ativa
+2025-08-26 20:47:12,738 - INFO - 📊 Extraindo itens APENAS da tabela visível da aba 'Itens'...
+2025-08-26 20:47:15,943 - INFO - 🔍 Testando seletor: div[role="tabpanel"]:not([hidden]) datatable-body-row
+2025-08-26 20:47:17,957 - INFO - 🔍 Testando seletor: div[aria-hidden="false"] datatable-body-row
+2025-08-26 20:47:19,980 - INFO - 🔍 Testando seletor: div.tab-content:not(.d-none) datatable-body-row
+2025-08-26 20:47:22,001 - INFO - 🔍 Testando seletor: div.active datatable-body-row
+2025-08-26 20:47:24,021 - INFO - 🔍 Testando seletor: datatable-body-row:visible
+2025-08-26 20:47:26,041 - INFO - 📊 Encontradas 1 linhas com seletor: datatable-body-row:visible
+2025-08-26 20:47:26,056 - INFO -    ✅ Linha 1 válida: 1
+CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA EXECUÇ...
+2025-08-26 20:47:26,057 - INFO - 📊 Processando 1 linhas válidas da aba 'Itens'
+2025-08-26 20:47:26,138 - INFO -    📋 Item 1: CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA EXECUÇÃO...
+2025-08-26 20:47:26,138 - INFO - 📊 Total de itens extraídos da aba 'Itens' ativa: 1
+2025-08-26 20:47:26,138 - INFO - 🗂️ Processando aba 'Arquivos' para downloads...
+2025-08-26 20:47:26,340 - INFO - ✅ Aba 'Arquivos' encontrada! (Seletor: li.tab-item:has-text("Arquivos"))
+2025-08-26 20:47:26,341 - INFO - 🖱️ Clicando na aba 'Arquivos'...
+2025-08-26 20:47:29,578 - INFO - ⬇️ Procurando arquivos para download na aba 'Arquivos'...
+2025-08-26 20:47:32,809 - INFO - 📎 Encontrados 9 links de download (seletor: a.br-button.circle[href*="arquivos"])
+2025-08-26 20:47:32,825 - INFO - ⬇️ Baixando arquivo: Fazer download...
+2025-08-26 20:47:33,187 - INFO - 💾 Arquivo salvo: downloads\edital_5_0_EDITAL_CE_0092025__DRENAG_E_PAV_RUA_LAZARO_CANDIDO_DE_MORAES_NETO.pdf
+2025-08-26 20:47:37,993 - INFO - 💾 Arquivo salvo: downloads\edital_5_0_EDITAL_CE_0092025__DRENAG_E_PAV_RUA_LAZARO_CANDIDO_DE_MORAES_NETO.pdf
+2025-08-26 20:47:37,994 - INFO - ✅ Arquivo 1 baixado: edital_5_0_EDITAL_CE_0092025__DRENAG_E_PAV_RUA_LAZARO_CANDIDO_DE_MORAES_NETO.pdf
+2025-08-26 20:47:38,013 - INFO - ⬇️ Baixando arquivo: Fazer download...
+2025-08-26 20:47:38,393 - INFO - 💾 Arquivo salvo: downloads\edital_5_1_ANEXOS_I_AO_VIII__CE_0092025__DRENAG_E_PAV_RUA_LAZARO_CANDIDO_DE_MORAES_NETO.docx
+2025-08-26 20:47:43,166 - INFO - 💾 Arquivo salvo: downloads\edital_5_1_ANEXOS_I_AO_VIII__CE_0092025__DRENAG_E_PAV_RUA_LAZARO_CANDIDO_DE_MORAES_NETO.docx
+2025-08-26 20:47:43,167 - INFO - ✅ Arquivo 2 baixado: edital_5_1_ANEXOS_I_AO_VIII__CE_0092025__DRENAG_E_PAV_RUA_LAZARO_CANDIDO_DE_MORAES_NETO.docx
+2025-08-26 20:47:43,182 - INFO - ⬇️ Baixando arquivo: Fazer download...
+2025-08-26 20:47:43,545 - INFO - 💾 Arquivo salvo: downloads\edital_5_2_ANEXO_IX__TERMO_DE_REFERENCIA_RUA_LAZARO.pdf
+2025-08-26 20:47:48,326 - INFO - 💾 Arquivo salvo: downloads\edital_5_2_ANEXO_IX__TERMO_DE_REFERENCIA_RUA_LAZARO.pdf
+2025-08-26 20:47:48,326 - INFO - ✅ Arquivo 3 baixado: edital_5_2_ANEXO_IX__TERMO_DE_REFERENCIA_RUA_LAZARO.pdf
+2025-08-26 20:47:48,342 - INFO - ⬇️ Baixando arquivo: Fazer download...
+2025-08-26 20:47:48,620 - INFO - 💾 Arquivo salvo: downloads\edital_5_3_ANEXO_X__MEMORIAL_DESCRITIVO.pdf
+2025-08-26 20:47:53,457 - INFO - 💾 Arquivo salvo: downloads\edital_5_3_ANEXO_X__MEMORIAL_DESCRITIVO.pdf
+2025-08-26 20:47:53,457 - INFO - ✅ Arquivo 4 baixado: edital_5_3_ANEXO_X__MEMORIAL_DESCRITIVO.pdf
+2025-08-26 20:47:53,474 - INFO - ⬇️ Baixando arquivo: Fazer download...
+2025-08-26 20:47:53,878 - INFO - 💾 Arquivo salvo: downloads\edital_5_4_ANEXO_XI__PLANILHA_ORCAMENTARIA_R_LAZARO.pdf
+2025-08-26 20:47:58,626 - INFO - 💾 Arquivo salvo: downloads\edital_5_4_ANEXO_XI__PLANILHA_ORCAMENTARIA_R_LAZARO.pdf
+2025-08-26 20:47:58,627 - INFO - ✅ Arquivo 5 baixado: edital_5_4_ANEXO_XI__PLANILHA_ORCAMENTARIA_R_LAZARO.pdf
+2025-08-26 20:47:58,627 - INFO - 📊 Total de arquivos baixados da aba 'Arquivos': 5
+2025-08-26 20:47:58,628 - INFO - 🔍 Procurando botão 'Acessar contratação'...
+2025-08-26 20:47:58,640 - INFO - ✅ Botão 'Acessar contratação' encontrado! (Seletor: button:has-text('Acessar contratação'))
+2025-08-26 20:48:03,619 - INFO - 📂 Acessou contratação com sucesso!
+2025-08-26 20:48:03,620 - INFO - ✅ Edital 6 processado com sucesso!
+2025-08-26 20:48:03,620 - INFO -    Título: Edital nº 009/2025
+2025-08-26 20:48:03,621 - INFO -    Organização: MUNICIPIO DE MAIRIPORA
+2025-08-26 20:48:03,621 - INFO -    Itens na aba Itens: 1
+2025-08-26 20:48:03,621 - INFO -    Arquivos baixados: 5
+2025-08-26 20:48:03,622 - INFO - 🔙 Voltando para lista de editais...
+2025-08-26 20:48:52,393 - INFO - ✅ Edital 6 adicionado à lista
+2025-08-26 20:48:54,399 - INFO - 
+🔄 Processando edital 7/10
+2025-08-26 20:48:54,399 - INFO - 
+==================================================
+2025-08-26 20:48:54,400 - INFO - 📄 PROCESSANDO EDITAL 7
+2025-08-26 20:48:54,400 - INFO - ==================================================
+2025-08-26 20:48:57,221 - INFO - 📋 Texto do card: Edital nº 53/2025
+Id contratação PNCP: 46392171000104-1-000069/2025
+Modalidade da Contratação: Conco...
+2025-08-26 20:48:57,233 - INFO - 🔗 Link do edital: /editais/46392171000104/2025/69
+2025-08-26 20:48:57,505 - INFO - 🖱️ Clicando no edital 7...
+2025-08-26 20:49:01,908 - INFO - 📍 URL atual: https://pncp.gov.br/app/editais/46392171000104/2025/69
+2025-08-26 20:49:01,908 - INFO - 📋 Extraindo informações detalhadas...
+2025-08-26 20:49:03,934 - INFO - 📊 Processando APENAS aba 'Itens' ativa para extrair dados...
+2025-08-26 20:49:04,173 - INFO - 🎯 Garantindo que aba 'Itens' está ativa...
+2025-08-26 20:49:04,180 - INFO - ✅ Aba 'Itens' encontrada! (Seletor: li.tab-item:has-text("Itens"))
+2025-08-26 20:49:04,206 - INFO - 📊 Aba 'Itens' já está ativa
+2025-08-26 20:49:07,450 - INFO - 📊 Extraindo itens APENAS da tabela visível da aba 'Itens'...
+2025-08-26 20:49:10,672 - INFO - 🔍 Testando seletor: div[role="tabpanel"]:not([hidden]) datatable-body-row
+2025-08-26 20:49:12,692 - INFO - 🔍 Testando seletor: div[aria-hidden="false"] datatable-body-row
+2025-08-26 20:49:14,704 - INFO - 🔍 Testando seletor: div.tab-content:not(.d-none) datatable-body-row
+2025-08-26 20:49:16,717 - INFO - 🔍 Testando seletor: div.active datatable-body-row
+2025-08-26 20:49:18,725 - INFO - 🔍 Testando seletor: datatable-body-row:visible
+2025-08-26 20:49:20,747 - INFO - 📊 Encontradas 1 linhas com seletor: datatable-body-row:visible
+2025-08-26 20:49:20,756 - INFO -    ✅ Linha 1 válida: 1
+Obras Civis Públicas ( Construção )
+1
+R$ 48.414....
+2025-08-26 20:49:20,756 - INFO - 📊 Processando 1 linhas válidas da aba 'Itens'
+2025-08-26 20:49:20,825 - INFO -    📋 Item 1: Obras Civis Públicas ( Construção )...
+2025-08-26 20:49:20,825 - INFO - 📊 Total de itens extraídos da aba 'Itens' ativa: 1
+2025-08-26 20:49:20,825 - INFO - 🗂️ Processando aba 'Arquivos' para downloads...
+2025-08-26 20:49:21,007 - INFO - ✅ Aba 'Arquivos' encontrada! (Seletor: li.tab-item:has-text("Arquivos"))
+2025-08-26 20:49:21,007 - INFO - 🖱️ Clicando na aba 'Arquivos'...
+2025-08-26 20:49:24,261 - INFO - ⬇️ Procurando arquivos para download na aba 'Arquivos'...
+2025-08-26 20:49:27,516 - INFO - 📎 Encontrados 2 links de download (seletor: a.br-button.circle[href*="arquivos"])
+2025-08-26 20:49:27,533 - INFO - ⬇️ Baixando arquivo: Fazer download...
+2025-08-26 20:49:27,907 - INFO - 💾 Arquivo salvo: downloads\edital_6_0_92505803900272025000.zip
+2025-08-26 20:49:32,698 - INFO - 💾 Arquivo salvo: downloads\edital_6_0_92505803900272025000.zip
+2025-08-26 20:49:32,698 - INFO - ✅ Arquivo 1 baixado: edital_6_0_92505803900272025000.zip
+2025-08-26 20:49:32,717 - INFO - ⬇️ Baixando arquivo: Fazer download...
+2025-08-26 20:50:32,739 - WARNING - ⚠️ Erro ao clicar no link de download: Locator.click: Timeout 60000ms exceeded.
+Call log:
+  - waiting for locator("a.br-button.circle[href*=\"arquivos\"]").nth(1)
+    - locator resolved to <a type="button" target="_blank" _ngcontent-fxj-c74="" class="br-button circle" aria-label="Fazer download" href="api/orgaos/46392171000104/compras/2025/69/arquivos/0?ignorarExclusao=false">…</a>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    116 × waiting for element to be visible, enabled and stable
+        - element is not visible
+      - retrying click action
+        - waiting 500ms
+
+2025-08-26 20:50:32,740 - INFO - 📊 Total de arquivos baixados da aba 'Arquivos': 1
+2025-08-26 20:50:32,740 - INFO - 🔍 Procurando botão 'Acessar contratação'...
+2025-08-26 20:50:32,767 - INFO - ⚠️ Botão 'Acessar contratação' não encontrado
+2025-08-26 20:50:32,767 - INFO - ✅ Edital 7 processado com sucesso!
+2025-08-26 20:50:32,767 - INFO -    Título: Edital nº 53/2025
+2025-08-26 20:50:32,768 - INFO -    Organização: SECRETARIA MUNICIPAL DE INFRAESTRUTURA URBANA E OBRAS
+2025-08-26 20:50:32,768 - INFO -    Itens na aba Itens: 1
+2025-08-26 20:50:32,768 - INFO -    Arquivos baixados: 1
+2025-08-26 20:50:32,768 - INFO - 🔙 Voltando para lista de editais...
+2025-08-26 20:50:36,573 - INFO - ✅ Edital 7 adicionado à lista
+2025-08-26 20:50:38,590 - INFO - 
+🔄 Processando edital 8/10
+2025-08-26 20:50:38,590 - INFO - 
+==================================================
+2025-08-26 20:50:38,591 - INFO - 📄 PROCESSANDO EDITAL 8
+2025-08-26 20:50:38,591 - INFO - ==================================================
+2025-08-26 20:50:40,619 - INFO - 📋 Texto do card: Edital nº 50/2025
+Id contratação PNCP: 46578514000120-1-000292/2025
+Modalidade da Contratação: Pregã...
+2025-08-26 20:50:40,625 - INFO - 🔗 Link do edital: /editais/46578514000120/2025/292
+2025-08-26 20:50:40,822 - INFO - 🖱️ Clicando no edital 8...
+2025-08-26 20:50:45,178 - INFO - 📍 URL atual: https://pncp.gov.br/app/editais/46578514000120/2025/292
+2025-08-26 20:50:45,179 - INFO - 📋 Extraindo informações detalhadas...
+2025-08-26 20:50:47,203 - INFO - 📊 Processando APENAS aba 'Itens' ativa para extrair dados...
+2025-08-26 20:50:47,416 - INFO - 🎯 Garantindo que aba 'Itens' está ativa...
+2025-08-26 20:50:47,422 - INFO - ✅ Aba 'Itens' encontrada! (Seletor: li.tab-item:has-text("Itens"))
+2025-08-26 20:50:47,447 - INFO - 📊 Aba 'Itens' já está ativa
+2025-08-26 20:50:50,676 - INFO - 📊 Extraindo itens APENAS da tabela visível da aba 'Itens'...
+2025-08-26 20:50:53,898 - INFO - 🔍 Testando seletor: div[role="tabpanel"]:not([hidden]) datatable-body-row
+2025-08-26 20:50:55,917 - INFO - 🔍 Testando seletor: div[aria-hidden="false"] datatable-body-row
+2025-08-26 20:50:57,940 - INFO - 🔍 Testando seletor: div.tab-content:not(.d-none) datatable-body-row
+2025-08-26 20:50:59,949 - INFO - 🔍 Testando seletor: div.active datatable-body-row
+2025-08-26 20:51:01,971 - INFO - 🔍 Testando seletor: datatable-body-row:visible
+2025-08-26 20:51:03,986 - INFO - 📊 Encontradas 5 linhas com seletor: datatable-body-row:visible
+2025-08-26 20:51:03,997 - INFO -    ✅ Linha 1 válida: 1
+ABAFADOR PARA COMBATE A INCÊNDIO
+4
+R$ 106,47
+R$ ...
+2025-08-26 20:51:04,010 - INFO -    ✅ Linha 2 válida: 2
+ALAVANCA - Pé De Cabra Aço Construção 3/4 80cm
+1...
+2025-08-26 20:51:04,022 - INFO -    ✅ Linha 3 válida: 3
+ALICATE - BICO MEIA CANA CURTO 4.1/2
+20
+R$ 64,27...
+2025-08-26 20:51:04,033 - INFO -    ✅ Linha 4 válida: 4
+ALICATE - DE CORTE DIAGONAL 6.1/2 - COM CABO ANT...
+2025-08-26 20:51:04,044 - INFO -    ✅ Linha 5 válida: 5
+ALICATE - PROFISSIONAL 8' AÇO
+18
+R$ 47,80
+R$ 860...
+2025-08-26 20:51:04,044 - INFO - 📊 Processando 5 linhas válidas da aba 'Itens'
+2025-08-26 20:51:04,114 - INFO -    📋 Item 1: ABAFADOR PARA COMBATE A INCÊNDIO...
+2025-08-26 20:51:04,186 - INFO -    📋 Item 2: ALAVANCA - Pé De Cabra Aço Construção 3/4 80cm...
+2025-08-26 20:51:04,255 - INFO -    📋 Item 3: ALICATE - BICO MEIA CANA CURTO 4.1/2...
+2025-08-26 20:51:04,326 - INFO -    📋 Item 4: ALICATE - DE CORTE DIAGONAL 6.1/2 - COM CABO ANTI-...
+2025-08-26 20:51:04,397 - INFO -    📋 Item 5: ALICATE - PROFISSIONAL 8' AÇO...
+2025-08-26 20:51:04,397 - INFO - 📊 Total de itens extraídos da aba 'Itens' ativa: 5
+2025-08-26 20:51:04,398 - INFO - 🗂️ Processando aba 'Arquivos' para downloads...
+2025-08-26 20:51:04,607 - INFO - ✅ Aba 'Arquivos' encontrada! (Seletor: li.tab-item:has-text("Arquivos"))
+2025-08-26 20:51:04,607 - INFO - 🖱️ Clicando na aba 'Arquivos'...
+2025-08-26 20:51:07,920 - INFO - ⬇️ Procurando arquivos para download na aba 'Arquivos'...
+2025-08-26 20:51:11,125 - INFO - 📎 Encontrados 2 links de download (seletor: a.br-button.circle[href*="arquivos"])
+2025-08-26 20:51:11,140 - INFO - ⬇️ Baixando arquivo: Fazer download...
+2025-08-26 20:51:11,451 - INFO - 💾 Arquivo salvo: downloads\edital_7_0_3280409e70af4f08986eb35912e6adc3AVPE+502025.pdf
+2025-08-26 20:51:16,325 - INFO - 💾 Arquivo salvo: downloads\edital_7_0_3280409e70af4f08986eb35912e6adc3AVPE+502025.pdf
+2025-08-26 20:51:16,329 - INFO - ✅ Arquivo 1 baixado: edital_7_0_3280409e70af4f08986eb35912e6adc3AVPE+502025.pdf
+2025-08-26 20:51:16,355 - INFO - ⬇️ Baixando arquivo: Fazer download...
+2025-08-26 20:52:16,380 - WARNING - ⚠️ Erro ao clicar no link de download: Locator.click: Timeout 60000ms exceeded.
+Call log:
+  - waiting for locator("a.br-button.circle[href*=\"arquivos\"]").nth(1)
+    - locator resolved to <a type="button" target="_blank" _ngcontent-rbs-c74="" class="br-button circle" aria-label="Fazer download" href="api/orgaos/46578514000120/compras/2025/292/arquivos/0?ignorarExclusao=false">…</a>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    115 × waiting for element to be visible, enabled and stable
+        - element is not visible
+      - retrying click action
+        - waiting 500ms
+
+2025-08-26 20:52:16,380 - INFO - 📊 Total de arquivos baixados da aba 'Arquivos': 1
+2025-08-26 20:52:16,380 - INFO - 🔍 Procurando botão 'Acessar contratação'...
+2025-08-26 20:52:16,415 - INFO - ⚠️ Botão 'Acessar contratação' não encontrado
+2025-08-26 20:52:16,415 - INFO - ✅ Edital 8 processado com sucesso!
+2025-08-26 20:52:16,416 - INFO -    Título: Edital nº 50/2025
+2025-08-26 20:52:16,416 - INFO -    Organização: MUNICIPIO DE PERUIBE
+2025-08-26 20:52:16,416 - INFO -    Itens na aba Itens: 5
+2025-08-26 20:52:16,416 - INFO -    Arquivos baixados: 1
+2025-08-26 20:52:16,416 - INFO - 🔙 Voltando para lista de editais...
+2025-08-26 20:52:20,230 - INFO - ✅ Edital 8 adicionado à lista
+2025-08-26 20:52:22,246 - INFO - 
+🔄 Processando edital 9/10
+2025-08-26 20:52:22,247 - INFO - 
+==================================================
+2025-08-26 20:52:22,247 - INFO - 📄 PROCESSANDO EDITAL 9
+2025-08-26 20:52:22,247 - INFO - ==================================================
+2025-08-26 20:52:24,288 - INFO - 📋 Texto do card: Edital nº PE 50/2025
+Id contratação PNCP: 46578514000120-1-000291/2025
+Modalidade da Contratação: Pr...
+2025-08-26 20:52:24,293 - INFO - 🔗 Link do edital: /editais/46578514000120/2025/291
+2025-08-26 20:52:24,487 - INFO - 🖱️ Clicando no edital 9...
+2025-08-26 20:52:28,858 - INFO - 📍 URL atual: https://pncp.gov.br/app/editais/46578514000120/2025/291
+2025-08-26 20:52:28,858 - INFO - 📋 Extraindo informações detalhadas...
+2025-08-26 20:52:30,890 - INFO - 📊 Processando APENAS aba 'Itens' ativa para extrair dados...
+2025-08-26 20:52:31,067 - INFO - 🎯 Garantindo que aba 'Itens' está ativa...
+2025-08-26 20:52:31,072 - INFO - ✅ Aba 'Itens' encontrada! (Seletor: li.tab-item:has-text("Itens"))
+2025-08-26 20:52:31,092 - INFO - 📊 Aba 'Itens' já está ativa
+2025-08-26 20:52:34,288 - INFO - 📊 Extraindo itens APENAS da tabela visível da aba 'Itens'...
+2025-08-26 20:52:37,532 - INFO - 🔍 Testando seletor: div[role="tabpanel"]:not([hidden]) datatable-body-row
+2025-08-26 20:52:39,545 - INFO - 🔍 Testando seletor: div[aria-hidden="false"] datatable-body-row
+2025-08-26 20:52:41,566 - INFO - 🔍 Testando seletor: div.tab-content:not(.d-none) datatable-body-row
+2025-08-26 20:52:43,582 - INFO - 🔍 Testando seletor: div.active datatable-body-row
+2025-08-26 20:52:45,604 - INFO - 🔍 Testando seletor: datatable-body-row:visible
+2025-08-26 20:52:47,625 - INFO - 📊 Encontradas 5 linhas com seletor: datatable-body-row:visible
+2025-08-26 20:52:47,642 - INFO -    ✅ Linha 1 válida: 1920908
+ABAFADOR PARA COMBATE A INCÊNDIO
+4
+R$ 106,...
+2025-08-26 20:52:47,656 - INFO -    ✅ Linha 2 válida: 1920909
+ALAVANCA - Pé De Cabra Aço Construção 3/4 ...
+2025-08-26 20:52:47,672 - INFO -    ✅ Linha 3 válida: 1920910
+ALICATE - BICO MEIA CANA CURTO 4.1/2
+20
+R$...
+2025-08-26 20:52:47,688 - INFO -    ✅ Linha 4 válida: 1920911
+ALICATE - DE CORTE DIAGONAL 6.1/2 - COM CA...
+2025-08-26 20:52:47,704 - INFO -    ✅ Linha 5 válida: 1920912
+ALICATE - PROFISSIONAL 8' AÇO
+18
+R$ 47,80
+...
+2025-08-26 20:52:47,705 - INFO - 📊 Processando 5 linhas válidas da aba 'Itens'
+2025-08-26 20:52:47,796 - INFO -    📋 Item 1: ABAFADOR PARA COMBATE A INCÊNDIO...
+2025-08-26 20:52:47,867 - INFO -    📋 Item 2: ALAVANCA - Pé De Cabra Aço Construção 3/4 80cm...
+2025-08-26 20:52:47,940 - INFO -    📋 Item 3: ALICATE - BICO MEIA CANA CURTO 4.1/2...
+2025-08-26 20:52:48,018 - INFO -    📋 Item 4: ALICATE - DE CORTE DIAGONAL 6.1/2 - COM CABO ANTI-...
+2025-08-26 20:52:48,089 - INFO -    📋 Item 5: ALICATE - PROFISSIONAL 8' AÇO...
+2025-08-26 20:52:48,089 - INFO - 📊 Total de itens extraídos da aba 'Itens' ativa: 5
+2025-08-26 20:52:48,089 - INFO - 🗂️ Processando aba 'Arquivos' para downloads...
+2025-08-26 20:52:48,296 - INFO - ✅ Aba 'Arquivos' encontrada! (Seletor: li.tab-item:has-text("Arquivos"))
+2025-08-26 20:52:48,297 - INFO - 🖱️ Clicando na aba 'Arquivos'...
+2025-08-26 20:52:51,560 - INFO - ⬇️ Procurando arquivos para download na aba 'Arquivos'...
+2025-08-26 20:52:54,768 - INFO - 📎 Encontrados 9 links de download (seletor: a.br-button.circle[href*="arquivos"])
+2025-08-26 20:52:54,783 - INFO - ⬇️ Baixando arquivo: Fazer download...
+2025-08-26 20:52:55,099 - INFO - 💾 Arquivo salvo: downloads\edital_8_0_Capa_Licitacao_PE-50_2025.pdf
+2025-08-26 20:52:59,907 - INFO - 💾 Arquivo salvo: downloads\edital_8_0_Capa_Licitacao_PE-50_2025.pdf
+2025-08-26 20:52:59,907 - INFO - ✅ Arquivo 1 baixado: edital_8_0_Capa_Licitacao_PE-50_2025.pdf
+2025-08-26 20:52:59,923 - INFO - ⬇️ Baixando arquivo: Fazer download...
+2025-08-26 20:53:00,325 - INFO - 💾 Arquivo salvo: downloads\edital_8_1_Edital---PE-50.2025-Assinados.pdf
+2025-08-26 20:53:05,082 - INFO - 💾 Arquivo salvo: downloads\edital_8_1_Edital---PE-50.2025-Assinados.pdf
+2025-08-26 20:53:05,082 - INFO - ✅ Arquivo 2 baixado: edital_8_1_Edital---PE-50.2025-Assinados.pdf
+2025-08-26 20:53:05,104 - INFO - ⬇️ Baixando arquivo: Fazer download...
+2025-08-26 20:53:05,444 - INFO - 💾 Arquivo salvo: downloads\edital_8_2_Anexo-1---Termo-de-Referencia---PE-50.2025-Assinado.pdf
+2025-08-26 20:53:10,246 - INFO - 💾 Arquivo salvo: downloads\edital_8_2_Anexo-1---Termo-de-Referencia---PE-50.2025-Assinado.pdf
+2025-08-26 20:53:10,247 - INFO - ✅ Arquivo 3 baixado: edital_8_2_Anexo-1---Termo-de-Referencia---PE-50.2025-Assinado.pdf
+2025-08-26 20:53:10,265 - INFO - ⬇️ Baixando arquivo: Fazer download...
+2025-08-26 20:53:10,594 - INFO - 💾 Arquivo salvo: downloads\edital_8_3_Anexo-2---Modelo-de-Credenciamento---PE-50.2025-Assinado.pdf
+2025-08-26 20:53:15,398 - INFO - 💾 Arquivo salvo: downloads\edital_8_3_Anexo-2---Modelo-de-Credenciamento---PE-50.2025-Assinado.pdf
+2025-08-26 20:53:15,399 - INFO - ✅ Arquivo 4 baixado: edital_8_3_Anexo-2---Modelo-de-Credenciamento---PE-50.2025-Assinado.pdf
+2025-08-26 20:53:15,415 - INFO - ⬇️ Baixando arquivo: Fazer download...
+2025-08-26 20:53:15,730 - INFO - 💾 Arquivo salvo: downloads\edital_8_4_Anexo-3---Declaracoes-diversas---PE-50.2025-Assinados.pdf
+2025-08-26 20:53:20,525 - INFO - 💾 Arquivo salvo: downloads\edital_8_4_Anexo-3---Declaracoes-diversas---PE-50.2025-Assinados.pdf
+2025-08-26 20:53:20,526 - INFO - ✅ Arquivo 5 baixado: edital_8_4_Anexo-3---Declaracoes-diversas---PE-50.2025-Assinados.pdf
+2025-08-26 20:53:20,526 - INFO - 📊 Total de arquivos baixados da aba 'Arquivos': 5
+2025-08-26 20:53:20,526 - INFO - 🔍 Procurando botão 'Acessar contratação'...
+2025-08-26 20:53:20,536 - INFO - ✅ Botão 'Acessar contratação' encontrado! (Seletor: button:has-text('Acessar contratação'))
+2025-08-26 20:53:25,024 - INFO - 📂 Acessou contratação com sucesso!
+2025-08-26 20:53:25,024 - INFO - ✅ Edital 9 processado com sucesso!
+2025-08-26 20:53:25,025 - INFO -    Título: Edital nº PE 50/2025
+2025-08-26 20:53:25,025 - INFO -    Organização: MUNICIPIO DE PERUIBE
+2025-08-26 20:53:25,025 - INFO -    Itens na aba Itens: 5
+2025-08-26 20:53:25,026 - INFO -    Arquivos baixados: 5
+2025-08-26 20:53:25,026 - INFO - 🔙 Voltando para lista de editais...
+2025-08-26 20:53:35,775 - INFO - ✅ Edital 9 adicionado à lista
+2025-08-26 20:53:37,793 - INFO - 
+🔄 Processando edital 10/10
+2025-08-26 20:53:37,794 - INFO - 
+==================================================
+2025-08-26 20:53:37,794 - INFO - 📄 PROCESSANDO EDITAL 10
+2025-08-26 20:53:37,794 - INFO - ==================================================
+2025-08-26 20:53:39,827 - INFO - 📋 Texto do card: Edital nº 27502/2025
+Id contratação PNCP: 39467292000102-1-000053/2025
+Modalidade da Contratação: Le...
+2025-08-26 20:53:39,832 - INFO - 🔗 Link do edital: /editais/39467292000102/2025/53
+2025-08-26 20:54:15,909 - INFO - 🖱️ Clicando no edital 10...
+2025-08-26 20:54:30,419 - INFO - 📍 URL atual: https://pncp.gov.br/app/editais/39467292000102/2025/53
+2025-08-26 20:54:30,419 - INFO - 📋 Extraindo informações detalhadas...
+2025-08-26 20:54:32,452 - INFO - 📊 Processando APENAS aba 'Itens' ativa para extrair dados...
+2025-08-26 20:55:06,122 - INFO - 🎯 Garantindo que aba 'Itens' está ativa...
+2025-08-26 20:55:06,130 - INFO - ✅ Aba 'Itens' encontrada! (Seletor: li.tab-item:has-text("Itens"))
+2025-08-26 20:55:06,183 - INFO - 📊 Aba 'Itens' já está ativa
+2025-08-26 20:55:10,856 - INFO - 📊 Extraindo itens APENAS da tabela visível da aba 'Itens'...
+2025-08-26 20:55:14,119 - INFO - 🔍 Testando seletor: div[role="tabpanel"]:not([hidden]) datatable-body-row
+2025-08-26 20:55:16,129 - INFO - 🔍 Testando seletor: div[aria-hidden="false"] datatable-body-row
+2025-08-26 20:55:18,151 - INFO - 🔍 Testando seletor: div.tab-content:not(.d-none) datatable-body-row
+2025-08-26 20:55:20,166 - INFO - 🔍 Testando seletor: div.active datatable-body-row
+2025-08-26 20:55:22,181 - INFO - 🔍 Testando seletor: datatable-body-row:visible
+2025-08-26 20:55:24,199 - INFO - 📊 Encontradas 4 linhas com seletor: datatable-body-row:visible
+2025-08-26 20:55:24,219 - INFO -    ✅ Linha 1 válida: 1
+Imóvel urbano, localizado na Rua Marechal Deodor...
+2025-08-26 20:55:24,234 - INFO -    ✅ Linha 2 válida: 2
+Imóvel urbano, localizado na Avenida Jornalista ...
+2025-08-26 20:55:24,248 - INFO -    ✅ Linha 3 válida: 3
+Imóvel urbano, localizado na Avenida Brasília, s...
+2025-08-26 20:55:24,264 - INFO -    ✅ Linha 4 válida: 4
+Imóvel urbano, localizado na Alameda Navarro de ...
+2025-08-26 20:55:24,264 - INFO - 📊 Processando 4 linhas válidas da aba 'Itens'
+2025-08-26 20:55:24,367 - INFO -    📋 Item 1: Imóvel urbano, localizado na Rua Marechal Deodoro ...
+2025-08-26 20:55:24,462 - INFO -    📋 Item 2: Imóvel urbano, localizado na Avenida Jornalista Ro...
+2025-08-26 20:55:24,559 - INFO -    📋 Item 3: Imóvel urbano, localizado na Avenida Brasília, s/n...
+2025-08-26 20:55:24,657 - INFO -    📋 Item 4: Imóvel urbano, localizado na Alameda Navarro de An...
+2025-08-26 20:55:24,657 - INFO - 📊 Total de itens extraídos da aba 'Itens' ativa: 4
+2025-08-26 20:55:24,658 - INFO - 🗂️ Processando aba 'Arquivos' para downloads...
+2025-08-26 20:55:24,907 - INFO - ✅ Aba 'Arquivos' encontrada! (Seletor: li.tab-item:has-text("Arquivos"))
+2025-08-26 20:55:24,907 - INFO - 🖱️ Clicando na aba 'Arquivos'...
+2025-08-26 20:55:28,169 - INFO - ⬇️ Procurando arquivos para download na aba 'Arquivos'...
+2025-08-26 20:55:31,386 - INFO - 📎 Encontrados 2 links de download (seletor: a.br-button.circle[href*="arquivos"])
+2025-08-26 20:55:31,402 - INFO - ⬇️ Baixando arquivo: Fazer download...
+2025-08-26 20:55:32,361 - INFO - 💾 Arquivo salvo: downloads\edital_9_0_documento.pdf
+2025-08-26 20:55:36,619 - INFO - 💾 Arquivo salvo: downloads\edital_9_0_documento.pdf
+2025-08-26 20:55:36,619 - INFO - ✅ Arquivo 1 baixado: edital_9_0_documento.pdf
+2025-08-26 20:55:36,638 - INFO - ⬇️ Baixando arquivo: Fazer download...
+2025-08-26 20:56:36,660 - WARNING - ⚠️ Erro ao clicar no link de download: Locator.click: Timeout 60000ms exceeded.
+Call log:
+  - waiting for locator("a.br-button.circle[href*=\"arquivos\"]").nth(1)
+    - locator resolved to <a type="button" target="_blank" _ngcontent-yhl-c74="" class="br-button circle" aria-label="Fazer download" href="api/orgaos/39467292000102/compras/2025/53/arquivos/0?ignorarExclusao=false">…</a>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    116 × waiting for element to be visible, enabled and stable
+        - element is not visible
+      - retrying click action
+        - waiting 500ms
+
+2025-08-26 20:56:36,661 - INFO - 📊 Total de arquivos baixados da aba 'Arquivos': 1
+2025-08-26 20:56:36,661 - INFO - 🔍 Procurando botão 'Acessar contratação'...
+2025-08-26 20:56:36,672 - INFO - ✅ Botão 'Acessar contratação' encontrado! (Seletor: button:has-text('Acessar contratação'))
+2025-08-26 20:56:41,256 - INFO - 📂 Acessou contratação com sucesso!
+2025-08-26 20:56:41,256 - INFO - ✅ Edital 10 processado com sucesso!
+2025-08-26 20:56:41,256 - INFO -    Título: Edital nº 27502/2025
+2025-08-26 20:56:41,257 - INFO -    Organização: SECRETARIA DE GESTAO E GOVERNO DIGITAL
+2025-08-26 20:56:41,257 - INFO -    Itens na aba Itens: 4
+2025-08-26 20:56:41,257 - INFO -    Arquivos baixados: 1
+2025-08-26 20:56:41,258 - INFO - 🔙 Voltando para lista de editais...
+2025-08-26 20:56:48,162 - INFO - ✅ Edital 10 adicionado à lista
+2025-08-26 20:56:50,200 - INFO - 🎉 Scraping com extração APENAS da aba 'Itens' concluído! 10 editais coletados
+2025-08-26 20:56:50,201 - INFO - 🎉 SUCESSO! 10 editais coletados
+2025-08-26 20:56:50,201 - INFO - 
+--- EDITAL 1 ---
+2025-08-26 20:56:50,201 - INFO - 📋 Título: Edital de Chamamento Público nº 108/2025
+2025-08-26 20:56:50,202 - INFO - 🆔 PNCP ID: 63106843000197-1-000186/2025
+2025-08-26 20:56:50,207 - INFO - 🏢 Organização: CONSELHO REGIONAL DE MEDICINA DO ESTADO DE SAO PAULO
+2025-08-26 20:56:50,208 - INFO - 🏙️ Município: São Paulo
+2025-08-26 20:56:50,209 - INFO - 📝 Modalidade: Credenciamento
+2025-08-26 20:56:50,209 - INFO - 💰 Valor Total: R$ 0.0
+2025-08-26 20:56:50,209 - INFO - 📊 Aba Itens encontrada: True
+2025-08-26 20:56:50,210 - INFO - 📊 Itens extraídos APENAS da aba 'Itens': 1
+2025-08-26 20:56:50,210 - INFO - 🗂️ Aba Arquivos encontrada: True
+2025-08-26 20:56:50,210 - INFO - ⬇️ Arquivos baixados: 4
+2025-08-26 20:56:50,211 - INFO -    📊 ITENS DA ABA 'ITENS' (APENAS):
+2025-08-26 20:56:50,211 - INFO -       1. Leiloeiros Leiloeiros...
+2025-08-26 20:56:50,211 - INFO -          Qtd: 1 | Valor: 0.0001
+2025-08-26 20:56:50,211 - INFO -          Método: angular_items_tab_only
+2025-08-26 20:56:50,212 - INFO -    🗂️ ARQUIVOS DA ABA 'ARQUIVOS':
+2025-08-26 20:56:50,212 - INFO -       1. edital_0_0_Edital.pdf (569508 bytes)
+2025-08-26 20:56:50,212 - INFO -       2. edital_0_1_Modelos+-+Anexos.docx (42121 bytes)
+2025-08-26 20:56:50,213 - INFO -       3. edital_0_2_Esclarecimento_1.pdf (427547 bytes)
+2025-08-26 20:56:50,213 - INFO -       4. edital_0_3_Esclarecimento_2.pdf (423950 bytes)
+2025-08-26 20:56:50,213 - INFO - 
+--- EDITAL 2 ---
+2025-08-26 20:56:50,214 - INFO - 📋 Título: Edital nº 55/2025
+2025-08-26 20:56:50,214 - INFO - 🆔 PNCP ID: 46392171000104-1-000071/2025
+2025-08-26 20:56:50,214 - INFO - 🏢 Organização: SECRETARIA MUNICIPAL DE INFRAESTRUTURA URBANA E OBRAS
+2025-08-26 20:56:50,215 - INFO - 🏙️ Município: São Paulo
+2025-08-26 20:56:50,215 - INFO - 📝 Modalidade: Concorrência - Presencial
+2025-08-26 20:56:50,217 - INFO - 💰 Valor Total: R$ 25736867.19
+2025-08-26 20:56:50,217 - INFO - 📊 Aba Itens encontrada: True
+2025-08-26 20:56:50,218 - INFO - 📊 Itens extraídos APENAS da aba 'Itens': 1
+2025-08-26 20:56:50,224 - INFO - 🗂️ Aba Arquivos encontrada: True
+2025-08-26 20:56:50,224 - INFO - ⬇️ Arquivos baixados: 1
+2025-08-26 20:56:50,225 - INFO -    📊 ITENS DA ABA 'ITENS' (APENAS):
+2025-08-26 20:56:50,225 - INFO -       1. Obras Civis Públicas ( Construção )...
+2025-08-26 20:56:50,226 - INFO -          Qtd: 1 | Valor: 25736867.19
+2025-08-26 20:56:50,226 - INFO -          Método: angular_items_tab_only
+2025-08-26 20:56:50,226 - INFO -    🗂️ ARQUIVOS DA ABA 'ARQUIVOS':
+2025-08-26 20:56:50,227 - INFO -       1. edital_1_0_92505803900232025000.zip (8873270 bytes)
+2025-08-26 20:56:50,227 - INFO - 
+--- EDITAL 3 ---
+2025-08-26 20:56:50,227 - INFO - 📋 Título: Aviso de Contratação Direta nº 90007/2025
+2025-08-26 20:56:50,227 - INFO - 🆔 PNCP ID: 46377800000127-1-003874/2025
+2025-08-26 20:56:50,228 - INFO - 🏢 Organização: SAO PAULO SECRETARIA DA SEGURANCA PUBLICA
+2025-08-26 20:56:50,228 - INFO - 🏙️ Município: São Paulo
+2025-08-26 20:56:50,228 - INFO - 📝 Modalidade: Dispensa
+2025-08-26 20:56:50,228 - INFO - 💰 Valor Total: R$ 23439.4
+2025-08-26 20:56:50,229 - INFO - 📊 Aba Itens encontrada: True
+2025-08-26 20:56:50,229 - INFO - 📊 Itens extraídos APENAS da aba 'Itens': 3
+2025-08-26 20:56:50,229 - INFO - 🗂️ Aba Arquivos encontrada: True
+2025-08-26 20:56:50,230 - INFO - ⬇️ Arquivos baixados: 1
+2025-08-26 20:56:50,230 - INFO -    📊 ITENS DA ABA 'ITENS' (APENAS):
+2025-08-26 20:56:50,230 - INFO -       1. Guardanapo De Papel...
+2025-08-26 20:56:50,231 - INFO -          Qtd: 300 | Valor: 2994.0
+2025-08-26 20:56:50,231 - INFO -          Método: angular_items_tab_only
+2025-08-26 20:56:50,231 - INFO -       2. Colher Descartável...
+2025-08-26 20:56:50,232 - INFO -          Qtd: 140 | Valor: 1485.4
+2025-08-26 20:56:50,232 - INFO -          Método: angular_items_tab_only
+2025-08-26 20:56:50,232 - INFO -       3. Toalha De Papel...
+2025-08-26 20:56:50,232 - INFO -          Qtd: 1000 | Valor: 18960.0
+2025-08-26 20:56:50,233 - INFO -          Método: angular_items_tab_only
+2025-08-26 20:56:50,233 - INFO -    🗂️ ARQUIVOS DA ABA 'ARQUIVOS':
+2025-08-26 20:56:50,233 - INFO -       1. edital_2_0_AC+E+SEUS+ANEXOS.pdf (1402899 bytes)
+2025-08-26 20:56:50,243 - INFO - 
+--- EDITAL 4 ---
+2025-08-26 20:56:50,244 - INFO - 📋 Título: Edital nº 54/2025
+2025-08-26 20:56:50,244 - INFO - 🆔 PNCP ID: 46392171000104-1-000070/2025
+2025-08-26 20:56:50,245 - INFO - 🏢 Organização: SECRETARIA MUNICIPAL DE INFRAESTRUTURA URBANA E OBRAS
+2025-08-26 20:56:50,245 - INFO - 🏙️ Município: São Paulo
+2025-08-26 20:56:50,245 - INFO - 📝 Modalidade: Concorrência - Presencial
+2025-08-26 20:56:50,245 - INFO - 💰 Valor Total: R$ 73278525.96
+2025-08-26 20:56:50,246 - INFO - 📊 Aba Itens encontrada: True
+2025-08-26 20:56:50,246 - INFO - 📊 Itens extraídos APENAS da aba 'Itens': 1
+2025-08-26 20:56:50,248 - INFO - 🗂️ Aba Arquivos encontrada: True
+2025-08-26 20:56:50,249 - INFO - ⬇️ Arquivos baixados: 1
+2025-08-26 20:56:50,249 - INFO -    📊 ITENS DA ABA 'ITENS' (APENAS):
+2025-08-26 20:56:50,250 - INFO -       1. Obras Civis Públicas ( Construção )...
+2025-08-26 20:56:50,250 - INFO -          Qtd: 1 | Valor: 73278525.96
+2025-08-26 20:56:50,250 - INFO -          Método: angular_items_tab_only
+2025-08-26 20:56:50,251 - INFO -    🗂️ ARQUIVOS DA ABA 'ARQUIVOS':
+2025-08-26 20:56:50,251 - INFO -       1. edital_3_0_92505803900282025000.zip (503555 bytes)
+2025-08-26 20:56:50,251 - INFO - 
+--- EDITAL 5 ---
+2025-08-26 20:56:50,252 - INFO - 📋 Título: Aviso de Contratação Direta nº 99596/2025
+2025-08-26 20:56:50,252 - INFO - 🆔 PNCP ID: 63025530000104-1-003570/2025
+2025-08-26 20:56:50,253 - INFO - 🏢 Organização: UNIVERSIDADE DE SAO PAULO
+2025-08-26 20:56:50,253 - INFO - 🏙️ Município: São Paulo
+2025-08-26 20:56:50,253 - INFO - 📝 Modalidade: Dispensa
+2025-08-26 20:56:50,254 - INFO - 💰 Valor Total: R$ 11048.68
+2025-08-26 20:56:50,254 - INFO - 📊 Aba Itens encontrada: True
+2025-08-26 20:56:50,254 - INFO - 📊 Itens extraídos APENAS da aba 'Itens': 3
+2025-08-26 20:56:50,255 - INFO - 🗂️ Aba Arquivos encontrada: True
+2025-08-26 20:56:50,255 - INFO - ⬇️ Arquivos baixados: 1
+2025-08-26 20:56:50,255 - INFO -    📊 ITENS DA ABA 'ITENS' (APENAS):
+2025-08-26 20:56:50,255 - INFO -       1. Peças E Acessórios Purificador Água...
+2025-08-26 20:56:50,256 - INFO -          Qtd: 1 | Valor: 3680.09
+2025-08-26 20:56:50,256 - INFO -          Método: angular_items_tab_only
+2025-08-26 20:56:50,256 - INFO -       2. Peças E Acessórios Purificador Água...
+2025-08-26 20:56:50,257 - INFO -          Qtd: 1 | Valor: 3656.21
+2025-08-26 20:56:50,257 - INFO -          Método: angular_items_tab_only
+2025-08-26 20:56:50,257 - INFO -       3. Peças E Acessórios Purificador Água...
+2025-08-26 20:56:50,258 - INFO -          Qtd: 2 | Valor: 3712.38
+2025-08-26 20:56:50,258 - INFO -          Método: angular_items_tab_only
+2025-08-26 20:56:50,258 - INFO -    🗂️ ARQUIVOS DA ABA 'ARQUIVOS':
+2025-08-26 20:56:50,258 - INFO -       1. edital_4_0_ACD+31-2025.pdf (1008000 bytes)
+2025-08-26 20:56:50,259 - INFO - 
+--- EDITAL 6 ---
+2025-08-26 20:56:50,261 - INFO - 📋 Título: Edital nº 009/2025
+2025-08-26 20:56:50,261 - INFO - 🆔 PNCP ID: 46523163000150-1-000392/2025
+2025-08-26 20:56:50,262 - INFO - 🏢 Organização: MUNICIPIO DE MAIRIPORA
+2025-08-26 20:56:50,262 - INFO - 🏙️ Município: Mairiporã
+2025-08-26 20:56:50,262 - INFO - 📝 Modalidade: Concorrência - Eletrônica
+2025-08-26 20:56:50,262 - INFO - 💰 Valor Total: R$ 500162.97
+2025-08-26 20:56:50,263 - INFO - 📊 Aba Itens encontrada: True
+2025-08-26 20:56:50,267 - INFO - 📊 Itens extraídos APENAS da aba 'Itens': 1
+2025-08-26 20:56:50,267 - INFO - 🗂️ Aba Arquivos encontrada: True
+2025-08-26 20:56:50,268 - INFO - ⬇️ Arquivos baixados: 5
+2025-08-26 20:56:50,268 - INFO -    📊 ITENS DA ABA 'ITENS' (APENAS):
+2025-08-26 20:56:50,268 - INFO -       1. CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA EXECUÇÃO...
+2025-08-26 20:56:50,268 - INFO -          Qtd: 1 | Valor: 500162.97
+2025-08-26 20:56:50,269 - INFO -          Método: angular_items_tab_only
+2025-08-26 20:56:50,269 - INFO -    🗂️ ARQUIVOS DA ABA 'ARQUIVOS':
+2025-08-26 20:56:50,269 - INFO -       1. edital_5_0_EDITAL_CE_0092025__DRENAG_E_PAV_RUA_LAZARO_CANDIDO_DE_MORAES_NETO.pdf (730766 bytes)
+2025-08-26 20:56:50,270 - INFO -       2. edital_5_1_ANEXOS_I_AO_VIII__CE_0092025__DRENAG_E_PAV_RUA_LAZARO_CANDIDO_DE_MORAES_NETO.docx (115218 bytes)
+2025-08-26 20:56:50,270 - INFO -       3. edital_5_2_ANEXO_IX__TERMO_DE_REFERENCIA_RUA_LAZARO.pdf (754680 bytes)
+2025-08-26 20:56:50,270 - INFO -       4. edital_5_3_ANEXO_X__MEMORIAL_DESCRITIVO.pdf (541353 bytes)
+2025-08-26 20:56:50,271 - INFO -       5. edital_5_4_ANEXO_XI__PLANILHA_ORCAMENTARIA_R_LAZARO.pdf (826826 bytes)
+2025-08-26 20:56:50,271 - INFO - 
+--- EDITAL 7 ---
+2025-08-26 20:56:50,272 - INFO - 📋 Título: Edital nº 53/2025
+2025-08-26 20:56:50,273 - INFO - 🆔 PNCP ID: 46392171000104-1-000069/2025
+2025-08-26 20:56:50,273 - INFO - 🏢 Organização: SECRETARIA MUNICIPAL DE INFRAESTRUTURA URBANA E OBRAS
+2025-08-26 20:56:50,274 - INFO - 🏙️ Município: São Paulo
+2025-08-26 20:56:50,274 - INFO - 📝 Modalidade: Concorrência - Presencial
+2025-08-26 20:56:50,275 - INFO - 💰 Valor Total: R$ 48414769.31
+2025-08-26 20:56:50,275 - INFO - 📊 Aba Itens encontrada: True
+2025-08-26 20:56:50,275 - INFO - 📊 Itens extraídos APENAS da aba 'Itens': 1
+2025-08-26 20:56:50,275 - INFO - 🗂️ Aba Arquivos encontrada: True
+2025-08-26 20:56:50,276 - INFO - ⬇️ Arquivos baixados: 1
+2025-08-26 20:56:50,276 - INFO -    📊 ITENS DA ABA 'ITENS' (APENAS):
+2025-08-26 20:56:50,276 - INFO -       1. Obras Civis Públicas ( Construção )...
+2025-08-26 20:56:50,277 - INFO -          Qtd: 1 | Valor: 48414769.31
+2025-08-26 20:56:50,277 - INFO -          Método: angular_items_tab_only
+2025-08-26 20:56:50,277 - INFO -    🗂️ ARQUIVOS DA ABA 'ARQUIVOS':
+2025-08-26 20:56:50,283 - INFO -       1. edital_6_0_92505803900272025000.zip (498469 bytes)
+2025-08-26 20:56:50,284 - INFO - 
+--- EDITAL 8 ---
+2025-08-26 20:56:50,284 - INFO - 📋 Título: Edital nº 50/2025
+2025-08-26 20:56:50,285 - INFO - 🆔 PNCP ID: 46578514000120-1-000292/2025
+2025-08-26 20:56:50,285 - INFO - 🏢 Organização: MUNICIPIO DE PERUIBE
+2025-08-26 20:56:50,285 - INFO - 🏙️ Município: Peruíbe
+2025-08-26 20:56:50,285 - INFO - 📝 Modalidade: Pregão - Eletrônico
+2025-08-26 20:56:50,286 - INFO - 💰 Valor Total: R$ 102645.89
+2025-08-26 20:56:50,287 - INFO - 📊 Aba Itens encontrada: True
+2025-08-26 20:56:50,288 - INFO - 📊 Itens extraídos APENAS da aba 'Itens': 5
+2025-08-26 20:56:50,289 - INFO - 🗂️ Aba Arquivos encontrada: True
+2025-08-26 20:56:50,289 - INFO - ⬇️ Arquivos baixados: 1
+2025-08-26 20:56:50,290 - INFO -    📊 ITENS DA ABA 'ITENS' (APENAS):
+2025-08-26 20:56:50,291 - INFO -       1. ABAFADOR PARA COMBATE A INCÊNDIO...
+2025-08-26 20:56:50,292 - INFO -          Qtd: 4 | Valor: 425.88
+2025-08-26 20:56:50,292 - INFO -          Método: angular_items_tab_only
+2025-08-26 20:56:50,293 - INFO -       2. ALAVANCA - Pé De Cabra Aço Construção 3/4 80cm...
+2025-08-26 20:56:50,293 - INFO -          Qtd: 12 | Valor: 635.4
+2025-08-26 20:56:50,293 - INFO -          Método: angular_items_tab_only
+2025-08-26 20:56:50,293 - INFO -       3. ALICATE - BICO MEIA CANA CURTO 4.1/2...
+2025-08-26 20:56:50,294 - INFO -          Qtd: 20 | Valor: 1285.4
+2025-08-26 20:56:50,294 - INFO -          Método: angular_items_tab_only
+2025-08-26 20:56:50,294 - INFO -       4. ALICATE - DE CORTE DIAGONAL 6.1/2 - COM CABO ANTI-...
+2025-08-26 20:56:50,295 - INFO -          Qtd: 18 | Valor: 1921.32
+2025-08-26 20:56:50,295 - INFO -          Método: angular_items_tab_only
+2025-08-26 20:56:50,295 - INFO -       5. ALICATE - PROFISSIONAL 8' AÇO...
+2025-08-26 20:56:50,295 - INFO -          Qtd: 18 | Valor: 860.4
+2025-08-26 20:56:50,296 - INFO -          Método: angular_items_tab_only
+2025-08-26 20:56:50,300 - INFO -    🗂️ ARQUIVOS DA ABA 'ARQUIVOS':
+2025-08-26 20:56:50,301 - INFO -       1. edital_7_0_3280409e70af4f08986eb35912e6adc3AVPE+502025.pdf (273278 bytes)
+2025-08-26 20:56:50,305 - INFO - 
+--- EDITAL 9 ---
+2025-08-26 20:56:50,308 - INFO - 📋 Título: Edital nº PE 50/2025
+2025-08-26 20:56:50,309 - INFO - 🆔 PNCP ID: 46578514000120-1-000291/2025
+2025-08-26 20:56:50,309 - INFO - 🏢 Organização: MUNICIPIO DE PERUIBE
+2025-08-26 20:56:50,309 - INFO - 🏙️ Município: Peruíbe
+2025-08-26 20:56:50,310 - INFO - 📝 Modalidade: Pregão - Eletrônico
+2025-08-26 20:56:50,310 - INFO - 💰 Valor Total: R$ 102645.89
+2025-08-26 20:56:50,310 - INFO - 📊 Aba Itens encontrada: True
+2025-08-26 20:56:50,311 - INFO - 📊 Itens extraídos APENAS da aba 'Itens': 5
+2025-08-26 20:56:50,318 - INFO - 🗂️ Aba Arquivos encontrada: True
+2025-08-26 20:56:50,318 - INFO - ⬇️ Arquivos baixados: 5
+2025-08-26 20:56:50,321 - INFO -    📊 ITENS DA ABA 'ITENS' (APENAS):
+2025-08-26 20:56:50,322 - INFO -       1. ABAFADOR PARA COMBATE A INCÊNDIO...
+2025-08-26 20:56:50,323 - INFO -          Qtd: 4 | Valor: 425.88
+2025-08-26 20:56:50,324 - INFO -          Método: angular_items_tab_only
+2025-08-26 20:56:50,325 - INFO -       2. ALAVANCA - Pé De Cabra Aço Construção 3/4 80cm...
+2025-08-26 20:56:50,325 - INFO -          Qtd: 12 | Valor: 635.4
+2025-08-26 20:56:50,330 - INFO -          Método: angular_items_tab_only
+2025-08-26 20:56:50,330 - INFO -       3. ALICATE - BICO MEIA CANA CURTO 4.1/2...
+2025-08-26 20:56:50,330 - INFO -          Qtd: 20 | Valor: 1285.4
+2025-08-26 20:56:50,331 - INFO -          Método: angular_items_tab_only
+2025-08-26 20:56:50,331 - INFO -       4. ALICATE - DE CORTE DIAGONAL 6.1/2 - COM CABO ANTI-...
+2025-08-26 20:56:50,332 - INFO -          Qtd: 18 | Valor: 1921.32
+2025-08-26 20:56:50,332 - INFO -          Método: angular_items_tab_only
+2025-08-26 20:56:50,333 - INFO -       5. ALICATE - PROFISSIONAL 8' AÇO...
+2025-08-26 20:56:50,333 - INFO -          Qtd: 18 | Valor: 860.4
+2025-08-26 20:56:50,333 - INFO -          Método: angular_items_tab_only
+2025-08-26 20:56:50,333 - INFO -    🗂️ ARQUIVOS DA ABA 'ARQUIVOS':
+2025-08-26 20:56:50,334 - INFO -       1. edital_8_0_Capa_Licitacao_PE-50_2025.pdf (63505 bytes)
+2025-08-26 20:56:50,334 - INFO -       2. edital_8_1_Edital---PE-50.2025-Assinados.pdf (930186 bytes)
+2025-08-26 20:56:50,335 - INFO -       3. edital_8_2_Anexo-1---Termo-de-Referencia---PE-50.2025-Assinado.pdf (595563 bytes)
+2025-08-26 20:56:50,335 - INFO -       4. edital_8_3_Anexo-2---Modelo-de-Credenciamento---PE-50.2025-Assinado.pdf (221433 bytes)
+2025-08-26 20:56:50,337 - INFO -       5. edital_8_4_Anexo-3---Declaracoes-diversas---PE-50.2025-Assinados.pdf (224409 bytes)
+2025-08-26 20:56:50,337 - INFO - 
+--- EDITAL 10 ---
+2025-08-26 20:56:50,339 - INFO - 📋 Título: Edital nº 27502/2025
+2025-08-26 20:56:50,339 - INFO - 🆔 PNCP ID: 39467292000102-1-000053/2025
+2025-08-26 20:56:50,339 - INFO - 🏢 Organização: SECRETARIA DE GESTAO E GOVERNO DIGITAL
+2025-08-26 20:56:50,340 - INFO - 🏙️ Município: São Paulo
+2025-08-26 20:56:50,347 - INFO - 📝 Modalidade: Leilão - Eletrônico
+2025-08-26 20:56:50,356 - INFO - 💰 Valor Total: R$ 3139000.0
+2025-08-26 20:56:50,366 - INFO - 📊 Aba Itens encontrada: True
+2025-08-26 20:56:50,367 - INFO - 📊 Itens extraídos APENAS da aba 'Itens': 4
+2025-08-26 20:56:50,367 - INFO - 🗂️ Aba Arquivos encontrada: True
+2025-08-26 20:56:50,367 - INFO - ⬇️ Arquivos baixados: 1
+2025-08-26 20:56:50,367 - INFO -    📊 ITENS DA ABA 'ITENS' (APENAS):
+2025-08-26 20:56:50,368 - INFO -       1. Imóvel urbano, localizado na Rua Marechal Deodoro ...
+2025-08-26 20:56:50,368 - INFO -          Qtd: 1 | Valor: 400000.0
+2025-08-26 20:56:50,369 - INFO -          Método: angular_items_tab_only
+2025-08-26 20:56:50,369 - INFO -       2. Imóvel urbano, localizado na Avenida Jornalista Ro...
+2025-08-26 20:56:50,369 - INFO -          Qtd: 1 | Valor: 2128000.0
+2025-08-26 20:56:50,370 - INFO -          Método: angular_items_tab_only
+2025-08-26 20:56:50,372 - INFO -       3. Imóvel urbano, localizado na Avenida Brasília, s/n...
+2025-08-26 20:56:50,373 - INFO -          Qtd: 1 | Valor: 366000.0
+2025-08-26 20:56:50,373 - INFO -          Método: angular_items_tab_only
+2025-08-26 20:56:50,374 - INFO -       4. Imóvel urbano, localizado na Alameda Navarro de An...
+2025-08-26 20:56:50,374 - INFO -          Qtd: 1 | Valor: 245000.0
+2025-08-26 20:56:50,375 - INFO -          Método: angular_items_tab_only
+2025-08-26 20:56:50,375 - INFO -    🗂️ ARQUIVOS DA ABA 'ARQUIVOS':
+2025-08-26 20:56:50,376 - INFO -       1. edital_9_0_documento.pdf (1733383 bytes)
+2025-08-26 20:56:52,279 - INFO - 🔒 Navegador fechado
+2025-08-26 20:56:52,280 - INFO - 
+============================================================
+2025-08-26 20:56:52,281 - INFO - 📊 RESUMO FINAL - APENAS ABA 'ITENS'
+2025-08-26 20:56:52,281 - INFO - ============================================================
+2025-08-26 20:56:52,281 - INFO - 📈 Total de editais coletados: 10
+2025-08-26 20:56:52,289 - INFO - 💾 Arquivo JSON salvo: editais_items_only_20250826_205652.json
+2025-08-26 20:56:52,290 - INFO - 💾 Salvando 10 editais no banco...
+2025-08-26 20:56:52,315 - INFO - ✅ Salvos 10 editais no banco!
+2025-08-26 20:56:52,315 - INFO - 🗄️ Banco de dados atualizado: 10 editais
+2025-08-26 20:56:52,316 - INFO - 
+📊 Estatísticas FINAIS - APENAS ABA 'ITENS':
+2025-08-26 20:56:52,316 - INFO -    📋 Total de editais: 10
+2025-08-26 20:56:52,317 - INFO -    📊 Abas 'Itens' encontradas: 10
+2025-08-26 20:56:52,318 - INFO -    📊 Editais com itens extraídos (APENAS aba Itens): 10
+2025-08-26 20:56:52,318 - INFO -    📊 Total de itens extraídos (APENAS aba Itens): 25
+2025-08-26 20:56:52,318 - INFO -    🗂️ Abas 'Arquivos' encontradas: 10
+2025-08-26 20:56:52,319 - INFO -    ⬇️ Total de arquivos baixados: 21
+2025-08-26 20:56:52,319 - INFO - 
+📸 Arquivos de debug gerados:
+2025-08-26 20:56:52,319 - INFO -    🖼️ debug_*.png (screenshots de cada etapa)
+2025-08-26 20:56:52,319 - INFO -    📁 downloads/ (arquivos baixados)
+2025-08-27 11:31:02,860 - INFO - 🎯 Iniciando PNCP Scraper - APENAS aba 'Itens'
+2025-08-27 11:31:02,860 - INFO - 📊 Extração RESTRITA à aba 'Itens' ativa
+2025-08-27 11:31:02,861 - INFO - 🗂️ Downloads da aba 'Arquivos'
+2025-08-27 11:31:02,862 - INFO - 🧭 Iniciando browser...
+2025-08-27 11:31:06,466 - INFO - ✅ Navegador iniciado com sucesso
+2025-08-27 11:31:06,467 - INFO - 
+============================================================
+2025-08-27 11:31:06,468 - INFO - 🎯 PROCESSANDO EDITAIS - APENAS ABA 'ITENS' - UF: SP
+2025-08-27 11:31:06,469 - INFO - ============================================================
+2025-08-27 11:31:06,470 - INFO - 🚀 Iniciando scraping com extração APENAS da aba 'Itens' para UF: SP
+2025-08-27 11:31:06,470 - INFO - 📊 Aba 'Itens' → APENAS dados da tabela visível
+2025-08-27 11:31:06,471 - INFO - 🗂️ Aba 'Arquivos' → Downloads de arquivos
+2025-08-27 11:31:06,471 - INFO - 🌐 Acessando a página de editais...
+2025-08-27 11:31:13,278 - INFO - 📸 Screenshot inicial salvo
+2025-08-27 11:31:13,278 - INFO - 📍 Selecionando UF: SP...
+2025-08-27 11:31:17,860 - INFO - 📸 Screenshot UF selecionado salvo
+2025-08-27 11:31:17,861 - INFO - 🔎 Clicando no botão Pesquisar...
+2025-08-27 11:31:23,228 - INFO - 📸 Screenshot resultados salvo
+2025-08-27 11:31:26,244 - INFO - 📊 Encontrados 35 editais na página (seletor: a.br-item)
+2025-08-27 11:31:26,245 - INFO - 📊 Processando 35 de 35 editais (limitado)
+2025-08-27 11:31:26,245 - INFO - 
+🔄 Processando edital 1/35
+2025-08-27 11:31:26,246 - INFO - 
+==================================================
+2025-08-27 11:31:26,246 - INFO - 📄 PROCESSANDO EDITAL 1
+2025-08-27 11:31:26,246 - INFO - ==================================================
+2025-08-27 11:31:28,282 - INFO - 📋 Texto do card: Aviso de Contratação Direta nº 0072/2025
+Id contratação PNCP: 68020916000147-1-000234/2025
+Modalidad...
+2025-08-27 11:31:28,291 - INFO - 🔗 Link do edital: /editais/68020916000147/2025/234
+2025-08-27 11:31:28,550 - INFO - 🖱️ Clicando no edital 1...
+2025-08-27 11:31:33,071 - INFO - 📍 URL atual: https://pncp.gov.br/app/editais/68020916000147/2025/234
+2025-08-27 11:31:33,071 - INFO - 📋 Extraindo informações detalhadas...
+2025-08-27 11:31:35,110 - INFO - 📊 Processando APENAS aba 'Itens' ativa para extrair dados...
+2025-08-27 11:31:35,383 - INFO - 🎯 Garantindo que aba 'Itens' está ativa...
+2025-08-27 11:31:35,392 - INFO - ✅ Aba 'Itens' encontrada! (Seletor: li.tab-item:has-text("Itens"))
+2025-08-27 11:31:35,430 - INFO - 📊 Aba 'Itens' já está ativa
+2025-08-27 11:31:38,689 - INFO - 📊 Extraindo itens APENAS da tabela visível da aba 'Itens'...
+2025-08-27 11:31:41,945 - INFO - 🔍 Testando seletor: div[role="tabpanel"]:not([hidden]) datatable-body-row
+2025-08-27 11:31:43,972 - INFO - 🔍 Testando seletor: div[aria-hidden="false"] datatable-body-row
+2025-08-27 11:31:45,991 - INFO - 🔍 Testando seletor: div.tab-content:not(.d-none) datatable-body-row
+2025-08-27 11:31:48,016 - INFO - 🔍 Testando seletor: div.active datatable-body-row
+2025-08-27 11:31:50,042 - INFO - 🔍 Testando seletor: datatable-body-row:visible
+2025-08-27 11:31:52,136 - INFO - 📊 Encontradas 5 linhas com seletor: datatable-body-row:visible
+2025-08-27 11:31:52,204 - INFO -    ✅ Linha 1 válida: 1
+ISOLANTE TÉRMICO; FABRICADO EM ESPUMA ELASTOMÉRI...
+2025-08-27 11:31:52,280 - INFO -    ✅ Linha 2 válida: 2
+ISOLANTE TÉRMICO; FABRICADO EM ESPUMA ELASTOMERI...
+2025-08-27 11:31:52,311 - INFO -    ✅ Linha 3 válida: 3
+CABO PP 3X2,5MM
+18
+R$ 8,97
+R$ 161,46...
+2025-08-27 11:31:52,337 - INFO -    ✅ Linha 4 válida: 4
+SUPORTE SPLIT 500MM 12K A 24K (ALUMÍNIO)
+1
+R$ 18...
+2025-08-27 11:31:52,356 - INFO -    ✅ Linha 5 válida: 5
+FITA SILVER TAPE SILVERTAPE 48MMX50M BRANCA (ROL...
+2025-08-27 11:31:52,357 - INFO - 📊 Processando 5 linhas válidas da aba 'Itens'
+2025-08-27 11:31:52,501 - INFO -    📋 Item 1: ISOLANTE TÉRMICO; FABRICADO EM ESPUMA ELASTOMÉRICA...
+2025-08-27 11:31:52,632 - INFO -    📋 Item 2: ISOLANTE TÉRMICO; FABRICADO EM ESPUMA ELASTOMERICA...
+2025-08-27 11:31:52,754 - INFO -    📋 Item 3: CABO PP 3X2,5MM...
+2025-08-27 11:31:52,881 - INFO -    📋 Item 4: SUPORTE SPLIT 500MM 12K A 24K (ALUMÍNIO)...
+2025-08-27 11:31:53,006 - INFO -    📋 Item 5: FITA SILVER TAPE SILVERTAPE 48MMX50M BRANCA (ROLO)...
+2025-08-27 11:31:53,007 - INFO - 📊 Total de itens extraídos da aba 'Itens' ativa: 5
+2025-08-27 11:31:53,007 - INFO - 🗂️ Processando aba 'Arquivos' para downloads...
+2025-08-27 11:31:53,277 - INFO - ✅ Aba 'Arquivos' encontrada! (Seletor: li.tab-item:has-text("Arquivos"))
+2025-08-27 11:31:53,277 - INFO - 🖱️ Clicando na aba 'Arquivos'...
+2025-08-27 11:31:56,629 - INFO - ⬇️ Procurando arquivos para download na aba 'Arquivos'...
+2025-08-27 11:31:59,901 - INFO - 📎 Encontrados 2 links de download (seletor: a.br-button.circle[href*="arquivos"])
+2025-08-27 11:31:59,924 - INFO - ⬇️ Baixando arquivo: Fazer download...
+2025-08-27 11:32:00,483 - INFO - 💾 Arquivo salvo: downloads\edital_0_0_edital_20250827113306.pdf
+2025-08-27 11:32:05,109 - INFO - 💾 Arquivo salvo: downloads\edital_0_0_edital_20250827113306.pdf
+2025-08-27 11:32:05,110 - INFO - ✅ Arquivo 1 baixado: edital_0_0_edital_20250827113306.pdf
+2025-08-27 11:32:05,137 - INFO - ⬇️ Baixando arquivo: Fazer download...
+2025-08-27 11:33:05,165 - WARNING - ⚠️ Erro ao clicar no link de download: Locator.click: Timeout 60000ms exceeded.
+Call log:
+  - waiting for locator("a.br-button.circle[href*=\"arquivos\"]").nth(1)
+    - locator resolved to <a type="button" target="_blank" _ngcontent-igx-c74="" class="br-button circle" aria-label="Fazer download" href="api/orgaos/68020916000147/compras/2025/234/arquivos/0?ignorarExclusao=false">…</a>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    112 × waiting for element to be visible, enabled and stable
+        - element is not visible
+      - retrying click action
+        - waiting 500ms
+
+2025-08-27 11:33:05,168 - INFO - 📊 Total de arquivos baixados da aba 'Arquivos': 1
+2025-08-27 11:33:05,172 - INFO - 🔍 Procurando botão 'Acessar contratação'...
+2025-08-27 11:33:05,227 - INFO - ⚠️ Botão 'Acessar contratação' não encontrado
+2025-08-27 11:33:05,228 - INFO - ✅ Edital 1 processado com sucesso!
+2025-08-27 11:33:05,229 - INFO -    Título: Aviso de Contratação Direta nº 0072/2025
+2025-08-27 11:33:05,229 - INFO -    Organização: MUNICIPIO DE BERTIOGA
+2025-08-27 11:33:05,230 - INFO -    Itens na aba Itens: 5
+2025-08-27 11:33:05,231 - INFO -    Arquivos baixados: 1
+2025-08-27 11:33:05,231 - INFO - 🔙 Voltando para lista de editais...
+2025-08-27 11:33:09,467 - INFO - ✅ Edital 1 adicionado à lista
+2025-08-27 11:33:11,474 - INFO - 
+🔄 Processando edital 2/35
+2025-08-27 11:33:11,475 - INFO - 
+==================================================
+2025-08-27 11:33:11,475 - INFO - 📄 PROCESSANDO EDITAL 2
+2025-08-27 11:33:11,476 - INFO - ==================================================
+2025-08-27 11:33:13,522 - INFO - 📋 Texto do card: Aviso de Contratação Direta nº 90163/2025
+Id contratação PNCP: 43728245000142-1-000258/2025
+Modalida...
+2025-08-27 11:33:13,531 - INFO - 🔗 Link do edital: /editais/43728245000142/2025/258
+2025-08-27 11:33:13,745 - INFO - 🖱️ Clicando no edital 2...
+2025-08-27 11:33:18,173 - INFO - 📍 URL atual: https://pncp.gov.br/app/editais/43728245000142/2025/258
+2025-08-27 11:33:18,173 - INFO - 📋 Extraindo informações detalhadas...
+2025-08-27 11:33:20,207 - INFO - 📊 Processando APENAS aba 'Itens' ativa para extrair dados...
+2025-08-27 11:33:20,475 - INFO - 🎯 Garantindo que aba 'Itens' está ativa...
+2025-08-27 11:33:20,482 - INFO - ✅ Aba 'Itens' encontrada! (Seletor: li.tab-item:has-text("Itens"))
+2025-08-27 11:33:20,512 - INFO - 📊 Aba 'Itens' já está ativa
+2025-08-27 11:33:23,776 - INFO - 📊 Extraindo itens APENAS da tabela visível da aba 'Itens'...
+2025-08-27 11:33:27,006 - INFO - 🔍 Testando seletor: div[role="tabpanel"]:not([hidden]) datatable-body-row
+2025-08-27 11:33:29,025 - INFO - 🔍 Testando seletor: div[aria-hidden="false"] datatable-body-row
+2025-08-27 11:33:31,044 - INFO - 🔍 Testando seletor: div.tab-content:not(.d-none) datatable-body-row
+2025-08-27 11:33:33,064 - INFO - 🔍 Testando seletor: div.active datatable-body-row
+2025-08-27 11:33:35,075 - INFO - 🔍 Testando seletor: datatable-body-row:visible
+2025-08-27 11:33:37,092 - INFO - 📊 Encontradas 1 linhas com seletor: datatable-body-row:visible
+2025-08-27 11:33:37,106 - INFO -    ✅ Linha 1 válida: 1
+Porta
+1
+R$ 0,00
+R$ 0,00...
+2025-08-27 11:33:37,106 - INFO - 📊 Processando 1 linhas válidas da aba 'Itens'
+2025-08-27 11:33:37,191 - INFO -    📋 Item 1: Item 1...
+2025-08-27 11:33:37,191 - INFO - 📊 Total de itens extraídos da aba 'Itens' ativa: 1
+2025-08-27 11:33:37,191 - INFO - 🗂️ Processando aba 'Arquivos' para downloads...
+2025-08-27 11:33:37,462 - INFO - ✅ Aba 'Arquivos' encontrada! (Seletor: li.tab-item:has-text("Arquivos"))
+2025-08-27 11:33:37,463 - INFO - 🖱️ Clicando na aba 'Arquivos'...
+2025-08-27 11:33:40,791 - INFO - ⬇️ Procurando arquivos para download na aba 'Arquivos'...
+2025-08-27 11:33:44,080 - INFO - 📎 Encontrados 2 links de download (seletor: a.br-button.circle[href*="arquivos"])
+2025-08-27 11:33:44,108 - INFO - ⬇️ Baixando arquivo: Fazer download...
+2025-08-27 11:33:44,635 - INFO - 💾 Arquivo salvo: downloads\edital_1_0_01-001481-2025+-+Termo+de+Referencia+-+marcenaria+-+auditorio.pdf
+2025-08-27 11:33:49,347 - INFO - 💾 Arquivo salvo: downloads\edital_1_0_01-001481-2025+-+Termo+de+Referencia+-+marcenaria+-+auditorio.pdf
+2025-08-27 11:33:49,348 - INFO - ✅ Arquivo 1 baixado: edital_1_0_01-001481-2025+-+Termo+de+Referencia+-+marcenaria+-+auditorio.pdf
+2025-08-27 11:33:49,371 - INFO - ⬇️ Baixando arquivo: Fazer download...
+2025-08-27 11:34:49,397 - WARNING - ⚠️ Erro ao clicar no link de download: Locator.click: Timeout 60000ms exceeded.
+Call log:
+  - waiting for locator("a.br-button.circle[href*=\"arquivos\"]").nth(1)
+    - locator resolved to <a type="button" target="_blank" _ngcontent-nqj-c74="" class="br-button circle" aria-label="Fazer download" href="api/orgaos/43728245000142/compras/2025/258/arquivos/0?ignorarExclusao=false">…</a>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    116 × waiting for element to be visible, enabled and stable
+        - element is not visible
+      - retrying click action
+        - waiting 500ms
+
+2025-08-27 11:34:49,397 - INFO - 📊 Total de arquivos baixados da aba 'Arquivos': 1
+2025-08-27 11:34:49,398 - INFO - 🔍 Procurando botão 'Acessar contratação'...
+2025-08-27 11:34:49,433 - INFO - ⚠️ Botão 'Acessar contratação' não encontrado
+2025-08-27 11:34:49,433 - INFO - ✅ Edital 2 processado com sucesso!
+2025-08-27 11:34:49,434 - INFO -    Título: Aviso de Contratação Direta nº 90163/2025
+2025-08-27 11:34:49,434 - INFO -    Organização: SERVICO DE APOIO AS MICRO E PEQ EMPRESAS DE SAO PAULO
+2025-08-27 11:34:49,434 - INFO -    Itens na aba Itens: 1
+2025-08-27 11:34:49,435 - INFO -    Arquivos baixados: 1
+2025-08-27 11:34:49,435 - INFO - 🔙 Voltando para lista de editais...
+2025-08-27 11:34:53,561 - INFO - ✅ Edital 2 adicionado à lista
+2025-08-27 11:34:55,566 - INFO - 
+🔄 Processando edital 3/35
+2025-08-27 11:34:55,567 - INFO - 
+==================================================
+2025-08-27 11:34:55,567 - INFO - 📄 PROCESSANDO EDITAL 3
+2025-08-27 11:34:55,567 - INFO - ==================================================
+2025-08-27 11:34:57,608 - INFO - 📋 Texto do card: Aviso de Contratação Direta nº 119/2025
+Id contratação PNCP: 07104377000130-1-000112/2025
+Modalidade...
+2025-08-27 11:34:57,616 - INFO - 🔗 Link do edital: /editais/07104377000130/2025/112
+2025-08-27 11:34:57,864 - INFO - 🖱️ Clicando no edital 3...
+2025-08-27 11:35:02,273 - INFO - 📍 URL atual: https://pncp.gov.br/app/editais/07104377000130/2025/112
+2025-08-27 11:35:02,273 - INFO - 📋 Extraindo informações detalhadas...
+2025-08-27 11:35:04,303 - INFO - 📊 Processando APENAS aba 'Itens' ativa para extrair dados...
+2025-08-27 11:35:04,546 - INFO - 🎯 Garantindo que aba 'Itens' está ativa...
+2025-08-27 11:35:04,553 - INFO - ✅ Aba 'Itens' encontrada! (Seletor: li.tab-item:has-text("Itens"))
+2025-08-27 11:35:04,589 - INFO - 📊 Aba 'Itens' já está ativa
+2025-08-27 11:35:07,858 - INFO - 📊 Extraindo itens APENAS da tabela visível da aba 'Itens'...
+2025-08-27 11:35:11,118 - INFO - 🔍 Testando seletor: div[role="tabpanel"]:not([hidden]) datatable-body-row
+2025-08-27 11:35:13,142 - INFO - 🔍 Testando seletor: div[aria-hidden="false"] datatable-body-row
+2025-08-27 11:35:15,162 - INFO - 🔍 Testando seletor: div.tab-content:not(.d-none) datatable-body-row
+2025-08-27 11:35:17,188 - INFO - 🔍 Testando seletor: div.active datatable-body-row
+2025-08-27 11:35:19,202 - INFO - 🔍 Testando seletor: datatable-body-row:visible
+2025-08-27 11:35:21,218 - INFO - 📊 Encontradas 1 linhas com seletor: datatable-body-row:visible
+2025-08-27 11:35:21,235 - INFO -    ✅ Linha 1 válida: 1
+HIDROJATEAMENTO DAS REDES DE ESGOTO
+16
+R$ 550,00...
+2025-08-27 11:35:21,235 - INFO - 📊 Processando 1 linhas válidas da aba 'Itens'
+2025-08-27 11:35:21,335 - INFO -    📋 Item 1: HIDROJATEAMENTO DAS REDES DE ESGOTO...
+2025-08-27 11:35:21,336 - INFO - 📊 Total de itens extraídos da aba 'Itens' ativa: 1
+2025-08-27 11:35:21,336 - INFO - 🗂️ Processando aba 'Arquivos' para downloads...
+2025-08-27 11:35:21,601 - INFO - ✅ Aba 'Arquivos' encontrada! (Seletor: li.tab-item:has-text("Arquivos"))
+2025-08-27 11:35:21,601 - INFO - 🖱️ Clicando na aba 'Arquivos'...
+2025-08-27 11:35:24,896 - INFO - ⬇️ Procurando arquivos para download na aba 'Arquivos'...
+2025-08-27 11:35:28,278 - INFO - 📎 Encontrados 2 links de download (seletor: a.br-button.circle[href*="arquivos"])
+2025-08-27 11:35:28,316 - INFO - ⬇️ Baixando arquivo: Fazer download...
+2025-08-27 11:35:28,844 - INFO - 💾 Arquivo salvo: downloads\edital_2_0_AVISO+DE+CONTRATACAO+DIRETA+SAAEB+-+94-+SERVICO+HIDROJATA.pdf
+2025-08-27 11:35:33,655 - INFO - 💾 Arquivo salvo: downloads\edital_2_0_AVISO+DE+CONTRATACAO+DIRETA+SAAEB+-+94-+SERVICO+HIDROJATA.pdf
+2025-08-27 11:35:33,656 - INFO - ✅ Arquivo 1 baixado: edital_2_0_AVISO+DE+CONTRATACAO+DIRETA+SAAEB+-+94-+SERVICO+HIDROJATA.pdf
+2025-08-27 11:35:33,682 - INFO - ⬇️ Baixando arquivo: Fazer download...
+2025-08-27 11:36:33,710 - WARNING - ⚠️ Erro ao clicar no link de download: Locator.click: Timeout 60000ms exceeded.
+Call log:
+  - waiting for locator("a.br-button.circle[href*=\"arquivos\"]").nth(1)
+    - locator resolved to <a type="button" target="_blank" _ngcontent-ooo-c74="" class="br-button circle" aria-label="Fazer download" href="api/orgaos/07104377000130/compras/2025/112/arquivos/0?ignorarExclusao=false">…</a>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    116 × waiting for element to be visible, enabled and stable
+        - element is not visible
+      - retrying click action
+        - waiting 500ms
+
+2025-08-27 11:36:33,711 - INFO - 📊 Total de arquivos baixados da aba 'Arquivos': 1
+2025-08-27 11:36:33,711 - INFO - 🔍 Procurando botão 'Acessar contratação'...
+2025-08-27 11:36:33,755 - INFO - ⚠️ Botão 'Acessar contratação' não encontrado
+2025-08-27 11:36:33,755 - INFO - ✅ Edital 3 processado com sucesso!
+2025-08-27 11:36:33,756 - INFO -    Título: Aviso de Contratação Direta nº 119/2025
+2025-08-27 11:36:33,756 - INFO -    Organização: SERVICO AUTONOMO DE AGUA E ESGOTO DE BROTAS - SAAEB
+2025-08-27 11:36:33,756 - INFO -    Itens na aba Itens: 1
+2025-08-27 11:36:33,757 - INFO -    Arquivos baixados: 1
+2025-08-27 11:36:33,757 - INFO - 🔙 Voltando para lista de editais...
+2025-08-27 11:36:37,889 - INFO - ✅ Edital 3 adicionado à lista
+2025-08-27 11:36:39,900 - INFO - 
+🔄 Processando edital 4/35
+2025-08-27 11:36:39,901 - INFO - 
+==================================================
+2025-08-27 11:36:39,901 - INFO - 📄 PROCESSANDO EDITAL 4
+2025-08-27 11:36:39,901 - INFO - ==================================================
+2025-08-27 11:36:41,940 - INFO - 📋 Texto do card: Edital nº 013/2025
+Id contratação PNCP: 39467292000102-1-000053/2025
+Modalidade da Contratação: Leil...
+2025-08-27 11:36:41,948 - INFO - 🔗 Link do edital: /editais/39467292000102/2025/53
+2025-08-27 11:36:42,171 - INFO - 🖱️ Clicando no edital 4...
+2025-08-27 11:36:46,693 - INFO - 📍 URL atual: https://pncp.gov.br/app/editais/39467292000102/2025/53
+2025-08-27 11:36:46,694 - INFO - 📋 Extraindo informações detalhadas...
+2025-08-27 11:36:48,738 - INFO - 📊 Processando APENAS aba 'Itens' ativa para extrair dados...
+2025-08-27 11:36:48,993 - INFO - 🎯 Garantindo que aba 'Itens' está ativa...
+2025-08-27 11:36:49,003 - INFO - ✅ Aba 'Itens' encontrada! (Seletor: li.tab-item:has-text("Itens"))
+2025-08-27 11:36:49,037 - INFO - 📊 Aba 'Itens' já está ativa
+2025-08-27 11:36:52,285 - INFO - 📊 Extraindo itens APENAS da tabela visível da aba 'Itens'...
+2025-08-27 11:36:55,516 - INFO - 🔍 Testando seletor: div[role="tabpanel"]:not([hidden]) datatable-body-row
+2025-08-27 11:36:57,530 - INFO - 🔍 Testando seletor: div[aria-hidden="false"] datatable-body-row
+2025-08-27 11:36:59,543 - INFO - 🔍 Testando seletor: div.tab-content:not(.d-none) datatable-body-row
+2025-08-27 11:37:01,568 - INFO - 🔍 Testando seletor: div.active datatable-body-row
+2025-08-27 11:37:03,594 - INFO - 🔍 Testando seletor: datatable-body-row:visible
+2025-08-27 11:37:05,610 - INFO - 📊 Encontradas 4 linhas com seletor: datatable-body-row:visible
+2025-08-27 11:37:05,624 - INFO -    ✅ Linha 1 válida: 1
+Imóvel urbano, localizado na Rua Marechal Deodor...
+2025-08-27 11:37:05,638 - INFO -    ✅ Linha 2 válida: 2
+Imóvel urbano, localizado na Avenida Jornalista ...
+2025-08-27 11:37:05,652 - INFO -    ✅ Linha 3 válida: 3
+Imóvel urbano, localizado na Avenida Brasília, s...
+2025-08-27 11:37:05,665 - INFO -    ✅ Linha 4 válida: 4
+Imóvel urbano, localizado na Alameda Navarro de ...
+2025-08-27 11:37:05,666 - INFO - 📊 Processando 4 linhas válidas da aba 'Itens'
+2025-08-27 11:37:05,754 - INFO -    📋 Item 1: Imóvel urbano, localizado na Rua Marechal Deodoro ...
+2025-08-27 11:37:05,842 - INFO -    📋 Item 2: Imóvel urbano, localizado na Avenida Jornalista Ro...
+2025-08-27 11:37:05,925 - INFO -    📋 Item 3: Imóvel urbano, localizado na Avenida Brasília, s/n...
+2025-08-27 11:37:06,009 - INFO -    📋 Item 4: Imóvel urbano, localizado na Alameda Navarro de An...
+2025-08-27 11:37:06,009 - INFO - 📊 Total de itens extraídos da aba 'Itens' ativa: 4
+2025-08-27 11:37:06,010 - INFO - 🗂️ Processando aba 'Arquivos' para downloads...
+2025-08-27 11:37:06,266 - INFO - ✅ Aba 'Arquivos' encontrada! (Seletor: li.tab-item:has-text("Arquivos"))
+2025-08-27 11:37:06,267 - INFO - 🖱️ Clicando na aba 'Arquivos'...
+2025-08-27 11:37:09,555 - INFO - ⬇️ Procurando arquivos para download na aba 'Arquivos'...
+2025-08-27 11:37:12,803 - INFO - 📎 Encontrados 2 links de download (seletor: a.br-button.circle[href*="arquivos"])
+2025-08-27 11:37:12,826 - INFO - ⬇️ Baixando arquivo: Fazer download...
+2025-08-27 11:37:13,579 - INFO - 💾 Arquivo salvo: downloads\edital_3_0_documento.pdf
+2025-08-27 11:37:18,114 - INFO - 💾 Arquivo salvo: downloads\edital_3_0_documento.pdf
+2025-08-27 11:37:18,115 - INFO - ✅ Arquivo 1 baixado: edital_3_0_documento.pdf
+2025-08-27 11:37:18,135 - INFO - ⬇️ Baixando arquivo: Fazer download...
+2025-08-27 11:38:18,161 - WARNING - ⚠️ Erro ao clicar no link de download: Locator.click: Timeout 60000ms exceeded.
+Call log:
+  - waiting for locator("a.br-button.circle[href*=\"arquivos\"]").nth(1)
+    - locator resolved to <a type="button" target="_blank" _ngcontent-lvx-c74="" class="br-button circle" aria-label="Fazer download" href="api/orgaos/39467292000102/compras/2025/53/arquivos/0?ignorarExclusao=false">…</a>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    116 × waiting for element to be visible, enabled and stable
+        - element is not visible
+      - retrying click action
+        - waiting 500ms
+
+2025-08-27 11:38:18,162 - INFO - 📊 Total de arquivos baixados da aba 'Arquivos': 1
+2025-08-27 11:38:18,162 - INFO - 🔍 Procurando botão 'Acessar contratação'...
+2025-08-27 11:38:18,176 - INFO - ✅ Botão 'Acessar contratação' encontrado! (Seletor: button:has-text('Acessar contratação'))
+2025-08-27 11:38:22,847 - INFO - 📂 Acessou contratação com sucesso!
+2025-08-27 11:38:22,848 - INFO - ✅ Edital 4 processado com sucesso!
+2025-08-27 11:38:22,848 - INFO -    Título: Edital nº 013/2025
+2025-08-27 11:38:22,849 - INFO -    Organização: SECRETARIA DE GESTAO E GOVERNO DIGITAL
+2025-08-27 11:38:22,849 - INFO -    Itens na aba Itens: 4
+2025-08-27 11:38:22,850 - INFO -    Arquivos baixados: 1
+2025-08-27 11:38:22,850 - INFO - 🔙 Voltando para lista de editais...
+2025-08-27 11:39:27,282 - ERROR - ❌ Erro ao processar edital 4: Page.screenshot: Timeout 60000ms exceeded.
+Call log:
+  - taking page screenshot
+  - waiting for fonts to load...
+  - fonts loaded
+
+2025-08-27 11:39:29,302 - WARNING - ⚠️ Falha ao processar edital 4
+2025-08-27 11:39:31,317 - INFO - 
+🔄 Processando edital 5/35
+2025-08-27 11:39:31,318 - INFO - 
+==================================================
+2025-08-27 11:39:31,318 - INFO - 📄 PROCESSANDO EDITAL 5
+2025-08-27 11:39:31,318 - INFO - ==================================================
+2025-08-27 11:39:33,367 - INFO - 📋 Texto do card: Edital nº 018/2025
+Id contratação PNCP: 06074712000131-1-000001/2025
+Modalidade da Contratação: Preg...
+2025-08-27 11:39:33,378 - INFO - 🔗 Link do edital: /editais/06074712000131/2025/1
+2025-08-27 11:40:03,197 - INFO - 🖱️ Clicando no edital 5...
+2025-08-27 11:40:07,576 - INFO - 📍 URL atual: https://pncp.gov.br/app/editais/06074712000131/2025/1
+2025-08-27 11:40:07,577 - INFO - 📋 Extraindo informações detalhadas...
+2025-08-27 11:40:09,615 - INFO - 📊 Processando APENAS aba 'Itens' ativa para extrair dados...
+2025-08-27 11:40:09,886 - INFO - 🎯 Garantindo que aba 'Itens' está ativa...
+2025-08-27 11:40:09,892 - INFO - ✅ Aba 'Itens' encontrada! (Seletor: li.tab-item:has-text("Itens"))
+2025-08-27 11:40:09,924 - INFO - 📊 Aba 'Itens' já está ativa
+2025-08-27 11:40:13,154 - INFO - 📊 Extraindo itens APENAS da tabela visível da aba 'Itens'...
+2025-08-27 11:40:16,357 - INFO - 🔍 Testando seletor: div[role="tabpanel"]:not([hidden]) datatable-body-row
+2025-08-27 11:40:18,373 - INFO - 🔍 Testando seletor: div[aria-hidden="false"] datatable-body-row
+2025-08-27 11:40:20,390 - INFO - 🔍 Testando seletor: div.tab-content:not(.d-none) datatable-body-row
+2025-08-27 11:40:22,403 - INFO - 🔍 Testando seletor: div.active datatable-body-row
+2025-08-27 11:40:24,418 - INFO - 🔍 Testando seletor: datatable-body-row:visible
+2025-08-27 11:40:26,439 - INFO - 📊 Encontradas 3 linhas com seletor: datatable-body-row:visible
+2025-08-27 11:40:26,454 - INFO -    ✅ Linha 1 válida: 1
+BANDEJA REFEITÓRIO PRATO INOX 3 DIVISÕES BANDEJÃ...
+2025-08-27 11:40:26,473 - INFO -    ✅ Linha 2 válida: 2
+CANECA DE INOX – CANECA DE MATERIAL 100% AÇO INO...
+2025-08-27 11:40:26,491 - INFO -    ✅ Linha 3 válida: 3
+COLHER DE INOX – COLHER DE SOPA, MATERIAL 100% A...
+2025-08-27 11:40:26,492 - INFO - 📊 Processando 3 linhas válidas da aba 'Itens'
+2025-08-27 11:40:26,585 - INFO -    📋 Item 1: BANDEJA REFEITÓRIO PRATO INOX 3 DIVISÕES BANDEJÃO ...
+2025-08-27 11:40:26,679 - INFO -    📋 Item 2: CANECA DE INOX – CANECA DE MATERIAL 100% AÇO INOX,...
+2025-08-27 11:40:26,776 - INFO -    📋 Item 3: COLHER DE INOX – COLHER DE SOPA, MATERIAL 100% AÇO...
+2025-08-27 11:40:26,777 - INFO - 📊 Total de itens extraídos da aba 'Itens' ativa: 3
+2025-08-27 11:40:26,777 - INFO - 🗂️ Processando aba 'Arquivos' para downloads...
+2025-08-27 11:40:27,010 - INFO - ✅ Aba 'Arquivos' encontrada! (Seletor: li.tab-item:has-text("Arquivos"))
+2025-08-27 11:40:27,010 - INFO - 🖱️ Clicando na aba 'Arquivos'...
+2025-08-27 11:40:30,319 - INFO - ⬇️ Procurando arquivos para download na aba 'Arquivos'...
+2025-08-27 11:40:33,586 - INFO - 📎 Encontrados 2 links de download (seletor: a.br-button.circle[href*="arquivos"])
+2025-08-27 11:40:33,608 - INFO - ⬇️ Baixando arquivo: Fazer download...
+2025-08-27 11:40:34,166 - INFO - 💾 Arquivo salvo: downloads\edital_4_0_EDITAL_PE_018_2025_Kits_para_refeies_educao.pdf
+2025-08-27 11:40:38,841 - INFO - 💾 Arquivo salvo: downloads\edital_4_0_EDITAL_PE_018_2025_Kits_para_refeies_educao.pdf
+2025-08-27 11:40:38,842 - INFO - ✅ Arquivo 1 baixado: edital_4_0_EDITAL_PE_018_2025_Kits_para_refeies_educao.pdf
+2025-08-27 11:40:38,871 - INFO - ⬇️ Baixando arquivo: Fazer download...
+2025-08-27 11:41:38,891 - WARNING - ⚠️ Erro ao clicar no link de download: Locator.click: Timeout 60000ms exceeded.
+Call log:
+  - waiting for locator("a.br-button.circle[href*=\"arquivos\"]").nth(1)
+    - locator resolved to <a type="button" target="_blank" _ngcontent-tpc-c74="" class="br-button circle" aria-label="Fazer download" href="api/orgaos/06074712000131/compras/2025/1/arquivos/0?ignorarExclusao=false">…</a>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not visible
+    - retrying click action
+      - waiting 100ms
+    116 × waiting for element to be visible, enabled and stable
+        - element is not visible
+      - retrying click action
+        - waiting 500ms
+
+2025-08-27 11:41:38,892 - INFO - 📊 Total de arquivos baixados da aba 'Arquivos': 1
+2025-08-27 11:41:38,893 - INFO - 🔍 Procurando botão 'Acessar contratação'...
+2025-08-27 11:41:38,906 - INFO - ✅ Botão 'Acessar contratação' encontrado! (Seletor: button:has-text('Acessar contratação'))
+2025-08-27 11:41:44,063 - INFO - 📂 Acessou contratação com sucesso!
+2025-08-27 11:41:44,063 - INFO - ✅ Edital 5 processado com sucesso!
+2025-08-27 11:41:44,064 - INFO -    Título: Edital nº 018/2025
+2025-08-27 11:41:44,064 - INFO -    Organização: MUNICIPIO DE DOM PEDRO - SECRETARIA MUNICIPAL DE EDUCACAO
+2025-08-27 11:41:44,064 - INFO -    Itens na aba Itens: 3
+2025-08-27 11:41:44,065 - INFO -    Arquivos baixados: 1
+2025-08-27 11:41:44,065 - INFO - 🔙 Voltando para lista de editais...
+2025-08-27 11:42:47,962 - ERROR - ❌ Erro ao processar edital 5: Page.screenshot: Timeout 60000ms exceeded.
+Call log:
+  - taking page screenshot
+  - waiting for fonts to load...
+  - fonts loaded
+
+2025-08-27 11:42:50,003 - WARNING - ⚠️ Falha ao processar edital 5
+2025-08-27 11:42:52,022 - INFO - 
+🔄 Processando edital 6/35
+2025-08-27 11:42:52,023 - INFO - 
+==================================================
+2025-08-27 11:42:52,023 - INFO - 📄 PROCESSANDO EDITAL 6
+2025-08-27 11:42:52,023 - INFO - ==================================================
+2025-08-27 11:42:54,072 - WARNING - ⚠️ Índice 5 fora do range. Total de cards: 0
+2025-08-27 11:42:54,073 - WARNING - ⚠️ Falha ao processar edital 6
+2025-08-27 11:42:56,091 - INFO - 
+🔄 Processando edital 7/35
+2025-08-27 11:42:56,091 - INFO - 
+==================================================
+2025-08-27 11:42:56,092 - INFO - 📄 PROCESSANDO EDITAL 7
+2025-08-27 11:42:56,092 - INFO - ==================================================
+2025-08-27 11:42:58,128 - WARNING - ⚠️ Índice 6 fora do range. Total de cards: 0
+2025-08-27 11:42:58,129 - WARNING - ⚠️ Falha ao processar edital 7
+2025-08-27 11:43:00,136 - INFO - 
+🔄 Processando edital 8/35
+2025-08-27 11:43:00,137 - INFO - 
+==================================================
+2025-08-27 11:43:00,137 - INFO - 📄 PROCESSANDO EDITAL 8
+2025-08-27 11:43:00,138 - INFO - ==================================================
+2025-08-27 11:43:02,192 - WARNING - ⚠️ Índice 7 fora do range. Total de cards: 0
+2025-08-27 11:43:02,193 - WARNING - ⚠️ Falha ao processar edital 8
+2025-08-27 11:43:04,210 - INFO - 
+🔄 Processando edital 9/35
+2025-08-27 11:43:04,211 - INFO - 
+==================================================
+2025-08-27 11:43:04,211 - INFO - 📄 PROCESSANDO EDITAL 9
+2025-08-27 11:43:04,212 - INFO - ==================================================
+2025-08-27 11:43:06,256 - WARNING - ⚠️ Índice 8 fora do range. Total de cards: 0
+2025-08-27 11:43:06,257 - WARNING - ⚠️ Falha ao processar edital 9
+2025-08-27 11:43:08,264 - INFO - 
+🔄 Processando edital 10/35
+2025-08-27 11:43:08,265 - INFO - 
+==================================================
+2025-08-27 11:43:08,265 - INFO - 📄 PROCESSANDO EDITAL 10
+2025-08-27 11:43:08,265 - INFO - ==================================================
+2025-08-27 11:43:10,307 - WARNING - ⚠️ Índice 9 fora do range. Total de cards: 0
+2025-08-27 11:43:10,307 - WARNING - ⚠️ Falha ao processar edital 10
+2025-08-27 11:43:12,327 - INFO - 
+🔄 Processando edital 11/35
+2025-08-27 11:43:12,328 - INFO - 
+==================================================
+2025-08-27 11:43:12,328 - INFO - 📄 PROCESSANDO EDITAL 11
+2025-08-27 11:43:12,328 - INFO - ==================================================
+2025-08-27 11:43:14,363 - WARNING - ⚠️ Índice 10 fora do range. Total de cards: 0
+2025-08-27 11:43:14,364 - WARNING - ⚠️ Falha ao processar edital 11
+2025-08-27 11:43:16,376 - INFO - 
+🔄 Processando edital 12/35
+2025-08-27 11:43:16,377 - INFO - 
+==================================================
+2025-08-27 11:43:16,377 - INFO - 📄 PROCESSANDO EDITAL 12
+2025-08-27 11:43:16,378 - INFO - ==================================================
+2025-08-27 11:43:18,407 - WARNING - ⚠️ Índice 11 fora do range. Total de cards: 0
+2025-08-27 11:43:18,407 - WARNING - ⚠️ Falha ao processar edital 12
+2025-08-27 11:43:20,420 - INFO - 
+🔄 Processando edital 13/35
+2025-08-27 11:43:20,421 - INFO - 
+==================================================
+2025-08-27 11:43:20,421 - INFO - 📄 PROCESSANDO EDITAL 13
+2025-08-27 11:43:20,422 - INFO - ==================================================
+2025-08-27 11:43:22,491 - WARNING - ⚠️ Índice 12 fora do range. Total de cards: 0
+2025-08-27 11:43:22,492 - WARNING - ⚠️ Falha ao processar edital 13
+2025-08-27 11:43:24,505 - INFO - 
+🔄 Processando edital 14/35
+2025-08-27 11:43:24,506 - INFO - 
+==================================================
+2025-08-27 11:43:24,506 - INFO - 📄 PROCESSANDO EDITAL 14
+2025-08-27 11:43:24,506 - INFO - ==================================================
+2025-08-27 11:43:26,553 - WARNING - ⚠️ Índice 13 fora do range. Total de cards: 0
+2025-08-27 11:43:26,553 - WARNING - ⚠️ Falha ao processar edital 14
+2025-08-27 11:43:28,570 - INFO - 
+🔄 Processando edital 15/35
+2025-08-27 11:43:28,571 - INFO - 
+==================================================
+2025-08-27 11:43:28,571 - INFO - 📄 PROCESSANDO EDITAL 15
+2025-08-27 11:43:28,572 - INFO - ==================================================
+2025-08-27 11:43:30,621 - WARNING - ⚠️ Índice 14 fora do range. Total de cards: 0
+2025-08-27 11:43:30,622 - WARNING - ⚠️ Falha ao processar edital 15
+2025-08-27 11:43:32,631 - INFO - 
+🔄 Processando edital 16/35
+2025-08-27 11:43:32,632 - INFO - 
+==================================================
+2025-08-27 11:43:32,632 - INFO - 📄 PROCESSANDO EDITAL 16
+2025-08-27 11:43:32,632 - INFO - ==================================================
+2025-08-27 11:43:34,667 - WARNING - ⚠️ Índice 15 fora do range. Total de cards: 0
+2025-08-27 11:43:34,667 - WARNING - ⚠️ Falha ao processar edital 16
+2025-08-27 11:43:36,678 - INFO - 
+🔄 Processando edital 17/35
+2025-08-27 11:43:36,679 - INFO - 
+==================================================
+2025-08-27 11:43:36,679 - INFO - 📄 PROCESSANDO EDITAL 17
+2025-08-27 11:43:36,680 - INFO - ==================================================
+2025-08-27 11:43:38,719 - WARNING - ⚠️ Índice 16 fora do range. Total de cards: 0
+2025-08-27 11:43:38,720 - WARNING - ⚠️ Falha ao processar edital 17
+2025-08-27 11:43:40,731 - INFO - 
+🔄 Processando edital 18/35
+2025-08-27 11:43:40,732 - INFO - 
+==================================================
+2025-08-27 11:43:40,732 - INFO - 📄 PROCESSANDO EDITAL 18
+2025-08-27 11:43:40,733 - INFO - ==================================================
+2025-08-27 11:43:42,771 - WARNING - ⚠️ Índice 17 fora do range. Total de cards: 0
+2025-08-27 11:43:42,772 - WARNING - ⚠️ Falha ao processar edital 18
+2025-08-27 11:43:44,785 - INFO - 
+🔄 Processando edital 19/35
+2025-08-27 11:43:44,786 - INFO - 
+==================================================
+2025-08-27 11:43:44,786 - INFO - 📄 PROCESSANDO EDITAL 19
+2025-08-27 11:43:44,787 - INFO - ==================================================
+2025-08-27 11:43:46,830 - WARNING - ⚠️ Índice 18 fora do range. Total de cards: 0
+2025-08-27 11:43:46,830 - WARNING - ⚠️ Falha ao processar edital 19
+2025-08-27 11:43:48,842 - INFO - 
+🔄 Processando edital 20/35
+2025-08-27 11:43:48,842 - INFO - 
+==================================================
+2025-08-27 11:43:48,842 - INFO - 📄 PROCESSANDO EDITAL 20
+2025-08-27 11:43:48,843 - INFO - ==================================================
+2025-08-27 11:43:50,888 - WARNING - ⚠️ Índice 19 fora do range. Total de cards: 0
+2025-08-27 11:43:50,888 - WARNING - ⚠️ Falha ao processar edital 20
+2025-08-27 11:43:52,906 - INFO - 
+🔄 Processando edital 21/35
+2025-08-27 11:43:52,907 - INFO - 
+==================================================
+2025-08-27 11:43:52,907 - INFO - 📄 PROCESSANDO EDITAL 21
+2025-08-27 11:43:52,907 - INFO - ==================================================
+2025-08-27 11:43:54,939 - WARNING - ⚠️ Índice 20 fora do range. Total de cards: 0
+2025-08-27 11:43:54,940 - WARNING - ⚠️ Falha ao processar edital 21
+2025-08-27 11:43:56,957 - INFO - 
+🔄 Processando edital 22/35
+2025-08-27 11:43:56,958 - INFO - 
+==================================================
+2025-08-27 11:43:56,958 - INFO - 📄 PROCESSANDO EDITAL 22
+2025-08-27 11:43:56,958 - INFO - ==================================================
+2025-08-27 11:43:59,110 - WARNING - ⚠️ Índice 21 fora do range. Total de cards: 0
+2025-08-27 11:43:59,111 - WARNING - ⚠️ Falha ao processar edital 22
+2025-08-27 11:44:01,129 - INFO - 
+🔄 Processando edital 23/35
+2025-08-27 11:44:01,129 - INFO - 
+==================================================
+2025-08-27 11:44:01,130 - INFO - 📄 PROCESSANDO EDITAL 23
+2025-08-27 11:44:01,130 - INFO - ==================================================
+2025-08-27 11:44:03,173 - WARNING - ⚠️ Índice 22 fora do range. Total de cards: 0
+2025-08-27 11:44:03,174 - WARNING - ⚠️ Falha ao processar edital 23
+2025-08-27 11:44:05,179 - INFO - 
+🔄 Processando edital 24/35
+2025-08-27 11:44:05,180 - INFO - 
+==================================================
+2025-08-27 11:44:05,181 - INFO - 📄 PROCESSANDO EDITAL 24
+2025-08-27 11:44:05,181 - INFO - ==================================================
+2025-08-27 11:44:07,214 - WARNING - ⚠️ Índice 23 fora do range. Total de cards: 0
+2025-08-27 11:44:07,215 - WARNING - ⚠️ Falha ao processar edital 24
+2025-08-27 11:44:09,225 - INFO - 
+🔄 Processando edital 25/35
+2025-08-27 11:44:09,226 - INFO - 
+==================================================
+2025-08-27 11:44:09,226 - INFO - 📄 PROCESSANDO EDITAL 25
+2025-08-27 11:44:09,227 - INFO - ==================================================
+2025-08-27 11:44:11,265 - WARNING - ⚠️ Índice 24 fora do range. Total de cards: 0
+2025-08-27 11:44:11,266 - WARNING - ⚠️ Falha ao processar edital 25
+2025-08-27 11:44:13,275 - INFO - 
+🔄 Processando edital 26/35
+2025-08-27 11:44:13,276 - INFO - 
+==================================================
+2025-08-27 11:44:13,276 - INFO - 📄 PROCESSANDO EDITAL 26
+2025-08-27 11:44:13,276 - INFO - ==================================================
+2025-08-27 11:44:15,306 - WARNING - ⚠️ Índice 25 fora do range. Total de cards: 0
+2025-08-27 11:44:15,306 - WARNING - ⚠️ Falha ao processar edital 26
+2025-08-27 11:44:17,311 - INFO - 
+🔄 Processando edital 27/35
+2025-08-27 11:44:17,312 - INFO - 
+==================================================
+2025-08-27 11:44:17,312 - INFO - 📄 PROCESSANDO EDITAL 27
+2025-08-27 11:44:17,312 - INFO - ==================================================
+2025-08-27 11:44:19,338 - WARNING - ⚠️ Índice 26 fora do range. Total de cards: 0
+2025-08-27 11:44:19,338 - WARNING - ⚠️ Falha ao processar edital 27
+2025-08-27 11:44:21,354 - INFO - 
+🔄 Processando edital 28/35
+2025-08-27 11:44:21,355 - INFO - 
+==================================================
+2025-08-27 11:44:21,355 - INFO - 📄 PROCESSANDO EDITAL 28
+2025-08-27 11:44:21,355 - INFO - ==================================================
+2025-08-27 11:44:23,391 - WARNING - ⚠️ Índice 27 fora do range. Total de cards: 0
+2025-08-27 11:44:23,391 - WARNING - ⚠️ Falha ao processar edital 28
+2025-08-27 11:44:25,400 - INFO - 
+🔄 Processando edital 29/35
+2025-08-27 11:44:25,401 - INFO - 
+==================================================
+2025-08-27 11:44:25,401 - INFO - 📄 PROCESSANDO EDITAL 29
+2025-08-27 11:44:25,402 - INFO - ==================================================
+2025-08-27 11:44:27,436 - WARNING - ⚠️ Índice 28 fora do range. Total de cards: 0
+2025-08-27 11:44:27,437 - WARNING - ⚠️ Falha ao processar edital 29
+2025-08-27 11:44:29,446 - INFO - 
+🔄 Processando edital 30/35
+2025-08-27 11:44:29,447 - INFO - 
+==================================================
+2025-08-27 11:44:29,447 - INFO - 📄 PROCESSANDO EDITAL 30
+2025-08-27 11:44:29,447 - INFO - ==================================================
+2025-08-27 11:44:31,473 - WARNING - ⚠️ Índice 29 fora do range. Total de cards: 0
+2025-08-27 11:44:31,474 - WARNING - ⚠️ Falha ao processar edital 30
+2025-08-27 11:44:33,489 - INFO - 
+🔄 Processando edital 31/35
+2025-08-27 11:44:33,489 - INFO - 
+==================================================
+2025-08-27 11:44:33,490 - INFO - 📄 PROCESSANDO EDITAL 31
+2025-08-27 11:44:33,491 - INFO - ==================================================
+2025-08-27 11:44:35,528 - WARNING - ⚠️ Índice 30 fora do range. Total de cards: 0
+2025-08-27 11:44:35,528 - WARNING - ⚠️ Falha ao processar edital 31
+2025-08-27 11:44:37,533 - INFO - 
+🔄 Processando edital 32/35
+2025-08-27 11:44:37,534 - INFO - 
+==================================================
+2025-08-27 11:44:37,534 - INFO - 📄 PROCESSANDO EDITAL 32
+2025-08-27 11:44:37,534 - INFO - ==================================================
+2025-08-27 11:44:39,574 - WARNING - ⚠️ Índice 31 fora do range. Total de cards: 0
+2025-08-27 11:44:39,574 - WARNING - ⚠️ Falha ao processar edital 32
+2025-08-27 11:44:41,590 - INFO - 
+🔄 Processando edital 33/35
+2025-08-27 11:44:41,591 - INFO - 
+==================================================
+2025-08-27 11:44:41,591 - INFO - 📄 PROCESSANDO EDITAL 33
+2025-08-27 11:44:41,591 - INFO - ==================================================
+2025-08-27 11:44:43,640 - WARNING - ⚠️ Índice 32 fora do range. Total de cards: 0
+2025-08-27 11:44:43,641 - WARNING - ⚠️ Falha ao processar edital 33
+2025-08-27 11:44:45,648 - INFO - 
+🔄 Processando edital 34/35
+2025-08-27 11:44:45,649 - INFO - 
+==================================================
+2025-08-27 11:44:45,649 - INFO - 📄 PROCESSANDO EDITAL 34
+2025-08-27 11:44:45,649 - INFO - ==================================================
+2025-08-27 11:44:47,682 - WARNING - ⚠️ Índice 33 fora do range. Total de cards: 0
+2025-08-27 11:44:47,683 - WARNING - ⚠️ Falha ao processar edital 34
+2025-08-27 11:44:49,689 - INFO - 
+🔄 Processando edital 35/35
+2025-08-27 11:44:49,689 - INFO - 
+==================================================
+2025-08-27 11:44:49,690 - INFO - 📄 PROCESSANDO EDITAL 35
+2025-08-27 11:44:49,690 - INFO - ==================================================
+2025-08-27 11:44:51,715 - WARNING - ⚠️ Índice 34 fora do range. Total de cards: 0
+2025-08-27 11:44:51,716 - WARNING - ⚠️ Falha ao processar edital 35
+2025-08-27 11:44:53,723 - INFO - 🎉 Scraping com extração APENAS da aba 'Itens' concluído! 3 editais coletados
+2025-08-27 11:44:53,724 - INFO - 🎉 SUCESSO! 3 editais coletados
+2025-08-27 11:44:53,724 - INFO - 
+--- EDITAL 1 ---
+2025-08-27 11:44:53,724 - INFO - 📋 Título: Aviso de Contratação Direta nº 0072/2025
+2025-08-27 11:44:53,724 - INFO - 🆔 PNCP ID: 68020916000147-1-000234/2025
+2025-08-27 11:44:53,725 - INFO - 🏢 Organização: MUNICIPIO DE BERTIOGA
+2025-08-27 11:44:53,725 - INFO - 🏙️ Município: Bertioga
+2025-08-27 11:44:53,725 - INFO - 📝 Modalidade: Dispensa
+2025-08-27 11:44:53,725 - INFO - 💰 Valor Total: R$ 1515.32
+2025-08-27 11:44:53,725 - INFO - 📊 Aba Itens encontrada: True
+2025-08-27 11:44:53,725 - INFO - 📊 Itens extraídos APENAS da aba 'Itens': 5
+2025-08-27 11:44:53,726 - INFO - 🗂️ Aba Arquivos encontrada: True
+2025-08-27 11:44:53,726 - INFO - ⬇️ Arquivos baixados: 1
+2025-08-27 11:44:53,726 - INFO -    📊 ITENS DA ABA 'ITENS' (APENAS):
+2025-08-27 11:44:53,726 - INFO -       1. ISOLANTE TÉRMICO; FABRICADO EM ESPUMA ELASTOMÉRICA...
+2025-08-27 11:44:53,727 - INFO -          Qtd: 12 | Valor: 36.0
+2025-08-27 11:44:53,727 - INFO -          Método: angular_items_tab_only
+2025-08-27 11:44:53,727 - INFO -       2. ISOLANTE TÉRMICO; FABRICADO EM ESPUMA ELASTOMERICA...
+2025-08-27 11:44:53,727 - INFO -          Qtd: 12 | Valor: 33.6
+2025-08-27 11:44:53,728 - INFO -          Método: angular_items_tab_only
+2025-08-27 11:44:53,728 - INFO -       3. CABO PP 3X2,5MM...
+2025-08-27 11:44:53,728 - INFO -          Qtd: 18 | Valor: 161.46
+2025-08-27 11:44:53,729 - INFO -          Método: angular_items_tab_only
+2025-08-27 11:44:53,729 - INFO -       4. SUPORTE SPLIT 500MM 12K A 24K (ALUMÍNIO)...
+2025-08-27 11:44:53,729 - INFO -          Qtd: 1 | Valor: 185.0
+2025-08-27 11:44:53,729 - INFO -          Método: angular_items_tab_only
+2025-08-27 11:44:53,730 - INFO -       5. FITA SILVER TAPE SILVERTAPE 48MMX50M BRANCA (ROLO)...
+2025-08-27 11:44:53,730 - INFO -          Qtd: 6 | Valor: 419.4
+2025-08-27 11:44:53,730 - INFO -          Método: angular_items_tab_only
+2025-08-27 11:44:53,730 - INFO -    🗂️ ARQUIVOS DA ABA 'ARQUIVOS':
+2025-08-27 11:44:53,731 - INFO -       1. edital_0_0_edital_20250827113306.pdf (276561 bytes)
+2025-08-27 11:44:53,731 - INFO - 
+--- EDITAL 2 ---
+2025-08-27 11:44:53,731 - INFO - 📋 Título: Aviso de Contratação Direta nº 90163/2025
+2025-08-27 11:44:53,731 - INFO - 🆔 PNCP ID: 43728245000142-1-000258/2025
+2025-08-27 11:44:53,731 - INFO - 🏢 Organização: SERVICO DE APOIO AS MICRO E PEQ EMPRESAS DE SAO PAULO
+2025-08-27 11:44:53,732 - INFO - 🏙️ Município: São Paulo
+2025-08-27 11:44:53,732 - INFO - 📝 Modalidade: Dispensa
+2025-08-27 11:44:53,732 - INFO - 💰 Valor Total: R$ 0.0
+2025-08-27 11:44:53,732 - INFO - 📊 Aba Itens encontrada: True
+2025-08-27 11:44:53,732 - INFO - 📊 Itens extraídos APENAS da aba 'Itens': 1
+2025-08-27 11:44:53,733 - INFO - 🗂️ Aba Arquivos encontrada: True
+2025-08-27 11:44:53,733 - INFO - ⬇️ Arquivos baixados: 1
+2025-08-27 11:44:53,733 - INFO -    📊 ITENS DA ABA 'ITENS' (APENAS):
+2025-08-27 11:44:53,733 - INFO -       1. Item 1...
+2025-08-27 11:44:53,733 - INFO -          Qtd: 1 | Valor: 0.0
+2025-08-27 11:44:53,734 - INFO -          Método: angular_items_tab_only
+2025-08-27 11:44:53,734 - INFO -    🗂️ ARQUIVOS DA ABA 'ARQUIVOS':
+2025-08-27 11:44:53,734 - INFO -       1. edital_1_0_01-001481-2025+-+Termo+de+Referencia+-+marcenaria+-+auditorio.pdf (386251 bytes)
+2025-08-27 11:44:53,734 - INFO - 
+--- EDITAL 3 ---
+2025-08-27 11:44:53,735 - INFO - 📋 Título: Aviso de Contratação Direta nº 119/2025
+2025-08-27 11:44:53,735 - INFO - 🆔 PNCP ID: 07104377000130-1-000112/2025
+2025-08-27 11:44:53,735 - INFO - 🏢 Organização: SERVICO AUTONOMO DE AGUA E ESGOTO DE BROTAS - SAAEB
+2025-08-27 11:44:53,735 - INFO - 🏙️ Município: Brotas
+2025-08-27 11:44:53,736 - INFO - 📝 Modalidade: Dispensa
+2025-08-27 11:44:53,736 - INFO - 💰 Valor Total: R$ 8800.0
+2025-08-27 11:44:53,736 - INFO - 📊 Aba Itens encontrada: True
+2025-08-27 11:44:53,736 - INFO - 📊 Itens extraídos APENAS da aba 'Itens': 1
+2025-08-27 11:44:53,737 - INFO - 🗂️ Aba Arquivos encontrada: True
+2025-08-27 11:44:53,737 - INFO - ⬇️ Arquivos baixados: 1
+2025-08-27 11:44:53,737 - INFO -    📊 ITENS DA ABA 'ITENS' (APENAS):
+2025-08-27 11:44:53,738 - INFO -       1. HIDROJATEAMENTO DAS REDES DE ESGOTO...
+2025-08-27 11:44:53,738 - INFO -          Qtd: 16 | Valor: 8800.0
+2025-08-27 11:44:53,738 - INFO -          Método: angular_items_tab_only
+2025-08-27 11:44:53,738 - INFO -    🗂️ ARQUIVOS DA ABA 'ARQUIVOS':
+2025-08-27 11:44:53,739 - INFO -       1. edital_2_0_AVISO+DE+CONTRATACAO+DIRETA+SAAEB+-+94-+SERVICO+HIDROJATA.pdf (361770 bytes)
+2025-08-27 11:44:54,177 - INFO - 🔒 Navegador fechado
+2025-08-27 11:44:54,177 - INFO - 
+============================================================
+2025-08-27 11:44:54,177 - INFO - 📊 RESUMO FINAL - APENAS ABA 'ITENS'
+2025-08-27 11:44:54,178 - INFO - ============================================================
+2025-08-27 11:44:54,178 - INFO - 📈 Total de editais coletados: 3
+2025-08-27 11:44:54,183 - INFO - 💾 Arquivo JSON salvo: editais_items_only_20250827_114454.json
+2025-08-27 11:44:54,183 - INFO - 💾 Salvando 3 editais no banco...
+2025-08-27 11:44:54,204 - INFO - ✅ Salvos 3 editais no banco!
+2025-08-27 11:44:54,204 - INFO - 🗄️ Banco de dados atualizado: 3 editais
+2025-08-27 11:44:54,205 - INFO - 
+📊 Estatísticas FINAIS - APENAS ABA 'ITENS':
+2025-08-27 11:44:54,205 - INFO -    📋 Total de editais: 3
+2025-08-27 11:44:54,205 - INFO -    📊 Abas 'Itens' encontradas: 3
+2025-08-27 11:44:54,206 - INFO -    📊 Editais com itens extraídos (APENAS aba Itens): 3
+2025-08-27 11:44:54,206 - INFO -    📊 Total de itens extraídos (APENAS aba Itens): 7
+2025-08-27 11:44:54,206 - INFO -    🗂️ Abas 'Arquivos' encontradas: 3
+2025-08-27 11:44:54,207 - INFO -    ⬇️ Total de arquivos baixados: 3
+2025-08-27 11:44:54,207 - INFO - 
+📸 Arquivos de debug gerados:
+2025-08-27 11:44:54,207 - INFO -    🖼️ debug_*.png (screenshots de cada etapa)
+2025-08-27 11:44:54,208 - INFO -    📁 downloads/ (arquivos baixados)

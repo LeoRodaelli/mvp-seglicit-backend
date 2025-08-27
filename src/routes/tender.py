@@ -1,323 +1,343 @@
-from flask import Blueprint, request, jsonify, send_file, redirect
-from datetime import datetime, date
-from sqlalchemy import and_, or_
+# -*- coding: utf-8 -*-
+"""
+API direta com psycopg2 - contorna problemas do SQLAlchemy
+"""
+
+from flask import Blueprint, request, jsonify
+import psycopg2
+import psycopg2.extras
 import logging
+import json
+import os
+from dotenv import load_dotenv
 
-from src.models.user import db
-from src.models.tender import Tender, City
-from src.services.data_scraper import DataScraper
+load_dotenv()
 
+# Configure logging
 logger = logging.getLogger(__name__)
 
 tender_bp = Blueprint('tender', __name__)
 
-@tender_bp.route('/cities', methods=['GET'])
-def get_cities():
-    """Get list of available cities"""
+def get_db_connection():
+    """Cria conexão direta com PostgreSQL"""
     try:
-        cities = City.query.all()
+        conn = psycopg2.connect(
+            host=os.getenv('DB_HOST'),
+            port=os.getenv('DB_PORT', 5432),
+            database=os.getenv('DB_NAME'),
+            user=os.getenv('DB_USER'),
+            password=os.getenv('DB_PASSWORD'),
+            client_encoding='utf8'
+        )
+        return conn
+    except Exception as e:
+        logger.error(f"Erro de conexão: {e}")
+        return None
+
+@tender_bp.route('/tenders', methods=['GET'])
+def get_tenders():
+    """Get tenders usando psycopg2 diretamente"""
+    try:
+        # Parâmetros
+        page = request.args.get('page', 1, type=int)
+        per_page = min(request.args.get('per_page', 10, type=int), 100)
+        city_name = request.args.get('city_name', '').strip()
+        state_code = request.args.get('state_code', '').strip()
+        keyword = request.args.get('keyword', '').strip()
+
+        # Conectar
+        conn = get_db_connection()
+        if not conn:
+            raise Exception("Erro de conexão com banco")
+
+        cursor = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+
+        # Query base
+        base_query = """
+        SELECT id, pncp_id, title, description, organization_name, organization_cnpj,
+               municipality_name, municipality_ibge, state_code, publication_date,
+               status, modality, estimated_value, source_url, detail_url,
+               data_source, created_at, downloaded_files
+        FROM tenders 
+        WHERE 1=1
+        """
+
+        params = []
+
+        # Aplicar filtros
+        if city_name:
+            base_query += " AND municipality_name ILIKE %s"
+            params.append(f'%{city_name}%')
+
+        if state_code:
+            base_query += " AND state_code ILIKE %s"
+            params.append(f'%{state_code}%')
+
+        if keyword:
+            base_query += " AND (title ILIKE %s OR description ILIKE %s OR organization_name ILIKE %s)"
+            params.extend([f'%{keyword}%', f'%{keyword}%', f'%{keyword}%'])
+
+        # Ordenar e paginar
+        base_query += " ORDER BY publication_date DESC"
+        base_query += f" LIMIT {per_page} OFFSET {(page - 1) * per_page}"
+
+        # Executar query
+        cursor.execute(base_query, params)
+        rows = cursor.fetchall()
+
+        # Converter para lista de dicionários
+        tenders = []
+        for row in rows:
+            tender_dict = {
+                'id': row['id'],
+                'pncp_id': row['pncp_id'] or '',
+                'title': row['title'] or '',
+                'description': row['description'] or '',
+                'organization_name': row['organization_name'] or '',
+                'organization_cnpj': row['organization_cnpj'] or '',
+                'municipality_name': row['municipality_name'] or '',
+                'municipality_ibge': row['municipality_ibge'] or '',
+                'state_code': row['state_code'] or '',
+                'publication_date': str(row['publication_date']) if row['publication_date'] else '',
+                'status': row['status'] or '',
+                'modality': row['modality'] or '',
+                'estimated_value': float(row['estimated_value']) if row['estimated_value'] else None,
+                'source_url': row['source_url'] or '',
+                'detail_url': row['detail_url'] or '',
+                'data_source': row['data_source'] or '',
+                'created_at': str(row['created_at']) if row['created_at'] else '',
+                'downloaded_files': row['downloaded_files'] or '[]',
+                'pncp_url': row['detail_url'] or row['source_url'] or '',
+                'formatted_value': f"R$ {float(row['estimated_value']):,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.') if row['estimated_value'] else 'Valor não informado'
+            }
+            tenders.append(tender_dict)
+
+        # Contar total
+        count_query = "SELECT COUNT(*) FROM tenders WHERE 1=1"
+        count_params = []
+
+        if city_name:
+            count_query += " AND municipality_name ILIKE %s"
+            count_params.append(f'%{city_name}%')
+
+        if state_code:
+            count_query += " AND state_code ILIKE %s"
+            count_params.append(f'%{state_code}%')
+
+        if keyword:
+            count_query += " AND (title ILIKE %s OR description ILIKE %s OR organization_name ILIKE %s)"
+            count_params.extend([f'%{keyword}%', f'%{keyword}%', f'%{keyword}%'])
+
+        cursor.execute(count_query, count_params)
+        total = cursor.fetchone()['count']
+
+        # Fechar conexão
+        cursor.close()
+        conn.close()
+
+        # Calcular paginação
+        pages = (total + per_page - 1) // per_page
+        has_next = page < pages
+        has_prev = page > 1
+
         return jsonify({
             'success': True,
-            'cities': [city.to_dict() for city in cities]
+            'tenders': tenders,
+            'pagination': {
+                'page': page,
+                'pages': pages,
+                'per_page': per_page,
+                'total': total,
+                'has_next': has_next,
+                'has_prev': has_prev
+            },
+            'filters_applied': {
+                'city_name': city_name,
+                'state_code': state_code,
+                'keyword': keyword
+            }
         })
+
+    except Exception as e:
+        logger.error(f"Error fetching tenders: {e}")
+        return jsonify({
+            'success': False,
+            'error': 'Erro interno do servidor',
+            'tenders': [],
+            'pagination': {
+                'page': 1,
+                'pages': 0,
+                'per_page': 10,
+                'total': 0,
+                'has_next': False,
+                'has_prev': False
+            }
+        }), 500
+
+@tender_bp.route('/cities', methods=['GET'])
+def get_cities():
+    """Get cities usando psycopg2 diretamente"""
+    try:
+        conn = get_db_connection()
+        if not conn:
+            raise Exception("Erro de conexão com banco")
+
+        cursor = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+
+        query = """
+        SELECT DISTINCT municipality_name, state_code, municipality_ibge, COUNT(*) as tender_count
+        FROM tenders 
+        WHERE municipality_name IS NOT NULL AND municipality_name != ''
+        GROUP BY municipality_name, state_code, municipality_ibge
+        ORDER BY municipality_name
+        """
+
+        cursor.execute(query)
+        rows = cursor.fetchall()
+
+        cities = []
+        for row in rows:
+            city = {
+                'name': row['municipality_name'] or '',
+                'state_code': row['state_code'] or '',
+                'ibge_code': row['municipality_ibge'] or '',
+                'tender_count': row['tender_count'] or 0
+            }
+            cities.append(city)
+
+        cursor.close()
+        conn.close()
+
+        return jsonify({
+            'success': True,
+            'cities': cities
+        })
+
     except Exception as e:
         logger.error(f"Error fetching cities: {e}")
         return jsonify({
             'success': False,
-            'error': str(e)
+            'error': 'Erro ao buscar cidades',
+            'cities': []
         }), 500
 
-@tender_bp.route('/cities/<ibge_code>', methods=['GET'])
-def get_city(ibge_code):
-    """Get specific city by IBGE code"""
+@tender_bp.route('/states', methods=['GET'])
+def get_states():
+    """Get states usando psycopg2 diretamente"""
     try:
-        city = City.query.filter_by(ibge_code=ibge_code).first()
-        if not city:
-            return jsonify({
-                'success': False,
-                'error': 'City not found'
-            }), 404
-        
-        return jsonify({
-            'success': True,
-            'city': city.to_dict()
-        })
-    except Exception as e:
-        logger.error(f"Error fetching city {ibge_code}: {e}")
-        return jsonify({
-            'success': False,
-            'error': str(e)
-        }), 500
+        conn = get_db_connection()
+        if not conn:
+            raise Exception("Erro de conexão com banco")
 
-@tender_bp.route('/tenders', methods=['GET'])
-def search_tenders():
-    """Search for tenders with filters"""
-    try:
-        # Get query parameters
-        city_ibge = request.args.get('city_ibge')
-        status = request.args.get('status')
-        start_date = request.args.get('start_date')
-        end_date = request.args.get('end_date')
-        keyword = request.args.get('keyword')
-        data_source = request.args.get('data_source')
-        page = int(request.args.get('page', 1))
-        per_page = min(int(request.args.get('per_page', 20)), 100)  # Max 100 per page
-        
-        # Build query
-        query = Tender.query
-        
-        # Apply filters
-        if city_ibge:
-            query = query.filter(Tender.municipality_ibge == city_ibge)
-        
-        if status:
-            query = query.filter(Tender.status.ilike(f'%{status}%'))
-        
-        if start_date:
-            try:
-                start_date_obj = datetime.strptime(start_date, '%Y-%m-%d').date()
-                query = query.filter(Tender.publication_date >= start_date_obj)
-            except ValueError:
-                return jsonify({
-                    'success': False,
-                    'error': 'Invalid start_date format. Use YYYY-MM-DD'
-                }), 400
-        
-        if end_date:
-            try:
-                end_date_obj = datetime.strptime(end_date, '%Y-%m-%d').date()
-                query = query.filter(Tender.publication_date <= end_date_obj)
-            except ValueError:
-                return jsonify({
-                    'success': False,
-                    'error': 'Invalid end_date format. Use YYYY-MM-DD'
-                }), 400
-        
-        if keyword:
-            keyword_filter = or_(
-                Tender.title.ilike(f'%{keyword}%'),
-                Tender.description.ilike(f'%{keyword}%'),
-                Tender.organization_name.ilike(f'%{keyword}%')
-            )
-            query = query.filter(keyword_filter)
-        
-        if data_source:
-            query = query.filter(Tender.data_source == data_source.upper())
-        
-        # Order by publication date (most recent first)
-        query = query.order_by(Tender.publication_date.desc(), Tender.created_at.desc())
-        
-        # Paginate
-        pagination = query.paginate(
-            page=page,
-            per_page=per_page,
-            error_out=False
-        )
-        
-        tenders = pagination.items
-        
-        return jsonify({
-            'success': True,
-            'tenders': [tender.to_dict() for tender in tenders],
-            'pagination': {
-                'page': page,
-                'per_page': per_page,
-                'total': pagination.total,
-                'pages': pagination.pages,
-                'has_next': pagination.has_next,
-                'has_prev': pagination.has_prev
+        cursor = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+
+        query = """
+        SELECT state_code, COUNT(*) as tender_count
+        FROM tenders 
+        WHERE state_code IS NOT NULL AND state_code != ''
+        GROUP BY state_code
+        ORDER BY state_code
+        """
+
+        cursor.execute(query)
+        rows = cursor.fetchall()
+
+        states = []
+        for row in rows:
+            state = {
+                'code': row['state_code'] or '',
+                'name': row['state_code'] or '',
+                'count': row['tender_count'] or 0
             }
-        })
-        
-    except Exception as e:
-        logger.error(f"Error searching tenders: {e}")
-        return jsonify({
-            'success': False,
-            'error': str(e)
-        }), 500
+            states.append(state)
 
-@tender_bp.route('/tenders/<int:tender_id>', methods=['GET'])
-def get_tender(tender_id):
-    """Get specific tender by ID"""
-    try:
-        tender = Tender.query.get(tender_id)
-        if not tender:
-            return jsonify({
-                'success': False,
-                'error': 'Tender not found'
-            }), 404
-        
+        cursor.close()
+        conn.close()
+
         return jsonify({
             'success': True,
-            'tender': tender.to_dict()
+            'states': states
         })
+
     except Exception as e:
-        logger.error(f"Error fetching tender {tender_id}: {e}")
+        logger.error(f"Error fetching states: {e}")
         return jsonify({
             'success': False,
-            'error': str(e)
+            'error': 'Erro ao buscar estados',
+            'states': []
         }), 500
 
 @tender_bp.route('/stats', methods=['GET'])
 def get_stats():
-    """Get statistics about tenders"""
+    """Get stats usando psycopg2 diretamente"""
     try:
-        scraper = DataScraper()
-        stats = scraper.get_scraping_stats()
-        
+        conn = get_db_connection()
+        if not conn:
+            raise Exception("Erro de conexão com banco")
+
+        cursor = conn.cursor()
+
+        # Total de licitações
+        cursor.execute("SELECT COUNT(*) FROM tenders")
+        total_tenders = cursor.fetchone()[0]
+
+        # Total de cidades
+        cursor.execute("SELECT COUNT(DISTINCT municipality_name) FROM tenders WHERE municipality_name IS NOT NULL")
+        total_cities = cursor.fetchone()[0]
+
+        # Total de estados
+        cursor.execute("SELECT COUNT(DISTINCT state_code) FROM tenders WHERE state_code IS NOT NULL")
+        total_states = cursor.fetchone()[0]
+
+        cursor.close()
+        conn.close()
+
         return jsonify({
             'success': True,
-            'stats': stats
+            'stats': {
+                'total_tenders': total_tenders,
+                'total_cities': total_cities,
+                'total_states': total_states,
+                'last_update': '2025-08-26'
+            }
         })
+
     except Exception as e:
         logger.error(f"Error fetching stats: {e}")
         return jsonify({
             'success': False,
-            'error': str(e)
-        }), 500
-
-@tender_bp.route('/scrape', methods=['POST'])
-def run_scraping():
-    """Manually trigger data scraping"""
-    try:
-        scraper = DataScraper()
-        results = scraper.run_full_scraping()
-        
-        return jsonify({
-            'success': True,
-            'results': results
-        })
-    except Exception as e:
-        logger.error(f"Error running scraping: {e}")
-        return jsonify({
-            'success': False,
-            'error': str(e)
-        }), 500
-
-
-@tender_bp.route('/tenders/<int:tender_id>/pdf', methods=['GET'])
-def get_tender_pdf(tender_id):
-    """Serve PDF file for a specific tender"""
-    try:
-        tender = Tender.query.get(tender_id)
-        if not tender:
-            return jsonify({
-                'success': False,
-                'error': 'Tender not found'
-            }), 404
-        
-        # Verificar se tem arquivos baixados
-        if not tender.downloaded_files or len(tender.downloaded_files) == 0:
-            return jsonify({
-                'success': False,
-                'error': 'No PDF files available for this tender'
-            }), 404
-        
-        # Pegar o primeiro arquivo PDF
-        pdf_file = tender.downloaded_files[0]
-        
-        # Verificar se é um caminho local ou URL
-        if 'local_path' in pdf_file and pdf_file['local_path']:
-            # Arquivo local - servir diretamente
-            file_path = pdf_file['local_path']
-            if os.path.exists(file_path):
-                return send_file(
-                    file_path,
-                    as_attachment=False,
-                    download_name=pdf_file.get('filename', 'edital.pdf'),
-                    mimetype='application/pdf'
-                )
-            else:
-                return jsonify({
-                    'success': False,
-                    'error': 'PDF file not found on server'
-                }), 404
-        
-        elif 'url' in pdf_file and pdf_file['url']:
-            # URL externa - redirecionar
-            return redirect(pdf_file['url'])
-        
-        else:
-            return jsonify({
-                'success': False,
-                'error': 'No valid PDF path or URL found'
-            }), 404
-            
-    except Exception as e:
-        logger.error(f"Error serving PDF for tender {tender_id}: {e}")
-        return jsonify({
-            'success': False,
-            'error': str(e)
-        }), 500
-
-@tender_bp.route('/tenders/<int:tender_id>/files', methods=['GET'])
-def get_tender_files(tender_id):
-    """Get all files for a specific tender"""
-    try:
-        tender = Tender.query.get(tender_id)
-        if not tender:
-            return jsonify({
-                'success': False,
-                'error': 'Tender not found'
-            }), 404
-        
-        files = tender.downloaded_files or []
-        
-        # Processar arquivos para adicionar informações úteis
-        processed_files = []
-        for file_info in files:
-            processed_file = {
-                'filename': file_info.get('filename', 'Arquivo'),
-                'url': file_info.get('url', ''),
-                'local_path': file_info.get('local_path', ''),
-                'file_size': file_info.get('file_size', 0),
-                'file_type': file_info.get('file_type', 'PDF'),
-                'download_url': f"/api/tenders/{tender_id}/pdf" if file_info.get('local_path') else file_info.get('url', ''),
-                'is_local': bool(file_info.get('local_path')),
-                'is_available': bool(file_info.get('local_path') and os.path.exists(file_info['local_path'])) or bool(file_info.get('url'))
+            'error': 'Erro ao buscar estatísticas',
+            'stats': {
+                'total_tenders': 0,
+                'total_cities': 0,
+                'total_states': 0,
+                'last_update': '2025-08-26'
             }
-            processed_files.append(processed_file)
-        
+        }), 500
+
+@tender_bp.route('/test', methods=['GET'])
+def test_connection():
+    """Test usando psycopg2 diretamente"""
+    try:
+        conn = get_db_connection()
+        if not conn:
+            raise Exception("Erro de conexão com banco")
+
+        cursor = conn.cursor()
+        cursor.execute("SELECT COUNT(*) FROM tenders")
+        count = cursor.fetchone()[0]
+
+        cursor.close()
+        conn.close()
+
         return jsonify({
             'success': True,
-            'files': processed_files,
-            'total_files': len(processed_files)
+            'message': 'API direta funcionando!',
+            'total_tenders': count,
+            'method': 'psycopg2_direct'
         })
-        
     except Exception as e:
-        logger.error(f"Error fetching files for tender {tender_id}: {e}")
         return jsonify({
             'success': False,
             'error': str(e)
         }), 500
-
-
-@tender_bp.route('/health', methods=['GET'])
-def health_check():
-    """Health check endpoint"""
-    try:
-        # Check database connection
-        from sqlalchemy import text
-        db.session.execute(text('SELECT 1'))
-        
-        # Get basic stats
-        total_tenders = Tender.query.count()
-        total_cities = City.query.count()
-        
-        return jsonify({
-            'success': True,
-            'status': 'healthy',
-            'database': 'connected',
-            'total_tenders': total_tenders,
-            'total_cities': total_cities,
-            'timestamp': datetime.utcnow().isoformat()
-        })
-    except Exception as e:
-        logger.error(f"Health check failed: {e}")
-        return jsonify({
-            'success': False,
-            'status': 'unhealthy',
-            'error': str(e),
-            'timestamp': datetime.utcnow().isoformat()
-        }), 500
-

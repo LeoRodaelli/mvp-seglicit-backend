@@ -1298,7 +1298,7 @@ async def main():
     
     # Configurações
     uf = "SP"
-    limit = 7  # Processar apenas 3 editais para teste (mude para None para processar todos)
+    limit = 50  # Processar apenas 3 editais para teste (mude para None para processar todos)
     
     all_editais = []
     

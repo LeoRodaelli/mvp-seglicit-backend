@@ -1,156 +1,383 @@
-from flask import Blueprint, request, jsonify
-from models.tender import db, City, Tender
+# -*- coding: utf-8 -*-
+import os
+import sys
+
+# Configurar encoding UTF-8
+os.environ['PYTHONIOENCODING'] = 'utf-8'
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8')
+    sys.stderr.reconfigure(encoding='utf-8')
+
+import os
+
+from flask import Blueprint, request, jsonify, send_file, redirect
+from datetime import datetime, date
+from sqlalchemy import and_, or_
 import logging
 
-# Configurar logging
-logging.basicConfig(level=logging.INFO)
+from src.models.user import db
+from src.models.tender import Tender, City
+from src.services.data_scraper import DataScraper
+
 logger = logging.getLogger(__name__)
 
 tender_bp = Blueprint('tender', __name__)
 
-@tender_bp.route('/health', methods=['GET'])
-def health_check():
-    """Endpoint de verificação de saúde"""
+import os
+import sys
+
+# Forçar encoding UTF-8
+if sys.version_info[0] == 3:
+    import codecs
+    sys.stdout = codecs.getwriter('utf-8')(sys.stdout.buffer, 'strict')
+    sys.stderr = codecs.getwriter('utf-8')(sys.stderr.buffer, 'strict')
+
+# Configurar locale
+import locale
+try:
+    locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
+except:
     try:
-        # Verificar conexão com banco
-        tender_count = Tender.query.count()
-        city_count = City.query.count()
-        
-        return jsonify({
-            'status': 'healthy',
-            'database': 'connected',
-            'tenders_count': tender_count,
-            'cities_count': city_count
-        }), 200
-    except Exception as e:
-        logger.error(f"Health check failed: {e}")
-        return jsonify({
-            'status': 'unhealthy',
-            'error': str(e)
-        }), 500
+        locale.setlocale(locale.LC_ALL, 'C.UTF-8')
+    except:
+        pass
+
 
 @tender_bp.route('/cities', methods=['GET'])
 def get_cities():
-    """Retorna lista de cidades disponíveis"""
+    """Get list of cities with UTF-8 handling"""
+    """Get list of cities with UTF-8 handling"""
+    """Get list of available cities"""
     try:
         cities = City.query.all()
-        cities_list = []
-        
-        for city in cities:
-            cities_list.append({
-                'ibge_code': city.ibge_code,
-                'name': city.name,
-                'state_code': city.state_code,
-                'display_name': f"{city.name} - {city.state_code}"
-            })
-        
-        return jsonify(cities_list), 200
-        
+        return jsonify({
+            'success': True,
+            'cities': [city.to_dict() for city in cities]
+        })
     except Exception as e:
         logger.error(f"Error fetching cities: {e}")
-        return jsonify({'error': 'Failed to fetch cities'}), 500
+        return jsonify({
+            'success': False,
+            'error': str(e)
+        }), 500
+
+@tender_bp.route('/cities/<ibge_code>', methods=['GET'])
+def get_city(ibge_code):
+    """Get specific city by IBGE code"""
+    try:
+        city = City.query.filter_by(ibge_code=ibge_code).first()
+        if not city:
+            return jsonify({
+                'success': False,
+                'error': 'City not found'
+            }), 404
+        
+        return jsonify({
+            'success': True,
+            'city': city.to_dict()
+        })
+    except Exception as e:
+        logger.error(f"Error fetching city {ibge_code}: {e}")
+        return jsonify({
+            'success': False,
+            'error': str(e)
+        }), 500
+
 
 @tender_bp.route('/tenders', methods=['GET'])
 def get_tenders():
-    """Retorna lista de licitações com filtros opcionais"""
+    """Get tenders with UTF-8 handling"""
+    """Get tenders with UTF-8 handling"""
+    """Get tenders with filters"""
     try:
-        # Parâmetros de consulta
-        city_ibge = request.args.get('city_ibge')
-        keyword = request.args.get('keyword')
-        start_date = request.args.get('start_date')
-        end_date = request.args.get('end_date')
-        page = int(request.args.get('page', 1))
-        per_page = int(request.args.get('per_page', 10))
-        
-        # Construir query
+        # Parâmetros de filtro
+        page = request.args.get('page', 1, type=int)
+        per_page = min(request.args.get('per_page', 10, type=int), 100)
+
+        # Filtros
+        city_name = request.args.get('city_name', '').strip()
+        state_code = request.args.get('state_code', '').strip()
+        keyword = request.args.get('keyword', '').strip()
+
+        # Query base
         query = Tender.query
-        
+
         # Aplicar filtros
-        if city_ibge:
-            query = query.filter(Tender.municipality_ibge == city_ibge)
-        
+        if city_name:
+            query = query.filter(Tender.municipality_name.ilike(f'%{city_name}%'))
+
+        if state_code:
+            query = query.filter(Tender.state_code.ilike(f'%{state_code}%'))
+
         if keyword:
             query = query.filter(
-                Tender.title.contains(keyword) | 
-                Tender.description.contains(keyword)
+                db.or_(
+                    Tender.title.ilike(f'%{keyword}%'),
+                    Tender.description.ilike(f'%{keyword}%'),
+                    Tender.organization_name.ilike(f'%{keyword}%')
+                )
             )
-        
-        if start_date:
-            query = query.filter(Tender.publication_date >= start_date)
-        
-        if end_date:
-            query = query.filter(Tender.publication_date <= end_date)
-        
-        # Ordenar por data de publicação (mais recentes primeiro)
+
+        # Ordenar por data mais recente
         query = query.order_by(Tender.publication_date.desc())
-        
+
         # Paginação
         pagination = query.paginate(
-            page=page, 
-            per_page=per_page, 
+            page=page,
+            per_page=per_page,
             error_out=False
         )
-        
-        tenders_list = []
-        for tender in pagination.items:
-            tenders_list.append(tender.to_dict())
-        
+
+        tenders = [tender.to_dict() for tender in pagination.items]
+
         return jsonify({
-            'tenders': tenders_list,
+            'success': True,
+            'tenders': tenders,
             'pagination': {
                 'page': page,
+                'pages': pagination.pages,
                 'per_page': per_page,
                 'total': pagination.total,
-                'pages': pagination.pages,
                 'has_next': pagination.has_next,
                 'has_prev': pagination.has_prev
+            },
+            'filters_applied': {
+                'city_name': city_name,
+                'state_code': state_code,
+                'keyword': keyword
             }
-        }), 200
-        
+        })
+
     except Exception as e:
         logger.error(f"Error fetching tenders: {e}")
-        return jsonify({'error': 'Failed to fetch tenders'}), 500
+        return jsonify({
+            'success': False,
+            'error': str(e)
+        }), 500
+
+
+@tender_bp.route('/tenders/<int:tender_id>', methods=['GET'])
+def get_tender(tender_id):
+    """Get specific tender by ID"""
+    try:
+        tender = Tender.query.get(tender_id)
+        if not tender:
+            return jsonify({
+                'success': False,
+                'error': 'Tender not found'
+            }), 404
+        
+        return jsonify({
+            'success': True,
+            'tender': tender.to_dict()
+        })
+    except Exception as e:
+        logger.error(f"Error fetching tender {tender_id}: {e}")
+        return jsonify({
+            'success': False,
+            'error': str(e)
+        }), 500
 
 @tender_bp.route('/stats', methods=['GET'])
 def get_stats():
-    """Retorna estatísticas gerais"""
+    """Get statistics about tenders"""
     try:
-        tender_count = Tender.query.count()
-        city_count = City.query.count()
-        
-        # Estatísticas por fonte
-        pncp_count = Tender.query.filter(Tender.data_source == 'PNCP').count()
-        qd_count = Tender.query.filter(Tender.data_source == 'QUERIDO_DIARIO').count()
+        scraper = DataScraper()
+        stats = scraper.get_scraping_stats()
         
         return jsonify({
-            'total_tenders': tender_count,
-            'total_cities': city_count,
-            'sources': {
-                'PNCP': pncp_count,
-                'QUERIDO_DIARIO': qd_count,
-                'others': tender_count - pncp_count - qd_count
-            }
-        }), 200
-        
+            'success': True,
+            'stats': stats
+        })
     except Exception as e:
-        logger.error(f"Error getting stats: {e}")
+        logger.error(f"Error fetching stats: {e}")
         return jsonify({
-            'total_tenders': 0,
-            'total_cities': 0,
-            'sources': {'PNCP': 0, 'QUERIDO_DIARIO': 0, 'others': 0}
-        }), 200
+            'success': False,
+            'error': str(e)
+        }), 500
 
 @tender_bp.route('/scrape', methods=['POST'])
-def trigger_scrape():
-    """Endpoint para disparar coleta de dados"""
+def run_scraping():
+    """Manually trigger data scraping"""
     try:
-        # Simular processo de scraping
+        scraper = DataScraper()
+        results = scraper.run_full_scraping()
+        
         return jsonify({
-            'status': 'success',
-            'message': 'Scraping process completed',
-            'collected': 0
-        }), 200
+            'success': True,
+            'results': results
+        })
+    except Exception as e:
+        logger.error(f"Error running scraping: {e}")
+        return jsonify({
+            'success': False,
+            'error': str(e)
+        }), 500
+
+
+@tender_bp.route('/tenders/<int:tender_id>/pdf', methods=['GET'])
+def get_tender_pdf(tender_id):
+    """Serve PDF file for a specific tender"""
+    try:
+        tender = Tender.query.get(tender_id)
+        if not tender:
+            return jsonify({
+                'success': False,
+                'error': 'Tender not found'
+            }), 404
+        
+        # Verificar se tem arquivos baixados
+        if not tender.downloaded_files or len(tender.downloaded_files) == 0:
+            return jsonify({
+                'success': False,
+                'error': 'No PDF files available for this tender'
+            }), 404
+        
+        # Pegar o primeiro arquivo PDF
+        pdf_file = tender.downloaded_files[0]
+        
+        # Verificar se é um caminho local ou URL
+        if 'local_path' in pdf_file and pdf_file['local_path']:
+            # Arquivo local - servir diretamente
+            file_path = pdf_file['local_path']
+            if os.path.exists(file_path):
+                return send_file(
+                    file_path,
+                    as_attachment=False,
+                    download_name=pdf_file.get('filename', 'edital.pdf'),
+                    mimetype='application/pdf'
+                )
+            else:
+                return jsonify({
+                    'success': False,
+                    'error': 'PDF file not found on server'
+                }), 404
+        
+        elif 'url' in pdf_file and pdf_file['url']:
+            # URL externa - redirecionar
+            return redirect(pdf_file['url'])
+        
+        else:
+            return jsonify({
+                'success': False,
+                'error': 'No valid PDF path or URL found'
+            }), 404
+            
+    except Exception as e:
+        logger.error(f"Error serving PDF for tender {tender_id}: {e}")
+        return jsonify({
+            'success': False,
+            'error': str(e)
+        }), 500
+
+@tender_bp.route('/tenders/<int:tender_id>/files', methods=['GET'])
+def get_tender_files(tender_id):
+    """Get all files for a specific tender"""
+    try:
+        tender = Tender.query.get(tender_id)
+        if not tender:
+            return jsonify({
+                'success': False,
+                'error': 'Tender not found'
+            }), 404
+        
+        files = tender.downloaded_files or []
+        
+        # Processar arquivos para adicionar informações úteis
+        processed_files = []
+        for file_info in files:
+            processed_file = {
+                'filename': file_info.get('filename', 'Arquivo'),
+                'url': file_info.get('url', ''),
+                'local_path': file_info.get('local_path', ''),
+                'file_size': file_info.get('file_size', 0),
+                'file_type': file_info.get('file_type', 'PDF'),
+                'download_url': f"/api/tenders/{tender_id}/pdf" if file_info.get('local_path') else file_info.get('url', ''),
+                'is_local': bool(file_info.get('local_path')),
+                'is_available': bool(file_info.get('local_path') and os.path.exists(file_info['local_path'])) or bool(file_info.get('url'))
+            }
+            processed_files.append(processed_file)
+        
+        return jsonify({
+            'success': True,
+            'files': processed_files,
+            'total_files': len(processed_files)
+        })
         
     except Exception as e:
-        logger.error(f"Error in scraping: {e}")
-        return jsonify({'error': 'Scraping failed'}), 500
+        logger.error(f"Error fetching files for tender {tender_id}: {e}")
+        return jsonify({
+            'success': False,
+            'error': str(e)
+        }), 500
+
+
+@tender_bp.route('/health', methods=['GET'])
+def health_check():
+    """Health check endpoint"""
+    try:
+        # Check database connection
+        from sqlalchemy import text
+        db.session.execute(text('SELECT 1'))
+        
+        # Get basic stats
+        total_tenders = Tender.query.count()
+        total_cities = City.query.count()
+        
+        return jsonify({
+            'success': True,
+            'status': 'healthy',
+            'database': 'connected',
+            'total_tenders': total_tenders,
+            'total_cities': total_cities,
+            'timestamp': datetime.utcnow().isoformat()
+        })
+    except Exception as e:
+        logger.error(f"Health check failed: {e}")
+        return jsonify({
+            'success': False,
+            'status': 'unhealthy',
+            'error': str(e),
+            'timestamp': datetime.utcnow().isoformat()
+        }), 500
+
+
+@tender_bp.route('/states', methods=['GET'])
+def get_states():
+    """Get list of states with UTF-8 handling"""
+    """Get list of states with UTF-8 handling"""
+    """Get list of states"""
+    try:
+        states = db.session.query(
+            Tender.state_code,
+            db.func.count(Tender.id).label('count')
+        ).filter(
+            Tender.state_code.isnot(None)
+        ).group_by(
+            Tender.state_code
+        ).order_by(
+            Tender.state_code
+        ).all()
+
+        states_list = [
+            {
+                'code': state.state_code,
+                'name': state.state_code,  # Você pode mapear para nomes completos depois
+                'count': state.count
+            }
+            for state in states
+        ]
+
+        return jsonify({
+            'success': True,
+            'states': states_list
+        })
+
+    except Exception as e:
+        logger.error(f"Error fetching states: {e}")
+        return jsonify({
+            'success': False,
+            'error': str(e)
+        }), 500
+
+
