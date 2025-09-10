@@ -1,0 +1,941 @@
+[
+  {
+    "id": "PNCP-ITEMS-ONLY-20250828-000",
+    "pncp_id": "96291141000180-1-004247/2025",
+    "title": "Aviso de Contratação Direta nº 90013/2025",
+    "description": "Aviso de Contratação Direta nº 90013/2025\nId contratação PNCP: 96291141000180-1-004247/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 28/08/2025\nÓrgão: SAO PAULO SECRETARIA DA ADMINISTRACAO PENITENCIARIA\nLocal: Andradina/SP\nObjeto: Aquisição de Outros Materiais de Consumo/Ferramentas Avulsas para Reforma do Pavilhão Disciplinar",
+    "organization_name": "SAO PAULO SECRETARIA DA ADMINISTRACAO PENITENCIARIA",
+    "municipality_name": "Andradina",
+    "state_code": "SP",
+    "modality": "Dispensa",
+    "estimated_value": null,
+    "publication_date": "2025-08-28",
+    "objeto": "Aquisição de Outros Materiais de Consumo/Ferramentas Avulsas para Reforma do Pavilhão Disciplinar",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Aviso de Contratação Direta nº 90013/2025\nId contratação PNCP: 96291141000180-1-004247/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 28/08/2025\nÓrgão: SAO PAULO SECRETARIA DA ADMINISTRACAO PENITENCIARIA\nLocal: Andradina/SP\nObjeto: Aquisição de Outros Materiais de Consumo/Ferramentas Avulsas para Reforma do Pavilhão Disciplinar",
+    "scraped_at": "2025-08-28T14:59:32.154323",
+    "has_details": true,
+    "has_access_button": false,
+    "edital_href": "/editais/96291141000180/2025/4247",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nAviso de Contratação Direta nº 90013/2025\nÚltima atualização 28/08/2025\n\nLocal: Andradina/SP\n\nÓrgão: SAO PAULO SECRETARIA DA ADMINISTRACAO PENITENCIARIA\n\nUnidade compradora: 380150 - ESP-PENIT. \"ASP ANISIO AP. OLIVEIRA\" - ANDRAD\n\nModalidade da contratação: Dispensa\n\nAmparo legal: Lei 14.133/2021, Art. 75, II\n\nTipo: Aviso de Contratação Direta\n\nModo de disputa: Dispensa Com Disputa\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 28/08/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 28/08/2025 15:01 (horário de Brasília)\n\nData fim de recebimento de propostas: 04/09/2025 07:59 (horário de Brasília)\n\nId contratação PNCP: 96291141000180-1-004247/2025\n\nFonte: Compras.gov.br\n\nObjeto:\n\nAquisição de Outros Materiais de Consumo/Ferramentas Avulsas para Reforma do Pavilhão Disciplinar\n\nInformação complementar:\nNão se aplica\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 7.671,83\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nBarra Chata\n8\nR$ 193,00\nR$ 1.544,00\n2\nChumbador Especial\n30\nR$ 1,88\nR$ 56,40\n3\nArame Solda\n1\nR$ 314,00\nR$ 314,00\n4\nEletrodo Solda\n3\nR$ 19,00\nR$ 57,00\n5\nMistura Gasosa\n3\nR$ 701,60\nR$ 2.104,80\nExibir:\n5\n1-5 de 11 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de agosto de 2021.\n\nO desenvolvimento dessa versão do Portal é um esforço conjunto de construção de uma concepção direta legal, homologado pelos indicados a compor o aludido comitê.\n\nA adequação, fidedignidade e corretude das informações e ",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 7671.83,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "Barra Chata",
+        "quantidade": 8,
+        "valor_unitario": 193.0,
+        "valor_total": 1544.0,
+        "raw_data": [
+          "1",
+          "Barra Chata",
+          "8",
+          "R$ 193,00",
+          "R$ 1.544,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "2",
+        "descricao": "Chumbador Especial",
+        "quantidade": 30,
+        "valor_unitario": 1.88,
+        "valor_total": 56.4,
+        "raw_data": [
+          "2",
+          "Chumbador Especial",
+          "30",
+          "R$ 1,88",
+          "R$ 56,40",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "3",
+        "descricao": "Arame Solda",
+        "quantidade": 1,
+        "valor_unitario": 314.0,
+        "valor_total": 314.0,
+        "raw_data": [
+          "3",
+          "Arame Solda",
+          "1",
+          "R$ 314,00",
+          "R$ 314,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "4",
+        "descricao": "Eletrodo Solda",
+        "quantidade": 3,
+        "valor_unitario": 19.0,
+        "valor_total": 57.0,
+        "raw_data": [
+          "4",
+          "Eletrodo Solda",
+          "3",
+          "R$ 19,00",
+          "R$ 57,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "5",
+        "descricao": "Mistura Gasosa",
+        "quantidade": 3,
+        "valor_unitario": 701.6,
+        "valor_total": 2104.8,
+        "raw_data": [
+          "5",
+          "Mistura Gasosa",
+          "3",
+          "R$ 701,60",
+          "R$ 2.104,80",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 5,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_0_0_ac+16+sei.pdf",
+        "filepath": "downloads\\edital_0_0_ac+16+sei.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/96291141000180/compras/2025/4247/arquivos/1",
+        "description": "Fazer download",
+        "size": 3818187,
+        "downloaded_at": "2025-08-28T15:00:16.562126"
+      }
+    ],
+    "downloads_count": 1,
+    "accessed_contratacao": false,
+    "detail_url": "https://pncp.gov.br/app/editais/96291141000180/2025/4247"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250828-001",
+    "pncp_id": "44892693000140-1-000254/2025",
+    "title": "Edital nº 76/2025",
+    "description": "Edital nº 76/2025\nId contratação PNCP: 44892693000140-1-000254/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 28/08/2025\nÓrgão: MUNICIPIO DE CARAPICUIBA\nLocal: Carapicuíba/SP\nObjeto: - Abertura de ATA de playground infantil",
+    "organization_name": "MUNICIPIO DE CARAPICUIBA",
+    "municipality_name": "Carapicuíba",
+    "state_code": "SP",
+    "modality": "Pregão - Eletrônico",
+    "estimated_value": null,
+    "publication_date": "2025-08-28",
+    "objeto": "- Abertura de ATA de playground infantil",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Edital nº 76/2025\nId contratação PNCP: 44892693000140-1-000254/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 28/08/2025\nÓrgão: MUNICIPIO DE CARAPICUIBA\nLocal: Carapicuíba/SP\nObjeto: - Abertura de ATA de playground infantil",
+    "scraped_at": "2025-08-28T15:01:24.709084",
+    "has_details": true,
+    "has_access_button": false,
+    "edital_href": "/editais/44892693000140/2025/254",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nEdital nº 76/2025\nÚltima atualização 28/08/2025\n\nLocal: Carapicuíba/SP\n\nÓrgão: MUNICIPIO DE CARAPICUIBA\n\nUnidade compradora: 1 - MUNICIPIO DE CARAPICUIBA\n\nModalidade da contratação: Pregão - Eletrônico\n\nAmparo legal: Lei 14.133/2021, Art. 28, I\n\nTipo: Edital\n\nModo de disputa: Aberto\n\nRegistro de preço: Sim\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 28/08/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 12/09/2025 11:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 12/09/2025 11:00 (horário de Brasília)\n\nId contratação PNCP: 44892693000140-1-000254/2025\n\nFonte: Sisvetor Informática Ltda\n\nObjeto:\n\n- Abertura de ATA de playground infantil\n\nInformação complementar:\n- O brinquedo e a brincadeira são constitutivos da infância, a brincadeira é para a criança um dos principais meios de expressão que possibilita a investigação e a aprendizagem sobre as pessoas e o mundo. Valorizar o brincar significa oferecer espaços e brinquedos que favoreçam a brincadeira como atividade que ocupa o maior espaço de tempo na infância. A aquisição de playground para uso das crianças na educação infantil é uma estratégia de implementação das diretrizes curriculares Nacionais para a educação infantil.\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 5.166.373,60\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nPARQUE INFANTIL MADEIRA PLÁSTICA 1 TORRE ÁREA NECESSÁRIA COM ESPAÇO DE CIRCULAÇÃO: 8,50MX 8,00M - ALTURA: 3,50 M FAIXA ETÁRIA: 2 A 5 ANOS\n10\nR$ 29.245,33\nR$ 292.453,30\n2\nPARQUE INFANTIL MADEIRA PLÁSTICA 2 TORRES: ESPAÇO NECESSÁRIO PARA INSTALAÇÃO: ‘10,50M X 9,00M - ALTURA: 3,50 M FAIXA ETÁRIA: 3 A 12 ANOS\n10\nR$ 57.712,70\nR$ 577.127,00\n3\nPARQUE INFANTIL MADEIRA PLÁSTICA 2 TORRES ESPAÇO NECESSÁRIO PARA INSTALAÇÃO: 9,50M X 7,50M - ALTURA: 3,50 M FAIXA ETÁRIA: 4 A 12 ANOS\n10\nR$ 43.871,67\nR$ 438.716,70\n4\nPARQUE INFANTIL MADEI",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 5166373.6,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "PARQUE INFANTIL MADEIRA PLÁSTICA 1 TORRE ÁREA NECESSÁRIA COM ESPAÇO DE CIRCULAÇÃO: 8,50MX 8,00M - ALTURA: 3,50 M FAIXA ETÁRIA: 2 A 5 ANOS",
+        "quantidade": 10,
+        "valor_unitario": 29245.33,
+        "valor_total": 292453.3,
+        "raw_data": [
+          "1",
+          "PARQUE INFANTIL MADEIRA PLÁSTICA 1 TORRE ÁREA NECESSÁRIA COM ESPAÇO DE CIRCULAÇÃO: 8,50MX 8,00M - ALTURA: 3,50 M FAIXA ETÁRIA: 2 A 5 ANOS",
+          "10",
+          "R$ 29.245,33",
+          "R$ 292.453,30",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "2",
+        "descricao": "PARQUE INFANTIL MADEIRA PLÁSTICA 2 TORRES: ESPAÇO NECESSÁRIO PARA INSTALAÇÃO: ‘10,50M X 9,00M - ALTURA: 3,50 M FAIXA ETÁRIA: 3 A 12 ANOS",
+        "quantidade": 10,
+        "valor_unitario": 57712.7,
+        "valor_total": 577127.0,
+        "raw_data": [
+          "2",
+          "PARQUE INFANTIL MADEIRA PLÁSTICA 2 TORRES: ESPAÇO NECESSÁRIO PARA INSTALAÇÃO: ‘10,50M X 9,00M - ALTURA: 3,50 M FAIXA ETÁRIA: 3 A 12 ANOS",
+          "10",
+          "R$ 57.712,70",
+          "R$ 577.127,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "3",
+        "descricao": "PARQUE INFANTIL MADEIRA PLÁSTICA 2 TORRES ESPAÇO NECESSÁRIO PARA INSTALAÇÃO: 9,50M X 7,50M - ALTURA: 3,50 M FAIXA ETÁRIA: 4 A 12 ANOS",
+        "quantidade": 10,
+        "valor_unitario": 43871.67,
+        "valor_total": 438716.7,
+        "raw_data": [
+          "3",
+          "PARQUE INFANTIL MADEIRA PLÁSTICA 2 TORRES ESPAÇO NECESSÁRIO PARA INSTALAÇÃO: 9,50M X 7,50M - ALTURA: 3,50 M FAIXA ETÁRIA: 4 A 12 ANOS",
+          "10",
+          "R$ 43.871,67",
+          "R$ 438.716,70",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "4",
+        "descricao": "PARQUE INFANTIL MADEIRA PLÁSTICA 3 TORRES ESPAÇO NECESSÁRIO PARA INSTALAÇÃO: 12,50M X 8,00M - ALTURA: 3,50 M FAIXA ETÁRIA: 3 A 12 ANOS",
+        "quantidade": 10,
+        "valor_unitario": 64096.33,
+        "valor_total": 640963.3,
+        "raw_data": [
+          "4",
+          "PARQUE INFANTIL MADEIRA PLÁSTICA 3 TORRES ESPAÇO NECESSÁRIO PARA INSTALAÇÃO: 12,50M X 8,00M - ALTURA: 3,50 M FAIXA ETÁRIA: 3 A 12 ANOS",
+          "10",
+          "R$ 64.096,33",
+          "R$ 640.963,30",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "5",
+        "descricao": "PARQUE INFANTIL MADEIRA PLÁSTICA 4 TORRES ESPAÇO NECESSÁRIO PARA INSTALAÇÃO: 10,00M X 13,00M - ALTURA: 3,50 M FAIXA ETÁRIA: 4 A 12 ANOS",
+        "quantidade": 10,
+        "valor_unitario": 95248.33,
+        "valor_total": 952483.3,
+        "raw_data": [
+          "5",
+          "PARQUE INFANTIL MADEIRA PLÁSTICA 4 TORRES ESPAÇO NECESSÁRIO PARA INSTALAÇÃO: 10,00M X 13,00M - ALTURA: 3,50 M FAIXA ETÁRIA: 4 A 12 ANOS",
+          "10",
+          "R$ 95.248,33",
+          "R$ 952.483,30",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 5,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_1_0_P.E.+76+-+2025+-+R.P.+para+aquisicao+de+playground+infantil.pdf",
+        "filepath": "downloads\\edital_1_0_P.E.+76+-+2025+-+R.P.+para+aquisicao+de+playground+infantil.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/44892693000140/compras/2025/254/arquivos/1",
+        "description": "Fazer download",
+        "size": 1649691,
+        "downloaded_at": "2025-08-28T15:02:01.912911"
+      },
+      {
+        "filename": "edital_1_1_Extrato+de+publicacao+76_2025+-+BLLCOMPRAS.pdf",
+        "filepath": "downloads\\edital_1_1_Extrato+de+publicacao+76_2025+-+BLLCOMPRAS.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/44892693000140/compras/2025/254/arquivos/2",
+        "description": "Fazer download",
+        "size": 272531,
+        "downloaded_at": "2025-08-28T15:02:07.147908"
+      }
+    ],
+    "downloads_count": 2,
+    "accessed_contratacao": false,
+    "detail_url": "https://pncp.gov.br/app/editais/44892693000140/2025/254"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250828-006",
+    "pncp_id": "46422408000152-1-000406/2025",
+    "title": "Edital nº 75/2025",
+    "description": "Edital nº 75/2025\nId contratação PNCP: 46422408000152-1-000406/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 28/08/2025\nÓrgão: MUNICIPIO DE SANTA BARBARA D'OESTE\nLocal: Santa Bárbara d'Oeste/SP\nObjeto: Registro de preço para a aquisição de Brinquedos Infantis Tipo Playgrounds (incluindo montagem e instalação).",
+    "organization_name": "MUNICIPIO DE SANTA BARBARA D'OESTE",
+    "municipality_name": "Santa Bárbara d'Oeste",
+    "state_code": "SP",
+    "modality": "Pregão - Eletrônico",
+    "estimated_value": null,
+    "publication_date": "2025-08-28",
+    "objeto": "Registro de preço para a aquisição de Brinquedos Infantis Tipo Playgrounds (incluindo montagem e instalação).",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Edital nº 75/2025\nId contratação PNCP: 46422408000152-1-000406/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 28/08/2025\nÓrgão: MUNICIPIO DE SANTA BARBARA D'OESTE\nLocal: Santa Bárbara d'Oeste/SP\nObjeto: Registro de preço para a aquisição de Brinquedos Infantis Tipo Playgrounds (incluindo montagem e instalação).",
+    "scraped_at": "2025-08-28T15:10:29.638031",
+    "has_details": true,
+    "has_access_button": false,
+    "edital_href": "/editais/46422408000152/2025/406",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nEdital nº 75/2025\nÚltima atualização 28/08/2025\n\nLocal: Santa Bárbara d'Oeste/SP\n\nÓrgão: MUNICIPIO DE SANTA BARBARA D'OESTE\n\nUnidade compradora: 1 - PREFEITURA MUNICIPAL DE SANTA BARBARA D'OESTE\n\nModalidade da contratação: Pregão - Eletrônico\n\nAmparo legal: Lei 14.133/2021, Art. 28, I\n\nTipo: Edital\n\nModo de disputa: Aberto\n\nRegistro de preço: Sim\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 28/08/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 28/08/2025 17:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 09/09/2025 08:59 (horário de Brasília)\n\nId contratação PNCP: 46422408000152-1-000406/2025\n\nFonte: SMARAPD INFORMATICA LTDA\n\nObjeto:\n\nRegistro de preço para a aquisição de Brinquedos Infantis Tipo Playgrounds (incluindo montagem e instalação).\n\nVALOR TOTAL ESTIMADO DA COMPRA\nSIGILOSO\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nBRINQUEDO INFANTIL - TIPO PLAYGROUND BABY Brinquedo infantil tipo ‘’playground baby’’, confeccionado em estrutura de polipropileno e polietileno (madeira plástica), colunas com aproximadamente 9 x 9 cm, reforçadas tipo cruzeta ou similar e parede de 20 mm, pigmentado na cor de madeira itaúba ou colorido, contendo: 02 patamares ‘’baby’’ medindo aprox. 1,00 x 1,00 m (altura aproximada de 80 cm), com cobertura cônica em plástico rotomoldado colorido com medidas aproximadas de 75 cm de raio e altura de 50 cm, 01 túnel em plástico rotomoldado colorido com comprimento aproximado de 100 cm, 02 escorregadores ‘’baby’’ em plástico rotomoldado colorido com comprimento aproximado de 100 cm, 01 teia de aranha ‘’baby’’ em plástico rotomoldado colorido com medidas aproximadas de 100 x 100 cm, 01 escada ‘’baby’’ com degraus e proteção em plástico rotomoldado colorido com medidas aproximadas de 100 x 100 cm, 1 balanço duplo ‘’baby’’ com estrutura tubular em aço pintando com",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": null,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "BRINQUEDO INFANTIL - TIPO PLAYGROUND BABY Brinquedo infantil tipo ‘’playground baby’’, confeccionado em estrutura de polipropileno e polietileno (madeira plástica), colunas com aproximadamente 9 x 9 cm, reforçadas tipo cruzeta ou similar e parede de 20 mm, pigmentado na cor de madeira itaúba ou colorido, contendo: 02 patamares ‘’baby’’ medindo aprox. 1,00 x 1,00 m (altura aproximada de 80 cm), com cobertura cônica em plástico rotomoldado colorido com medidas aproximadas de 75 cm de raio e altura",
+        "quantidade": 15,
+        "valor_unitario": "Sigiloso",
+        "valor_total": "Sigiloso",
+        "raw_data": [
+          "1",
+          "BRINQUEDO INFANTIL - TIPO PLAYGROUND BABY Brinquedo infantil tipo ‘’playground baby’’, confeccionado em estrutura de polipropileno e polietileno (madeira plástica), colunas com aproximadamente 9 x 9 cm, reforçadas tipo cruzeta ou similar e parede de 20 mm, pigmentado na cor de madeira itaúba ou colorido, contendo: 02 patamares ‘’baby’’ medindo aprox. 1,00 x 1,00 m (altura aproximada de 80 cm), com cobertura cônica em plástico rotomoldado colorido com medidas aproximadas de 75 cm de raio e altura de 50 cm, 01 túnel em plástico rotomoldado colorido com comprimento aproximado de 100 cm, 02 escorregadores ‘’baby’’ em plástico rotomoldado colorido com comprimento aproximado de 100 cm, 01 teia de aranha ‘’baby’’ em plástico rotomoldado colorido com medidas aproximadas de 100 x 100 cm, 01 escada ‘’baby’’ com degraus e proteção em plástico rotomoldado colorido com medidas aproximadas de 100 x 100 cm, 1 balanço duplo ‘’baby’’ com estrutura tubular em aço pintando com um dos assentos sendo do tipo ‘’baby’’ e o outro assento sendo do tipo ‘’reto’’, 01 kit de jogo da velha em plástico rotomoldado colorido com medidas aproximadas de 100 x 100 cm.",
+          "15",
+          "Sigiloso",
+          "Sigiloso",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "2",
+        "descricao": "Brinquedo Infantil Tipo Playground - 2 Torres, certificado e autorizado pela ABNT Brinquedo Infantil Tipo Playground - 2 Torres, certificado e autorizado pela ABNT, contendo: - 02 (duas) Torres confeccionadas em estrutura de madeira plástica medindo aproximadamente 1,00 x 1,00 metros com cobertura formato redondo em plástico roto moldado tendo como referência, telha colonial medindo aproximadamente 4.90 de circunferência, 0.75cm de raio, 0.50 cm de altura, com encaixe das colunas embutidas, send",
+        "quantidade": 30,
+        "valor_unitario": "Sigiloso",
+        "valor_total": "Sigiloso",
+        "raw_data": [
+          "2",
+          "Brinquedo Infantil Tipo Playground - 2 Torres, certificado e autorizado pela ABNT Brinquedo Infantil Tipo Playground - 2 Torres, certificado e autorizado pela ABNT, contendo: - 02 (duas) Torres confeccionadas em estrutura de madeira plástica medindo aproximadamente 1,00 x 1,00 metros com cobertura formato redondo em plástico roto moldado tendo como referência, telha colonial medindo aproximadamente 4.90 de circunferência, 0.75cm de raio, 0.50 cm de altura, com encaixe das colunas embutidas, sendo colunas em madeira plástica medindo aproximadamente 9,00 x 9,00 com reforço interno tipo cruzeta ou similar, na cor itaúba, plataforma em plástico roto moldado medindo aproximadamente 1,00 x 1,00 (H 1,20); - 01 (um) Túnel em plástico roto moldado medindo aproximadamente 2,00 x 0,80 com bordas em plástico roto moldado; - 01 (uma) Rampa de cordas (tipo teia de aranha) em plástico roto moldado medindo aproximadamente (L x C x A) : 0,90 x 0,90 x 1,20m; - 01 (uma) Rampa de escalada em plástico roto moldado medindo aproximadamente: 1,20 x 0,80m; - 01 (um) Escorregador duplo em plástico roto moldado, medindo aproximadamente: 2,00 M X 0,80; - 01 (uma) Rampa tipo nó em plástico roto moldado colorido e estrutura tubular metálica galvanizado com corda auxiliar para subida; - 01 (um) Tobogã em plástico roto moldado medindo aproximadamente 3,00m, contendo bordas e ponteiras em plástico roto moldado; - 01 (um) Balanço medindo aproximadamente 2.50 x 2.10 x 1.70 com estrutura tubular, travessa feita com tubo de 2”, com 02 assentos em plástico roto moldado e correntes galvanizadas 4,5mm; - 01 (um) Jogo da velha em plástico roto moldado e estrutura metálica medindo aproximadamente: 0,90 x 0,80m.",
+          "30",
+          "Sigiloso",
+          "Sigiloso",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "3",
+        "descricao": "Brinquedo Infantil Tipo Playground - 3 Torres, certificado e autorizado pela ABNT Brinquedo Infantil Tipo Playground - 3 Torres, certificado e autorizado pela ABNT, contendo: - 02 (duas) Torres confeccionadas em estrutura de madeira plástica medindo aproximadamente 1,00 x 1,00 metros com cobertura formato redondo em plástico roto moldado tendo como referência, telha colonial com medidas aproximadas de 4.90 de circunferência, 0.75cm de raio, 0.50 cm de altura, com encaixe das colunas embutidas, s",
+        "quantidade": 5,
+        "valor_unitario": "Sigiloso",
+        "valor_total": "Sigiloso",
+        "raw_data": [
+          "3",
+          "Brinquedo Infantil Tipo Playground - 3 Torres, certificado e autorizado pela ABNT Brinquedo Infantil Tipo Playground - 3 Torres, certificado e autorizado pela ABNT, contendo: - 02 (duas) Torres confeccionadas em estrutura de madeira plástica medindo aproximadamente 1,00 x 1,00 metros com cobertura formato redondo em plástico roto moldado tendo como referência, telha colonial com medidas aproximadas de 4.90 de circunferência, 0.75cm de raio, 0.50 cm de altura, com encaixe das colunas embutidas, sendo colunas em madeira plástica medindo 9,00 x 9,00 aproximadamente, com reforço interno tipo cruzeta ou similar, na cor itaúba, plataforma em plástico roto moldado medindo 1,00 x 1,00 (H 1,20) aproximadamente; - 01 (uma) Torre confeccionada em estrutura de madeira plástica medindo 1,00 x 1,00 metros aproximadamente, com base quadrada em plástico roto moldado tendo como referência, telha colonial com medidas aproximadas de 4.90 de circunferência, 0.75cm de raio, 0.50cm de altura, com encaixe das colunas embutidas, sendo colunas em madeira plástica medindo aproximadamente 9,00 x 9,00 com reforço interno tipo cruzeta ou similar, na cor itaúba, plataforma em plástico roto moldado medindo aproximadamente 1,00x 1,00 (H 1,20); - 01 (um) Balanço medindo aproximadamente 2.50 x 2.10 x 1.70 com estrutura tubular, travessa feita com tubo de 2” no mínimo, com 02 assentos em plástico roto moldado e correntes galvanizadas de no mínimo 4,5mm; - 01 (uma) Descida de bombeiro em aço tubular; - 01 (uma) Escada com até seis degraus em plástico roto moldado em polietileno e espessura mínima de 5mm com corrimão em aço carbono; - 01 (um) Escorregador curvo em plástico roto moldado medindo aproximadamente (L x C x A): 1,50 x 0,95 x 1,20m com portal em plástico roto moldado; - 01 (um) Escorregador simples em plástico roto moldado medindo aproximadamente (L x C x A): 0,50 x 2,00 x 1,20m com portal em plástico roto moldado; - 01 (um) Jogo da velha em plástico roto moldado e estrutura metálica medindo aproximadamente: 0,90 x 0,80m; - 01 (",
+          "5",
+          "Sigiloso",
+          "Sigiloso",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "4",
+        "descricao": "Brinquedo Infantil Tipo Playground - 3 Torres, certificado e autorizado pela ABNT Brinquedo Infantil Tipo Playground - 3 Torres, certificado e autorizado pela ABNT, contendo: - 03 (três) Torres confeccionadas em estrutura de madeira plástica com medidas aproximadas de 1,00 x 1,00 metros com cobertura formato redondo em plástico roto moldado tendo como referência, telha colonial medindo aproximadamente 4.90 de circunferência, 0.75cm de raio, 0.50 cm de altura, com encaixe das colunas embutidas, s",
+        "quantidade": 5,
+        "valor_unitario": "Sigiloso",
+        "valor_total": "Sigiloso",
+        "raw_data": [
+          "4",
+          "Brinquedo Infantil Tipo Playground - 3 Torres, certificado e autorizado pela ABNT Brinquedo Infantil Tipo Playground - 3 Torres, certificado e autorizado pela ABNT, contendo: - 03 (três) Torres confeccionadas em estrutura de madeira plástica com medidas aproximadas de 1,00 x 1,00 metros com cobertura formato redondo em plástico roto moldado tendo como referência, telha colonial medindo aproximadamente 4.90 de circunferência, 0.75cm de raio, 0.50 cm de altura, com encaixe das colunas embutidas, sendo colunas em madeira plástica medindo aproximadamente 9,00 x 9,00 com reforço interno tipo cruzeta ou similar, na cor itaúba, plataforma em plástico roto moldado medindo aproximadamente 1,00 x 1,00 (H 1,20); - 01 (um) Túnel em plástico roto moldado medindo aproximadamente 2,00 x 0,80 com bordas em plástico roto moldado; - 01 (uma) Rampa de cordas (tipo teia de aranha) em plástico roto moldado medindo aproximadamente (L x C x A) : 0,90 x 0,90 x 1,20m; - 01 (um) Tobogã em plástico roto moldado medindo aproximadamente 3,00m com bordas e ponteiras em plástico roto moldado; - 01 (uma) Escada com até seis degraus em plástico roto moldado em polietileno e espessura mínima de 5mm com corrimão em aço carbono; - 01 (uma) Rampa de escalada em plástico roto moldado medindo aproximadamente: 1,20 x 0,80m; - 01 (um) Escorregador curvo em plástico roto moldado medindo aproximadamente (L x C x A): 1,50 x 0,95 x 1,20m com portal em plástico roto moldado; - 01 (uma) Passarela de cordas medindo aproximadamente 2,00 metros, confeccionada com cordas de no mínimo 12mm em forma de losango ou quadrado com malha de 15x15 sem nós, corrimão em madeira; - 01 (um) Escorregador simples em plástico roto moldado medindo aproximadamente (L x C x A): 0,50 x 2,00 x 1,20m com portal em plástico roto moldado; - 01 (uma) Descida de Bombeiro com discos, com estrutura tubular e discos coloridos em plástico roto moldado; - 01 (uma) Passarela fixa de assoalho com fechamentos na lateral em plástico roto moldado medindo aproximadamente 1,95m; - 02 (du",
+          "5",
+          "Sigiloso",
+          "Sigiloso",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 4,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_6_0_PREGAO+ELETRONICO+752025_20250828150923.pdf",
+        "filepath": "downloads\\edital_6_0_PREGAO+ELETRONICO+752025_20250828150923.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46422408000152/compras/2025/406/arquivos/1",
+        "description": "Fazer download",
+        "size": 671777,
+        "downloaded_at": "2025-08-28T15:11:12.503946"
+      }
+    ],
+    "downloads_count": 1,
+    "accessed_contratacao": false,
+    "detail_url": "https://pncp.gov.br/app/editais/46422408000152/2025/406"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250828-007",
+    "pncp_id": "46634259000195-1-000162/2025",
+    "title": "Edital nº 83/2025",
+    "description": "Edital nº 83/2025\nId contratação PNCP: 46634259000195-1-000162/2025\nModalidade da Contratação: Concorrência - Eletrônica\nÚltima Atualização: 28/08/2025\nÓrgão: MUNICIPIO DE CAPAO BONITO\nLocal: Capão Bonito/SP\nObjeto: Contratação de empresa especializada para execução de Pavimentação Asfáltica com CBQU no Pátio da Polícia Militar, no Município de Capão Bonito/SP, conforme solicitação da Secretaria Municipal de Planejamento, deste município, conforme especificações constantes dos anexos pertecentes...",
+    "organization_name": "MUNICIPIO DE CAPAO BONITO",
+    "municipality_name": "Capão Bonito",
+    "state_code": "SP",
+    "modality": "Concorrência - Eletrônica",
+    "estimated_value": null,
+    "publication_date": "2025-08-28",
+    "objeto": "Contratação de empresa especializada para execução de Pavimentação Asfáltica com CBQU no Pátio da Polícia Militar, no Município de Capão Bonito/SP, conforme solicitação da Secretaria Municipal de Planejamento, deste município, conforme especificações constantes dos anexos pertecentes ao presente instrumento convocatório.",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Edital nº 83/2025\nId contratação PNCP: 46634259000195-1-000162/2025\nModalidade da Contratação: Concorrência - Eletrônica\nÚltima Atualização: 28/08/2025\nÓrgão: MUNICIPIO DE CAPAO BONITO\nLocal: Capão Bonito/SP\nObjeto: Contratação de empresa especializada para execução de Pavimentação Asfáltica com CBQU no Pátio da Polícia Militar, no Município de Capão Bonito/SP, conforme solicitação da Secretaria Municipal de Planejamento, deste município, conforme especificações constantes dos anexos pertecentes ao presente instrumento convocatório.",
+    "scraped_at": "2025-08-28T15:12:20.699217",
+    "has_details": true,
+    "has_access_button": false,
+    "edital_href": "/editais/46634259000195/2025/162",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nEdital nº 83/2025\nÚltima atualização 28/08/2025\n\nLocal: Capão Bonito/SP\n\nÓrgão: MUNICIPIO DE CAPAO BONITO\n\nUnidade compradora: 9.2025 - SEC. MUN. DE PLANEJAMENTO\n\nModalidade da contratação: Concorrência - Eletrônica\n\nAmparo legal: Lei 14.133/2021, Art. 28, II\n\nTipo: Edital\n\nModo de disputa: Aberto\n\nRegistro de preço: Não\n\nFonte orçamentária: Estadual\n\nData de divulgação no PNCP: 28/08/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 29/08/2025 08:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 15/09/2025 09:00 (horário de Brasília)\n\nId contratação PNCP: 46634259000195-1-000162/2025\n\nFonte: JL Alves Gestão\n\nObjeto:\n\nContratação de empresa especializada para execução de Pavimentação Asfáltica com CBQU no Pátio da Polícia Militar, no Município de Capão Bonito/SP, conforme solicitação da Secretaria Municipal de Planejamento, deste município, conforme especificações constantes dos anexos pertecentes ao presente instrumento convocatório.\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 198.432,19\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nContratação de empresa especializada para execução de Pavimentação Asfáltica com CBQU no Pátio da Polícia Militar, no Município de Capão Bonito/SP, conforme solicitação da Secretaria Municipal de Planejamento.\n100\nR$ 1.984,3219\nR$ 198.432,19\nExibir:\n5\n1-1 de 1 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de agosto de 2021.\n\nO desenvolvimento dessa versão do Portal é um esforço conjunto de constr",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 198432.19,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "Contratação de empresa especializada para execução de Pavimentação Asfáltica com CBQU no Pátio da Polícia Militar, no Município de Capão Bonito/SP, conforme solicitação da Secretaria Municipal de Planejamento.",
+        "quantidade": 100,
+        "valor_unitario": 1984.3219,
+        "valor_total": 198432.19,
+        "raw_data": [
+          "1",
+          "Contratação de empresa especializada para execução de Pavimentação Asfáltica com CBQU no Pátio da Polícia Militar, no Município de Capão Bonito/SP, conforme solicitação da Secretaria Municipal de Planejamento.",
+          "100",
+          "R$ 1.984,3219",
+          "R$ 198.432,19",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 1,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_7_0_1320f58af17f4b13ad1e04ec8f73648dCE+n++17+Pavim.+Asfal+PAtio+PMSP+SMP+++ane.pdf",
+        "filepath": "downloads\\edital_7_0_1320f58af17f4b13ad1e04ec8f73648dCE+n++17+Pavim.+Asfal+PAtio+PMSP+SMP+++ane.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46634259000195/compras/2025/162/arquivos/1",
+        "description": "Fazer download",
+        "size": 2681661,
+        "downloaded_at": "2025-08-28T15:12:57.120175"
+      }
+    ],
+    "downloads_count": 1,
+    "accessed_contratacao": false,
+    "detail_url": "https://pncp.gov.br/app/editais/46634259000195/2025/162"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250828-008",
+    "pncp_id": "57740490000180-1-000161/2025",
+    "title": "Edital nº 28/2025",
+    "description": "Edital nº 28/2025\nId contratação PNCP: 57740490000180-1-000161/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 28/08/2025\nÓrgão: CONSORCIO INTERMUNICIPAL DE SAUDE DO VALE DO RIBEIRA E LITORAL SUL\nLocal: Pariquera-Açu/SP\nObjeto: REGISTRO DE PREÇOS PARA AQUISIÇÃO PARCELADA DE MATERIAIS DE ALVENARIAS DESTINADOS AO HRLB/CONSAÚDE, CONFORME CONDIÇÕES, QUANTIDADES E EXIGÊNCIAS ESTABELECIDAS NESTE EDITAL E SEUS ANEXOS, PELO PERIODO DE 12 (DOZE) MESES.",
+    "organization_name": "CONSORCIO INTERMUNICIPAL DE SAUDE DO VALE DO RIBEIRA E LITORAL SUL",
+    "municipality_name": "Pariquera-Açu",
+    "state_code": "SP",
+    "modality": "Pregão - Eletrônico",
+    "estimated_value": null,
+    "publication_date": "2025-08-28",
+    "objeto": "REGISTRO DE PREÇOS PARA AQUISIÇÃO PARCELADA DE MATERIAIS DE ALVENARIAS DESTINADOS AO HRLB/CONSAÚDE, CONFORME CONDIÇÕES, QUANTIDADES E EXIGÊNCIAS ESTABELECIDAS NESTE EDITAL E SEUS ANEXOS, PELO PERIODO DE 12 (DOZE) MESES.",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Edital nº 28/2025\nId contratação PNCP: 57740490000180-1-000161/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 28/08/2025\nÓrgão: CONSORCIO INTERMUNICIPAL DE SAUDE DO VALE DO RIBEIRA E LITORAL SUL\nLocal: Pariquera-Açu/SP\nObjeto: REGISTRO DE PREÇOS PARA AQUISIÇÃO PARCELADA DE MATERIAIS DE ALVENARIAS DESTINADOS AO HRLB/CONSAÚDE, CONFORME CONDIÇÕES, QUANTIDADES E EXIGÊNCIAS ESTABELECIDAS NESTE EDITAL E SEUS ANEXOS, PELO PERIODO DE 12 (DOZE) MESES.",
+    "scraped_at": "2025-08-28T15:14:05.079225",
+    "has_details": true,
+    "has_access_button": true,
+    "edital_href": "/editais/57740490000180/2025/161",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nEdital nº 28/2025\nAcessar Contratação\nÚltima atualização 28/08/2025\n\nLocal: Pariquera-Açu/SP\n\nÓrgão: CONSORCIO INTERMUNICIPAL DE SAUDE DO VALE DO RIBEIRA E LITORAL SUL\n\nUnidade compradora: 617 - Consórcio de Saúde do Vale do Ribeira (CONSAÚDE) - SP\n\nModalidade da contratação: Pregão - Eletrônico\n\nAmparo legal: Lei 14.133/2021, Art. 28, I\n\nTipo: Edital\n\nModo de disputa: Aberto\n\nRegistro de preço: Sim\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 28/08/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 29/08/2025 08:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 15/09/2025 08:50 (horário de Brasília)\n\nId contratação PNCP: 57740490000180-1-000161/2025\n\nFonte: AZ INFORMATICA LTDA\n\nObjeto:\n\nREGISTRO DE PREÇOS PARA AQUISIÇÃO PARCELADA DE MATERIAIS DE ALVENARIAS DESTINADOS AO HRLB/CONSAÚDE, CONFORME CONDIÇÕES, QUANTIDADES E EXIGÊNCIAS ESTABELECIDAS NESTE EDITAL E SEUS ANEXOS, PELO PERIODO DE 12 (DOZE) MESES.\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 197.102,10\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1923048\nARAME TORCIDO - ARAME TORCIDO\n10\nR$ 15,62\nR$ 156,20\n1923049\nAREIA FINA (ACABAMENTO) - AREIA FINA (ACABAMENTO)\n15\nR$ 211,16\nR$ 3.167,40\n1923050\nAREIA MEDIA - AREIA MEDIA\n25\nR$ 182,13\nR$ 4.553,25\n1923051\nARGAMASSA (PISO SOBRE PISO) - CIMENTO COLA\n70\nR$ 39,99\nR$ 2.799,30\n1923052\nARGAMASSA CII 20 KG(CIMENTO COLA) -\n70\nR$ 26,98\nR$ 1.888,60\nExibir:\n5\n1-5 de 42 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de a",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 197102.1,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1923048",
+        "descricao": "ARAME TORCIDO - ARAME TORCIDO",
+        "quantidade": 10,
+        "valor_unitario": 15.62,
+        "valor_total": 156.2,
+        "raw_data": [
+          "1923048",
+          "ARAME TORCIDO - ARAME TORCIDO",
+          "10",
+          "R$ 15,62",
+          "R$ 156,20",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "1923049",
+        "descricao": "AREIA FINA (ACABAMENTO) - AREIA FINA (ACABAMENTO)",
+        "quantidade": 15,
+        "valor_unitario": 211.16,
+        "valor_total": 3167.4,
+        "raw_data": [
+          "1923049",
+          "AREIA FINA (ACABAMENTO) - AREIA FINA (ACABAMENTO)",
+          "15",
+          "R$ 211,16",
+          "R$ 3.167,40",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "1923050",
+        "descricao": "AREIA MEDIA - AREIA MEDIA",
+        "quantidade": 25,
+        "valor_unitario": 182.13,
+        "valor_total": 4553.25,
+        "raw_data": [
+          "1923050",
+          "AREIA MEDIA - AREIA MEDIA",
+          "25",
+          "R$ 182,13",
+          "R$ 4.553,25",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "1923051",
+        "descricao": "ARGAMASSA (PISO SOBRE PISO) - CIMENTO COLA",
+        "quantidade": 70,
+        "valor_unitario": 39.99,
+        "valor_total": 2799.3,
+        "raw_data": [
+          "1923051",
+          "ARGAMASSA (PISO SOBRE PISO) - CIMENTO COLA",
+          "70",
+          "R$ 39,99",
+          "R$ 2.799,30",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "1923052",
+        "descricao": "ARGAMASSA CII 20 KG(CIMENTO COLA) -",
+        "quantidade": 70,
+        "valor_unitario": 26.98,
+        "valor_total": 1888.6,
+        "raw_data": [
+          "1923052",
+          "ARGAMASSA CII 20 KG(CIMENTO COLA) -",
+          "70",
+          "R$ 26,98",
+          "R$ 1.888,60",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 5,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_8_0_Capa_Licitacao_28_2025.pdf",
+        "filepath": "downloads\\edital_8_0_Capa_Licitacao_28_2025.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/57740490000180/compras/2025/161/arquivos/1",
+        "description": "Fazer download",
+        "size": 48990,
+        "downloaded_at": "2025-08-28T15:14:42.017649"
+      },
+      {
+        "filename": "edital_8_1_Edital-comprimido-P.E-28-2025-R.P-Mat.-Alvenaria_compressed-_6_.pdf",
+        "filepath": "downloads\\edital_8_1_Edital-comprimido-P.E-28-2025-R.P-Mat.-Alvenaria_compressed-_6_.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/57740490000180/compras/2025/161/arquivos/2",
+        "description": "Fazer download",
+        "size": 8695009,
+        "downloaded_at": "2025-08-28T15:14:49.125115"
+      }
+    ],
+    "downloads_count": 2,
+    "accessed_contratacao": true,
+    "access_button_selector": "button:has-text('Acessar contratação')",
+    "detail_url": "https://pncp.gov.br/app/editais/57740490000180/2025/161"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250828-009",
+    "pncp_id": "03676803000159-1-000060/2025",
+    "title": "Aviso de Contratação Direta nº 90054/2025",
+    "description": "Aviso de Contratação Direta nº 90054/2025\nId contratação PNCP: 03676803000159-1-000060/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 28/08/2025\nÓrgão: CONSELHO REGIONAL DE EDUCACAO FISICA DA 4 REGIAO\nLocal: São Paulo/SP\nObjeto: Manutenção de 2 portas automáticas de aço, de enrolar, com altura de 2,70 metros x largura de 3,40 metros, para a Sede Regional de São José dos Campos.",
+    "organization_name": "CONSELHO REGIONAL DE EDUCACAO FISICA DA 4 REGIAO",
+    "municipality_name": "São Paulo",
+    "state_code": "SP",
+    "modality": "Dispensa",
+    "estimated_value": null,
+    "publication_date": "2025-08-28",
+    "objeto": "Manutenção de 2 portas automáticas de aço, de enrolar, com altura de 2,70 metros x largura de 3,40 metros, para a Sede Regional de São José dos Campos.",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Aviso de Contratação Direta nº 90054/2025\nId contratação PNCP: 03676803000159-1-000060/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 28/08/2025\nÓrgão: CONSELHO REGIONAL DE EDUCACAO FISICA DA 4 REGIAO\nLocal: São Paulo/SP\nObjeto: Manutenção de 2 portas automáticas de aço, de enrolar, com altura de 2,70 metros x largura de 3,40 metros, para a Sede Regional de São José dos Campos.",
+    "scraped_at": "2025-08-28T15:17:04.201999",
+    "has_details": true,
+    "has_access_button": false,
+    "edital_href": "/editais/03676803000159/2025/60",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nAviso de Contratação Direta nº 90054/2025\nÚltima atualização 28/08/2025\n\nLocal: São Paulo/SP\n\nÓrgão: CONSELHO REGIONAL DE EDUCACAO FISICA DA 4 REGIAO\n\nUnidade compradora: 926089 - CONSELHO REGIONAL DE EDUCACAO FISICA 4A - SP\n\nModalidade da contratação: Dispensa\n\nAmparo legal: Lei 14.133/2021, Art. 75, II\n\nTipo: Aviso de Contratação Direta\n\nModo de disputa: Dispensa Com Disputa\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 28/08/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 28/08/2025 15:07 (horário de Brasília)\n\nData fim de recebimento de propostas: 02/09/2025 07:59 (horário de Brasília)\n\nId contratação PNCP: 03676803000159-1-000060/2025\n\nFonte: Compras.gov.br\n\nObjeto:\n\nManutenção de 2 portas automáticas de aço, de enrolar, com altura de 2,70 metros x largura de 3,40 metros, para a Sede Regional de São José dos Campos.\n\nInformação complementar:\nAutorização legal, haja vista que não foi atingido o limite de dispensa para a natureza da despesa.\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 2.150,00\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nAutomatização de Portão - Instalação / Manutenção\n2\nR$ 1.075,00\nR$ 2.150,00\nExibir:\n5\n1-1 de 1 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de agosto de 2021.\n\nO desenvolvimento dessa versão do Portal é um esforço conjunto de construção de uma concepção direta legal, homologado pelos indicados a compor o aludido comitê.\n\nA adequação, fidedignidade e corretud",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 2150.0,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "Automatização de Portão - Instalação / Manutenção",
+        "quantidade": 2,
+        "valor_unitario": 1075.0,
+        "valor_total": 2150.0,
+        "raw_data": [
+          "1",
+          "Automatização de Portão - Instalação / Manutenção",
+          "2",
+          "R$ 1.075,00",
+          "R$ 2.150,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 1,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_9_0_Termo+de+Referencia+-+Dispensa+Eletronica+54.2025.docx",
+        "filepath": "downloads\\edital_9_0_Termo+de+Referencia+-+Dispensa+Eletronica+54.2025.docx",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/03676803000159/compras/2025/60/arquivos/1",
+        "description": "Fazer download",
+        "size": 987742,
+        "downloaded_at": "2025-08-28T15:17:39.635449"
+      }
+    ],
+    "downloads_count": 1,
+    "accessed_contratacao": false,
+    "detail_url": "https://pncp.gov.br/app/editais/03676803000159/2025/60"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250828-000",
+    "pncp_id": "45352267000186-1-000294/2025",
+    "title": "Edital nº 69/2025",
+    "description": "Edital nº 69/2025\nId contratação PNCP: 45352267000186-1-000294/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 28/08/2025\nÓrgão: MUNICIPIO DE PONTAL\nLocal: Pontal/SP\nObjeto: Contratação de empresa especializada na realização de processo seletivo simplificado para contratação de professores, incluindo todas as etapas, desde a inscrição até a publicação do resultado final.",
+    "organization_name": "MUNICIPIO DE PONTAL",
+    "municipality_name": "Pontal",
+    "state_code": "SP",
+    "modality": "Pregão - Eletrônico",
+    "estimated_value": null,
+    "publication_date": "2025-08-28",
+    "objeto": "Contratação de empresa especializada na realização de processo seletivo simplificado para contratação de professores, incluindo todas as etapas, desde a inscrição até a publicação do resultado final.",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Edital nº 69/2025\nId contratação PNCP: 45352267000186-1-000294/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 28/08/2025\nÓrgão: MUNICIPIO DE PONTAL\nLocal: Pontal/SP\nObjeto: Contratação de empresa especializada na realização de processo seletivo simplificado para contratação de professores, incluindo todas as etapas, desde a inscrição até a publicação do resultado final.",
+    "scraped_at": "2025-08-28T15:48:25.466790",
+    "has_details": true,
+    "has_access_button": true,
+    "edital_href": "/editais/45352267000186/2025/294",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nEdital nº 69/2025\nAcessar Contratação\nÚltima atualização 28/08/2025\n\nLocal: Pontal/SP\n\nÓrgão: MUNICIPIO DE PONTAL\n\nUnidade compradora: 1 - MUNICIPIO DE PONTAL\n\nModalidade da contratação: Pregão - Eletrônico\n\nAmparo legal: Lei 14.133/2021, Art. 28, I\n\nTipo: Edital\n\nModo de disputa: Aberto\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 28/08/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 01/09/2025 09:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 17/09/2025 08:59 (horário de Brasília)\n\nId contratação PNCP: 45352267000186-1-000294/2025\n\nFonte: BLL Compras\n\nObjeto:\n\nContratação de empresa especializada na realização de processo seletivo simplificado para contratação de professores, incluindo todas as etapas, desde a inscrição até a publicação do resultado final.\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 25.266,67\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nPROCESSO SELETIVO\n1\nR$ 25.266,67\nR$ 25.266,67\nExibir:\n5\n1-1 de 1 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de agosto de 2021.\n\nO desenvolvimento dessa versão do Portal é um esforço conjunto de construção de uma concepção direta legal, homologado pelos indicados a compor o aludido comitê.\n\nA adequação, fidedignidade e corretude das informações e dos arquivos relativos às contratações disponibilizadas no PNCP por força da Lei nº 14.133/2021 são de estrita responsabilidade dos órgãos e entidades contratantes.\n\nhttps://portald",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 25266.67,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "PROCESSO SELETIVO",
+        "quantidade": 1,
+        "valor_unitario": 25266.67,
+        "valor_total": 25266.67,
+        "raw_data": [
+          "1",
+          "PROCESSO SELETIVO",
+          "1",
+          "R$ 25.266,67",
+          "R$ 25.266,67",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 1,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_0_0_Prego_Eletrnico_n._0692025__Processo_Seletivo__Educao.pdf",
+        "filepath": "downloads\\edital_0_0_Prego_Eletrnico_n._0692025__Processo_Seletivo__Educao.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/45352267000186/compras/2025/294/arquivos/1",
+        "description": "Fazer download",
+        "size": 524033,
+        "downloaded_at": "2025-08-28T15:49:00.744186"
+      }
+    ],
+    "downloads_count": 1,
+    "accessed_contratacao": true,
+    "access_button_selector": "button:has-text('Acessar contratação')",
+    "detail_url": "https://pncp.gov.br/app/editais/45352267000186/2025/294"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250828-001",
+    "pncp_id": "44531788000138-1-000173/2025",
+    "title": "Edital nº 71/2025",
+    "description": "Edital nº 71/2025\nId contratação PNCP: 44531788000138-1-000173/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 28/08/2025\nÓrgão: MUNICIPIO DE LINS\nLocal: Lins/SP\nObjeto: SOLICITAÇÃO DE COMPRA PARA ABERTURA DE PROCESSI LICITATÓRIO VISANDO A CONTRATAÇAO DE EMPRESA ESPECIALIZADA EM MANUTENÇAO E REFORMA PREDIAL PARA RECONSTRUÇÃO DE VIA DE PASSSEIO DA EMEI \"PROFª. MARIA AP DA SILVA ELIAS\"",
+    "organization_name": "MUNICIPIO DE LINS",
+    "municipality_name": "Lins",
+    "state_code": "SP",
+    "modality": "Pregão - Eletrônico",
+    "estimated_value": null,
+    "publication_date": "2025-08-28",
+    "objeto": "SOLICITAÇÃO DE COMPRA PARA ABERTURA DE PROCESSI LICITATÓRIO VISANDO A CONTRATAÇAO DE EMPRESA ESPECIALIZADA EM MANUTENÇAO E REFORMA PREDIAL PARA RECONSTRUÇÃO DE VIA DE PASSSEIO DA EMEI \"PROFª. MARIA AP DA SILVA ELIAS\"",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Edital nº 71/2025\nId contratação PNCP: 44531788000138-1-000173/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 28/08/2025\nÓrgão: MUNICIPIO DE LINS\nLocal: Lins/SP\nObjeto: SOLICITAÇÃO DE COMPRA PARA ABERTURA DE PROCESSI LICITATÓRIO VISANDO A CONTRATAÇAO DE EMPRESA ESPECIALIZADA EM MANUTENÇAO E REFORMA PREDIAL PARA RECONSTRUÇÃO DE VIA DE PASSSEIO DA EMEI \"PROFª. MARIA AP DA SILVA ELIAS\"",
+    "scraped_at": "2025-08-28T15:50:22.172045",
+    "has_details": true,
+    "has_access_button": false,
+    "edital_href": "/editais/44531788000138/2025/173",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nEdital nº 71/2025\nÚltima atualização 28/08/2025\n\nLocal: Lins/SP\n\nÓrgão: MUNICIPIO DE LINS\n\nUnidade compradora: 2 - Prefeitura Municipal de Lins\n\nModalidade da contratação: Pregão - Eletrônico\n\nAmparo legal: Lei 14.133/2021, Art. 28, I\n\nTipo: Edital\n\nModo de disputa: Aberto\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 28/08/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 28/08/2025 18:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 16/09/2025 08:30 (horário de Brasília)\n\nId contratação PNCP: 44531788000138-1-000173/2025\n\nFonte: Grupo Assessor\n\nObjeto:\n\nSOLICITAÇÃO DE COMPRA PARA ABERTURA DE PROCESSI LICITATÓRIO VISANDO A CONTRATAÇAO DE EMPRESA ESPECIALIZADA EM MANUTENÇAO E REFORMA PREDIAL PARA RECONSTRUÇÃO DE VIA DE PASSSEIO DA EMEI \"PROFª. MARIA AP DA SILVA ELIAS\"\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 26.459,84\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nCONTRATAÇÃO DE EMPRESA PARA MANUTENÇÃO PREDIAL INCLUINDO DEMOLIÇÃO E RECONSTRUÇÃO DE VIA DE PASSEIO COM FORNECIMENTO DE MATERIAL\n1\nR$ 26.459,84\nR$ 26.459,84\nExibir:\n5\n1-1 de 1 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de agosto de 2021.\n\nO desenvolvimento dessa versão do Portal é um esforço conjunto de construção de uma concepção direta legal, homologado pelos indicados a compor o aludido comitê.\n\nA adequação, fidedignidade e corretude das informações e dos arquivos relativos às contratações disponibilizadas no PNCP p",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 26459.84,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "CONTRATAÇÃO DE EMPRESA PARA MANUTENÇÃO PREDIAL INCLUINDO DEMOLIÇÃO E RECONSTRUÇÃO DE VIA DE PASSEIO COM FORNECIMENTO DE MATERIAL",
+        "quantidade": 1,
+        "valor_unitario": 26459.84,
+        "valor_total": 26459.84,
+        "raw_data": [
+          "1",
+          "CONTRATAÇÃO DE EMPRESA PARA MANUTENÇÃO PREDIAL INCLUINDO DEMOLIÇÃO E RECONSTRUÇÃO DE VIA DE PASSEIO COM FORNECIMENTO DE MATERIAL",
+          "1",
+          "R$ 26.459,84",
+          "R$ 26.459,84",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 1,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_1_0_EDITAL+PE+071+-2025+-+SERVICOS+DE+REFORMA+NA+EMEI+PROF+MARIA+AP+SILVA+ELIAS.pdf",
+        "filepath": "downloads\\edital_1_0_EDITAL+PE+071+-2025+-+SERVICOS+DE+REFORMA+NA+EMEI+PROF+MARIA+AP+SILVA+ELIAS.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/44531788000138/compras/2025/173/arquivos/1",
+        "description": "Fazer download",
+        "size": 408478,
+        "downloaded_at": "2025-08-28T15:50:57.585757"
+      },
+      {
+        "filename": "edital_1_1_ANEXO+III+-+MINUTA+DE+CONTRATO.pdf",
+        "filepath": "downloads\\edital_1_1_ANEXO+III+-+MINUTA+DE+CONTRATO.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/44531788000138/compras/2025/173/arquivos/2",
+        "description": "Fazer download",
+        "size": 331773,
+        "downloaded_at": "2025-08-28T15:51:03.367046"
+      },
+      {
+        "filename": "edital_1_2_ANEXO+I+-+TERMO+DE+REFERENCIA+_+MEMORIAL+DESCRTIVO+E+PLANILHA+ORC..pdf",
+        "filepath": "downloads\\edital_1_2_ANEXO+I+-+TERMO+DE+REFERENCIA+_+MEMORIAL+DESCRTIVO+E+PLANILHA+ORC..pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/44531788000138/compras/2025/173/arquivos/3",
+        "description": "Fazer download",
+        "size": 1894788,
+        "downloaded_at": "2025-08-28T15:51:08.630909"
+      },
+      {
+        "filename": "edital_1_3_ANEXO+II+-+ESTUDO+TECNICO+PRELIMINAR.pdf",
+        "filepath": "downloads\\edital_1_3_ANEXO+II+-+ESTUDO+TECNICO+PRELIMINAR.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/44531788000138/compras/2025/173/arquivos/4",
+        "description": "Fazer download",
+        "size": 519849,
+        "downloaded_at": "2025-08-28T15:51:13.808810"
+      },
+      {
+        "filename": "edital_1_4_ANEXOS+IV+-+X.pdf",
+        "filepath": "downloads\\edital_1_4_ANEXOS+IV+-+X.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/44531788000138/compras/2025/173/arquivos/5",
+        "description": "Fazer download",
+        "size": 278087,
+        "downloaded_at": "2025-08-28T15:51:19.001528"
+      }
+    ],
+    "downloads_count": 5,
+    "accessed_contratacao": false,
+    "detail_url": "https://pncp.gov.br/app/editais/44531788000138/2025/173"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250828-002",
+    "pncp_id": "06252986000173-1-000063/2025",
+    "title": "Aviso de Contratação Direta nº 44/2025/2025",
+    "description": "Aviso de Contratação Direta nº 44/2025/2025\nId contratação PNCP: 06252986000173-1-000063/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 28/08/2025\nÓrgão: SANEBAVI - SANEAMENTO BASICO VINHEDO\nLocal: Vinhedo/SP\nObjeto: Contratação de empresa especializada para prestação de serviços de Inspeção, Medição, Calibração de Manutenção dos Vasos de Pressão como Compressores, Autoclaves e Trocadores de Calor, utilizados nas Estações de Tratamento de Água e Esgoto da Sanebavi, bem como nos lab...",
+    "organization_name": "SANEBAVI - SANEAMENTO BASICO VINHEDO",
+    "municipality_name": "Vinhedo",
+    "state_code": "SP",
+    "modality": "Dispensa",
+    "estimated_value": null,
+    "publication_date": "2025-08-28",
+    "objeto": "Contratação de empresa especializada para prestação de serviços de Inspeção, Medição, Calibração de Manutenção dos Vasos de Pressão como Compressores, Autoclaves e Trocadores de Calor, utilizados nas Estações de Tratamento de Água e Esgoto da Sanebavi, bem como nos laboratórios dos Setores de Análises Laboratoriais de Água e Esgoto, incluindo o fornecimento de Documentos e atualização de Livro Registro, emissão de ART, Laudo de Calibração de Válvulas, Plaquetas e Lacres, visando atendimento da N",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Aviso de Contratação Direta nº 44/2025/2025\nId contratação PNCP: 06252986000173-1-000063/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 28/08/2025\nÓrgão: SANEBAVI - SANEAMENTO BASICO VINHEDO\nLocal: Vinhedo/SP\nObjeto: Contratação de empresa especializada para prestação de serviços de Inspeção, Medição, Calibração de Manutenção dos Vasos de Pressão como Compressores, Autoclaves e Trocadores de Calor, utilizados nas Estações de Tratamento de Água e Esgoto da Sanebavi, bem como nos laboratórios dos Setores de Análises Laboratoriais de Água e Esgoto, incluindo o fornecimento de Documentos e atualização de Livro Registro, emissão de ART, Laudo de Calibração de Válvulas, Plaquetas e Lacres, visando atendimento da N ...",
+    "scraped_at": "2025-08-28T15:51:27.010206",
+    "has_details": true,
+    "has_access_button": false,
+    "edital_href": "/editais/06252986000173/2025/63",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nAviso de Contratação Direta nº 44/2025/2025\nÚltima atualização 28/08/2025\n\nLocal: Vinhedo/SP\n\nÓrgão: SANEBAVI - SANEAMENTO BASICO VINHEDO\n\nUnidade compradora: 13812 - SANEBAVI - Saneamento Básico Vinhedo\n\nModalidade da contratação: Dispensa\n\nAmparo legal: Lei 14.133/2021, Art. 75, II\n\nTipo: Aviso de Contratação Direta\n\nModo de disputa: Dispensa Com Disputa\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 28/08/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 29/08/2025 08:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 05/09/2025 08:00 (horário de Brasília)\n\nId contratação PNCP: 06252986000173-1-000063/2025\n\nFonte: Novo BBMNET Licitações\n\nObjeto:\n\nContratação de empresa especializada para prestação de serviços de Inspeção, Medição, Calibração de Manutenção dos Vasos de Pressão como Compressores, Autoclaves e Trocadores de Calor, utilizados nas Estações de Tratamento de Água e Esgoto da Sanebavi, bem como nos laboratórios dos Setores de Análises Laboratoriais de Água e Esgoto, incluindo o fornecimento de Documentos e atualização de Livro Registro, emissão de ART, Laudo de Calibração de Válvulas, Plaquetas e Lacres, visando atendimento da NR-13.\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 6.177,34\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nINSPEÇÃO PERIÓDICA COM MEDIÇÃO DE ESPESSURA POR ULTRASSOM, CALIBRAÇÃO VÁLVULAS DE SEGURANÇA COM LAUDO DE CALIBRAÇÃO DE VÁLVULAS COM PLAQUETA E LACRE, CALIBRAÇÃO DE MANÔMETRO E CALIBRAÇÃO DE PRESSOSTATO COM LAUDO DE CALIBRAÇÃO COM ADESIVO RESISTENTE A INTEMPÉRIE PARA COMPRESSORES.\n2\nR$ 1.021,66\nR$ 2.043,32\n2\nINSPEÇÃO PERIÓDICA EXTERNA COM MEDIÇÃO DE ESPESSURA POR ULTRASSOM, CALIBRAÇÃO VÁLVULAS DE SEGURANÇA COM LAUDO DE CALIBRAÇÃO DE VÁLVULAS COM PLAQUETA E LACRE, CALIBRAÇÃO DE MANÔMETRO COM LAUDO DE CALIBRAÇÃO COM ADESIVO RESISTENTE A I",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 6177.34,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "INSPEÇÃO PERIÓDICA COM MEDIÇÃO DE ESPESSURA POR ULTRASSOM, CALIBRAÇÃO VÁLVULAS DE SEGURANÇA COM LAUDO DE CALIBRAÇÃO DE VÁLVULAS COM PLAQUETA E LACRE, CALIBRAÇÃO DE MANÔMETRO E CALIBRAÇÃO DE PRESSOSTATO COM LAUDO DE CALIBRAÇÃO COM ADESIVO RESISTENTE A INTEMPÉRIE PARA COMPRESSORES.",
+        "quantidade": 2,
+        "valor_unitario": 1021.66,
+        "valor_total": 2043.32,
+        "raw_data": [
+          "1",
+          "INSPEÇÃO PERIÓDICA COM MEDIÇÃO DE ESPESSURA POR ULTRASSOM, CALIBRAÇÃO VÁLVULAS DE SEGURANÇA COM LAUDO DE CALIBRAÇÃO DE VÁLVULAS COM PLAQUETA E LACRE, CALIBRAÇÃO DE MANÔMETRO E CALIBRAÇÃO DE PRESSOSTATO COM LAUDO DE CALIBRAÇÃO COM ADESIVO RESISTENTE A INTEMPÉRIE PARA COMPRESSORES.",
+          "2",
+          "R$ 1.021,66",
+          "R$ 2.043,32",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "2",
+        "descricao": "INSPEÇÃO PERIÓDICA EXTERNA COM MEDIÇÃO DE ESPESSURA POR ULTRASSOM, CALIBRAÇÃO VÁLVULAS DE SEGURANÇA COM LAUDO DE CALIBRAÇÃO DE VÁLVULAS COM PLAQUETA E LACRE, CALIBRAÇÃO DE MANÔMETRO COM LAUDO DE CALIBRAÇÃO COM ADESIVO RESISTENTE A INTEMPÉRIE PARA AUTOCLAVES (02 DE 50 LITROS E 01 DE 130 LITROS).",
+        "quantidade": 2,
+        "valor_unitario": 1020.35,
+        "valor_total": 2040.7,
+        "raw_data": [
+          "2",
+          "INSPEÇÃO PERIÓDICA EXTERNA COM MEDIÇÃO DE ESPESSURA POR ULTRASSOM, CALIBRAÇÃO VÁLVULAS DE SEGURANÇA COM LAUDO DE CALIBRAÇÃO DE VÁLVULAS COM PLAQUETA E LACRE, CALIBRAÇÃO DE MANÔMETRO COM LAUDO DE CALIBRAÇÃO COM ADESIVO RESISTENTE A INTEMPÉRIE PARA AUTOCLAVES (02 DE 50 LITROS E 01 DE 130 LITROS).",
+          "2",
+          "R$ 1.020,35",
+          "R$ 2.040,70",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "3",
+        "descricao": "INSPEÇÃO PERIÓDICA EXTERNA COM MEDIÇÃO DE ESPESSURA POR ULTRASSOM, CALIBRAÇÃO VÁLVULAS DE SEGURANÇA COM LAUDO DE CALIBRAÇÃO DE VÁLVULAS COM PLAQUETA E LACRE, CALIBRAÇÃO DE MANÔMETRO COM LAUDO DE CALIBRAÇÃO COM ADESIVO RESISTENTE A INTEMPÉRIE PARA TROCADORES DE CALOR DE 450 LITROS.",
+        "quantidade": 2,
+        "valor_unitario": 1046.66,
+        "valor_total": 2093.32,
+        "raw_data": [
+          "3",
+          "INSPEÇÃO PERIÓDICA EXTERNA COM MEDIÇÃO DE ESPESSURA POR ULTRASSOM, CALIBRAÇÃO VÁLVULAS DE SEGURANÇA COM LAUDO DE CALIBRAÇÃO DE VÁLVULAS COM PLAQUETA E LACRE, CALIBRAÇÃO DE MANÔMETRO COM LAUDO DE CALIBRAÇÃO COM ADESIVO RESISTENTE A INTEMPÉRIE PARA TROCADORES DE CALOR DE 450 LITROS.",
+          "2",
+          "R$ 1.046,66",
+          "R$ 2.093,32",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 3,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_2_0_tmpfCySGf.pdf",
+        "filepath": "downloads\\edital_2_0_tmpfCySGf.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/06252986000173/compras/2025/63/arquivos/1",
+        "description": "Fazer download",
+        "size": 633625,
+        "downloaded_at": "2025-08-28T15:52:03.647022"
+      }
+    ],
+    "downloads_count": 1,
+    "accessed_contratacao": false,
+    "detail_url": "https://pncp.gov.br/app/editais/06252986000173/2025/63"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250828-003",
+    "pncp_id": "44405967000129-1-000058/2025",
+    "title": "Edital nº 13/2025",
+    "description": "Edital nº 13/2025\nId contratação PNCP: 44405967000129-1-000058/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 28/08/2025\nÓrgão: SERVICO AUTONOMO DE AGUA E ESGOTOS DE BEBEDOURO\nLocal: Bebedouro/SP\nObjeto: [Portal de Compras Públicas] - Aquisição de 28.000 Kg de Ácido Fluossilícico, a serem utilizados como auxiliar no tratamento de água potável para abastecimento público, em conformidade com a ABNT NBR 15.784 vigente.",
+    "organization_name": "SERVICO AUTONOMO DE AGUA E ESGOTOS DE BEBEDOURO",
+    "municipality_name": "Bebedouro",
+    "state_code": "SP",
+    "modality": "Pregão - Eletrônico",
+    "estimated_value": null,
+    "publication_date": "2025-08-28",
+    "objeto": "[Portal de Compras Públicas] - Aquisição de 28.000 Kg de Ácido Fluossilícico, a serem utilizados como auxiliar no tratamento de água potável para abastecimento público, em conformidade com a ABNT NBR 15.784 vigente.",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Edital nº 13/2025\nId contratação PNCP: 44405967000129-1-000058/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 28/08/2025\nÓrgão: SERVICO AUTONOMO DE AGUA E ESGOTOS DE BEBEDOURO\nLocal: Bebedouro/SP\nObjeto: [Portal de Compras Públicas] - Aquisição de 28.000 Kg de Ácido Fluossilícico, a serem utilizados como auxiliar no tratamento de água potável para abastecimento público, em conformidade com a ABNT NBR 15.784 vigente.",
+    "scraped_at": "2025-08-28T15:53:11.680248",
+    "has_details": true,
+    "has_access_button": true,
+    "edital_href": "/editais/44405967000129/2025/58",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nEdital nº 13/2025\nAcessar Contratação\nÚltima atualização 28/08/2025\n\nLocal: Bebedouro/SP\n\nÓrgão: SERVICO AUTONOMO DE AGUA E ESGOTOS DE BEBEDOURO\n\nUnidade compradora: 01 - Serviço Autônomo de Água e Esgoto de Bebedouro\n\nModalidade da contratação: Pregão - Eletrônico\n\nAmparo legal: Lei 14.133/2021, Art. 28, I\n\nTipo: Edital\n\nModo de disputa: Aberto\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 28/08/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 02/09/2025 09:30 (horário de Brasília)\n\nData fim de recebimento de propostas: 12/09/2025 09:30 (horário de Brasília)\n\nId contratação PNCP: 44405967000129-1-000058/2025\n\nFonte: ECustomize Consultoria em Software S.A\n\nObjeto:\n\n[Portal de Compras Públicas] - Aquisição de 28.000 Kg de Ácido Fluossilícico, a serem utilizados como auxiliar no tratamento de água potável para abastecimento público, em conformidade com a ABNT NBR 15.784 vigente.\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 88.760,00\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nAquisição de Ácido Fluossilícico, a serem utilizados como auxiliar no tratamento de água potável para abastecimento público, em conformidade com a ABNT NBR 15.784 vigente.\n25200\nR$ 3,17\nR$ 79.884,00\n2\nAquisição de Ácido Fluossilícico, a serem utilizados como auxiliar no tratamento de água potável para abastecimento público, em conformidade com a ABNT NBR 15.784 vigente.\n2800\nR$ 3,17\nR$ 8.876,00\nExibir:\n5\n1-2 de 2 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabele",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 88760.0,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "Aquisição de Ácido Fluossilícico, a serem utilizados como auxiliar no tratamento de água potável para abastecimento público, em conformidade com a ABNT NBR 15.784 vigente.",
+        "quantidade": 25200,
+        "valor_unitario": 3.17,
+        "valor_total": 79884.0,
+        "raw_data": [
+          "1",
+          "Aquisição de Ácido Fluossilícico, a serem utilizados como auxiliar no tratamento de água potável para abastecimento público, em conformidade com a ABNT NBR 15.784 vigente.",
+          "25200",
+          "R$ 3,17",
+          "R$ 79.884,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "2",
+        "descricao": "Aquisição de Ácido Fluossilícico, a serem utilizados como auxiliar no tratamento de água potável para abastecimento público, em conformidade com a ABNT NBR 15.784 vigente.",
+        "quantidade": 2800,
+        "valor_unitario": 3.17,
+        "valor_total": 8876.0,
+        "raw_data": [
+          "2",
+          "Aquisição de Ácido Fluossilícico, a serem utilizados como auxiliar no tratamento de água potável para abastecimento público, em conformidade com a ABNT NBR 15.784 vigente.",
+          "2800",
+          "R$ 3,17",
+          "R$ 8.876,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 2,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_3_0_PROCESSO+13-2025+-+EDITAL+13-2025+-+PREGAO+ELETRONICO+13-2025+-+FLuOR.pdf",
+        "filepath": "downloads\\edital_3_0_PROCESSO+13-2025+-+EDITAL+13-2025+-+PREGAO+ELETRONICO+13-2025+-+FLuOR.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/44405967000129/compras/2025/58/arquivos/1",
+        "description": "Fazer download",
+        "size": 1318584,
+        "downloaded_at": "2025-08-28T15:53:48.818085"
+      }
+    ],
+    "downloads_count": 1,
+    "accessed_contratacao": true,
+    "access_button_selector": "button:has-text('Acessar contratação')",
+    "detail_url": "https://pncp.gov.br/app/editais/44405967000129/2025/58"
+  }
+]

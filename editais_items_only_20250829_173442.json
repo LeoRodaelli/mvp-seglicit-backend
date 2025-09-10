@@ -1,0 +1,871 @@
+[
+  {
+    "id": "PNCP-ITEMS-ONLY-20250829-000",
+    "pncp_id": "46523171000104-1-000195/2025",
+    "title": "Edital nº 90069/2025",
+    "description": "Edital nº 90069/2025\nId contratação PNCP: 46523171000104-1-000195/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 29/08/2025\nÓrgão: MUNICIPIO DE OSASCO\nLocal: Osasco/SP\nObjeto: REGISTRO DE PREÇOS PARA AQUISIÇÃO DE BRINQUEDOS E JOGOS",
+    "organization_name": "MUNICIPIO DE OSASCO",
+    "municipality_name": "Osasco",
+    "state_code": "SP",
+    "modality": "Pregão - Eletrônico",
+    "estimated_value": null,
+    "publication_date": "2025-08-29",
+    "objeto": "REGISTRO DE PREÇOS PARA AQUISIÇÃO DE BRINQUEDOS E JOGOS",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Edital nº 90069/2025\nId contratação PNCP: 46523171000104-1-000195/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 29/08/2025\nÓrgão: MUNICIPIO DE OSASCO\nLocal: Osasco/SP\nObjeto: REGISTRO DE PREÇOS PARA AQUISIÇÃO DE BRINQUEDOS E JOGOS",
+    "scraped_at": "2025-08-29T17:10:20.967426",
+    "has_details": true,
+    "has_access_button": false,
+    "edital_href": "/editais/46523171000104/2025/195",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nEdital nº 90069/2025\nÚltima atualização 29/08/2025\n\nLocal: Osasco/SP\n\nÓrgão: MUNICIPIO DE OSASCO\n\nUnidade compradora: 1 - PREFEITURA MUNICIPAL DE OSASCO\n\nModalidade da contratação: Pregão - Eletrônico\n\nAmparo legal: Lei 14.133/2021, Art. 28, I\n\nTipo: Edital\n\nModo de disputa: Aberto\n\nRegistro de preço: Sim\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 29/08/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 01/09/2025 00:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 12/09/2025 10:00 (horário de Brasília)\n\nId contratação PNCP: 46523171000104-1-000195/2025\n\nFonte: SMARAPD INFORMATICA LTDA\n\nObjeto:\n\nREGISTRO DE PREÇOS PARA AQUISIÇÃO DE BRINQUEDOS E JOGOS\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 7.692.390,00\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nAndador infantil em plástico de alto impacto, com cesto frontal removível, rodas com sistema de trava de segurança, formas geométricas encaixáveis e alça traseira anatômica. Altura aproximada: 45 cm. Estimula equilíbrio, coordenação e mobilidade. Certificação INMETRO obrigatória. Faixa etária: a partir de 12 meses.\n19000\nR$ 173,90\nR$ 3.304.100,00\n2\nConjunto com lançador circular, com uma rampa e 2 carrinhos com fricção. Base com dimensões aproximadas de 35 x 35 cm. Estimula ação, percepção espacial e coordenação motora. Peças em plástico injetado resistente, sem arestas. Certificação INMETRO obrigatória. Faixa etária: a partir de 3 anos.\n10500\nR$ 89,67\nR$ 941.535,00\n3\nBoneca de 36 cm em vinil macio, olhos móveis, braços e pernas articuláveis. Acompanha roupinha, chupeta, mamadeira, fralda e escova. Estimula cuidado, empatia e vínculo afetivo. Certificação INMETRO obrigatória. Faixa etária: a partir de 3 anos.\n10500\nR$ 105,11\nR$ 1.103.655,00\n4\nMaleta temática com acessórios plásticos simulando lanchonete: potes de massinha, copos, sanduíches, mol",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 7692390.0,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "Andador infantil em plástico de alto impacto, com cesto frontal removível, rodas com sistema de trava de segurança, formas geométricas encaixáveis e alça traseira anatômica. Altura aproximada: 45 cm. Estimula equilíbrio, coordenação e mobilidade. Certificação INMETRO obrigatória. Faixa etária: a partir de 12 meses.",
+        "quantidade": 19000,
+        "valor_unitario": 173.9,
+        "valor_total": 3304100.0,
+        "raw_data": [
+          "1",
+          "Andador infantil em plástico de alto impacto, com cesto frontal removível, rodas com sistema de trava de segurança, formas geométricas encaixáveis e alça traseira anatômica. Altura aproximada: 45 cm. Estimula equilíbrio, coordenação e mobilidade. Certificação INMETRO obrigatória. Faixa etária: a partir de 12 meses.",
+          "19000",
+          "R$ 173,90",
+          "R$ 3.304.100,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "2",
+        "descricao": "Conjunto com lançador circular, com uma rampa e 2 carrinhos com fricção. Base com dimensões aproximadas de 35 x 35 cm. Estimula ação, percepção espacial e coordenação motora. Peças em plástico injetado resistente, sem arestas. Certificação INMETRO obrigatória. Faixa etária: a partir de 3 anos.",
+        "quantidade": 10500,
+        "valor_unitario": 89.67,
+        "valor_total": 941535.0,
+        "raw_data": [
+          "2",
+          "Conjunto com lançador circular, com uma rampa e 2 carrinhos com fricção. Base com dimensões aproximadas de 35 x 35 cm. Estimula ação, percepção espacial e coordenação motora. Peças em plástico injetado resistente, sem arestas. Certificação INMETRO obrigatória. Faixa etária: a partir de 3 anos.",
+          "10500",
+          "R$ 89,67",
+          "R$ 941.535,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "3",
+        "descricao": "Boneca de 36 cm em vinil macio, olhos móveis, braços e pernas articuláveis. Acompanha roupinha, chupeta, mamadeira, fralda e escova. Estimula cuidado, empatia e vínculo afetivo. Certificação INMETRO obrigatória. Faixa etária: a partir de 3 anos.",
+        "quantidade": 10500,
+        "valor_unitario": 105.11,
+        "valor_total": 1103655.0,
+        "raw_data": [
+          "3",
+          "Boneca de 36 cm em vinil macio, olhos móveis, braços e pernas articuláveis. Acompanha roupinha, chupeta, mamadeira, fralda e escova. Estimula cuidado, empatia e vínculo afetivo. Certificação INMETRO obrigatória. Faixa etária: a partir de 3 anos.",
+          "10500",
+          "R$ 105,11",
+          "R$ 1.103.655,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "4",
+        "descricao": "Maleta temática com acessórios plásticos simulando lanchonete: potes de massinha, copos, sanduíches, moldes e utensílios. Maleta com alça, travas e divisórias internas. Dimensões mínimas: 25 x 20 x 10 cm. Certificação INMETRO obrigatória. Faixa etária: a partir de 3 anos.",
+        "quantidade": 10000,
+        "valor_unitario": 63.9,
+        "valor_total": 639000.0,
+        "raw_data": [
+          "4",
+          "Maleta temática com acessórios plásticos simulando lanchonete: potes de massinha, copos, sanduíches, moldes e utensílios. Maleta com alça, travas e divisórias internas. Dimensões mínimas: 25 x 20 x 10 cm. Certificação INMETRO obrigatória. Faixa etária: a partir de 3 anos.",
+          "10000",
+          "R$ 63,90",
+          "R$ 639.000,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "5",
+        "descricao": "Maleta temática com potes de massinha, moldes de fósseis, peças de dinossauro e cenário de vulcão. Maleta com tampa articulada, divisórias internas e alça. Dimensões mínimas: 25 x 20 x 10 cm. Certificação INMETRO obrigatória. Faixa etária: a partir de 3 anos.",
+        "quantidade": 10000,
+        "valor_unitario": 53.62,
+        "valor_total": 536200.0,
+        "raw_data": [
+          "5",
+          "Maleta temática com potes de massinha, moldes de fósseis, peças de dinossauro e cenário de vulcão. Maleta com tampa articulada, divisórias internas e alça. Dimensões mínimas: 25 x 20 x 10 cm. Certificação INMETRO obrigatória. Faixa etária: a partir de 3 anos.",
+          "10000",
+          "R$ 53,62",
+          "R$ 536.200,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 5,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_0_0_AVISO+DE+ABERTURA_20250829171209.pdf",
+        "filepath": "downloads\\edital_0_0_AVISO+DE+ABERTURA_20250829171209.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46523171000104/compras/2025/195/arquivos/1",
+        "description": "Fazer download",
+        "size": 169780,
+        "downloaded_at": "2025-08-29T17:10:57.946432"
+      },
+      {
+        "filename": "edital_0_1_EDITAL+E+ANEXOS++ABERTURA_20250829171212.pdf",
+        "filepath": "downloads\\edital_0_1_EDITAL+E+ANEXOS++ABERTURA_20250829171212.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46523171000104/compras/2025/195/arquivos/2",
+        "description": "Fazer download",
+        "size": 762843,
+        "downloaded_at": "2025-08-29T17:11:03.176190"
+      }
+    ],
+    "downloads_count": 2,
+    "accessed_contratacao": false,
+    "detail_url": "https://pncp.gov.br/app/editais/46523171000104/2025/195"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250829-001",
+    "pncp_id": "45142684000102-1-000056/2025",
+    "title": "Edital nº 35/2025",
+    "description": "Edital nº 35/2025\nId contratação PNCP: 45142684000102-1-000056/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 29/08/2025\nÓrgão: MUNICIPIO DE JACI\nLocal: Jaci/SP\nObjeto: Registro de Preço de Medicamentos III para uso da Coordenadoria de Saúde de Jaci",
+    "organization_name": "MUNICIPIO DE JACI",
+    "municipality_name": "Jaci",
+    "state_code": "SP",
+    "modality": "Pregão - Eletrônico",
+    "estimated_value": null,
+    "publication_date": "2025-08-29",
+    "objeto": "Registro de Preço de Medicamentos III para uso da Coordenadoria de Saúde de Jaci",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Edital nº 35/2025\nId contratação PNCP: 45142684000102-1-000056/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 29/08/2025\nÓrgão: MUNICIPIO DE JACI\nLocal: Jaci/SP\nObjeto: Registro de Preço de Medicamentos III para uso da Coordenadoria de Saúde de Jaci",
+    "scraped_at": "2025-08-29T17:13:11.841129",
+    "has_details": true,
+    "has_access_button": true,
+    "edital_href": "/editais/45142684000102/2025/56",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nEdital nº 35/2025\nAcessar Contratação\nÚltima atualização 29/08/2025\n\nLocal: Jaci/SP\n\nÓrgão: MUNICIPIO DE JACI\n\nUnidade compradora: 1 - PREFEITURA MUNICIPAL DE JACI\n\nModalidade da contratação: Pregão - Eletrônico\n\nAmparo legal: Lei 14.133/2021, Art. 28, I\n\nTipo: Edital\n\nModo de disputa: Aberto\n\nRegistro de preço: Sim\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 29/08/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 05/09/2025 00:01 (horário de Brasília)\n\nData fim de recebimento de propostas: 05/09/2025 23:59 (horário de Brasília)\n\nId contratação PNCP: 45142684000102-1-000056/2025\n\nFonte: Fiorilli Software\n\nObjeto:\n\nRegistro de Preço de Medicamentos III para uso da Coordenadoria de Saúde de Jaci\n\nInformação complementar:\nREGISTRO DE PREÇOS DE MEDICAMENTOS DIVERSOS 3 PARA A SAÚDE DO MUNICIPAIO DE JACI-SP\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 1.432.166,52\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nINSULINA REGULAR 100UI/ML\n120\nR$ 52,39\nR$ 6.286,80\n2\nISOFLAVONA-DE-SOJA (GLYCINE MAX)\n720\nR$ 3,769\nR$ 2.713,68\n3\nITRACONAZOL 100MG\n3600\nR$ 3,464\nR$ 12.470,40\n4\nIVERMECTINA 6MG - CP\n1200\nR$ 2,174\nR$ 2.608,80\n5\nLACTULOSE 667MG/ML - 200ML\n720\nR$ 40,02\nR$ 28.814,40\nExibir:\n5\n1-5 de 114 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de agosto de 2021.\n\nO desenvolvimento dessa versão do Portal é um esforço conjunto de construção de uma concepção direta legal, homologado pelos indicados a compor o aludido comitê.\n\nA adequação, fi",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 1432166.52,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "INSULINA REGULAR 100UI/ML",
+        "quantidade": 120,
+        "valor_unitario": 52.39,
+        "valor_total": 6286.8,
+        "raw_data": [
+          "1",
+          "INSULINA REGULAR 100UI/ML",
+          "120",
+          "R$ 52,39",
+          "R$ 6.286,80",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "2",
+        "descricao": "ISOFLAVONA-DE-SOJA (GLYCINE MAX)",
+        "quantidade": 720,
+        "valor_unitario": 3.769,
+        "valor_total": 2713.68,
+        "raw_data": [
+          "2",
+          "ISOFLAVONA-DE-SOJA (GLYCINE MAX)",
+          "720",
+          "R$ 3,769",
+          "R$ 2.713,68",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "3",
+        "descricao": "ITRACONAZOL 100MG",
+        "quantidade": 3600,
+        "valor_unitario": 3.464,
+        "valor_total": 12470.4,
+        "raw_data": [
+          "3",
+          "ITRACONAZOL 100MG",
+          "3600",
+          "R$ 3,464",
+          "R$ 12.470,40",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "4",
+        "descricao": "IVERMECTINA 6MG - CP",
+        "quantidade": 1200,
+        "valor_unitario": 2.174,
+        "valor_total": 2608.8,
+        "raw_data": [
+          "4",
+          "IVERMECTINA 6MG - CP",
+          "1200",
+          "R$ 2,174",
+          "R$ 2.608,80",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "5",
+        "descricao": "LACTULOSE 667MG/ML - 200ML",
+        "quantidade": 720,
+        "valor_unitario": 40.02,
+        "valor_total": 28814.4,
+        "raw_data": [
+          "5",
+          "LACTULOSE 667MG/ML - 200ML",
+          "720",
+          "R$ 40,02",
+          "R$ 28.814,40",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 5,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_1_0_PNCP_-_Edital.doc",
+        "filepath": "downloads\\edital_1_0_PNCP_-_Edital.doc",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/45142684000102/compras/2025/56/arquivos/1",
+        "description": "Fazer download",
+        "size": 352768,
+        "downloaded_at": "2025-08-29T17:13:47.983656"
+      }
+    ],
+    "downloads_count": 1,
+    "accessed_contratacao": true,
+    "access_button_selector": "button:has-text('Acessar contratação')",
+    "detail_url": "https://pncp.gov.br/app/editais/45142684000102/2025/56"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250829-002",
+    "pncp_id": "53300356000107-1-000162/2025",
+    "title": "Edital nº 33/2025",
+    "description": "Edital nº 33/2025\nId contratação PNCP: 53300356000107-1-000162/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 29/08/2025\nÓrgão: MUNICIPIO DE OSVALDO CRUZ\nLocal: Osvaldo Cruz/SP\nObjeto: REGISTRO DE PREÇOS PARA FUTURA E EVENTUAL AQUISIÇÃO DE MATERIAIS DE CONSTRUÇÃO DESTINADOS PARA ATENDER A DEMANDA DAS DIVERSAS SECRETARIAS QUE INTEGRAM O MUNICIPIO DE OSVALDO CRUZ - SP, POR UM PERIODO DE 12 (DOZE) MESES.",
+    "organization_name": "MUNICIPIO DE OSVALDO CRUZ",
+    "municipality_name": "Osvaldo Cruz",
+    "state_code": "SP",
+    "modality": "Pregão - Eletrônico",
+    "estimated_value": null,
+    "publication_date": "2025-08-29",
+    "objeto": "REGISTRO DE PREÇOS PARA FUTURA E EVENTUAL AQUISIÇÃO DE MATERIAIS DE CONSTRUÇÃO DESTINADOS PARA ATENDER A DEMANDA DAS DIVERSAS SECRETARIAS QUE INTEGRAM O MUNICIPIO DE OSVALDO CRUZ - SP, POR UM PERIODO DE 12 (DOZE) MESES.",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Edital nº 33/2025\nId contratação PNCP: 53300356000107-1-000162/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 29/08/2025\nÓrgão: MUNICIPIO DE OSVALDO CRUZ\nLocal: Osvaldo Cruz/SP\nObjeto: REGISTRO DE PREÇOS PARA FUTURA E EVENTUAL AQUISIÇÃO DE MATERIAIS DE CONSTRUÇÃO DESTINADOS PARA ATENDER A DEMANDA DAS DIVERSAS SECRETARIAS QUE INTEGRAM O MUNICIPIO DE OSVALDO CRUZ - SP, POR UM PERIODO DE 12 (DOZE) MESES.",
+    "scraped_at": "2025-08-29T17:15:02.929550",
+    "has_details": true,
+    "has_access_button": false,
+    "edital_href": "/editais/53300356000107/2025/162",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nEdital nº 33/2025\nÚltima atualização 29/08/2025\n\nLocal: Osvaldo Cruz/SP\n\nÓrgão: MUNICIPIO DE OSVALDO CRUZ\n\nUnidade compradora: 11.2025 - SECR MUN SERVIÇOS E OPERAÇÕES URBANAS\n\nModalidade da contratação: Pregão - Eletrônico\n\nAmparo legal: Lei 14.133/2021, Art. 28, I\n\nTipo: Edital\n\nModo de disputa: Aberto\n\nRegistro de preço: Sim\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 29/08/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 29/08/2025 16:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 12/09/2025 09:00 (horário de Brasília)\n\nId contratação PNCP: 53300356000107-1-000162/2025\n\nFonte: JL Alves Gestão\n\nObjeto:\n\nREGISTRO DE PREÇOS PARA FUTURA E EVENTUAL AQUISIÇÃO DE MATERIAIS DE CONSTRUÇÃO DESTINADOS PARA ATENDER A DEMANDA DAS DIVERSAS SECRETARIAS QUE INTEGRAM O MUNICIPIO DE OSVALDO CRUZ - SP, POR UM PERIODO DE 12 (DOZE) MESES.\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 1.017.797,06\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nADITIVO IMPERMEABILIZANTE PARA CONCRETOS E ARGAMASSAS, QUE AGE POR HIDROFUGAÇÃO DO SISTEMA CAPILAR E PERMITE A RESPIRAÇÃO DOS MATERIAIS, MANTENDO OS AMBIENTES SALUBRES. LATA 18 LITROS.\n2\nR$ 140,67\nR$ 281,34\n2\nARAME RECOZIDO ENROLADO\n157\nR$ 17,25\nR$ 2.708,25\n3\nAREIA FINA\n1000\nR$ 73,27\nR$ 73.270,00\n4\nAREIA GROSSA\n1000\nR$ 133,67\nR$ 133.670,00\n5\nBLOCO 6 FUROS 11,54X14X23\n48600\nR$ 0,94\nR$ 45.684,00\nExibir:\n5\n1-5 de 64 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de agosto de 2021.\n\nO dese",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 1017797.06,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "ADITIVO IMPERMEABILIZANTE PARA CONCRETOS E ARGAMASSAS, QUE AGE POR HIDROFUGAÇÃO DO SISTEMA CAPILAR E PERMITE A RESPIRAÇÃO DOS MATERIAIS, MANTENDO OS AMBIENTES SALUBRES. LATA 18 LITROS.",
+        "quantidade": 2,
+        "valor_unitario": 140.67,
+        "valor_total": 281.34,
+        "raw_data": [
+          "1",
+          "ADITIVO IMPERMEABILIZANTE PARA CONCRETOS E ARGAMASSAS, QUE AGE POR HIDROFUGAÇÃO DO SISTEMA CAPILAR E PERMITE A RESPIRAÇÃO DOS MATERIAIS, MANTENDO OS AMBIENTES SALUBRES. LATA 18 LITROS.",
+          "2",
+          "R$ 140,67",
+          "R$ 281,34",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "2",
+        "descricao": "ARAME RECOZIDO ENROLADO",
+        "quantidade": 157,
+        "valor_unitario": 17.25,
+        "valor_total": 2708.25,
+        "raw_data": [
+          "2",
+          "ARAME RECOZIDO ENROLADO",
+          "157",
+          "R$ 17,25",
+          "R$ 2.708,25",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "3",
+        "descricao": "AREIA FINA",
+        "quantidade": 1000,
+        "valor_unitario": 73.27,
+        "valor_total": 73270.0,
+        "raw_data": [
+          "3",
+          "AREIA FINA",
+          "1000",
+          "R$ 73,27",
+          "R$ 73.270,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "4",
+        "descricao": "AREIA GROSSA",
+        "quantidade": 1000,
+        "valor_unitario": 133.67,
+        "valor_total": 133670.0,
+        "raw_data": [
+          "4",
+          "AREIA GROSSA",
+          "1000",
+          "R$ 133,67",
+          "R$ 133.670,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "5",
+        "descricao": "BLOCO 6 FUROS 11,54X14X23",
+        "quantidade": 48600,
+        "valor_unitario": 0.94,
+        "valor_total": 45684.0,
+        "raw_data": [
+          "5",
+          "BLOCO 6 FUROS 11,54X14X23",
+          "48600",
+          "R$ 0,94",
+          "R$ 45.684,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 5,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_2_0_954144ed92764308af47dca3be6ae9b2EDITAL+PE+3324++MATERIAL+DE+CONSTRUCAO.pdf",
+        "filepath": "downloads\\edital_2_0_954144ed92764308af47dca3be6ae9b2EDITAL+PE+3324++MATERIAL+DE+CONSTRUCAO.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/53300356000107/compras/2025/162/arquivos/1",
+        "description": "Fazer download",
+        "size": 780150,
+        "downloaded_at": "2025-08-29T17:15:41.391127"
+      }
+    ],
+    "downloads_count": 1,
+    "accessed_contratacao": false,
+    "detail_url": "https://pncp.gov.br/app/editais/53300356000107/2025/162"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250829-003",
+    "pncp_id": "46446696000185-1-000285/2025",
+    "title": "Edital de Chamamento Público nº 002/2025 - SMDSMU/2025",
+    "description": "Edital de Chamamento Público nº 002/2025 - SMDSMU/2025\nId contratação PNCP: 46446696000185-1-000285/2025\nModalidade da Contratação: Credenciamento\nÚltima Atualização: 29/08/2025\nÓrgão: MUNICIPIO DE VINHEDO\nLocal: Vinhedo/SP\nObjeto: CHAMAMENTO PÚBLICO PARA CREDENCIAMENTO DE LEILOEIROS PARA ALIENAÇÃO DE VEÍCULOS APREENDIDOS E REMOVIDOS PELA AUTORIDADE DE TRÂNSITO, DE ACORDO COM O TERMO DE REFERÊNCIA E DEMAIS ANEXOS.",
+    "organization_name": "MUNICIPIO DE VINHEDO",
+    "municipality_name": "Vinhedo",
+    "state_code": "SP",
+    "modality": "Credenciamento",
+    "estimated_value": null,
+    "publication_date": "2025-08-29",
+    "objeto": "CHAMAMENTO PÚBLICO PARA CREDENCIAMENTO DE LEILOEIROS PARA ALIENAÇÃO DE VEÍCULOS APREENDIDOS E REMOVIDOS PELA AUTORIDADE DE TRÂNSITO, DE ACORDO COM O TERMO DE REFERÊNCIA E DEMAIS ANEXOS.",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Edital de Chamamento Público nº 002/2025 - SMDSMU/2025\nId contratação PNCP: 46446696000185-1-000285/2025\nModalidade da Contratação: Credenciamento\nÚltima Atualização: 29/08/2025\nÓrgão: MUNICIPIO DE VINHEDO\nLocal: Vinhedo/SP\nObjeto: CHAMAMENTO PÚBLICO PARA CREDENCIAMENTO DE LEILOEIROS PARA ALIENAÇÃO DE VEÍCULOS APREENDIDOS E REMOVIDOS PELA AUTORIDADE DE TRÂNSITO, DE ACORDO COM O TERMO DE REFERÊNCIA E DEMAIS ANEXOS.",
+    "scraped_at": "2025-08-29T17:16:49.540934",
+    "has_details": true,
+    "has_access_button": true,
+    "edital_href": "/editais/46446696000185/2025/285",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nEdital de Chamamento Público nº 002/2025 - SMDSMU/2025\nAcessar Contratação\nÚltima atualização 29/08/2025\n\nLocal: Vinhedo/SP\n\nÓrgão: MUNICIPIO DE VINHEDO\n\nUnidade compradora: 2 - Prefeitura Municipal de Vinhedo\n\nModalidade da contratação: Credenciamento\n\nAmparo legal: Lei 14.133/2021, Art. 79, I\n\nTipo: Edital de Chamamento Público\n\nModo de disputa: Não se aplica\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 29/08/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 29/08/2025 10:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 03/10/2025 09:00 (horário de Brasília)\n\nId contratação PNCP: 46446696000185-1-000285/2025\n\nFonte: BR Conectado\n\nObjeto:\n\nCHAMAMENTO PÚBLICO PARA CREDENCIAMENTO DE LEILOEIROS PARA ALIENAÇÃO DE VEÍCULOS APREENDIDOS E REMOVIDOS PELA AUTORIDADE DE TRÂNSITO, DE ACORDO COM O TERMO DE REFERÊNCIA E DEMAIS ANEXOS.\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 0,00\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nCHAMAMENTO PÚBLICO PARA CREDENCIAMENTO DE LEILOEIROS PARA ALIENAÇÃO DE VEÍCULOS APREENDIDOS E REMOVIDOS PELA AUTORIDADE DE TRÂNSITO, DE ACORDO COM O TERMO DE REFERÊNCIA E DEMAIS ANEXOS.\n1\nR$ 0,00\nR$ 0,00\nExibir:\n5\n1-1 de 1 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de agosto de 2021.\n\nO desenvolvimento dessa versão do Portal é um esforço conjunto de construção de uma concepção direta legal, homologado pelos indicados a compor o aludido comitê.\n\nA adequação, fidedignid",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 0.0,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "CHAMAMENTO PÚBLICO PARA CREDENCIAMENTO DE LEILOEIROS PARA ALIENAÇÃO DE VEÍCULOS APREENDIDOS E REMOVIDOS PELA AUTORIDADE DE TRÂNSITO, DE ACORDO COM O TERMO DE REFERÊNCIA E DEMAIS ANEXOS.",
+        "quantidade": 1,
+        "valor_unitario": 0.0,
+        "valor_total": 0.0,
+        "raw_data": [
+          "1",
+          "CHAMAMENTO PÚBLICO PARA CREDENCIAMENTO DE LEILOEIROS PARA ALIENAÇÃO DE VEÍCULOS APREENDIDOS E REMOVIDOS PELA AUTORIDADE DE TRÂNSITO, DE ACORDO COM O TERMO DE REFERÊNCIA E DEMAIS ANEXOS.",
+          "1",
+          "R$ 0,00",
+          "R$ 0,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 1,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_3_0_62452EDITAL_CHAMAMENTO_PUBLICO_N_002-2025_COMPLETO.pdf",
+        "filepath": "downloads\\edital_3_0_62452EDITAL_CHAMAMENTO_PUBLICO_N_002-2025_COMPLETO.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46446696000185/compras/2025/285/arquivos/1",
+        "description": "Fazer download",
+        "size": 10557055,
+        "downloaded_at": "2025-08-29T17:17:25.532514"
+      }
+    ],
+    "downloads_count": 1,
+    "accessed_contratacao": true,
+    "access_button_selector": "button:has-text('Acessar contratação')",
+    "detail_url": "https://pncp.gov.br/app/editais/46446696000185/2025/285"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250829-004",
+    "pncp_id": "46341038000129-1-000550/2025",
+    "title": "Edital nº 1/2025",
+    "description": "Edital nº 1/2025\nId contratação PNCP: 46341038000129-1-000550/2025\nModalidade da Contratação: Pregão - Presencial\nÚltima Atualização: 29/08/2025\nÓrgão: MUNICIPIO DE PIRACICABA\nLocal: Piracicaba/SP\nObjeto: Prestação de serviços de monitoramento eletrônico, através de equipamentos de controle de velocidade, restrição veicular com classificação de veículos e de vídeo captura e o processamento das infrações de trânsito.",
+    "organization_name": "MUNICIPIO DE PIRACICABA",
+    "municipality_name": "Piracicaba",
+    "state_code": "SP",
+    "modality": "Pregão - Presencial",
+    "estimated_value": null,
+    "publication_date": "2025-08-29",
+    "objeto": "Prestação de serviços de monitoramento eletrônico, através de equipamentos de controle de velocidade, restrição veicular com classificação de veículos e de vídeo captura e o processamento das infrações de trânsito.",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Edital nº 1/2025\nId contratação PNCP: 46341038000129-1-000550/2025\nModalidade da Contratação: Pregão - Presencial\nÚltima Atualização: 29/08/2025\nÓrgão: MUNICIPIO DE PIRACICABA\nLocal: Piracicaba/SP\nObjeto: Prestação de serviços de monitoramento eletrônico, através de equipamentos de controle de velocidade, restrição veicular com classificação de veículos e de vídeo captura e o processamento das infrações de trânsito.",
+    "scraped_at": "2025-08-29T17:18:40.663233",
+    "has_details": true,
+    "has_access_button": false,
+    "edital_href": "/editais/46341038000129/2025/550",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nEdital nº 1/2025\nÚltima atualização 29/08/2025\n\nLocal: Piracicaba/SP\n\nÓrgão: MUNICIPIO DE PIRACICABA\n\nUnidade compradora: 1 - PREFEITURA DO MUNICIPIO DE PIRACICABA\n\nModalidade da contratação: Pregão - Presencial\n\nAmparo legal: Lei 14.133/2021, Art. 28, I\n\nTipo: Edital\n\nModo de disputa: Fechado-Aberto\n\nRegistro de preço: Não\n\nFonte orçamentária: Municipal\n\nData de divulgação no PNCP: 29/08/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 29/08/2025 18:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 17/09/2025 09:00 (horário de Brasília)\n\nId contratação PNCP: 46341038000129-1-000550/2025\n\nFonte: Prefeitura Municipal de Piracicaba\n\nJustificativa da Modalidade Presencial:\n\nObjeto:\n\nPrestação de serviços de monitoramento eletrônico, através de equipamentos de controle de velocidade, restrição veicular com classificação de veículos e de vídeo captura e o processamento das infrações de trânsito.\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 21.280.936,50\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nPrestação de serviços de monitoramento eletrônico, através de equipamentos de controle de velocidade, restrição veicular com classificação de veículos e de vídeo captura e o processamento das infrações de trânsito.\n1\nR$ 21.280.936,50\nR$ 21.280.936,50\nExibir:\n5\n1-1 de 1 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de agosto de 2021.\n\nO desenvolvimento dessa versão do Portal é um esforço conjunto de construção de uma concepção direta leg",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 21280936.5,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "Prestação de serviços de monitoramento eletrônico, através de equipamentos de controle de velocidade, restrição veicular com classificação de veículos e de vídeo captura e o processamento das infrações de trânsito.",
+        "quantidade": 1,
+        "valor_unitario": 21280936.5,
+        "valor_total": 21280936.5,
+        "raw_data": [
+          "1",
+          "Prestação de serviços de monitoramento eletrônico, através de equipamentos de controle de velocidade, restrição veicular com classificação de veículos e de vídeo captura e o processamento das infrações de trânsito.",
+          "1",
+          "R$ 21.280.936,50",
+          "R$ 21.280.936,50",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 1,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_4_0_02003447010493.doc",
+        "filepath": "downloads\\edital_4_0_02003447010493.doc",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46341038000129/compras/2025/550/arquivos/1",
+        "description": "Fazer download",
+        "size": 269824,
+        "downloaded_at": "2025-08-29T17:19:16.193704"
+      },
+      {
+        "filename": "edital_4_1_16003447010494.docx",
+        "filepath": "downloads\\edital_4_1_16003447010494.docx",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46341038000129/compras/2025/550/arquivos/2",
+        "description": "Fazer download",
+        "size": 26466,
+        "downloaded_at": "2025-08-29T17:19:21.453249"
+      },
+      {
+        "filename": "edital_4_2_16003447010495.pdf",
+        "filepath": "downloads\\edital_4_2_16003447010495.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46341038000129/compras/2025/550/arquivos/3",
+        "description": "Fazer download",
+        "size": 1521459,
+        "downloaded_at": "2025-08-29T17:19:26.666377"
+      },
+      {
+        "filename": "edital_4_3_16003447010496.pdf",
+        "filepath": "downloads\\edital_4_3_16003447010496.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46341038000129/compras/2025/550/arquivos/4",
+        "description": "Fazer download",
+        "size": 720425,
+        "downloaded_at": "2025-08-29T17:19:33.084888"
+      }
+    ],
+    "downloads_count": 4,
+    "accessed_contratacao": false,
+    "detail_url": "https://pncp.gov.br/app/editais/46341038000129/2025/550"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250829-005",
+    "pncp_id": "46634531000137-1-000080/2025",
+    "title": "Edital nº 23/2025",
+    "description": "Edital nº 23/2025\nId contratação PNCP: 46634531000137-1-000080/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 29/08/2025\nÓrgão: MUNICIPIO DE IBIUNA\nLocal: Ibiúna/SP\nObjeto: Contratação de serviços contínuos de transporte de merenda escolar e veículo de uso administrativo para o transporte da equipe do setor de merenda escolar, enquadrando-se como serviços comuns contínuos, conforme condições, quantidades e exigências estabelecidas neste termo de referência e no estudo té...",
+    "organization_name": "MUNICIPIO DE IBIUNA",
+    "municipality_name": "Ibiúna",
+    "state_code": "SP",
+    "modality": "Pregão - Eletrônico",
+    "estimated_value": null,
+    "publication_date": "2025-08-29",
+    "objeto": "Contratação de serviços contínuos de transporte de merenda escolar e veículo de uso administrativo para o transporte da equipe do setor de merenda escolar, enquadrando-se como serviços comuns contínuos, conforme condições, quantidades e exigências estabelecidas neste termo de referência e no estudo técnico preliminar",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Edital nº 23/2025\nId contratação PNCP: 46634531000137-1-000080/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 29/08/2025\nÓrgão: MUNICIPIO DE IBIUNA\nLocal: Ibiúna/SP\nObjeto: Contratação de serviços contínuos de transporte de merenda escolar e veículo de uso administrativo para o transporte da equipe do setor de merenda escolar, enquadrando-se como serviços comuns contínuos, conforme condições, quantidades e exigências estabelecidas neste termo de referência e no estudo técnico preliminar",
+    "scraped_at": "2025-08-29T17:20:41.541781",
+    "has_details": true,
+    "has_access_button": false,
+    "edital_href": "/editais/46634531000137/2025/80",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nEdital nº 23/2025\nÚltima atualização 29/08/2025\n\nLocal: Ibiúna/SP\n\nÓrgão: MUNICIPIO DE IBIUNA\n\nUnidade compradora: 9.2025 - SECRETARIA MUNICIPAL DE EDUCAÇÃO\n\nModalidade da contratação: Pregão - Eletrônico\n\nAmparo legal: Lei 14.133/2021, Art. 28, I\n\nTipo: Edital\n\nModo de disputa: Aberto\n\nRegistro de preço: Não\n\nFonte orçamentária: Municipal\n\nData de divulgação no PNCP: 29/08/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 01/09/2025 08:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 16/09/2025 08:00 (horário de Brasília)\n\nId contratação PNCP: 46634531000137-1-000080/2025\n\nFonte: GCASPP CONSULTORIA CONTABIL E SISTEMAS LTDA\n\nObjeto:\n\nContratação de serviços contínuos de transporte de merenda escolar e veículo de uso administrativo para o transporte da equipe do setor de merenda escolar, enquadrando-se como serviços comuns contínuos, conforme condições, quantidades e exigências estabelecidas neste termo de referência e no estudo técnico preliminar\n\nInformação complementar:\nSECRETARIA MUNICIPAL DE EDUCAÇÃO\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 790.354,56\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nTransporte de merenda escolar com 01 caminhão refrigerado do tipo utilitário (características mínimas: Comprimento: 4.850 mm, Largura: 1.740 mm, Altura: 1.965 mm, Capacidade de carga útil: 1.800 kg), com motorista e ajudante.\n12\nR$ 18.059,83\nR$ 216.717,96\n2\nTransporte de merenda escolar com 02 caminhão refrigerado do tipo 3/4 (características mínimas: Capacidade de carga: 3,0 toneladas; Altura: 3,0 metros; Largura: 2,0 metros; Comprimento máximo: 5,5 metros), com motorista e ajudante\n12\nR$ 34.674,90\nR$ 416.098,80\n3\nTransporte da equipe administrativa do setor de merenda escolar, em 01 veículo de quatro portas, com ar condicionado, com idade máxima de 15 anos, com capacidade para o motorista e mais quatro passagei",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 790354.56,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "Transporte de merenda escolar com 01 caminhão refrigerado do tipo utilitário (características mínimas: Comprimento: 4.850 mm, Largura: 1.740 mm, Altura: 1.965 mm, Capacidade de carga útil: 1.800 kg), com motorista e ajudante.",
+        "quantidade": 12,
+        "valor_unitario": 18059.83,
+        "valor_total": 216717.96,
+        "raw_data": [
+          "1",
+          "Transporte de merenda escolar com 01 caminhão refrigerado do tipo utilitário (características mínimas: Comprimento: 4.850 mm, Largura: 1.740 mm, Altura: 1.965 mm, Capacidade de carga útil: 1.800 kg), com motorista e ajudante.",
+          "12",
+          "R$ 18.059,83",
+          "R$ 216.717,96",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "2",
+        "descricao": "Transporte de merenda escolar com 02 caminhão refrigerado do tipo 3/4 (características mínimas: Capacidade de carga: 3,0 toneladas; Altura: 3,0 metros; Largura: 2,0 metros; Comprimento máximo: 5,5 metros), com motorista e ajudante",
+        "quantidade": 12,
+        "valor_unitario": 34674.9,
+        "valor_total": 416098.8,
+        "raw_data": [
+          "2",
+          "Transporte de merenda escolar com 02 caminhão refrigerado do tipo 3/4 (características mínimas: Capacidade de carga: 3,0 toneladas; Altura: 3,0 metros; Largura: 2,0 metros; Comprimento máximo: 5,5 metros), com motorista e ajudante",
+          "12",
+          "R$ 34.674,90",
+          "R$ 416.098,80",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "3",
+        "descricao": "Transporte da equipe administrativa do setor de merenda escolar, em 01 veículo de quatro portas, com ar condicionado, com idade máxima de 15 anos, com capacidade para o motorista e mais quatro passageiros, devidamente acompanhado de motorista.",
+        "quantidade": 12,
+        "valor_unitario": 13128.15,
+        "valor_total": 157537.8,
+        "raw_data": [
+          "3",
+          "Transporte da equipe administrativa do setor de merenda escolar, em 01 veículo de quatro portas, com ar condicionado, com idade máxima de 15 anos, com capacidade para o motorista e mais quatro passageiros, devidamente acompanhado de motorista.",
+          "12",
+          "R$ 13.128,15",
+          "R$ 157.537,80",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 3,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_5_0_431258c7ba0241dea8f64b98f46206f9PREGAO+ELETRONICO+15+2025.pdf",
+        "filepath": "downloads\\edital_5_0_431258c7ba0241dea8f64b98f46206f9PREGAO+ELETRONICO+15+2025.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46634531000137/compras/2025/80/arquivos/1",
+        "description": "Fazer download",
+        "size": 601198,
+        "downloaded_at": "2025-08-29T17:21:18.599338"
+      }
+    ],
+    "downloads_count": 1,
+    "accessed_contratacao": false,
+    "detail_url": "https://pncp.gov.br/app/editais/46634531000137/2025/80"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250829-006",
+    "pncp_id": "53415717000160-1-000132/2025",
+    "title": "Edital de Chamamento Público nº 8/2025",
+    "description": "Edital de Chamamento Público nº 8/2025\nId contratação PNCP: 53415717000160-1-000132/2025\nModalidade da Contratação: Manifestação de Interesse\nÚltima Atualização: 29/08/2025\nÓrgão: MUNICIPIO DE OURINHOS\nLocal: Ourinhos/SP\nObjeto: Prospecção do mercado imobiliário em O U R I N H O S - S P , com vistas à futura locação tradicional de imóvel para instalação da “Procuradoria-Geral do Município”, mediante coleta de propostas técnicas de imóvel localizado na região central do município de Ourinhos-SP c...",
+    "organization_name": "MUNICIPIO DE OURINHOS",
+    "municipality_name": "Ourinhos",
+    "state_code": "SP",
+    "modality": "Manifestação de Interesse",
+    "estimated_value": null,
+    "publication_date": "2025-08-29",
+    "objeto": "Prospecção do mercado imobiliário em O U R I N H O S - S P , com vistas à futura locação tradicional de imóvel para instalação da “Procuradoria-Geral do Município”, mediante coleta de propostas técnicas de imóvel localizado na região central do município de Ourinhos-SP com acessibilidade, nos termos da lei 10.098/2000, com capacidade para alocar 52 servidores (considerando 40 já lotados, e a expectativa da vinda de mais 12 servidores), com área útil de, no mínimo, 800m², que possa ser dividido e",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Edital de Chamamento Público nº 8/2025\nId contratação PNCP: 53415717000160-1-000132/2025\nModalidade da Contratação: Manifestação de Interesse\nÚltima Atualização: 29/08/2025\nÓrgão: MUNICIPIO DE OURINHOS\nLocal: Ourinhos/SP\nObjeto: Prospecção do mercado imobiliário em O U R I N H O S - S P , com vistas à futura locação tradicional de imóvel para instalação da “Procuradoria-Geral do Município”, mediante coleta de propostas técnicas de imóvel localizado na região central do município de Ourinhos-SP com acessibilidade, nos termos da lei 10.098/2000, com capacidade para alocar 52 servidores (considerando 40 já lotados, e a expectativa da vinda de mais 12 servidores), com área útil de, no mínimo, 800m², que possa ser dividido e ...",
+    "scraped_at": "2025-08-29T17:22:26.784476",
+    "has_details": true,
+    "has_access_button": true,
+    "edital_href": "/editais/53415717000160/2025/132",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nEdital de Chamamento Público nº 8/2025\nAcessar Contratação\nÚltima atualização 29/08/2025\n\nLocal: Ourinhos/SP\n\nÓrgão: MUNICIPIO DE OURINHOS\n\nUnidade compradora: 28063 - Prefeitura Municipal de Ourinhos\n\nModalidade da contratação: Manifestação de Interesse\n\nAmparo legal: Lei 14.133/2021, Art. 78, III\n\nTipo: Edital de Chamamento Público\n\nModo de disputa: Não se aplica\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 26/08/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 26/08/2025 12:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 08/09/2025 09:00 (horário de Brasília)\n\nId contratação PNCP: 53415717000160-1-000132/2025\n\nFonte: Instar Tecnologia em Informática\n\nObjeto:\n\nProspecção do mercado imobiliário em O U R I N H O S - S P , com vistas à futura locação tradicional de imóvel para instalação da “Procuradoria-Geral do Município”, mediante coleta de propostas técnicas de imóvel localizado na região central do município de Ourinhos-SP com acessibilidade, nos termos da lei 10.098/2000, com capacidade para alocar 52 servidores (considerando 40 já lotados, e a expectativa da vinda de mais 12 servidores), com área útil de, no mínimo, 800m², que possa ser dividido em 19 salas com aproximadamente 18m², 4 salas com aproximadamente 28m², 2 salas com aproximadamente 12m², e pelo menos, 4 sanitários, que atenda os requisitos mínimos especificados neste Edital\n\nInformação complementar:\nAs propostas serão recebidas até às 09:00 horas, horário de Brasília, do dia 08/09/2025, na Rua Monsenhor Córdova, nº 210, Centro, pessoalmente ou enviada tempestivamente por via postal, em envelope lacrado e identificado da seguintes forma: – “Proposta para Locação de Imóvel” ou por e-mail: comissao.contratacao@ourinhos.sp.gov.br, com a descrição do assunto “Proposta para Locação de Imóvel”.\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 240.000,00\nItens\nArquivos\nHistó",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 240000.0,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "Prospecção do mercado imobiliário em O U R I N H O S - S P , com vistas à futura locação tradicional de imóvel para instalação da “Procuradoria-Geral do Município”, mediante coleta de propostas técnic",
+        "quantidade": 12,
+        "valor_unitario": 20000.0,
+        "valor_total": 240000.0,
+        "raw_data": [
+          "1",
+          "Prospecção do mercado imobiliário em O U R I N H O S - S P , com vistas à futura locação tradicional de imóvel para instalação da “Procuradoria-Geral do Município”, mediante coleta de propostas técnic",
+          "12",
+          "R$ 20.000,00",
+          "R$ 240.000,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 1,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_6_0__home_ourinhos_public_html_editais_30_-_edital_26015333.pdf",
+        "filepath": "downloads\\edital_6_0__home_ourinhos_public_html_editais_30_-_edital_26015333.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/53415717000160/compras/2025/132/arquivos/1",
+        "description": "Fazer download",
+        "size": 787064,
+        "downloaded_at": "2025-08-29T17:23:24.190464"
+      },
+      {
+        "filename": "edital_6_1__home_ourinhos_public_html_editais_chamamento_publico_08-2025_-_retificado_29050407.pdf",
+        "filepath": "downloads\\edital_6_1__home_ourinhos_public_html_editais_chamamento_publico_08-2025_-_retificado_29050407.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/53415717000160/compras/2025/132/arquivos/2",
+        "description": "Fazer download",
+        "size": 983280,
+        "downloaded_at": "2025-08-29T17:23:29.406710"
+      }
+    ],
+    "downloads_count": 2,
+    "accessed_contratacao": true,
+    "access_button_selector": "button:has-text('Acessar contratação')",
+    "detail_url": "https://pncp.gov.br/app/editais/53415717000160/2025/132"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250829-007",
+    "pncp_id": "44925691000100-1-000043/2025",
+    "title": "Aviso de Contratação Direta nº 11/2025",
+    "description": "Aviso de Contratação Direta nº 11/2025\nId contratação PNCP: 44925691000100-1-000043/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 29/08/2025\nÓrgão: MUNICIPIO DE FLORIDA PAULISTA\nLocal: Flórida Paulista/SP\nObjeto: Obtenção de proposta mais vantajosa à Administração Municipal, visando a contratação de empresa especializada em manutenção de veículos, com fornecimento de peças e mão de obra para o conserto da Van Master 2.3 16V 2018/19, PLACA FPL-9695.",
+    "organization_name": "MUNICIPIO DE FLORIDA PAULISTA",
+    "municipality_name": "Flórida Paulista",
+    "state_code": "SP",
+    "modality": "Dispensa",
+    "estimated_value": null,
+    "publication_date": "2025-08-29",
+    "objeto": "Obtenção de proposta mais vantajosa à Administração Municipal, visando a contratação de empresa especializada em manutenção de veículos, com fornecimento de peças e mão de obra para o conserto da Van Master 2.3 16V 2018/19, PLACA FPL-9695.",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Aviso de Contratação Direta nº 11/2025\nId contratação PNCP: 44925691000100-1-000043/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 29/08/2025\nÓrgão: MUNICIPIO DE FLORIDA PAULISTA\nLocal: Flórida Paulista/SP\nObjeto: Obtenção de proposta mais vantajosa à Administração Municipal, visando a contratação de empresa especializada em manutenção de veículos, com fornecimento de peças e mão de obra para o conserto da Van Master 2.3 16V 2018/19, PLACA FPL-9695.",
+    "scraped_at": "2025-08-29T17:25:44.035659",
+    "has_details": true,
+    "has_access_button": false,
+    "edital_href": "/editais/44925691000100/2025/43",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nAviso de Contratação Direta nº 11/2025\nÚltima atualização 29/08/2025\n\nLocal: Flórida Paulista/SP\n\nÓrgão: MUNICIPIO DE FLORIDA PAULISTA\n\nUnidade compradora: 10.2025 - DIVISÃO DE SAUDE\n\nModalidade da contratação: Dispensa\n\nAmparo legal: Lei 14.133/2021, Art. 75, I\n\nTipo: Aviso de Contratação Direta\n\nModo de disputa: Dispensa Com Disputa\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 29/08/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 01/09/2025 08:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 05/09/2025 08:30 (horário de Brasília)\n\nId contratação PNCP: 44925691000100-1-000043/2025\n\nFonte: NOVOSERV INFORMATICA LTDA EPP\n\nObjeto:\n\nObtenção de proposta mais vantajosa à Administração Municipal, visando a contratação de empresa especializada em manutenção de veículos, com fornecimento de peças e mão de obra para o conserto da Van Master 2.3 16V 2018/19, PLACA FPL-9695.\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 45.612,98\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nLote 1\n1\nR$ 45.612,975\nR$ 45.612,975\nExibir:\n5\n1-1 de 1 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de agosto de 2021.\n\nO desenvolvimento dessa versão do Portal é um esforço conjunto de construção de uma concepção direta legal, homologado pelos indicados a compor o aludido comitê.\n\nA adequação, fidedignidade e corretude das informações e dos arquivos relativos às contratações disponibilizadas no PNCP por força da Lei nº ",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 45612.98,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "Lote 1",
+        "quantidade": 1,
+        "valor_unitario": 45612.975,
+        "valor_total": 45612.975,
+        "raw_data": [
+          "1",
+          "Lote 1",
+          "1",
+          "R$ 45.612,975",
+          "R$ 45.612,975",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 1,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_7_0_997b91b0b3bb4133a4c4a8d2e394ea3bAviso+de+ContrataCAo.pdf",
+        "filepath": "downloads\\edital_7_0_997b91b0b3bb4133a4c4a8d2e394ea3bAviso+de+ContrataCAo.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/44925691000100/compras/2025/43/arquivos/1",
+        "description": "Fazer download",
+        "size": 882808,
+        "downloaded_at": "2025-08-29T17:26:19.572687"
+      }
+    ],
+    "downloads_count": 1,
+    "accessed_contratacao": false,
+    "detail_url": "https://pncp.gov.br/app/editais/44925691000100/2025/43"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250829-008",
+    "pncp_id": "46482840000139-1-000651/2025",
+    "title": "Aviso de Contratação Direta nº 558/2025",
+    "description": "Aviso de Contratação Direta nº 558/2025\nId contratação PNCP: 46482840000139-1-000651/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 29/08/2025\nÓrgão: MUNICIPIO DE CARAGUATATUBA\nLocal: Caraguatatuba/SP\nObjeto: Aquisição de medicamento não padronizado na REMUME, para atender o paciente com processo judicial novo, E. M. S. B.",
+    "organization_name": "MUNICIPIO DE CARAGUATATUBA",
+    "municipality_name": "Caraguatatuba",
+    "state_code": "SP",
+    "modality": "Dispensa",
+    "estimated_value": null,
+    "publication_date": "2025-08-29",
+    "objeto": "Aquisição de medicamento não padronizado na REMUME, para atender o paciente com processo judicial novo, E. M. S. B.",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Aviso de Contratação Direta nº 558/2025\nId contratação PNCP: 46482840000139-1-000651/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 29/08/2025\nÓrgão: MUNICIPIO DE CARAGUATATUBA\nLocal: Caraguatatuba/SP\nObjeto: Aquisição de medicamento não padronizado na REMUME, para atender o paciente com processo judicial novo, E. M. S. B.",
+    "scraped_at": "2025-08-29T17:27:27.667779",
+    "has_details": true,
+    "has_access_button": true,
+    "edital_href": "/editais/46482840000139/2025/651",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nAviso de Contratação Direta nº 558/2025\nAcessar Contratação\nÚltima atualização 29/08/2025\n\nLocal: Caraguatatuba/SP\n\nÓrgão: MUNICIPIO DE CARAGUATATUBA\n\nUnidade compradora: 5 - SECRETARIA DE SAUDE\n\nModalidade da contratação: Dispensa\n\nAmparo legal: Lei 14.133/2021, Art. 75, II\n\nTipo: Aviso de Contratação Direta\n\nModo de disputa: Dispensa Com Disputa\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 29/08/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 29/08/2025 00:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 03/09/2025 00:00 (horário de Brasília)\n\nId contratação PNCP: 46482840000139-1-000651/2025\n\nFonte: EMBRAS - EMPRESA BRASILEIRA DE TECNOLOGIA LTDA\n\nObjeto:\n\nAquisição de medicamento não padronizado na REMUME, para atender o paciente com processo judicial novo, E. M. S. B.\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 28.423,20\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nESILATO DE NINTEDANIBE 150 MG Especificação: CAIXAS CONTENDO 30 OU 60 CÁPSULAS\n120\nR$ 236,86\nR$ 28.423,20\nExibir:\n5\n1-1 de 1 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de agosto de 2021.\n\nO desenvolvimento dessa versão do Portal é um esforço conjunto de construção de uma concepção direta legal, homologado pelos indicados a compor o aludido comitê.\n\nA adequação, fidedignidade e corretude das informações e dos arquivos relativos às contratações disponibilizadas no PNCP por força da Lei nº 14.133/2021 são de estrit",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 28423.2,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "ESILATO DE NINTEDANIBE 150 MG Especificação: CAIXAS CONTENDO 30 OU 60 CÁPSULAS",
+        "quantidade": 120,
+        "valor_unitario": 236.86,
+        "valor_total": 28423.2,
+        "raw_data": [
+          "1",
+          "ESILATO DE NINTEDANIBE 150 MG Especificação: CAIXAS CONTENDO 30 OU 60 CÁPSULAS",
+          "120",
+          "R$ 236,86",
+          "R$ 28.423,20",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 1,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_8_0_AVISO+DE+CONTRATACAO+DIRETA+SC+2640.pdf",
+        "filepath": "downloads\\edital_8_0_AVISO+DE+CONTRATACAO+DIRETA+SC+2640.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46482840000139/compras/2025/651/arquivos/1",
+        "description": "Fazer download",
+        "size": 4174529,
+        "downloaded_at": "2025-08-29T17:28:03.374212"
+      }
+    ],
+    "downloads_count": 1,
+    "accessed_contratacao": true,
+    "access_button_selector": "button:has-text('Acessar contratação')",
+    "detail_url": "https://pncp.gov.br/app/editais/46482840000139/2025/651"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250829-009",
+    "pncp_id": "44229821000170-1-000064/2025",
+    "title": "Edital nº 005/2025",
+    "description": "Edital nº 005/2025\nId contratação PNCP: 44229821000170-1-000064/2025\nModalidade da Contratação: Concorrência - Eletrônica\nÚltima Atualização: 29/08/2025\nÓrgão: MUNICIPIO DE JARDINOPOLIS\nLocal: Jardinópolis/SP\nObjeto: [LICITANET] - Contratação de empresa especializada em construção civil, com fornecimento de materiais, equipamentos, ferramentas, acessórios e mão de obra para execução da Praça “MARIA DE LOURDES VIOLA FERREIRA”",
+    "organization_name": "MUNICIPIO DE JARDINOPOLIS",
+    "municipality_name": "Jardinópolis",
+    "state_code": "SP",
+    "modality": "Concorrência - Eletrônica",
+    "estimated_value": null,
+    "publication_date": "2025-08-29",
+    "objeto": "[LICITANET] - Contratação de empresa especializada em construção civil, com fornecimento de materiais, equipamentos, ferramentas, acessórios e mão de obra para execução da Praça “MARIA DE LOURDES VIOLA FERREIRA”",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Edital nº 005/2025\nId contratação PNCP: 44229821000170-1-000064/2025\nModalidade da Contratação: Concorrência - Eletrônica\nÚltima Atualização: 29/08/2025\nÓrgão: MUNICIPIO DE JARDINOPOLIS\nLocal: Jardinópolis/SP\nObjeto: [LICITANET] - Contratação de empresa especializada em construção civil, com fornecimento de materiais, equipamentos, ferramentas, acessórios e mão de obra para execução da Praça “MARIA DE LOURDES VIOLA FERREIRA”",
+    "scraped_at": "2025-08-29T17:29:16.834640",
+    "has_details": true,
+    "has_access_button": true,
+    "edital_href": "/editais/44229821000170/2025/64",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nEdital nº 005/2025\nAcessar Contratação\nÚltima atualização 29/08/2025\n\nLocal: Jardinópolis/SP\n\nÓrgão: MUNICIPIO DE JARDINOPOLIS\n\nUnidade compradora: 1795 - MUNICÍPIO DE JARDINÓPOLIS/SP\n\nModalidade da contratação: Concorrência - Eletrônica\n\nAmparo legal: Lei 14.133/2021, Art. 28, II\n\nTipo: Edital\n\nModo de disputa: Aberto\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 29/08/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 29/08/2025 16:53 (horário de Brasília)\n\nData fim de recebimento de propostas: 06/10/2025 09:00 (horário de Brasília)\n\nId contratação PNCP: 44229821000170-1-000064/2025\n\nFonte: Licitanet Licitações Eletrônicas LTDA\n\nObjeto:\n\n[LICITANET] - Contratação de empresa especializada em construção civil, com fornecimento de materiais, equipamentos, ferramentas, acessórios e mão de obra para execução da Praça “MARIA DE LOURDES VIOLA FERREIRA”\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 417.915,59\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n6404470\nContratação de empresa especializada em construção civil, com fornecimento de materiais, equipamentos, ferramentas, acessórios e mão de obra para execução da Praça MARIA DE LOURDES VIOLA FERREIRA\n1\nR$ 417.915,59\nR$ 417.915,59\nExibir:\n5\n1-1 de 1 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de agosto de 2021.\n\nO desenvolvimento dessa versão do Portal é um esforço conjunto de construção de uma concepção direta legal, homologado pelos indicados a compor ",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 417915.59,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "6404470",
+        "descricao": "Contratação de empresa especializada em construção civil, com fornecimento de materiais, equipamentos, ferramentas, acessórios e mão de obra para execução da Praça MARIA DE LOURDES VIOLA FERREIRA",
+        "quantidade": 1,
+        "valor_unitario": 417915.59,
+        "valor_total": 417915.59,
+        "raw_data": [
+          "6404470",
+          "Contratação de empresa especializada em construção civil, com fornecimento de materiais, equipamentos, ferramentas, acessórios e mão de obra para execução da Praça MARIA DE LOURDES VIOLA FERREIRA",
+          "1",
+          "R$ 417.915,59",
+          "R$ 417.915,59",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 1,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_9_0_151657_editais_1756497115.zip",
+        "filepath": "downloads\\edital_9_0_151657_editais_1756497115.zip",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/44229821000170/compras/2025/64/arquivos/1",
+        "description": "Fazer download",
+        "size": 13715322,
+        "downloaded_at": "2025-08-29T17:29:52.918656"
+      }
+    ],
+    "downloads_count": 1,
+    "accessed_contratacao": true,
+    "access_button_selector": "button:has-text('Acessar contratação')",
+    "detail_url": "https://pncp.gov.br/app/editais/44229821000170/2025/64"
+  }
+]

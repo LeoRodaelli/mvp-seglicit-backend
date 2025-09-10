@@ -18,6 +18,8 @@ from src.routes.tender import tender_bp
 import os
 from dotenv import load_dotenv
 
+from src.routes.user import user_bp
+
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,

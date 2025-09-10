@@ -6,13 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="7f12e291-75b6-4e17-9e59-80e49e750700" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editais_items_only_20250827_114454.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pncp_scraper.log" beforeDir="false" afterPath="$PROJECT_DIR$/pncp_scraper.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pncp_scraper_items_only.py" beforeDir="false" afterPath="$PROJECT_DIR$/pncp_scraper_items_only.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/database/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/app.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/tender.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/tender.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/tender.py.backup" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/tender.py.backup" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/user.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +42,7 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
     "last_opened_file_path": "C:/Users/leoro/Desktop/rodaelli/manusAI/mvp-licitacoes-melhorado-backend",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
@@ -55,7 +56,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-d9fa9deec7cb-d902c0275401-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-252.23892.515" />
+        <option value="bundled-python-sdk-8753aad8314d-d902c0275401-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-252.25557.178" />
       </set>
     </attachedChunks>
   </component>

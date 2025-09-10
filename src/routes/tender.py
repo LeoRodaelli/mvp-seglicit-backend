@@ -1,14 +1,15 @@
 # -*- coding: utf-8 -*-
 """
-API direta com psycopg2 - contorna problemas do SQLAlchemy
+API melhorada com dados completos e formatação brasileira
 """
 
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, request, jsonify, send_file
 import psycopg2
 import psycopg2.extras
 import logging
 import json
 import os
+from datetime import datetime
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -34,9 +35,40 @@ def get_db_connection():
         logger.error(f"Erro de conexão: {e}")
         return None
 
+def format_brazilian_date(date_str):
+    """Formata data para padrão brasileiro"""
+    if not date_str:
+        return ''
+    try:
+        if isinstance(date_str, str):
+            # Se já está no formato YYYY-MM-DD
+            if '-' in date_str and len(date_str) == 10:
+                year, month, day = date_str.split('-')
+                return f"{day}/{month}/{year}"
+        return str(date_str)
+    except:
+        return str(date_str)
+
+def format_brazilian_currency(value):
+    """Formata valor para moeda brasileira"""
+    if not value or value == 0:
+        return 'Valor não informado'
+    try:
+        # Converter para float se necessário
+        if isinstance(value, str):
+            value = float(value.replace(',', '.'))
+
+        # Formatar como moeda brasileira
+        formatted = f"R$ {float(value):,.2f}"
+        # Trocar . por , e , por .
+        formatted = formatted.replace(',', 'TEMP').replace('.', ',').replace('TEMP', '.')
+        return formatted
+    except:
+        return 'Valor não informado'
+
 @tender_bp.route('/tenders', methods=['GET'])
 def get_tenders():
-    """Get tenders usando psycopg2 diretamente"""
+    """Get tenders com dados completos e formatação brasileira"""
     try:
         # Parâmetros
         page = request.args.get('page', 1, type=int)
@@ -52,12 +84,14 @@ def get_tenders():
 
         cursor = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
 
-        # Query base
+        # Query com TODOS os campos
         base_query = """
         SELECT id, pncp_id, title, description, organization_name, organization_cnpj,
                municipality_name, municipality_ibge, state_code, publication_date,
                status, modality, estimated_value, source_url, detail_url,
-               data_source, created_at, downloaded_files
+               data_source, created_at, downloaded_files, objeto, items_json,
+               downloaded_files_json, prazo, detailed_description, valor_total_estimado,
+               items_count, downloads_count
         FROM tenders 
         WHERE 1=1
         """
@@ -74,8 +108,8 @@ def get_tenders():
             params.append(f'%{state_code}%')
 
         if keyword:
-            base_query += " AND (title ILIKE %s OR description ILIKE %s OR organization_name ILIKE %s)"
-            params.extend([f'%{keyword}%', f'%{keyword}%', f'%{keyword}%'])
+            base_query += " AND (title ILIKE %s OR description ILIKE %s OR organization_name ILIKE %s OR objeto ILIKE %s)"
+            params.extend([f'%{keyword}%', f'%{keyword}%', f'%{keyword}%', f'%{keyword}%'])
 
         # Ordenar e paginar
         base_query += " ORDER BY publication_date DESC"
@@ -85,9 +119,25 @@ def get_tenders():
         cursor.execute(base_query, params)
         rows = cursor.fetchall()
 
-        # Converter para lista de dicionários
+        # Converter para lista de dicionários com formatação brasileira
         tenders = []
         for row in rows:
+            # Parse JSON fields
+            items = []
+            downloaded_files = []
+
+            try:
+                if row['items_json']:
+                    items = json.loads(row['items_json'])
+            except:
+                items = []
+
+            try:
+                if row['downloaded_files_json']:
+                    downloaded_files = json.loads(row['downloaded_files_json'])
+            except:
+                downloaded_files = []
+
             tender_dict = {
                 'id': row['id'],
                 'pncp_id': row['pncp_id'] or '',
@@ -99,6 +149,7 @@ def get_tenders():
                 'municipality_ibge': row['municipality_ibge'] or '',
                 'state_code': row['state_code'] or '',
                 'publication_date': str(row['publication_date']) if row['publication_date'] else '',
+                'publication_date_br': format_brazilian_date(row['publication_date']),
                 'status': row['status'] or '',
                 'modality': row['modality'] or '',
                 'estimated_value': float(row['estimated_value']) if row['estimated_value'] else None,
@@ -106,9 +157,23 @@ def get_tenders():
                 'detail_url': row['detail_url'] or '',
                 'data_source': row['data_source'] or '',
                 'created_at': str(row['created_at']) if row['created_at'] else '',
-                'downloaded_files': row['downloaded_files'] or '[]',
                 'pncp_url': row['detail_url'] or row['source_url'] or '',
-                'formatted_value': f"R$ {float(row['estimated_value']):,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.') if row['estimated_value'] else 'Valor não informado'
+
+                # NOVOS CAMPOS COMPLETOS
+                'objeto': row['objeto'] or '',
+                'prazo': row['prazo'] or '',
+                'detailed_description': row['detailed_description'] or '',
+                'valor_total_estimado': float(row['valor_total_estimado']) if row['valor_total_estimado'] else None,
+                'valor_total_estimado_br': format_brazilian_currency(row['valor_total_estimado']),
+                'items_count': row['items_count'] or 0,
+                'downloads_count': row['downloads_count'] or 0,
+                'items': items,
+                'downloaded_files': downloaded_files,
+
+                # FORMATAÇÃO BRASILEIRA
+                'formatted_value': format_brazilian_currency(row['valor_total_estimado'] or row['estimated_value']),
+                'has_items': len(items) > 0,
+                'has_files': len(downloaded_files) > 0
             }
             tenders.append(tender_dict)
 
@@ -125,8 +190,8 @@ def get_tenders():
             count_params.append(f'%{state_code}%')
 
         if keyword:
-            count_query += " AND (title ILIKE %s OR description ILIKE %s OR organization_name ILIKE %s)"
-            count_params.extend([f'%{keyword}%', f'%{keyword}%', f'%{keyword}%'])
+            count_query += " AND (title ILIKE %s OR description ILIKE %s OR organization_name ILIKE %s OR objeto ILIKE %s)"
+            count_params.extend([f'%{keyword}%', f'%{keyword}%', f'%{keyword}%', f'%{keyword}%'])
 
         cursor.execute(count_query, count_params)
         total = cursor.fetchone()['count']
@@ -174,6 +239,137 @@ def get_tenders():
             }
         }), 500
 
+@tender_bp.route('/tenders/<int:tender_id>', methods=['GET'])
+def get_tender_details(tender_id):
+    """Get detalhes completos de uma licitação"""
+    try:
+        conn = get_db_connection()
+        if not conn:
+            raise Exception("Erro de conexão com banco")
+
+        cursor = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+
+        query = """
+        SELECT * FROM tenders WHERE id = %s
+        """
+
+        cursor.execute(query, (tender_id,))
+        row = cursor.fetchone()
+
+        if not row:
+            return jsonify({
+                'success': False,
+                'error': 'Licitação não encontrada'
+            }), 404
+
+        # Parse JSON fields
+        items = []
+        downloaded_files = []
+
+        try:
+            if row['items_json']:
+                items = json.loads(row['items_json'])
+        except:
+            items = []
+
+        try:
+            if row['downloaded_files_json']:
+                downloaded_files = json.loads(row['downloaded_files_json'])
+        except:
+            downloaded_files = []
+
+        tender = {
+            'id': row['id'],
+            'pncp_id': row['pncp_id'] or '',
+            'title': row['title'] or '',
+            'description': row['description'] or '',
+            'organization_name': row['organization_name'] or '',
+            'organization_cnpj': row['organization_cnpj'] or '',
+            'municipality_name': row['municipality_name'] or '',
+            'state_code': row['state_code'] or '',
+            'publication_date_br': format_brazilian_date(row['publication_date']),
+            'status': row['status'] or '',
+            'modality': row['modality'] or '',
+            'pncp_url': row['detail_url'] or row['source_url'] or '',
+            'objeto': row['objeto'] or '',
+            'prazo': row['prazo'] or '',
+            'detailed_description': row['detailed_description'] or '',
+            'valor_total_estimado_br': format_brazilian_currency(row['valor_total_estimado']),
+            'items_count': row['items_count'] or 0,
+            'downloads_count': row['downloads_count'] or 0,
+            'items': items,
+            'downloaded_files': downloaded_files
+        }
+
+        cursor.close()
+        conn.close()
+
+        return jsonify({
+            'success': True,
+            'tender': tender
+        })
+
+    except Exception as e:
+        logger.error(f"Error fetching tender details: {e}")
+        return jsonify({
+            'success': False,
+            'error': 'Erro ao buscar detalhes'
+        }), 500
+
+@tender_bp.route('/tenders/<int:tender_id>/download/<filename>', methods=['GET'])
+def download_file(tender_id, filename):
+    """Download de arquivo específico"""
+    try:
+        # Buscar informações do arquivo
+        conn = get_db_connection()
+        if not conn:
+            raise Exception("Erro de conexão com banco")
+
+        cursor = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+
+        query = "SELECT downloaded_files_json FROM tenders WHERE id = %s"
+        cursor.execute(query, (tender_id,))
+        row = cursor.fetchone()
+
+        if not row:
+            return jsonify({'error': 'Licitação não encontrada'}), 404
+
+        # Parse arquivos
+        try:
+            downloaded_files = json.loads(row['downloaded_files_json'] or '[]')
+        except:
+            downloaded_files = []
+
+        # Buscar arquivo específico
+        target_file = None
+        for file_info in downloaded_files:
+            if file_info.get('filename') == filename:
+                target_file = file_info
+                break
+
+        if not target_file:
+            return jsonify({'error': 'Arquivo não encontrado'}), 404
+
+        # Verificar se arquivo existe no disco
+        filepath = target_file.get('filepath', '')
+        if not os.path.exists(filepath):
+            return jsonify({'error': 'Arquivo não disponível no servidor'}), 404
+
+        cursor.close()
+        conn.close()
+
+        # Enviar arquivo
+        return send_file(
+            filepath,
+            as_attachment=True,
+            download_name=filename
+        )
+
+    except Exception as e:
+        logger.error(f"Error downloading file: {e}")
+        return jsonify({'error': 'Erro ao baixar arquivo'}), 500
+
+# Manter rotas existentes (cities, states, stats, test)
 @tender_bp.route('/cities', methods=['GET'])
 def get_cities():
     """Get cities usando psycopg2 diretamente"""
@@ -269,7 +465,7 @@ def get_states():
 
 @tender_bp.route('/stats', methods=['GET'])
 def get_stats():
-    """Get stats usando psycopg2 diretamente"""
+    """Retorna estatísticas gerais do sistema"""
     try:
         conn = get_db_connection()
         if not conn:
@@ -281,37 +477,57 @@ def get_stats():
         cursor.execute("SELECT COUNT(*) FROM tenders")
         total_tenders = cursor.fetchone()[0]
 
-        # Total de cidades
+        # Total de cidades únicas
         cursor.execute("SELECT COUNT(DISTINCT municipality_name) FROM tenders WHERE municipality_name IS NOT NULL")
         total_cities = cursor.fetchone()[0]
 
-        # Total de estados
+        # Total de itens (somar items_count)
+        cursor.execute("SELECT COALESCE(SUM(items_count), 0) FROM tenders WHERE items_count IS NOT NULL")
+        total_items = cursor.fetchone()[0]
+
+        # Total de arquivos (somar downloads_count)
+        cursor.execute("SELECT COALESCE(SUM(downloads_count), 0) FROM tenders WHERE downloads_count IS NOT NULL")
+        total_files = cursor.fetchone()[0]
+
+        # Estados únicos
         cursor.execute("SELECT COUNT(DISTINCT state_code) FROM tenders WHERE state_code IS NOT NULL")
         total_states = cursor.fetchone()[0]
+
+        # Valor total estimado
+        cursor.execute("SELECT COALESCE(SUM(estimated_value), 0) FROM tenders WHERE estimated_value IS NOT NULL")
+        total_value = cursor.fetchone()[0]
 
         cursor.close()
         conn.close()
 
+        stats = {
+            'total_tenders': total_tenders,
+            'total_cities': total_cities,
+            'total_items': int(total_items) if total_items else 0,
+            'total_files': int(total_files) if total_files else 0,
+            'total_states': total_states,
+            'total_value': float(total_value) if total_value else 0.0,
+            'formatted_value': f"R$ {float(total_value):,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.') if total_value else "R$ 0,00"
+        }
+
         return jsonify({
             'success': True,
-            'stats': {
-                'total_tenders': total_tenders,
-                'total_cities': total_cities,
-                'total_states': total_states,
-                'last_update': '2025-08-26'
-            }
+            'stats': stats
         })
 
     except Exception as e:
-        logger.error(f"Error fetching stats: {e}")
+        logger.error(f"Erro ao buscar estatísticas: {e}")
         return jsonify({
             'success': False,
-            'error': 'Erro ao buscar estatísticas',
+            'error': str(e),
             'stats': {
                 'total_tenders': 0,
                 'total_cities': 0,
+                'total_items': 0,
+                'total_files': 0,
                 'total_states': 0,
-                'last_update': '2025-08-26'
+                'total_value': 0.0,
+                'formatted_value': "R$ 0,00"
             }
         }), 500
 
@@ -332,9 +548,10 @@ def test_connection():
 
         return jsonify({
             'success': True,
-            'message': 'API direta funcionando!',
+            'message': 'API melhorada funcionando!',
             'total_tenders': count,
-            'method': 'psycopg2_direct'
+            'method': 'psycopg2_direct_enhanced',
+            'features': ['formatacao_brasileira', 'dados_completos', 'download_arquivos']
         })
     except Exception as e:
         return jsonify({
