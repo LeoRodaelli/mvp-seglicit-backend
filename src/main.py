@@ -80,5 +80,9 @@ def serve(path):
         else:
             return "index.html not found", 404
 
+# Configuração para produção
+PORT = int(os.getenv('PORT', 5000))
+DEBUG = os.getenv('FLASK_ENV') != 'production'
+
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=PORT, debug=DEBUG)
