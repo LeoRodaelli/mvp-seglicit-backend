@@ -1,0 +1,388 @@
+[
+  {
+    "id": "PNCP-ITEMS-ONLY-20250918-000",
+    "pncp_id": "61914891000186-1-000480/2025",
+    "title": "Aviso de Contratação Direta nº 114/2025",
+    "description": "Aviso de Contratação Direta nº 114/2025\nId contratação PNCP: 61914891000186-1-000480/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 18/09/2025\nÓrgão: FUND PE ANCHIETA CENTRO PAULISTA RADIO E TV EDUCATIVAS\nLocal: São Paulo/SP\nObjeto: Contratação de empresa especializada em transporte de instrumentos musicais.",
+    "organization_name": "FUND PE ANCHIETA CENTRO PAULISTA RADIO E TV EDUCATIVAS",
+    "municipality_name": "São Paulo",
+    "state_code": "SP",
+    "modality": "Dispensa",
+    "estimated_value": null,
+    "publication_date": "2025-09-18",
+    "objeto": "Contratação de empresa especializada em transporte de instrumentos musicais.",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Aviso de Contratação Direta nº 114/2025\nId contratação PNCP: 61914891000186-1-000480/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 18/09/2025\nÓrgão: FUND PE ANCHIETA CENTRO PAULISTA RADIO E TV EDUCATIVAS\nLocal: São Paulo/SP\nObjeto: Contratação de empresa especializada em transporte de instrumentos musicais.",
+    "scraped_at": "2025-09-18T12:08:41.762419",
+    "has_details": true,
+    "has_access_button": false,
+    "edital_href": "/editais/61914891000186/2025/480",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nAviso de Contratação Direta nº 114/2025\nÚltima atualização 18/09/2025\n\nLocal: São Paulo/SP\n\nÓrgão: FUND PE ANCHIETA CENTRO PAULISTA RADIO E TV EDUCATIVAS\n\nUnidade compradora: 121101 - ESP-FUND. PE. ANCHI - CTO.PTA.RADIO TV.EDUC.\n\nModalidade da contratação: Dispensa\n\nAmparo legal: Lei 14.133/2021, Art. 75, II\n\nTipo: Aviso de Contratação Direta\n\nModo de disputa: Dispensa Com Disputa\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 18/09/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 18/09/2025 13:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 24/09/2025 08:00 (horário de Brasília)\n\nId contratação PNCP: 61914891000186-1-000480/2025\n\nFonte: Compras.gov.br\n\nObjeto:\n\nContratação de empresa especializada em transporte de instrumentos musicais.\n\nInformação complementar:\nSC 069446\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 7.800,00\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nTransporte Rodoviário - Cargas / Encomendas Transporte Rodoviário - Cargas / Encomendas Conforme termo de referência 509/2025\n1\nR$ 7.800,00\nR$ 7.800,00\nExibir:\n5\n1-1 de 1 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de agosto de 2021.\n\nO desenvolvimento dessa versão do Portal é um esforço conjunto de construção de uma concepção direta legal, homologado pelos indicados a compor o aludido comitê.\n\nA adequação, fidedignidade e corretude das informações e dos arquivos relativos às contratações disponibilizadas no PNCP p",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 7800.0,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "Transporte Rodoviário - Cargas / Encomendas Transporte Rodoviário - Cargas / Encomendas Conforme termo de referência 509/2025",
+        "quantidade": 1,
+        "valor_unitario": 7800.0,
+        "valor_total": 7800.0,
+        "raw_data": [
+          "1",
+          "Transporte Rodoviário - Cargas / Encomendas Transporte Rodoviário - Cargas / Encomendas Conforme termo de referência 509/2025",
+          "1",
+          "R$ 7.800,00",
+          "R$ 7.800,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 1,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_0_0_AC_121101-000350-2025+(1).zip",
+        "filepath": "downloads\\edital_0_0_AC_121101-000350-2025+(1).zip",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/61914891000186/compras/2025/480/arquivos/1",
+        "description": "Fazer download",
+        "size": 297776,
+        "downloaded_at": "2025-09-18T12:09:17.001931"
+      },
+      {
+        "filename": "edital_0_1_TR121101_000509_2025.pdf",
+        "filepath": "downloads\\edital_0_1_TR121101_000509_2025.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/61914891000186/compras/2025/480/arquivos/2",
+        "description": "Fazer download",
+        "size": 110740,
+        "downloaded_at": "2025-09-18T12:09:22.133078"
+      },
+      {
+        "filename": "edital_0_2_350_2025.pdf",
+        "filepath": "downloads\\edital_0_2_350_2025.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/61914891000186/compras/2025/480/arquivos/3",
+        "description": "Fazer download",
+        "size": 179804,
+        "downloaded_at": "2025-09-18T12:09:27.284152"
+      }
+    ],
+    "downloads_count": 3,
+    "accessed_contratacao": false,
+    "detail_url": "https://pncp.gov.br/app/editais/61914891000186/2025/480"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250918-003",
+    "pncp_id": "58993577000121-1-000162/2025",
+    "title": "Edital de Chamamento Público nº 1/2025",
+    "description": "Edital de Chamamento Público nº 1/2025\nId contratação PNCP: 58993577000121-1-000162/2025\nModalidade da Contratação: Credenciamento\nÚltima Atualização: 18/09/2025\nÓrgão: MUNICIPIO DE ARACARIGUAMA\nLocal: Araçariguama/SP\nObjeto: Credenciamento e seleção de profissional devidamente capacitados e interessados em ministrar oficinas livres e atividades técnicas de caráter sócio cultural e esportivo, através das Secretarias Municipais de Cultura e Secretaria Municipal de Esportes do Município de Araçari...",
+    "organization_name": "MUNICIPIO DE ARACARIGUAMA",
+    "municipality_name": "Araçariguama",
+    "state_code": "SP",
+    "modality": "Credenciamento",
+    "estimated_value": null,
+    "publication_date": "2025-09-18",
+    "objeto": "Credenciamento e seleção de profissional devidamente capacitados e interessados em ministrar oficinas livres e atividades técnicas de caráter sócio cultural e esportivo, através das Secretarias Municipais de Cultura e Secretaria Municipal de Esportes do Município de Araçariguama-SP, voltadas para atividades a serem desenvolvidas conforme contra no Termo de Referência, com prazo de vigência do contrato de 12 meses",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Edital de Chamamento Público nº 1/2025\nId contratação PNCP: 58993577000121-1-000162/2025\nModalidade da Contratação: Credenciamento\nÚltima Atualização: 18/09/2025\nÓrgão: MUNICIPIO DE ARACARIGUAMA\nLocal: Araçariguama/SP\nObjeto: Credenciamento e seleção de profissional devidamente capacitados e interessados em ministrar oficinas livres e atividades técnicas de caráter sócio cultural e esportivo, através das Secretarias Municipais de Cultura e Secretaria Municipal de Esportes do Município de Araçariguama-SP, voltadas para atividades a serem desenvolvidas conforme contra no Termo de Referência, com prazo de vigência do contrato de 12 meses",
+    "scraped_at": "2025-09-18T12:15:38.264461",
+    "has_details": true,
+    "has_access_button": true,
+    "edital_href": "/editais/58993577000121/2025/162",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nEdital de Chamamento Público nº 1/2025\nAcessar Contratação\nÚltima atualização 18/09/2025\n\nLocal: Araçariguama/SP\n\nÓrgão: MUNICIPIO DE ARACARIGUAMA\n\nUnidade compradora: 939 - Araçariguama\n\nModalidade da contratação: Credenciamento\n\nAmparo legal: Lei 14.133/2021, Art. 79, I\n\nTipo: Edital de Chamamento Público\n\nModo de disputa: Não se aplica\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 18/09/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 18/09/2025 14:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 20/10/2025 17:00 (horário de Brasília)\n\nId contratação PNCP: 58993577000121-1-000162/2025\n\nFonte: Instar Tecnologia em Informática\n\nObjeto:\n\nCredenciamento e seleção de profissional devidamente capacitados e interessados em ministrar oficinas livres e atividades técnicas de caráter sócio cultural e esportivo, através das Secretarias Municipais de Cultura e Secretaria Municipal de Esportes do Município de Araçariguama-SP, voltadas para atividades a serem desenvolvidas conforme contra no Termo de Referência, com prazo de vigência do contrato de 12 meses\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 254.496,00\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nOficineiro de arte/cultural – modalidade Dança Contemporânea\n2400\nR$ 15,71\nR$ 37.704,00\n2\nOficineiro de arte/cultural – modalidade Desenho Artístico e Artes Plásticas\n1\nR$ 37.704,00\nR$ 37.704,00\n3\nOficineiro de esporte na modalidade Tae-kwon-do\n1680\nR$ 15,71\nR$ 26.392,7999\n4\nOficineiro de esporte na modalidade Jiu-Jitsu\n1680\nR$ 15,71\nR$ 26.392,7999\n5\nOficineiro de esporte na modalidade Futsal\n3360\nR$ 25,0599\nR$ 84.201,60\nExibir:\n5\n1-5 de 6 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos ",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 254496.0,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "Oficineiro de arte/cultural – modalidade Dança Contemporânea",
+        "quantidade": 2400,
+        "valor_unitario": 15.71,
+        "valor_total": 37704.0,
+        "raw_data": [
+          "1",
+          "Oficineiro de arte/cultural – modalidade Dança Contemporânea",
+          "2400",
+          "R$ 15,71",
+          "R$ 37.704,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "2",
+        "descricao": "Oficineiro de arte/cultural – modalidade Desenho Artístico e Artes Plásticas",
+        "quantidade": 1,
+        "valor_unitario": 37704.0,
+        "valor_total": 37704.0,
+        "raw_data": [
+          "2",
+          "Oficineiro de arte/cultural – modalidade Desenho Artístico e Artes Plásticas",
+          "1",
+          "R$ 37.704,00",
+          "R$ 37.704,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "3",
+        "descricao": "Oficineiro de esporte na modalidade Tae-kwon-do",
+        "quantidade": 1680,
+        "valor_unitario": 15.71,
+        "valor_total": 26392.7999,
+        "raw_data": [
+          "3",
+          "Oficineiro de esporte na modalidade Tae-kwon-do",
+          "1680",
+          "R$ 15,71",
+          "R$ 26.392,7999",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "4",
+        "descricao": "Oficineiro de esporte na modalidade Jiu-Jitsu",
+        "quantidade": 1680,
+        "valor_unitario": 15.71,
+        "valor_total": 26392.7999,
+        "raw_data": [
+          "4",
+          "Oficineiro de esporte na modalidade Jiu-Jitsu",
+          "1680",
+          "R$ 15,71",
+          "R$ 26.392,7999",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "5",
+        "descricao": "Oficineiro de esporte na modalidade Futsal",
+        "quantidade": 3360,
+        "valor_unitario": 25.0599,
+        "valor_total": 84201.6,
+        "raw_data": [
+          "5",
+          "Oficineiro de esporte na modalidade Futsal",
+          "3360",
+          "R$ 25,0599",
+          "R$ 84.201,60",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 5,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_3_0__home_aracarig_public_html_editais_edital_de_chamamento_pUblico_para_seleCAo_e_credenciamento_d_18120356.pdf",
+        "filepath": "downloads\\edital_3_0__home_aracarig_public_html_editais_edital_de_chamamento_pUblico_para_seleCAo_e_credenciamento_d_18120356.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/58993577000121/compras/2025/162/arquivos/1",
+        "description": "Fazer download",
+        "size": 1329248,
+        "downloaded_at": "2025-09-18T12:16:17.334230"
+      }
+    ],
+    "downloads_count": 1,
+    "accessed_contratacao": true,
+    "access_button_selector": "button:has-text('Acessar contratação')",
+    "detail_url": "https://pncp.gov.br/app/editais/58993577000121/2025/162"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250918-004",
+    "pncp_id": "18338293000187-1-000118/2025",
+    "title": "Aviso de Contratação Direta nº 17/2025",
+    "description": "Aviso de Contratação Direta nº 17/2025\nId contratação PNCP: 18338293000187-1-000118/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 18/09/2025\nÓrgão: MUNICIPIO DE SIMAO PEREIRA\nLocal: Simão Pereira/MG\nObjeto: CONTRATAÇÃO DE EMPRESA PARA AQUISIÇÃO DE INSTRUMENTOS MUSICAIS PARA USO EM ATIVIDADES PEDAGÓGICAS VOLTADAS AO ATENDIMENTO DOS ALUNOS DO ENSINO EM TEMPO INTEGRAL DA REDE MUNICIPAL DE EDUCAÇÃO.",
+    "organization_name": "MUNICIPIO DE SIMAO PEREIRA",
+    "municipality_name": "Simão Pereira",
+    "state_code": "SP",
+    "modality": "Dispensa",
+    "estimated_value": null,
+    "publication_date": "2025-09-18",
+    "objeto": "CONTRATAÇÃO DE EMPRESA PARA AQUISIÇÃO DE INSTRUMENTOS MUSICAIS PARA USO EM ATIVIDADES PEDAGÓGICAS VOLTADAS AO ATENDIMENTO DOS ALUNOS DO ENSINO EM TEMPO INTEGRAL DA REDE MUNICIPAL DE EDUCAÇÃO.",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Aviso de Contratação Direta nº 17/2025\nId contratação PNCP: 18338293000187-1-000118/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 18/09/2025\nÓrgão: MUNICIPIO DE SIMAO PEREIRA\nLocal: Simão Pereira/MG\nObjeto: CONTRATAÇÃO DE EMPRESA PARA AQUISIÇÃO DE INSTRUMENTOS MUSICAIS PARA USO EM ATIVIDADES PEDAGÓGICAS VOLTADAS AO ATENDIMENTO DOS ALUNOS DO ENSINO EM TEMPO INTEGRAL DA REDE MUNICIPAL DE EDUCAÇÃO.",
+    "scraped_at": "2025-09-18T12:16:31.002649",
+    "has_details": true,
+    "has_access_button": true,
+    "edital_href": "/editais/18338293000187/2025/118",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nAviso de Contratação Direta nº 17/2025\nAcessar Contratação\nÚltima atualização 18/09/2025\n\nLocal: Simão Pereira/MG\n\nÓrgão: MUNICIPIO DE SIMAO PEREIRA\n\nUnidade compradora: 1 - PREFEITURA MUNICIPAL DE SIMÃO PERERIRA\n\nModalidade da contratação: Dispensa\n\nAmparo legal: Lei 14.133/2021, Art. 75, I\n\nTipo: Aviso de Contratação Direta\n\nModo de disputa: Dispensa Com Disputa\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 18/09/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 18/09/2025 14:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 24/09/2025 08:30 (horário de Brasília)\n\nId contratação PNCP: 18338293000187-1-000118/2025\n\nFonte: BLL Compras\n\nObjeto:\n\nCONTRATAÇÃO DE EMPRESA PARA AQUISIÇÃO DE INSTRUMENTOS MUSICAIS PARA USO EM ATIVIDADES PEDAGÓGICAS VOLTADAS AO ATENDIMENTO DOS ALUNOS DO ENSINO EM TEMPO INTEGRAL DA REDE MUNICIPAL DE EDUCAÇÃO.\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 44.571,04\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nAgogô Castanha do Pará\n3\nR$ 205,07\nR$ 615,21\n2\nAtabaque (amarração em corda) Atabaque de Massaranduba, fixação da pele com corda. Couro Bovino ou Caprino (a escolher), com ou sem pé de sustentação. Medidas: RUM: 120cm altura X 27cm diâmetro X 13,5kg RUMPI: 100cm altura X 25cm diâmetro X 10,5Kg LÉ: 80cm altura X 25cm diâmetro X 7\n3\nR$ 786,85\nR$ 2.360,55\n3\nBerimbau Envernizado - Tamanho 160 cm de altura\n3\nR$ 238,33\nR$ 714,99\n4\nBerimbau infantil envernizado tamanho 85 cm\n3\nR$ 151,69\nR$ 455,07\n5\nCaixa De Som Ativa Passiva 8 300w Rms Tripe Bt\n2\nR$ 2.353,62\nR$ 4.707,24\nExibir:\n5\n1-5 de 20 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo n",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 44571.04,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "Agogô Castanha do Pará",
+        "quantidade": 3,
+        "valor_unitario": 205.07,
+        "valor_total": 615.21,
+        "raw_data": [
+          "1",
+          "Agogô Castanha do Pará",
+          "3",
+          "R$ 205,07",
+          "R$ 615,21",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "2",
+        "descricao": "Atabaque (amarração em corda) Atabaque de Massaranduba, fixação da pele com corda. Couro Bovino ou Caprino (a escolher), com ou sem pé de sustentação. Medidas: RUM: 120cm altura X 27cm diâmetro X 13,5kg RUMPI: 100cm altura X 25cm diâmetro X 10,5Kg LÉ: 80cm altura X 25cm diâmetro X 7",
+        "quantidade": 3,
+        "valor_unitario": 786.85,
+        "valor_total": 2360.55,
+        "raw_data": [
+          "2",
+          "Atabaque (amarração em corda) Atabaque de Massaranduba, fixação da pele com corda. Couro Bovino ou Caprino (a escolher), com ou sem pé de sustentação. Medidas: RUM: 120cm altura X 27cm diâmetro X 13,5kg RUMPI: 100cm altura X 25cm diâmetro X 10,5Kg LÉ: 80cm altura X 25cm diâmetro X 7",
+          "3",
+          "R$ 786,85",
+          "R$ 2.360,55",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "3",
+        "descricao": "Berimbau Envernizado - Tamanho 160 cm de altura",
+        "quantidade": 3,
+        "valor_unitario": 238.33,
+        "valor_total": 714.99,
+        "raw_data": [
+          "3",
+          "Berimbau Envernizado - Tamanho 160 cm de altura",
+          "3",
+          "R$ 238,33",
+          "R$ 714,99",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "4",
+        "descricao": "Berimbau infantil envernizado tamanho 85 cm",
+        "quantidade": 3,
+        "valor_unitario": 151.69,
+        "valor_total": 455.07,
+        "raw_data": [
+          "4",
+          "Berimbau infantil envernizado tamanho 85 cm",
+          "3",
+          "R$ 151,69",
+          "R$ 455,07",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "5",
+        "descricao": "Caixa De Som Ativa Passiva 8 300w Rms Tripe Bt",
+        "quantidade": 2,
+        "valor_unitario": 2353.62,
+        "valor_total": 4707.24,
+        "raw_data": [
+          "5",
+          "Caixa De Som Ativa Passiva 8 300w Rms Tripe Bt",
+          "2",
+          "R$ 2.353,62",
+          "R$ 4.707,24",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 5,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_4_0_AVISO_DE_DISPENSA_ELETRNICA.pdf",
+        "filepath": "downloads\\edital_4_0_AVISO_DE_DISPENSA_ELETRNICA.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/18338293000187/compras/2025/118/arquivos/1",
+        "description": "Fazer download",
+        "size": 519238,
+        "downloaded_at": "2025-09-18T12:17:08.123270"
+      }
+    ],
+    "downloads_count": 1,
+    "accessed_contratacao": true,
+    "access_button_selector": "button:has-text('Acessar contratação')",
+    "detail_url": "https://pncp.gov.br/app/editais/18338293000187/2025/118"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250918-005",
+    "pncp_id": "05816630000152-1-007477/2025",
+    "title": "Aviso de Contratação Direta nº PCE1913820250252/2025",
+    "description": "Aviso de Contratação Direta nº PCE1913820250252/2025\nId contratação PNCP: 05816630000152-1-007477/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 18/09/2025\nÓrgão: FUNDO ESTADUAL DE SAUDE DO ESTADO DA BAHIA\nLocal: Vitória da Conquista/BA\nObjeto: ESPONJA HEMOSTATICA",
+    "organization_name": "FUNDO ESTADUAL DE SAUDE DO ESTADO DA BAHIA",
+    "municipality_name": "Vitória da Conquista",
+    "state_code": "SP",
+    "modality": "Dispensa",
+    "estimated_value": null,
+    "publication_date": "2025-09-18",
+    "objeto": "ESPONJA HEMOSTATICA",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Aviso de Contratação Direta nº PCE1913820250252/2025\nId contratação PNCP: 05816630000152-1-007477/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 18/09/2025\nÓrgão: FUNDO ESTADUAL DE SAUDE DO ESTADO DA BAHIA\nLocal: Vitória da Conquista/BA\nObjeto: ESPONJA HEMOSTATICA",
+    "scraped_at": "2025-09-18T12:18:22.525411",
+    "has_details": true,
+    "has_access_button": false,
+    "edital_href": "/editais/05816630000152/2025/7477",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nAviso de Contratação Direta nº PCE1913820250252/2025\nÚltima atualização 18/09/2025\n\nLocal: Vitória da Conquista/BA\n\nÓrgão: FUNDO ESTADUAL DE SAUDE DO ESTADO DA BAHIA\n\nUnidade compradora: 19138 - COMPLEXO HOSPITALAR DE VITORIA DA CONQUISTA\n\nModalidade da contratação: Dispensa\n\nAmparo legal: Lei 14.133/2021, Art. 75, II\n\nTipo: Aviso de Contratação Direta\n\nModo de disputa: Dispensa Com Disputa\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 18/09/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 25/09/2025 08:30 (horário de Brasília)\n\nData fim de recebimento de propostas: 25/09/2025 10:30 (horário de Brasília)\n\nId contratação PNCP: 05816630000152-1-007477/2025\n\nFonte: BAHIA SECRETARIA DA ADMINISTRACAO\n\nObjeto:\n\nESPONJA HEMOSTATICA\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 58.656,00\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1083139\nESPONJA, hemostatica, a base de colageno, esteril, absorvivel, flexivel dimensoes 7cm x 5cm x 1cm, podendo o comprimento variar em +/- 01 cm.\n1300\nR$ 45,12\nR$ 58.656,00\nExibir:\n5\n1-1 de 1 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de agosto de 2021.\n\nO desenvolvimento dessa versão do Portal é um esforço conjunto de construção de uma concepção direta legal, homologado pelos indicados a compor o aludido comitê.\n\nA adequação, fidedignidade e corretude das informações e dos arquivos relativos às contratações disponibilizadas no PNCP por força da Lei nº 14.133/2021 são de es",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 58656.0,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1083139",
+        "descricao": "ESPONJA, hemostatica, a base de colageno, esteril, absorvivel, flexivel dimensoes 7cm x 5cm x 1cm, podendo o comprimento variar em +/- 01 cm.",
+        "quantidade": 1300,
+        "valor_unitario": 45.12,
+        "valor_total": 58656.0,
+        "raw_data": [
+          "1083139",
+          "ESPONJA, hemostatica, a base de colageno, esteril, absorvivel, flexivel dimensoes 7cm x 5cm x 1cm, podendo o comprimento variar em +/- 01 cm.",
+          "1300",
+          "R$ 45,12",
+          "R$ 58.656,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 1,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_5_0_DocContratacao.pdf",
+        "filepath": "downloads\\edital_5_0_DocContratacao.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/05816630000152/compras/2025/7477/arquivos/1",
+        "description": "Fazer download",
+        "size": 27083,
+        "downloaded_at": "2025-09-18T12:18:58.119292"
+      }
+    ],
+    "downloads_count": 1,
+    "accessed_contratacao": false,
+    "detail_url": "https://pncp.gov.br/app/editais/05816630000152/2025/7477"
+  }
+]

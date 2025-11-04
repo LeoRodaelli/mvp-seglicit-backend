@@ -1,0 +1,830 @@
+[
+  {
+    "id": "PNCP-ITEMS-ONLY-20250918-000",
+    "pncp_id": "44529592000109-1-000032/2025",
+    "title": "Edital nº 12/2025",
+    "description": "Edital nº 12/2025\nId contratação PNCP: 44529592000109-1-000032/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 18/09/2025\nÓrgão: MUNICIPIO DE GUAIMBE\nLocal: Guaimbê/SP\nObjeto: A presente licitação tem por objeto, o Registro de Preços para a Aquisição de 5.400 Kg. de Ácido Fluossilícico e 6.600 Kg. de Hipoclorito de Sódio, para o SAE – Serviço de Água e Esgoto, conforme especificações constantes do Termo de Referência, que integra este Edital como Anexo I.",
+    "organization_name": "MUNICIPIO DE GUAIMBE",
+    "municipality_name": "Guaimbê",
+    "state_code": "SP",
+    "modality": "Pregão - Eletrônico",
+    "estimated_value": null,
+    "publication_date": "2025-09-18",
+    "objeto": "A presente licitação tem por objeto, o Registro de Preços para a Aquisição de 5.400 Kg. de Ácido Fluossilícico e 6.600 Kg. de Hipoclorito de Sódio, para o SAE – Serviço de Água e Esgoto, conforme especificações constantes do Termo de Referência, que integra este Edital como Anexo I.",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Edital nº 12/2025\nId contratação PNCP: 44529592000109-1-000032/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 18/09/2025\nÓrgão: MUNICIPIO DE GUAIMBE\nLocal: Guaimbê/SP\nObjeto: A presente licitação tem por objeto, o Registro de Preços para a Aquisição de 5.400 Kg. de Ácido Fluossilícico e 6.600 Kg. de Hipoclorito de Sódio, para o SAE – Serviço de Água e Esgoto, conforme especificações constantes do Termo de Referência, que integra este Edital como Anexo I.",
+    "scraped_at": "2025-09-18T10:26:37.176276",
+    "has_details": true,
+    "has_access_button": true,
+    "edital_href": "/editais/44529592000109/2025/32",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nEdital nº 12/2025\nAcessar Contratação\nÚltima atualização 18/09/2025\n\nLocal: Guaimbê/SP\n\nÓrgão: MUNICIPIO DE GUAIMBE\n\nUnidade compradora: 1 - PREFEITURA MUNICIPAL DE GUAIMBE\n\nModalidade da contratação: Pregão - Eletrônico\n\nAmparo legal: Lei 14.133/2021, Art. 28, I\n\nTipo: Edital\n\nModo de disputa: Aberto\n\nRegistro de preço: Sim\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 18/09/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 30/09/2025 00:01 (horário de Brasília)\n\nData fim de recebimento de propostas: 30/09/2025 23:59 (horário de Brasília)\n\nId contratação PNCP: 44529592000109-1-000032/2025\n\nFonte: Fiorilli Software\n\nObjeto:\n\nA presente licitação tem por objeto, o Registro de Preços para a Aquisição de 5.400 Kg. de Ácido Fluossilícico e 6.600 Kg. de Hipoclorito de Sódio, para o SAE – Serviço de Água e Esgoto, conforme especificações constantes do Termo de Referência, que integra este Edital como Anexo I.\n\nInformação complementar:\nPara instrução dos autos, a área demandante encaminhou os seguintes documentos: Documento de Formalização de Demanda; Estudo Técnico Preliminar; Anexo ao ETP – Mapa de Gerenciamento de Riscos da Contratação; e Termo de Referência.\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 49.896,00\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nÁCIDO FLUORSILICICO 80 ONU\n5400\nR$ 5,17\nR$ 27.918,00\n2\nHIPOCLORETO DE SODIO 80 ONU\n6600\nR$ 3,33\nR$ 21.978,00\nExibir:\n5\n1-2 de 2 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 49896.0,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "ÁCIDO FLUORSILICICO 80 ONU",
+        "quantidade": 5400,
+        "valor_unitario": 5.17,
+        "valor_total": 27918.0,
+        "raw_data": [
+          "1",
+          "ÁCIDO FLUORSILICICO 80 ONU",
+          "5400",
+          "R$ 5,17",
+          "R$ 27.918,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "2",
+        "descricao": "HIPOCLORETO DE SODIO 80 ONU",
+        "quantidade": 6600,
+        "valor_unitario": 3.33,
+        "valor_total": 21978.0,
+        "raw_data": [
+          "2",
+          "HIPOCLORETO DE SODIO 80 ONU",
+          "6600",
+          "R$ 3,33",
+          "R$ 21.978,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 2,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_0_0_Edital_-_PNCP.docx",
+        "filepath": "downloads\\edital_0_0_Edital_-_PNCP.docx",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/44529592000109/compras/2025/32/arquivos/1",
+        "description": "Fazer download",
+        "size": 275490,
+        "downloaded_at": "2025-09-18T10:27:12.822637"
+      }
+    ],
+    "downloads_count": 1,
+    "accessed_contratacao": true,
+    "access_button_selector": "button:has-text('Acessar contratação')",
+    "detail_url": "https://pncp.gov.br/app/editais/44529592000109/2025/32"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250918-002",
+    "pncp_id": "07954480000179-1-017970/2025",
+    "title": "Aviso de Contratação Direta nº 202526331/2025",
+    "description": "Aviso de Contratação Direta nº 202526331/2025\nId contratação PNCP: 07954480000179-1-017970/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 18/09/2025\nÓrgão: ESTADO DO CEARA\nLocal: Fortaleza/CE\nObjeto: Gás engarrafado - Recarga de extintores",
+    "organization_name": "ESTADO DO CEARA",
+    "municipality_name": "Fortaleza",
+    "state_code": "SP",
+    "modality": "Dispensa",
+    "estimated_value": null,
+    "publication_date": "2025-09-18",
+    "objeto": "Gás engarrafado - Recarga de extintores",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Aviso de Contratação Direta nº 202526331/2025\nId contratação PNCP: 07954480000179-1-017970/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 18/09/2025\nÓrgão: ESTADO DO CEARA\nLocal: Fortaleza/CE\nObjeto: Gás engarrafado - Recarga de extintores",
+    "scraped_at": "2025-09-18T10:33:21.573468",
+    "has_details": true,
+    "has_access_button": false,
+    "edital_href": "/editais/07954480000179/2025/17970",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nAviso de Contratação Direta nº 202526331/2025\nÚltima atualização 18/09/2025\n\nLocal: Fortaleza/CE\n\nÓrgão: ESTADO DO CEARA\n\nUnidade compradora: 228071 - EEFM PARÓQUIA DA PAZ\n\nModalidade da contratação: Dispensa\n\nAmparo legal: Lei 14.133/2021, Art. 75, II\n\nTipo: Aviso de Contratação Direta\n\nModo de disputa: Dispensa Com Disputa\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 18/09/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 19/09/2025 11:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 24/09/2025 11:00 (horário de Brasília)\n\nId contratação PNCP: 07954480000179-1-017970/2025\n\nFonte: Secretaria do Planejamento e Gestão do Ceará\n\nObjeto:\n\nGás engarrafado - Recarga de extintores\n\nInformação complementar:\nPARA ATENDER A DEMANDA DA ESCOLA\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 700,00\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nEXTINTOR DE INCENDIO, RECARGA, CO2, 06 KG, AVULSO 1.0 UNIDADE\n10\nR$ 70,00\nR$ 700,00\nExibir:\n5\n1-1 de 1 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de agosto de 2021.\n\nO desenvolvimento dessa versão do Portal é um esforço conjunto de construção de uma concepção direta legal, homologado pelos indicados a compor o aludido comitê.\n\nA adequação, fidedignidade e corretude das informações e dos arquivos relativos às contratações disponibilizadas no PNCP por força da Lei nº 14.133/2021 são de estrita responsabilidade dos órgãos e entidades contratantes.\n\nhttps://po",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 700.0,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "EXTINTOR DE INCENDIO, RECARGA, CO2, 06 KG, AVULSO 1.0 UNIDADE",
+        "quantidade": 10,
+        "valor_unitario": 70.0,
+        "valor_total": 700.0,
+        "raw_data": [
+          "1",
+          "EXTINTOR DE INCENDIO, RECARGA, CO2, 06 KG, AVULSO 1.0 UNIDADE",
+          "10",
+          "R$ 70,00",
+          "R$ 700,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 1,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_2_0_TermoDeParticipacao_20250021.pdf",
+        "filepath": "downloads\\edital_2_0_TermoDeParticipacao_20250021.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/07954480000179/compras/2025/17970/arquivos/1",
+        "description": "Fazer download",
+        "size": 78656,
+        "downloaded_at": "2025-09-18T10:34:03.335839"
+      }
+    ],
+    "downloads_count": 1,
+    "accessed_contratacao": false,
+    "detail_url": "https://pncp.gov.br/app/editais/07954480000179/2025/17970"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250918-003",
+    "pncp_id": "14217327000124-1-000204/2025",
+    "title": "Aviso de Contratação Direta nº 42/2025",
+    "description": "Aviso de Contratação Direta nº 42/2025\nId contratação PNCP: 14217327000124-1-000204/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 18/09/2025\nÓrgão: MUNICIPIO DE PAULO AFONSO\nLocal: Paulo Afonso/BA\nObjeto: Contratação de empresa especializada para o fornecimento de headsets como forma de premiação/incentivo aos alunos nos eventos pedagógicos vinculados a Secretaria Municipal de Educação (SME), conforme condições e especificações técnicas estabelecidas no Termo de Referência.",
+    "organization_name": "MUNICIPIO DE PAULO AFONSO",
+    "municipality_name": "Paulo Afonso",
+    "state_code": "SP",
+    "modality": "Dispensa",
+    "estimated_value": null,
+    "publication_date": "2025-09-18",
+    "objeto": "Contratação de empresa especializada para o fornecimento de headsets como forma de premiação/incentivo aos alunos nos eventos pedagógicos vinculados a Secretaria Municipal de Educação (SME), conforme condições e especificações técnicas estabelecidas no Termo de Referência.",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Aviso de Contratação Direta nº 42/2025\nId contratação PNCP: 14217327000124-1-000204/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 18/09/2025\nÓrgão: MUNICIPIO DE PAULO AFONSO\nLocal: Paulo Afonso/BA\nObjeto: Contratação de empresa especializada para o fornecimento de headsets como forma de premiação/incentivo aos alunos nos eventos pedagógicos vinculados a Secretaria Municipal de Educação (SME), conforme condições e especificações técnicas estabelecidas no Termo de Referência.",
+    "scraped_at": "2025-09-18T10:35:11.253953",
+    "has_details": true,
+    "has_access_button": false,
+    "edital_href": "/editais/14217327000124/2025/204",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nAviso de Contratação Direta nº 42/2025\nÚltima atualização 18/09/2025\n\nLocal: Paulo Afonso/BA\n\nÓrgão: MUNICIPIO DE PAULO AFONSO\n\nUnidade compradora: 983781 - PREFEITURA MUNICIPAL DE PAULO AFONSO - BA\n\nModalidade da contratação: Dispensa\n\nAmparo legal: Lei 14.133/2021, Art. 75, II\n\nTipo: Aviso de Contratação Direta\n\nModo de disputa: Dispensa Com Disputa\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 18/09/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 19/09/2025 08:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 23/09/2025 12:00 (horário de Brasília)\n\nId contratação PNCP: 14217327000124-1-000204/2025\n\nFonte: Compras.gov.br\n\nObjeto:\n\nContratação de empresa especializada para o fornecimento de headsets como forma de premiação/incentivo aos alunos nos eventos pedagógicos vinculados a Secretaria Municipal de Educação (SME), conforme condições e especificações técnicas estabelecidas no Termo de Referência.\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 9.052,80\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nFone Ouvido comprimento fio: 1,80, freqüência: 20 hz a 16, impedância: 16 a 32, sensibilidade: - 58 a - 38, tipo: headset, tipo microfone: omnidirecional HEADSET: Versão Bluetooth: 5.0; Alcance e distância de recepção: até 10 metros (sem barreiras); Duração da bateria: até 12 horas de reprodução contínua; Bateria: 400mAh (lítio recarregável); Faixa de frequência: 20Hz a 20kHz; Funções: Bluetooth, micr\n60\nR$ 150,88\nR$ 9.052,80\nExibir:\n5\n1-1 de 1 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contrat",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 9052.8,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "Fone Ouvido comprimento fio: 1,80, freqüência: 20 hz a 16, impedância: 16 a 32, sensibilidade: - 58 a - 38, tipo: headset, tipo microfone: omnidirecional HEADSET: Versão Bluetooth: 5.0; Alcance e distância de recepção: até 10 metros (sem barreiras); Duração da bateria: até 12 horas de reprodução contínua; Bateria: 400mAh (lítio recarregável); Faixa de frequência: 20Hz a 20kHz; Funções: Bluetooth, micr",
+        "quantidade": 60,
+        "valor_unitario": 150.88,
+        "valor_total": 9052.8,
+        "raw_data": [
+          "1",
+          "Fone Ouvido comprimento fio: 1,80, freqüência: 20 hz a 16, impedância: 16 a 32, sensibilidade: - 58 a - 38, tipo: headset, tipo microfone: omnidirecional HEADSET: Versão Bluetooth: 5.0; Alcance e distância de recepção: até 10 metros (sem barreiras); Duração da bateria: até 12 horas de reprodução contínua; Bateria: 400mAh (lítio recarregável); Faixa de frequência: 20Hz a 20kHz; Funções: Bluetooth, micr",
+          "60",
+          "R$ 150,88",
+          "R$ 9.052,80",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 1,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_3_0_EDITAL_DS_0042.2025_AQUISICAOHEADSET_COMTR_assinado.pdf",
+        "filepath": "downloads\\edital_3_0_EDITAL_DS_0042.2025_AQUISICAOHEADSET_COMTR_assinado.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/14217327000124/compras/2025/204/arquivos/1",
+        "description": "Fazer download",
+        "size": 2251391,
+        "downloaded_at": "2025-09-18T10:35:46.998202"
+      },
+      {
+        "filename": "edital_3_1_Decisao+Prefeito+-+HeadSet+-+Premiacao.pdf",
+        "filepath": "downloads\\edital_3_1_Decisao+Prefeito+-+HeadSet+-+Premiacao.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/14217327000124/compras/2025/204/arquivos/2",
+        "description": "Fazer download",
+        "size": 135121,
+        "downloaded_at": "2025-09-18T10:35:52.248136"
+      },
+      {
+        "filename": "edital_3_2_AVISO+DE+EDITAL+-+DISPENSA+90042.2025.docx",
+        "filepath": "downloads\\edital_3_2_AVISO+DE+EDITAL+-+DISPENSA+90042.2025.docx",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/14217327000124/compras/2025/204/arquivos/3",
+        "description": "Fazer download",
+        "size": 510719,
+        "downloaded_at": "2025-09-18T10:35:57.444393"
+      }
+    ],
+    "downloads_count": 3,
+    "accessed_contratacao": false,
+    "detail_url": "https://pncp.gov.br/app/editais/14217327000124/2025/204"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250918-004",
+    "pncp_id": "48031918000124-1-003129/2025",
+    "title": "Aviso de Contratação Direta nº 55/2025",
+    "description": "Aviso de Contratação Direta nº 55/2025\nId contratação PNCP: 48031918000124-1-003129/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 18/09/2025\nÓrgão: UNIVERSIDADE ESTADUAL PAULISTA JULIO DE MESQUITA FILHO\nLocal: Botucatu/SP\nObjeto: Aquisição de itens de papelaria para o estoque do almoxarifado do IBB",
+    "organization_name": "UNIVERSIDADE ESTADUAL PAULISTA JULIO DE MESQUITA FILHO",
+    "municipality_name": "Botucatu",
+    "state_code": "SP",
+    "modality": "Dispensa",
+    "estimated_value": null,
+    "publication_date": "2025-09-18",
+    "objeto": "Aquisição de itens de papelaria para o estoque do almoxarifado do IBB",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Aviso de Contratação Direta nº 55/2025\nId contratação PNCP: 48031918000124-1-003129/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 18/09/2025\nÓrgão: UNIVERSIDADE ESTADUAL PAULISTA JULIO DE MESQUITA FILHO\nLocal: Botucatu/SP\nObjeto: Aquisição de itens de papelaria para o estoque do almoxarifado do IBB",
+    "scraped_at": "2025-09-18T10:38:05.491817",
+    "has_details": true,
+    "has_access_button": false,
+    "edital_href": "/editais/48031918000124/2025/3129",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nAviso de Contratação Direta nº 55/2025\nÚltima atualização 18/09/2025\n\nLocal: Botucatu/SP\n\nÓrgão: UNIVERSIDADE ESTADUAL PAULISTA JULIO DE MESQUITA FILHO\n\nUnidade compradora: 102315 - ESP-UNESP-INSTITUTO DE BIOCIENCIAS-C.BOTUCATU\n\nModalidade da contratação: Dispensa\n\nAmparo legal: Lei 14.133/2021, Art. 75, II\n\nTipo: Aviso de Contratação Direta\n\nModo de disputa: Dispensa Com Disputa\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 18/09/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 18/09/2025 17:31 (horário de Brasília)\n\nData fim de recebimento de propostas: 24/09/2025 08:00 (horário de Brasília)\n\nId contratação PNCP: 48031918000124-1-003129/2025\n\nFonte: Compras.gov.br\n\nObjeto:\n\nAquisição de itens de papelaria para o estoque do almoxarifado do IBB\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 1.946,64\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nCaderno tipo: 1/4, material: papel off-set, gramatura folhas: 56, material capa: papelão revestida com papel-couché, comprimento: 200, largura: 140, quantidade folhas: 96, características adicionais: brochura, capa dura, costurado\n100\nR$ 9,57\nR$ 957,00\n2\nLinha Costura material: algodão, comprimento: 183, número: 00, características adicionais: tipo cordonete encerado e trançado\n18\nR$ 54,98\nR$ 989,64\nExibir:\n5\n1-2 de 2 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de agosto de 2021.\n\nO desenvolvimento dessa versão do Portal é um esforço conjunto de construção d",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 1946.64,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "Caderno tipo: 1/4, material: papel off-set, gramatura folhas: 56, material capa: papelão revestida com papel-couché, comprimento: 200, largura: 140, quantidade folhas: 96, características adicionais: brochura, capa dura, costurado",
+        "quantidade": 100,
+        "valor_unitario": 9.57,
+        "valor_total": 957.0,
+        "raw_data": [
+          "1",
+          "Caderno tipo: 1/4, material: papel off-set, gramatura folhas: 56, material capa: papelão revestida com papel-couché, comprimento: 200, largura: 140, quantidade folhas: 96, características adicionais: brochura, capa dura, costurado",
+          "100",
+          "R$ 9,57",
+          "R$ 957,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "2",
+        "descricao": "Linha Costura material: algodão, comprimento: 183, número: 00, características adicionais: tipo cordonete encerado e trançado",
+        "quantidade": 18,
+        "valor_unitario": 54.98,
+        "valor_total": 989.64,
+        "raw_data": [
+          "2",
+          "Linha Costura material: algodão, comprimento: 183, número: 00, características adicionais: tipo cordonete encerado e trançado",
+          "18",
+          "R$ 54,98",
+          "R$ 989,64",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 2,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_4_0_10+-+aviso-de-contratacao-COMPLETO.pdf",
+        "filepath": "downloads\\edital_4_0_10+-+aviso-de-contratacao-COMPLETO.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/48031918000124/compras/2025/3129/arquivos/1",
+        "description": "Fazer download",
+        "size": 826934,
+        "downloaded_at": "2025-09-18T10:38:40.721651"
+      },
+      {
+        "filename": "edital_4_1_10.2+-+Ato_que_autoriza_a_contratacao_direta+aasinado.pdf",
+        "filepath": "downloads\\edital_4_1_10.2+-+Ato_que_autoriza_a_contratacao_direta+aasinado.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/48031918000124/compras/2025/3129/arquivos/2",
+        "description": "Fazer download",
+        "size": 190235,
+        "downloaded_at": "2025-09-18T10:38:45.875206"
+      },
+      {
+        "filename": "edital_4_2_304_2025.pdf",
+        "filepath": "downloads\\edital_4_2_304_2025.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/48031918000124/compras/2025/3129/arquivos/3",
+        "description": "Fazer download",
+        "size": 190581,
+        "downloaded_at": "2025-09-18T10:38:51.056149"
+      }
+    ],
+    "downloads_count": 3,
+    "accessed_contratacao": false,
+    "detail_url": "https://pncp.gov.br/app/editais/48031918000124/2025/3129"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250918-005",
+    "pncp_id": "44880060000111-1-000189/2025",
+    "title": "Edital nº 85/2025",
+    "description": "Edital nº 85/2025\nId contratação PNCP: 44880060000111-1-000189/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 18/09/2025\nÓrgão: MUNICIPIO DE DRACENA\nLocal: Dracena/SP\nObjeto: Contratação de Empresa Especializada, mediante Sistema de Registro de Preços (SRP), para prestação de serviços de publicação de avisos oficiais no dou e em jornal de grande circulação no estado, em conformidade com as especificações do Termo de Referência do Edital.",
+    "organization_name": "MUNICIPIO DE DRACENA",
+    "municipality_name": "Dracena",
+    "state_code": "SP",
+    "modality": "Pregão - Eletrônico",
+    "estimated_value": null,
+    "publication_date": "2025-09-18",
+    "objeto": "Contratação de Empresa Especializada, mediante Sistema de Registro de Preços (SRP), para prestação de serviços de publicação de avisos oficiais no dou e em jornal de grande circulação no estado, em conformidade com as especificações do Termo de Referência do Edital.",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Edital nº 85/2025\nId contratação PNCP: 44880060000111-1-000189/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 18/09/2025\nÓrgão: MUNICIPIO DE DRACENA\nLocal: Dracena/SP\nObjeto: Contratação de Empresa Especializada, mediante Sistema de Registro de Preços (SRP), para prestação de serviços de publicação de avisos oficiais no dou e em jornal de grande circulação no estado, em conformidade com as especificações do Termo de Referência do Edital.",
+    "scraped_at": "2025-09-18T10:40:59.043947",
+    "has_details": true,
+    "has_access_button": true,
+    "edital_href": "/editais/44880060000111/2025/189",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nEdital nº 85/2025\nAcessar Contratação\nÚltima atualização 18/09/2025\n\nLocal: Dracena/SP\n\nÓrgão: MUNICIPIO DE DRACENA\n\nUnidade compradora: 1 - PREFEITURA MUNICIPAL DE DRACENA\n\nModalidade da contratação: Pregão - Eletrônico\n\nAmparo legal: Lei 14.133/2021, Art. 28, I\n\nTipo: Edital\n\nModo de disputa: Aberto\n\nRegistro de preço: Sim\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 18/09/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 18/09/2025 07:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 03/10/2025 08:59 (horário de Brasília)\n\nId contratação PNCP: 44880060000111-1-000189/2025\n\nFonte: Fiorilli Software\n\nObjeto:\n\nContratação de Empresa Especializada, mediante Sistema de Registro de Preços (SRP), para prestação de serviços de publicação de avisos oficiais no dou e em jornal de grande circulação no estado, em conformidade com as especificações do Termo de Referência do Edital.\n\nInformação complementar:\nContratação de Empresa Especializada, mediante Sistema de Registro de Preços (SRP), para prestação de serviços de publicação de avisos oficiais no dou e em jornal de grande circulação no estado, em conformidade com as especificações do Termo de Referência do Edital. Proc. Administrativo 11.593/2025\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 83.270,00\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nCONTRATAÇAO DE EMPRESA ESPECIALIZADA PARA PUBLICIDADE DE ATOS OFICIAIS NO JORNAL DIARIO DE GDE CIRCULAÇAO NO ESTADO\n2000\nR$ 11,05\nR$ 22.100,00\n2\nCONTRATAÇAO DE EMPRESA ESPECIALIZADA PARA PUBLICIDADE DE ATOS OFICIAIS NO JORNAL DIARIO OFICIAL DA UNIAO\n1500\nR$ 40,78\nR$ 61.170,00\nExibir:\n5\n1-2 de 2 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licita",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 83270.0,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "CONTRATAÇAO DE EMPRESA ESPECIALIZADA PARA PUBLICIDADE DE ATOS OFICIAIS NO JORNAL DIARIO DE GDE CIRCULAÇAO NO ESTADO",
+        "quantidade": 2000,
+        "valor_unitario": 11.05,
+        "valor_total": 22100.0,
+        "raw_data": [
+          "1",
+          "CONTRATAÇAO DE EMPRESA ESPECIALIZADA PARA PUBLICIDADE DE ATOS OFICIAIS NO JORNAL DIARIO DE GDE CIRCULAÇAO NO ESTADO",
+          "2000",
+          "R$ 11,05",
+          "R$ 22.100,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "2",
+        "descricao": "CONTRATAÇAO DE EMPRESA ESPECIALIZADA PARA PUBLICIDADE DE ATOS OFICIAIS NO JORNAL DIARIO OFICIAL DA UNIAO",
+        "quantidade": 1500,
+        "valor_unitario": 40.78,
+        "valor_total": 61170.0,
+        "raw_data": [
+          "2",
+          "CONTRATAÇAO DE EMPRESA ESPECIALIZADA PARA PUBLICIDADE DE ATOS OFICIAIS NO JORNAL DIARIO OFICIAL DA UNIAO",
+          "1500",
+          "R$ 40,78",
+          "R$ 61.170,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 2,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_5_0_PNCP-EDITAL.pdf",
+        "filepath": "downloads\\edital_5_0_PNCP-EDITAL.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/44880060000111/compras/2025/189/arquivos/1",
+        "description": "Fazer download",
+        "size": 4735302,
+        "downloaded_at": "2025-09-18T10:41:34.729286"
+      }
+    ],
+    "downloads_count": 1,
+    "accessed_contratacao": true,
+    "access_button_selector": "button:has-text('Acessar contratação')",
+    "detail_url": "https://pncp.gov.br/app/editais/44880060000111/2025/189"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250918-006",
+    "pncp_id": "46694147000120-1-000067/2025",
+    "title": "Edital nº 7/2025",
+    "description": "Edital nº 7/2025\nId contratação PNCP: 46694147000120-1-000067/2025\nModalidade da Contratação: Concorrência - Eletrônica\nÚltima Atualização: 18/09/2025\nÓrgão: MUNICIPIO DE IGARATA\nLocal: Igaratá/SP\nObjeto: CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA A EXECUÇÃO DA CONSTRUÇÃO DO CENTRO DE REFERÊNCIA DA ASSISTÊNCIA SOCIAL (CRAS), NO JARDIM ROSA HELENA, IGARATÁ/SP",
+    "organization_name": "MUNICIPIO DE IGARATA",
+    "municipality_name": "Igaratá",
+    "state_code": "SP",
+    "modality": "Concorrência - Eletrônica",
+    "estimated_value": null,
+    "publication_date": "2025-09-18",
+    "objeto": "CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA A EXECUÇÃO DA CONSTRUÇÃO DO CENTRO DE REFERÊNCIA DA ASSISTÊNCIA SOCIAL (CRAS), NO JARDIM ROSA HELENA, IGARATÁ/SP",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Edital nº 7/2025\nId contratação PNCP: 46694147000120-1-000067/2025\nModalidade da Contratação: Concorrência - Eletrônica\nÚltima Atualização: 18/09/2025\nÓrgão: MUNICIPIO DE IGARATA\nLocal: Igaratá/SP\nObjeto: CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA A EXECUÇÃO DA CONSTRUÇÃO DO CENTRO DE REFERÊNCIA DA ASSISTÊNCIA SOCIAL (CRAS), NO JARDIM ROSA HELENA, IGARATÁ/SP",
+    "scraped_at": "2025-09-18T10:42:47.333133",
+    "has_details": true,
+    "has_access_button": false,
+    "edital_href": "/editais/46694147000120/2025/67",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nEdital nº 7/2025\nÚltima atualização 18/09/2025\n\nLocal: Igaratá/SP\n\nÓrgão: MUNICIPIO DE IGARATA\n\nUnidade compradora: 8.2025 - SECRET. MUNIC. AÇÃO SOCIAL E CIDADANIA\n\nModalidade da contratação: Concorrência - Eletrônica\n\nAmparo legal: Lei 14.133/2021, Art. 28, II\n\nTipo: Edital\n\nModo de disputa: Aberto\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 18/09/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 16/09/2025 09:29 (horário de Brasília)\n\nData fim de recebimento de propostas: 07/10/2025 09:30 (horário de Brasília)\n\nId contratação PNCP: 46694147000120-1-000067/2025\n\nFonte: JL Alves Gestão\n\nObjeto:\n\nCONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA A EXECUÇÃO DA CONSTRUÇÃO DO CENTRO DE REFERÊNCIA DA ASSISTÊNCIA SOCIAL (CRAS), NO JARDIM ROSA HELENA, IGARATÁ/SP\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 1.016.665,76\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nCONSTRUÇÃO DO CENTRO DE REFERÊNCIA DA ASSISTÊNCIA SOCIAL (CRAS)\n1\nR$ 1.016.665,76\nR$ 1.016.665,76\nExibir:\n5\n1-1 de 1 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de agosto de 2021.\n\nO desenvolvimento dessa versão do Portal é um esforço conjunto de construção de uma concepção direta legal, homologado pelos indicados a compor o aludido comitê.\n\nA adequação, fidedignidade e corretude das informações e dos arquivos relativos às contratações disponibilizadas no PNCP por força da Lei nº 14.133/2021 são de estrita responsabilidade dos órgãos e entidades cont",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 1016665.76,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "CONSTRUÇÃO DO CENTRO DE REFERÊNCIA DA ASSISTÊNCIA SOCIAL (CRAS)",
+        "quantidade": 1,
+        "valor_unitario": 1016665.76,
+        "valor_total": 1016665.76,
+        "raw_data": [
+          "1",
+          "CONSTRUÇÃO DO CENTRO DE REFERÊNCIA DA ASSISTÊNCIA SOCIAL (CRAS)",
+          "1",
+          "R$ 1.016.665,76",
+          "R$ 1.016.665,76",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 1,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_6_0_061d1b7683e74b12a62cfd6bac80b100EDITAL+CRAS+2025.pdf",
+        "filepath": "downloads\\edital_6_0_061d1b7683e74b12a62cfd6bac80b100EDITAL+CRAS+2025.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46694147000120/compras/2025/67/arquivos/1",
+        "description": "Fazer download",
+        "size": 1010924,
+        "downloaded_at": "2025-09-18T10:43:22.844869"
+      }
+    ],
+    "downloads_count": 1,
+    "accessed_contratacao": false,
+    "detail_url": "https://pncp.gov.br/app/editais/46694147000120/2025/67"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250918-007",
+    "pncp_id": "46694147000120-1-000066/2025",
+    "title": "Edital nº 28/2025",
+    "description": "Edital nº 28/2025\nId contratação PNCP: 46694147000120-1-000066/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 18/09/2025\nÓrgão: MUNICIPIO DE IGARATA\nLocal: Igaratá/SP\nObjeto: REGISTRO DE PREÇOS PARA EVENTUAL E FUTURA CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA PRESTAÇÃO DE SERVIÇO DE PINTURA DE SINALIZAÇÃO, COM FONRNECIMENTO DE MATERIAL, MÃO DE OBRA E EQUIPAMENTOS",
+    "organization_name": "MUNICIPIO DE IGARATA",
+    "municipality_name": "Igaratá",
+    "state_code": "SP",
+    "modality": "Pregão - Eletrônico",
+    "estimated_value": null,
+    "publication_date": "2025-09-18",
+    "objeto": "REGISTRO DE PREÇOS PARA EVENTUAL E FUTURA CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA PRESTAÇÃO DE SERVIÇO DE PINTURA DE SINALIZAÇÃO, COM FONRNECIMENTO DE MATERIAL, MÃO DE OBRA E EQUIPAMENTOS",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Edital nº 28/2025\nId contratação PNCP: 46694147000120-1-000066/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 18/09/2025\nÓrgão: MUNICIPIO DE IGARATA\nLocal: Igaratá/SP\nObjeto: REGISTRO DE PREÇOS PARA EVENTUAL E FUTURA CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA PRESTAÇÃO DE SERVIÇO DE PINTURA DE SINALIZAÇÃO, COM FONRNECIMENTO DE MATERIAL, MÃO DE OBRA E EQUIPAMENTOS",
+    "scraped_at": "2025-09-18T10:44:30.725766",
+    "has_details": true,
+    "has_access_button": false,
+    "edital_href": "/editais/46694147000120/2025/66",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nEdital nº 28/2025\nÚltima atualização 18/09/2025\n\nLocal: Igaratá/SP\n\nÓrgão: MUNICIPIO DE IGARATA\n\nUnidade compradora: 7.2025 - SECRET. MUNC. DO PLANEJ. URBANO\n\nModalidade da contratação: Pregão - Eletrônico\n\nAmparo legal: Lei 14.133/2021, Art. 28, I\n\nTipo: Edital\n\nModo de disputa: Aberto\n\nRegistro de preço: Sim\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 18/09/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 16/09/2025 09:29 (horário de Brasília)\n\nData fim de recebimento de propostas: 09/10/2025 09:30 (horário de Brasília)\n\nId contratação PNCP: 46694147000120-1-000066/2025\n\nFonte: JL Alves Gestão\n\nObjeto:\n\nREGISTRO DE PREÇOS PARA EVENTUAL E FUTURA CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA PRESTAÇÃO DE SERVIÇO DE PINTURA DE SINALIZAÇÃO, COM FONRNECIMENTO DE MATERIAL, MÃO DE OBRA E EQUIPAMENTOS\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 748.400,00\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nCONTRATAÇÃO PARA PRESTAÇÃO DE SERVIÇO DE PINTURA DE SINALIZAÇÃO HORIZONTAL, COM FORNECIMENTO DE MATERIAL, MÃO DE OBRA E EQUIPAMENTOS, CONFORME ESPECIFICAÇÕES CONTIDAS NO TERMO DE REFÊRENCIA E DEMAIS ANEXOS DO EDITAL.\n20000\nR$ 37,42\nR$ 748.400,00\nExibir:\n5\n1-1 de 1 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de agosto de 2021.\n\nO desenvolvimento dessa versão do Portal é um esforço conjunto de construção de uma concepção direta legal, homologado pelos indicados a compor o aludido comitê.\n\nA adequação, fidedignidade e corretude das i",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 748400.0,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "CONTRATAÇÃO PARA PRESTAÇÃO DE SERVIÇO DE PINTURA DE SINALIZAÇÃO HORIZONTAL, COM FORNECIMENTO DE MATERIAL, MÃO DE OBRA E EQUIPAMENTOS, CONFORME ESPECIFICAÇÕES CONTIDAS NO TERMO DE REFÊRENCIA E DEMAIS ANEXOS DO EDITAL.",
+        "quantidade": 20000,
+        "valor_unitario": 37.42,
+        "valor_total": 748400.0,
+        "raw_data": [
+          "1",
+          "CONTRATAÇÃO PARA PRESTAÇÃO DE SERVIÇO DE PINTURA DE SINALIZAÇÃO HORIZONTAL, COM FORNECIMENTO DE MATERIAL, MÃO DE OBRA E EQUIPAMENTOS, CONFORME ESPECIFICAÇÕES CONTIDAS NO TERMO DE REFÊRENCIA E DEMAIS ANEXOS DO EDITAL.",
+          "20000",
+          "R$ 37,42",
+          "R$ 748.400,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 1,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_7_0_7fe0037436f14cfcbb72234f4896efe2EDITAL+SINALIZACAO+HORIZONTAL.pdf",
+        "filepath": "downloads\\edital_7_0_7fe0037436f14cfcbb72234f4896efe2EDITAL+SINALIZACAO+HORIZONTAL.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46694147000120/compras/2025/66/arquivos/1",
+        "description": "Fazer download",
+        "size": 1209335,
+        "downloaded_at": "2025-09-18T10:45:05.955628"
+      }
+    ],
+    "downloads_count": 1,
+    "accessed_contratacao": false,
+    "detail_url": "https://pncp.gov.br/app/editais/46694147000120/2025/66"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250918-008",
+    "pncp_id": "46694147000120-1-000065/2025",
+    "title": "Edital nº 27/2025",
+    "description": "Edital nº 27/2025\nId contratação PNCP: 46694147000120-1-000065/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 18/09/2025\nÓrgão: MUNICIPIO DE IGARATA\nLocal: Igaratá/SP\nObjeto: PRESTAÇÃO DE SERVIÇOS DE LOCAÇÃO DE BRINQUEDOS INFLAVEIS.",
+    "organization_name": "MUNICIPIO DE IGARATA",
+    "municipality_name": "Igaratá",
+    "state_code": "SP",
+    "modality": "Pregão - Eletrônico",
+    "estimated_value": null,
+    "publication_date": "2025-09-18",
+    "objeto": "PRESTAÇÃO DE SERVIÇOS DE LOCAÇÃO DE BRINQUEDOS INFLAVEIS.",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Edital nº 27/2025\nId contratação PNCP: 46694147000120-1-000065/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 18/09/2025\nÓrgão: MUNICIPIO DE IGARATA\nLocal: Igaratá/SP\nObjeto: PRESTAÇÃO DE SERVIÇOS DE LOCAÇÃO DE BRINQUEDOS INFLAVEIS.",
+    "scraped_at": "2025-09-18T10:46:13.924714",
+    "has_details": true,
+    "has_access_button": false,
+    "edital_href": "/editais/46694147000120/2025/65",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nEdital nº 27/2025\nÚltima atualização 18/09/2025\n\nLocal: Igaratá/SP\n\nÓrgão: MUNICIPIO DE IGARATA\n\nUnidade compradora: 6.2025 - SECRET. MUNIC. DESENV. ECON. ESP. LAZER\n\nModalidade da contratação: Pregão - Eletrônico\n\nAmparo legal: Lei 14.133/2021, Art. 28, I\n\nTipo: Edital\n\nModo de disputa: Aberto\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 18/09/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 16/09/2025 09:29 (horário de Brasília)\n\nData fim de recebimento de propostas: 02/10/2025 09:30 (horário de Brasília)\n\nId contratação PNCP: 46694147000120-1-000065/2025\n\nFonte: JL Alves Gestão\n\nObjeto:\n\nPRESTAÇÃO DE SERVIÇOS DE LOCAÇÃO DE BRINQUEDOS INFLAVEIS.\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 1.354.768,70\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nKID PLAY AVENTURA, MEDINDO APROXIMADAMENTE 6,5X4,5X3,1(MULTI ATIIDADES: PULA-PULA, JOÃO BOBO, OBSTÁCULO, ESCADA E TOBOGÃ). PRESTAÇÃO DOS SERVIÇOS TECNICOS, MONTAGEME DESMONTAGEM, MANUNTEÇÃO E APOIO DURANTE TODO EVENTO\n500\nR$ 109,2566\nR$ 54.628,333\n2\nDISCO PLAY, MEDINDO APROXIMADAMENTE 7 MTS DE DIÂMETRO (PULA-PULA GIGANTE COM LUZ TIPO BALADA E SOM). PRESTAÇÃO DOS SERVIÇOS DE LOCAÇÃO, CONTANDO COM SUPORTE TÉCNICO, MONTAGEM E DESMONTAGEM, MANUNTEÇÃO E APOIO DURANTE TODO EVENTO\n500\nR$ 122,6333\nR$ 61.316,6665\n3\nTOBOGÃ PREMIUM MEDINDO APROXIMADAMENTE 6,0X3,3X4,5. PRESTAÇÃO DOS SERVIÇOS DE LOCAÇÃO, CONTANDO COM SUPORTE TÉCNICO, MONTAGEM E DESMONTAGEM, MANUNTEÇÃO E APOIO DURANTE TODO O EVENTO\n500\nR$ 102,45\nR$ 51.225,00\n4\nTOBOGÃ INFANTIL MEDINDO APROXIMADAMETE 2,5X3,3X2,5. PRESTAÇÃO DOS SERVIÇOS DE LOCAÇÃO, CONTANDO COM SUPORTE TÉCNICO, MONTAGEM E DESMONTAGEM, MANUNTENÇÃO E APOIO DURANTE TODO O EVENTO\n500\nR$ 91,2083\nR$ 45.604,1665\n5\nTOBOGÃ DUPLO MEDINDO APROXIMADAMENTE 5,5X2,5X2,8. PRESTAÇÃO DOS SERVIÇOS DE LOCAÇÃO, CONTANDO COM SUPORTE TÉCNICO, MO",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 1354768.7,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "KID PLAY AVENTURA, MEDINDO APROXIMADAMENTE 6,5X4,5X3,1(MULTI ATIIDADES: PULA-PULA, JOÃO BOBO, OBSTÁCULO, ESCADA E TOBOGÃ). PRESTAÇÃO DOS SERVIÇOS TECNICOS, MONTAGEME DESMONTAGEM, MANUNTEÇÃO E APOIO DURANTE TODO EVENTO",
+        "quantidade": 500,
+        "valor_unitario": 109.2566,
+        "valor_total": 54628.333,
+        "raw_data": [
+          "1",
+          "KID PLAY AVENTURA, MEDINDO APROXIMADAMENTE 6,5X4,5X3,1(MULTI ATIIDADES: PULA-PULA, JOÃO BOBO, OBSTÁCULO, ESCADA E TOBOGÃ). PRESTAÇÃO DOS SERVIÇOS TECNICOS, MONTAGEME DESMONTAGEM, MANUNTEÇÃO E APOIO DURANTE TODO EVENTO",
+          "500",
+          "R$ 109,2566",
+          "R$ 54.628,333",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "2",
+        "descricao": "DISCO PLAY, MEDINDO APROXIMADAMENTE 7 MTS DE DIÂMETRO (PULA-PULA GIGANTE COM LUZ TIPO BALADA E SOM). PRESTAÇÃO DOS SERVIÇOS DE LOCAÇÃO, CONTANDO COM SUPORTE TÉCNICO, MONTAGEM E DESMONTAGEM, MANUNTEÇÃO E APOIO DURANTE TODO EVENTO",
+        "quantidade": 500,
+        "valor_unitario": 122.6333,
+        "valor_total": 61316.6665,
+        "raw_data": [
+          "2",
+          "DISCO PLAY, MEDINDO APROXIMADAMENTE 7 MTS DE DIÂMETRO (PULA-PULA GIGANTE COM LUZ TIPO BALADA E SOM). PRESTAÇÃO DOS SERVIÇOS DE LOCAÇÃO, CONTANDO COM SUPORTE TÉCNICO, MONTAGEM E DESMONTAGEM, MANUNTEÇÃO E APOIO DURANTE TODO EVENTO",
+          "500",
+          "R$ 122,6333",
+          "R$ 61.316,6665",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "3",
+        "descricao": "TOBOGÃ PREMIUM MEDINDO APROXIMADAMENTE 6,0X3,3X4,5. PRESTAÇÃO DOS SERVIÇOS DE LOCAÇÃO, CONTANDO COM SUPORTE TÉCNICO, MONTAGEM E DESMONTAGEM, MANUNTEÇÃO E APOIO DURANTE TODO O EVENTO",
+        "quantidade": 500,
+        "valor_unitario": 102.45,
+        "valor_total": 51225.0,
+        "raw_data": [
+          "3",
+          "TOBOGÃ PREMIUM MEDINDO APROXIMADAMENTE 6,0X3,3X4,5. PRESTAÇÃO DOS SERVIÇOS DE LOCAÇÃO, CONTANDO COM SUPORTE TÉCNICO, MONTAGEM E DESMONTAGEM, MANUNTEÇÃO E APOIO DURANTE TODO O EVENTO",
+          "500",
+          "R$ 102,45",
+          "R$ 51.225,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "4",
+        "descricao": "TOBOGÃ INFANTIL MEDINDO APROXIMADAMETE 2,5X3,3X2,5. PRESTAÇÃO DOS SERVIÇOS DE LOCAÇÃO, CONTANDO COM SUPORTE TÉCNICO, MONTAGEM E DESMONTAGEM, MANUNTENÇÃO E APOIO DURANTE TODO O EVENTO",
+        "quantidade": 500,
+        "valor_unitario": 91.2083,
+        "valor_total": 45604.1665,
+        "raw_data": [
+          "4",
+          "TOBOGÃ INFANTIL MEDINDO APROXIMADAMETE 2,5X3,3X2,5. PRESTAÇÃO DOS SERVIÇOS DE LOCAÇÃO, CONTANDO COM SUPORTE TÉCNICO, MONTAGEM E DESMONTAGEM, MANUNTENÇÃO E APOIO DURANTE TODO O EVENTO",
+          "500",
+          "R$ 91,2083",
+          "R$ 45.604,1665",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "5",
+        "descricao": "TOBOGÃ DUPLO MEDINDO APROXIMADAMENTE 5,5X2,5X2,8. PRESTAÇÃO DOS SERVIÇOS DE LOCAÇÃO, CONTANDO COM SUPORTE TÉCNICO, MONTAGEM E DESMONTAGEM, MANUNTENÇÃO E APOIO DURANTE TODO EVENTO",
+        "quantidade": 500,
+        "valor_unitario": 99.3472,
+        "valor_total": 49673.6,
+        "raw_data": [
+          "5",
+          "TOBOGÃ DUPLO MEDINDO APROXIMADAMENTE 5,5X2,5X2,8. PRESTAÇÃO DOS SERVIÇOS DE LOCAÇÃO, CONTANDO COM SUPORTE TÉCNICO, MONTAGEM E DESMONTAGEM, MANUNTENÇÃO E APOIO DURANTE TODO EVENTO",
+          "500",
+          "R$ 99,3472",
+          "R$ 49.673,60",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 5,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_8_0_0650d713d1fd405190363fa674808791EDITAL+LOCACAO+BRINQUEDOS+2025+2.pdf",
+        "filepath": "downloads\\edital_8_0_0650d713d1fd405190363fa674808791EDITAL+LOCACAO+BRINQUEDOS+2025+2.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46694147000120/compras/2025/65/arquivos/1",
+        "description": "Fazer download",
+        "size": 709947,
+        "downloaded_at": "2025-09-18T10:46:49.438897"
+      }
+    ],
+    "downloads_count": 1,
+    "accessed_contratacao": false,
+    "detail_url": "https://pncp.gov.br/app/editais/46694147000120/2025/65"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250918-009",
+    "pncp_id": "18140806000140-1-000021/2025",
+    "title": "Edital nº 20/2025",
+    "description": "Edital nº 20/2025\nId contratação PNCP: 18140806000140-1-000021/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 18/09/2025\nÓrgão: MUNICIPIO DE TAPIRA\nLocal: Tapira/MG\nObjeto: [LICITANET] - O PRESENTE PREGÃO ELETRÔNICO TEM POR OBJETO O REGISTRO DE PREÇOS PARA FUTURA E EVENTUAL CONTRATAÇÃO DE EMPRESA ESPECIALIZADA EM SERVIÇOS DE VIDRAÇARIA COM FORNECIMENTO DE VIDROS E ACESSÓRIOS, DESTINADOS A ATENDER ÀS NECESSIDADES DA SECRETARIA DE OBRAS DO MUNICIPAL DE TAPIRA/MG, CONFORME ...",
+    "organization_name": "MUNICIPIO DE TAPIRA",
+    "municipality_name": "Tapira",
+    "state_code": "SP",
+    "modality": "Pregão - Eletrônico",
+    "estimated_value": null,
+    "publication_date": "2025-09-18",
+    "objeto": "[LICITANET] - O PRESENTE PREGÃO ELETRÔNICO TEM POR OBJETO O REGISTRO DE PREÇOS PARA FUTURA E EVENTUAL CONTRATAÇÃO DE EMPRESA ESPECIALIZADA EM SERVIÇOS DE VIDRAÇARIA COM FORNECIMENTO DE VIDROS E ACESSÓRIOS, DESTINADOS A ATENDER ÀS NECESSIDADES DA SECRETARIA DE OBRAS DO MUNICIPAL DE TAPIRA/MG, CONFORME ESPECIFICAÇÕES TÉCNICAS, QUANTIDADES E CONDIÇÕES ESTABELECIDAS NESTE EDITAL E EM SEUS ANEXOS.",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Edital nº 20/2025\nId contratação PNCP: 18140806000140-1-000021/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 18/09/2025\nÓrgão: MUNICIPIO DE TAPIRA\nLocal: Tapira/MG\nObjeto: [LICITANET] - O PRESENTE PREGÃO ELETRÔNICO TEM POR OBJETO O REGISTRO DE PREÇOS PARA FUTURA E EVENTUAL CONTRATAÇÃO DE EMPRESA ESPECIALIZADA EM SERVIÇOS DE VIDRAÇARIA COM FORNECIMENTO DE VIDROS E ACESSÓRIOS, DESTINADOS A ATENDER ÀS NECESSIDADES DA SECRETARIA DE OBRAS DO MUNICIPAL DE TAPIRA/MG, CONFORME ESPECIFICAÇÕES TÉCNICAS, QUANTIDADES E CONDIÇÕES ESTABELECIDAS NESTE EDITAL E EM SEUS ANEXOS.",
+    "scraped_at": "2025-09-18T10:47:57.342314",
+    "has_details": true,
+    "has_access_button": true,
+    "edital_href": "/editais/18140806000140/2025/21",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nEdital nº 20/2025\nAcessar Contratação\nÚltima atualização 18/09/2025\n\nLocal: Tapira/MG\n\nÓrgão: MUNICIPIO DE TAPIRA\n\nUnidade compradora: 854 - MUNICÍPIO DE TAPIRA/MG\n\nModalidade da contratação: Pregão - Eletrônico\n\nAmparo legal: Lei 14.133/2021, Art. 28, I\n\nTipo: Edital\n\nModo de disputa: Aberto\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 18/09/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 18/09/2025 10:35 (horário de Brasília)\n\nData fim de recebimento de propostas: 06/10/2025 09:00 (horário de Brasília)\n\nId contratação PNCP: 18140806000140-1-000021/2025\n\nFonte: Licitanet Licitações Eletrônicas LTDA\n\nObjeto:\n\n[LICITANET] - O PRESENTE PREGÃO ELETRÔNICO TEM POR OBJETO O REGISTRO DE PREÇOS PARA FUTURA E EVENTUAL CONTRATAÇÃO DE EMPRESA ESPECIALIZADA EM SERVIÇOS DE VIDRAÇARIA COM FORNECIMENTO DE VIDROS E ACESSÓRIOS, DESTINADOS A ATENDER ÀS NECESSIDADES DA SECRETARIA DE OBRAS DO MUNICIPAL DE TAPIRA/MG, CONFORME ESPECIFICAÇÕES TÉCNICAS, QUANTIDADES E CONDIÇÕES ESTABELECIDAS NESTE EDITAL E EM SEUS ANEXOS.\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 1.010.489,50\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n6502895\nFECHADURAS PARA VIDROSESPECIFICACAO: FECHADURA PARA PORTA DE VIDRO DE ABRIR PIVOTANTE 1520 FECHADURA FEITO EM METAL ZAMAC CROMADO\n150\nR$ 151,03\nR$ 22.654,50\n6502896\nFERMAX PARA VIDROS\n150\nR$ 19,00\nR$ 2.850,00\n6502897\nPERFIL DE ALUMINIO PARA VIDROS\n200\nR$ 235,42\nR$ 47.084,00\n6502898\nPUXADOR DE PORTAS PARA VIDROSESPECIFICACOES TECNICA: MATERIAL ACO INOX 304,INSTLACAO EM AREA INTERNA E EXTERNA CONTEUDO DA EMBALAGEM 1 PAR DE PUXADOR, LADO DE DENTRO E LADO DE FORA (MACHO E FEMEA), MEDIDA DO PUXADOR 30 CM, MEDIDADA BARRA LARGURA 4 CM, MEDIDA DA BARRA ESPESSURA 1CM, SUPORTE DE FIXACAO REDONDO.\n180\nR$ 183,75\nR$ 33.075,00\n6502899\nROLDANAS PARA VIDRO\n150\nR$ 15,50\nR$ 2.325,00\nExibir:\n5\n1-5 de ",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 1010489.5,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "6502895",
+        "descricao": "FECHADURAS PARA VIDROSESPECIFICACAO: FECHADURA PARA PORTA DE VIDRO DE ABRIR PIVOTANTE 1520 FECHADURA FEITO EM METAL ZAMAC CROMADO",
+        "quantidade": 150,
+        "valor_unitario": 151.03,
+        "valor_total": 22654.5,
+        "raw_data": [
+          "6502895",
+          "FECHADURAS PARA VIDROSESPECIFICACAO: FECHADURA PARA PORTA DE VIDRO DE ABRIR PIVOTANTE 1520 FECHADURA FEITO EM METAL ZAMAC CROMADO",
+          "150",
+          "R$ 151,03",
+          "R$ 22.654,50",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "6502896",
+        "descricao": "FERMAX PARA VIDROS",
+        "quantidade": 150,
+        "valor_unitario": 19.0,
+        "valor_total": 2850.0,
+        "raw_data": [
+          "6502896",
+          "FERMAX PARA VIDROS",
+          "150",
+          "R$ 19,00",
+          "R$ 2.850,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "6502897",
+        "descricao": "PERFIL DE ALUMINIO PARA VIDROS",
+        "quantidade": 200,
+        "valor_unitario": 235.42,
+        "valor_total": 47084.0,
+        "raw_data": [
+          "6502897",
+          "PERFIL DE ALUMINIO PARA VIDROS",
+          "200",
+          "R$ 235,42",
+          "R$ 47.084,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "6502898",
+        "descricao": "PUXADOR DE PORTAS PARA VIDROSESPECIFICACOES TECNICA: MATERIAL ACO INOX 304,INSTLACAO EM AREA INTERNA E EXTERNA CONTEUDO DA EMBALAGEM 1 PAR DE PUXADOR, LADO DE DENTRO E LADO DE FORA (MACHO E FEMEA), MEDIDA DO PUXADOR 30 CM, MEDIDADA BARRA LARGURA 4 CM, MEDIDA DA BARRA ESPESSURA 1CM, SUPORTE DE FIXACAO REDONDO.",
+        "quantidade": 180,
+        "valor_unitario": 183.75,
+        "valor_total": 33075.0,
+        "raw_data": [
+          "6502898",
+          "PUXADOR DE PORTAS PARA VIDROSESPECIFICACOES TECNICA: MATERIAL ACO INOX 304,INSTLACAO EM AREA INTERNA E EXTERNA CONTEUDO DA EMBALAGEM 1 PAR DE PUXADOR, LADO DE DENTRO E LADO DE FORA (MACHO E FEMEA), MEDIDA DO PUXADOR 30 CM, MEDIDADA BARRA LARGURA 4 CM, MEDIDA DA BARRA ESPESSURA 1CM, SUPORTE DE FIXACAO REDONDO.",
+          "180",
+          "R$ 183,75",
+          "R$ 33.075,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "6502899",
+        "descricao": "ROLDANAS PARA VIDRO",
+        "quantidade": 150,
+        "valor_unitario": 15.5,
+        "valor_total": 2325.0,
+        "raw_data": [
+          "6502899",
+          "ROLDANAS PARA VIDRO",
+          "150",
+          "R$ 15,50",
+          "R$ 2.325,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 5,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_9_0_154500_editais_1758202381.zip",
+        "filepath": "downloads\\edital_9_0_154500_editais_1758202381.zip",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/18140806000140/compras/2025/21/arquivos/1",
+        "description": "Fazer download",
+        "size": 617278,
+        "downloaded_at": "2025-09-18T10:48:32.979068"
+      }
+    ],
+    "downloads_count": 1,
+    "accessed_contratacao": true,
+    "access_button_selector": "button:has-text('Acessar contratação')",
+    "detail_url": "https://pncp.gov.br/app/editais/18140806000140/2025/21"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250918-000",
+    "pncp_id": "35076645000192-1-000028/2025",
+    "title": "Edital nº 2025.09.16.01PE/2025",
+    "description": "Edital nº 2025.09.16.01PE/2025\nId contratação PNCP: 35076645000192-1-000028/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 18/09/2025\nÓrgão: MUNICIPIO DE TRAIRI - CAMARA MUNICIPAL\nLocal: Trairi/CE\nObjeto: Contratação de empresa de consultoria e assessoria administrativa para prestação de serviços de mapeamento, monitoramento e melhorias continuas de processos nos setores da Câmara Municipal de Trairi/Ce, conforme condições e exigências estabelecidas neste instrumento",
+    "organization_name": "MUNICIPIO DE TRAIRI - CAMARA MUNICIPAL",
+    "municipality_name": "Trairi",
+    "state_code": "SP",
+    "modality": "Pregão - Eletrônico",
+    "estimated_value": null,
+    "publication_date": "2025-09-18",
+    "objeto": "Contratação de empresa de consultoria e assessoria administrativa para prestação de serviços de mapeamento, monitoramento e melhorias continuas de processos nos setores da Câmara Municipal de Trairi/Ce, conforme condições e exigências estabelecidas neste instrumento",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=2",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Edital nº 2025.09.16.01PE/2025\nId contratação PNCP: 35076645000192-1-000028/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 18/09/2025\nÓrgão: MUNICIPIO DE TRAIRI - CAMARA MUNICIPAL\nLocal: Trairi/CE\nObjeto: Contratação de empresa de consultoria e assessoria administrativa para prestação de serviços de mapeamento, monitoramento e melhorias continuas de processos nos setores da Câmara Municipal de Trairi/Ce, conforme condições e exigências estabelecidas neste instrumento",
+    "scraped_at": "2025-09-18T10:50:04.941243",
+    "has_details": true,
+    "has_access_button": true,
+    "edital_href": "/editais/35076645000192/2025/28",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nEdital nº 2025.09.16.01PE/2025\nAcessar Contratação\nÚltima atualização 18/09/2025\n\nLocal: Trairi/CE\n\nÓrgão: MUNICIPIO DE TRAIRI - CAMARA MUNICIPAL\n\nUnidade compradora: 202599 - CÂMARA MUNICIPAL DE TRAIRI\n\nModalidade da contratação: Pregão - Eletrônico\n\nAmparo legal: Lei 14.133/2021, Art. 28, I\n\nTipo: Edital\n\nModo de disputa: Aberto\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 18/09/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 18/09/2025 00:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 03/10/2025 08:59 (horário de Brasília)\n\nId contratação PNCP: 35076645000192-1-000028/2025\n\nFonte: M2A tecnologia\n\nObjeto:\n\nContratação de empresa de consultoria e assessoria administrativa para prestação de serviços de mapeamento, monitoramento e melhorias continuas de processos nos setores da Câmara Municipal de Trairi/Ce, conforme condições e exigências estabelecidas neste instrumento\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 116.799,96\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nPrestação de serviços de mapeamento, monitoramento e melhorias continuas de processos nos setores da Câmara Municipal de Trairi/Ce\n12\nR$ 9.733,33\nR$ 116.799,96\nExibir:\n5\n1-1 de 1 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de agosto de 2021.\n\nO desenvolvimento dessa versão do Portal é um esforço conjunto de construção de uma concepção direta legal, homologado pelos indicados a compor o aludido comitê.\n\nA adequaç",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 116799.96,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "Prestação de serviços de mapeamento, monitoramento e melhorias continuas de processos nos setores da Câmara Municipal de Trairi/Ce",
+        "quantidade": 12,
+        "valor_unitario": 9733.33,
+        "valor_total": 116799.96,
+        "raw_data": [
+          "1",
+          "Prestação de serviços de mapeamento, monitoramento e melhorias continuas de processos nos setores da Câmara Municipal de Trairi/Ce",
+          "12",
+          "R$ 9.733,33",
+          "R$ 116.799,96",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 1,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_0_0_Edital.pdf",
+        "filepath": "downloads\\edital_0_0_Edital.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/35076645000192/compras/2025/28/arquivos/1",
+        "description": "Fazer download",
+        "size": 224630,
+        "downloaded_at": "2025-09-18T10:50:40.080471"
+      },
+      {
+        "filename": "edital_0_1_Anexo+-+Edital.pdf",
+        "filepath": "downloads\\edital_0_1_Anexo+-+Edital.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/35076645000192/compras/2025/28/arquivos/2",
+        "description": "Fazer download",
+        "size": 199360,
+        "downloaded_at": "2025-09-18T10:50:45.268117"
+      },
+      {
+        "filename": "edital_0_2_Anexo+-+Minuta+do+Edital.pdf",
+        "filepath": "downloads\\edital_0_2_Anexo+-+Minuta+do+Edital.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/35076645000192/compras/2025/28/arquivos/3",
+        "description": "Fazer download",
+        "size": 160555,
+        "downloaded_at": "2025-09-18T10:50:50.404465"
+      }
+    ],
+    "downloads_count": 3,
+    "accessed_contratacao": true,
+    "access_button_selector": "button:has-text('Acessar contratação')",
+    "detail_url": "https://pncp.gov.br/app/editais/35076645000192/2025/28"
+  }
+]

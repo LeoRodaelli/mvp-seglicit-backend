@@ -6,13 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="7f12e291-75b6-4e17-9e59-80e49e750700" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editais_items_only_20250827_114454.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/downloads/edital_0_0_Edital.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/downloads/edital_0_0_Edital.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pncp_scraper.log" beforeDir="false" afterPath="$PROJECT_DIR$/pncp_scraper.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pncp_scraper_items_only.py" beforeDir="false" afterPath="$PROJECT_DIR$/pncp_scraper_items_only.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/database/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/app.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/tender.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/tender.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/user.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,17 +34,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/leoro/Desktop/rodaelli/manusAI/mvp-licitacoes-melhorado-backend",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/leoro/Desktop/rodaelli/manusAI/mvp-licitacoes-melhorado-backend&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\leoro\Desktop\rodaelli\manusAI\mvp-licitacoes-melhorado-backend" />
@@ -56,7 +53,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-8753aad8314d-d902c0275401-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-252.25557.178" />
+        <option value="bundled-python-sdk-1f77c24022e5-d902c0275401-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-252.26830.99" />
       </set>
     </attachedChunks>
   </component>

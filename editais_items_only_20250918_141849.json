@@ -1,0 +1,279 @@
+[
+  {
+    "id": "PNCP-ITEMS-ONLY-20250918-000",
+    "pncp_id": "48031918000124-1-003134/2025",
+    "title": "Aviso de Contratação Direta nº 152/2025",
+    "description": "Aviso de Contratação Direta nº 152/2025\nId contratação PNCP: 48031918000124-1-003134/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 18/09/2025\nÓrgão: UNIVERSIDADE ESTADUAL PAULISTA JULIO DE MESQUITA FILHO\nLocal: Bauru/SP\nObjeto: Aquisição de itens médicos",
+    "organization_name": "UNIVERSIDADE ESTADUAL PAULISTA JULIO DE MESQUITA FILHO",
+    "municipality_name": "Bauru",
+    "state_code": "SP",
+    "modality": "Dispensa",
+    "estimated_value": null,
+    "publication_date": "2025-09-18",
+    "objeto": "Aquisição de itens médicos",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Aviso de Contratação Direta nº 152/2025\nId contratação PNCP: 48031918000124-1-003134/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 18/09/2025\nÓrgão: UNIVERSIDADE ESTADUAL PAULISTA JULIO DE MESQUITA FILHO\nLocal: Bauru/SP\nObjeto: Aquisição de itens médicos",
+    "scraped_at": "2025-09-18T14:03:57.512142",
+    "has_details": true,
+    "has_access_button": false,
+    "edital_href": "/editais/48031918000124/2025/3134",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nAviso de Contratação Direta nº 152/2025\nÚltima atualização 18/09/2025\n\nLocal: Bauru/SP\n\nÓrgão: UNIVERSIDADE ESTADUAL PAULISTA JULIO DE MESQUITA FILHO\n\nUnidade compradora: 102308 - ESP-UNESP-ADMINISTRACAO GERAL-C.BAURU\n\nModalidade da contratação: Dispensa\n\nAmparo legal: Lei 14.133/2021, Art. 75, II\n\nTipo: Aviso de Contratação Direta\n\nModo de disputa: Dispensa Com Disputa\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 18/09/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 18/09/2025 14:15 (horário de Brasília)\n\nData fim de recebimento de propostas: 23/09/2025 08:00 (horário de Brasília)\n\nId contratação PNCP: 48031918000124-1-003134/2025\n\nFonte: Compras.gov.br\n\nObjeto:\n\nAquisição de itens médicos\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 12.027,10\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nVentosa Uso Médico material: acrílico, tamanho: 4,5 a 2,3mm, características adicionais: com aplicador, jogo c/ cerca de 20 unidades Considerar as especificações constantes no Termo de Referência (Anexo I)\n2\nR$ 392,09\nR$ 784,18\n2\nAgulha Acupuntura material: aço inoxidável, tipo: de retenção (auricular), tamanho: 0,18 x 1,5, tipo de cabo: sem cabo, esterilidade: estéril, descartável Considerar as especificações constantes no Termo de Referência (Anexo I)\n10\nR$ 9,54\nR$ 95,40\n3\nAgulha Acupuntura material: aço inoxidável, tipo: de retenção (auricular), tamanho: 0,18 x 7,0, tipo de cabo: sem cabo, esterilidade: estéril, descartável Considerar as especificações constantes no Termo de Referência (Anexo I)\n10\nR$ 10,46\nR$ 104,60\n4\nÓrtese Externa Para Coluna Vertebral - Não Implantável modelo: colar cervical resgate pré-hospitalar, material: polietileno de alta densidade, revestimento: acolchoado, estrutura: apoio mentoniano, occipital e esternal, adicionais: abertura frontal e posterior, tipo fecho: velcro ",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 12027.1,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "Ventosa Uso Médico material: acrílico, tamanho: 4,5 a 2,3mm, características adicionais: com aplicador, jogo c/ cerca de 20 unidades Considerar as especificações constantes no Termo de Referência (Anexo I)",
+        "quantidade": 2,
+        "valor_unitario": 392.09,
+        "valor_total": 784.18,
+        "raw_data": [
+          "1",
+          "Ventosa Uso Médico material: acrílico, tamanho: 4,5 a 2,3mm, características adicionais: com aplicador, jogo c/ cerca de 20 unidades Considerar as especificações constantes no Termo de Referência (Anexo I)",
+          "2",
+          "R$ 392,09",
+          "R$ 784,18",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "2",
+        "descricao": "Agulha Acupuntura material: aço inoxidável, tipo: de retenção (auricular), tamanho: 0,18 x 1,5, tipo de cabo: sem cabo, esterilidade: estéril, descartável Considerar as especificações constantes no Termo de Referência (Anexo I)",
+        "quantidade": 10,
+        "valor_unitario": 9.54,
+        "valor_total": 95.4,
+        "raw_data": [
+          "2",
+          "Agulha Acupuntura material: aço inoxidável, tipo: de retenção (auricular), tamanho: 0,18 x 1,5, tipo de cabo: sem cabo, esterilidade: estéril, descartável Considerar as especificações constantes no Termo de Referência (Anexo I)",
+          "10",
+          "R$ 9,54",
+          "R$ 95,40",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "3",
+        "descricao": "Agulha Acupuntura material: aço inoxidável, tipo: de retenção (auricular), tamanho: 0,18 x 7,0, tipo de cabo: sem cabo, esterilidade: estéril, descartável Considerar as especificações constantes no Termo de Referência (Anexo I)",
+        "quantidade": 10,
+        "valor_unitario": 10.46,
+        "valor_total": 104.6,
+        "raw_data": [
+          "3",
+          "Agulha Acupuntura material: aço inoxidável, tipo: de retenção (auricular), tamanho: 0,18 x 7,0, tipo de cabo: sem cabo, esterilidade: estéril, descartável Considerar as especificações constantes no Termo de Referência (Anexo I)",
+          "10",
+          "R$ 10,46",
+          "R$ 104,60",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "4",
+        "descricao": "Órtese Externa Para Coluna Vertebral - Não Implantável modelo: colar cervical resgate pré-hospitalar, material: polietileno de alta densidade, revestimento: acolchoado, estrutura: apoio mentoniano, occipital e esternal, adicionais: abertura frontal e posterior, tipo fecho: velcro com 5 cm, tamanho: p- pequeno, característica adicional: sem metal, radiotransparente Considerar as especificações constantes no Termo de Referência (Anexo I)",
+        "quantidade": 10,
+        "valor_unitario": 14.05,
+        "valor_total": 140.5,
+        "raw_data": [
+          "4",
+          "Órtese Externa Para Coluna Vertebral - Não Implantável modelo: colar cervical resgate pré-hospitalar, material: polietileno de alta densidade, revestimento: acolchoado, estrutura: apoio mentoniano, occipital e esternal, adicionais: abertura frontal e posterior, tipo fecho: velcro com 5 cm, tamanho: p- pequeno, característica adicional: sem metal, radiotransparente Considerar as especificações constantes no Termo de Referência (Anexo I)",
+          "10",
+          "R$ 14,05",
+          "R$ 140,50",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "5",
+        "descricao": "Órtese Externa Para Coluna Vertebral - Não Implantável modelo: colar cervical resgate pré-hospitalar, material: polietileno de alta densidade, revestimento: acolchoado, estrutura: apoio mentoniano, occipital e esternal, adicionais: abertura frontal e posterior, tipo fecho: velcro com 5 cm, tamanho: pequeno, característica adicional: sem metal, radiotransparente Considerar as especificações constantes no Termo de Referência (Anexo I)",
+        "quantidade": 10,
+        "valor_unitario": 13.9,
+        "valor_total": 139.0,
+        "raw_data": [
+          "5",
+          "Órtese Externa Para Coluna Vertebral - Não Implantável modelo: colar cervical resgate pré-hospitalar, material: polietileno de alta densidade, revestimento: acolchoado, estrutura: apoio mentoniano, occipital e esternal, adicionais: abertura frontal e posterior, tipo fecho: velcro com 5 cm, tamanho: pequeno, característica adicional: sem metal, radiotransparente Considerar as especificações constantes no Termo de Referência (Anexo I)",
+          "10",
+          "R$ 13,90",
+          "R$ 139,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 5,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_0_0_Aviso+de+Contratacao+Direta+n+152-2025.pdf",
+        "filepath": "downloads\\edital_0_0_Aviso+de+Contratacao+Direta+n+152-2025.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/48031918000124/compras/2025/3134/arquivos/1",
+        "description": "Fazer download",
+        "size": 859974,
+        "downloaded_at": "2025-09-18T14:04:33.321982"
+      },
+      {
+        "filename": "edital_0_1_5.+AUTORIZACAO+DE+ABERTURA+DE+LICITACAO.pdf",
+        "filepath": "downloads\\edital_0_1_5.+AUTORIZACAO+DE+ABERTURA+DE+LICITACAO.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/48031918000124/compras/2025/3134/arquivos/2",
+        "description": "Fazer download",
+        "size": 150814,
+        "downloaded_at": "2025-09-18T14:04:38.513226"
+      }
+    ],
+    "downloads_count": 2,
+    "accessed_contratacao": false,
+    "detail_url": "https://pncp.gov.br/app/editais/48031918000124/2025/3134"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250918-001",
+    "pncp_id": "44482248000101-1-000051/2025",
+    "title": "Edital nº 31/2025",
+    "description": "Edital nº 31/2025\nId contratação PNCP: 44482248000101-1-000051/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 18/09/2025\nÓrgão: MUNICIPIO DE OCAUCU\nLocal: Ocauçu/SP\nObjeto: AQUISIÇÃO DE REFEIÇÕES DO TIPO SELF-SERVICE, NO MUNICÍPIO DE MARÍLIA, DESTINADAS A TODOS OS SETORES DA ADMINISTRAÇÃO PÚBLICA",
+    "organization_name": "MUNICIPIO DE OCAUCU",
+    "municipality_name": "Ocauçu",
+    "state_code": "SP",
+    "modality": "Pregão - Eletrônico",
+    "estimated_value": null,
+    "publication_date": "2025-09-18",
+    "objeto": "AQUISIÇÃO DE REFEIÇÕES DO TIPO SELF-SERVICE, NO MUNICÍPIO DE MARÍLIA, DESTINADAS A TODOS OS SETORES DA ADMINISTRAÇÃO PÚBLICA",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Edital nº 31/2025\nId contratação PNCP: 44482248000101-1-000051/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 18/09/2025\nÓrgão: MUNICIPIO DE OCAUCU\nLocal: Ocauçu/SP\nObjeto: AQUISIÇÃO DE REFEIÇÕES DO TIPO SELF-SERVICE, NO MUNICÍPIO DE MARÍLIA, DESTINADAS A TODOS OS SETORES DA ADMINISTRAÇÃO PÚBLICA",
+    "scraped_at": "2025-09-18T14:06:46.926660",
+    "has_details": true,
+    "has_access_button": true,
+    "edital_href": "/editais/44482248000101/2025/51",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nEdital nº 31/2025\nAcessar Contratação\nÚltima atualização 18/09/2025\n\nLocal: Ocauçu/SP\n\nÓrgão: MUNICIPIO DE OCAUCU\n\nUnidade compradora: 1 - MUNICIPIO DE OCAUCU\n\nModalidade da contratação: Pregão - Eletrônico\n\nAmparo legal: Lei 14.133/2021, Art. 28, I\n\nTipo: Edital\n\nModo de disputa: Aberto\n\nRegistro de preço: Sim\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 18/09/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 22/09/2025 00:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 02/10/2025 08:59 (horário de Brasília)\n\nId contratação PNCP: 44482248000101-1-000051/2025\n\nFonte: Fiorilli Software\n\nObjeto:\n\nAQUISIÇÃO DE REFEIÇÕES DO TIPO SELF-SERVICE, NO MUNICÍPIO DE MARÍLIA, DESTINADAS A TODOS OS SETORES DA ADMINISTRAÇÃO PÚBLICA\n\nInformação complementar:\nREGISTRO DE PREÇOS VISANDO A FUTURA E EVENTUAL AQUISIÇÃO DE REFEIÇÕES DO TIPO SELF-SERVICE, NO MUNICÍPIO DE MARÍLIA, DESTINADAS A TODOS OS SETORES DA ADMINISTRAÇÃO PÚBLICA\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 72.659,50\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nREFEIÇAO TIPO SELF SERVICE + BEBIDA NA CIDADE DE MARILIA\n1450\nR$ 50,11\nR$ 72.659,50\nExibir:\n5\n1-1 de 1 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de agosto de 2021.\n\nO desenvolvimento dessa versão do Portal é um esforço conjunto de construção de uma concepção direta legal, homologado pelos indicados a compor o aludido comitê.\n\nA adequação, fidedignidade e corretude das informações e dos arquivos r",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 72659.5,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "REFEIÇAO TIPO SELF SERVICE + BEBIDA NA CIDADE DE MARILIA",
+        "quantidade": 1450,
+        "valor_unitario": 50.11,
+        "valor_total": 72659.5,
+        "raw_data": [
+          "1",
+          "REFEIÇAO TIPO SELF SERVICE + BEBIDA NA CIDADE DE MARILIA",
+          "1450",
+          "R$ 50,11",
+          "R$ 72.659,50",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 1,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_1_0_Edital_-_PNCP.pdf",
+        "filepath": "downloads\\edital_1_0_Edital_-_PNCP.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/44482248000101/compras/2025/51/arquivos/1",
+        "description": "Fazer download",
+        "size": 670483,
+        "downloaded_at": "2025-09-18T14:07:22.347385"
+      }
+    ],
+    "downloads_count": 1,
+    "accessed_contratacao": true,
+    "access_button_selector": "button:has-text('Acessar contratação')",
+    "detail_url": "https://pncp.gov.br/app/editais/44482248000101/2025/51"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250918-002",
+    "pncp_id": "43467992000174-1-000277/2025",
+    "title": "Aviso de Contratação Direta nº 000334/2025",
+    "description": "Aviso de Contratação Direta nº 000334/2025\nId contratação PNCP: 43467992000174-1-000277/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 18/09/2025\nÓrgão: SERVICO AUTONOMO DE AGUA E ESGOTOS\nLocal: Amparo/SP\nObjeto: AQUISIÇÃO DE APARELHOS DE TELEFONIA MÓVEL E HASTES EXTENSORAS",
+    "organization_name": "SERVICO AUTONOMO DE AGUA E ESGOTOS",
+    "municipality_name": "Amparo",
+    "state_code": "SP",
+    "modality": "Dispensa",
+    "estimated_value": null,
+    "publication_date": "2025-09-18",
+    "objeto": "AQUISIÇÃO DE APARELHOS DE TELEFONIA MÓVEL E HASTES EXTENSORAS",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Aviso de Contratação Direta nº 000334/2025\nId contratação PNCP: 43467992000174-1-000277/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 18/09/2025\nÓrgão: SERVICO AUTONOMO DE AGUA E ESGOTOS\nLocal: Amparo/SP\nObjeto: AQUISIÇÃO DE APARELHOS DE TELEFONIA MÓVEL E HASTES EXTENSORAS",
+    "scraped_at": "2025-09-18T14:08:35.974395",
+    "has_details": true,
+    "has_access_button": false,
+    "edital_href": "/editais/43467992000174/2025/277",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nAviso de Contratação Direta nº 000334/2025\nÚltima atualização 18/09/2025\n\nLocal: Amparo/SP\n\nÓrgão: SERVICO AUTONOMO DE AGUA E ESGOTOS\n\nUnidade compradora: 2500060 - DIRETORIA DE FINANÇAS\n\nModalidade da contratação: Dispensa\n\nAmparo legal: Lei 14.133/2021, Art. 75, II\n\nTipo: Aviso de Contratação Direta\n\nModo de disputa: Dispensa Com Disputa\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 18/09/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 18/09/2025 14:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 22/09/2025 08:00 (horário de Brasília)\n\nId contratação PNCP: 43467992000174-1-000277/2025\n\nFonte: Centro Eletrônico Bancário Industrial LTDA\n\nObjeto:\n\nAQUISIÇÃO DE APARELHOS DE TELEFONIA MÓVEL E HASTES EXTENSORAS\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 10.000,00\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nCELULAR\n10\nR$ 950,00\nR$ 9.500,00\n2\nHaste Extensora para Dispositivos Móveis\n10\nR$ 50,00\nR$ 500,00\nExibir:\n5\n1-2 de 2 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de agosto de 2021.\n\nO desenvolvimento dessa versão do Portal é um esforço conjunto de construção de uma concepção direta legal, homologado pelos indicados a compor o aludido comitê.\n\nA adequação, fidedignidade e corretude das informações e dos arquivos relativos às contratações disponibilizadas no PNCP por força da Lei nº 14.133/2021 são de estrita responsabilidade dos órgãos e entidades contratantes.\n\nhttps://portaldes",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 10000.0,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "CELULAR",
+        "quantidade": 10,
+        "valor_unitario": 950.0,
+        "valor_total": 9500.0,
+        "raw_data": [
+          "1",
+          "CELULAR",
+          "10",
+          "R$ 950,00",
+          "R$ 9.500,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "2",
+        "descricao": "Haste Extensora para Dispositivos Móveis",
+        "quantidade": 10,
+        "valor_unitario": 50.0,
+        "valor_total": 500.0,
+        "raw_data": [
+          "2",
+          "Haste Extensora para Dispositivos Móveis",
+          "10",
+          "R$ 50,00",
+          "R$ 500,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 2,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_2_0_AVISO+3+DIAS_PNCP+CELULAR.pdf",
+        "filepath": "downloads\\edital_2_0_AVISO+3+DIAS_PNCP+CELULAR.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/43467992000174/compras/2025/277/arquivos/1",
+        "description": "Fazer download",
+        "size": 111594,
+        "downloaded_at": "2025-09-18T14:09:12.809101"
+      },
+      {
+        "filename": "edital_2_1_TR+TELEFONE+CELULAR.pdf",
+        "filepath": "downloads\\edital_2_1_TR+TELEFONE+CELULAR.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/43467992000174/compras/2025/277/arquivos/2",
+        "description": "Fazer download",
+        "size": 1631345,
+        "downloaded_at": "2025-09-18T14:09:19.011906"
+      }
+    ],
+    "downloads_count": 2,
+    "accessed_contratacao": false,
+    "detail_url": "https://pncp.gov.br/app/editais/43467992000174/2025/277"
+  }
+]

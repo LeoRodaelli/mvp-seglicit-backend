@@ -1,0 +1,318 @@
+[
+  {
+    "id": "PNCP-DEFINITIVO-20251009112401-SP-000",
+    "title": "Aviso de Contratação Direta nº 7/2025\nId contratação PNCP: 13864377000130-1-001728/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 09/10/2025\nÓrgão: FUNDO MUNICIPAL DE SAUDE - FMS\nLocal: São Paulo/SP\nObjeto: AQUISIÇÃO DE EQUIPAMENTOS PARA O CECCO SÃO DOMINGOS, UNIDADE PERTENCENTE A CRS-N",
+    "description": "Aviso de Contratação Direta nº 7/2025\nId contratação PNCP: 13864377000130-1-001728/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 09/10/2025\nÓrgão: FUNDO MUNICIPAL DE SAUDE - FMS\nLocal: São Paulo/SP\nObjeto: AQUISIÇÃO DE EQUIPAMENTOS PARA O CECCO SÃO DOMINGOS, UNIDADE PERTENCENTE A CRS-N",
+    "state_code": "SP",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?ufs=SP",
+    "data_source": "PNCP_SCRAPING_DEFINITIVO",
+    "raw_text": "Aviso de Contratação Direta nº 7/2025\nId contratação PNCP: 13864377000130-1-001728/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 09/10/2025\nÓrgão: FUNDO MUNICIPAL DE SAUDE - FMS\nLocal: São Paulo/SP\nObjeto: AQUISIÇÃO DE EQUIPAMENTOS PARA O CECCO SÃO DOMINGOS, UNIDADE PERTENCENTE A CRS-N",
+    "scraped_at": "2025-10-09T11:24:01.554625",
+    "publication_date": "2025-10-09",
+    "has_details": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "Aquecedor tipo: a óleo, potência: 1.500, características adicionais: 3 níveis de aquecimento Conforme Aviso de Dispensa",
+        "quantidade": 2,
+        "valor_unitario": 356.67,
+        "valor_total": 713.34,
+        "raw_data": [
+          "1",
+          "Aquecedor tipo: a óleo, potência: 1.500, características adicionais: 3 níveis de aquecimento Conforme Aviso de Dispensa",
+          "2",
+          "R$ 356,67",
+          "R$ 713,34",
+          ""
+        ],
+        "extraction_method": "angular_definitivo_extraction"
+      },
+      {
+        "numero": "2",
+        "descricao": "Climatizador tipo: portátil, tensão alimentação: 127, potência: 65, tipo motor: monofásico, capacidade água: 5,7 Conforme Aviso de Dispensa",
+        "quantidade": 3,
+        "valor_unitario": 372.93,
+        "valor_total": 1118.79,
+        "raw_data": [
+          "2",
+          "Climatizador tipo: portátil, tensão alimentação: 127, potência: 65, tipo motor: monofásico, capacidade água: 5,7 Conforme Aviso de Dispensa",
+          "3",
+          "R$ 372,93",
+          "R$ 1.118,79",
+          ""
+        ],
+        "extraction_method": "angular_definitivo_extraction"
+      },
+      {
+        "numero": "3",
+        "descricao": "Forno Microondas material: aço inoxidável, capacidade: 31, potência: 1.000, voltagem: 110, cor: branca, tratamento superficial: pintura eletrostática com tinta epoxi Conforme Aviso de Dispensa",
+        "quantidade": 1,
+        "valor_unitario": 572.58,
+        "valor_total": 572.58,
+        "raw_data": [
+          "3",
+          "Forno Microondas material: aço inoxidável, capacidade: 31, potência: 1.000, voltagem: 110, cor: branca, tratamento superficial: pintura eletrostática com tinta epoxi Conforme Aviso de Dispensa",
+          "1",
+          "R$ 572,58",
+          "R$ 572,58",
+          ""
+        ],
+        "extraction_method": "angular_definitivo_extraction"
+      },
+      {
+        "numero": "4",
+        "descricao": "Forno Industrial tipo: elétrico, material: aço inox, tensão alimentação: 220, consumo: 5,0, faixa temperatura: 0 a 300, componentes: com cavalete estrutura pintada, aplicação: cozinha Conforme Aviso de Dispensa",
+        "quantidade": 1,
+        "valor_unitario": 3256.77,
+        "valor_total": 3256.77,
+        "raw_data": [
+          "4",
+          "Forno Industrial tipo: elétrico, material: aço inox, tensão alimentação: 220, consumo: 5,0, faixa temperatura: 0 a 300, componentes: com cavalete estrutura pintada, aplicação: cozinha Conforme Aviso de Dispensa",
+          "1",
+          "R$ 3.256,77",
+          "R$ 3.256,77",
+          ""
+        ],
+        "extraction_method": "angular_definitivo_extraction"
+      },
+      {
+        "numero": "5",
+        "descricao": "Tela Projeção material estrutura: alumínio, tipo tripé: com ajuste de altura multi point, tipo ajuste tela: retrátil, tipo acabamento: traçado por filamento c/ filme black out, material: tecido acetinado branco duplo, cor acabamento: branca, tipo fixação: tripé, cor: branca, altura: 1,80, largura: 1,80, material triplé: alumínio, características adicionais: tripé anodizado fosco com ajuste de altura e incli, tipo tela: retrátil, pintura: eletrostática Conforme Aviso de Dispensa",
+        "quantidade": 2,
+        "valor_unitario": 645.71,
+        "valor_total": 1291.42,
+        "raw_data": [
+          "5",
+          "Tela Projeção material estrutura: alumínio, tipo tripé: com ajuste de altura multi point, tipo ajuste tela: retrátil, tipo acabamento: traçado por filamento c/ filme black out, material: tecido acetinado branco duplo, cor acabamento: branca, tipo fixação: tripé, cor: branca, altura: 1,80, largura: 1,80, material triplé: alumínio, características adicionais: tripé anodizado fosco com ajuste de altura e incli, tipo tela: retrátil, pintura: eletrostática Conforme Aviso de Dispensa",
+          "2",
+          "R$ 645,71",
+          "R$ 1.291,42",
+          ""
+        ],
+        "extraction_method": "angular_definitivo_extraction"
+      }
+    ],
+    "downloaded_files": [
+      {
+        "filename": "Portal Nacional de Contratações Públicas\nEntrar\n E",
+        "original_name": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nAviso de Contratação Direta nº 7/2025\nÚltima atualização 09/10/2025\n\nLocal: São Paulo/SP\n\nÓrgão: FUNDO MUNICIPAL DE SAUDE - FMS\n\nUnidade compradora: 925212 - PMSP - COORDENADORIA REGIONAL DE SAÚDE NORTE\n\nModalidade da contratação: Dispensa\n\nAmparo legal: Lei 14.133/2021, Art. 75, II\n\nTipo: Aviso de Contratação Direta\n\nModo de disputa: Dispensa Com Disputa\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 09/10/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 13/10/2025 08:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 16/10/2025 08:00 (horário de Brasília)\n\nId contratação PNCP: 13864377000130-1-001728/2025\n\nFonte: Compras.gov.br\n\nObjeto:\n\nAQUISIÇÃO DE EQUIPAMENTOS PARA O CECCO SÃO DOMINGOS, UNIDADE PERTENCENTE A CRS-N\n\nInformação complementar:\nO INÍCIO DO JULGAMENTO DAS PROPOSTAS SERÁ EM 16/10/2025 ÀS 14:00. Considerando AUSÊNCIA DE CÓDIGO ESPECÍFICO para o ITEM no COMPRASNET, solicitamos que para a FORMAÇÃO DA PROPOSTA DE PREÇO e seu registro no sistema, o interessado baseie-se EXCLUSIVAMENTE nas informações do Aviso de Dispensa de Licitação, especialmente nas ESPECIFICAÇÕES TÉCNICAS DO OBJETO e demais condições deste instrumento.\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 11.066,56\nItens\nArquivos\nHistórico\nNome\nData\nTipo\nBaixar\nSEI_143839606_Despacho.pdf\n09/10/2025\nAto que autoriza a Contratação Direta\nAVISO DE DISPENSA 7-2025 - EQUIP ELETRO ELETRONICO.pdf\n09/10/2025\nAviso de Contratação Direta\nExibir:\n5\n1-2 de 2 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de agosto de 2021.\n\nO desenvolvimento dessa versão do Portal é um esforço conjunto de construção de uma concepção direta legal, homologado pelos indicados a compor o aludido comitê.\n\nA adequação, fidedignidade e corretude das informações e dos arquivos relativos às contratações disponibilizadas no PNCP por força da Lei nº 14.133/2021 são de estrita responsabilidade dos órgãos e entidades contratantes.\n\nhttps://portaldeservicos.gestao.gov.br\n0800 978 9001\nAGRADECIMENTO AOS PARCEIROS\nTexto destinado a exibição de informações relacionadas à licença de uso.",
+        "url": "",
+        "size": 0,
+        "download_status": "listed_only",
+        "extraction_method": "files_tab_list_definitivo"
+      }
+    ],
+    "edital_href": "/editais/13864377000130/2025/1728",
+    "detail_url": "https://pncp.gov.br/editais/13864377000130/2025/1728",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nAviso de Contratação Direta nº 7/2025\nÚltima atualização 09/10/2025\n\nLocal: São Paulo/SP\n\nÓrgão: FUNDO MUNICIPAL DE SAUDE - FMS\n\nUnidade compradora: 925212 - PMSP - COORDENADORIA REGIONAL DE SAÚDE NORTE\n\nModalidade da contratação: Dispensa\n\nAmparo legal: Lei 14.133/2021, Art. 75, II\n\nTipo: Aviso de Contratação Direta\n\nModo de disputa: Dispensa Com Disputa\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 09/10/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 13/10/2025 08:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 16/10/2025 08:00 (horário de Brasília)\n\nId contratação PNCP: 13864377000130-1-001728/2025\n\nFonte: Compras.gov.br\n\nObjeto:\n\nAQUISIÇÃO DE EQUIPAMENTOS PARA O CECCO SÃO DOMINGOS, UNIDADE PERTENCENTE A CRS-N\n\nInformação complementar:\nO INÍCIO DO JULGAMENTO DAS PROPOSTAS SERÁ EM 16/10/2025 ÀS 14:00. Considerando AUSÊNCIA DE CÓDIGO ESPECÍFICO para o ITEM no COMPRASNET, solicitamos que para a FORMAÇÃO DA PROPOSTA DE PREÇO e seu registro no sistema, o interessado baseie-se EXCLUSIVAMENTE nas informações do Aviso de Dispensa de Licitação, especialmente nas ESPECIFICAÇÕES TÉCNICAS DO OBJETO e demais condições deste instrumento.\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 11.066,56\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nAquecedor tipo: a óleo, potência: 1.500, características adicionais: 3 níveis de aquecimento Conforme Aviso de Dispensa\n2\nR$ 356,67\nR$ 713,34\n2\nClimatizador tipo: portátil, tensão alimentação: 127, potência: 65, tipo motor: monofásico, capacidade água: 5,7 Conforme Aviso de Dispensa\n3\nR$ 372,93\nR$ 1.118,79\n3\nForno Microondas material: aço inoxidável, capacidade: 31, potência: 1.000, voltagem: 110, cor: branca, tratamento superficial: pintura eletrostática com tinta epoxi Conforme Aviso de Dispensa\n1\nR$ 572,58\nR$ 572,58\n4\nForno Industrial tipo: el",
+    "valor_total_estimado": null,
+    "items_count": 5,
+    "items_tab_found": true,
+    "downloads_count": 1,
+    "files_tab_found": true,
+    "pncp_id": "",
+    "organization_name": "",
+    "municipality_name": "",
+    "modality": "",
+    "objeto": "",
+    "estimated_value": null
+  },
+  {
+    "id": "PNCP-DEFINITIVO-20251009112421-SP-001",
+    "title": "Edital nº 211/2025\nId contratação PNCP: 46195079000154-1-001020/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 09/10/2025\nÓrgão: MUNICIPIO DE JAHU\nLocal: Jaú/SP\nObjeto: AQUISIÇÃO DE EQUIPAMENTOS DE EPIs DESTINADOS AOS REEDUCANDOS DO CENTRO DE RESSOCIALIZAÇÃO “DR. JOÃO EDUARDO FRANCO PERLATTI” E DA FUNDAÇÃO PROFESSOR DR. MANOEL PEDRO PIMENTEL, QUE REALIZAM ATIVIDADES PÚBLICAS NA SECRETARIA DE MOBILIDADE URBANA",
+    "description": "Edital nº 211/2025\nId contratação PNCP: 46195079000154-1-001020/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 09/10/2025\nÓrgão: MUNICIPIO DE JAHU\nLocal: Jaú/SP\nObjeto: AQUISIÇÃO DE EQUIPAMENTOS DE EPIs DESTINADOS AOS REEDUCANDOS DO CENTRO DE RESSOCIALIZAÇÃO “DR. JOÃO EDUARDO FRANCO PERLATTI” E DA FUNDAÇÃO PROFESSOR DR. MANOEL PEDRO PIMENTEL, QUE REALIZAM ATIVIDADES PÚBLICAS NA SECRETARIA DE MOBILIDADE URBANA",
+    "state_code": "SP",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?ufs=SP",
+    "data_source": "PNCP_SCRAPING_DEFINITIVO",
+    "raw_text": "Edital nº 211/2025\nId contratação PNCP: 46195079000154-1-001020/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 09/10/2025\nÓrgão: MUNICIPIO DE JAHU\nLocal: Jaú/SP\nObjeto: AQUISIÇÃO DE EQUIPAMENTOS DE EPIs DESTINADOS AOS REEDUCANDOS DO CENTRO DE RESSOCIALIZAÇÃO “DR. JOÃO EDUARDO FRANCO PERLATTI” E DA FUNDAÇÃO PROFESSOR DR. MANOEL PEDRO PIMENTEL, QUE REALIZAM ATIVIDADES PÚBLICAS NA SECRETARIA DE MOBILIDADE URBANA",
+    "scraped_at": "2025-10-09T11:24:21.269355",
+    "publication_date": "2025-10-09",
+    "has_details": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "Lote 01",
+        "quantidade": 1,
+        "valor_unitario": 4971.6,
+        "valor_total": 4971.6,
+        "raw_data": [
+          "1",
+          "Lote 01",
+          "1",
+          "R$ 4.971,60",
+          "R$ 4.971,60",
+          ""
+        ],
+        "extraction_method": "angular_definitivo_extraction"
+      },
+      {
+        "numero": "2",
+        "descricao": "Lote 02",
+        "quantidade": 1,
+        "valor_unitario": 5796.0,
+        "valor_total": 5796.0,
+        "raw_data": [
+          "2",
+          "Lote 02",
+          "1",
+          "R$ 5.796,00",
+          "R$ 5.796,00",
+          ""
+        ],
+        "extraction_method": "angular_definitivo_extraction"
+      },
+      {
+        "numero": "3",
+        "descricao": "Lote 03",
+        "quantidade": 1,
+        "valor_unitario": 5085.0,
+        "valor_total": 5085.0,
+        "raw_data": [
+          "3",
+          "Lote 03",
+          "1",
+          "R$ 5.085,00",
+          "R$ 5.085,00",
+          ""
+        ],
+        "extraction_method": "angular_definitivo_extraction"
+      }
+    ],
+    "downloaded_files": [
+      {
+        "filename": "Portal Nacional de Contratações Públicas\nEntrar\n E",
+        "original_name": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nEdital nº 211/2025\nÚltima atualização 09/10/2025\n\nLocal: Jaú/SP\n\nÓrgão: MUNICIPIO DE JAHU\n\nUnidade compradora: 1 - PREFEITURA MUNICIPAL DE JAHU\n\nModalidade da contratação: Pregão - Eletrônico\n\nAmparo legal: Lei 14.133/2021, Art. 28, I\n\nTipo: Edital\n\nModo de disputa: Aberto-Fechado\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 09/10/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 10/10/2025 10:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 23/10/2025 08:29 (horário de Brasília)\n\nId contratação PNCP: 46195079000154-1-001020/2025\n\nFonte: Fiorilli Software\n\nObjeto:\n\nAQUISIÇÃO DE EQUIPAMENTOS DE EPIs DESTINADOS AOS REEDUCANDOS DO CENTRO DE RESSOCIALIZAÇÃO “DR. JOÃO EDUARDO FRANCO PERLATTI” E DA FUNDAÇÃO PROFESSOR DR. MANOEL PEDRO PIMENTEL, QUE REALIZAM ATIVIDADES PÚBLICAS NA SECRETARIA DE MOBILIDADE URBANA\n\nInformação complementar:\nAQUISIÇÃO DE EQUIPAMENTOS DE EPIs DESTINADOS AOS REEDUCANDOS DO CENTRO DE RESSOCIALIZAÇÃO “DR. JOÃO EDUARDO FRANCO PERLATTI” E DA FUNDAÇÃO PROFESSOR DR. MANOEL PEDRO PIMENTEL, QUE REALIZAM ATIVIDADES PÚBLICAS NA SECRETARIA DE MOBILIDADE URBANA\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 15.852,60\nItens\nArquivos\nHistórico\nNome\nData\nTipo\nBaixar\nAviso_de_Licitacao.pdf\n09/10/2025\nOutros Documentos\nEdital.pdf\n09/10/2025\nEdital\nExibir:\n5\n1-2 de 2 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de agosto de 2021.\n\nO desenvolvimento dessa versão do Portal é um esforço conjunto de construção de uma concepção direta legal, homologado pelos indicados a compor o aludido comitê.\n\nA adequação, fidedignidade e corretude das informações e dos arquivos relativos às contratações disponibilizadas no PNCP por força da Lei nº 14.133/2021 são de estrita responsabilidade dos órgãos e entidades contratantes.\n\nhttps://portaldeservicos.gestao.gov.br\n0800 978 9001\nAGRADECIMENTO AOS PARCEIROS\nTexto destinado a exibição de informações relacionadas à licença de uso.",
+        "url": "",
+        "size": 0,
+        "download_status": "listed_only",
+        "extraction_method": "files_tab_list_definitivo"
+      }
+    ],
+    "edital_href": "/editais/46195079000154/2025/1020",
+    "detail_url": "https://pncp.gov.br/editais/46195079000154/2025/1020",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nEdital nº 211/2025\nÚltima atualização 09/10/2025\n\nLocal: Jaú/SP\n\nÓrgão: MUNICIPIO DE JAHU\n\nUnidade compradora: 1 - PREFEITURA MUNICIPAL DE JAHU\n\nModalidade da contratação: Pregão - Eletrônico\n\nAmparo legal: Lei 14.133/2021, Art. 28, I\n\nTipo: Edital\n\nModo de disputa: Aberto-Fechado\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 09/10/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 10/10/2025 10:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 23/10/2025 08:29 (horário de Brasília)\n\nId contratação PNCP: 46195079000154-1-001020/2025\n\nFonte: Fiorilli Software\n\nObjeto:\n\nAQUISIÇÃO DE EQUIPAMENTOS DE EPIs DESTINADOS AOS REEDUCANDOS DO CENTRO DE RESSOCIALIZAÇÃO “DR. JOÃO EDUARDO FRANCO PERLATTI” E DA FUNDAÇÃO PROFESSOR DR. MANOEL PEDRO PIMENTEL, QUE REALIZAM ATIVIDADES PÚBLICAS NA SECRETARIA DE MOBILIDADE URBANA\n\nInformação complementar:\nAQUISIÇÃO DE EQUIPAMENTOS DE EPIs DESTINADOS AOS REEDUCANDOS DO CENTRO DE RESSOCIALIZAÇÃO “DR. JOÃO EDUARDO FRANCO PERLATTI” E DA FUNDAÇÃO PROFESSOR DR. MANOEL PEDRO PIMENTEL, QUE REALIZAM ATIVIDADES PÚBLICAS NA SECRETARIA DE MOBILIDADE URBANA\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 15.852,60\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nLote 01\n1\nR$ 4.971,60\nR$ 4.971,60\n2\nLote 02\n1\nR$ 5.796,00\nR$ 5.796,00\n3\nLote 03\n1\nR$ 5.085,00\nR$ 5.085,00\nExibir:\n5\n1-3 de 3 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de agosto de 2021.\n\nO desenvolvimento dessa vers",
+    "valor_total_estimado": null,
+    "items_count": 3,
+    "items_tab_found": true,
+    "downloads_count": 1,
+    "files_tab_found": true,
+    "pncp_id": "",
+    "organization_name": "",
+    "municipality_name": "",
+    "modality": "",
+    "objeto": "",
+    "estimated_value": null
+  },
+  {
+    "id": "PNCP-DEFINITIVO-20251009112440-SP-002",
+    "title": "Edital nº 136/2025/2025\nId contratação PNCP: 46578498000175-1-000319/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 09/10/2025\nÓrgão: MUNICIPIO DE ITANHAEM\nLocal: Itanhaém/SP\nObjeto: Registro de preços para possível aquisição dos itens abaixo para atender os processos judiciais da Secretaria de Saúde de Prefeitura Municipal de Itanhaém pelo período de 12 meses",
+    "description": "Edital nº 136/2025/2025\nId contratação PNCP: 46578498000175-1-000319/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 09/10/2025\nÓrgão: MUNICIPIO DE ITANHAEM\nLocal: Itanhaém/SP\nObjeto: Registro de preços para possível aquisição dos itens abaixo para atender os processos judiciais da Secretaria de Saúde de Prefeitura Municipal de Itanhaém pelo período de 12 meses",
+    "state_code": "SP",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?ufs=SP",
+    "data_source": "PNCP_SCRAPING_DEFINITIVO",
+    "raw_text": "Edital nº 136/2025/2025\nId contratação PNCP: 46578498000175-1-000319/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 09/10/2025\nÓrgão: MUNICIPIO DE ITANHAEM\nLocal: Itanhaém/SP\nObjeto: Registro de preços para possível aquisição dos itens abaixo para atender os processos judiciais da Secretaria de Saúde de Prefeitura Municipal de Itanhaém pelo período de 12 meses",
+    "scraped_at": "2025-10-09T11:24:40.656726",
+    "publication_date": "2025-10-09",
+    "has_details": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "ALL 26 GERIATRIC - FRASCO C/ 100 COMPRIMIDOS – USO ORAL – PRAZO DE VALIDADE: MÍNIMO 12 MESES. POLIVITAMÍNICO COMPRIMIDO (Vitamina A (6000UI), Vitamina C (60mg), Vitamina D (400UI), Vitamina E (45UI), Vitamina B1 (1,5mg), Vitamina B2 (1,7mg), Nicotinamida (20mg), Vitamina B6 (3mg), Ácido fólico (200mcg), Vitamina B12 (25mcg), Biotina (30mcg), cálcio (10mg), Iodo (150 mcg), Ferro (9mg), Magnésio (100mg), Cobre (2mg), Molibdênio (25mcg), Cromo (100mcg), Potássio (80mg), Boro (150mcg), Níquel (5mcg)",
+        "quantidade": 500,
+        "valor_unitario": 1.5957,
+        "valor_total": 797.85,
+        "raw_data": [
+          "1",
+          "ALL 26 GERIATRIC - FRASCO C/ 100 COMPRIMIDOS – USO ORAL – PRAZO DE VALIDADE: MÍNIMO 12 MESES. POLIVITAMÍNICO COMPRIMIDO (Vitamina A (6000UI), Vitamina C (60mg), Vitamina D (400UI), Vitamina E (45UI), Vitamina B1 (1,5mg), Vitamina B2 (1,7mg), Nicotinamida (20mg), Vitamina B6 (3mg), Ácido fólico (200mcg), Vitamina B12 (25mcg), Biotina (30mcg), cálcio (10mg), Iodo (150 mcg), Ferro (9mg), Magnésio (100mg), Cobre (2mg), Molibdênio (25mcg), Cromo (100mcg), Potássio (80mg), Boro (150mcg), Níquel (5mcg), Silício (10mcg), Vanádio (10mcg), Estanho (10 mcg).",
+          "500",
+          "R$ 1,5957",
+          "R$ 797,85",
+          ""
+        ],
+        "extraction_method": "angular_definitivo_extraction"
+      },
+      {
+        "numero": "2",
+        "descricao": "ALOGLIPTINA 25mg + PIOGLITAZONA 30mg COMPRIMIDO REVESTIDO; VALIDADE: MÍNIMO 12 MESES, VIA DE ADMINISTAÇÃO: ORAL",
+        "quantidade": 1000,
+        "valor_unitario": 7.2535,
+        "valor_total": 7253.5,
+        "raw_data": [
+          "2",
+          "ALOGLIPTINA 25mg + PIOGLITAZONA 30mg COMPRIMIDO REVESTIDO; VALIDADE: MÍNIMO 12 MESES, VIA DE ADMINISTAÇÃO: ORAL",
+          "1000",
+          "R$ 7,2535",
+          "R$ 7.253,50",
+          ""
+        ],
+        "extraction_method": "angular_definitivo_extraction"
+      },
+      {
+        "numero": "3",
+        "descricao": "ASPIRINA PREVENT 100 MG",
+        "quantidade": 1000,
+        "valor_unitario": 0.6787,
+        "valor_total": 678.7,
+        "raw_data": [
+          "3",
+          "ASPIRINA PREVENT 100 MG",
+          "1000",
+          "R$ 0,6787",
+          "R$ 678,70",
+          ""
+        ],
+        "extraction_method": "angular_definitivo_extraction"
+      },
+      {
+        "numero": "4",
+        "descricao": "BISOPROLOL 2,5mg COMPRIMIDO REVESTIDO - VIA DE ADMINISTRAÇÃO: ORAL; PRAZO DE VALIDADE: MÍNIMO 12 MESES.",
+        "quantidade": 500,
+        "valor_unitario": 0.8002,
+        "valor_total": 400.1,
+        "raw_data": [
+          "4",
+          "BISOPROLOL 2,5mg COMPRIMIDO REVESTIDO - VIA DE ADMINISTRAÇÃO: ORAL; PRAZO DE VALIDADE: MÍNIMO 12 MESES.",
+          "500",
+          "R$ 0,8002",
+          "R$ 400,10",
+          ""
+        ],
+        "extraction_method": "angular_definitivo_extraction"
+      },
+      {
+        "numero": "5",
+        "descricao": "BUPRENORFINA 10mg ADESIVO TRANSDÉRMICO - ÁREA CONTENDO SUBSTÂNCIA ATIVA É DE 12,5cm² - LIBERA 10mcg/h - PRAZO DE VALIDADE: MÍNIMO 12 MESES.",
+        "quantidade": 120,
+        "valor_unitario": 64.36,
+        "valor_total": 7723.2,
+        "raw_data": [
+          "5",
+          "BUPRENORFINA 10mg ADESIVO TRANSDÉRMICO - ÁREA CONTENDO SUBSTÂNCIA ATIVA É DE 12,5cm² - LIBERA 10mcg/h - PRAZO DE VALIDADE: MÍNIMO 12 MESES.",
+          "120",
+          "R$ 64,36",
+          "R$ 7.723,20",
+          ""
+        ],
+        "extraction_method": "angular_definitivo_extraction"
+      }
+    ],
+    "downloaded_files": [],
+    "edital_href": "/editais/46578498000175/2025/319",
+    "detail_url": "https://pncp.gov.br/editais/46578498000175/2025/319",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nEdital nº 136/2025/2025\nÚltima atualização 09/10/2025\n\nLocal: Itanhaém/SP\n\nÓrgão: MUNICIPIO DE ITANHAEM\n\nUnidade compradora: 12442 - Itanhaém\n\nModalidade da contratação: Pregão - Eletrônico\n\nAmparo legal: Lei 14.133/2021, Art. 28, I\n\nTipo: Edital\n\nModo de disputa: Aberto\n\nRegistro de preço: Sim\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 09/10/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 09/10/2025 11:30 (horário de Brasília)\n\nData fim de recebimento de propostas: 22/10/2025 08:30 (horário de Brasília)\n\nId contratação PNCP: 46578498000175-1-000319/2025\n\nFonte: Novo BBMNET Licitações\n\nObjeto:\n\nRegistro de preços para possível aquisição dos itens abaixo para atender os processos judiciais da Secretaria de Saúde de Prefeitura Municipal de Itanhaém pelo período de 12 meses\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 648.222,65\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nALL 26 GERIATRIC - FRASCO C/ 100 COMPRIMIDOS – USO ORAL – PRAZO DE VALIDADE: MÍNIMO 12 MESES. POLIVITAMÍNICO COMPRIMIDO (Vitamina A (6000UI), Vitamina C (60mg), Vitamina D (400UI), Vitamina E (45UI), Vitamina B1 (1,5mg), Vitamina B2 (1,7mg), Nicotinamida (20mg), Vitamina B6 (3mg), Ácido fólico (200mcg), Vitamina B12 (25mcg), Biotina (30mcg), cálcio (10mg), Iodo (150 mcg), Ferro (9mg), Magnésio (100mg), Cobre (2mg), Molibdênio (25mcg), Cromo (100mcg), Potássio (80mg), Boro (150mcg), Níquel (5mcg), Silício (10mcg), Vanádio (10mcg), Estanho (10 mcg).\n500\nR$ 1,5957\nR$ 797,85\n2\nALOGLIPTINA 25mg + PIOGLITAZONA 30mg COMPRIMIDO REVESTIDO; VALIDADE: MÍNIMO 12 MESES, VIA DE ADMINISTAÇÃO: ORAL\n1000\nR$ 7,2535\nR$ 7.253,50\n3\nASPIRINA PREVENT 100 MG\n1000\nR$ 0,6787\nR$ 678,70\n4\nBISOPROLOL 2,5mg COMPRIMIDO REVESTIDO - VIA DE ADMINISTRAÇÃO: ORAL; PRAZO DE VALIDADE: MÍNIMO 12 MESES.\n500\nR$ 0,8002\nR$ 400,10\n5\nBUPRENORFINA 10mg ADESIVO TRANSDÉRMICO - ÁREA CONT",
+    "valor_total_estimado": null,
+    "items_count": 5,
+    "items_tab_found": true,
+    "downloads_count": 0,
+    "files_tab_found": true,
+    "pncp_id": "",
+    "organization_name": "",
+    "municipality_name": "",
+    "modality": "",
+    "objeto": "",
+    "estimated_value": null
+  }
+]

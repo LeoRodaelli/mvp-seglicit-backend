@@ -1,0 +1,214 @@
+[
+  {
+    "id": "PNCP-ITEMS-ONLY-20250918-000",
+    "pncp_id": "00394452000103-1-019122/2025",
+    "title": "Aviso de Contratação Direta nº 32/2025",
+    "description": "Aviso de Contratação Direta nº 32/2025\nId contratação PNCP: 00394452000103-1-019122/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 18/09/2025\nÓrgão: COMANDO DO EXERCITO\nLocal: São Paulo/SP\nObjeto: RECARGA DE EXTINTORES DE INCENDIO, OS SEGUINTES SERÃO RECARREGADOS: 11un de AP 10 LT 02un de ABC 6 KG 02un de ABC 12 KG 08un de PQS 4 KG 15un de PQS 6 KG 03un de ABC 8 KG 01un de CO2 4 KG 30un de CO2 6 KG 01un de CO2 25 KG",
+    "organization_name": "COMANDO DO EXERCITO",
+    "municipality_name": "São Paulo",
+    "state_code": "SP",
+    "modality": "Dispensa",
+    "estimated_value": null,
+    "publication_date": "2025-09-18",
+    "objeto": "RECARGA DE EXTINTORES DE INCENDIO, OS SEGUINTES SERÃO RECARREGADOS: 11un de AP 10 LT 02un de ABC 6 KG 02un de ABC 12 KG 08un de PQS 4 KG 15un de PQS 6 KG 03un de ABC 8 KG 01un de CO2 4 KG 30un de CO2 6 KG 01un de CO2 25 KG",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Aviso de Contratação Direta nº 32/2025\nId contratação PNCP: 00394452000103-1-019122/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 18/09/2025\nÓrgão: COMANDO DO EXERCITO\nLocal: São Paulo/SP\nObjeto: RECARGA DE EXTINTORES DE INCENDIO, OS SEGUINTES SERÃO RECARREGADOS: 11un de AP 10 LT 02un de ABC 6 KG 02un de ABC 12 KG 08un de PQS 4 KG 15un de PQS 6 KG 03un de ABC 8 KG 01un de CO2 4 KG 30un de CO2 6 KG 01un de CO2 25 KG",
+    "scraped_at": "2025-09-18T10:54:16.604434",
+    "has_details": true,
+    "has_access_button": false,
+    "edital_href": "/editais/00394452000103/2025/19122",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nAviso de Contratação Direta nº 32/2025\nÚltima atualização 18/09/2025\n\nLocal: São Paulo/SP\n\nÓrgão: COMANDO DO EXERCITO\n\nUnidade compradora: 160457 - BASE DE ADMINISTRACAO E APOIO DA 2A RM MEX/SP\n\nModalidade da contratação: Dispensa\n\nAmparo legal: Lei 14.133/2021, Art. 75, II\n\nTipo: Aviso de Contratação Direta\n\nModo de disputa: Dispensa Com Disputa\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 18/09/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 18/09/2025 12:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 23/09/2025 12:00 (horário de Brasília)\n\nId contratação PNCP: 00394452000103-1-019122/2025\n\nFonte: Compras.gov.br\n\nObjeto:\n\nRECARGA DE EXTINTORES DE INCENDIO, OS SEGUINTES SERÃO RECARREGADOS: 11un de AP 10 LT 02un de ABC 6 KG 02un de ABC 12 KG 08un de PQS 4 KG 15un de PQS 6 KG 03un de ABC 8 KG 01un de CO2 4 KG 30un de CO2 6 KG 01un de CO2 25 KG\n\nInformação complementar:\nConforme consta no Aviso de dispensa eletronica, termo de referência e seus anexos.\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 5.615,00\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nCarga Extintor Incêndio capacidade carga: 12, características adicionais: tipo bc, tipo carga: pó químico\n1\nR$ 5.615,00\nR$ 5.615,00\nExibir:\n5\n1-1 de 1 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de agosto de 2021.\n\nO desenvolvimento dessa versão do Portal é um esforço conjunto de construção de uma concepção direta legal, homologado p",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 5615.0,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "Carga Extintor Incêndio capacidade carga: 12, características adicionais: tipo bc, tipo carga: pó químico",
+        "quantidade": 1,
+        "valor_unitario": 5615.0,
+        "valor_total": 5615.0,
+        "raw_data": [
+          "1",
+          "Carga Extintor Incêndio capacidade carga: 12, características adicionais: tipo bc, tipo carga: pó químico",
+          "1",
+          "R$ 5.615,00",
+          "R$ 5.615,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 1,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_0_0_DIEX+REQ+20470+FALTA+OD.pdf",
+        "filepath": "downloads\\edital_0_0_DIEX+REQ+20470+FALTA+OD.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/00394452000103/compras/2025/19122/arquivos/1",
+        "description": "Fazer download",
+        "size": 142513,
+        "downloaded_at": "2025-09-18T10:54:51.818132"
+      },
+      {
+        "filename": "edital_0_1_AVISO_DISP_ELETRONICA_32_RECARGA_EXTINTORES_EXERCITO.pdf",
+        "filepath": "downloads\\edital_0_1_AVISO_DISP_ELETRONICA_32_RECARGA_EXTINTORES_EXERCITO.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/00394452000103/compras/2025/19122/arquivos/2",
+        "description": "Fazer download",
+        "size": 617414,
+        "downloaded_at": "2025-09-18T10:54:56.970651"
+      }
+    ],
+    "downloads_count": 2,
+    "accessed_contratacao": false,
+    "detail_url": "https://pncp.gov.br/app/editais/00394452000103/2025/19122"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250918-001",
+    "pncp_id": "13864377000130-1-001583/2025",
+    "title": "Aviso de Contratação Direta nº 13/2025",
+    "description": "Aviso de Contratação Direta nº 13/2025\nId contratação PNCP: 13864377000130-1-001583/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 18/09/2025\nÓrgão: FUNDO MUNICIPAL DE SAUDE - FMS\nLocal: São Paulo/SP\nObjeto: AQUISIÇÃO DE DETECTOR FETAL PORTÁTIL, CONTEMPLANDO ENTREGA, POR EMENDA PARLAMENTAR ESTADUAL, PARA O HOSPITAL MUNICIPAL PROF. DR. WALDOMIRO DE PAULA, VINCULADO A ESTA SECRETARIA MUNICIPAL DE SAUDE DE SÃO PAULO.",
+    "organization_name": "FUNDO MUNICIPAL DE SAUDE - FMS",
+    "municipality_name": "São Paulo",
+    "state_code": "SP",
+    "modality": "Dispensa",
+    "estimated_value": null,
+    "publication_date": "2025-09-18",
+    "objeto": "AQUISIÇÃO DE DETECTOR FETAL PORTÁTIL, CONTEMPLANDO ENTREGA, POR EMENDA PARLAMENTAR ESTADUAL, PARA O HOSPITAL MUNICIPAL PROF. DR. WALDOMIRO DE PAULA, VINCULADO A ESTA SECRETARIA MUNICIPAL DE SAUDE DE SÃO PAULO.",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Aviso de Contratação Direta nº 13/2025\nId contratação PNCP: 13864377000130-1-001583/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 18/09/2025\nÓrgão: FUNDO MUNICIPAL DE SAUDE - FMS\nLocal: São Paulo/SP\nObjeto: AQUISIÇÃO DE DETECTOR FETAL PORTÁTIL, CONTEMPLANDO ENTREGA, POR EMENDA PARLAMENTAR ESTADUAL, PARA O HOSPITAL MUNICIPAL PROF. DR. WALDOMIRO DE PAULA, VINCULADO A ESTA SECRETARIA MUNICIPAL DE SAUDE DE SÃO PAULO.",
+    "scraped_at": "2025-09-18T10:57:04.994233",
+    "has_details": true,
+    "has_access_button": false,
+    "edital_href": "/editais/13864377000130/2025/1583",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nAviso de Contratação Direta nº 13/2025\nÚltima atualização 18/09/2025\n\nLocal: São Paulo/SP\n\nÓrgão: FUNDO MUNICIPAL DE SAUDE - FMS\n\nUnidade compradora: 925003 - PMSP - SECRETARIA MUNICIPAL DE SAÚDE\n\nModalidade da contratação: Dispensa\n\nAmparo legal: Lei 14.133/2021, Art. 75, II\n\nTipo: Aviso de Contratação Direta\n\nModo de disputa: Dispensa Com Disputa\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 18/09/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 18/09/2025 10:55 (horário de Brasília)\n\nData fim de recebimento de propostas: 24/09/2025 09:00 (horário de Brasília)\n\nId contratação PNCP: 13864377000130-1-001583/2025\n\nFonte: Compras.gov.br\n\nObjeto:\n\nAQUISIÇÃO DE DETECTOR FETAL PORTÁTIL, CONTEMPLANDO ENTREGA, POR EMENDA PARLAMENTAR ESTADUAL, PARA O HOSPITAL MUNICIPAL PROF. DR. WALDOMIRO DE PAULA, VINCULADO A ESTA SECRETARIA MUNICIPAL DE SAUDE DE SÃO PAULO.\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 10.191,65\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nDetector Fetal ajuste*: ajuste digital e tela gráfica, componentes: c/ alto falante, transdutor, faixa medição: bcf até cerca 200, fonte alimentação: à bateria, frequência: até cerca 2,2, material: gabinete plástico, outros componentes: entrada auxiliar, tipo: portátil, tipo de análise: ausculta bcf, fluxo sanguíneo placenta e cordão\n5\nR$ 2.038,33\nR$ 10.191,65\nExibir:\n5\n1-1 de 1 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de agosto de 2021.\n\nO desenvo",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 10191.65,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "Detector Fetal ajuste*: ajuste digital e tela gráfica, componentes: c/ alto falante, transdutor, faixa medição: bcf até cerca 200, fonte alimentação: à bateria, frequência: até cerca 2,2, material: gabinete plástico, outros componentes: entrada auxiliar, tipo: portátil, tipo de análise: ausculta bcf, fluxo sanguíneo placenta e cordão",
+        "quantidade": 5,
+        "valor_unitario": 2038.33,
+        "valor_total": 10191.65,
+        "raw_data": [
+          "1",
+          "Detector Fetal ajuste*: ajuste digital e tela gráfica, componentes: c/ alto falante, transdutor, faixa medição: bcf até cerca 200, fonte alimentação: à bateria, frequência: até cerca 2,2, material: gabinete plástico, outros componentes: entrada auxiliar, tipo: portátil, tipo de análise: ausculta bcf, fluxo sanguíneo placenta e cordão",
+          "5",
+          "R$ 2.038,33",
+          "R$ 10.191,65",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 1,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_1_0_Edital+DE+925003-13-2025.pdf",
+        "filepath": "downloads\\edital_1_0_Edital+DE+925003-13-2025.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/13864377000130/compras/2025/1583/arquivos/1",
+        "description": "Fazer download",
+        "size": 2108820,
+        "downloaded_at": "2025-09-18T10:57:40.161196"
+      },
+      {
+        "filename": "edital_1_1_Aviso+de+Contratacao+Direta.pdf",
+        "filepath": "downloads\\edital_1_1_Aviso+de+Contratacao+Direta.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/13864377000130/compras/2025/1583/arquivos/2",
+        "description": "Fazer download",
+        "size": 129878,
+        "downloaded_at": "2025-09-18T10:57:45.316875"
+      },
+      {
+        "filename": "edital_1_2_Autorizacao+contratacao.pdf",
+        "filepath": "downloads\\edital_1_2_Autorizacao+contratacao.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/13864377000130/compras/2025/1583/arquivos/3",
+        "description": "Fazer download",
+        "size": 145930,
+        "downloaded_at": "2025-09-18T10:57:50.457981"
+      }
+    ],
+    "downloads_count": 3,
+    "accessed_contratacao": false,
+    "detail_url": "https://pncp.gov.br/app/editais/13864377000130/2025/1583"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250918-002",
+    "pncp_id": "62463005000108-1-000193/2025",
+    "title": "Aviso de Contratação Direta nº 4/2025",
+    "description": "Aviso de Contratação Direta nº 4/2025\nId contratação PNCP: 62463005000108-1-000193/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 18/09/2025\nÓrgão: CIA.DE ENTREPOSTOS E ARMAZENS GER.DE S.PAULO\nLocal: São Paulo/SP\nObjeto: Aquisição por dispensa de licitação de 01 martelete perfurador rompedor, conforme condições, quantidades e exigências estabelecidas neste Aviso de Contratação Direta e seus anexos",
+    "organization_name": "CIA.DE ENTREPOSTOS E ARMAZENS GER.DE S.PAULO",
+    "municipality_name": "São Paulo",
+    "state_code": "SP",
+    "modality": "Dispensa",
+    "estimated_value": null,
+    "publication_date": "2025-09-18",
+    "objeto": "Aquisição por dispensa de licitação de 01 martelete perfurador rompedor, conforme condições, quantidades e exigências estabelecidas neste Aviso de Contratação Direta e seus anexos",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Aviso de Contratação Direta nº 4/2025\nId contratação PNCP: 62463005000108-1-000193/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 18/09/2025\nÓrgão: CIA.DE ENTREPOSTOS E ARMAZENS GER.DE S.PAULO\nLocal: São Paulo/SP\nObjeto: Aquisição por dispensa de licitação de 01 martelete perfurador rompedor, conforme condições, quantidades e exigências estabelecidas neste Aviso de Contratação Direta e seus anexos",
+    "scraped_at": "2025-09-18T10:59:58.478540",
+    "has_details": true,
+    "has_access_button": false,
+    "edital_href": "/editais/62463005000108/2025/193",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nAviso de Contratação Direta nº 4/2025\nÚltima atualização 18/09/2025\n\nLocal: São Paulo/SP\n\nÓrgão: CIA.DE ENTREPOSTOS E ARMAZENS GER.DE S.PAULO\n\nUnidade compradora: 225001 - CIA, DE ENTREPOSTOS E ARMAZENS GER. DE SP\n\nModalidade da contratação: Dispensa\n\nAmparo legal: Lei 14.133/2021, Art. 75, II\n\nTipo: Aviso de Contratação Direta\n\nModo de disputa: Dispensa Com Disputa\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 18/09/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 18/09/2025 11:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 23/09/2025 08:00 (horário de Brasília)\n\nId contratação PNCP: 62463005000108-1-000193/2025\n\nFonte: Compras.gov.br\n\nObjeto:\n\nAquisição por dispensa de licitação de 01 martelete perfurador rompedor, conforme condições, quantidades e exigências estabelecidas neste Aviso de Contratação Direta e seus anexos\n\nInformação complementar:\nSEI 21400.000387/2025-28 - SEMAM - Utilizado o menor valor da pesquisa de preços como referência.\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 2.011,49\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nMartelete tipo: rompedor, potência: 820, tensão alimentação: 220, características adicionais: encaixe sds-plus, com maleta CATMAT utilizado apenas para efeito de cadastro no Comprasnet. Considerar a descrição do Aviso de dispensa eletrônica.\n1\nR$ 2.011,49\nR$ 2.011,49\nExibir:\n5\n1-1 de 1 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de agosto de ",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 2011.49,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "Martelete tipo: rompedor, potência: 820, tensão alimentação: 220, características adicionais: encaixe sds-plus, com maleta CATMAT utilizado apenas para efeito de cadastro no Comprasnet. Considerar a descrição do Aviso de dispensa eletrônica.",
+        "quantidade": 1,
+        "valor_unitario": 2011.49,
+        "valor_total": 2011.49,
+        "raw_data": [
+          "1",
+          "Martelete tipo: rompedor, potência: 820, tensão alimentação: 220, características adicionais: encaixe sds-plus, com maleta CATMAT utilizado apenas para efeito de cadastro no Comprasnet. Considerar a descrição do Aviso de dispensa eletrônica.",
+          "1",
+          "R$ 2.011,49",
+          "R$ 2.011,49",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 1,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_2_0_Aviso+dispensa+Martelete.pdf",
+        "filepath": "downloads\\edital_2_0_Aviso+dispensa+Martelete.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/62463005000108/compras/2025/193/arquivos/1",
+        "description": "Fazer download",
+        "size": 325885,
+        "downloaded_at": "2025-09-18T11:00:34.055185"
+      },
+      {
+        "filename": "edital_2_1_SEI_0010032_Solicitacao_e_Autorizacao_de_Compra_10.pdf",
+        "filepath": "downloads\\edital_2_1_SEI_0010032_Solicitacao_e_Autorizacao_de_Compra_10.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/62463005000108/compras/2025/193/arquivos/2",
+        "description": "Fazer download",
+        "size": 51540,
+        "downloaded_at": "2025-09-18T11:00:39.208065"
+      }
+    ],
+    "downloads_count": 2,
+    "accessed_contratacao": false,
+    "detail_url": "https://pncp.gov.br/app/editais/62463005000108/2025/193"
+  }
+]

@@ -1,0 +1,1032 @@
+[
+  {
+    "id": "PNCP-ITEMS-ONLY-20251009-000",
+    "pncp_id": "46137451000176-1-000157/2025",
+    "title": "Edital nº 039/2025",
+    "description": "Edital nº 039/2025\nId contratação PNCP: 46137451000176-1-000157/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 09/10/2025\nÓrgão: MUNICIPIO DE PIRATININGA\nLocal: Piratininga/SP\nObjeto: REGISTRO DE PREÇOS PARA LOCAÇÃO DE BIPAP E CPAP, VISANDO ATENDER AS NECESSIDADES DE PACIENTES QUE FAZEM USO EM DOMICÍLIO.",
+    "organization_name": "MUNICIPIO DE PIRATININGA",
+    "municipality_name": "Piratininga",
+    "state_code": "SP",
+    "modality": "Pregão - Eletrônico",
+    "estimated_value": null,
+    "publication_date": "2025-10-09",
+    "objeto": "REGISTRO DE PREÇOS PARA LOCAÇÃO DE BIPAP E CPAP, VISANDO ATENDER AS NECESSIDADES DE PACIENTES QUE FAZEM USO EM DOMICÍLIO.",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Edital nº 039/2025\nId contratação PNCP: 46137451000176-1-000157/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 09/10/2025\nÓrgão: MUNICIPIO DE PIRATININGA\nLocal: Piratininga/SP\nObjeto: REGISTRO DE PREÇOS PARA LOCAÇÃO DE BIPAP E CPAP, VISANDO ATENDER AS NECESSIDADES DE PACIENTES QUE FAZEM USO EM DOMICÍLIO.",
+    "scraped_at": "2025-10-09T11:35:50.159770",
+    "has_details": true,
+    "has_access_button": true,
+    "edital_href": "/editais/46137451000176/2025/157",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nEdital nº 039/2025\nAcessar Contratação\nÚltima atualização 09/10/2025\n\nLocal: Piratininga/SP\n\nÓrgão: MUNICIPIO DE PIRATININGA\n\nUnidade compradora: 1 - PREFEITURA MUNICIPAL DE PIRATININGA - SP\n\nModalidade da contratação: Pregão - Eletrônico\n\nAmparo legal: Lei 14.133/2021, Art. 28, I\n\nTipo: Edital\n\nModo de disputa: Aberto-Fechado\n\nRegistro de preço: Sim\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 09/10/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 10/10/2025 08:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 24/10/2025 08:30 (horário de Brasília)\n\nId contratação PNCP: 46137451000176-1-000157/2025\n\nFonte: BLL Compras\n\nObjeto:\n\nREGISTRO DE PREÇOS PARA LOCAÇÃO DE BIPAP E CPAP, VISANDO ATENDER AS NECESSIDADES DE PACIENTES QUE FAZEM USO EM DOMICÍLIO.\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 250.308,96\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nBIPAP\n72\nR$ 812,78\nR$ 58.520,16\n2\nCPAP (CONTIUNOUS POSITIVE AIRWAY PRESSURE)\n480\nR$ 399,56\nR$ 191.788,80\nExibir:\n5\n1-2 de 2 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de agosto de 2021.\n\nO desenvolvimento dessa versão do Portal é um esforço conjunto de construção de uma concepção direta legal, homologado pelos indicados a compor o aludido comitê.\n\nA adequação, fidedignidade e corretude das informações e dos arquivos relativos às contratações disponibilizadas no PNCP por força da Lei nº 14.133/2021 são de estrita responsabilidade dos órgãos e entidades contrata",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 250308.96,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "Item 1",
+        "quantidade": 72,
+        "valor_unitario": 812.78,
+        "valor_total": 58520.16,
+        "raw_data": [
+          "1",
+          "BIPAP",
+          "72",
+          "R$ 812,78",
+          "R$ 58.520,16",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "2",
+        "descricao": "CPAP (CONTIUNOUS POSITIVE AIRWAY PRESSURE)",
+        "quantidade": 480,
+        "valor_unitario": 399.56,
+        "valor_total": 191788.8,
+        "raw_data": [
+          "2",
+          "CPAP (CONTIUNOUS POSITIVE AIRWAY PRESSURE)",
+          "480",
+          "R$ 399,56",
+          "R$ 191.788,80",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 2,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_0_0_Edital_39.2025__Bipap_Cpap__assinado.pdf",
+        "filepath": "downloads\\edital_0_0_Edital_39.2025__Bipap_Cpap__assinado.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46137451000176/compras/2025/157/arquivos/1",
+        "description": "Fazer download",
+        "size": 499941,
+        "downloaded_at": "2025-10-09T11:36:25.565124"
+      }
+    ],
+    "downloads_count": 1,
+    "accessed_contratacao": true,
+    "access_button_selector": "button:has-text('Acessar contratação')",
+    "detail_url": "https://pncp.gov.br/app/editais/46137451000176/2025/157"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20251009-001",
+    "pncp_id": "00394502000144-1-008596/2025",
+    "title": "Aviso de Contratação Direta nº 20/2025",
+    "description": "Aviso de Contratação Direta nº 20/2025\nId contratação PNCP: 00394502000144-1-008596/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 09/10/2025\nÓrgão: COMANDO DA MARINHA\nLocal: Barra Bonita/SP\nObjeto: O objetivo desta demanda é a contratação de empresa especializada para prestação de serviço de seguro para as viaturas desta organização militar.",
+    "organization_name": "COMANDO DA MARINHA",
+    "municipality_name": "Barra Bonita",
+    "state_code": "SP",
+    "modality": "Dispensa",
+    "estimated_value": null,
+    "publication_date": "2025-10-09",
+    "objeto": "O objetivo desta demanda é a contratação de empresa especializada para prestação de serviço de seguro para as viaturas desta organização militar.",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Aviso de Contratação Direta nº 20/2025\nId contratação PNCP: 00394502000144-1-008596/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 09/10/2025\nÓrgão: COMANDO DA MARINHA\nLocal: Barra Bonita/SP\nObjeto: O objetivo desta demanda é a contratação de empresa especializada para prestação de serviço de seguro para as viaturas desta organização militar.",
+    "scraped_at": "2025-10-09T11:37:38.502123",
+    "has_details": true,
+    "has_access_button": false,
+    "edital_href": "/editais/00394502000144/2025/8596",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nAviso de Contratação Direta nº 20/2025\nÚltima atualização 09/10/2025\n\nLocal: Barra Bonita/SP\n\nÓrgão: COMANDO DA MARINHA\n\nUnidade compradora: 789320 - CAPITANIA FLUVIAL DO TIETE-PARANA\n\nModalidade da contratação: Dispensa\n\nAmparo legal: Lei 14.133/2021, Art. 75, II\n\nTipo: Aviso de Contratação Direta\n\nModo de disputa: Dispensa Com Disputa\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 09/10/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 09/10/2025 12:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 13/10/2025 09:00 (horário de Brasília)\n\nId contratação PNCP: 00394502000144-1-008596/2025\n\nFonte: Compras.gov.br\n\nObjeto:\n\nO objetivo desta demanda é a contratação de empresa especializada para prestação de serviço de seguro para as viaturas desta organização militar.\n\nInformação complementar:\nDISPENSA ELETRÔNICA N° 90.018/2025.\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 48.365,32\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nPagamento Coberturas Seguro Veículo Pagamento Coberturas Seguro Veículo\n1\nR$ 5.676,78\nR$ 5.676,78\n2\nPagamento Coberturas Seguro Veículo Pagamento Coberturas Seguro Veículo\n1\nR$ 4.243,30\nR$ 4.243,30\n3\nPagamento Coberturas Seguro Veículo Pagamento Coberturas Seguro Veículo\n1\nR$ 3.709,43\nR$ 3.709,43\n4\nPagamento Coberturas Seguro Veículo Pagamento Coberturas Seguro Veículo\n1\nR$ 3.709,43\nR$ 3.709,43\n5\nPagamento Coberturas Seguro Veículo Pagamento Coberturas Seguro Veículo\n1\nR$ 6.266,63\nR$ 6.266,63\nExibir:\n5\n1-5 de 9 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públic",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 48365.32,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "Pagamento Coberturas Seguro Veículo Pagamento Coberturas Seguro Veículo",
+        "quantidade": 1,
+        "valor_unitario": 5676.78,
+        "valor_total": 5676.78,
+        "raw_data": [
+          "1",
+          "Pagamento Coberturas Seguro Veículo Pagamento Coberturas Seguro Veículo",
+          "1",
+          "R$ 5.676,78",
+          "R$ 5.676,78",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "2",
+        "descricao": "Pagamento Coberturas Seguro Veículo Pagamento Coberturas Seguro Veículo",
+        "quantidade": 1,
+        "valor_unitario": 4243.3,
+        "valor_total": 4243.3,
+        "raw_data": [
+          "2",
+          "Pagamento Coberturas Seguro Veículo Pagamento Coberturas Seguro Veículo",
+          "1",
+          "R$ 4.243,30",
+          "R$ 4.243,30",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "3",
+        "descricao": "Pagamento Coberturas Seguro Veículo Pagamento Coberturas Seguro Veículo",
+        "quantidade": 1,
+        "valor_unitario": 3709.43,
+        "valor_total": 3709.43,
+        "raw_data": [
+          "3",
+          "Pagamento Coberturas Seguro Veículo Pagamento Coberturas Seguro Veículo",
+          "1",
+          "R$ 3.709,43",
+          "R$ 3.709,43",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "4",
+        "descricao": "Pagamento Coberturas Seguro Veículo Pagamento Coberturas Seguro Veículo",
+        "quantidade": 1,
+        "valor_unitario": 3709.43,
+        "valor_total": 3709.43,
+        "raw_data": [
+          "4",
+          "Pagamento Coberturas Seguro Veículo Pagamento Coberturas Seguro Veículo",
+          "1",
+          "R$ 3.709,43",
+          "R$ 3.709,43",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "5",
+        "descricao": "Pagamento Coberturas Seguro Veículo Pagamento Coberturas Seguro Veículo",
+        "quantidade": 1,
+        "valor_unitario": 6266.63,
+        "valor_total": 6266.63,
+        "raw_data": [
+          "5",
+          "Pagamento Coberturas Seguro Veículo Pagamento Coberturas Seguro Veículo",
+          "1",
+          "R$ 6.266,63",
+          "R$ 6.266,63",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 5,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_1_0_11+AVISO+DE+DISPENSA+47+aviso-de-contratacao-direta-14-133-agosto-2023+material.pdf",
+        "filepath": "downloads\\edital_1_0_11+AVISO+DE+DISPENSA+47+aviso-de-contratacao-direta-14-133-agosto-2023+material.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/00394502000144/compras/2025/8596/arquivos/1",
+        "description": "Fazer download",
+        "size": 312974,
+        "downloaded_at": "2025-10-09T11:38:14.165260"
+      },
+      {
+        "filename": "edital_1_1_10_Termo_de_Referencia_AGU_SERVICO_PREGAO_ATUALIZADO_ABRIL-2025_assinado_assinado.pdf",
+        "filepath": "downloads\\edital_1_1_10_Termo_de_Referencia_AGU_SERVICO_PREGAO_ATUALIZADO_ABRIL-2025_assinado_assinado.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/00394502000144/compras/2025/8596/arquivos/2",
+        "description": "Fazer download",
+        "size": 367271,
+        "downloaded_at": "2025-10-09T11:38:19.307069"
+      },
+      {
+        "filename": "edital_1_2_02_REQUISICAO_DE_ABERTURA_E_TJDL_assinado_assinado_assinado-2_assinado.pdf",
+        "filepath": "downloads\\edital_1_2_02_REQUISICAO_DE_ABERTURA_E_TJDL_assinado_assinado_assinado-2_assinado.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/00394502000144/compras/2025/8596/arquivos/3",
+        "description": "Fazer download",
+        "size": 262527,
+        "downloaded_at": "2025-10-09T11:38:24.463118"
+      }
+    ],
+    "downloads_count": 3,
+    "accessed_contratacao": false,
+    "detail_url": "https://pncp.gov.br/app/editais/00394502000144/2025/8596"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20251009-002",
+    "pncp_id": "46634531000137-1-000121/2025",
+    "title": "Edital nº 20/2025",
+    "description": "Edital nº 20/2025\nId contratação PNCP: 46634531000137-1-000121/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 09/10/2025\nÓrgão: MUNICIPIO DE IBIUNA\nLocal: Ibiúna/SP\nObjeto: CONTRATAÇÃO DE EMPRESA PARA SERVIÇO DE PAVIMENTAÇÃO DA RUA BRAZ PEREIRA DA SILVA E PEDRO FLORIZE, CONFORME CONDIÇÕES, QUANTIDADES E EXIGÊNCIAS ESTABELECIDAS NO EDITAL E SEUS ANEXOS",
+    "organization_name": "MUNICIPIO DE IBIUNA",
+    "municipality_name": "Ibiúna",
+    "state_code": "SP",
+    "modality": "Pregão - Eletrônico",
+    "estimated_value": null,
+    "publication_date": "2025-10-09",
+    "objeto": "CONTRATAÇÃO DE EMPRESA PARA SERVIÇO DE PAVIMENTAÇÃO DA RUA BRAZ PEREIRA DA SILVA E PEDRO FLORIZE, CONFORME CONDIÇÕES, QUANTIDADES E EXIGÊNCIAS ESTABELECIDAS NO EDITAL E SEUS ANEXOS",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Edital nº 20/2025\nId contratação PNCP: 46634531000137-1-000121/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 09/10/2025\nÓrgão: MUNICIPIO DE IBIUNA\nLocal: Ibiúna/SP\nObjeto: CONTRATAÇÃO DE EMPRESA PARA SERVIÇO DE PAVIMENTAÇÃO DA RUA BRAZ PEREIRA DA SILVA E PEDRO FLORIZE, CONFORME CONDIÇÕES, QUANTIDADES E EXIGÊNCIAS ESTABELECIDAS NO EDITAL E SEUS ANEXOS",
+    "scraped_at": "2025-10-09T11:38:32.431389",
+    "has_details": true,
+    "has_access_button": true,
+    "edital_href": "/editais/46634531000137/2025/121",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nEdital nº 20/2025\nAcessar Contratação\nÚltima atualização 09/10/2025\n\nLocal: Ibiúna/SP\n\nÓrgão: MUNICIPIO DE IBIUNA\n\nUnidade compradora: 188 - Prefeitura Municipal de Ibiúna - SP\n\nModalidade da contratação: Pregão - Eletrônico\n\nAmparo legal: Lei 14.133/2021, Art. 28, I\n\nTipo: Edital\n\nModo de disputa: Aberto\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 09/10/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 10/10/2025 08:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 23/10/2025 08:00 (horário de Brasília)\n\nId contratação PNCP: 46634531000137-1-000121/2025\n\nFonte: AZ INFORMATICA LTDA\n\nObjeto:\n\nCONTRATAÇÃO DE EMPRESA PARA SERVIÇO DE PAVIMENTAÇÃO DA RUA BRAZ PEREIRA DA SILVA E PEDRO FLORIZE, CONFORME CONDIÇÕES, QUANTIDADES E EXIGÊNCIAS ESTABELECIDAS NO EDITAL E SEUS ANEXOS\n\nInformação complementar:\nRecurso Estadual e Municipal\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 1.824.583,74\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1978035\nCONTRATAÇÃO DE EMPRESA PARA SERVIÇO DE PAVIMENTAÇÃO DA RUA BRAZ PEREIRA DA SILVA E PEDRO FLORIZE, CONFORME CONDIÇÕES E EXIGÊNCIAS ESTABELECIDAS NESTE EDITAL E SEUS ANEXOS. RECURSO ESTADUAL.\n1\nR$ 1.700.000,00\nR$ 1.700.000,00\n1978036\nCONTRATAÇÃO DE EMPRESA PARA SERVIÇO DE PAVIMENTAÇÃO DA RUA BRAZ PEREIRA DA SILVA E PEDRO FLORIZE, CONFORME CONDIÇÕES E EXIGÊNCIAS ESTABELECIDAS NESTE EDITAL E SEUS ANEXOS. CONTRA-PARTIDA\n1\nR$ 124.583,74\nR$ 124.583,74\nExibir:\n5\n1-2 de 2 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas ",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 1824583.74,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1978035",
+        "descricao": "CONTRATAÇÃO DE EMPRESA PARA SERVIÇO DE PAVIMENTAÇÃO DA RUA BRAZ PEREIRA DA SILVA E PEDRO FLORIZE, CONFORME CONDIÇÕES E EXIGÊNCIAS ESTABELECIDAS NESTE EDITAL E SEUS ANEXOS. RECURSO ESTADUAL.",
+        "quantidade": 1,
+        "valor_unitario": 1700000.0,
+        "valor_total": 1700000.0,
+        "raw_data": [
+          "1978035",
+          "CONTRATAÇÃO DE EMPRESA PARA SERVIÇO DE PAVIMENTAÇÃO DA RUA BRAZ PEREIRA DA SILVA E PEDRO FLORIZE, CONFORME CONDIÇÕES E EXIGÊNCIAS ESTABELECIDAS NESTE EDITAL E SEUS ANEXOS. RECURSO ESTADUAL.",
+          "1",
+          "R$ 1.700.000,00",
+          "R$ 1.700.000,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "1978036",
+        "descricao": "CONTRATAÇÃO DE EMPRESA PARA SERVIÇO DE PAVIMENTAÇÃO DA RUA BRAZ PEREIRA DA SILVA E PEDRO FLORIZE, CONFORME CONDIÇÕES E EXIGÊNCIAS ESTABELECIDAS NESTE EDITAL E SEUS ANEXOS. CONTRA-PARTIDA",
+        "quantidade": 1,
+        "valor_unitario": 124583.74,
+        "valor_total": 124583.74,
+        "raw_data": [
+          "1978036",
+          "CONTRATAÇÃO DE EMPRESA PARA SERVIÇO DE PAVIMENTAÇÃO DA RUA BRAZ PEREIRA DA SILVA E PEDRO FLORIZE, CONFORME CONDIÇÕES E EXIGÊNCIAS ESTABELECIDAS NESTE EDITAL E SEUS ANEXOS. CONTRA-PARTIDA",
+          "1",
+          "R$ 124.583,74",
+          "R$ 124.583,74",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 2,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_2_0_Capa_Licitacao_20_2025.pdf",
+        "filepath": "downloads\\edital_2_0_Capa_Licitacao_20_2025.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46634531000137/compras/2025/121/arquivos/1",
+        "description": "Fazer download",
+        "size": 33606,
+        "downloaded_at": "2025-10-09T11:39:07.792967"
+      },
+      {
+        "filename": "edital_2_1_Edital.docx.pdf",
+        "filepath": "downloads\\edital_2_1_Edital.docx.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46634531000137/compras/2025/121/arquivos/2",
+        "description": "Fazer download",
+        "size": 708412,
+        "downloaded_at": "2025-10-09T11:39:12.953361"
+      },
+      {
+        "filename": "edital_2_2_TR-Braz-Pereira.pdf",
+        "filepath": "downloads\\edital_2_2_TR-Braz-Pereira.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46634531000137/compras/2025/121/arquivos/3",
+        "description": "Fazer download",
+        "size": 332948,
+        "downloaded_at": "2025-10-09T11:39:18.097076"
+      }
+    ],
+    "downloads_count": 3,
+    "accessed_contratacao": true,
+    "access_button_selector": "button:has-text('Acessar contratação')",
+    "detail_url": "https://pncp.gov.br/app/editais/46634531000137/2025/121"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20251009-003",
+    "pncp_id": "96493648000116-1-000010/2025",
+    "title": "Edital nº 001/2025",
+    "description": "Edital nº 001/2025\nId contratação PNCP: 96493648000116-1-000010/2025\nModalidade da Contratação: Concorrência - Eletrônica\nÚltima Atualização: 09/10/2025\nÓrgão: SERVICO MUNICIPAL DE PREVIDENCIA SOCIAL-SEPREV\nLocal: Franco da Rocha/SP\nObjeto: O objeto da presente licitação é a Contratação de empresa especializada na execução de obras de engenharia para reforma e ampliação da sede do Serviço Municipal de Previdência Social – SEPREV, compreendendo serviços civis, elétricos, hidráulicos, estruturais,...",
+    "organization_name": "SERVICO MUNICIPAL DE PREVIDENCIA SOCIAL-SEPREV",
+    "municipality_name": "Franco da Rocha",
+    "state_code": "SP",
+    "modality": "Concorrência - Eletrônica",
+    "estimated_value": null,
+    "publication_date": "2025-10-09",
+    "objeto": "O objeto da presente licitação é a Contratação de empresa especializada na execução de obras de engenharia para reforma e ampliação da sede do Serviço Municipal de Previdência Social – SEPREV, compreendendo serviços civis, elétricos, hidráulicos, estruturais, de acessibilidade e adequação funcional.",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Edital nº 001/2025\nId contratação PNCP: 96493648000116-1-000010/2025\nModalidade da Contratação: Concorrência - Eletrônica\nÚltima Atualização: 09/10/2025\nÓrgão: SERVICO MUNICIPAL DE PREVIDENCIA SOCIAL-SEPREV\nLocal: Franco da Rocha/SP\nObjeto: O objeto da presente licitação é a Contratação de empresa especializada na execução de obras de engenharia para reforma e ampliação da sede do Serviço Municipal de Previdência Social – SEPREV, compreendendo serviços civis, elétricos, hidráulicos, estruturais, de acessibilidade e adequação funcional.",
+    "scraped_at": "2025-10-09T11:41:30.951587",
+    "has_details": true,
+    "has_access_button": true,
+    "edital_href": "/editais/96493648000116/2025/10",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nEdital nº 001/2025\nAcessar Contratação\nÚltima atualização 09/10/2025\n\nLocal: Franco da Rocha/SP\n\nÓrgão: SERVICO MUNICIPAL DE PREVIDENCIA SOCIAL-SEPREV\n\nUnidade compradora: 541 - Serviço Municipal de Previdência Social - SEPREV - SP\n\nModalidade da contratação: Concorrência - Eletrônica\n\nAmparo legal: Lei 14.133/2021, Art. 28, II\n\nTipo: Edital\n\nModo de disputa: Aberto\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 09/10/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 29/09/2025 09:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 13/10/2025 08:59 (horário de Brasília)\n\nId contratação PNCP: 96493648000116-1-000010/2025\n\nFonte: AZ INFORMATICA LTDA\n\nObjeto:\n\nO objeto da presente licitação é a Contratação de empresa especializada na execução de obras de engenharia para reforma e ampliação da sede do Serviço Municipal de Previdência Social – SEPREV, compreendendo serviços civis, elétricos, hidráulicos, estruturais, de acessibilidade e adequação funcional.\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 1.013.338,93\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1966114\nO objeto da presente licitação é a Contratação de empresa especializada na execução de obras de engenharia para reforma e ampliação da sede do Serviço Municipal de Previdência Social - SEPREV, compreendendo serviços civis, elétricos, hidráulicos, estruturais, de acessibilidade e adequação funcional\n1\nR$ 1.013.338,93\nR$ 1.013.338,93\nExibir:\n5\n1-1 de 1 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberati",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 1013338.93,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1966114",
+        "descricao": "O objeto da presente licitação é a Contratação de empresa especializada na execução de obras de engenharia para reforma e ampliação da sede do Serviço Municipal de Previdência Social - SEPREV, compreendendo serviços civis, elétricos, hidráulicos, estruturais, de acessibilidade e adequação funcional",
+        "quantidade": 1,
+        "valor_unitario": 1013338.93,
+        "valor_total": 1013338.93,
+        "raw_data": [
+          "1966114",
+          "O objeto da presente licitação é a Contratação de empresa especializada na execução de obras de engenharia para reforma e ampliação da sede do Serviço Municipal de Previdência Social - SEPREV, compreendendo serviços civis, elétricos, hidráulicos, estruturais, de acessibilidade e adequação funcional",
+          "1",
+          "R$ 1.013.338,93",
+          "R$ 1.013.338,93",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 1,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_3_0_Capa_Licitacao_001_2025.pdf",
+        "filepath": "downloads\\edital_3_0_Capa_Licitacao_001_2025.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/96493648000116/compras/2025/10/arquivos/1",
+        "description": "Fazer download",
+        "size": 33286,
+        "downloaded_at": "2025-10-09T11:42:06.227292"
+      },
+      {
+        "filename": "edital_3_1_Edital-20-08-2025.docx.pdf",
+        "filepath": "downloads\\edital_3_1_Edital-20-08-2025.docx.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/96493648000116/compras/2025/10/arquivos/2",
+        "description": "Fazer download",
+        "size": 697938,
+        "downloaded_at": "2025-10-09T11:42:11.392563"
+      },
+      {
+        "filename": "edital_3_2_1.B_-Cronograma-fisico-financeiro.pdf",
+        "filepath": "downloads\\edital_3_2_1.B_-Cronograma-fisico-financeiro.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/96493648000116/compras/2025/10/arquivos/3",
+        "description": "Fazer download",
+        "size": 121875,
+        "downloaded_at": "2025-10-09T11:42:16.563447"
+      },
+      {
+        "filename": "edital_3_3_1.D_-Memorial-descritivo.pdf",
+        "filepath": "downloads\\edital_3_3_1.D_-Memorial-descritivo.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/96493648000116/compras/2025/10/arquivos/4",
+        "description": "Fazer download",
+        "size": 283397,
+        "downloaded_at": "2025-10-09T11:42:21.690250"
+      },
+      {
+        "filename": "edital_3_4_1.E_-Memoria-de-calculo.pdf",
+        "filepath": "downloads\\edital_3_4_1.E_-Memoria-de-calculo.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/96493648000116/compras/2025/10/arquivos/5",
+        "description": "Fazer download",
+        "size": 612644,
+        "downloaded_at": "2025-10-09T11:42:26.836660"
+      }
+    ],
+    "downloads_count": 5,
+    "accessed_contratacao": true,
+    "access_button_selector": "button:has-text('Acessar contratação')",
+    "detail_url": "https://pncp.gov.br/app/editais/96493648000116/2025/10"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20251009-004",
+    "pncp_id": "58200015000183-1-000666/2025",
+    "title": "Aviso de Contratação Direta nº 144/2025",
+    "description": "Aviso de Contratação Direta nº 144/2025\nId contratação PNCP: 58200015000183-1-000666/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 09/10/2025\nÓrgão: MUNICIPIO DE SANTOS\nLocal: Santos/SP\nObjeto: Aquisição de copos descartáveis para atendimento às aulas dos cursos de Geração de Renda e Qualificação Profissional (oficina das voluntárias) do Fundo Social de Solidariedade- FSS",
+    "organization_name": "MUNICIPIO DE SANTOS",
+    "municipality_name": "Santos",
+    "state_code": "SP",
+    "modality": "Dispensa",
+    "estimated_value": null,
+    "publication_date": "2025-10-09",
+    "objeto": "Aquisição de copos descartáveis para atendimento às aulas dos cursos de Geração de Renda e Qualificação Profissional (oficina das voluntárias) do Fundo Social de Solidariedade- FSS",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Aviso de Contratação Direta nº 144/2025\nId contratação PNCP: 58200015000183-1-000666/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 09/10/2025\nÓrgão: MUNICIPIO DE SANTOS\nLocal: Santos/SP\nObjeto: Aquisição de copos descartáveis para atendimento às aulas dos cursos de Geração de Renda e Qualificação Profissional (oficina das voluntárias) do Fundo Social de Solidariedade- FSS",
+    "scraped_at": "2025-10-09T11:42:45.552093",
+    "has_details": true,
+    "has_access_button": true,
+    "edital_href": "/editais/58200015000183/2025/666",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nAviso de Contratação Direta nº 144/2025\nAcessar Contratação\nÚltima atualização 09/10/2025\n\nLocal: Santos/SP\n\nÓrgão: MUNICIPIO DE SANTOS\n\nUnidade compradora: 1 - GERAL\n\nModalidade da contratação: Dispensa\n\nAmparo legal: Lei 14.133/2021, Art. 75, II\n\nTipo: Aviso de Contratação Direta\n\nModo de disputa: Dispensa Com Disputa\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 09/10/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 09/10/2025 14:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 15/10/2025 09:00 (horário de Brasília)\n\nId contratação PNCP: 58200015000183-1-000666/2025\n\nFonte: BLL Compras\n\nObjeto:\n\nAquisição de copos descartáveis para atendimento às aulas dos cursos de Geração de Renda e Qualificação Profissional (oficina das voluntárias) do Fundo Social de Solidariedade- FSS\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 9.756,00\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nCOPO DESCARTAVEL P/ AGUA (Cintado 100 unidades)- Especificação: Copo Descartável; Em Polipropileno Biodegradável; Com Capacidade Mínima para 180ml; Acondicionado Em Mangas, e Massa de Cada Copo Pesando No Mínimo 1,62 Gramas; Deverá Constar Impresso Na Manga a Capacidade Total de Massa do Copo e a Quantidade; Os Copos Devem Conter Gravado de Forma Indelével: Em Relevo a Marca Ou Identificação do Fabricante; Símbolo de Identificação do Material P/ Reciclagem conforme Nbr 13230/2008 e Alterações Posteriores; Os Copos Deverão Estar Em Conformidade Com Certificação Compulsória Inmetro\n1200\nR$ 5,45\nR$ 6.540,00\n2\nCOPO DESCARTAVEL P/ CAFE (Cintado 100 unidades) - Especificação: Copo Descartável; Em Polipropileno Biodegradável; Com Capacidade Mínima para 50 Ml; Acondicionado Em Mangas, e Massa de Cada Copo Mínima 0,75 G; Deverá Constar Impresso Na Manga a Capacidade Total Da Massa do Copo e a Quantidade; Não D",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 9756.0,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "COPO DESCARTAVEL P/ AGUA (Cintado 100 unidades)- Especificação: Copo Descartável; Em Polipropileno Biodegradável; Com Capacidade Mínima para 180ml; Acondicionado Em Mangas, e Massa de Cada Copo Pesando No Mínimo 1,62 Gramas; Deverá Constar Impresso Na Manga a Capacidade Total de Massa do Copo e a Quantidade; Os Copos Devem Conter Gravado de Forma Indelével: Em Relevo a Marca Ou Identificação do Fabricante; Símbolo de Identificação do Material P/ Reciclagem conforme Nbr 13230/2008 e Alterações Po",
+        "quantidade": 1200,
+        "valor_unitario": 5.45,
+        "valor_total": 6540.0,
+        "raw_data": [
+          "1",
+          "COPO DESCARTAVEL P/ AGUA (Cintado 100 unidades)- Especificação: Copo Descartável; Em Polipropileno Biodegradável; Com Capacidade Mínima para 180ml; Acondicionado Em Mangas, e Massa de Cada Copo Pesando No Mínimo 1,62 Gramas; Deverá Constar Impresso Na Manga a Capacidade Total de Massa do Copo e a Quantidade; Os Copos Devem Conter Gravado de Forma Indelével: Em Relevo a Marca Ou Identificação do Fabricante; Símbolo de Identificação do Material P/ Reciclagem conforme Nbr 13230/2008 e Alterações Posteriores; Os Copos Deverão Estar Em Conformidade Com Certificação Compulsória Inmetro",
+          "1200",
+          "R$ 5,45",
+          "R$ 6.540,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "2",
+        "descricao": "COPO DESCARTAVEL P/ CAFE (Cintado 100 unidades) - Especificação: Copo Descartável; Em Polipropileno Biodegradável; Com Capacidade Mínima para 50 Ml; Acondicionado Em Mangas, e Massa de Cada Copo Mínima 0,75 G; Deverá Constar Impresso Na Manga a Capacidade Total Da Massa do Copo e a Quantidade; Não Devem Apresentar Sujidade, Interna Ou Externamente, Isentos de Bordas Afiadas e Rebarbas; Os Copos Devem Conter Gravado de Forma Indelével: Em Relevo, Marca Ou Identificação do Fabricante; Isento de Ma",
+        "quantidade": 1200,
+        "valor_unitario": 2.68,
+        "valor_total": 3216.0,
+        "raw_data": [
+          "2",
+          "COPO DESCARTAVEL P/ CAFE (Cintado 100 unidades) - Especificação: Copo Descartável; Em Polipropileno Biodegradável; Com Capacidade Mínima para 50 Ml; Acondicionado Em Mangas, e Massa de Cada Copo Mínima 0,75 G; Deverá Constar Impresso Na Manga a Capacidade Total Da Massa do Copo e a Quantidade; Não Devem Apresentar Sujidade, Interna Ou Externamente, Isentos de Bordas Afiadas e Rebarbas; Os Copos Devem Conter Gravado de Forma Indelével: Em Relevo, Marca Ou Identificação do Fabricante; Isento de Materiais Estranhos, Rachaduras, Furos e Deformações;",
+          "1200",
+          "R$ 2,68",
+          "R$ 3.216,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 2,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_4_0_EDITAL_1442025.pdf",
+        "filepath": "downloads\\edital_4_0_EDITAL_1442025.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/58200015000183/compras/2025/666/arquivos/1",
+        "description": "Fazer download",
+        "size": 349977,
+        "downloaded_at": "2025-10-09T11:43:29.653399"
+      }
+    ],
+    "downloads_count": 1,
+    "accessed_contratacao": true,
+    "access_button_selector": "button:has-text('Acessar contratação')",
+    "detail_url": "https://pncp.gov.br/app/editais/58200015000183/2025/666"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20251009-005",
+    "pncp_id": "59851543000165-1-000126/2025",
+    "title": "Edital nº 005/2025",
+    "description": "Edital nº 005/2025\nId contratação PNCP: 59851543000165-1-000126/2025\nModalidade da Contratação: Concorrência - Eletrônica\nÚltima Atualização: 09/10/2025\nÓrgão: MUNICIPIO DE SAO JOAQUIM DA BARRA\nLocal: São Joaquim da Barra/SP\nObjeto: CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA A EXECUÇÃO DE SERVIÇOS DE REFORMA EM CRECHE MUNICIPAL “CEI JOSÉ FLORA”, CONFORME DETALHADO NO TERMO DE REFERÊNCIA/MEMORIAL DESCRITIVO, PROJETO BÁSICO, PLANILHA ORÇAMENTÁRIA E CRONOGRAMA FÍSICO-FINANCEIRO, E AS DEMAIS CONDIÇÕE...",
+    "organization_name": "MUNICIPIO DE SAO JOAQUIM DA BARRA",
+    "municipality_name": "São Joaquim da Barra",
+    "state_code": "SP",
+    "modality": "Concorrência - Eletrônica",
+    "estimated_value": null,
+    "publication_date": "2025-10-09",
+    "objeto": "CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA A EXECUÇÃO DE SERVIÇOS DE REFORMA EM CRECHE MUNICIPAL “CEI JOSÉ FLORA”, CONFORME DETALHADO NO TERMO DE REFERÊNCIA/MEMORIAL DESCRITIVO, PROJETO BÁSICO, PLANILHA ORÇAMENTÁRIA E CRONOGRAMA FÍSICO-FINANCEIRO, E AS DEMAIS CONDIÇÕES ESPECIFICADAS NO ANEXO I DESTE EDITAL.",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Edital nº 005/2025\nId contratação PNCP: 59851543000165-1-000126/2025\nModalidade da Contratação: Concorrência - Eletrônica\nÚltima Atualização: 09/10/2025\nÓrgão: MUNICIPIO DE SAO JOAQUIM DA BARRA\nLocal: São Joaquim da Barra/SP\nObjeto: CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA A EXECUÇÃO DE SERVIÇOS DE REFORMA EM CRECHE MUNICIPAL “CEI JOSÉ FLORA”, CONFORME DETALHADO NO TERMO DE REFERÊNCIA/MEMORIAL DESCRITIVO, PROJETO BÁSICO, PLANILHA ORÇAMENTÁRIA E CRONOGRAMA FÍSICO-FINANCEIRO, E AS DEMAIS CONDIÇÕES ESPECIFICADAS NO ANEXO I DESTE EDITAL.",
+    "scraped_at": "2025-10-09T11:44:42.283694",
+    "has_details": true,
+    "has_access_button": true,
+    "edital_href": "/editais/59851543000165/2025/126",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nEdital nº 005/2025\nAcessar Contratação\nÚltima atualização 09/10/2025\n\nLocal: São Joaquim da Barra/SP\n\nÓrgão: MUNICIPIO DE SAO JOAQUIM DA BARRA\n\nUnidade compradora: 1 - PREFEITURA DE SÃO JOAQUIM DA BARRA\n\nModalidade da contratação: Concorrência - Eletrônica\n\nAmparo legal: Lei 14.133/2021, Art. 28, II\n\nTipo: Edital\n\nModo de disputa: Aberto\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 09/10/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 09/10/2025 17:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 18/11/2025 08:00 (horário de Brasília)\n\nId contratação PNCP: 59851543000165-1-000126/2025\n\nFonte: BLL Compras\n\nObjeto:\n\nCONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA A EXECUÇÃO DE SERVIÇOS DE REFORMA EM CRECHE MUNICIPAL “CEI JOSÉ FLORA”, CONFORME DETALHADO NO TERMO DE REFERÊNCIA/MEMORIAL DESCRITIVO, PROJETO BÁSICO, PLANILHA ORÇAMENTÁRIA E CRONOGRAMA FÍSICO-FINANCEIRO, E AS DEMAIS CONDIÇÕES ESPECIFICADAS NO ANEXO I DESTE EDITAL.\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 245.226,19\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nCONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA A EXECUÇÃO DE SERVIÇOS DE REFORMA EM CRECHE MUNICIPAL ?CEI JOSÉ FLORA?\n1\nR$ 245.226,19\nR$ 245.226,19\nExibir:\n5\n1-1 de 1 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de agosto de 2021.\n\nO desenvolvimento dessa versão do Portal é um esforço conjunto de construção de uma concepção direta legal, homologado pelos indicados a compor ",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 245226.19,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA A EXECUÇÃO DE SERVIÇOS DE REFORMA EM CRECHE MUNICIPAL ?CEI JOSÉ FLORA?",
+        "quantidade": 1,
+        "valor_unitario": 245226.19,
+        "valor_total": 245226.19,
+        "raw_data": [
+          "1",
+          "CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA A EXECUÇÃO DE SERVIÇOS DE REFORMA EM CRECHE MUNICIPAL ?CEI JOSÉ FLORA?",
+          "1",
+          "R$ 245.226,19",
+          "R$ 245.226,19",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 1,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_5_0_CE_N_052025__REFORMA_CEI_JOS_FLORA__EDITAL_E_ANEXOS.rar",
+        "filepath": "downloads\\edital_5_0_CE_N_052025__REFORMA_CEI_JOS_FLORA__EDITAL_E_ANEXOS.rar",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/59851543000165/compras/2025/126/arquivos/1",
+        "description": "Fazer download",
+        "size": 912015,
+        "downloaded_at": "2025-10-09T11:45:17.658386"
+      }
+    ],
+    "downloads_count": 1,
+    "accessed_contratacao": true,
+    "access_button_selector": "button:has-text('Acessar contratação')",
+    "detail_url": "https://pncp.gov.br/app/editais/59851543000165/2025/126"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20251009-006",
+    "pncp_id": "13864377000130-1-001728/2025",
+    "title": "Aviso de Contratação Direta nº 7/2025",
+    "description": "Aviso de Contratação Direta nº 7/2025\nId contratação PNCP: 13864377000130-1-001728/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 09/10/2025\nÓrgão: FUNDO MUNICIPAL DE SAUDE - FMS\nLocal: São Paulo/SP\nObjeto: AQUISIÇÃO DE EQUIPAMENTOS PARA O CECCO SÃO DOMINGOS, UNIDADE PERTENCENTE A CRS-N",
+    "organization_name": "FUNDO MUNICIPAL DE SAUDE - FMS",
+    "municipality_name": "São Paulo",
+    "state_code": "SP",
+    "modality": "Dispensa",
+    "estimated_value": null,
+    "publication_date": "2025-10-09",
+    "objeto": "AQUISIÇÃO DE EQUIPAMENTOS PARA O CECCO SÃO DOMINGOS, UNIDADE PERTENCENTE A CRS-N",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Aviso de Contratação Direta nº 7/2025\nId contratação PNCP: 13864377000130-1-001728/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 09/10/2025\nÓrgão: FUNDO MUNICIPAL DE SAUDE - FMS\nLocal: São Paulo/SP\nObjeto: AQUISIÇÃO DE EQUIPAMENTOS PARA O CECCO SÃO DOMINGOS, UNIDADE PERTENCENTE A CRS-N",
+    "scraped_at": "2025-10-09T11:46:30.538945",
+    "has_details": true,
+    "has_access_button": false,
+    "edital_href": "/editais/13864377000130/2025/1728",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nAviso de Contratação Direta nº 7/2025\nÚltima atualização 09/10/2025\n\nLocal: São Paulo/SP\n\nÓrgão: FUNDO MUNICIPAL DE SAUDE - FMS\n\nUnidade compradora: 925212 - PMSP - COORDENADORIA REGIONAL DE SAÚDE NORTE\n\nModalidade da contratação: Dispensa\n\nAmparo legal: Lei 14.133/2021, Art. 75, II\n\nTipo: Aviso de Contratação Direta\n\nModo de disputa: Dispensa Com Disputa\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 09/10/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 13/10/2025 08:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 16/10/2025 08:00 (horário de Brasília)\n\nId contratação PNCP: 13864377000130-1-001728/2025\n\nFonte: Compras.gov.br\n\nObjeto:\n\nAQUISIÇÃO DE EQUIPAMENTOS PARA O CECCO SÃO DOMINGOS, UNIDADE PERTENCENTE A CRS-N\n\nInformação complementar:\nO INÍCIO DO JULGAMENTO DAS PROPOSTAS SERÁ EM 16/10/2025 ÀS 14:00. Considerando AUSÊNCIA DE CÓDIGO ESPECÍFICO para o ITEM no COMPRASNET, solicitamos que para a FORMAÇÃO DA PROPOSTA DE PREÇO e seu registro no sistema, o interessado baseie-se EXCLUSIVAMENTE nas informações do Aviso de Dispensa de Licitação, especialmente nas ESPECIFICAÇÕES TÉCNICAS DO OBJETO e demais condições deste instrumento.\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 11.066,56\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nAquecedor tipo: a óleo, potência: 1.500, características adicionais: 3 níveis de aquecimento Conforme Aviso de Dispensa\n2\nR$ 356,67\nR$ 713,34\n2\nClimatizador tipo: portátil, tensão alimentação: 127, potência: 65, tipo motor: monofásico, capacidade água: 5,7 Conforme Aviso de Dispensa\n3\nR$ 372,93\nR$ 1.118,79\n3\nForno Microondas material: aço inoxidável, capacidade: 31, potência: 1.000, voltagem: 110, cor: branca, tratamento superficial: pintura eletrostática com tinta epoxi Conforme Aviso de Dispensa\n1\nR$ 572,58\nR$ 572,58\n4\nForno Industrial tipo: el",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 11066.56,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "Aquecedor tipo: a óleo, potência: 1.500, características adicionais: 3 níveis de aquecimento Conforme Aviso de Dispensa",
+        "quantidade": 2,
+        "valor_unitario": 356.67,
+        "valor_total": 713.34,
+        "raw_data": [
+          "1",
+          "Aquecedor tipo: a óleo, potência: 1.500, características adicionais: 3 níveis de aquecimento Conforme Aviso de Dispensa",
+          "2",
+          "R$ 356,67",
+          "R$ 713,34",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "2",
+        "descricao": "Climatizador tipo: portátil, tensão alimentação: 127, potência: 65, tipo motor: monofásico, capacidade água: 5,7 Conforme Aviso de Dispensa",
+        "quantidade": 3,
+        "valor_unitario": 372.93,
+        "valor_total": 1118.79,
+        "raw_data": [
+          "2",
+          "Climatizador tipo: portátil, tensão alimentação: 127, potência: 65, tipo motor: monofásico, capacidade água: 5,7 Conforme Aviso de Dispensa",
+          "3",
+          "R$ 372,93",
+          "R$ 1.118,79",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "3",
+        "descricao": "Forno Microondas material: aço inoxidável, capacidade: 31, potência: 1.000, voltagem: 110, cor: branca, tratamento superficial: pintura eletrostática com tinta epoxi Conforme Aviso de Dispensa",
+        "quantidade": 1,
+        "valor_unitario": 572.58,
+        "valor_total": 572.58,
+        "raw_data": [
+          "3",
+          "Forno Microondas material: aço inoxidável, capacidade: 31, potência: 1.000, voltagem: 110, cor: branca, tratamento superficial: pintura eletrostática com tinta epoxi Conforme Aviso de Dispensa",
+          "1",
+          "R$ 572,58",
+          "R$ 572,58",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "4",
+        "descricao": "Forno Industrial tipo: elétrico, material: aço inox, tensão alimentação: 220, consumo: 5,0, faixa temperatura: 0 a 300, componentes: com cavalete estrutura pintada, aplicação: cozinha Conforme Aviso de Dispensa",
+        "quantidade": 1,
+        "valor_unitario": 3256.77,
+        "valor_total": 3256.77,
+        "raw_data": [
+          "4",
+          "Forno Industrial tipo: elétrico, material: aço inox, tensão alimentação: 220, consumo: 5,0, faixa temperatura: 0 a 300, componentes: com cavalete estrutura pintada, aplicação: cozinha Conforme Aviso de Dispensa",
+          "1",
+          "R$ 3.256,77",
+          "R$ 3.256,77",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "5",
+        "descricao": "Tela Projeção material estrutura: alumínio, tipo tripé: com ajuste de altura multi point, tipo ajuste tela: retrátil, tipo acabamento: traçado por filamento c/ filme black out, material: tecido acetinado branco duplo, cor acabamento: branca, tipo fixação: tripé, cor: branca, altura: 1,80, largura: 1,80, material triplé: alumínio, características adicionais: tripé anodizado fosco com ajuste de altura e incli, tipo tela: retrátil, pintura: eletrostática Conforme Aviso de Dispensa",
+        "quantidade": 2,
+        "valor_unitario": 645.71,
+        "valor_total": 1291.42,
+        "raw_data": [
+          "5",
+          "Tela Projeção material estrutura: alumínio, tipo tripé: com ajuste de altura multi point, tipo ajuste tela: retrátil, tipo acabamento: traçado por filamento c/ filme black out, material: tecido acetinado branco duplo, cor acabamento: branca, tipo fixação: tripé, cor: branca, altura: 1,80, largura: 1,80, material triplé: alumínio, características adicionais: tripé anodizado fosco com ajuste de altura e incli, tipo tela: retrátil, pintura: eletrostática Conforme Aviso de Dispensa",
+          "2",
+          "R$ 645,71",
+          "R$ 1.291,42",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 5,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_6_0_SEI_143839606_Despacho.pdf",
+        "filepath": "downloads\\edital_6_0_SEI_143839606_Despacho.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/13864377000130/compras/2025/1728/arquivos/1",
+        "description": "Fazer download",
+        "size": 45682,
+        "downloaded_at": "2025-10-09T11:47:06.169635"
+      },
+      {
+        "filename": "edital_6_1_AVISO+DE+DISPENSA+7-2025+-+EQUIP+ELETRO+ELETRONICO.pdf",
+        "filepath": "downloads\\edital_6_1_AVISO+DE+DISPENSA+7-2025+-+EQUIP+ELETRO+ELETRONICO.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/13864377000130/compras/2025/1728/arquivos/2",
+        "description": "Fazer download",
+        "size": 394278,
+        "downloaded_at": "2025-10-09T11:47:11.300745"
+      }
+    ],
+    "downloads_count": 2,
+    "accessed_contratacao": false,
+    "detail_url": "https://pncp.gov.br/app/editais/13864377000130/2025/1728"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20251009-007",
+    "pncp_id": "46195079000154-1-001020/2025",
+    "title": "Edital nº 211/2025",
+    "description": "Edital nº 211/2025\nId contratação PNCP: 46195079000154-1-001020/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 09/10/2025\nÓrgão: MUNICIPIO DE JAHU\nLocal: Jaú/SP\nObjeto: AQUISIÇÃO DE EQUIPAMENTOS DE EPIs DESTINADOS AOS REEDUCANDOS DO CENTRO DE RESSOCIALIZAÇÃO “DR. JOÃO EDUARDO FRANCO PERLATTI” E DA FUNDAÇÃO PROFESSOR DR. MANOEL PEDRO PIMENTEL, QUE REALIZAM ATIVIDADES PÚBLICAS NA SECRETARIA DE MOBILIDADE URBANA",
+    "organization_name": "MUNICIPIO DE JAHU",
+    "municipality_name": "Jaú",
+    "state_code": "SP",
+    "modality": "Pregão - Eletrônico",
+    "estimated_value": null,
+    "publication_date": "2025-10-09",
+    "objeto": "AQUISIÇÃO DE EQUIPAMENTOS DE EPIs DESTINADOS AOS REEDUCANDOS DO CENTRO DE RESSOCIALIZAÇÃO “DR. JOÃO EDUARDO FRANCO PERLATTI” E DA FUNDAÇÃO PROFESSOR DR. MANOEL PEDRO PIMENTEL, QUE REALIZAM ATIVIDADES PÚBLICAS NA SECRETARIA DE MOBILIDADE URBANA",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Edital nº 211/2025\nId contratação PNCP: 46195079000154-1-001020/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 09/10/2025\nÓrgão: MUNICIPIO DE JAHU\nLocal: Jaú/SP\nObjeto: AQUISIÇÃO DE EQUIPAMENTOS DE EPIs DESTINADOS AOS REEDUCANDOS DO CENTRO DE RESSOCIALIZAÇÃO “DR. JOÃO EDUARDO FRANCO PERLATTI” E DA FUNDAÇÃO PROFESSOR DR. MANOEL PEDRO PIMENTEL, QUE REALIZAM ATIVIDADES PÚBLICAS NA SECRETARIA DE MOBILIDADE URBANA",
+    "scraped_at": "2025-10-09T11:48:19.266618",
+    "has_details": true,
+    "has_access_button": false,
+    "edital_href": "/editais/46195079000154/2025/1020",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nEdital nº 211/2025\nÚltima atualização 09/10/2025\n\nLocal: Jaú/SP\n\nÓrgão: MUNICIPIO DE JAHU\n\nUnidade compradora: 1 - PREFEITURA MUNICIPAL DE JAHU\n\nModalidade da contratação: Pregão - Eletrônico\n\nAmparo legal: Lei 14.133/2021, Art. 28, I\n\nTipo: Edital\n\nModo de disputa: Aberto-Fechado\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 09/10/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 10/10/2025 10:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 23/10/2025 08:29 (horário de Brasília)\n\nId contratação PNCP: 46195079000154-1-001020/2025\n\nFonte: Fiorilli Software\n\nObjeto:\n\nAQUISIÇÃO DE EQUIPAMENTOS DE EPIs DESTINADOS AOS REEDUCANDOS DO CENTRO DE RESSOCIALIZAÇÃO “DR. JOÃO EDUARDO FRANCO PERLATTI” E DA FUNDAÇÃO PROFESSOR DR. MANOEL PEDRO PIMENTEL, QUE REALIZAM ATIVIDADES PÚBLICAS NA SECRETARIA DE MOBILIDADE URBANA\n\nInformação complementar:\nAQUISIÇÃO DE EQUIPAMENTOS DE EPIs DESTINADOS AOS REEDUCANDOS DO CENTRO DE RESSOCIALIZAÇÃO “DR. JOÃO EDUARDO FRANCO PERLATTI” E DA FUNDAÇÃO PROFESSOR DR. MANOEL PEDRO PIMENTEL, QUE REALIZAM ATIVIDADES PÚBLICAS NA SECRETARIA DE MOBILIDADE URBANA\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 15.852,60\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nLote 01\n1\nR$ 4.971,60\nR$ 4.971,60\n2\nLote 02\n1\nR$ 5.796,00\nR$ 5.796,00\n3\nLote 03\n1\nR$ 5.085,00\nR$ 5.085,00\nExibir:\n5\n1-3 de 3 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de agosto de 2021.\n\nO desenvolvimento dessa vers",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 15852.6,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "Lote 01",
+        "quantidade": 1,
+        "valor_unitario": 4971.6,
+        "valor_total": 4971.6,
+        "raw_data": [
+          "1",
+          "Lote 01",
+          "1",
+          "R$ 4.971,60",
+          "R$ 4.971,60",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "2",
+        "descricao": "Lote 02",
+        "quantidade": 1,
+        "valor_unitario": 5796.0,
+        "valor_total": 5796.0,
+        "raw_data": [
+          "2",
+          "Lote 02",
+          "1",
+          "R$ 5.796,00",
+          "R$ 5.796,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "3",
+        "descricao": "Lote 03",
+        "quantidade": 1,
+        "valor_unitario": 5085.0,
+        "valor_total": 5085.0,
+        "raw_data": [
+          "3",
+          "Lote 03",
+          "1",
+          "R$ 5.085,00",
+          "R$ 5.085,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 3,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_7_0_Aviso_de_Licitacao.pdf",
+        "filepath": "downloads\\edital_7_0_Aviso_de_Licitacao.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46195079000154/compras/2025/1020/arquivos/1",
+        "description": "Fazer download",
+        "size": 318593,
+        "downloaded_at": "2025-10-09T11:48:54.684408"
+      },
+      {
+        "filename": "edital_7_1_Edital.pdf",
+        "filepath": "downloads\\edital_7_1_Edital.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46195079000154/compras/2025/1020/arquivos/2",
+        "description": "Fazer download",
+        "size": 840991,
+        "downloaded_at": "2025-10-09T11:48:59.901916"
+      }
+    ],
+    "downloads_count": 2,
+    "accessed_contratacao": false,
+    "detail_url": "https://pncp.gov.br/app/editais/46195079000154/2025/1020"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20251009-008",
+    "pncp_id": "46578498000175-1-000319/2025",
+    "title": "Edital nº 136/2025/2025",
+    "description": "Edital nº 136/2025/2025\nId contratação PNCP: 46578498000175-1-000319/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 09/10/2025\nÓrgão: MUNICIPIO DE ITANHAEM\nLocal: Itanhaém/SP\nObjeto: Registro de preços para possível aquisição dos itens abaixo para atender os processos judiciais da Secretaria de Saúde de Prefeitura Municipal de Itanhaém pelo período de 12 meses",
+    "organization_name": "MUNICIPIO DE ITANHAEM",
+    "municipality_name": "Itanhaém",
+    "state_code": "SP",
+    "modality": "Pregão - Eletrônico",
+    "estimated_value": null,
+    "publication_date": "2025-10-09",
+    "objeto": "Registro de preços para possível aquisição dos itens abaixo para atender os processos judiciais da Secretaria de Saúde de Prefeitura Municipal de Itanhaém pelo período de 12 meses",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Edital nº 136/2025/2025\nId contratação PNCP: 46578498000175-1-000319/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 09/10/2025\nÓrgão: MUNICIPIO DE ITANHAEM\nLocal: Itanhaém/SP\nObjeto: Registro de preços para possível aquisição dos itens abaixo para atender os processos judiciais da Secretaria de Saúde de Prefeitura Municipal de Itanhaém pelo período de 12 meses",
+    "scraped_at": "2025-10-09T11:51:07.953591",
+    "has_details": true,
+    "has_access_button": false,
+    "edital_href": "/editais/46578498000175/2025/319",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nEdital nº 136/2025/2025\nÚltima atualização 09/10/2025\n\nLocal: Itanhaém/SP\n\nÓrgão: MUNICIPIO DE ITANHAEM\n\nUnidade compradora: 12442 - Itanhaém\n\nModalidade da contratação: Pregão - Eletrônico\n\nAmparo legal: Lei 14.133/2021, Art. 28, I\n\nTipo: Edital\n\nModo de disputa: Aberto\n\nRegistro de preço: Sim\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 09/10/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 09/10/2025 11:30 (horário de Brasília)\n\nData fim de recebimento de propostas: 22/10/2025 08:30 (horário de Brasília)\n\nId contratação PNCP: 46578498000175-1-000319/2025\n\nFonte: Novo BBMNET Licitações\n\nObjeto:\n\nRegistro de preços para possível aquisição dos itens abaixo para atender os processos judiciais da Secretaria de Saúde de Prefeitura Municipal de Itanhaém pelo período de 12 meses\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 648.222,65\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nALL 26 GERIATRIC - FRASCO C/ 100 COMPRIMIDOS – USO ORAL – PRAZO DE VALIDADE: MÍNIMO 12 MESES. POLIVITAMÍNICO COMPRIMIDO (Vitamina A (6000UI), Vitamina C (60mg), Vitamina D (400UI), Vitamina E (45UI), Vitamina B1 (1,5mg), Vitamina B2 (1,7mg), Nicotinamida (20mg), Vitamina B6 (3mg), Ácido fólico (200mcg), Vitamina B12 (25mcg), Biotina (30mcg), cálcio (10mg), Iodo (150 mcg), Ferro (9mg), Magnésio (100mg), Cobre (2mg), Molibdênio (25mcg), Cromo (100mcg), Potássio (80mg), Boro (150mcg), Níquel (5mcg), Silício (10mcg), Vanádio (10mcg), Estanho (10 mcg).\n500\nR$ 1,5957\nR$ 797,85\n2\nALOGLIPTINA 25mg + PIOGLITAZONA 30mg COMPRIMIDO REVESTIDO; VALIDADE: MÍNIMO 12 MESES, VIA DE ADMINISTAÇÃO: ORAL\n1000\nR$ 7,2535\nR$ 7.253,50\n3\nASPIRINA PREVENT 100 MG\n1000\nR$ 0,6787\nR$ 678,70\n4\nBISOPROLOL 2,5mg COMPRIMIDO REVESTIDO - VIA DE ADMINISTRAÇÃO: ORAL; PRAZO DE VALIDADE: MÍNIMO 12 MESES.\n500\nR$ 0,8002\nR$ 400,10\n5\nBUPRENORFINA 10mg ADESIVO TRANSDÉRMICO - ÁREA CONT",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 648222.65,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "ALL 26 GERIATRIC - FRASCO C/ 100 COMPRIMIDOS – USO ORAL – PRAZO DE VALIDADE: MÍNIMO 12 MESES. POLIVITAMÍNICO COMPRIMIDO (Vitamina A (6000UI), Vitamina C (60mg), Vitamina D (400UI), Vitamina E (45UI), Vitamina B1 (1,5mg), Vitamina B2 (1,7mg), Nicotinamida (20mg), Vitamina B6 (3mg), Ácido fólico (200mcg), Vitamina B12 (25mcg), Biotina (30mcg), cálcio (10mg), Iodo (150 mcg), Ferro (9mg), Magnésio (100mg), Cobre (2mg), Molibdênio (25mcg), Cromo (100mcg), Potássio (80mg), Boro (150mcg), Níquel (5mcg)",
+        "quantidade": 500,
+        "valor_unitario": 1.5957,
+        "valor_total": 797.85,
+        "raw_data": [
+          "1",
+          "ALL 26 GERIATRIC - FRASCO C/ 100 COMPRIMIDOS – USO ORAL – PRAZO DE VALIDADE: MÍNIMO 12 MESES. POLIVITAMÍNICO COMPRIMIDO (Vitamina A (6000UI), Vitamina C (60mg), Vitamina D (400UI), Vitamina E (45UI), Vitamina B1 (1,5mg), Vitamina B2 (1,7mg), Nicotinamida (20mg), Vitamina B6 (3mg), Ácido fólico (200mcg), Vitamina B12 (25mcg), Biotina (30mcg), cálcio (10mg), Iodo (150 mcg), Ferro (9mg), Magnésio (100mg), Cobre (2mg), Molibdênio (25mcg), Cromo (100mcg), Potássio (80mg), Boro (150mcg), Níquel (5mcg), Silício (10mcg), Vanádio (10mcg), Estanho (10 mcg).",
+          "500",
+          "R$ 1,5957",
+          "R$ 797,85",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "2",
+        "descricao": "ALOGLIPTINA 25mg + PIOGLITAZONA 30mg COMPRIMIDO REVESTIDO; VALIDADE: MÍNIMO 12 MESES, VIA DE ADMINISTAÇÃO: ORAL",
+        "quantidade": 1000,
+        "valor_unitario": 7.2535,
+        "valor_total": 7253.5,
+        "raw_data": [
+          "2",
+          "ALOGLIPTINA 25mg + PIOGLITAZONA 30mg COMPRIMIDO REVESTIDO; VALIDADE: MÍNIMO 12 MESES, VIA DE ADMINISTAÇÃO: ORAL",
+          "1000",
+          "R$ 7,2535",
+          "R$ 7.253,50",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "3",
+        "descricao": "ASPIRINA PREVENT 100 MG",
+        "quantidade": 1000,
+        "valor_unitario": 0.6787,
+        "valor_total": 678.7,
+        "raw_data": [
+          "3",
+          "ASPIRINA PREVENT 100 MG",
+          "1000",
+          "R$ 0,6787",
+          "R$ 678,70",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "4",
+        "descricao": "BISOPROLOL 2,5mg COMPRIMIDO REVESTIDO - VIA DE ADMINISTRAÇÃO: ORAL; PRAZO DE VALIDADE: MÍNIMO 12 MESES.",
+        "quantidade": 500,
+        "valor_unitario": 0.8002,
+        "valor_total": 400.1,
+        "raw_data": [
+          "4",
+          "BISOPROLOL 2,5mg COMPRIMIDO REVESTIDO - VIA DE ADMINISTRAÇÃO: ORAL; PRAZO DE VALIDADE: MÍNIMO 12 MESES.",
+          "500",
+          "R$ 0,8002",
+          "R$ 400,10",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "5",
+        "descricao": "BUPRENORFINA 10mg ADESIVO TRANSDÉRMICO - ÁREA CONTENDO SUBSTÂNCIA ATIVA É DE 12,5cm² - LIBERA 10mcg/h - PRAZO DE VALIDADE: MÍNIMO 12 MESES.",
+        "quantidade": 120,
+        "valor_unitario": 64.36,
+        "valor_total": 7723.2,
+        "raw_data": [
+          "5",
+          "BUPRENORFINA 10mg ADESIVO TRANSDÉRMICO - ÁREA CONTENDO SUBSTÂNCIA ATIVA É DE 12,5cm² - LIBERA 10mcg/h - PRAZO DE VALIDADE: MÍNIMO 12 MESES.",
+          "120",
+          "R$ 64,36",
+          "R$ 7.723,20",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 5,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_8_0_tmpebrjSg.pdf",
+        "filepath": "downloads\\edital_8_0_tmpebrjSg.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46578498000175/compras/2025/319/arquivos/1",
+        "description": "Fazer download",
+        "size": 1854303,
+        "downloaded_at": "2025-10-09T11:51:43.837457"
+      },
+      {
+        "filename": "edital_8_1_tmp4PdOOi.pdf",
+        "filepath": "downloads\\edital_8_1_tmp4PdOOi.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46578498000175/compras/2025/319/arquivos/2",
+        "description": "Fazer download",
+        "size": 479225,
+        "downloaded_at": "2025-10-09T11:51:48.997684"
+      }
+    ],
+    "downloads_count": 2,
+    "accessed_contratacao": false,
+    "detail_url": "https://pncp.gov.br/app/editais/46578498000175/2025/319"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20251009-009",
+    "pncp_id": "46482840000139-1-000838/2025",
+    "title": "Aviso de Contratação Direta nº 698/2025",
+    "description": "Aviso de Contratação Direta nº 698/2025\nId contratação PNCP: 46482840000139-1-000838/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 09/10/2025\nÓrgão: MUNICIPIO DE CARAGUATATUBA\nLocal: Caraguatatuba/SP\nObjeto: Aquisição de materiais para manutenção e substituição de portas das unidades escolares e da Secretaria Municipal de Educação.",
+    "organization_name": "MUNICIPIO DE CARAGUATATUBA",
+    "municipality_name": "Caraguatatuba",
+    "state_code": "SP",
+    "modality": "Dispensa",
+    "estimated_value": null,
+    "publication_date": "2025-10-09",
+    "objeto": "Aquisição de materiais para manutenção e substituição de portas das unidades escolares e da Secretaria Municipal de Educação.",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Aviso de Contratação Direta nº 698/2025\nId contratação PNCP: 46482840000139-1-000838/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 09/10/2025\nÓrgão: MUNICIPIO DE CARAGUATATUBA\nLocal: Caraguatatuba/SP\nObjeto: Aquisição de materiais para manutenção e substituição de portas das unidades escolares e da Secretaria Municipal de Educação.",
+    "scraped_at": "2025-10-09T11:53:56.915567",
+    "has_details": true,
+    "has_access_button": true,
+    "edital_href": "/editais/46482840000139/2025/838",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nAviso de Contratação Direta nº 698/2025\nAcessar Contratação\nÚltima atualização 09/10/2025\n\nLocal: Caraguatatuba/SP\n\nÓrgão: MUNICIPIO DE CARAGUATATUBA\n\nUnidade compradora: 13 - SECRETARIA MUNICIPAL DE EDUCAÇÃO\n\nModalidade da contratação: Dispensa\n\nAmparo legal: Lei 14.133/2021, Art. 75, II\n\nTipo: Aviso de Contratação Direta\n\nModo de disputa: Dispensa Com Disputa\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 09/10/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 09/10/2025 00:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 14/10/2025 07:59 (horário de Brasília)\n\nId contratação PNCP: 46482840000139-1-000838/2025\n\nFonte: EMBRAS - EMPRESA BRASILEIRA DE TECNOLOGIA LTDA\n\nObjeto:\n\nAquisição de materiais para manutenção e substituição de portas das unidades escolares e da Secretaria Municipal de Educação.\n\nInformação complementar:\nP.A. 44.542 Disputa 14/10\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 29.369,90\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nBATENTE * Especificação: Batente de porta em madeira maciça (madeira de lei), dimensões de 3,0 cm x 14 cm, acabamento envernizado de alta durabilidade, resistente a uso contínuo, compatível com portas de madeira padrão, atendendo aos requisitos das normas técnicas da ABNT.\n30\nR$ 224,80\nR$ 6.744,00\n2\nDOBRADICA Especificação: Jogo com 3 unidades de dobradiça para porta, fabricadas em aço inoxidável, alta resistência, indicadas para uso intenso, com medidas padrão de 3” x 3” (76mm x 76mm), eixo reforçado, acabamento escovado, compatíveis com portas de madeira ou metálicas, conforme normas técnicas da ABNT, equivalente ao modelo FOE3 S1003FOE-3.\n30\nR$ 16,14\nR$ 484,20\n3\nFECHADURA * Especificação: Fechadura de embutir, modelo padrão, acabamento cromado, indicada para portas externas, com cilindro de alta segurança, trinco reversível,",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 29369.9,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "BATENTE * Especificação: Batente de porta em madeira maciça (madeira de lei), dimensões de 3,0 cm x 14 cm, acabamento envernizado de alta durabilidade, resistente a uso contínuo, compatível com portas de madeira padrão, atendendo aos requisitos das normas técnicas da ABNT.",
+        "quantidade": 30,
+        "valor_unitario": 224.8,
+        "valor_total": 6744.0,
+        "raw_data": [
+          "1",
+          "BATENTE * Especificação: Batente de porta em madeira maciça (madeira de lei), dimensões de 3,0 cm x 14 cm, acabamento envernizado de alta durabilidade, resistente a uso contínuo, compatível com portas de madeira padrão, atendendo aos requisitos das normas técnicas da ABNT.",
+          "30",
+          "R$ 224,80",
+          "R$ 6.744,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "2",
+        "descricao": "DOBRADICA Especificação: Jogo com 3 unidades de dobradiça para porta, fabricadas em aço inoxidável, alta resistência, indicadas para uso intenso, com medidas padrão de 3” x 3” (76mm x 76mm), eixo reforçado, acabamento escovado, compatíveis com portas de madeira ou metálicas, conforme normas técnicas da ABNT, equivalente ao modelo FOE3 S1003FOE-3.",
+        "quantidade": 30,
+        "valor_unitario": 16.14,
+        "valor_total": 484.2,
+        "raw_data": [
+          "2",
+          "DOBRADICA Especificação: Jogo com 3 unidades de dobradiça para porta, fabricadas em aço inoxidável, alta resistência, indicadas para uso intenso, com medidas padrão de 3” x 3” (76mm x 76mm), eixo reforçado, acabamento escovado, compatíveis com portas de madeira ou metálicas, conforme normas técnicas da ABNT, equivalente ao modelo FOE3 S1003FOE-3.",
+          "30",
+          "R$ 16,14",
+          "R$ 484,20",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "3",
+        "descricao": "FECHADURA * Especificação: Fechadura de embutir, modelo padrão, acabamento cromado, indicada para portas externas, com cilindro de alta segurança, trinco reversível, compatível com portas de 35mm a 45mm de espessura, equivalente ao modelo Silv.Italy ZR CRO 1300 EX",
+        "quantidade": 30,
+        "valor_unitario": 72.13,
+        "valor_total": 2163.9,
+        "raw_data": [
+          "3",
+          "FECHADURA * Especificação: Fechadura de embutir, modelo padrão, acabamento cromado, indicada para portas externas, com cilindro de alta segurança, trinco reversível, compatível com portas de 35mm a 45mm de espessura, equivalente ao modelo Silv.Italy ZR CRO 1300 EX",
+          "30",
+          "R$ 72,13",
+          "R$ 2.163,90",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "4",
+        "descricao": "FECHADURA * Especificação: Fechadura de embutir para porta interna, modelo padrão, acabamento cromado, com cilindro de alta segurança, trinco reversível, compatível com portas de madeira com espessura entre 35 mm e 45 mm, atendendo aos requisitos das normas técnicas da ABNT, equivalente ao modelo Silv. Italy ZR CRO 1310 IN.",
+        "quantidade": 30,
+        "valor_unitario": 49.44,
+        "valor_total": 1483.2,
+        "raw_data": [
+          "4",
+          "FECHADURA * Especificação: Fechadura de embutir para porta interna, modelo padrão, acabamento cromado, com cilindro de alta segurança, trinco reversível, compatível com portas de madeira com espessura entre 35 mm e 45 mm, atendendo aos requisitos das normas técnicas da ABNT, equivalente ao modelo Silv. Italy ZR CRO 1310 IN.",
+          "30",
+          "R$ 49,44",
+          "R$ 1.483,20",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "5",
+        "descricao": "PORTA Especificação: Porta de madeira lisa, fabricada em madeira maciça (madeira de lei), com largura de 72 cm, altura padrão de 2,10 m e espessura de 35 mm, acabamento envernizado de alta durabilidade, pronta para instalação, atendendo aos requisitos das normas técnicas da ABNT.",
+        "quantidade": 10,
+        "valor_unitario": 432.23,
+        "valor_total": 4322.3,
+        "raw_data": [
+          "5",
+          "PORTA Especificação: Porta de madeira lisa, fabricada em madeira maciça (madeira de lei), com largura de 72 cm, altura padrão de 2,10 m e espessura de 35 mm, acabamento envernizado de alta durabilidade, pronta para instalação, atendendo aos requisitos das normas técnicas da ABNT.",
+          "10",
+          "R$ 432,23",
+          "R$ 4.322,30",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 5,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_9_0_Aviso+de+contratacao+direta.pdf",
+        "filepath": "downloads\\edital_9_0_Aviso+de+contratacao+direta.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46482840000139/compras/2025/838/arquivos/1",
+        "description": "Fazer download",
+        "size": 1519007,
+        "downloaded_at": "2025-10-09T11:54:32.607747"
+      }
+    ],
+    "downloads_count": 1,
+    "accessed_contratacao": true,
+    "access_button_selector": "button:has-text('Acessar contratação')",
+    "detail_url": "https://pncp.gov.br/app/editais/46482840000139/2025/838"
+  }
+]

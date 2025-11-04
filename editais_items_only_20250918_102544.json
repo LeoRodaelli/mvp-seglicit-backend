@@ -1,0 +1,419 @@
+[
+  {
+    "id": "PNCP-ITEMS-ONLY-20250918-000",
+    "pncp_id": "46316600000164-1-000355/2025",
+    "title": "Aviso de Contratação Direta nº 00053/2025",
+    "description": "Aviso de Contratação Direta nº 00053/2025\nId contratação PNCP: 46316600000164-1-000355/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 18/09/2025\nÓrgão: MUNICIPIO DE ITAQUAQUECETUBA\nLocal: Itaquaquecetuba/SP\nObjeto: AQUISICO DE FERRAMENTAS DE INFORMATICA",
+    "organization_name": "MUNICIPIO DE ITAQUAQUECETUBA",
+    "municipality_name": "Itaquaquecetuba",
+    "state_code": "SP",
+    "modality": "Dispensa",
+    "estimated_value": null,
+    "publication_date": "2025-09-18",
+    "objeto": "AQUISICO DE FERRAMENTAS DE INFORMATICA",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Aviso de Contratação Direta nº 00053/2025\nId contratação PNCP: 46316600000164-1-000355/2025\nModalidade da Contratação: Dispensa\nÚltima Atualização: 18/09/2025\nÓrgão: MUNICIPIO DE ITAQUAQUECETUBA\nLocal: Itaquaquecetuba/SP\nObjeto: AQUISICO DE FERRAMENTAS DE INFORMATICA",
+    "scraped_at": "2025-09-18T10:13:59.348578",
+    "has_details": true,
+    "has_access_button": false,
+    "edital_href": "/editais/46316600000164/2025/355",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nAviso de Contratação Direta nº 00053/2025\nÚltima atualização 18/09/2025\n\nLocal: Itaquaquecetuba/SP\n\nÓrgão: MUNICIPIO DE ITAQUAQUECETUBA\n\nUnidade compradora: 1 - Prefeitura Municipal de Itaquaquecetuba\n\nModalidade da contratação: Dispensa\n\nAmparo legal: Lei 14.133/2021, Art. 75, II\n\nTipo: Aviso de Contratação Direta\n\nModo de disputa: Dispensa Com Disputa\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 18/09/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 18/09/2025 08:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 23/09/2025 17:00 (horário de Brasília)\n\nId contratação PNCP: 46316600000164-1-000355/2025\n\nFonte: CONAM Consultoria em Administração Municipal\n\nObjeto:\n\nAQUISICO DE FERRAMENTAS DE INFORMATICA\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 2.929,76\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nALICATE DE CRIMPAGEM PARA CONECTORES RJ45 ALICATE DE CRIMPAGEM PARA CONECTORES RJ45.\n3\nR$ 51,43\nR$ 154,29\n2\nFERRO DE SOLDA 30 WATTS/110VOLTS FERRO DE SOLDA 30 WATTS/110VOLTS\n2\nR$ 41,98\nR$ 83,96\n3\nROLO DE SOLDA FIO 60 X 40 ROLO DE SOLDA FIO 60 X 40 DE APROXIMADAMENTE1 MM, 250 GRAMAS DE ESTANHO.\n1\nR$ 104,36\nR$ 104,36\n4\nMULTIMETRO DIGITAL COM SENSOR DE TEMPERATURA MULTIMETRO DIGITAL COM SENSOR DE TEMPERATURA, COMMEDICAO DE TENSAO AC/DC, OHMS, AMPERES.\n1\nR$ 76,13\nR$ 76,13\n5\nKIT LOCALIZADOR DE LINHA E CABOS DE REDE KIT LOCALIZADOR, RASTREADOR, TESTADOR DE LINHA ECABOS DE REDES RJ45 E RJ11.\n3\nR$ 99,24\nR$ 297,72\nExibir:\n5\n1-5 de 17 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um ",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 2929.76,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "ALICATE DE CRIMPAGEM PARA CONECTORES RJ45 ALICATE DE CRIMPAGEM PARA CONECTORES RJ45.",
+        "quantidade": 3,
+        "valor_unitario": 51.43,
+        "valor_total": 154.29,
+        "raw_data": [
+          "1",
+          "ALICATE DE CRIMPAGEM PARA CONECTORES RJ45 ALICATE DE CRIMPAGEM PARA CONECTORES RJ45.",
+          "3",
+          "R$ 51,43",
+          "R$ 154,29",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "2",
+        "descricao": "FERRO DE SOLDA 30 WATTS/110VOLTS FERRO DE SOLDA 30 WATTS/110VOLTS",
+        "quantidade": 2,
+        "valor_unitario": 41.98,
+        "valor_total": 83.96,
+        "raw_data": [
+          "2",
+          "FERRO DE SOLDA 30 WATTS/110VOLTS FERRO DE SOLDA 30 WATTS/110VOLTS",
+          "2",
+          "R$ 41,98",
+          "R$ 83,96",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "3",
+        "descricao": "ROLO DE SOLDA FIO 60 X 40 ROLO DE SOLDA FIO 60 X 40 DE APROXIMADAMENTE1 MM, 250 GRAMAS DE ESTANHO.",
+        "quantidade": 1,
+        "valor_unitario": 104.36,
+        "valor_total": 104.36,
+        "raw_data": [
+          "3",
+          "ROLO DE SOLDA FIO 60 X 40 ROLO DE SOLDA FIO 60 X 40 DE APROXIMADAMENTE1 MM, 250 GRAMAS DE ESTANHO.",
+          "1",
+          "R$ 104,36",
+          "R$ 104,36",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "4",
+        "descricao": "MULTIMETRO DIGITAL COM SENSOR DE TEMPERATURA MULTIMETRO DIGITAL COM SENSOR DE TEMPERATURA, COMMEDICAO DE TENSAO AC/DC, OHMS, AMPERES.",
+        "quantidade": 1,
+        "valor_unitario": 76.13,
+        "valor_total": 76.13,
+        "raw_data": [
+          "4",
+          "MULTIMETRO DIGITAL COM SENSOR DE TEMPERATURA MULTIMETRO DIGITAL COM SENSOR DE TEMPERATURA, COMMEDICAO DE TENSAO AC/DC, OHMS, AMPERES.",
+          "1",
+          "R$ 76,13",
+          "R$ 76,13",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "5",
+        "descricao": "KIT LOCALIZADOR DE LINHA E CABOS DE REDE KIT LOCALIZADOR, RASTREADOR, TESTADOR DE LINHA ECABOS DE REDES RJ45 E RJ11.",
+        "quantidade": 3,
+        "valor_unitario": 99.24,
+        "valor_total": 297.72,
+        "raw_data": [
+          "5",
+          "KIT LOCALIZADOR DE LINHA E CABOS DE REDE KIT LOCALIZADOR, RASTREADOR, TESTADOR DE LINHA ECABOS DE REDES RJ45 E RJ11.",
+          "3",
+          "R$ 99,24",
+          "R$ 297,72",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 5,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_0_0_dispensa_53-2025_aviso.pdf",
+        "filepath": "downloads\\edital_0_0_dispensa_53-2025_aviso.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46316600000164/compras/2025/355/arquivos/1",
+        "description": "Fazer download",
+        "size": 115622,
+        "downloaded_at": "2025-09-18T10:14:35.264931"
+      },
+      {
+        "filename": "edital_0_1_dispensa_53-2025_e.t.p.pdf",
+        "filepath": "downloads\\edital_0_1_dispensa_53-2025_e.t.p.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46316600000164/compras/2025/355/arquivos/2",
+        "description": "Fazer download",
+        "size": 4433034,
+        "downloaded_at": "2025-09-18T10:14:40.897100"
+      },
+      {
+        "filename": "edital_0_2_dispensa_53-2025_termo_referencia.pdf",
+        "filepath": "downloads\\edital_0_2_dispensa_53-2025_termo_referencia.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46316600000164/compras/2025/355/arquivos/3",
+        "description": "Fazer download",
+        "size": 7987469,
+        "downloaded_at": "2025-09-18T10:14:46.495370"
+      },
+      {
+        "filename": "edital_0_3_dispensa_53-2025_modelo_proposta.pdf",
+        "filepath": "downloads\\edital_0_3_dispensa_53-2025_modelo_proposta.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46316600000164/compras/2025/355/arquivos/4",
+        "description": "Fazer download",
+        "size": 352630,
+        "downloaded_at": "2025-09-18T10:14:51.637133"
+      }
+    ],
+    "downloads_count": 4,
+    "accessed_contratacao": false,
+    "detail_url": "https://pncp.gov.br/app/editais/46316600000164/2025/355"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250918-001",
+    "pncp_id": "46410866000171-1-001018/2025",
+    "title": "Edital nº 321/2025",
+    "description": "Edital nº 321/2025\nId contratação PNCP: 46410866000171-1-001018/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 18/09/2025\nÓrgão: MUNICIPIO DE JAGUARIUNA\nLocal: Jaguariúna/SP\nObjeto: Aquisição de 3 veículos automotivos tipo SUV caracterizados como viatura para uso da Guarda Municipal do Município de Jaguariúna – Transferência Especial – Investimento, Emenda nº 202443490014 – Delegado Palumbo",
+    "organization_name": "MUNICIPIO DE JAGUARIUNA",
+    "municipality_name": "Jaguariúna",
+    "state_code": "SP",
+    "modality": "Pregão - Eletrônico",
+    "estimated_value": null,
+    "publication_date": "2025-09-18",
+    "objeto": "Aquisição de 3 veículos automotivos tipo SUV caracterizados como viatura para uso da Guarda Municipal do Município de Jaguariúna – Transferência Especial – Investimento, Emenda nº 202443490014 – Delegado Palumbo",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Edital nº 321/2025\nId contratação PNCP: 46410866000171-1-001018/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 18/09/2025\nÓrgão: MUNICIPIO DE JAGUARIUNA\nLocal: Jaguariúna/SP\nObjeto: Aquisição de 3 veículos automotivos tipo SUV caracterizados como viatura para uso da Guarda Municipal do Município de Jaguariúna – Transferência Especial – Investimento, Emenda nº 202443490014 – Delegado Palumbo",
+    "scraped_at": "2025-09-18T10:15:59.694498",
+    "has_details": true,
+    "has_access_button": false,
+    "edital_href": "/editais/46410866000171/2025/1018",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nEdital nº 321/2025\nÚltima atualização 18/09/2025\n\nLocal: Jaguariúna/SP\n\nÓrgão: MUNICIPIO DE JAGUARIUNA\n\nUnidade compradora: 0216 - SECRETARIA MUNICIPAL DE SEGURANÇA PÚBLICA\n\nModalidade da contratação: Pregão - Eletrônico\n\nAmparo legal: Lei 14.133/2021, Art. 28, I\n\nTipo: Edital\n\nModo de disputa: Aberto-Fechado\n\nRegistro de preço: Não\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 19/08/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 18/09/2025 09:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 02/10/2025 09:00 (horário de Brasília)\n\nId contratação PNCP: 46410866000171-1-001018/2025\n\nFonte: SONNER SISTEMAS DE INFORMATICA LTDA\n\nObjeto:\n\nAquisição de 3 veículos automotivos tipo SUV caracterizados como viatura para uso da Guarda Municipal do Município de Jaguariúna – Transferência Especial – Investimento, Emenda nº 202443490014 – Delegado Palumbo\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 864.072,21\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nVEÍCULOS EM GERAL (P) VEÍCULO ZERO KM, TIPO SUV; Grande Porte; Combustível Diesel; 4X4.\n1\nR$ 416.382,17\nR$ 416.382,17\n2\nVEÍCULOS EM GERAL (P) VEÍCULO ZERO KM, TIPO SUV; Médio Porte; Combustível Flex (álcool e gasolina); 4X2\n2\nR$ 223.845,02\nR$ 447.690,04\nExibir:\n5\n1-2 de 2 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de agosto de 2021.\n\nO desenvolvimento dessa versão do Portal é um esforço conjunto de construção de uma concepção direta legal, homologado pelos indicados",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 864072.21,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "VEÍCULOS EM GERAL (P) VEÍCULO ZERO KM, TIPO SUV; Grande Porte; Combustível Diesel; 4X4.",
+        "quantidade": 1,
+        "valor_unitario": 416382.17,
+        "valor_total": 416382.17,
+        "raw_data": [
+          "1",
+          "VEÍCULOS EM GERAL (P) VEÍCULO ZERO KM, TIPO SUV; Grande Porte; Combustível Diesel; 4X4.",
+          "1",
+          "R$ 416.382,17",
+          "R$ 416.382,17",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "2",
+        "descricao": "VEÍCULOS EM GERAL (P) VEÍCULO ZERO KM, TIPO SUV; Médio Porte; Combustível Flex (álcool e gasolina); 4X2",
+        "quantidade": 2,
+        "valor_unitario": 223845.02,
+        "valor_total": 447690.04,
+        "raw_data": [
+          "2",
+          "VEÍCULOS EM GERAL (P) VEÍCULO ZERO KM, TIPO SUV; Médio Porte; Combustível Flex (álcool e gasolina); 4X2",
+          "2",
+          "R$ 223.845,02",
+          "R$ 447.690,04",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 2,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_1_0_Edital+-Pregao+90063-2025+-+Aquisicao+de+viaturas.pdf",
+        "filepath": "downloads\\edital_1_0_Edital+-Pregao+90063-2025+-+Aquisicao+de+viaturas.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46410866000171/compras/2025/1018/arquivos/1",
+        "description": "Fazer download",
+        "size": 1073382,
+        "downloaded_at": "2025-09-18T10:16:35.118640"
+      },
+      {
+        "filename": "edital_1_1_ETP+92-2025.pdf",
+        "filepath": "downloads\\edital_1_1_ETP+92-2025.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46410866000171/compras/2025/1018/arquivos/2",
+        "description": "Fazer download",
+        "size": 157032,
+        "downloaded_at": "2025-09-18T10:16:40.325616"
+      },
+      {
+        "filename": "edital_1_2_TR+88-2025+-+Atual.pdf",
+        "filepath": "downloads\\edital_1_2_TR+88-2025+-+Atual.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46410866000171/compras/2025/1018/arquivos/3",
+        "description": "Fazer download",
+        "size": 150593,
+        "downloaded_at": "2025-09-18T10:16:45.481576"
+      },
+      {
+        "filename": "edital_1_3_Anexo+I+-+Layout+das+viaturas.pdf",
+        "filepath": "downloads\\edital_1_3_Anexo+I+-+Layout+das+viaturas.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46410866000171/compras/2025/1018/arquivos/4",
+        "description": "Fazer download",
+        "size": 269889,
+        "downloaded_at": "2025-09-18T10:16:50.612896"
+      }
+    ],
+    "downloads_count": 4,
+    "accessed_contratacao": false,
+    "detail_url": "https://pncp.gov.br/app/editais/46410866000171/2025/1018"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250918-002",
+    "pncp_id": "44498467000189-1-000587/2025",
+    "title": "Edital nº 33/2025",
+    "description": "Edital nº 33/2025\nId contratação PNCP: 44498467000189-1-000587/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 18/09/2025\nÓrgão: MUNICIPIO DE IGARACU DO TIETE\nLocal: Igaraçu do Tietê/SP\nObjeto: Registro de preços para a eventual aquisição de Concreto Betuminoso Usinado a Quente (CBUQ), incluindo emulsão asfáltica betuminosa RR2C necessária à aplicação do CBUQ, a serem retirados parceladamente na usina pela Prefeitura de Igaraçu do Tietê.",
+    "organization_name": "MUNICIPIO DE IGARACU DO TIETE",
+    "municipality_name": "Igaraçu do Tietê",
+    "state_code": "SP",
+    "modality": "Pregão - Eletrônico",
+    "estimated_value": null,
+    "publication_date": "2025-09-18",
+    "objeto": "Registro de preços para a eventual aquisição de Concreto Betuminoso Usinado a Quente (CBUQ), incluindo emulsão asfáltica betuminosa RR2C necessária à aplicação do CBUQ, a serem retirados parceladamente na usina pela Prefeitura de Igaraçu do Tietê.",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Edital nº 33/2025\nId contratação PNCP: 44498467000189-1-000587/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 18/09/2025\nÓrgão: MUNICIPIO DE IGARACU DO TIETE\nLocal: Igaraçu do Tietê/SP\nObjeto: Registro de preços para a eventual aquisição de Concreto Betuminoso Usinado a Quente (CBUQ), incluindo emulsão asfáltica betuminosa RR2C necessária à aplicação do CBUQ, a serem retirados parceladamente na usina pela Prefeitura de Igaraçu do Tietê.",
+    "scraped_at": "2025-09-18T10:17:58.855001",
+    "has_details": true,
+    "has_access_button": true,
+    "edital_href": "/editais/44498467000189/2025/587",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nEdital nº 33/2025\nAcessar Contratação\nÚltima atualização 18/09/2025\n\nLocal: Igaraçu do Tietê/SP\n\nÓrgão: MUNICIPIO DE IGARACU DO TIETE\n\nUnidade compradora: 1 - PREFEITURA MUNICIPAL DE IGARAÇU DO TIETÊ\n\nModalidade da contratação: Pregão - Eletrônico\n\nAmparo legal: Lei 14.133/2021, Art. 28, I\n\nTipo: Edital\n\nModo de disputa: Aberto\n\nRegistro de preço: Sim\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 18/09/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 19/09/2025 08:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 01/10/2025 23:59 (horário de Brasília)\n\nId contratação PNCP: 44498467000189-1-000587/2025\n\nFonte: BLL Compras\n\nObjeto:\n\nRegistro de preços para a eventual aquisição de Concreto Betuminoso Usinado a Quente (CBUQ), incluindo emulsão asfáltica betuminosa RR2C necessária à aplicação do CBUQ, a serem retirados parceladamente na usina pela Prefeitura de Igaraçu do Tietê.\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 395.666,65\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nCONCRETO BETUMINOSO USINADO A QUENTE (CBUQ)\n500\nR$ 791,3333\nR$ 395.666,65\nExibir:\n5\n1-1 de 1 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de agosto de 2021.\n\nO desenvolvimento dessa versão do Portal é um esforço conjunto de construção de uma concepção direta legal, homologado pelos indicados a compor o aludido comitê.\n\nA adequação, fidedignidade e corretude das informações e dos arquivos relativos às contratações disponibilizadas no PNCP",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 395666.65,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "CONCRETO BETUMINOSO USINADO A QUENTE (CBUQ)",
+        "quantidade": 500,
+        "valor_unitario": 791.3333,
+        "valor_total": 395666.65,
+        "raw_data": [
+          "1",
+          "CONCRETO BETUMINOSO USINADO A QUENTE (CBUQ)",
+          "500",
+          "R$ 791,3333",
+          "R$ 395.666,65",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 1,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_2_0_PREGO_ELETRNICO_332025__EDITAL.pdf",
+        "filepath": "downloads\\edital_2_0_PREGO_ELETRNICO_332025__EDITAL.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/44498467000189/compras/2025/587/arquivos/1",
+        "description": "Fazer download",
+        "size": 303621,
+        "downloaded_at": "2025-09-18T10:18:34.569742"
+      },
+      {
+        "filename": "edital_2_1_DFD_ETP_TR.pdf",
+        "filepath": "downloads\\edital_2_1_DFD_ETP_TR.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/44498467000189/compras/2025/587/arquivos/2",
+        "description": "Fazer download",
+        "size": 4152082,
+        "downloaded_at": "2025-09-18T10:18:39.977652"
+      },
+      {
+        "filename": "edital_2_2_PREGO_ELETRNICO_332025__ANEXO_I_TERMO_DE_REFERNCIA.pdf",
+        "filepath": "downloads\\edital_2_2_PREGO_ELETRNICO_332025__ANEXO_I_TERMO_DE_REFERNCIA.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/44498467000189/compras/2025/587/arquivos/3",
+        "description": "Fazer download",
+        "size": 105574,
+        "downloaded_at": "2025-09-18T10:18:45.141132"
+      },
+      {
+        "filename": "edital_2_3_PREGO_ELETRNICO_332025__ANEXO_II_PROPOSTA_DE_PREOS.pdf",
+        "filepath": "downloads\\edital_2_3_PREGO_ELETRNICO_332025__ANEXO_II_PROPOSTA_DE_PREOS.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/44498467000189/compras/2025/587/arquivos/4",
+        "description": "Fazer download",
+        "size": 13153,
+        "downloaded_at": "2025-09-18T10:18:50.298178"
+      },
+      {
+        "filename": "edital_2_4_PREGO_ELETRNICO_332025__ANEXO_III_MINUTA_ATA.pdf",
+        "filepath": "downloads\\edital_2_4_PREGO_ELETRNICO_332025__ANEXO_III_MINUTA_ATA.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/44498467000189/compras/2025/587/arquivos/5",
+        "description": "Fazer download",
+        "size": 43807,
+        "downloaded_at": "2025-09-18T10:18:55.467876"
+      }
+    ],
+    "downloads_count": 5,
+    "accessed_contratacao": true,
+    "access_button_selector": "button:has-text('Acessar contratação')",
+    "detail_url": "https://pncp.gov.br/app/editais/44498467000189/2025/587"
+  },
+  {
+    "id": "PNCP-ITEMS-ONLY-20250918-003",
+    "pncp_id": "46578498000175-1-000294/2025",
+    "title": "Edital nº 130/2025/2025",
+    "description": "Edital nº 130/2025/2025\nId contratação PNCP: 46578498000175-1-000294/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 18/09/2025\nÓrgão: MUNICIPIO DE ITANHAEM\nLocal: Itanhaém/SP\nObjeto: Abertura de Processo Licitatório com Registro de Preço para possível aquisição de Insumos a fim de atender o C.I.N.I. - Centro de Infectologia de Itanhaém (CINI) pelo período de 12 meses",
+    "organization_name": "MUNICIPIO DE ITANHAEM",
+    "municipality_name": "Itanhaém",
+    "state_code": "SP",
+    "modality": "Pregão - Eletrônico",
+    "estimated_value": null,
+    "publication_date": "2025-09-18",
+    "objeto": "Abertura de Processo Licitatório com Registro de Preço para possível aquisição de Insumos a fim de atender o C.I.N.I. - Centro de Infectologia de Itanhaém (CINI) pelo período de 12 meses",
+    "status": "Publicado",
+    "source_url": "https://pncp.gov.br/app/editais?pagina=1&ufs=SP&q=&status=recebendo_proposta",
+    "data_source": "PNCP_SCRAPING_ITEMS_ONLY",
+    "raw_text": "Edital nº 130/2025/2025\nId contratação PNCP: 46578498000175-1-000294/2025\nModalidade da Contratação: Pregão - Eletrônico\nÚltima Atualização: 18/09/2025\nÓrgão: MUNICIPIO DE ITANHAEM\nLocal: Itanhaém/SP\nObjeto: Abertura de Processo Licitatório com Registro de Preço para possível aquisição de Insumos a fim de atender o C.I.N.I. - Centro de Infectologia de Itanhaém (CINI) pelo período de 12 meses",
+    "scraped_at": "2025-09-18T10:19:49.158630",
+    "has_details": true,
+    "has_access_button": false,
+    "edital_href": "/editais/46578498000175/2025/294",
+    "detailed_description": "Portal Nacional de Contratações Públicas\nEntrar\n Editais\n\n\nEdital nº 130/2025/2025\nÚltima atualização 18/09/2025\n\nLocal: Itanhaém/SP\n\nÓrgão: MUNICIPIO DE ITANHAEM\n\nUnidade compradora: 12442 - Itanhaém\n\nModalidade da contratação: Pregão - Eletrônico\n\nAmparo legal: Lei 14.133/2021, Art. 28, I\n\nTipo: Edital\n\nModo de disputa: Aberto\n\nRegistro de preço: Sim\n\nFonte orçamentária: Não informada\n\nData de divulgação no PNCP: 18/09/2025\n\nSituação: Divulgada no PNCP\n\nData de início de recebimento de propostas: 19/09/2025 10:00 (horário de Brasília)\n\nData fim de recebimento de propostas: 03/10/2025 08:30 (horário de Brasília)\n\nId contratação PNCP: 46578498000175-1-000294/2025\n\nFonte: Novo BBMNET Licitações\n\nObjeto:\n\nAbertura de Processo Licitatório com Registro de Preço para possível aquisição de Insumos a fim de atender o C.I.N.I. - Centro de Infectologia de Itanhaém (CINI) pelo período de 12 meses\n\nVALOR TOTAL ESTIMADO DA COMPRA\nR$ 47.643,02\nItens\nArquivos\nHistórico\nNúmero\nDescrição\nQuantidade\nValor unitário estimado\nValor total estimado\nDetalhar\n1\nFÓRMULA LÁCTEA INFANTIL 400g\n600\nR$ 34,8217\nR$ 20.893,02\n2\nGEL LUBRIFICANTE ÍNTIMO SACHÊ 5g\n50000\nR$ 0,535\nR$ 26.750,00\nExibir:\n5\n1-2 de 2 itens\nPágina:\n1\nVoltar\n\nCriado pela Lei nº 14.133/21, o Portal Nacional de Contratações Públicas (PNCP) é o sítio eletrônico oficial destinado à divulgação centralizada e obrigatória dos atos exigidos em sede de licitações e contratos administrativos abarcados pelo novel diploma.\n\nÉ gerido pelo Comitê Gestor da Rede Nacional de Contratações Públicas, um colegiado deliberativo com suas atribuições estabelecidas no Decreto nº 10.764, de 9 de agosto de 2021.\n\nO desenvolvimento dessa versão do Portal é um esforço conjunto de construção de uma concepção direta legal, homologado pelos indicados a compor o aludido comitê.\n\nA adequação, fidedignidade e corretude das informações e dos arquivos relativos às contratações disponibilizadas no PNCP por força da Lei nº 14.133/2021 são de estrita responsabilidad",
+    "objeto_detalhado": null,
+    "valor_estimado_detalhado": null,
+    "valor_total_estimado": 47643.02,
+    "prazo": null,
+    "items_tab_found": true,
+    "items": [
+      {
+        "numero": "1",
+        "descricao": "FÓRMULA LÁCTEA INFANTIL 400g",
+        "quantidade": 600,
+        "valor_unitario": 34.8217,
+        "valor_total": 20893.02,
+        "raw_data": [
+          "1",
+          "FÓRMULA LÁCTEA INFANTIL 400g",
+          "600",
+          "R$ 34,8217",
+          "R$ 20.893,02",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      },
+      {
+        "numero": "2",
+        "descricao": "GEL LUBRIFICANTE ÍNTIMO SACHÊ 5g",
+        "quantidade": 50000,
+        "valor_unitario": 0.535,
+        "valor_total": 26750.0,
+        "raw_data": [
+          "2",
+          "GEL LUBRIFICANTE ÍNTIMO SACHÊ 5g",
+          "50000",
+          "R$ 0,535",
+          "R$ 26.750,00",
+          ""
+        ],
+        "extraction_method": "angular_items_tab_only"
+      }
+    ],
+    "items_count": 2,
+    "files_tab_found": true,
+    "downloaded_files": [
+      {
+        "filename": "edital_3_0_tmpiuCl3g.pdf",
+        "filepath": "downloads\\edital_3_0_tmpiuCl3g.pdf",
+        "url": "https://pncp.gov.br/pncp-api/v1/orgaos/46578498000175/compras/2025/294/arquivos/1",
+        "description": "Fazer download",
+        "size": 5904597,
+        "downloaded_at": "2025-09-18T10:20:24.737034"
+      }
+    ],
+    "downloads_count": 1,
+    "accessed_contratacao": false,
+    "detail_url": "https://pncp.gov.br/app/editais/46578498000175/2025/294"
+  }
+]
