@@ -14,6 +14,7 @@ from flask_cors import CORS
 from src.models.user import db
 from src.models.tender import Tender, City
 from src.routes.user import user_bp
+from src.routes.mercadopago import mercadopago_bp
 from src.routes.tender import tender_bp
 import os
 from dotenv import load_dotenv
@@ -35,6 +36,7 @@ CORS(app)
 # Register blueprints
 app.register_blueprint(user_bp, url_prefix='/api')
 app.register_blueprint(tender_bp, url_prefix='/api')
+app.register_blueprint(mercadopago_bp, url_prefix='/api')
 
 load_dotenv()
 

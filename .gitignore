@@ -1,0 +1,103 @@
+# ======================
+# Python / Flask Backend
+# ======================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+.env/
+env/
+.venv/
+
+# Flask instance folder
+instance/
+*.sqlite3
+
+# Configuration files
+*.env
+*.ini
+*.cfg
+*.toml
+*.json
+
+# Logs
+*.log
+logs/
+*.pid
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.pytest_cache/
+
+# Distribution / packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# IDEs / editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Mac / Windows / Linux system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# MyPy / Pyre / Ruff / Lint
+.mypy_cache/
+.pyre/
+.ruff_cache/
+.dmypy.json
+
+# Local scripts or temp data
+tmp/
+temp/
+*.bak
+*.swp
+
+# Docker / Compose
+*.pid
+*.seed
+*.backup
+docker-compose.override.yml
+
+# Jupyter / Notebooks
+.ipynb_checkpoints
+
+# VSCode environment definitions
+.vscode/
+.history/
+
+# Coverage and profiling
+prof/
+*.prof
