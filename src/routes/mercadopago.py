@@ -374,7 +374,7 @@ def webhook():
                                     # Criar usuário
                                     cursor.execute("""
                                         INSERT INTO users (
-                                            email, full_name, cpf, phone, 
+                                            email, full_name, cnpj_cpf, phone, 
                                             created_at, updated_at
                                         ) VALUES (%s, %s, %s, %s, NOW(), NOW())
                                         RETURNING id
