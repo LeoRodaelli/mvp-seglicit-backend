@@ -18,6 +18,7 @@ instance/
 *.sqlite3
 
 # Configuration files
+.env
 *.env
 *.ini
 *.cfg
