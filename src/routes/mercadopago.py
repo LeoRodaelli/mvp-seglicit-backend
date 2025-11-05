@@ -353,6 +353,43 @@ def webhook():
                             # LOG 12: User ID encontrado
                             logger.info(f"User ID: {user_id}")
 
+                            # ✨ NOVO: Se usuário não existe, criar automaticamente
+                            if not user_id:
+                                logger.info(f"⚠️ Usuário não encontrado. Criando usuário para: {payment_data[0]}")
+
+                                # Buscar dados do cliente no payment
+                                cursor.execute("""
+                                    SELECT customer_name, customer_cpf, customer_phone
+                                    FROM payments
+                                    WHERE reference_id = %s
+                                """, (reference_id,))
+
+                                customer_data = cursor.fetchone()
+
+                                if customer_data:
+                                    customer_name = customer_data[0]
+                                    customer_cpf = customer_data[1]
+                                    customer_phone = customer_data[2]
+
+                                    # Criar usuário
+                                    cursor.execute("""
+                                        INSERT INTO users (
+                                            email, name, cpf, phone, 
+                                            created_at, updated_at
+                                        ) VALUES (%s, %s, %s, %s, NOW(), NOW())
+                                        RETURNING id
+                                    """, (
+                                        payment_data[0],  # email
+                                        customer_name,
+                                        customer_cpf,
+                                        customer_phone
+                                    ))
+
+                                    user_id = cursor.fetchone()[0]
+                                    logger.info(f"✅ Usuário criado com ID: {user_id}")
+                                else:
+                                    logger.error(f"❌ Não foi possível obter dados do cliente")
+
                             if user_id:
                                 # Criar ou atualizar assinatura
                                 cursor.execute("""
