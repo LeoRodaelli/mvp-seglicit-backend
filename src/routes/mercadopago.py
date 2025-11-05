@@ -204,8 +204,8 @@ def create_preference():
                 extra_areas,
                 extra_areas_price,
                 total,
-                ",".join(selected_states),
-                ",".join(selected_areas)
+                json.dumps(selected_states),
+                json.dumps(selected_areas)
             ))
 
             conn.commit()
@@ -375,10 +375,8 @@ def webhook():
                                     payment_data[1],  # plan_id
                                     payment_data[2],  # plan_name
                                     'active',
-                                    json.dumps(payment_data[3]) if isinstance(payment_data[3], list) else payment_data[
-                                        3],  # selected_states
-                                    json.dumps(payment_data[4]) if isinstance(payment_data[4], list) else payment_data[
-                                        4],  # selected_areas
+                                    json.dumps(payment_data[3]) if isinstance(payment_data[3], list) else payment_data[3],  # selected_states
+                                    json.dumps(payment_data[4]) if isinstance(payment_data[4], list) else payment_data[4],  # selected_areas
                                     reference_id
                                 ))
 
