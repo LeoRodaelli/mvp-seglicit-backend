@@ -353,13 +353,14 @@ def webhook():
                             # LOG 12: User ID encontrado
                             logger.info(f"User ID: {user_id}")
 
-                            # ✨ NOVO: Se usuário não existe, criar automaticamente
+                            # ✨ CORRIGIDO: Se usuário não existe, criar automaticamente
                             if not user_id:
                                 logger.info(f"⚠️ Usuário não encontrado. Criando usuário para: {payment_data[0]}")
 
-                                # Buscar dados do cliente no payment
+                                # ✅ CORREÇÃO 1: Buscar TODOS os dados do cliente (incluindo senha)
                                 cursor.execute("""
-                                    SELECT customer_name, customer_cpf, customer_phone
+                                    SELECT customer_name, customer_cpf, customer_phone,
+                                           customer_empresa, customer_cnpj, customer_senha_hash
                                     FROM payments
                                     WHERE reference_id = %s
                                 """, (reference_id,))
@@ -370,23 +371,62 @@ def webhook():
                                     customer_name = customer_data[0]
                                     customer_cpf = customer_data[1]
                                     customer_phone = customer_data[2]
+                                    customer_empresa = customer_data[3]  # ✅ NOVO
+                                    customer_cnpj = customer_data[4]  # ✅ NOVO
+                                    customer_senha_hash = customer_data[5]  # ✅ NOVO
 
-                                    # Criar usuário
+                                    # ✅ CORREÇÃO 2: Gerar username a partir do email
+                                    email = payment_data[0]
+                                    username = email.split('@')[0]
+
+                                    # Verificar se username já existe
+                                    cursor.execute("SELECT COUNT(*) FROM users WHERE username = %s", (username,))
+                                    count = cursor.fetchone()[0]
+                                    if count > 0:
+                                        username = f"{username}_{count + 1}"
+
+                                    logger.info(f"   Username gerado: {username}")
+
+                                    # ✅ CORREÇÃO 3: Se senha não existe, gerar temporária
+                                    if not customer_senha_hash:
+                                        import secrets
+                                        import bcrypt
+
+                                        temp_password = secrets.token_urlsafe(12)
+                                        customer_senha_hash = bcrypt.hashpw(
+                                            temp_password.encode('utf-8'),
+                                            bcrypt.gensalt()
+                                        ).decode('utf-8')
+                                        logger.warning(f"⚠️ Senha não encontrada. Gerada senha temporária.")
+                                        logger.warning(f"   Usuário deve redefinir senha no primeiro acesso.")
+
+                                    # ✅ CORREÇÃO 4: Criar usuário COM TODOS OS CAMPOS OBRIGATÓRIOS
                                     cursor.execute("""
                                         INSERT INTO users (
-                                            email, full_name, cnpj_cpf, phone, 
+                                            username, email, password_hash, full_name, 
+                                            phone, company_name, cnpj_cpf,
                                             created_at, updated_at
-                                        ) VALUES (%s, %s, %s, %s, NOW(), NOW())
+                                        ) VALUES (%s, %s, %s, %s, %s, %s, %s, NOW(), NOW())
                                         RETURNING id
                                     """, (
-                                        payment_data[0],  # email
+                                        username,  # ✅ NOVO - OBRIGATÓRIO
+                                        email,
+                                        customer_senha_hash,  # ✅ NOVO - OBRIGATÓRIO
                                         customer_name,
-                                        customer_cpf,
-                                        customer_phone
+                                        customer_phone,
+                                        customer_empresa,  # ✅ NOVO
+                                        customer_cpf
                                     ))
 
                                     user_id = cursor.fetchone()[0]
                                     logger.info(f"✅ Usuário criado com ID: {user_id}")
+                                    logger.info(f"   Username: {username}")
+                                    logger.info(f"   Email: {email}")
+                                    logger.info(f"   Nome: {customer_name}")
+                                    if customer_empresa:
+                                        logger.info(f"   Empresa: {customer_empresa}")
+                                    if customer_cnpj:
+                                        logger.info(f"   CNPJ: {customer_cnpj}")
                                 else:
                                     logger.error(f"❌ Não foi possível obter dados do cliente")
 
@@ -412,8 +452,10 @@ def webhook():
                                     payment_data[1],  # plan_id
                                     payment_data[2],  # plan_name
                                     'active',
-                                    json.dumps(payment_data[3]) if isinstance(payment_data[3], list) else payment_data[3],  # selected_states
-                                    json.dumps(payment_data[4]) if isinstance(payment_data[4], list) else payment_data[4],  # selected_areas
+                                    json.dumps(payment_data[3]) if isinstance(payment_data[3], list) else payment_data[
+                                        3],  # selected_states
+                                    json.dumps(payment_data[4]) if isinstance(payment_data[4], list) else payment_data[
+                                        4],  # selected_areas
                                     reference_id
                                 ))
 
