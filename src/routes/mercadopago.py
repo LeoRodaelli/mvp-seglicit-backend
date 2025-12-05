@@ -14,6 +14,7 @@ from datetime import datetime
 from dotenv import load_dotenv
 import psycopg2
 import psycopg2.extras
+import bcrypt
 
 load_dotenv()
 
@@ -174,6 +175,16 @@ def create_preference():
         logger.info(f"✅ Preferência criada: {preference_id}")
         logger.info(f"Init Point: {init_point}")
 
+        senha_hash = None
+        if 'senha' in customer and customer['senha']:
+            senha_hash = bcrypt.hashpw(
+                customer['senha'].encode('utf-8'),
+                bcrypt.gensalt()
+            ).decode('utf-8')
+            logger.info("✅ Senha hasheada com sucesso")
+        else:
+            logger.warning("⚠️ Senha não fornecida no checkout")
+
         # Salvar no banco de dados
         try:
             logger.info("Salvando pagamento no banco de dados...")
@@ -186,7 +197,7 @@ def create_preference():
                     reference_id, preference_id, status,
                     plan_id, plan_name, plan_price,
                     customer_name, customer_email, customer_cpf, customer_phone,
-                    extra_areas, extra_areas_price, total_amount,
+                    customer_senha_hash, extra_areas, extra_areas_price, total_amount,
                     selected_states, selected_areas,
                     created_at
                 ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, NOW())
@@ -201,12 +212,23 @@ def create_preference():
                 customer['email'],
                 customer['cpf'],
                 customer['phone'],
+                senha_hash,
                 extra_areas,
                 extra_areas_price,
                 total,
                 json.dumps(selected_states),
                 json.dumps(selected_areas)
             ))
+
+            logger.info(f"✅ Payment criado:")
+            logger.info(f"   Email: {customer['email']}")
+            logger.info(f"   Nome: {customer['name']}")
+            if customer.get('empresa'):
+                logger.info(f"   Empresa: {customer.get('empresa')}")
+            if customer.get('cnpj'):
+                logger.info(f"   CNPJ: {customer.get('cnpj')}")
+            if senha_hash:
+                logger.info(f"   ✅ Senha salva (hasheada)")
 
             conn.commit()
             cursor.close()
@@ -360,7 +382,7 @@ def webhook():
                                 # ✅ CORREÇÃO 1: Buscar TODOS os dados do cliente (incluindo senha)
                                 cursor.execute("""
                                     SELECT customer_name, customer_cpf, customer_phone,
-                                           customer_empresa, customer_cnpj, customer_senha_hash
+                                           customer_empresa, customer_senha_hash
                                     FROM payments
                                     WHERE reference_id = %s
                                 """, (reference_id,))
@@ -372,7 +394,7 @@ def webhook():
                                     customer_cpf = customer_data[1]
                                     customer_phone = customer_data[2]
                                     customer_empresa = customer_data[3]  # ✅ NOVO
-                                    customer_cnpj = customer_data[4]  # ✅ NOVO
+
                                     customer_senha_hash = customer_data[5]  # ✅ NOVO
 
                                     # ✅ CORREÇÃO 2: Gerar username a partir do email
@@ -425,8 +447,7 @@ def webhook():
                                     logger.info(f"   Nome: {customer_name}")
                                     if customer_empresa:
                                         logger.info(f"   Empresa: {customer_empresa}")
-                                    if customer_cnpj:
-                                        logger.info(f"   CNPJ: {customer_cnpj}")
+
                                 else:
                                     logger.error(f"❌ Não foi possível obter dados do cliente")
 
