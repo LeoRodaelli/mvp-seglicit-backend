@@ -385,7 +385,7 @@ def webhook():
                                 # ✅ CORREÇÃO 1: Buscar TODOS os dados do cliente (incluindo senha)
                                 cursor.execute("""
                                     SELECT customer_name, customer_cpf, customer_phone,
-                                           customer_empresa, customer_senha_hash
+                                           customer_empresa, customer_cnpj, customer_senha_hash
                                     FROM payments
                                     WHERE reference_id = %s
                                 """, (reference_id,))
@@ -397,7 +397,7 @@ def webhook():
                                     customer_cpf = customer_data[1]
                                     customer_phone = customer_data[2]
                                     customer_empresa = customer_data[3]  # ✅ NOVO
-
+                                    customer_cnpj = customer_data[4]  # ✅ NOVO
                                     customer_senha_hash = customer_data[5]  # ✅ NOVO
 
                                     # ✅ CORREÇÃO 2: Gerar username a partir do email
@@ -440,7 +440,7 @@ def webhook():
                                         customer_name,
                                         customer_phone,
                                         customer_empresa,  # ✅ NOVO
-                                        customer_cpf
+                                        customer_cnpj if customer_cnpj else customer_cpf  # ✅ CNPJ ou CPF
                                     ))
 
                                     user_id = cursor.fetchone()[0]
@@ -450,6 +450,8 @@ def webhook():
                                     logger.info(f"   Nome: {customer_name}")
                                     if customer_empresa:
                                         logger.info(f"   Empresa: {customer_empresa}")
+                                    if customer_cnpj:
+                                        logger.info(f"   CNPJ: {customer_cnpj}")
 
                                 else:
                                     logger.error(f"❌ Não foi possível obter dados do cliente")
