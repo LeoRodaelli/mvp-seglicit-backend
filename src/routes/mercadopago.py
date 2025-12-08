@@ -197,10 +197,11 @@ def create_preference():
                     reference_id, preference_id, status,
                     plan_id, plan_name, plan_price,
                     customer_name, customer_email, customer_cpf, customer_phone,
-                    customer_senha_hash, extra_areas, extra_areas_price, total_amount,
+                    customer_empresa, customer_cnpj, customer_senha_hash,
+                    extra_areas, extra_areas_price, total_amount,
                     selected_states, selected_areas,
                     created_at
-                ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, NOW())
+                ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, NOW())
             """, (
                 reference_id,
                 preference_id,
@@ -212,6 +213,8 @@ def create_preference():
                 customer['email'],
                 customer['cpf'],
                 customer['phone'],
+                customer.get('empresa'),
+                customer.get('cnpj'),
                 senha_hash,
                 extra_areas,
                 extra_areas_price,
