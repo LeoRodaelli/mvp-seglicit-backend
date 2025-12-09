@@ -66,12 +66,15 @@ def create_preference():
         customer = data['customer']
         extra_areas = data.get('extra_areas', 0)
         extra_areas_price = data.get('extra_areas_price', 0)
+        extra_states = data.get('extra_states', 0)
+        extra_states_price = data.get('extra_states_price', 0)
         total = data.get('total', plan['price'])
         selected_states = data.get('selected_states', [])
         selected_areas = data.get('selected_areas', [])
 
         logger.info(f"Plano: {plan['name']} (R$ {plan['price']})")
         logger.info(f"Cliente: {customer['name']} ({customer['email']})")
+        logger.info(f"Estados extras: {extra_states} (R$ {extra_states_price})")
         logger.info(f"Áreas extras: {extra_areas} (R$ {extra_areas_price})")
         logger.info(f"Total: R$ {total}")
 
@@ -88,6 +91,15 @@ def create_preference():
                 "currency_id": "BRL"
             }
         ]
+
+        if extra_states > 0 and extra_states_price > 0:
+            items.append({
+                "title": f"Estados Extras ({extra_states}x)",
+                "quantity": 1,
+                "unit_price": float(extra_states_price),
+                "currency_id": "BRL"
+            })
+            logger.info(f"✅ Item de estados extras adicionado: {extra_states}x R$ 7,00 = R$ {extra_states_price}")
 
         # Adicionar áreas extras como item separado
         if extra_areas > 0 and extra_areas_price > 0:
@@ -131,6 +143,7 @@ def create_preference():
             "metadata": {
                 "plan_id": plan['id'],
                 "plan_name": plan['name'],
+                "extra_states": extra_states,
                 "extra_areas": extra_areas,
                 "states": ",".join(selected_states),
                 "areas": ",".join(selected_areas)
@@ -198,10 +211,11 @@ def create_preference():
                     plan_id, plan_name, plan_price,
                     customer_name, customer_email, customer_cpf, customer_phone,
                     customer_empresa, customer_cnpj, customer_senha_hash,
+                    extra_states, extra_states_price,
                     extra_areas, extra_areas_price, total_amount,
                     selected_states, selected_areas,
                     created_at
-                ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, NOW())
+                ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, NOW())
             """, (
                 reference_id,
                 preference_id,
@@ -216,6 +230,8 @@ def create_preference():
                 customer.get('empresa'),
                 customer.get('cnpj'),
                 senha_hash,
+                extra_states,
+                extra_states_price,
                 extra_areas,
                 extra_areas_price,
                 total,
@@ -356,7 +372,9 @@ def webhook():
                         # Buscar dados do pagamento
                         cursor.execute("""
                             SELECT customer_email, plan_id, plan_name, 
-                                   selected_states, selected_areas
+                                   selected_states, selected_areas,
+                                   extra_states, extra_states_price,
+                                    extra_areas, extra_areas_price
                             FROM payments
                             WHERE reference_id = %s
                         """, (reference_id,))
@@ -366,6 +384,9 @@ def webhook():
                         if payment_data:
                             # LOG 11: Dados para criar assinatura
                             logger.info(f"Dados do pagamento: {payment_data}")
+                            logger.info(f"Payment encontrado: {payment_data[0]}")
+                            logger.info(f"Estados extras: {payment_data[5]} (R$ {payment_data[6]})")  # ✅ ADICIONAR
+                            logger.info(f"Áreas extras: {payment_data[7]} (R$ {payment_data[8]})")
 
                             # Buscar user_id pelo email
                             cursor.execute("""
