@@ -2,7 +2,7 @@
 """
 API completa para autenticação de usuários
 """
-
+import bcrypt
 from flask import Blueprint, request, jsonify
 import psycopg2
 import psycopg2.extras
@@ -182,9 +182,10 @@ def register_user():
             'error': 'Erro interno do servidor'
         }), 500
 
+
 @user_bp.route('/login', methods=['POST'])
 def login_user():
-    """Login de usuário com recursos avançados"""
+    """Login de usuário com bcrypt"""
     try:
         data = request.get_json()
 
@@ -212,15 +213,47 @@ def login_user():
 
         if not user:
             logger.warning(f"Tentativa de login com usuário inexistente: {data['username']}")
+            cursor.close()
+            conn.close()
             return jsonify({
                 'success': False,
                 'error': 'Usuário não encontrado'
             }), 401
 
-        # Verificar senha
-        password_hash = hash_password(data['password'])
-        if password_hash != user['password_hash']:
+        # ✅ CORREÇÃO: Verificar senha com bcrypt
+        password_hash_db = user['password_hash']
+        password_input = data['password']
+
+        # Verificar se o hash no banco é bcrypt ou SHA256
+        if password_hash_db.startswith('$2b$') or password_hash_db.startswith('$2a$'):
+            # Hash é bcrypt (correto)
+            password_match = bcrypt.checkpw(
+                password_input.encode('utf-8'),
+                password_hash_db.encode('utf-8')
+            )
+        else:
+            # Hash é SHA256 (antigo) - converter para bcrypt
+            import hashlib
+            sha256_hash = hashlib.sha256(password_input.encode()).hexdigest()
+            password_match = (sha256_hash == password_hash_db)
+
+            # Se senha correta, atualizar para bcrypt
+            if password_match:
+                new_hash = bcrypt.hashpw(
+                    password_input.encode('utf-8'),
+                    bcrypt.gensalt()
+                ).decode('utf-8')
+
+                cursor.execute(
+                    "UPDATE users SET password_hash = %s WHERE id = %s",
+                    (new_hash, user['id'])
+                )
+                logger.info(f"✅ Senha do usuário {user['username']} migrada para bcrypt")
+
+        if not password_match:
             logger.warning(f"Tentativa de login com senha incorreta: {user['username']}")
+            cursor.close()
+            conn.close()
             return jsonify({
                 'success': False,
                 'error': 'Senha incorreta'
