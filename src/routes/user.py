@@ -522,6 +522,42 @@ def get_user_stats():
             'error': 'Erro interno do servidor'
         }), 500
 
+@user_bp.route('/user/subscription', methods=['GET'])
+def get_user_subscription():
+    user_id = request.args.get('user_id', type=int)
+    if not user_id:
+        return jsonify({'success': False, 'error': 'user_id obrigatório'}), 400
+
+    conn = get_db_connection()
+    cursor = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+    cursor.execute("""
+        SELECT id, plan_name, selected_states, selected_areas, status, created_at
+        FROM subscriptions
+        WHERE user_id = %s AND status = 'active'
+        ORDER BY created_at DESC
+        LIMIT 1
+    """, (user_id,))
+    row = cursor.fetchone()
+    cursor.close()
+    conn.close()
+
+    if not row:
+        return jsonify({'success': True, 'subscription': None})
+
+    sub = dict(row)
+    # Parsear JSON strings
+    import json
+    for field in ['selected_states', 'selected_areas']:
+        if isinstance(sub[field], str):
+            try:
+                sub[field] = json.loads(sub[field])
+            except:
+                sub[field] = []
+    if sub['created_at']:
+        sub['created_at'] = sub['created_at'].isoformat()
+
+    return jsonify({'success': True, 'subscription': sub})
+
 @user_bp.route('/test', methods=['GET'])
 def test_user_api():
     """Testa conexão da API de usuários"""
