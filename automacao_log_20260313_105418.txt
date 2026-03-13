@@ -1,0 +1,56 @@
+[2026-03-13 10:54:18] [INFO] 🤖 AUTOMAÇÃO DE LICITAÇÕES - INÍCIO
+[2026-03-13 10:54:18] [INFO] 📅 Data/Hora: 2026-03-13 10:54:18
+[2026-03-13 10:54:18] [INFO] 📂 Diretório: C:\Users\leoro\Desktop\rodaelli\manusAI\mvp-licitacoes-melhorado-backend
+[2026-03-13 10:54:18] [INFO] 🐍 Python: C:\Users\leoro\Desktop\rodaelli\manusAI\mvp-licitacoes-melhorado-backend\.venv\Scripts\python.exe
+[2026-03-13 10:54:18] [INFO] ============================================================
+[2026-03-13 10:54:18] [INFO] FASE 1: Executando Scraper do PNCP
+[2026-03-13 10:54:18] [INFO] ============================================================
+[2026-03-13 10:54:18] [INFO] ✅ Arquivo encontrado: pncp_scraper_items_only.py
+[2026-03-13 10:54:18] [INFO] 📂 Diretório: C:\Users\leoro\Desktop\rodaelli\manusAI\mvp-licitacoes-melhorado-backend
+[2026-03-13 10:54:18] [INFO] 🐍 Python: C:\Users\leoro\Desktop\rodaelli\manusAI\mvp-licitacoes-melhorado-backend\.venv\Scripts\python.exe
+[2026-03-13 10:54:18] [INFO] ⏳ Executando: C:\Users\leoro\Desktop\rodaelli\manusAI\mvp-licitacoes-melhorado-backend\.venv\Scripts\python.exe pncp_scraper_items_only.py
+[2026-03-13 10:54:18] [INFO] (Isso pode levar vários minutos... aguarde!)
+[2026-03-13 11:03:07] [INFO] ✅ Scraper finalizou! Return code: 0
+[2026-03-13 11:03:07] [INFO] ⚠️  Stderr do scraper:
+[2026-03-13 11:03:07] [WARNING]   2026-03-13 11:03:07,378 - INFO -    📋 Total de editais: 10
+[2026-03-13 11:03:07] [WARNING]   2026-03-13 11:03:07,378 - INFO -    📊 Abas 'Itens' encontradas: 10
+[2026-03-13 11:03:07] [WARNING]   2026-03-13 11:03:07,378 - INFO -    📊 Editais com itens extraídos (APENAS aba Itens): 10
+[2026-03-13 11:03:07] [WARNING]   2026-03-13 11:03:07,378 - INFO -    📊 Total de itens extraídos (APENAS aba Itens): 23
+[2026-03-13 11:03:07] [WARNING]   2026-03-13 11:03:07,378 - INFO -    🗂️ Abas 'Arquivos' encontradas: 10
+[2026-03-13 11:03:07] [WARNING]   2026-03-13 11:03:07,378 - INFO -    ⬇️ Total de arquivos baixados: 23
+[2026-03-13 11:03:07] [WARNING]   2026-03-13 11:03:07,378 - INFO - 
+[2026-03-13 11:03:07] [WARNING]   📸 Arquivos de debug gerados:
+[2026-03-13 11:03:07] [WARNING]   2026-03-13 11:03:07,378 - INFO -    🖼️ debug_*.png (screenshots de cada etapa)
+[2026-03-13 11:03:07] [WARNING]   2026-03-13 11:03:07,378 - INFO -    📁 downloads/ (arquivos baixados)
+[2026-03-13 11:03:07] [INFO] 🔍 Procurando arquivo JSON gerado...
+[2026-03-13 11:03:07] [INFO] ✅ JSON encontrado: editais_items_only_20260313_110307.json
+[2026-03-13 11:03:07] [INFO] 📊 Tamanho do arquivo: 72,125 bytes
+[2026-03-13 11:03:07] [INFO] ✅ JSON válido com 10 licitações
+[2026-03-13 11:03:07] [INFO] ============================================================
+[2026-03-13 11:03:07] [INFO] FASE 2: Inserindo Dados no Banco
+[2026-03-13 11:03:07] [INFO] ============================================================
+[2026-03-13 11:03:07] [INFO] 📋 Licitações no JSON: 10
+[2026-03-13 11:03:07] [INFO] 🔌 Conectando ao banco de dados...
+[2026-03-13 11:03:08] [INFO] ✅ Conectado ao banco!
+[2026-03-13 11:03:08] [INFO] 📊 Licitações já no banco: 158
+[2026-03-13 11:03:08] [INFO] 🆕 Licitações novas para adicionar: 10
+[2026-03-13 11:03:08] [INFO]   ✅ Progresso: 5/10 licitações inseridas
+[2026-03-13 11:03:08] [INFO]   ✅ Progresso: 10/10 licitações inseridas
+[2026-03-13 11:03:08] [INFO] 
+[2026-03-13 11:03:08] [INFO] 📊 Inserção concluída!
+[2026-03-13 11:03:08] [INFO]   ✅ Inseridos: 10
+[2026-03-13 11:03:08] [INFO]   ❌ Erros: 0
+[2026-03-13 11:03:08] [INFO]   📈 Total no banco: 168
+[2026-03-13 11:03:08] [INFO]   📝 Com objeto: 168
+[2026-03-13 11:03:08] [INFO] ============================================================
+[2026-03-13 11:03:08] [INFO] FASE 3: Limpando Arquivos Antigos
+[2026-03-13 11:03:08] [INFO] ============================================================
+[2026-03-13 11:03:08] [INFO] ✅ Limpeza concluída:
+[2026-03-13 11:03:08] [INFO]   📄 JSONs removidos: 11
+[2026-03-13 11:03:08] [INFO]   📋 Logs removidos: 0
+[2026-03-13 11:03:10] [INFO] ✅ Estatísticas salvas no banco!
+[2026-03-13 11:03:10] [INFO] ============================================================
+[2026-03-13 11:03:10] [INFO] ✅ AUTOMAÇÃO CONCLUÍDA COM SUCESSO!
+[2026-03-13 11:03:10] [INFO] ⏱️  Tempo total: 531 segundos (8 minutos)
+[2026-03-13 11:03:10] [INFO] 📋 Log salvo em: automacao_log_20260313_105418.txt
+[2026-03-13 11:03:10] [INFO] ============================================================

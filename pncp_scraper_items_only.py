@@ -92,9 +92,6 @@ class PNCPScraperItemsOnly:
             await self.page.goto(self.editais_url, timeout=60000)
             await self.page.wait_for_timeout(5000)
 
-            # Screenshot inicial
-            await self.page.screenshot(path="debug_01_inicial.png")
-            logger.info("📸 Screenshot inicial salvo")
 
             logger.info(f"📍 Selecionando UF: {uf}...")
 
@@ -110,17 +107,9 @@ class PNCPScraperItemsOnly:
             await self.page.keyboard.press("Enter")
             await self.page.wait_for_timeout(2000)
 
-            # Screenshot após selecionar UF
-            await self.page.screenshot(path="debug_02_uf_selecionado.png")
-            logger.info("📸 Screenshot UF selecionado salvo")
-
             logger.info("🔎 Clicando no botão Pesquisar...")
             await self.page.click("button.br-button.primary:has-text('Pesquisar')")
             await self.page.wait_for_timeout(5000)
-
-            # Screenshot após pesquisar
-            await self.page.screenshot(path="debug_03_resultados.png")
-            logger.info("📸 Screenshot resultados salvo")
 
             return True
 
@@ -260,9 +249,6 @@ class PNCPScraperItemsOnly:
         try:
             logger.info("🔍 Procurando botão 'Página seguinte'...")
 
-            # Screenshot antes de procurar botão
-            await self.page.screenshot(path=f"debug_pagination_before.png")
-
             # Seletores para o botão de próxima página
             next_button_selectors = [
                 'button[data-next-page="data-next-page"]',
@@ -316,9 +302,6 @@ class PNCPScraperItemsOnly:
                                         break
                                     except:
                                         continue
-
-                            # Screenshot após clicar
-                            await self.page.screenshot(path=f"debug_pagination_after.png")
 
                             logger.info("✅ Próxima página carregada com sucesso!")
                             return True
@@ -411,16 +394,10 @@ class PNCPScraperItemsOnly:
             edital_info = self.extract_basic_info(card_text, index)
             edital_info['edital_href'] = href
 
-            # Screenshot antes de clicar
-            await self.page.screenshot(path=f"debug_04_antes_click_{index}.png")
-
             # Clicar no card para acessar detalhes
             logger.info(f"🖱️ Clicando no edital {index + 1}...")
             await card.click()
             await self.page.wait_for_timeout(4000)
-
-            # Screenshot da página de detalhes
-            await self.page.screenshot(path=f"debug_05_detalhes_{index}.png")
 
             current_url = self.page.url
             logger.info(f"📍 URL atual: {current_url}")
@@ -455,9 +432,6 @@ class PNCPScraperItemsOnly:
             await self.page.go_back()
             await self.page.wait_for_timeout(3000)
 
-            # Screenshot após voltar
-            await self.page.screenshot(path=f"debug_06_voltou_{index}.png")
-
             return edital_info
 
         except Exception as e:
@@ -476,17 +450,11 @@ class PNCPScraperItemsOnly:
         try:
             logger.info("📊 Processando APENAS aba 'Itens' ativa para extrair dados...")
 
-            # Screenshot antes de procurar aba Itens
-            await self.page.screenshot(path=f"debug_07_antes_aba_itens_{index}.png")
-
             # Garantir que estamos na aba "Itens"
             await self.ensure_items_tab_active()
 
             # Aguardar carregamento da tabela da aba Itens
             await self.page.wait_for_timeout(3000)
-
-            # Screenshot da aba Itens ativa
-            await self.page.screenshot(path=f"debug_08_aba_itens_ativa_{index}.png")
 
             # CORRIGIDO: Extrair itens APENAS da tabela visível da aba Itens
             items = await self.extract_items_from_active_items_tab(index)
@@ -554,9 +522,6 @@ class PNCPScraperItemsOnly:
 
             # Aguardar carregamento da tabela
             await self.page.wait_for_timeout(3000)
-
-            # Screenshot da tabela na aba Itens
-            await self.page.screenshot(path=f"debug_09_tabela_itens_ativa_{index}.png")
 
             items = []
 
@@ -899,9 +864,6 @@ class PNCPScraperItemsOnly:
         try:
             logger.info("🗂️ Processando aba 'Arquivos' para downloads...")
 
-            # Screenshot antes de procurar aba Arquivos
-            await self.page.screenshot(path=f"debug_10_antes_aba_arquivos_{index}.png")
-
             downloaded_files = []
 
             # Procurar pela aba "Arquivos"
@@ -926,9 +888,6 @@ class PNCPScraperItemsOnly:
                         logger.info("🖱️ Clicando na aba 'Arquivos'...")
                         await tab_button.click()
                         await self.page.wait_for_timeout(3000)
-
-                        # Screenshot após clicar na aba
-                        await self.page.screenshot(path=f"debug_11_aba_arquivos_ativa_{index}.png")
 
                         files_tab_found = True
                         break
@@ -963,9 +922,6 @@ class PNCPScraperItemsOnly:
 
             # Aguardar carregamento da aba
             await self.page.wait_for_timeout(3000)
-
-            # Screenshot da aba arquivos
-            await self.page.screenshot(path=f"debug_12_lista_arquivos_{index}.png")
 
             # Procurar por botões de download ESPECÍFICOS da aba Arquivos
             download_selectors = [
@@ -1149,12 +1105,8 @@ class PNCPScraperItemsOnly:
             if access_button and await access_button.count() > 0:
                 logger.info(f"✅ Botão 'Acessar contratação' encontrado! (Seletor: {used_selector})")
 
-                await self.page.screenshot(path=f"debug_13_antes_acesso_{index}.png")
-
                 await access_button.click()
                 await self.page.wait_for_timeout(4000)
-
-                await self.page.screenshot(path=f"debug_14_apos_acesso_{index}.png")
 
                 logger.info("📂 Acessou contratação com sucesso!")
 
@@ -1200,6 +1152,7 @@ class PNCPScraperItemsOnly:
         title = self.safe_extract_title(card_text)
         organization = self.safe_extract_organization(card_text)
         municipality = self.safe_extract_municipality(card_text)
+        state_code = self.safe_extract_state_code(card_text)
         modality = self.safe_extract_modality(card_text)
         value = self.safe_extract_value(card_text)
         pub_date = self.safe_extract_date(card_text)
@@ -1213,7 +1166,7 @@ class PNCPScraperItemsOnly:
             'description': card_text[:500] + "..." if len(card_text) > 500 else card_text,
             'organization_name': organization,
             'municipality_name': municipality,
-            'state_code': 'SP',
+            'state_code': state_code,
             'modality': modality,
             'estimated_value': value,
             'publication_date': pub_date,
@@ -1270,6 +1223,27 @@ class PNCPScraperItemsOnly:
             return None
         except:
             return None
+
+    def safe_extract_state_code(self, text: str) -> str:
+        """Extrai código do estado (UF) de forma segura"""
+        try:
+            if 'Local:' in text:
+                parts = text.split('Local:')
+                if len(parts) > 1:
+                    local_part = parts[1].split('\n')[0].strip()
+                    # Formato esperado: "Cidade/UF" ou "Cidade - UF"
+                    if '/' in local_part:
+                        uf = local_part.split('/')[-1].strip()
+                        # Validar se é uma UF válida (2 letras maiúsculas)
+                        if len(uf) == 2 and uf.isupper():
+                            return uf
+                    elif '-' in local_part:
+                        uf = local_part.split('-')[-1].strip()
+                        if len(uf) == 2 and uf.isupper():
+                            return uf
+            return 'SP'  # Fallback para SP se não conseguir extrair
+        except:
+            return 'SP'
 
     def safe_extract_modality(self, text: str) -> str:
         """Extrai modalidade de forma segura"""
@@ -1564,7 +1538,7 @@ async def main():
 
     all_editais = []
 
-    async with PNCPScraperItemsOnly(headless=False) as scraper:
+    async with PNCPScraperItemsOnly(headless=True) as scraper:
         logger.info(f"\n{'='*60}")
         logger.info(f"🎯 PROCESSANDO EDITAIS - APENAS ABA 'ITENS' - UF: {uf}")
         logger.info(f"{'='*60}")

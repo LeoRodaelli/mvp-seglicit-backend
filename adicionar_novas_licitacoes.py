@@ -1,8 +1,3 @@
-#!/usr/bin/env python3
-"""
-Adiciona novas licitações sem duplicar dados existentes
-"""
-
 import psycopg2
 import json
 import os
@@ -63,7 +58,7 @@ def adicionar_novas_licitacoes(json_file):
         inseridos = 0
         for edital in novos_editais:
             try:
-                # Preparar dados
+                # ✅ Preparar dados básicos
                 pncp_id = edital.get('pncp_id', '')
                 title = edital.get('title', '')
                 description = edital.get('description', '')
@@ -75,11 +70,27 @@ def adicionar_novas_licitacoes(json_file):
                 publication_date = edital.get('publication_date')
                 status = edital.get('status', '')
                 modality = edital.get('modality', '')
-                estimated_value = edital.get('valor_total_estimado')
+                estimated_value = edital.get('estimated_value')
                 source_url = edital.get('source_url', '')
                 detail_url = edital.get('detail_url', '')
                 data_source = f'PNCP_SCRAPING_{datetime.now().strftime("%Y%m%d")}'
-                downloaded_files = json.dumps(edital.get('downloaded_files', []))
+
+                # ✅ CAMPOS ADICIONAIS (usando nomes EXATOS das colunas)
+                objeto = edital.get('objeto', '')
+                detailed_description = edital.get('detailed_description', '')
+                valor_total_estimado = edital.get('valor_total_estimado')
+                prazo = edital.get('prazo', '')
+
+                # ✅ Converter items para JSON (coluna: items_json)
+                items = edital.get('items', [])
+                items_json = json.dumps(items) if items else None
+                items_count = len(items) if items else 0
+
+                # ✅ Converter downloaded_files para JSON (coluna: downloaded_files_json)
+                downloaded_files = edital.get('downloaded_files', [])
+                downloaded_files_json = json.dumps(downloaded_files) if downloaded_files else None
+                downloads_count = len(downloaded_files) if downloaded_files else 0
+
                 created_at = datetime.now()
 
                 # Tratar data de publicação
@@ -89,26 +100,35 @@ def adicionar_novas_licitacoes(json_file):
                     except:
                         publication_date = None
 
-                # Inserir no banco
+                # ✅ Usar valor_total_estimado se estimated_value for None
+                if estimated_value is None and valor_total_estimado is not None:
+                    estimated_value = valor_total_estimado
+
+                # ✅ Inserir no banco COM NOMES CORRETOS DAS COLUNAS
                 cursor.execute("""
                     INSERT INTO tenders (
                         pncp_id, title, description, organization_name, organization_cnpj,
                         municipality_name, municipality_ibge, state_code, publication_date,
                         status, modality, estimated_value, source_url, detail_url,
-                        data_source, downloaded_files, created_at
-                    ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                        data_source, created_at,
+                        objeto, detailed_description, valor_total_estimado, prazo,
+                        items_json, items_count, downloaded_files_json, downloads_count
+                    ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
                 """, (
                     pncp_id, title, description, organization_name, organization_cnpj,
                     municipality_name, municipality_ibge, state_code, publication_date,
                     status, modality, estimated_value, source_url, detail_url,
-                    data_source, downloaded_files, created_at
+                    data_source, created_at,
+                    objeto, detailed_description, valor_total_estimado, prazo,
+                    items_json, items_count, downloaded_files_json, downloads_count
                 ))
 
                 inseridos += 1
-                print(f"✅ Adicionado: {title[:50]}...")
+                print(f"✅ Adicionado: {title[:50]}... ({items_count} itens, {downloads_count} arquivos)")
 
             except Exception as e:
-                print(f"❌ Erro ao inserir edital: {e}")
+                print(f"❌ Erro ao inserir edital '{title[:30]}...': {e}")
+                conn.rollback()  # ✅ Rollback para continuar com próximo
                 continue
 
         conn.commit()
@@ -123,17 +143,28 @@ def adicionar_novas_licitacoes(json_file):
         cursor.execute("SELECT COUNT(DISTINCT municipality_name) FROM tenders WHERE municipality_name IS NOT NULL")
         total_cities = cursor.fetchone()[0]
 
+        # ✅ Verificar quantos têm objeto e items_json (nome correto!)
+        cursor.execute("SELECT COUNT(*) FROM tenders WHERE objeto IS NOT NULL AND objeto != ''")
+        total_com_objeto = cursor.fetchone()[0]
+
+        cursor.execute("SELECT COUNT(*) FROM tenders WHERE items_json IS NOT NULL")
+        total_com_items = cursor.fetchone()[0]
+
         conn.close()
 
-        print(f"\\n🎉 Adição concluída!")
+        print(f"\n🎉 Adição concluída!")
         print(f"📊 Estatísticas finais:")
         print(f"  - Editais novos adicionados: {inseridos}")
         print(f"  - Total de editais no banco: {total_final}")
+        print(f"  - Editais com objeto: {total_com_objeto}")
+        print(f"  - Editais com items: {total_com_items}")
         print(f"  - Estados: {total_states}")
         print(f"  - Cidades: {total_cities}")
 
     except Exception as e:
         print(f"❌ Erro: {e}")
+        import traceback
+        traceback.print_exc()
 
 
 def buscar_json_mais_recente():
@@ -163,8 +194,8 @@ def buscar_json_mais_recente():
 
 
 if __name__ == "__main__":
-    print("🚀 Script para adicionar novas licitações")
-    print("=" * 50)
+    print("🚀 Script para adicionar novas licitações (VERSÃO CORRIGIDA)")
+    print("=" * 60)
 
     # Opção 1: Usar arquivo específico
     import sys
@@ -178,7 +209,7 @@ if __name__ == "__main__":
         if json_file:
             adicionar_novas_licitacoes(json_file)
         else:
-            print("\\n📋 Como usar:")
+            print("\n📋 Como usar:")
             print("python adicionar_novas_licitacoes.py arquivo.json")
             print("ou")
             print("python adicionar_novas_licitacoes.py  # usa arquivo mais recente")

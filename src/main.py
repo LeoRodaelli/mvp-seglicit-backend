@@ -16,6 +16,8 @@ from src.models.tender import Tender, City
 from src.routes.user import user_bp
 from src.routes.mercadopago import mercadopago_bp
 from src.routes.tender import tender_bp
+from src.routes.api_ultimas_licitacoes import licitacoes_realtime_bp
+from src.routes.zaia_api import zaia_bp
 import os
 from dotenv import load_dotenv
 
@@ -37,6 +39,8 @@ CORS(app)
 app.register_blueprint(user_bp, url_prefix='/api')
 app.register_blueprint(tender_bp, url_prefix='/api')
 app.register_blueprint(mercadopago_bp, url_prefix='/api')
+app.register_blueprint(licitacoes_realtime_bp, url_prefix='/api')
+app.register_blueprint(zaia_bp, url_prefix='/api')
 
 load_dotenv()
 
