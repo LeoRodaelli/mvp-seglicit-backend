@@ -805,8 +805,29 @@ def buscar_licitacoes(current_user):
                 'criado_em': row['created_at'].isoformat() if row['created_at'] else None
             })
 
+        # Montar texto resumido para o agente Zaia usar diretamente na resposta
+        if licitacoes:
+            linhas = [f"Encontrei {total} licitação(ões) com esses critérios. Aqui estão as primeiras {len(licitacoes)}:\n"]
+            for i, l in enumerate(licitacoes, 1):
+                data_pub = l['data_publicacao'] or 'N/D'
+                linhas.append(
+                    f"{i}. *{l['titulo']}*\n"
+                    f"   Órgão: {l['orgao']}\n"
+                    f"   Local: {l['municipio']} - {l['estado']}\n"
+                    f"   Valor estimado: {l['valor_formatado']}\n"
+                    f"   Publicado em: {data_pub}\n"
+                    f"   Link PNCP: {l['url_pncp']}\n"
+                )
+            resumo_texto = "\n".join(linhas)
+        else:
+            resumo_texto = (
+                "Nenhuma licitação encontrada com os critérios informados. "
+                "Tente ampliar a busca usando palavras-chave mais gerais ou removendo filtros de data."
+            )
+
         return jsonify({
             'success': True,
+            'resumo_texto': resumo_texto,
             'pagination': {
                 'page': page,
                 'per_page': per_page,

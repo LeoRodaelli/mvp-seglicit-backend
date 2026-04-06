@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-API melhorada com dados completos e formatação brasileira
-v2 — suporte a múltiplos estados e múltiplas keywords (para filtragem por plano)
-"""
-
-
 from flask import Blueprint, request, jsonify, send_file
 import psycopg2
 import psycopg2.extras
@@ -132,6 +125,8 @@ def get_tenders():
       - valor_min          : valor mínimo estimado
       - valor_max          : valor máximo estimado
       - apenas_hoje        : 'true' para filtrar apenas publicações de hoje
+      - date_from           : data inicial do período (YYYY-MM-DD)
+      - date_to             : data final do período (YYYY-MM-DD)
     """
     try:
         page = request.args.get('page', 1, type=int)
@@ -143,6 +138,18 @@ def get_tenders():
         valor_min = request.args.get('valor_min', type=float)
         valor_max = request.args.get('valor_max', type=float)
         apenas_hoje = request.args.get('apenas_hoje', '').lower() == 'true'
+        date_from = request.args.get('date_from', '').strip()   # YYYY-MM-DD
+        date_to = request.args.get('date_to', '').strip()       # YYYY-MM-DD
+
+        # ── Filtro por IDs específicos (para favoritos) ──────────────────────────────
+        # Aceita: ids=1&ids=2&ids=3  OU  ids=1,2,3
+        raw_ids = request.args.getlist('ids')
+        filter_ids = []
+        for i in raw_ids:
+            for part in i.split(','):
+                part = part.strip()
+                if part.isdigit():
+                    filter_ids.append(int(part))
 
         # ── Múltiplos estados ──────────────────────────────────────────────
         # Aceita: state_code=SP&state_code=RJ  OU  state_code=SP,RJ
@@ -185,6 +192,12 @@ def get_tenders():
         """
         params = []
 
+        # Filtro por IDs específicos (favoritos)
+        if filter_ids:
+            placeholders = ','.join(['%s'] * len(filter_ids))
+            base_query += f" AND id IN ({placeholders})"
+            params.extend(filter_ids)
+
         # Filtro por cidade
         if city_name:
             base_query += " AND municipality_name ILIKE %s"
@@ -215,6 +228,14 @@ def get_tenders():
         if apenas_hoje:
             base_query += " AND DATE(publication_date) = CURRENT_DATE"
 
+        # Filtro por período (data inicial e data final)
+        if date_from:
+            base_query += " AND DATE(publication_date) >= %s"
+            params.append(date_from)
+        if date_to:
+            base_query += " AND DATE(publication_date) <= %s"
+            params.append(date_to)
+
         # Filtro por múltiplas keywords (OR entre elas, busca em title + objeto + description)
         if all_keywords:
             keyword_conditions = []
@@ -236,6 +257,12 @@ def get_tenders():
         # ── Count query (mesma lógica, sem LIMIT/OFFSET) ───────────────────
         count_query = "SELECT COUNT(*) FROM tenders WHERE 1=1"
         count_params = []
+
+        # Filtro por IDs específicos (favoritos)
+        if filter_ids:
+            placeholders = ','.join(['%s'] * len(filter_ids))
+            count_query += f" AND id IN ({placeholders})"
+            count_params.extend(filter_ids)
 
         if city_name:
             count_query += " AND municipality_name ILIKE %s"
@@ -260,6 +287,13 @@ def get_tenders():
 
         if apenas_hoje:
             count_query += " AND DATE(publication_date) = CURRENT_DATE"
+
+        if date_from:
+            count_query += " AND DATE(publication_date) >= %s"
+            count_params.append(date_from)
+        if date_to:
+            count_query += " AND DATE(publication_date) <= %s"
+            count_params.append(date_to)
 
         if all_keywords:
             keyword_conditions = []
