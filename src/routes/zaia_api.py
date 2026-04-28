@@ -807,21 +807,23 @@ def buscar_licitacoes(current_user):
 
         # Montar texto resumido para o agente Zaia usar diretamente na resposta
         if licitacoes:
-            linhas = [f"Encontrei {total} licitação(ões) com esses critérios. Aqui estão as primeiras {len(licitacoes)}:\n"]
+            partes = [f"Encontrei {total} licitacao(oes) com esses criterios. Aqui estao as primeiras {len(licitacoes)}:"]
             for i, l in enumerate(licitacoes, 1):
                 data_pub = l['data_publicacao'] or 'N/D'
-                linhas.append(
-                    f"{i}. *{l['titulo']}*\n"
-                    f"   Órgão: {l['orgao']}\n"
-                    f"   Local: {l['municipio']} - {l['estado']}\n"
-                    f"   Valor estimado: {l['valor_formatado']}\n"
-                    f"   Publicado em: {data_pub}\n"
-                    f"   Link PNCP: {l['url_pncp']}\n"
+                valor = l['valor_formatado'] or 'Nao informado'
+                link = l['url_pncp'] or 'Nao disponivel'
+                partes.append(
+                    f"{i}. Titulo: {l['titulo']} | "
+                    f"Orgao: {l['orgao']} | "
+                    f"Local: {l['municipio']} - {l['estado']} | "
+                    f"Valor: {valor} | "
+                    f"Publicado em: {data_pub} | "
+                    f"Link: {link}"
                 )
-            resumo_texto = "\n".join(linhas)
+            resumo_texto = " /// ".join(partes)
         else:
             resumo_texto = (
-                "Nenhuma licitação encontrada com os critérios informados. "
+                "Nenhuma licitacao encontrada com os criterios informados. "
                 "Tente ampliar a busca usando palavras-chave mais gerais ou removendo filtros de data."
             )
 
