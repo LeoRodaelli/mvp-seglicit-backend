@@ -1179,19 +1179,19 @@ def buscar_simples(current_user):
         cur = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
 
         # Montar filtros
-        conditions = ["l.status = 'Publicado'"]
+        conditions = ["status = 'Publicado'"]
         params = []
 
         # Filtro por palavra-chave
         if q:
-            conditions.append("(l.title ILIKE %s OR l.description ILIKE %s)")
-            params.extend([f'%{q}%', f'%{q}%'])
+            conditions.append("(title ILIKE %s OR objeto ILIKE %s OR organization_name ILIKE %s OR description ILIKE %s)")
+            params.extend([f'%{q}%', f'%{q}%', f'%{q}%', f'%{q}%'])
 
         # Filtro por estados
         estados_lista = [e.strip().upper() for e in estados_param.split(',') if e.strip()] if estados_param else []
         if estados_lista:
             placeholders = ','.join(['%s'] * len(estados_lista))
-            conditions.append(f"l.state IN ({placeholders})")
+            conditions.append(f"state_code IN ({placeholders})")
             params.extend(estados_lista)
 
         # Filtro por data de início
@@ -1206,7 +1206,7 @@ def buscar_simples(current_user):
                         data_inicio_fmt = data_inicio
                 else:
                     data_inicio_fmt = data_inicio
-                conditions.append("l.publication_date >= %s")
+                conditions.append("publication_date >= %s")
                 params.append(data_inicio_fmt)
             except Exception:
                 pass
@@ -1215,19 +1215,19 @@ def buscar_simples(current_user):
 
         query = f"""
             SELECT
-                l.id,
-                l.title,
-                l.description,
-                l.organ_name,
-                l.city,
-                l.state,
-                l.estimated_value,
-                l.publication_date,
-                l.detail_url,
-                l.source_url
-            FROM licitacoes l
+                id,
+                title,
+                objeto,
+                organization_name,
+                municipality_name,
+                state_code,
+                COALESCE(valor_total_estimado, estimated_value) AS valor,
+                publication_date,
+                detail_url,
+                source_url
+            FROM tenders
             WHERE {where_clause}
-            ORDER BY l.publication_date DESC
+            ORDER BY publication_date DESC
             LIMIT 10
         """
 
@@ -1246,10 +1246,10 @@ def buscar_simples(current_user):
             linhas = [f"Encontrei {len(rows)} licitacao(oes):"]
             for i, row in enumerate(rows, 1):
                 titulo = row['title'] or 'Sem titulo'
-                orgao = row['organ_name'] or 'Orgao nao informado'
-                municipio = row['city'] or 'N/D'
-                estado = row['state'] or 'N/D'
-                valor = _format_currency(row['estimated_value'])
+                orgao = row['organization_name'] or 'Orgao nao informado'
+                municipio = row['municipality_name'] or 'N/D'
+                estado = row['state_code'] or 'N/D'
+                valor = _format_currency(row['valor'])
                 data_pub = str(row['publication_date'])[:10] if row['publication_date'] else 'N/D'
                 link = row['detail_url'] or row['source_url'] or 'Nao disponivel'
                 linhas.append(
