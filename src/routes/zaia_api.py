@@ -1152,3 +1152,114 @@ def _format_currency(value):
         return formatted
     except Exception:
         return 'Valor não informado'
+
+# ============================================================
+# ENDPOINT SIMPLIFICADO PARA O AGENTE ZAIA
+# Retorna apenas o campo "resultado" com texto puro formatado,
+# sem arrays ou objetos aninhados que confundem o LLM.
+# ============================================================
+
+@zaia_bp.route('/zaia/buscar', methods=['GET'])
+@require_api_key
+def buscar_simples(current_user):
+    """
+    Endpoint simplificado para o agente Zaia.
+    Retorna apenas { "resultado": "texto formatado..." }
+    para que o LLM possa exibir diretamente sem confusão.
+    """
+    q = request.args.get('q', '').strip()
+    estados_param = request.args.get('estados', '').strip()
+    data_inicio = request.args.get('data_inicio', '').strip()
+
+    try:
+        conn = get_db_connection()
+        if not conn:
+            return jsonify({'resultado': 'Erro ao conectar ao banco de dados. Tente novamente.'}), 500
+
+        cur = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+
+        # Montar filtros
+        conditions = ["l.status = 'Publicado'"]
+        params = []
+
+        # Filtro por palavra-chave
+        if q:
+            conditions.append("(l.title ILIKE %s OR l.description ILIKE %s)")
+            params.extend([f'%{q}%', f'%{q}%'])
+
+        # Filtro por estados
+        estados_lista = [e.strip().upper() for e in estados_param.split(',') if e.strip()] if estados_param else []
+        if estados_lista:
+            placeholders = ','.join(['%s'] * len(estados_lista))
+            conditions.append(f"l.state IN ({placeholders})")
+            params.extend(estados_lista)
+
+        # Filtro por data de início
+        if data_inicio:
+            try:
+                # Aceita formatos dd/mm/yyyy ou yyyy-mm-dd
+                if '/' in data_inicio:
+                    parts = data_inicio.split('/')
+                    if len(parts) == 3:
+                        data_inicio_fmt = f"{parts[2]}-{parts[1]}-{parts[0]}"
+                    else:
+                        data_inicio_fmt = data_inicio
+                else:
+                    data_inicio_fmt = data_inicio
+                conditions.append("l.publication_date >= %s")
+                params.append(data_inicio_fmt)
+            except Exception:
+                pass
+
+        where_clause = ' AND '.join(conditions)
+
+        query = f"""
+            SELECT
+                l.id,
+                l.title,
+                l.description,
+                l.organ_name,
+                l.city,
+                l.state,
+                l.estimated_value,
+                l.publication_date,
+                l.detail_url,
+                l.source_url
+            FROM licitacoes l
+            WHERE {where_clause}
+            ORDER BY l.publication_date DESC
+            LIMIT 10
+        """
+
+        cur.execute(query, params)
+        rows = cur.fetchall()
+        cur.close()
+        conn.close()
+
+        if not rows:
+            resultado = (
+                f"Nenhuma licitacao encontrada para os criterios: "
+                f"palavra-chave='{q}', estados='{estados_param}', data_inicio='{data_inicio}'. "
+                "Tente usar palavras-chave mais gerais ou remover o filtro de data."
+            )
+        else:
+            linhas = [f"Encontrei {len(rows)} licitacao(oes):"]
+            for i, row in enumerate(rows, 1):
+                titulo = row['title'] or 'Sem titulo'
+                orgao = row['organ_name'] or 'Orgao nao informado'
+                municipio = row['city'] or 'N/D'
+                estado = row['state'] or 'N/D'
+                valor = _format_currency(row['estimated_value'])
+                data_pub = str(row['publication_date'])[:10] if row['publication_date'] else 'N/D'
+                link = row['detail_url'] or row['source_url'] or 'Nao disponivel'
+                linhas.append(
+                    f"{i}. {titulo} | Orgao: {orgao} | Local: {municipio}-{estado} | "
+                    f"Valor: {valor} | Data: {data_pub} | Link: {link}"
+                )
+            resultado = " | ".join(linhas)
+
+        return jsonify({'resultado': resultado})
+
+    except Exception as e:
+        logger.error(f"Erro no endpoint buscar_simples: {e}")
+        return jsonify({'resultado': f'Erro ao realizar a busca: {str(e)}'}), 500
