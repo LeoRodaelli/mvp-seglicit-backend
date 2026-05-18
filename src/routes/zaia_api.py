@@ -1243,7 +1243,7 @@ def buscar_simples(current_user):
                 "Tente usar palavras-chave mais gerais ou remover o filtro de data."
             )
         else:
-            linhas = [f"Encontrei {len(rows)} licitacao(oes):"]
+            linhas = [f"Encontrei {len(rows)} licitacao(oes):\n"]
             for i, row in enumerate(rows, 1):
                 titulo = row['title'] or 'Sem titulo'
                 orgao = row['organization_name'] or 'Orgao nao informado'
@@ -1253,10 +1253,10 @@ def buscar_simples(current_user):
                 data_pub = str(row['publication_date'])[:10] if row['publication_date'] else 'N/D'
                 link = row['detail_url'] or row['source_url'] or 'Nao disponivel'
                 linhas.append(
-                    f"{i}. {titulo} | Orgao: {orgao} | Local: {municipio}-{estado} | "
-                    f"Valor: {valor} | Data: {data_pub} | Link: {link}"
+                    f"{i}. Titulo: {titulo}; Orgao: {orgao}; Local: {municipio}-{estado}; "
+                    f"Valor: {valor}; Data: {data_pub}; Link: {link}"
                 )
-            resultado = " | ".join(linhas)
+            resultado = "\n".join(linhas)
 
         return jsonify({'resultado': resultado})
 
