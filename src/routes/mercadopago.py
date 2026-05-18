@@ -15,6 +15,8 @@ from dotenv import load_dotenv
 import psycopg2
 import psycopg2.extras
 import bcrypt
+import hmac
+import hashlib
 
 load_dotenv()
 
@@ -26,6 +28,60 @@ mercadopago_bp = Blueprint('mercadopago', __name__)
 
 # Inicializar SDK do Mercado Pago
 sdk = mercadopago.SDK(os.getenv('MERCADOPAGO_ACCESS_TOKEN'))
+
+
+def _verify_webhook_signature(request):
+    """
+    Valida assinatura do webhook do MercadoPago.
+    Docs: https://www.mercadopago.com.br/developers/pt/docs/your-integrations/notifications/webhooks
+    """
+    secret = os.getenv('MERCADOPAGO_WEBHOOK_SECRET')
+    if not secret:
+        logger.warning("⚠️ MERCADOPAGO_WEBHOOK_SECRET não configurado — pulando validação")
+        return True
+
+    x_signature = request.headers.get('x-signature', '')
+    x_request_id = request.headers.get('x-request-id', '')
+
+    if not x_signature or not x_request_id:
+        logger.error("❌ Headers x-signature ou x-request-id ausentes")
+        return False
+
+    # Extrair ts e v1 do header x-signature
+    ts = None
+    v1 = None
+    for part in x_signature.split(','):
+        part = part.strip()
+        if part.startswith('ts='):
+            ts = part[3:]
+        elif part.startswith('v1='):
+            v1 = part[3:]
+
+    if not ts or not v1:
+        logger.error("❌ Formato inválido do header x-signature")
+        return False
+
+    # Montar o manifest para verificação
+    data_id = request.args.get('data.id') or request.get_json(silent=True, force=True) or {}
+    if isinstance(data_id, dict):
+        data_id = data_id.get('data', {}).get('id', '')
+
+    manifest = f"id:{data_id};request-id:{x_request_id};ts:{ts};"
+
+    # Calcular HMAC-SHA256
+    expected = hmac.new(
+        secret.encode('utf-8'),
+        manifest.encode('utf-8'),
+        hashlib.sha256
+    ).hexdigest()
+
+
+    if not hmac.compare_digest(expected, v1):
+        logger.error(f"❌ Assinatura inválida. Esperado: {expected} | Recebido: {v1}")
+        return False
+
+    logger.info("✅ Assinatura do webhook validada com sucesso")
+    return True
 
 
 def get_db_connection():
@@ -288,6 +344,11 @@ def webhook():
     Webhook para receber notificações do Mercado Pago
     """
     try:
+        # Verificar assinatura antes de processar
+        if not _verify_webhook_signature(request):
+            logger.error("❌ Webhook rejeitado: assinatura inválida")
+            return jsonify({'error': 'Invalid signature'}), 401
+
         # LOG 1: Webhook foi chamado
         logger.info("=" * 60)
         logger.info("🔔 WEBHOOK RECEBIDO!")
