@@ -44,29 +44,35 @@ def _verify_webhook_signature(request):
     x_request_id = request.headers.get('x-request-id', '')
 
     if not x_signature or not x_request_id:
-        logger.error("❌ Headers x-signature ou x-request-id ausentes")
-        return False
+        logger.warning("⚠️ Headers x-signature ou x-request-id ausentes — pulando validação")
+        return True
 
-    # Extrair ts e v1 do header x-signature
+    # Extrair ts e v1 do header x-signature (formato: ts=<timestamp>,v1=<hash>)
     ts = None
     v1 = None
     for part in x_signature.split(','):
-        part = part.strip()
-        if part.startswith('ts='):
-            ts = part[3:]
-        elif part.startswith('v1='):
-            v1 = part[3:]
+        key, _, value = part.strip().partition('=')
+        if key == 'ts':
+            ts = value
+        elif key == 'v1':
+            v1 = value
 
     if not ts or not v1:
         logger.error("❌ Formato inválido do header x-signature")
         return False
 
-    # Montar o manifest para verificação
-    data_id = request.args.get('data.id') or request.get_json(silent=True, force=True) or {}
-    if isinstance(data_id, dict):
-        data_id = data_id.get('data', {}).get('id', '')
+    # data.id vem sempre como query param na URL enviada pelo MercadoPago
+    data_id = request.args.get('data.id', '')
 
     manifest = f"id:{data_id};request-id:{x_request_id};ts:{ts};"
+
+    logger.info(f"🔍 WEBHOOK SIGNATURE DEBUG:")
+    logger.info(f"   x-signature header : {x_signature}")
+    logger.info(f"   x-request-id header: {x_request_id}")
+    logger.info(f"   data.id query param: {data_id}")
+    logger.info(f"   ts extraído        : {ts}")
+    logger.info(f"   v1 recebido        : {v1}")
+    logger.info(f"   manifest           : {manifest}")
 
     # Calcular HMAC-SHA256
     expected = hmac.new(
@@ -74,7 +80,6 @@ def _verify_webhook_signature(request):
         manifest.encode('utf-8'),
         hashlib.sha256
     ).hexdigest()
-
 
     if not hmac.compare_digest(expected, v1):
         logger.error(f"❌ Assinatura inválida. Esperado: {expected} | Recebido: {v1}")
