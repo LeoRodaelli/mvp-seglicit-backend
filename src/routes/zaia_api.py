@@ -1263,3 +1263,9 @@ def buscar_simples(current_user):
     except Exception as e:
         logger.error(f"Erro no endpoint buscar_simples: {e}")
         return jsonify({'resultado': f'Erro ao realizar a busca: {str(e)}'}), 500
+
+
+@zaia_bp.route('/zaia/teste', methods=['GET'])
+def buscar_teste():
+    """Endpoint de diagnóstico para validar o mapeamento do Zaia."""
+    return jsonify({'resultado': 'teste ok'})
