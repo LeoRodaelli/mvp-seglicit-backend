@@ -458,10 +458,14 @@ def forgot_password():
             conn.commit()
 
             try:
+                import threading as _threading
                 from src.services.email_service import send_password_reset
-                send_password_reset(data['email'], user['full_name'], reset_token)
+                _args = (data['email'], user['full_name'], reset_token)
+                _t = _threading.Thread(target=lambda: send_password_reset(*_args), daemon=True)
+                _t.start()
+                logger.info(f"📧 Email de reset agendado em background para: {data['email']}")
             except Exception as email_err:
-                logger.error(f"❌ Erro ao enviar email de reset: {email_err}")
+                logger.error(f"❌ Erro ao agendar email de reset: {email_err}")
 
             logger.info(f"Reset de senha solicitado para: {data['email']}")
 

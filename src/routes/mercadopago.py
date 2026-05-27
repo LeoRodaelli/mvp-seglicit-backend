@@ -576,21 +576,19 @@ def webhook():
                                 # LOG 13: Assinatura criada
                                 logger.info("✅ Assinatura criada/atualizada com sucesso!")
 
-                                # Enviar email de confirmação
+                                # Enviar email de confirmação em background (não bloqueia o webhook)
                                 try:
+                                    import threading as _threading
                                     from src.services.email_service import send_payment_confirmation
                                     import json as _json
-                                    states = _json.loads(payment_data[3]) if isinstance(payment_data[3], str) else (payment_data[3] or [])
-                                    areas = _json.loads(payment_data[4]) if isinstance(payment_data[4], str) else (payment_data[4] or [])
-                                    send_payment_confirmation(
-                                        payment_data[0],   # email
-                                        payment_data[9],   # customer_name
-                                        payment_data[2],   # plan_name
-                                        states,
-                                        areas
-                                    )
+                                    _states = _json.loads(payment_data[3]) if isinstance(payment_data[3], str) else (payment_data[3] or [])
+                                    _areas = _json.loads(payment_data[4]) if isinstance(payment_data[4], str) else (payment_data[4] or [])
+                                    _email_args = (payment_data[0], payment_data[9], payment_data[2], _states, _areas)
+                                    _t = _threading.Thread(target=lambda: send_payment_confirmation(*_email_args), daemon=True)
+                                    _t.start()
+                                    logger.info("📧 Email de confirmação agendado em background")
                                 except Exception as email_err:
-                                    logger.error(f"❌ Erro ao enviar email de confirmação: {email_err}")
+                                    logger.error(f"❌ Erro ao agendar email de confirmação: {email_err}")
                             else:
                                 logger.warning(f"⚠️ Usuário não encontrado para email: {payment_data[0]}")
                         else:
