@@ -408,60 +408,144 @@ def logout_user():
 
 @user_bp.route('/forgot-password', methods=['POST'])
 def forgot_password():
-    """Solicita reset de senha (placeholder)"""
+    """Solicita reset de senha — gera token e envia email"""
     try:
         data = request.get_json()
 
         if not data.get('email'):
-            return jsonify({
-                'success': False,
-                'error': 'Email é obrigatório'
-            }), 400
+            return jsonify({'success': False, 'error': 'Email é obrigatório'}), 400
 
         conn = get_db_connection()
         if not conn:
             raise Exception("Erro de conexão com banco")
 
-        cursor = conn.cursor()
+        cursor = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
 
-        # Verificar se email existe
-        cursor.execute("SELECT id FROM users WHERE email = %s AND is_active = true", (data['email'],))
+        # Garantir que a tabela de tokens existe
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS password_reset_tokens (
+                id SERIAL PRIMARY KEY,
+                user_id INTEGER NOT NULL,
+                token VARCHAR(64) UNIQUE NOT NULL,
+                expires_at TIMESTAMP NOT NULL,
+                used BOOLEAN DEFAULT FALSE,
+                created_at TIMESTAMP DEFAULT NOW()
+            )
+        """)
+        conn.commit()
+
+        # Buscar usuário — por segurança sempre retorna a mesma mensagem
+        cursor.execute(
+            "SELECT id, full_name FROM users WHERE email = %s AND is_active = true",
+            (data['email'],)
+        )
         user = cursor.fetchone()
 
-        if not user:
-            # Por segurança, sempre retorna sucesso mesmo se email não existir
-            return jsonify({
-                'success': True,
-                'message': 'Se o email existir, você receberá instruções para reset da senha'
-            })
+        if user:
+            reset_token = generate_reset_token()
+            expires_at = datetime.now() + timedelta(hours=1)
 
-        # Gerar token de reset (implementação futura)
-        reset_token = generate_reset_token()
-        expires_at = datetime.now() + timedelta(hours=1)
+            # Invalidar tokens anteriores do usuário
+            cursor.execute(
+                "UPDATE password_reset_tokens SET used = TRUE WHERE user_id = %s AND used = FALSE",
+                (user['id'],)
+            )
 
-        # Salvar token no banco (implementação futura)
-        # cursor.execute(
-        #     "INSERT INTO password_reset_tokens (user_id, token, expires_at) VALUES (%s, %s, %s)",
-        #     (user[0], reset_token, expires_at)
-        # )
+            cursor.execute(
+                "INSERT INTO password_reset_tokens (user_id, token, expires_at) VALUES (%s, %s, %s)",
+                (user['id'], reset_token, expires_at)
+            )
+            conn.commit()
+
+            try:
+                from src.services.email_service import send_password_reset
+                send_password_reset(data['email'], user['full_name'], reset_token)
+            except Exception as email_err:
+                logger.error(f"❌ Erro ao enviar email de reset: {email_err}")
+
+            logger.info(f"Reset de senha solicitado para: {data['email']}")
 
         cursor.close()
         conn.close()
 
-        # Aqui seria enviado o email com o token (implementação futura)
-        logger.info(f"Reset de senha solicitado para: {data['email']}")
-
         return jsonify({
             'success': True,
-            'message': 'Se o email existir, você receberá instruções para reset da senha'
+            'message': 'Se o email existir, você receberá instruções para redefinir a senha'
         })
 
     except Exception as e:
         logger.error(f"Erro no reset de senha: {e}")
-        return jsonify({
-            'success': False,
-            'error': 'Erro interno do servidor'
-        }), 500
+        return jsonify({'success': False, 'error': 'Erro interno do servidor'}), 500
+
+
+@user_bp.route('/reset-password', methods=['POST'])
+def reset_password():
+    """Redefine a senha usando token válido"""
+    try:
+        data = request.get_json()
+
+        if not data.get('token') or not data.get('password'):
+            return jsonify({'success': False, 'error': 'Token e nova senha são obrigatórios'}), 400
+
+        if len(data['password']) < 6:
+            return jsonify({'success': False, 'error': 'Senha deve ter pelo menos 6 caracteres'}), 400
+
+        conn = get_db_connection()
+        if not conn:
+            raise Exception("Erro de conexão com banco")
+
+        cursor = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+
+        cursor.execute("""
+            SELECT user_id, expires_at, used
+            FROM password_reset_tokens
+            WHERE token = %s
+        """, (data['token'],))
+        token_row = cursor.fetchone()
+
+        if not token_row:
+            cursor.close()
+            conn.close()
+            return jsonify({'success': False, 'error': 'Token inválido'}), 400
+
+        if token_row['used']:
+            cursor.close()
+            conn.close()
+            return jsonify({'success': False, 'error': 'Token já utilizado'}), 400
+
+        if datetime.now() > token_row['expires_at']:
+            cursor.close()
+            conn.close()
+            return jsonify({'success': False, 'error': 'Token expirado. Solicite um novo.'}), 400
+
+        # Atualizar senha
+        new_hash = bcrypt.hashpw(
+            data['password'].encode('utf-8'),
+            bcrypt.gensalt()
+        ).decode('utf-8')
+
+        cursor.execute(
+            "UPDATE users SET password_hash = %s, updated_at = NOW() WHERE id = %s",
+            (new_hash, token_row['user_id'])
+        )
+
+        # Marcar token como usado
+        cursor.execute(
+            "UPDATE password_reset_tokens SET used = TRUE WHERE token = %s",
+            (data['token'],)
+        )
+
+        conn.commit()
+        cursor.close()
+        conn.close()
+
+        logger.info(f"✅ Senha redefinida para user_id: {token_row['user_id']}")
+
+        return jsonify({'success': True, 'message': 'Senha redefinida com sucesso!'})
+
+    except Exception as e:
+        logger.error(f"Erro ao redefinir senha: {e}")
+        return jsonify({'success': False, 'error': 'Erro interno do servidor'}), 500
 
 @user_bp.route('/user-stats', methods=['GET'])
 def get_user_stats():

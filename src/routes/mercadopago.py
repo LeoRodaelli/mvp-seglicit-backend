@@ -437,10 +437,11 @@ def webhook():
 
                         # Buscar dados do pagamento
                         cursor.execute("""
-                            SELECT customer_email, plan_id, plan_name, 
+                            SELECT customer_email, plan_id, plan_name,
                                    selected_states, selected_areas,
                                    extra_states, extra_states_price,
-                                    extra_areas, extra_areas_price
+                                   extra_areas, extra_areas_price,
+                                   customer_name
                             FROM payments
                             WHERE reference_id = %s
                         """, (reference_id,))
@@ -574,6 +575,22 @@ def webhook():
 
                                 # LOG 13: Assinatura criada
                                 logger.info("✅ Assinatura criada/atualizada com sucesso!")
+
+                                # Enviar email de confirmação
+                                try:
+                                    from src.services.email_service import send_payment_confirmation
+                                    import json as _json
+                                    states = _json.loads(payment_data[3]) if isinstance(payment_data[3], str) else (payment_data[3] or [])
+                                    areas = _json.loads(payment_data[4]) if isinstance(payment_data[4], str) else (payment_data[4] or [])
+                                    send_payment_confirmation(
+                                        payment_data[0],   # email
+                                        payment_data[9],   # customer_name
+                                        payment_data[2],   # plan_name
+                                        states,
+                                        areas
+                                    )
+                                except Exception as email_err:
+                                    logger.error(f"❌ Erro ao enviar email de confirmação: {email_err}")
                             else:
                                 logger.warning(f"⚠️ Usuário não encontrado para email: {payment_data[0]}")
                         else:
