@@ -1,38 +1,45 @@
 # -*- coding: utf-8 -*-
-import smtplib
 import os
 import logging
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
+import requests
 
 logger = logging.getLogger(__name__)
 
+RESEND_API_URL = 'https://api.resend.com/emails'
+
 
 def send_email(to_email, subject, html_body):
-    mail_user = os.getenv('MAIL_USER')
-    mail_password = os.getenv('MAIL_PASSWORD')
+    api_key = os.getenv('RESEND_API_KEY')
+    mail_from = os.getenv('MAIL_FROM', 'Seglicit <noreply@seglicit.com.br>')
 
-    if not mail_user or not mail_password:
-        logger.warning("⚠️ MAIL_USER ou MAIL_PASSWORD não configurados — email não enviado")
+    if not api_key:
+        logger.warning("⚠️ RESEND_API_KEY não configurado — email não enviado")
         return False
 
-    logger.info(f"📧 Tentando enviar email para {to_email} via {mail_user}")
+    logger.info(f"📧 Enviando email para {to_email} via Resend...")
     try:
-        msg = MIMEMultipart('alternative')
-        msg['Subject'] = subject
-        msg['From'] = f"Seglicit <{mail_user}>"
-        msg['To'] = to_email
-        msg.attach(MIMEText(html_body, 'html', 'utf-8'))
+        resp = requests.post(
+            RESEND_API_URL,
+            headers={
+                'Authorization': f'Bearer {api_key}',
+                'Content-Type': 'application/json'
+            },
+            json={
+                'from': mail_from,
+                'to': [to_email],
+                'subject': subject,
+                'html': html_body
+            },
+            timeout=10
+        )
 
-        with smtplib.SMTP('smtp.gmail.com', 587, timeout=10) as server:
-            server.ehlo()
-            server.starttls()
-            server.ehlo()
-            server.login(mail_user, mail_password)
-            server.sendmail(mail_user, to_email, msg.as_string())
+        if resp.status_code in (200, 201):
+            logger.info(f"✅ Email enviado para {to_email}: {subject}")
+            return True
+        else:
+            logger.error(f"❌ Resend retornou {resp.status_code}: {resp.text}")
+            return False
 
-        logger.info(f"✅ Email enviado para {to_email}: {subject}")
-        return True
     except Exception as e:
         logger.error(f"❌ Erro ao enviar email para {to_email}: {e}")
         return False
