@@ -619,7 +619,7 @@ def get_user_subscription():
     conn = get_db_connection()
     cursor = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
     cursor.execute("""
-        SELECT id, plan_name, selected_states, selected_areas, status, created_at
+        SELECT id, plan_id, plan_name, selected_states, selected_areas, status, created_at
         FROM subscriptions
         WHERE user_id = %s AND status = 'active'
         ORDER BY created_at DESC

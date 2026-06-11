@@ -667,3 +667,25 @@ def get_payment_status(payment_id):
             'success': False,
             'error': str(e)
         }), 500
+
+
+@mercadopago_bp.route('/mercadopago/test-email', methods=['POST'])
+def test_payment_email():
+    """Endpoint temporário para testar email de confirmação sem fazer pagamento real."""
+    try:
+        data = request.get_json()
+        email = data.get('email')
+        if not email:
+            return jsonify({'success': False, 'error': 'email obrigatório'}), 400
+
+        from src.services.email_service import send_payment_confirmation
+        send_payment_confirmation(
+            customer_email=email,
+            customer_name=data.get('name', 'Usuário Teste'),
+            plan_name=data.get('plan', 'Básico'),
+            selected_states=data.get('states', ['SP', 'RJ']),
+            selected_areas=data.get('areas', ['Construção Civil'])
+        )
+        return jsonify({'success': True, 'message': f'Email de teste enviado para {email}'})
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500

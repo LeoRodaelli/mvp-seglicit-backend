@@ -566,32 +566,146 @@ def get_states():
         return jsonify({'success': False, 'error': 'Erro ao buscar estados', 'states': []}), 500
 
 
+def _load_subscription_filters(user_id):
+    """Carrega estados e áreas da assinatura ativa do usuário."""
+    conn = get_db_connection()
+    if not conn:
+        return None, None
+
+    try:
+        cursor = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+        cursor.execute("""
+            SELECT selected_states, selected_areas
+            FROM subscriptions
+            WHERE user_id = %s AND status = 'active'
+            ORDER BY created_at DESC
+            LIMIT 1
+        """, (user_id,))
+        row = cursor.fetchone()
+        cursor.close()
+        conn.close()
+
+        if not row:
+            return None, None
+
+        states = row['selected_states']
+        areas = row['selected_areas']
+
+        if isinstance(states, str):
+            try:
+                states = json.loads(states)
+            except Exception:
+                states = []
+        if isinstance(areas, str):
+            try:
+                areas = json.loads(areas)
+            except Exception:
+                areas = []
+
+        return states or None, areas or None
+    except Exception as e:
+        logger.error(f"Erro ao carregar subscription para stats: {e}")
+        return None, None
+
+
+def _build_stats_filter_clause(state_codes=None, area_keywords=None):
+    """Monta cláusulas WHERE e params para filtrar stats pelo plano."""
+    clauses = []
+    params = []
+
+    if state_codes:
+        placeholders = ','.join(['%s'] * len(state_codes))
+        clauses.append(f"state_code IN ({placeholders})")
+        params.extend(state_codes)
+
+    if area_keywords:
+        keyword_conditions = []
+        for kw in area_keywords:
+            keyword_conditions.append(
+                "(title ILIKE %s OR objeto ILIKE %s OR description ILIKE %s)"
+            )
+            params.extend([f'%{kw}%', f'%{kw}%', f'%{kw}%'])
+        clauses.append("(" + " OR ".join(keyword_conditions) + ")")
+
+    if not clauses:
+        return "", []
+
+    return " WHERE " + " AND ".join(clauses), params
+
+
 @tender_bp.route('/stats', methods=['GET'])
 def get_stats():
-    """Retorna estatísticas gerais do sistema"""
+    """Retorna estatísticas do sistema, opcionalmente filtradas pelo plano do usuário."""
     try:
+        user_id = request.args.get('user_id', type=int)
+        state_codes = None
+        area_keywords = None
+        scoped = False
+
+        if user_id:
+            states, areas = _load_subscription_filters(user_id)
+            if states:
+                state_codes = [s.strip().upper() for s in states if s and str(s).strip()]
+                scoped = True
+            if areas:
+                from src.routes.zaia_api import get_keywords_para_areas
+                area_keywords = get_keywords_para_areas(areas)[:20]
+                scoped = True
+
+        where_clause, filter_params = _build_stats_filter_clause(state_codes, area_keywords)
+
         conn = get_db_connection()
         if not conn:
             raise Exception("Erro de conexão com banco")
 
         cursor = conn.cursor()
 
-        cursor.execute("SELECT COUNT(*) FROM tenders")
+        cursor.execute(f"SELECT COUNT(*) FROM tenders{where_clause}", filter_params)
         total_tenders = cursor.fetchone()[0]
 
-        cursor.execute("SELECT COUNT(DISTINCT municipality_name) FROM tenders WHERE municipality_name IS NOT NULL")
+        cities_where = where_clause
+        cities_params = list(filter_params)
+        if cities_where:
+            cities_where += " AND municipality_name IS NOT NULL"
+        else:
+            cities_where = " WHERE municipality_name IS NOT NULL"
+        cursor.execute(f"SELECT COUNT(DISTINCT municipality_name) FROM tenders{cities_where}", cities_params)
         total_cities = cursor.fetchone()[0]
 
-        cursor.execute("SELECT COALESCE(SUM(items_count), 0) FROM tenders WHERE items_count IS NOT NULL")
+        items_where = where_clause
+        items_params = list(filter_params)
+        if items_where:
+            items_where += " AND items_count IS NOT NULL"
+        else:
+            items_where = " WHERE items_count IS NOT NULL"
+        cursor.execute(f"SELECT COALESCE(SUM(items_count), 0) FROM tenders{items_where}", items_params)
         total_items = cursor.fetchone()[0]
 
-        cursor.execute("SELECT COALESCE(SUM(downloads_count), 0) FROM tenders WHERE downloads_count IS NOT NULL")
+        files_where = where_clause
+        files_params = list(filter_params)
+        if files_where:
+            files_where += " AND downloads_count IS NOT NULL"
+        else:
+            files_where = " WHERE downloads_count IS NOT NULL"
+        cursor.execute(f"SELECT COALESCE(SUM(downloads_count), 0) FROM tenders{files_where}", files_params)
         total_files = cursor.fetchone()[0]
 
-        cursor.execute("SELECT COUNT(DISTINCT state_code) FROM tenders WHERE state_code IS NOT NULL")
+        states_where = where_clause
+        states_params = list(filter_params)
+        if states_where:
+            states_where += " AND state_code IS NOT NULL"
+        else:
+            states_where = " WHERE state_code IS NOT NULL"
+        cursor.execute(f"SELECT COUNT(DISTINCT state_code) FROM tenders{states_where}", states_params)
         total_states = cursor.fetchone()[0]
 
-        cursor.execute("SELECT COALESCE(SUM(estimated_value), 0) FROM tenders WHERE estimated_value IS NOT NULL")
+        value_where = where_clause
+        value_params = list(filter_params)
+        if value_where:
+            value_where += " AND estimated_value IS NOT NULL"
+        else:
+            value_where = " WHERE estimated_value IS NOT NULL"
+        cursor.execute(f"SELECT COALESCE(SUM(estimated_value), 0) FROM tenders{value_where}", value_params)
         total_value = cursor.fetchone()[0]
 
         cursor.close()
@@ -604,7 +718,8 @@ def get_stats():
             'total_files': int(total_files) if total_files else 0,
             'total_states': total_states,
             'total_value': float(total_value) if total_value else 0.0,
-            'formatted_value': f"R$ {float(total_value):,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.') if total_value else "R$ 0,00"
+            'formatted_value': f"R$ {float(total_value):,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.') if total_value else "R$ 0,00",
+            'scoped': scoped,
         }
 
         return jsonify({'success': True, 'stats': stats})
@@ -617,7 +732,7 @@ def get_stats():
             'stats': {
                 'total_tenders': 0, 'total_cities': 0, 'total_items': 0,
                 'total_files': 0, 'total_states': 0, 'total_value': 0.0,
-                'formatted_value': "R$ 0,00"
+                'formatted_value': "R$ 0,00", 'scoped': False,
             }
         }), 500
 

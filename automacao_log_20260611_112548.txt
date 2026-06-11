@@ -1,0 +1,19 @@
+[2026-06-11 11:25:48] [INFO] 🤖 AUTOMAÇÃO DE LICITAÇÕES - INÍCIO
+[2026-06-11 11:25:48] [INFO] 📅 Data/Hora: 2026-06-11 11:25:48
+[2026-06-11 11:25:48] [INFO] 📂 Diretório: C:\Users\leoro\Desktop\rodaelli\workspace\seglicit-workspace\seglicit-backend
+[2026-06-11 11:25:48] [INFO] 🐍 Python: C:\Users\leoro\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\python.exe
+[2026-06-11 11:25:48] [INFO] ============================================================
+[2026-06-11 11:25:48] [INFO] FASE 1: Executando Scraper do PNCP
+[2026-06-11 11:25:48] [INFO] ============================================================
+[2026-06-11 11:25:48] [INFO] ✅ Arquivo encontrado: pncp_scraper_items_only.py
+[2026-06-11 11:25:48] [INFO] 📂 Diretório: C:\Users\leoro\Desktop\rodaelli\workspace\seglicit-workspace\seglicit-backend
+[2026-06-11 11:25:48] [INFO] 🐍 Python: C:\Users\leoro\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\python.exe
+[2026-06-11 11:25:48] [INFO] ⏳ Executando: C:\Users\leoro\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\python.exe pncp_scraper_items_only.py
+[2026-06-11 11:25:48] [INFO] (Isso pode levar vários minutos... aguarde!)
+[2026-06-11 11:25:49] [INFO] ✅ Scraper finalizou! Return code: 1
+[2026-06-11 11:25:49] [INFO] 📝 Output do scraper (últimas 10 linhas):
+[2026-06-11 11:25:49] [INFO]   ERRO: Playwright nao instalado. Execute: pip install playwright
+[2026-06-11 11:25:49] [INFO]      Depois execute: playwright install
+[2026-06-11 11:25:49] [ERROR] ❌ Scraper falhou com código: 1
+[2026-06-11 11:25:49] [ERROR] ❌ Falha no scraper. Abortando.
+[2026-06-11 11:25:49] [INFO] ✅ Estatísticas salvas no banco!
