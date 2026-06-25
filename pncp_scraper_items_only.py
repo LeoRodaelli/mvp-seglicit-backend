@@ -3,6 +3,7 @@
 PNCP Scraper - Extrai itens APENAS da aba "Itens" ativa
 """
 
+import argparse
 import asyncio
 import os
 import json
@@ -12,6 +13,13 @@ from typing import List, Dict, Optional
 import re
 import logging
 from pathlib import Path
+
+# Estados prioritários (9 maiores mercados) — sobrescreva via SCRAPER_STATES
+DEFAULT_STATES = "SP,RJ,MG,RS,PR,SC,BA,GO,DF"
+ALL_BRAZIL_STATES = (
+    "AC,AL,AP,AM,BA,CE,DF,ES,GO,MA,MT,MS,MG,PA,PB,PR,PE,PI,"
+    "RJ,RN,RS,RO,RR,SC,SP,SE,TO"
+)
 
 try:
     from playwright.async_api import async_playwright, Page, Browser
@@ -61,7 +69,9 @@ class PNCPScraperItemsOnly:
             headless=self.headless,
             args=[
                 '--no-sandbox',
-                '--disable-dev-shm-usage'
+                '--disable-dev-shm-usage',
+                '--disable-gpu',
+                '--disable-extensions',
             ]
         )
 
@@ -1526,59 +1536,74 @@ async def save_to_database(editais: List[Dict], db_path: str = 'src/database/app
         logger.error(f"❌ Erro ao salvar no banco: {e}")
         return 0
 
+def parse_scraper_args():
+    """Lê configuração via CLI ou variáveis de ambiente."""
+    default_states = os.getenv("SCRAPER_STATES", DEFAULT_STATES)
+    default_limit = int(os.getenv("SCRAPER_LIMIT_PER_STATE", "10"))
+    default_headless = os.getenv("SCRAPER_HEADLESS", "true").lower() in ("1", "true", "yes")
+
+    parser = argparse.ArgumentParser(description="PNCP Scraper — aba Itens")
+    parser.add_argument(
+        "--states",
+        default=default_states,
+        help="UFs separadas por vírgula (use 'ALL' para os 27 estados)",
+    )
+    parser.add_argument(
+        "--limit",
+        type=int,
+        default=default_limit,
+        help="Máximo de editais por estado (0 = sem limite)",
+    )
+    parser.add_argument(
+        "--headless",
+        action=argparse.BooleanOptionalAction,
+        default=default_headless,
+        help="Executar browser em modo headless",
+    )
+    return parser.parse_args()
+
+
+def resolve_states(states_arg: str) -> List[str]:
+    raw = (states_arg or DEFAULT_STATES).strip().upper()
+    if raw == "ALL":
+        raw = ALL_BRAZIL_STATES
+    return [part.strip() for part in raw.split(",") if part.strip()]
+
+
 async def main():
     """Função principal"""
+    args = parse_scraper_args()
+    states = resolve_states(args.states)
+    limit = args.limit if args.limit > 0 else None
+
     logger.info("🎯 Iniciando PNCP Scraper - APENAS aba 'Itens'")
     logger.info("📊 Extração RESTRITA à aba 'Itens' ativa")
     logger.info("🗂️ Downloads da aba 'Arquivos'")
-
-    # Configurações
-    uf = "SP"
-    limit = 10  # Processar apenas 3 editais para teste (mude para None para processar todos)
+    logger.info(f"🌎 Estados: {', '.join(states)}")
+    logger.info(f"🔢 Limite por estado: {limit or 'sem limite'}")
+    logger.info(f"👻 Headless: {args.headless}")
 
     all_editais = []
+    skip_sqlite = os.getenv("SCRAPER_SKIP_SQLITE", "").lower() in ("1", "true", "yes") or bool(
+        os.getenv("DB_HOST")
+    )
 
-    async with PNCPScraperItemsOnly(headless=True) as scraper:
-        logger.info(f"\n{'='*60}")
-        logger.info(f"🎯 PROCESSANDO EDITAIS - APENAS ABA 'ITENS' - UF: {uf}")
-        logger.info(f"{'='*60}")
+    async with PNCPScraperItemsOnly(headless=args.headless) as scraper:
+        for uf in states:
+            logger.info(f"\n{'='*60}")
+            logger.info(f"🎯 PROCESSANDO EDITAIS - UF: {uf}")
+            logger.info(f"{'='*60}")
 
-        editais = await scraper.scrape_editais(uf, limit)
+            editais = await scraper.scrape_editais(uf, limit)
 
-        if editais:
-            all_editais.extend(editais)
-            logger.info(f"🎉 SUCESSO! {len(editais)} editais coletados")
+            if editais:
+                all_editais.extend(editais)
+                logger.info(f"🎉 {len(editais)} editais coletados em {uf}")
+            else:
+                logger.warning(f"⚠️ Nenhum edital coletado para {uf}")
 
-            # Mostrar resumo detalhado
-            for i, edital in enumerate(editais):
-                logger.info(f"\n--- EDITAL {i+1} ---")
-                logger.info(f"📋 Título: {edital['title']}")
-                logger.info(f"🆔 PNCP ID: {edital.get('pncp_id', 'N/A')}")
-                logger.info(f"🏢 Organização: {edital.get('organization_name', 'N/A')}")
-                logger.info(f"🏙️ Município: {edital.get('municipality_name', 'N/A')}")
-                logger.info(f"📝 Modalidade: {edital.get('modality', 'N/A')}")
-                logger.info(f"💰 Valor Total: R$ {edital.get('valor_total_estimado', 'N/A')}")
-                logger.info(f"📊 Aba Itens encontrada: {edital.get('items_tab_found', False)}")
-                logger.info(f"📊 Itens extraídos APENAS da aba 'Itens': {edital.get('items_count', 0)}")
-                logger.info(f"🗂️ Aba Arquivos encontrada: {edital.get('files_tab_found', False)}")
-                logger.info(f"⬇️ Arquivos baixados: {edital.get('downloads_count', 0)}")
-
-                # Mostrar itens se houver (APENAS da aba Itens)
-                if edital.get('items'):
-                    logger.info(f"   📊 ITENS DA ABA 'ITENS' (APENAS):")
-                    for j, item in enumerate(edital['items']):
-                        logger.info(f"      {j+1}. {item.get('descricao', 'N/A')[:50]}...")
-                        logger.info(f"         Qtd: {item.get('quantidade', 'N/A')} | Valor: {item.get('valor_total', 'N/A')}")
-                        logger.info(f"         Método: {item.get('extraction_method', 'N/A')}")
-
-                # Mostrar arquivos baixados se houver
-                if edital.get('downloaded_files'):
-                    logger.info(f"   🗂️ ARQUIVOS DA ABA 'ARQUIVOS':")
-                    for j, file_info in enumerate(edital['downloaded_files']):
-                        logger.info(f"      {j+1}. {file_info['filename']} ({file_info.get('size', 0)} bytes)")
-
-        else:
-            logger.warning(f"⚠️ Nenhum edital coletado para {uf}")
+            if uf != states[-1]:
+                await asyncio.sleep(2)
 
     # Salvar resultados
     if all_editais:
@@ -1594,9 +1619,12 @@ async def main():
 
         logger.info(f"💾 Arquivo JSON salvo: {output_file}")
 
-        # Salvar no banco
-        saved = await save_to_database(all_editais)
-        logger.info(f"🗄️ Banco de dados atualizado: {saved} editais")
+        # SQLite local apenas em dev (produção usa automacao → PostgreSQL)
+        if skip_sqlite:
+            logger.info("ℹ️ Salvamento SQLite ignorado (produção/SCRAPER_SKIP_SQLITE)")
+        else:
+            saved = await save_to_database(all_editais)
+            logger.info(f"🗄️ Banco SQLite atualizado: {saved} editais")
 
         # Estatísticas finais
         total_items = sum(edital.get('items_count', 0) for edital in all_editais)

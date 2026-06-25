@@ -102,3 +102,5 @@ docker-compose.override.yml
 # Coverage and profiling
 prof/
 *.prof
+
+!railway.automation.toml

@@ -7,6 +7,8 @@ import os
 from datetime import datetime
 from dotenv import load_dotenv
 
+from src.utils.plan_filters import build_plan_filter, parse_json_list
+
 load_dotenv()
 
 # Configure logging
@@ -127,6 +129,8 @@ def get_tenders():
       - apenas_hoje        : 'true' para filtrar apenas publicações de hoje
       - date_from           : data inicial do período (YYYY-MM-DD)
       - date_to             : data final do período (YYYY-MM-DD)
+      - user_id             : ID do usuário (usado com plan_filter)
+      - plan_filter         : 'true' para aplicar estados/áreas da assinatura ativa
     """
     try:
         page = request.args.get('page', 1, type=int)
@@ -140,6 +144,10 @@ def get_tenders():
         apenas_hoje = request.args.get('apenas_hoje', '').lower() == 'true'
         date_from = request.args.get('date_from', '').strip()   # YYYY-MM-DD
         date_to = request.args.get('date_to', '').strip()       # YYYY-MM-DD
+        user_id = request.args.get('user_id', type=int)
+        plan_filter = request.args.get('plan_filter', '').lower() == 'true'
+        plan_state_codes = None
+        plan_areas = None
 
         # ── Filtro por IDs específicos (para favoritos) ──────────────────────────────
         # Aceita: ids=1&ids=2&ids=3  OU  ids=1,2,3
@@ -151,27 +159,36 @@ def get_tenders():
                 if part.isdigit():
                     filter_ids.append(int(part))
 
+        # ── Filtro automático pelo plano (assinatura ativa) ────────────────
+        if plan_filter and user_id:
+            plan_state_codes, plan_areas = _load_subscription_filters(user_id)
+
         # ── Múltiplos estados ──────────────────────────────────────────────
         # Aceita: state_code=SP&state_code=RJ  OU  state_code=SP,RJ
         raw_states = request.args.getlist('state_code')
         state_codes = []
-        for s in raw_states:
-            for part in s.split(','):
-                part = part.strip().upper()
-                if part:
-                    state_codes.append(part)
+        if plan_state_codes:
+            state_codes = plan_state_codes
+        else:
+            for s in raw_states:
+                for part in s.split(','):
+                    part = part.strip().upper()
+                    if part:
+                        state_codes.append(part)
 
         # ── Múltiplas keywords ─────────────────────────────────────────────
         # Aceita: keywords=computador,notebook,servidor
         # OU keyword=computador (retrocompatível)
         all_keywords = []
-        if keywords_param:
-            for kw in keywords_param.split(','):
-                kw = kw.strip()
-                if kw:
-                    all_keywords.append(kw)
-        elif keyword:
-            all_keywords = [keyword]
+        use_plan_area_filter = bool(plan_areas)
+        if not use_plan_area_filter:
+            if keywords_param:
+                for kw in keywords_param.split(','):
+                    kw = kw.strip()
+                    if kw:
+                        all_keywords.append(kw)
+            elif keyword:
+                all_keywords = [keyword]
 
         # Conectar
         conn = get_db_connection()
@@ -236,8 +253,15 @@ def get_tenders():
             base_query += " AND DATE(publication_date) <= %s"
             params.append(date_to)
 
+        # Filtro por áreas do plano (cada área com OR interno; entre áreas também OR)
+        if use_plan_area_filter:
+            area_clause, area_params = build_plan_filter(None, plan_areas)
+            if area_clause:
+                base_query += f" AND {area_clause}"
+                params.extend(area_params)
+
         # Filtro por múltiplas keywords (OR entre elas, busca em title + objeto + description)
-        if all_keywords:
+        elif all_keywords:
             keyword_conditions = []
             for kw in all_keywords:
                 keyword_conditions.append(
@@ -295,7 +319,12 @@ def get_tenders():
             count_query += " AND DATE(publication_date) <= %s"
             count_params.append(date_to)
 
-        if all_keywords:
+        if use_plan_area_filter:
+            area_clause, area_params = build_plan_filter(None, plan_areas)
+            if area_clause:
+                count_query += f" AND {area_clause}"
+                count_params.extend(area_params)
+        elif all_keywords:
             keyword_conditions = []
             for kw in all_keywords:
                 keyword_conditions.append(
@@ -588,49 +617,12 @@ def _load_subscription_filters(user_id):
         if not row:
             return None, None
 
-        states = row['selected_states']
-        areas = row['selected_areas']
-
-        if isinstance(states, str):
-            try:
-                states = json.loads(states)
-            except Exception:
-                states = []
-        if isinstance(areas, str):
-            try:
-                areas = json.loads(areas)
-            except Exception:
-                areas = []
-
+        states = parse_json_list(row['selected_states'])
+        areas = parse_json_list(row['selected_areas'])
         return states or None, areas or None
     except Exception as e:
         logger.error(f"Erro ao carregar subscription para stats: {e}")
         return None, None
-
-
-def _build_stats_filter_clause(state_codes=None, area_keywords=None):
-    """Monta cláusulas WHERE e params para filtrar stats pelo plano."""
-    clauses = []
-    params = []
-
-    if state_codes:
-        placeholders = ','.join(['%s'] * len(state_codes))
-        clauses.append(f"state_code IN ({placeholders})")
-        params.extend(state_codes)
-
-    if area_keywords:
-        keyword_conditions = []
-        for kw in area_keywords:
-            keyword_conditions.append(
-                "(title ILIKE %s OR objeto ILIKE %s OR description ILIKE %s)"
-            )
-            params.extend([f'%{kw}%', f'%{kw}%', f'%{kw}%'])
-        clauses.append("(" + " OR ".join(keyword_conditions) + ")")
-
-    if not clauses:
-        return "", []
-
-    return " WHERE " + " AND ".join(clauses), params
 
 
 @tender_bp.route('/stats', methods=['GET'])
@@ -638,21 +630,17 @@ def get_stats():
     """Retorna estatísticas do sistema, opcionalmente filtradas pelo plano do usuário."""
     try:
         user_id = request.args.get('user_id', type=int)
-        state_codes = None
-        area_keywords = None
         scoped = False
+        filter_clause = ""
+        filter_params = []
 
         if user_id:
             states, areas = _load_subscription_filters(user_id)
-            if states:
-                state_codes = [s.strip().upper() for s in states if s and str(s).strip()]
-                scoped = True
-            if areas:
-                from src.routes.zaia_api import get_keywords_para_areas
-                area_keywords = get_keywords_para_areas(areas)[:20]
-                scoped = True
+            if states or areas:
+                filter_clause, filter_params = build_plan_filter(states, areas)
+                scoped = bool(filter_clause)
 
-        where_clause, filter_params = _build_stats_filter_clause(state_codes, area_keywords)
+        where_clause = f" WHERE {filter_clause}" if filter_clause else ""
 
         conn = get_db_connection()
         if not conn:

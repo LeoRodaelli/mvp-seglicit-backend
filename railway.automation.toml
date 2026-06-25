@@ -1,0 +1,17 @@
+# Configuração do serviço CRON de automação na Railway.
+# Crie um segundo serviço no mesmo projeto apontando para este arquivo em:
+# Settings → Config file path → railway.automation.toml
+#
+# Horários UTC (BRT = UTC-3):
+#   09:00 UTC = 06:00 BRT
+#   15:00 UTC = 12:00 BRT
+#   21:00 UTC = 18:00 BRT
+
+[build]
+builder = "NIXPACKS"
+buildCommand = "pip install -r requirements.txt && python -m playwright install --with-deps chromium"
+
+[deploy]
+startCommand = "python automacao_licitacoes_FINAL.py"
+restartPolicyType = "never"
+cronSchedule = "0 9,15,21 * * *"
