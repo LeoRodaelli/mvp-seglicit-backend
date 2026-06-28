@@ -440,6 +440,35 @@ def get_user_subscription(user_id, cursor):
 # AUTENTICAÇÃO POR API KEY
 # ============================================================
 
+def extract_api_key_from_request():
+    """Lê a API Key do header X-API-Key ou Authorization: Bearer."""
+    api_key = (request.headers.get('X-API-Key') or '').strip()
+    if api_key:
+        return api_key
+
+    auth = (request.headers.get('Authorization') or '').strip()
+    if auth.lower().startswith('bearer '):
+        return auth[7:].strip()
+    return None
+
+
+def _load_user_by_id(user_id, cursor):
+    cursor.execute("""
+        SELECT id, username, email, full_name, phone,
+               company_name, state, user_type,
+               zaia_api_key, zaia_webhook_url
+        FROM users
+        WHERE id = %s AND is_active = true
+    """, (user_id,))
+    user = cursor.fetchone()
+    if not user:
+        return None
+
+    user_dict = dict(user)
+    user_dict['subscription'] = get_user_subscription(user_dict['id'], cursor)
+    return user_dict
+
+
 def get_user_by_api_key(api_key):
     """Busca o usuário dono da API Key informada."""
     if not api_key:
@@ -463,6 +492,14 @@ def get_user_by_api_key(api_key):
         user = cursor.fetchone()
 
         if not user:
+            env_key = (os.getenv('ZAIA_AGENT_API_KEY') or '').strip()
+            env_user_id = (os.getenv('ZAIA_AGENT_USER_ID') or '').strip()
+            if env_key and api_key == env_key and env_user_id.isdigit():
+                user_dict = _load_user_by_id(int(env_user_id), cursor)
+                cursor.close()
+                conn.close()
+                return user_dict
+
             cursor.close()
             conn.close()
             return None
@@ -488,7 +525,7 @@ def require_api_key(f):
 
     @wraps(f)
     def decorated(*args, **kwargs):
-        api_key = request.headers.get('X-API-Key')
+        api_key = extract_api_key_from_request()
 
         if not api_key:
             return jsonify({
@@ -501,13 +538,37 @@ def require_api_key(f):
         if not user:
             return jsonify({
                 'success': False,
-                'error': 'API Key inválida ou usuário inativo.'
+                'error': (
+                    'API Key inválida ou usuário inativo. '
+                    'Gere uma nova chave em POST /api/zaia/gerar-api-key e configure '
+                    'o header X-API-Key na ação HTTP do agente Zaia.'
+                )
             }), 403
 
         kwargs['current_user'] = user
         return f(*args, **kwargs)
 
     return decorated
+
+
+def _first_query_param(*names):
+    """Retorna o primeiro query param preenchido entre vários aliases."""
+    for name in names:
+        value = request.args.get(name, '')
+        if value and str(value).strip():
+            return str(value).strip()
+    return ''
+
+
+def _normalize_date_param(value):
+    """Aceita yyyy-mm-dd ou dd/mm/yyyy."""
+    if not value:
+        return ''
+    if '/' in value:
+        parts = value.split('/')
+        if len(parts) == 3:
+            return f"{parts[2]}-{parts[1]}-{parts[0]}"
+    return value
 
 
 # ============================================================
@@ -659,13 +720,17 @@ def buscar_licitacoes(current_user):
     - per_page   : Itens por página (padrão: 10, máximo: 50)
     """
     try:
-        q = request.args.get('q', '').strip()
-        estados_param = request.args.get('estados', '').strip()
+        q = _first_query_param('q', 'palavra_chave', 'keywords', 'keyword')
+        estados_param = _first_query_param('estados', 'estado', 'uf')
         areas_param = request.args.get('areas', '').strip()
         valor_min = request.args.get('valor_min', type=float)
         valor_max = request.args.get('valor_max', type=float)
-        data_inicio = request.args.get('data_inicio', '').strip()
-        data_fim = request.args.get('data_fim', '').strip()
+        data_inicio = _normalize_date_param(
+            _first_query_param('data_inicio', 'inicio', 'date_from', 'data_inicio_busca')
+        )
+        data_fim = _normalize_date_param(
+            _first_query_param('data_fim', 'fim', 'date_to')
+        )
         apenas_novas = request.args.get('apenas_novas', 'false').lower() == 'true'
         page = max(1, request.args.get('page', 1, type=int))
         per_page = min(50, request.args.get('per_page', 10, type=int))
@@ -1057,9 +1122,11 @@ def buscar_simples(current_user):
     Retorna apenas { "resultado": "texto formatado..." }
     para que o LLM possa exibir diretamente sem confusão.
     """
-    q = request.args.get('q', '').strip()
-    estados_param = request.args.get('estados', '').strip()
-    data_inicio = request.args.get('data_inicio', '').strip()
+    q = _first_query_param('q', 'palavra_chave', 'keywords', 'keyword')
+    estados_param = _first_query_param('estados', 'estado', 'uf')
+    data_inicio = _normalize_date_param(
+        _first_query_param('data_inicio', 'inicio', 'date_from', 'data_inicio_busca')
+    )
 
     try:
         conn = get_db_connection()
@@ -1087,17 +1154,8 @@ def buscar_simples(current_user):
         # Filtro por data de início
         if data_inicio:
             try:
-                # Aceita formatos dd/mm/yyyy ou yyyy-mm-dd
-                if '/' in data_inicio:
-                    parts = data_inicio.split('/')
-                    if len(parts) == 3:
-                        data_inicio_fmt = f"{parts[2]}-{parts[1]}-{parts[0]}"
-                    else:
-                        data_inicio_fmt = data_inicio
-                else:
-                    data_inicio_fmt = data_inicio
                 conditions.append("publication_date >= %s")
-                params.append(data_inicio_fmt)
+                params.append(data_inicio)
             except Exception:
                 pass
 
@@ -1153,6 +1211,18 @@ def buscar_simples(current_user):
     except Exception as e:
         logger.error(f"Erro no endpoint buscar_simples: {e}")
         return jsonify({'resultado': f'Erro ao realizar a busca: {str(e)}'}), 500
+
+
+@zaia_bp.route('/zaia/validar-api-key', methods=['GET'])
+@require_api_key
+def validar_api_key(current_user):
+    """Diagnóstico rápido: confirma se a API Key configurada na Zaia é válida."""
+    return jsonify({
+        'success': True,
+        'mensagem': 'API Key válida.',
+        'usuario_id': current_user['id'],
+        'email': current_user.get('email', ''),
+    })
 
 
 @zaia_bp.route('/zaia/teste', methods=['GET'])

@@ -23,6 +23,7 @@ sys.path.insert(0, str(SCRIPT_DIR))
 load_dotenv(SCRIPT_DIR / ".env")
 
 from src.services.tender_notification_service import notify_users_of_new_tenders_batch
+from src.utils.tender_enrichment import enrich_edital_scrape_data
 
 
 class AutomacaoLicitacoes:
@@ -204,22 +205,21 @@ class AutomacaoLicitacoes:
             existing_ids = set(row[0] for row in cursor.fetchall())
             self.log(f"📊 Licitações já no banco: {len(existing_ids)}")
 
-            novos_editais = [
-                e for e in json_data
-                if e.get('pncp_id') and e.get('pncp_id') not in existing_ids
-            ]
-            self.log(f"🆕 Licitações novas para adicionar: {len(novos_editais)}")
+            editais_validos = [e for e in json_data if e.get('pncp_id')]
+            self.log(f"📋 Licitações válidas no JSON: {len(editais_validos)}")
 
-            if len(novos_editais) == 0:
-                self.log("✅ Nenhuma licitação nova encontrada!")
+            if len(editais_validos) == 0:
+                self.log("✅ Nenhuma licitação válida para processar!")
                 conn.close()
                 return True
 
             inseridos = 0
+            atualizados = 0
             erros = 0
             licitacoes_inseridas = []
 
-            for i, edital in enumerate(novos_editais, 1):
+            for i, edital in enumerate(editais_validos, 1):
+                edital = enrich_edital_scrape_data(edital)
                 title = edital.get('title', '')
                 try:
                     pncp_id = edital.get('pncp_id', '')
@@ -243,11 +243,11 @@ class AutomacaoLicitacoes:
                     prazo = edital.get('prazo', '')
 
                     items = edital.get('items', [])
-                    items_json = json.dumps(items) if items else None
+                    items_json = json.dumps(items, ensure_ascii=False) if items else None
                     items_count = len(items) if items else 0
 
                     downloaded_files = edital.get('downloaded_files', [])
-                    downloaded_files_json = json.dumps(downloaded_files) if downloaded_files else None
+                    downloaded_files_json = json.dumps(downloaded_files, ensure_ascii=False) if downloaded_files else None
                     downloads_count = len(downloaded_files) if downloaded_files else 0
 
                     created_at = datetime.now()
@@ -261,48 +261,87 @@ class AutomacaoLicitacoes:
                     if estimated_value is None and valor_total_estimado is not None:
                         estimated_value = valor_total_estimado
 
-                    cursor.execute("""
-                        INSERT INTO tenders (
+                    if pncp_id in existing_ids:
+                        cursor.execute("""
+                            UPDATE tenders SET
+                                title = COALESCE(NULLIF(%s, ''), title),
+                                description = COALESCE(NULLIF(%s, ''), description),
+                                organization_name = COALESCE(NULLIF(%s, ''), organization_name),
+                                organization_cnpj = COALESCE(NULLIF(%s, ''), organization_cnpj),
+                                municipality_name = COALESCE(NULLIF(%s, ''), municipality_name),
+                                municipality_ibge = COALESCE(NULLIF(%s, ''), municipality_ibge),
+                                state_code = COALESCE(NULLIF(%s, ''), state_code),
+                                publication_date = COALESCE(%s, publication_date),
+                                status = COALESCE(NULLIF(%s, ''), status),
+                                modality = COALESCE(NULLIF(%s, ''), modality),
+                                estimated_value = COALESCE(%s, estimated_value),
+                                source_url = COALESCE(NULLIF(%s, ''), source_url),
+                                detail_url = COALESCE(NULLIF(%s, ''), detail_url),
+                                data_source = %s,
+                                objeto = COALESCE(NULLIF(%s, ''), objeto),
+                                detailed_description = COALESCE(NULLIF(%s, ''), detailed_description),
+                                valor_total_estimado = COALESCE(%s, valor_total_estimado),
+                                prazo = COALESCE(NULLIF(%s, ''), prazo),
+                                items_json = CASE WHEN %s > 0 THEN %s ELSE items_json END,
+                                items_count = GREATEST(COALESCE(items_count, 0), %s),
+                                downloaded_files_json = CASE WHEN %s > 0 THEN %s ELSE downloaded_files_json END,
+                                downloads_count = GREATEST(COALESCE(downloads_count, 0), %s)
+                            WHERE pncp_id = %s
+                        """, (
+                            title, description, organization_name, organization_cnpj,
+                            municipality_name, municipality_ibge, state_code, publication_date,
+                            status, modality, estimated_value, source_url, detail_url,
+                            data_source, objeto, detailed_description, valor_total_estimado, prazo,
+                            items_count, items_json, items_count,
+                            downloads_count, downloaded_files_json, downloads_count,
+                            pncp_id,
+                        ))
+                        conn.commit()
+                        atualizados += 1
+                    else:
+                        cursor.execute("""
+                            INSERT INTO tenders (
+                                pncp_id, title, description, organization_name, organization_cnpj,
+                                municipality_name, municipality_ibge, state_code, publication_date,
+                                status, modality, estimated_value, source_url, detail_url,
+                                data_source, created_at,
+                                objeto, detailed_description, valor_total_estimado, prazo,
+                                items_json, items_count, downloaded_files_json, downloads_count
+                            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                            RETURNING id
+                        """, (
                             pncp_id, title, description, organization_name, organization_cnpj,
                             municipality_name, municipality_ibge, state_code, publication_date,
                             status, modality, estimated_value, source_url, detail_url,
                             data_source, created_at,
                             objeto, detailed_description, valor_total_estimado, prazo,
-                            items_json, items_count, downloaded_files_json, downloads_count
-                        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-                        RETURNING id
-                    """, (
-                        pncp_id, title, description, organization_name, organization_cnpj,
-                        municipality_name, municipality_ibge, state_code, publication_date,
-                        status, modality, estimated_value, source_url, detail_url,
-                        data_source, created_at,
-                        objeto, detailed_description, valor_total_estimado, prazo,
-                        items_json, items_count, downloaded_files_json, downloads_count,
-                    ))
-                    tender_id = cursor.fetchone()[0]
-                    conn.commit()
-                    inseridos += 1
-                    licitacoes_inseridas.append({
-                        'id': tender_id,
-                        'title': title,
-                        'description': description,
-                        'objeto': objeto,
-                        'organization_name': organization_name,
-                        'municipality_name': municipality_name,
-                        'state_code': state_code,
-                        'modality': modality,
-                        'estimated_value': estimated_value,
-                        'publication_date': publication_date,
-                        'detail_url': detail_url,
-                    })
+                            items_json, items_count, downloaded_files_json, downloads_count,
+                        ))
+                        tender_id = cursor.fetchone()[0]
+                        conn.commit()
+                        inseridos += 1
+                        existing_ids.add(pncp_id)
+                        licitacoes_inseridas.append({
+                            'id': tender_id,
+                            'title': title,
+                            'description': description,
+                            'objeto': objeto,
+                            'organization_name': organization_name,
+                            'municipality_name': municipality_name,
+                            'state_code': state_code,
+                            'modality': modality,
+                            'estimated_value': estimated_value or valor_total_estimado,
+                            'publication_date': publication_date,
+                            'detail_url': detail_url,
+                        })
 
-                    if i % 5 == 0 or i == len(novos_editais):
-                        self.log(f"  ✅ Progresso: {i}/{len(novos_editais)} licitações inseridas")
+                    if i % 5 == 0 or i == len(editais_validos):
+                        self.log(f"  ✅ Progresso: {i}/{len(editais_validos)} (inseridos: {inseridos}, atualizados: {atualizados})")
 
                 except Exception as e:
                     erros += 1
                     conn.rollback()
-                    self.log(f"  ❌ Erro ao inserir '{title[:30]}...': {e}", "ERROR")
+                    self.log(f"  ❌ Erro ao processar '{title[:30]}...': {e}", "ERROR")
 
             self.inseridos = inseridos
 
@@ -328,6 +367,7 @@ class AutomacaoLicitacoes:
             self.log("")
             self.log("📊 Inserção concluída!")
             self.log(f"  ✅ Inseridos: {inseridos}")
+            self.log(f"  🔄 Atualizados: {atualizados}")
             self.log(f"  ❌ Erros: {erros}")
             self.log(f"  📈 Total no banco: {total_final}")
             self.log(f"  📝 Com objeto: {com_objeto}")

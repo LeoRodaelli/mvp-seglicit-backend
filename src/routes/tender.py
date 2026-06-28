@@ -8,6 +8,7 @@ from datetime import datetime
 from dotenv import load_dotenv
 
 from src.utils.plan_filters import build_plan_filter, parse_json_list
+from src.utils.tender_enrichment import resolve_tender_value
 
 load_dotenv()
 
@@ -75,6 +76,12 @@ def build_tender_dict(row):
     except:
         downloaded_files = []
 
+    resolved_value = resolve_tender_value(
+        row['valor_total_estimado'],
+        row['estimated_value'],
+        items,
+    )
+
     return {
         'id': row['id'],
         'pncp_id': row['pncp_id'] or '',
@@ -98,13 +105,13 @@ def build_tender_dict(row):
         'objeto': row['objeto'] or '',
         'prazo': row['prazo'] or '',
         'detailed_description': row['detailed_description'] or '',
-        'valor_total_estimado': float(row['valor_total_estimado']) if row['valor_total_estimado'] else None,
-        'valor_total_estimado_br': format_brazilian_currency(row['valor_total_estimado']),
-        'items_count': row['items_count'] or 0,
+        'valor_total_estimado': resolved_value,
+        'valor_total_estimado_br': format_brazilian_currency(resolved_value),
+        'items_count': row['items_count'] or len(items),
         'downloads_count': row['downloads_count'] or 0,
         'items': items,
         'downloaded_files': downloaded_files,
-        'formatted_value': format_brazilian_currency(row['valor_total_estimado'] or row['estimated_value']),
+        'formatted_value': format_brazilian_currency(resolved_value),
         'has_items': len(items) > 0,
         'has_files': len(downloaded_files) > 0
     }
@@ -404,6 +411,12 @@ def get_tender_details(tender_id):
         except:
             downloaded_files = []
 
+        resolved_value = resolve_tender_value(
+            row['valor_total_estimado'],
+            row['estimated_value'],
+            items,
+        )
+
         tender = {
             'id': row['id'],
             'pncp_id': row['pncp_id'] or '',
@@ -421,10 +434,10 @@ def get_tender_details(tender_id):
             'objeto': row['objeto'] or '',
             'prazo': row['prazo'] or '',
             'detailed_description': row['detailed_description'] or '',
-            'valor_total_estimado': float(row['valor_total_estimado']) if row['valor_total_estimado'] else None,
-            'valor_total_estimado_br': format_brazilian_currency(row['valor_total_estimado']),
-            'formatted_value': format_brazilian_currency(row['valor_total_estimado'] or row['estimated_value']),
-            'items_count': row['items_count'] or 0,
+            'valor_total_estimado': resolved_value,
+            'valor_total_estimado_br': format_brazilian_currency(resolved_value),
+            'formatted_value': format_brazilian_currency(resolved_value),
+            'items_count': row['items_count'] or len(items),
             'downloads_count': row['downloads_count'] or 0,
             'items': items,
             'downloaded_files': downloaded_files
@@ -466,7 +479,12 @@ def download_file(tender_id, filename):
             return jsonify({'error': 'Arquivo não encontrado'}), 404
 
         filepath = target_file.get('filepath', '')
-        if not os.path.exists(filepath):
+        remote_url = target_file.get('url', '')
+        if not filepath or not os.path.exists(filepath):
+            if remote_url:
+                cursor.close()
+                conn.close()
+                return jsonify({'success': True, 'redirect_url': remote_url}), 200
             return jsonify({'error': 'Arquivo não disponível no servidor'}), 404
 
         cursor.close()
@@ -505,7 +523,12 @@ def view_file(tender_id, filename):
             return jsonify({'error': 'Arquivo não encontrado'}), 404
 
         filepath = target_file.get('filepath', '')
-        if not os.path.exists(filepath):
+        remote_url = target_file.get('url', '')
+        if not filepath or not os.path.exists(filepath):
+            if remote_url:
+                cursor.close()
+                conn.close()
+                return jsonify({'success': True, 'redirect_url': remote_url}), 200
             return jsonify({'error': 'Arquivo não disponível no servidor'}), 404
 
         cursor.close()

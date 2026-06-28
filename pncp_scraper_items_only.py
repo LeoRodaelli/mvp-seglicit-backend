@@ -407,29 +407,24 @@ class PNCPScraperItemsOnly:
             # Clicar no card para acessar detalhes
             logger.info(f"🖱️ Clicando no edital {index + 1}...")
             await card.click()
-            await self.page.wait_for_timeout(4000)
+            await self.wait_for_detail_page()
+
+            # Entrar na contratação/processo antes de extrair itens e arquivos
+            access_info = await self.try_access_detail_page(index)
 
             current_url = self.page.url
             logger.info(f"📍 URL atual: {current_url}")
 
-            # Extrair informações detalhadas da página
             detailed_info = await self.extract_detailed_info()
-
-            # CORRIGIDO: Processar aba "Itens" APENAS para dados da tabela
             items_info = await self.process_items_tab_only(index)
-
-            # Depois processar aba "Arquivos" para downloads
             files_info = await self.process_files_tab(index)
 
-            # Tentar acessar contratação
-            access_info = await self.try_access_contratacao(index)
-
-            # Combinar todas as informações
             edital_info.update(detailed_info)
             edital_info.update(items_info)
             edital_info.update(files_info)
             edital_info.update(access_info)
             edital_info['detail_url'] = current_url
+            edital_info = self.enrich_edital_from_items(edital_info)
 
             logger.info(f"✅ Edital {index + 1} processado com sucesso!")
             logger.info(f"   Título: {edital_info.get('title', 'N/A')}")
@@ -1053,21 +1048,128 @@ class PNCPScraperItemsOnly:
             logger.warning(f"⚠️ Erro ao baixar arquivo: {e}")
             return None
 
+    async def wait_for_detail_page(self, timeout_ms: int = 20000) -> bool:
+        """Aguarda a página de detalhe sair do estado 'Carregando...'."""
+        elapsed = 0
+        step = 500
+        while elapsed < timeout_ms:
+            try:
+                text = await self.page.inner_text('body')
+                text_upper = text.upper()
+                still_loading = (
+                    'CARREGANDO...' in text_upper
+                    and 'VALOR TOTAL' not in text_upper
+                    and 'OBJETO:' not in text_upper
+                    and 'MODALIDADE DA CONTRATAÇÃO' not in text_upper
+                    and 'MODALIDADE DA CONTRATACAO' not in text_upper
+                )
+                if not still_loading:
+                    return True
+            except Exception:
+                pass
+            await self.page.wait_for_timeout(step)
+            elapsed += step
+        logger.warning("⚠️ Timeout aguardando página de detalhe carregar")
+        return False
+
+    def enrich_edital_from_items(self, edital_info: Dict) -> Dict:
+        """Preenche valor ausente com a soma dos itens extraídos."""
+        if edital_info.get('valor_total_estimado'):
+            return edital_info
+        items = edital_info.get('items') or []
+        total = 0.0
+        found = False
+        for item in items:
+            try:
+                value = item.get('valor_total')
+                if value is not None:
+                    total += float(value)
+                    found = True
+            except (TypeError, ValueError):
+                continue
+        if found and total > 0:
+            edital_info['valor_total_estimado'] = total
+            if not edital_info.get('estimated_value'):
+                edital_info['estimated_value'] = total
+        return edital_info
+
+    async def try_access_detail_page(self, index: int) -> Dict:
+        """Acessa a página completa da contratação/processo quando disponível."""
+        try:
+            logger.info("🔍 Procurando botão de acesso à contratação/processo...")
+
+            access_selectors = [
+                "button:has-text('Acessar contratação')",
+                "a:has-text('Acessar contratação')",
+                "button:has-text('Acessar Contratação')",
+                "a:has-text('Acessar Contratação')",
+                "button:has-text('Acessar Processo Eletrônico')",
+                "a:has-text('Acessar Processo Eletrônico')",
+                "[title*='Acessar contratação']",
+                "[title*='Acessar Contratação']",
+            ]
+
+            access_button = None
+            used_selector = None
+
+            for selector in access_selectors:
+                try:
+                    button = self.page.locator(selector)
+                    if await button.count() > 0:
+                        access_button = button
+                        used_selector = selector
+                        break
+                except Exception:
+                    continue
+
+            if access_button and await access_button.count() > 0:
+                logger.info(f"✅ Botão de acesso encontrado! (Seletor: {used_selector})")
+                await access_button.first.click()
+                await self.wait_for_detail_page()
+                logger.info("📂 Acessou contratação/processo com sucesso!")
+                return {
+                    'has_access_button': True,
+                    'accessed_contratacao': True,
+                    'access_button_selector': used_selector,
+                }
+
+            logger.info("ℹ️ Botão de acesso à contratação não encontrado — seguindo na página atual")
+            return {
+                'has_access_button': False,
+                'accessed_contratacao': False,
+            }
+
+        except Exception as e:
+            logger.warning(f"⚠️ Erro ao tentar acessar contratação/processo: {e}")
+            return {
+                'has_access_button': False,
+                'accessed_contratacao': False,
+            }
+
+    async def try_access_contratacao(self, index: int) -> Dict:
+        """Compatibilidade — delega para try_access_detail_page."""
+        return await self.try_access_detail_page(index)
+
     async def extract_detailed_info(self) -> Dict:
         """Extrai informações detalhadas da página do edital"""
         try:
             logger.info("📋 Extraindo informações detalhadas...")
 
-            await self.page.wait_for_timeout(2000)
+            await self.wait_for_detail_page(timeout_ms=8000)
 
             page_text = await self.page.inner_text('body')
 
+            if 'Carregando...' in page_text and 'VALOR TOTAL' not in page_text.upper():
+                logger.warning("⚠️ Página ainda em carregamento — aguardando mais...")
+                await self.page.wait_for_timeout(3000)
+                page_text = await self.page.inner_text('body')
+
             detailed_description = page_text[:2000]
 
-            # Extrair valor total estimado
             valor_total = self.extract_valor_total(page_text)
+            if valor_total is None:
+                valor_total = self.extract_valor_total_from_items_preview(page_text)
 
-            # Extrair informações específicas
             objeto_detalhado = self.extract_objeto_detalhado(page_text)
             valor_estimado = self.extract_valor_estimado(page_text)
             prazo = self.extract_prazo(page_text)
@@ -1085,74 +1187,39 @@ class PNCPScraperItemsOnly:
             logger.warning(f"⚠️ Erro ao extrair detalhes: {e}")
             return {'has_details': False}
 
-    async def try_access_contratacao(self, index: int) -> Dict:
-        """Tenta acessar a contratação"""
-        try:
-            logger.info("🔍 Procurando botão 'Acessar contratação'...")
-
-            access_selectors = [
-                "button:has-text('Acessar contratação')",
-                "a:has-text('Acessar contratação')",
-                "button:has-text('Acessar Contratação')",
-                "a:has-text('Acessar Contratação')",
-                "[title*='Acessar contratação']",
-                "[title*='Acessar Contratação']"
-            ]
-
-            access_button = None
-            used_selector = None
-
-            for selector in access_selectors:
-                try:
-                    button = self.page.locator(selector)
-                    if await button.count() > 0:
-                        access_button = button
-                        used_selector = selector
-                        break
-                except:
-                    continue
-
-            if access_button and await access_button.count() > 0:
-                logger.info(f"✅ Botão 'Acessar contratação' encontrado! (Seletor: {used_selector})")
-
-                await access_button.click()
-                await self.page.wait_for_timeout(4000)
-
-                logger.info("📂 Acessou contratação com sucesso!")
-
-                return {
-                    'has_access_button': True,
-                    'accessed_contratacao': True,
-                    'access_button_selector': used_selector
-                }
-
-            else:
-                logger.info("⚠️ Botão 'Acessar contratação' não encontrado")
-                return {
-                    'has_access_button': False,
-                    'accessed_contratacao': False
-                }
-
-        except Exception as e:
-            logger.warning(f"⚠️ Erro ao tentar acessar contratação: {e}")
-            return {
-                'has_access_button': False,
-                'accessed_contratacao': False
-            }
-
     def extract_valor_total(self, text: str) -> Optional[float]:
         """Extrai valor total estimado"""
         try:
-            # Procurar por "VALOR TOTAL ESTIMADO"
-            pattern = r'VALOR TOTAL ESTIMADO.*?R\$\s*([\d.,]+)'
-            match = re.search(pattern, text, re.IGNORECASE | re.DOTALL)
-
-            if match:
-                valor_str = match.group(1).replace('.', '').replace(',', '.')
-                return float(valor_str)
-
+            patterns = [
+                r'VALOR TOTAL ESTIMADO(?:\s+DA COMPRA)?[^\d]*R\$\s*([\d.,]+)',
+                r'VALOR TOTAL HOMOLOGADO(?:\s+DA COMPRA)?[^\d]*R\$\s*([\d.,]+)',
+                r'Valor(?:\s+Total)?(?:\s+Estimado)?(?:\s+da Compra)?\s*:?\s*R\$\s*([\d.,]+)',
+            ]
+            for pattern in patterns:
+                match = re.search(pattern, text, re.IGNORECASE | re.DOTALL)
+                if match:
+                    valor_str = match.group(1).replace('.', '').replace(',', '.')
+                    value = float(valor_str)
+                    if value > 0:
+                        return value
             return None
-        except:
+        except Exception:
+            return None
+
+    def extract_valor_total_from_items_preview(self, text: str) -> Optional[float]:
+        """Fallback: soma valores totais visíveis no preview da tabela de itens."""
+        try:
+            matches = re.findall(r'R\$\s*([\d]{1,3}(?:\.[\d]{3})*,[\d]{2})', text)
+            values = []
+            for raw in matches:
+                try:
+                    values.append(float(raw.replace('.', '').replace(',', '.')))
+                except ValueError:
+                    continue
+            if len(values) >= 2:
+                return max(values)
+            return None
+        except Exception:
             return None
 
     # Métodos de extração básica (mantidos do código anterior)
