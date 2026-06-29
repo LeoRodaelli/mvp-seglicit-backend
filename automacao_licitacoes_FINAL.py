@@ -24,6 +24,21 @@ load_dotenv(SCRIPT_DIR / ".env")
 
 from src.services.tender_notification_service import notify_users_of_new_tenders_batch
 from src.utils.tender_enrichment import enrich_edital_scrape_data
+from src.utils.tender_dates import coerce_date, parse_proposal_dates_from_text
+from src.services.tender_expiration_service import expirar_licitacoes_encerradas
+
+
+def _proposal_dates_from_edital(edital):
+    start = coerce_date(edital.get('proposal_start_date'))
+    end = coerce_date(edital.get('proposal_end_date'))
+    if not start or not end:
+        blob = ' '.join(
+            filter(None, [edital.get('detailed_description'), edital.get('description'), edital.get('prazo')])
+        )
+        parsed_start, parsed_end = parse_proposal_dates_from_text(blob)
+        start = start or parsed_start
+        end = end or parsed_end
+    return start, end
 
 
 class AutomacaoLicitacoes:
@@ -261,6 +276,8 @@ class AutomacaoLicitacoes:
                     if estimated_value is None and valor_total_estimado is not None:
                         estimated_value = valor_total_estimado
 
+                    proposal_start_date, proposal_end_date = _proposal_dates_from_edital(edital)
+
                     if pncp_id in existing_ids:
                         cursor.execute("""
                             UPDATE tenders SET
@@ -282,6 +299,8 @@ class AutomacaoLicitacoes:
                                 detailed_description = COALESCE(NULLIF(%s, ''), detailed_description),
                                 valor_total_estimado = COALESCE(%s, valor_total_estimado),
                                 prazo = COALESCE(NULLIF(%s, ''), prazo),
+                                proposal_start_date = COALESCE(%s, proposal_start_date),
+                                proposal_end_date = COALESCE(%s, proposal_end_date),
                                 items_json = CASE WHEN %s > 0 THEN %s ELSE items_json END,
                                 items_count = GREATEST(COALESCE(items_count, 0), %s),
                                 downloaded_files_json = CASE WHEN %s > 0 THEN %s ELSE downloaded_files_json END,
@@ -292,6 +311,7 @@ class AutomacaoLicitacoes:
                             municipality_name, municipality_ibge, state_code, publication_date,
                             status, modality, estimated_value, source_url, detail_url,
                             data_source, objeto, detailed_description, valor_total_estimado, prazo,
+                            proposal_start_date, proposal_end_date,
                             items_count, items_json, items_count,
                             downloads_count, downloaded_files_json, downloads_count,
                             pncp_id,
@@ -306,8 +326,9 @@ class AutomacaoLicitacoes:
                                 status, modality, estimated_value, source_url, detail_url,
                                 data_source, created_at,
                                 objeto, detailed_description, valor_total_estimado, prazo,
+                                proposal_start_date, proposal_end_date,
                                 items_json, items_count, downloaded_files_json, downloads_count
-                            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
                             RETURNING id
                         """, (
                             pncp_id, title, description, organization_name, organization_cnpj,
@@ -315,6 +336,7 @@ class AutomacaoLicitacoes:
                             status, modality, estimated_value, source_url, detail_url,
                             data_source, created_at,
                             objeto, detailed_description, valor_total_estimado, prazo,
+                            proposal_start_date, proposal_end_date,
                             items_json, items_count, downloaded_files_json, downloads_count,
                         ))
                         tender_id = cursor.fetchone()[0]
@@ -480,6 +502,15 @@ class AutomacaoLicitacoes:
                 self.log("❌ Falha na inserção. Abortando.", "ERROR")
                 self.salvar_estatisticas(False, json_file)
                 return False
+
+            self.log("=" * 60)
+            self.log("FASE 2.5: Expirando licitações encerradas")
+            self.log("=" * 60)
+            try:
+                expiradas = expirar_licitacoes_encerradas()
+                self.log(f"⏳ Licitações marcadas como Expirada: {expiradas}")
+            except Exception as e:
+                self.log(f"⚠️  Erro ao expirar licitações: {e}", "WARNING")
 
             self.limpar_arquivos_antigos(dias=7)
             self.salvar_estatisticas(True, json_file, self.inseridos)

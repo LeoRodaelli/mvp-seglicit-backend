@@ -12,7 +12,13 @@ from datetime import datetime, date
 from typing import List, Dict, Optional
 import re
 import logging
+import sys
 from pathlib import Path
+
+SCRIPT_DIR = Path(__file__).resolve().parent
+sys.path.insert(0, str(SCRIPT_DIR))
+
+from src.utils.tender_dates import parse_proposal_dates_from_text
 
 # Estados prioritários (9 maiores mercados) — sobrescreva via SCRAPER_STATES
 DEFAULT_STATES = "SP,RJ,MG,RS,PR,SC,BA,GO,DF"
@@ -1170,9 +1176,11 @@ class PNCPScraperItemsOnly:
             if valor_total is None:
                 valor_total = self.extract_valor_total_from_items_preview(page_text)
 
+            proposal_start, proposal_end = self.extract_proposal_dates(page_text)
+            prazo = self.format_prazo_propostas(proposal_start, proposal_end) or self.extract_prazo(page_text)
+
             objeto_detalhado = self.extract_objeto_detalhado(page_text)
             valor_estimado = self.extract_valor_estimado(page_text)
-            prazo = self.extract_prazo(page_text)
 
             return {
                 'has_details': True,
@@ -1180,7 +1188,9 @@ class PNCPScraperItemsOnly:
                 'objeto_detalhado': objeto_detalhado,
                 'valor_estimado_detalhado': valor_estimado,
                 'valor_total_estimado': valor_total,
-                'prazo': prazo
+                'prazo': prazo,
+                'proposal_start_date': proposal_start.isoformat() if proposal_start else None,
+                'proposal_end_date': proposal_end.isoformat() if proposal_end else None,
             }
 
         except Exception as e:
@@ -1430,6 +1440,18 @@ class PNCPScraperItemsOnly:
             return None
         except:
             return None
+
+    def extract_proposal_dates(self, text: str):
+        return parse_proposal_dates_from_text(text)
+
+    def format_prazo_propostas(self, start, end) -> Optional[str]:
+        if start and end:
+            return f'Propostas: {start.strftime("%d/%m/%Y")} a {end.strftime("%d/%m/%Y")}'
+        if end:
+            return f'Propostas até {end.strftime("%d/%m/%Y")}'
+        if start:
+            return f'Propostas a partir de {start.strftime("%d/%m/%Y")}'
+        return None
 
     async def scrape_editais(self, uf: str, limit: int = None) -> List[Dict]:
         """Função principal de scraping com extração APENAS da aba Itens - COM PAGINAÇÃO POR BOTÃO"""

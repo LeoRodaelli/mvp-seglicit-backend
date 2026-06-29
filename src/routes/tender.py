@@ -9,6 +9,12 @@ from dotenv import load_dotenv
 
 from src.utils.plan_filters import build_plan_filter, parse_json_list
 from src.utils.tender_enrichment import resolve_tender_value
+from src.utils.tender_dates import (
+    tender_is_open,
+    days_until_proposal_close,
+    proposal_close_label,
+    open_tender_sql_clause,
+)
 
 load_dotenv()
 
@@ -82,6 +88,13 @@ def build_tender_dict(row):
         items,
     )
 
+    proposal_end = row.get('proposal_end_date')
+    proposal_start = row.get('proposal_start_date')
+    status = row.get('status')
+    publication = row.get('publication_date')
+    is_open = tender_is_open(proposal_end, publication, status)
+    days_left = days_until_proposal_close(proposal_end)
+
     return {
         'id': row['id'],
         'pncp_id': row['pncp_id'] or '',
@@ -104,6 +117,12 @@ def build_tender_dict(row):
         'pncp_url': row['detail_url'] or row['source_url'] or '',
         'objeto': row['objeto'] or '',
         'prazo': row['prazo'] or '',
+        'proposal_start_date': str(proposal_start) if proposal_start else '',
+        'proposal_end_date': str(proposal_end) if proposal_end else '',
+        'proposal_end_date_br': format_brazilian_date(proposal_end),
+        'is_open': is_open,
+        'days_until_close': days_left,
+        'proposal_close_label': proposal_close_label(proposal_end, status),
         'detailed_description': row['detailed_description'] or '',
         'valor_total_estimado': resolved_value,
         'valor_total_estimado_br': format_brazilian_currency(resolved_value),
@@ -134,6 +153,8 @@ def get_tenders():
       - valor_min          : valor mínimo estimado
       - valor_max          : valor máximo estimado
       - apenas_hoje        : 'true' para filtrar apenas publicações de hoje
+      - apenas_abertas     : 'false' para incluir encerradas (padrão: true)
+      - incluir_encerradas : alias de apenas_abertas=false
       - date_from           : data inicial do período (YYYY-MM-DD)
       - date_to             : data final do período (YYYY-MM-DD)
       - user_id             : ID do usuário (usado com plan_filter)
@@ -149,6 +170,9 @@ def get_tenders():
         valor_min = request.args.get('valor_min', type=float)
         valor_max = request.args.get('valor_max', type=float)
         apenas_hoje = request.args.get('apenas_hoje', '').lower() == 'true'
+        incluir_encerradas = request.args.get('incluir_encerradas', '').lower() == 'true'
+        apenas_abertas_param = request.args.get('apenas_abertas', 'true').lower()
+        apenas_abertas = not incluir_encerradas and apenas_abertas_param != 'false'
         date_from = request.args.get('date_from', '').strip()   # YYYY-MM-DD
         date_to = request.args.get('date_to', '').strip()       # YYYY-MM-DD
         user_id = request.args.get('user_id', type=int)
@@ -210,11 +234,14 @@ def get_tenders():
                status, modality, estimated_value, source_url, detail_url,
                data_source, created_at, downloaded_files, objeto, items_json,
                downloaded_files_json, prazo, detailed_description, valor_total_estimado,
-               items_count, downloads_count
+               items_count, downloads_count, proposal_start_date, proposal_end_date
         FROM tenders
         WHERE 1=1
         """
         params = []
+
+        if apenas_abertas and not filter_ids:
+            base_query += f" AND ({open_tender_sql_clause()})"
 
         # Filtro por IDs específicos (favoritos)
         if filter_ids:
@@ -288,6 +315,9 @@ def get_tenders():
         # ── Count query (mesma lógica, sem LIMIT/OFFSET) ───────────────────
         count_query = "SELECT COUNT(*) FROM tenders WHERE 1=1"
         count_params = []
+
+        if apenas_abertas and not filter_ids:
+            count_query += f" AND ({open_tender_sql_clause()})"
 
         # Filtro por IDs específicos (favoritos)
         if filter_ids:
@@ -366,7 +396,8 @@ def get_tenders():
                 'modality': modality,
                 'valor_min': valor_min,
                 'valor_max': valor_max,
-                'apenas_hoje': apenas_hoje
+                'apenas_hoje': apenas_hoje,
+                'apenas_abertas': apenas_abertas and not filter_ids,
             }
         })
 
@@ -433,6 +464,12 @@ def get_tender_details(tender_id):
             'pncp_url': row['detail_url'] or row['source_url'] or '',
             'objeto': row['objeto'] or '',
             'prazo': row['prazo'] or '',
+            'proposal_start_date': str(row['proposal_start_date']) if row.get('proposal_start_date') else '',
+            'proposal_end_date': str(row['proposal_end_date']) if row.get('proposal_end_date') else '',
+            'proposal_end_date_br': format_brazilian_date(row.get('proposal_end_date')),
+            'is_open': tender_is_open(row.get('proposal_end_date'), row.get('publication_date'), row.get('status')),
+            'days_until_close': days_until_proposal_close(row.get('proposal_end_date')),
+            'proposal_close_label': proposal_close_label(row.get('proposal_end_date'), row.get('status')),
             'detailed_description': row['detailed_description'] or '',
             'valor_total_estimado': resolved_value,
             'valor_total_estimado_br': format_brazilian_currency(resolved_value),

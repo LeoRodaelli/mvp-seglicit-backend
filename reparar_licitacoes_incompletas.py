@@ -24,6 +24,7 @@ sys.path.insert(0, str(SCRIPT_DIR))
 load_dotenv(SCRIPT_DIR / ".env")
 
 from src.utils.tender_enrichment import enrich_edital_scrape_data
+from src.utils.tender_dates import coerce_date
 from pncp_scraper_items_only import PNCPScraperItemsOnly
 
 
@@ -71,6 +72,8 @@ def upsert_repaired(cursor, conn, edital):
     files_json = json.dumps(files, ensure_ascii=False) if files else None
     valor = edital.get('valor_total_estimado')
     estimated = edital.get('estimated_value') or valor
+    proposal_start = coerce_date(edital.get('proposal_start_date'))
+    proposal_end = coerce_date(edital.get('proposal_end_date'))
 
     cursor.execute(
         """
@@ -82,6 +85,9 @@ def upsert_repaired(cursor, conn, edital):
             downloaded_files_json = CASE WHEN %s > 0 THEN %s ELSE downloaded_files_json END,
             downloads_count = GREATEST(COALESCE(downloads_count, 0), %s),
             detailed_description = COALESCE(NULLIF(%s, ''), detailed_description),
+            prazo = COALESCE(NULLIF(%s, ''), prazo),
+            proposal_start_date = COALESCE(%s, proposal_start_date),
+            proposal_end_date = COALESCE(%s, proposal_end_date),
             data_source = %s
         WHERE pncp_id = %s
         """,
@@ -95,6 +101,9 @@ def upsert_repaired(cursor, conn, edital):
             files_json,
             len(files),
             edital.get('detailed_description') or '',
+            edital.get('prazo') or '',
+            proposal_start,
+            proposal_end,
             f'PNCP_REPAIR_{datetime.now().strftime("%Y%m%d")}',
             edital.get('pncp_id'),
         ),
