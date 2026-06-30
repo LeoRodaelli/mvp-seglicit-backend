@@ -366,8 +366,51 @@ class PNCPScraperItemsOnly:
         except Exception as e:
             logger.error(f"❌ Erro no debug de paginação: {e}")
 
+    def resolve_detail_url(self, href: Optional[str]) -> Optional[str]:
+        """Monta URL absoluta da página de detalhe a partir do href do card."""
+        if not href:
+            return None
+        if href.startswith('http'):
+            return href
+        if href.startswith('/editais/'):
+            return f"{self.base_url}/app{href}"
+        if href.startswith('/'):
+            return f"{self.base_url}{href}"
+        return f"{self.base_url}/{href}"
+
+    def is_scrape_incomplete(self, data: Dict) -> bool:
+        """Indica se valor e itens ainda não foram extraídos."""
+        items = data.get('items') or []
+        valor = data.get('valor_total_estimado')
+        return valor is None and len(items) == 0
+
+    async def scrape_detail_page(self, index: int = 0) -> Dict:
+        """Extrai detalhes, itens e arquivos da página de detalhe atual."""
+        access_info = await self.try_access_detail_page(index)
+        detailed_info = await self.extract_detailed_info()
+        items_info = await self.process_items_tab_only(index)
+        files_info = await self.process_files_tab(index)
+
+        result = {}
+        result.update(detailed_info)
+        result.update(items_info)
+        result.update(files_info)
+        result.update(access_info)
+        return self.enrich_edital_from_items(result)
+
+    async def return_to_list_page(self, list_url: str) -> None:
+        """Volta à listagem após visitar a página de detalhe."""
+        logger.info("🔙 Voltando para lista de editais...")
+        try:
+            await self.page.goto(list_url, timeout=60000, wait_until='domcontentloaded')
+        except Exception:
+            await self.page.go_back()
+        await self.page.wait_for_timeout(2500)
+
     async def process_edital(self, index: int) -> Optional[Dict]:
-        """Processa um edital específico pelo índice"""
+        """Processa um edital específico pelo índice (navegação direta via URL)."""
+        list_url = getattr(self, 'list_page_url', None) or self.page.url
+
         try:
             logger.info(f"\n{'='*50}")
             logger.info(f"📄 PROCESSANDO EDITAL {index + 1}")
@@ -375,7 +418,6 @@ class PNCPScraperItemsOnly:
 
             await self.page.wait_for_timeout(2000)
 
-            # Obter todos os cards
             cards = await self.page.locator("a.br-item").all()
 
             if len(cards) == 0:
@@ -391,67 +433,61 @@ class PNCPScraperItemsOnly:
                         if len(cards) > 0:
                             logger.info(f"✅ Usando seletor alternativo: {selector}")
                             break
-                    except:
+                    except Exception:
                         continue
 
             if index >= len(cards):
                 logger.warning(f"⚠️ Índice {index} fora do range. Total de cards: {len(cards)}")
                 return None
 
-            # Extrair informações básicas do card
             card = cards[index]
             card_text = await card.inner_text()
             logger.info(f"📋 Texto do card: {card_text[:100]}...")
 
             href = await card.get_attribute('href')
-            logger.info(f"🔗 Link do edital: {href}")
+            detail_url = self.resolve_detail_url(href)
+            logger.info(f"🔗 Link do edital: {href} → {detail_url}")
 
-            # Extrair informações básicas
             edital_info = self.extract_basic_info(card_text, index)
             edital_info['edital_href'] = href
+            edital_info['detail_url'] = detail_url
 
-            # Clicar no card para acessar detalhes
-            logger.info(f"🖱️ Clicando no edital {index + 1}...")
-            await card.click()
-            await self.wait_for_detail_page()
+            if not detail_url:
+                logger.warning("⚠️ URL de detalhe indisponível — tentando clique no card")
+                await card.click()
+                await self.wait_for_detail_page()
+            else:
+                logger.info(f"🌐 Navegando para detalhe: {detail_url}")
+                await self.page.goto(detail_url, timeout=60000, wait_until='domcontentloaded')
+                await self.wait_for_detail_page()
 
-            # Entrar na contratação/processo antes de extrair itens e arquivos
-            access_info = await self.try_access_detail_page(index)
+            detail_data = await self.scrape_detail_page(index)
 
-            current_url = self.page.url
-            logger.info(f"📍 URL atual: {current_url}")
+            if self.is_scrape_incomplete(detail_data):
+                logger.warning("⚠️ Dados incompletos — retentando com espera extendida...")
+                await self.page.wait_for_timeout(5000)
+                await self.wait_for_detail_page(timeout_ms=15000)
+                detail_data = await self.scrape_detail_page(index)
 
-            detailed_info = await self.extract_detailed_info()
-            items_info = await self.process_items_tab_only(index)
-            files_info = await self.process_files_tab(index)
-
-            edital_info.update(detailed_info)
-            edital_info.update(items_info)
-            edital_info.update(files_info)
-            edital_info.update(access_info)
-            edital_info['detail_url'] = current_url
-            edital_info = self.enrich_edital_from_items(edital_info)
+            edital_info.update(detail_data)
+            edital_info['detail_url'] = self.page.url
 
             logger.info(f"✅ Edital {index + 1} processado com sucesso!")
             logger.info(f"   Título: {edital_info.get('title', 'N/A')}")
             logger.info(f"   Organização: {edital_info.get('organization_name', 'N/A')}")
+            logger.info(f"   Valor: {edital_info.get('valor_total_estimado', 'N/A')}")
             logger.info(f"   Itens na aba Itens: {len(edital_info.get('items', []))}")
             logger.info(f"   Arquivos baixados: {len(edital_info.get('downloaded_files', []))}")
 
-            # Voltar para página de resultados
-            logger.info(f"🔙 Voltando para lista de editais...")
-            await self.page.go_back()
-            await self.page.wait_for_timeout(3000)
-
+            await self.return_to_list_page(list_url)
             return edital_info
 
         except Exception as e:
             logger.error(f"❌ Erro ao processar edital {index + 1}: {e}")
 
             try:
-                await self.page.go_back()
-                await self.page.wait_for_timeout(2000)
-            except:
+                await self.return_to_list_page(list_url)
+            except Exception:
                 pass
 
             return None
@@ -1477,6 +1513,7 @@ class PNCPScraperItemsOnly:
 
                 # Aguardar carregamento da página
                 await self.page.wait_for_timeout(3000)
+                self.list_page_url = self.page.url
 
                 # Contar editais na página atual
                 total_editais_page = await self.get_editais_count()

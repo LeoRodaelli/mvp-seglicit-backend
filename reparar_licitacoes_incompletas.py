@@ -112,24 +112,23 @@ def upsert_repaired(cursor, conn, edital):
 
 
 async def repair_tender(scraper: PNCPScraperItemsOnly, row):
-    url = row['detail_url']
+    url = scraper.resolve_detail_url(row['detail_url']) or row['detail_url']
     print(f"🔧 Reparando: {row['title'][:60]}...")
-    await scraper.page.goto(url, timeout=45000)
+    await scraper.page.goto(url, timeout=45000, wait_until='domcontentloaded')
     await scraper.wait_for_detail_page()
-    await scraper.try_access_detail_page(0)
 
-    detailed = await scraper.extract_detailed_info()
-    items_info = await scraper.process_items_tab_only(0)
-    files_info = await scraper.process_files_tab(0)
+    detail_data = await scraper.scrape_detail_page(0)
 
-    edital = {
+    if scraper.is_scrape_incomplete(detail_data):
+        await scraper.page.wait_for_timeout(5000)
+        await scraper.wait_for_detail_page(timeout_ms=15000)
+        detail_data = await scraper.scrape_detail_page(0)
+
+    return {
         'pncp_id': row['pncp_id'],
-        **detailed,
-        **items_info,
-        **files_info,
+        **detail_data,
         'detail_url': scraper.page.url,
     }
-    return scraper.enrich_edital_from_items(edital)
 
 
 async def main(days: int, limit: int):

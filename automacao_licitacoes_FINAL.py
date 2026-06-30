@@ -402,6 +402,43 @@ class AutomacaoLicitacoes:
             self.log(traceback.format_exc(), "ERROR")
             return False
 
+    def executar_reparo_incompletas(self, days: int = 2, limit: int = 50):
+        """Re-scrape licitações sem valor/itens dos últimos dias (rede de segurança pós-insert)."""
+        repair_script = SCRIPT_DIR / 'reparar_licitacoes_incompletas.py'
+        if not repair_script.exists():
+            self.log("⚠️  Script de reparo não encontrado — pulando fase", "WARNING")
+            return
+
+        cmd = [
+            sys.executable,
+            str(repair_script),
+            '--days', str(days),
+            '--limit', str(limit),
+        ]
+        self.log(f"🔧 Executando: {' '.join(cmd)}")
+
+        try:
+            result = subprocess.run(
+                cmd,
+                cwd=str(SCRIPT_DIR),
+                capture_output=True,
+                text=True,
+                timeout=int(os.getenv('REPAIR_TIMEOUT_SECONDS', '3600')),
+            )
+            if result.stdout:
+                for line in result.stdout.strip().splitlines():
+                    self.log(line)
+            if result.returncode != 0:
+                self.log(f"⚠️  Reparo retornou código {result.returncode}", "WARNING")
+                if result.stderr:
+                    self.log(result.stderr.strip(), "WARNING")
+            else:
+                self.log("✅ Fase de reparo concluída")
+        except subprocess.TimeoutExpired:
+            self.log("⚠️  Reparo excedeu tempo limite — continuando automação", "WARNING")
+        except Exception as e:
+            self.log(f"⚠️  Erro na fase de reparo: {e}", "WARNING")
+
     def limpar_arquivos_antigos(self, dias=7):
         """Remove JSONs e logs antigos"""
         self.log("=" * 60)
@@ -502,6 +539,11 @@ class AutomacaoLicitacoes:
                 self.log("❌ Falha na inserção. Abortando.", "ERROR")
                 self.salvar_estatisticas(False, json_file)
                 return False
+
+            self.log("=" * 60)
+            self.log("FASE 2.25: Reparando licitações incompletas recentes")
+            self.log("=" * 60)
+            self.executar_reparo_incompletas()
 
             self.log("=" * 60)
             self.log("FASE 2.5: Expirando licitações encerradas")
