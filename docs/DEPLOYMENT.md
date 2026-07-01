@@ -33,7 +33,12 @@ A automação roda em um **serviço separado** do web server.
 | `SCRAPER_STATES` | `SP,RJ,MG,RS,PR,SC,BA,GO,DF` | UFs separadas por vírgula. Use `ALL` para os 27 estados |
 | `SCRAPER_LIMIT_PER_STATE` | `10` | Máximo de editais coletados por UF |
 | `SCRAPER_HEADLESS` | `true` | Browser sem interface gráfica |
-| `SCRAPER_TIMEOUT_SECONDS` | `7200` | Timeout total do scraper (2h) |
+| `SCRAPER_TIMEOUT_SECONDS` | `10800` | Timeout total do scraper (3h) |
+| `SCRAPER_SKIP_DOWNLOADS` | `true` (auto em prod) | Pula download de PDFs no cron (mais rápido) |
+| `REPAIR_ENABLED` | `true` | Fase de reparo pós-insert |
+| `REPAIR_DAYS` | `1` | Janela de dias para reparo |
+| `REPAIR_LIMIT` | `10` | Máx. licitações reparadas por execução |
+| `REPAIR_TIMEOUT_SECONDS` | `1800` | Timeout da fase de reparo (30 min) |
 | `SCRAPER_SKIP_SQLITE` | `true` | Ignora SQLite local em produção |
 
 ### 3. Horários (cron)

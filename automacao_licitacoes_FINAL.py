@@ -49,7 +49,7 @@ class AutomacaoLicitacoes:
         self.inseridos = 0
         self.scraper_states = os.getenv("SCRAPER_STATES", "SP,RJ,MG,RS,PR,SC,BA,GO,DF")
         self.scraper_limit = os.getenv("SCRAPER_LIMIT_PER_STATE", "10")
-        self.scraper_timeout = int(os.getenv("SCRAPER_TIMEOUT_SECONDS", "7200"))
+        self.scraper_timeout = int(os.getenv("SCRAPER_TIMEOUT_SECONDS", "10800"))
 
     def log(self, message, level="INFO"):
         """Adiciona mensagem ao log"""
@@ -85,6 +85,17 @@ class AutomacaoLicitacoes:
         except Exception as exc:
             self.log(f"❌ Playwright/Chromium indisponível: {exc}", "ERROR")
             return False
+
+    def _find_latest_json(self, include_checkpoint=True):
+        """Retorna o JSON mais recente gerado pelo scraper (inclui checkpoint parcial)."""
+        json_files = glob.glob(str(SCRIPT_DIR / 'editais_items_only_*.json'))
+        if json_files:
+            return max(json_files, key=os.path.getctime)
+        if include_checkpoint:
+            checkpoint = SCRIPT_DIR / 'editais_scrape_checkpoint.json'
+            if checkpoint.exists():
+                return str(checkpoint)
+        return None
 
     def executar_scraper(self):
         """Executa o scraper do PNCP"""
@@ -149,13 +160,11 @@ class AutomacaoLicitacoes:
                 return None
 
             self.log("🔍 Procurando arquivo JSON gerado...")
-            json_files = glob.glob(str(SCRIPT_DIR / 'editais_items_only_*.json'))
-
-            if not json_files:
+            json_file = self._find_latest_json()
+            if not json_file:
                 self.log("❌ Nenhum arquivo JSON encontrado!", "ERROR")
                 return None
 
-            json_file = max(json_files, key=os.path.getctime)
             self.log(f"✅ JSON encontrado: {json_file}")
 
             file_size = os.path.getsize(json_file)
@@ -175,6 +184,10 @@ class AutomacaoLicitacoes:
 
         except subprocess.TimeoutExpired:
             self.log(f"❌ Timeout ao executar scraper (>{self.scraper_timeout}s)", "ERROR")
+            partial = self._find_latest_json(include_checkpoint=True)
+            if partial:
+                self.log(f"⚠️  Usando JSON parcial salvo antes do timeout: {partial}", "WARNING")
+                return partial
             return None
         except Exception as e:
             self.log(f"❌ Erro inesperado no scraper: {e}", "ERROR")
@@ -402,8 +415,14 @@ class AutomacaoLicitacoes:
             self.log(traceback.format_exc(), "ERROR")
             return False
 
-    def executar_reparo_incompletas(self, days: int = 2, limit: int = 50):
+    def executar_reparo_incompletas(self, days: int = None, limit: int = None):
         """Re-scrape licitações sem valor/itens dos últimos dias (rede de segurança pós-insert)."""
+        if os.getenv('REPAIR_ENABLED', 'true').lower() in ('0', 'false', 'no'):
+            self.log("ℹ️  Reparo automático desabilitado (REPAIR_ENABLED=false)")
+            return
+
+        days = days if days is not None else int(os.getenv('REPAIR_DAYS', '1'))
+        limit = limit if limit is not None else int(os.getenv('REPAIR_LIMIT', '10'))
         repair_script = SCRIPT_DIR / 'reparar_licitacoes_incompletas.py'
         if not repair_script.exists():
             self.log("⚠️  Script de reparo não encontrado — pulando fase", "WARNING")
@@ -423,7 +442,7 @@ class AutomacaoLicitacoes:
                 cwd=str(SCRIPT_DIR),
                 capture_output=True,
                 text=True,
-                timeout=int(os.getenv('REPAIR_TIMEOUT_SECONDS', '3600')),
+                timeout=int(os.getenv('REPAIR_TIMEOUT_SECONDS', '1800')),
             )
             if result.stdout:
                 for line in result.stdout.strip().splitlines():
