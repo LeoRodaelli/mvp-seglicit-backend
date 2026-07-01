@@ -27,6 +27,7 @@ import asyncio
 import json
 import os
 import sys
+import time
 from datetime import datetime
 from pathlib import Path
 from typing import List, Optional
@@ -39,9 +40,16 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPT_DIR))
 load_dotenv(SCRIPT_DIR / ".env")
 
+from src.utils.pncp_api_enrichment import (
+    DATES_ONLY_DELAY,
+    apply_publicacao_index,
+    build_publicacao_index,
+    enrich_edital_dates_bulk,
+    enrich_edital_from_pncp_api,
+    parse_pncp_id,
+)
 from src.utils.tender_enrichment import enrich_edital_scrape_data
 from src.utils.tender_dates import coerce_date
-from src.utils.pncp_api_enrichment import enrich_edital_from_pncp_api, parse_pncp_id
 from pncp_scraper_items_only import PNCPScraperItemsOnly
 
 
@@ -56,15 +64,20 @@ def db_connect():
     )
 
 
+TENDER_SELECT = """
+        SELECT id, pncp_id, detail_url, title,
+               valor_total_estimado, items_count, items_json, estimated_value,
+               publication_date, proposal_start_date, proposal_end_date,
+               objeto, prazo, downloaded_files_json, downloads_count
+        FROM tenders
+"""
+
+
 def fetch_tender_by_pncp_id(pncp_id: str):
     conn = db_connect()
     cursor = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
     cursor.execute(
-        """
-        SELECT id, pncp_id, detail_url, title,
-               valor_total_estimado, items_count, items_json, estimated_value
-        FROM tenders WHERE pncp_id = %s
-        """,
+        f"{TENDER_SELECT} WHERE pncp_id = %s",
         (pncp_id,),
     )
     row = cursor.fetchone()
@@ -76,11 +89,7 @@ def fetch_tender_by_id(tender_id: int):
     conn = db_connect()
     cursor = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
     cursor.execute(
-        """
-        SELECT id, pncp_id, detail_url, title,
-               valor_total_estimado, items_count, items_json, estimated_value
-        FROM tenders WHERE id = %s
-        """,
+        f"{TENDER_SELECT} WHERE id = %s",
         (tender_id,),
     )
     row = cursor.fetchone()
@@ -88,46 +97,98 @@ def fetch_tender_by_id(tender_id: int):
     return row
 
 
-def fetch_incomplete_tenders(days: int, limit: int):
+def fetch_incomplete_tenders(days: int, limit: int, dates_only: bool = False):
     conn = db_connect()
     cursor = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
-    cursor.execute(
-        """
-        SELECT id, pncp_id, detail_url, title,
-               valor_total_estimado, items_count, items_json, estimated_value
-        FROM tenders
-        WHERE created_at >= NOW() - (%s || ' days')::interval
-          AND pncp_id IS NOT NULL
-          AND (
-            valor_total_estimado IS NULL
-            OR items_json IS NULL
-            OR items_count IS NULL
-            OR items_count = 0
-            OR proposal_end_date IS NULL
-            OR objeto IS NULL
-            OR objeto = ''
-            OR downloaded_files_json IS NULL
-            OR downloads_count IS NULL
-            OR downloads_count = 0
-          )
-        ORDER BY created_at DESC
-        LIMIT %s
-        """,
-        (days, limit),
-    )
+    if dates_only:
+        cursor.execute(
+            f"""
+            {TENDER_SELECT}
+            WHERE created_at >= NOW() - (%s || ' days')::interval
+              AND pncp_id IS NOT NULL
+              AND proposal_end_date IS NULL
+              AND items_count IS NOT NULL
+              AND items_count > 0
+            ORDER BY created_at DESC
+            LIMIT %s
+            """,
+            (days, limit),
+        )
+    else:
+        cursor.execute(
+            f"""
+            {TENDER_SELECT}
+            WHERE created_at >= NOW() - (%s || ' days')::interval
+              AND pncp_id IS NOT NULL
+              AND (
+                valor_total_estimado IS NULL
+                OR items_json IS NULL
+                OR items_count IS NULL
+                OR items_count = 0
+                OR proposal_end_date IS NULL
+                OR objeto IS NULL
+                OR objeto = ''
+                OR downloaded_files_json IS NULL
+                OR downloads_count IS NULL
+                OR downloads_count = 0
+              )
+            ORDER BY created_at DESC
+            LIMIT %s
+            """,
+            (days, limit),
+        )
     rows = cursor.fetchall()
     conn.close()
     return rows
 
 
+def _parse_json_field(raw):
+    if not raw:
+        return None
+    if isinstance(raw, (list, dict)):
+        return raw
+    try:
+        return json.loads(raw)
+    except Exception:
+        return None
+
+
+def row_to_edital(row: dict) -> dict:
+    items = _parse_json_field(row.get('items_json')) or []
+    files = _parse_json_field(row.get('downloaded_files_json')) or []
+    edital = {
+        'pncp_id': row.get('pncp_id'),
+        'detail_url': row.get('detail_url'),
+        'valor_total_estimado': row.get('valor_total_estimado'),
+        'estimated_value': row.get('estimated_value'),
+        'publication_date': row.get('publication_date'),
+        'proposal_start_date': row.get('proposal_start_date'),
+        'proposal_end_date': row.get('proposal_end_date'),
+        'objeto': row.get('objeto'),
+        'prazo': row.get('prazo'),
+    }
+    if items:
+        edital['items'] = items
+        edital['items_count'] = row.get('items_count') or len(items)
+    if files:
+        edital['downloaded_files'] = files
+        edital['downloads_count'] = row.get('downloads_count') or len(files)
+    return edital
+
+
 def is_incomplete(edital: dict) -> bool:
+    """Falha grave: sem valor e sem itens (reparo não trouxe dados úteis)."""
     items = edital.get('items') or []
     valor = edital.get('valor_total_estimado')
-    missing_core = (valor is None or valor == 0) and len(items) == 0
-    missing_dates = not edital.get('proposal_end_date')
-    missing_files = not edital.get('downloaded_files')
-    missing_objeto = not edital.get('objeto')
-    return missing_core or missing_dates or missing_files or missing_objeto
+    return (valor is None or valor == 0) and len(items) == 0
+
+
+def is_partial(edital: dict) -> bool:
+    return (
+        not edital.get('proposal_end_date')
+        or not edital.get('objeto')
+        or not edital.get('downloaded_files')
+    )
 
 
 def print_row_state(label: str, row: dict, verbose: bool):
@@ -165,13 +226,25 @@ def print_enriched_result(edital: dict, verbose: bool):
             print(f"      … +{len(items)-5} itens")
 
 
-def repair_via_api(row: dict, verbose: bool) -> dict:
-    edital = {'pncp_id': row['pncp_id'], 'detail_url': row.get('detail_url')}
-    enrich_edital_from_pncp_api(edital, force=True)
-    edital = enrich_edital_scrape_data(edital)
+def repair_via_api(row: dict, verbose: bool, dates_only: bool = False, pub_index: Optional[dict] = None) -> dict:
+    edital = row_to_edital(row)
+    if dates_only:
+        if pub_index is not None:
+            enrich_edital_dates_bulk(edital, pub_index)
+        else:
+            enrich_edital_from_pncp_api(edital, dates_only=True)
+    else:
+        enrich_edital_from_pncp_api(edital, force=False)
+        edital = enrich_edital_scrape_data(edital)
     if verbose:
         print_enriched_result(edital, verbose=True)
+        if is_partial(edital):
+            print('   ⚠️  Parcial — datas/objeto/arquivos podem ficar pendentes (API consulta lenta)')
     return edital
+
+
+def is_dates_repair_failed(edital: dict) -> bool:
+    return not edital.get('proposal_end_date')
 
 
 async def repair_via_playwright(scraper: PNCPScraperItemsOnly, row: dict, verbose: bool) -> dict:
@@ -198,11 +271,11 @@ async def repair_via_playwright(scraper: PNCPScraperItemsOnly, row: dict, verbos
     return edital
 
 
-async def repair_one(row: dict, scraper: Optional[PNCPScraperItemsOnly], method: str, verbose: bool) -> dict:
+async def repair_one(row: dict, scraper: Optional[PNCPScraperItemsOnly], method: str, verbose: bool, dates_only: bool = False, pub_index: Optional[dict] = None) -> dict:
     edital = None
     if method in ('auto', 'api'):
-        edital = repair_via_api(row, verbose)
-    if method == 'playwright' or (method == 'auto' and is_incomplete(edital or {})):
+        edital = repair_via_api(row, verbose, dates_only=dates_only, pub_index=pub_index)
+    if not dates_only and (method == 'playwright' or (method == 'auto' and is_incomplete(edital or {}))):
         if scraper is None:
             raise RuntimeError('Playwright necessário mas browser não iniciado')
         if verbose and method == 'auto':
@@ -267,12 +340,13 @@ def upsert_repaired(cursor, conn, edital):
     return updated
 
 
-async def run_repairs(rows: List[dict], method: str, apply: bool, verbose: bool):
+async def run_repairs(rows: List[dict], method: str, apply: bool, verbose: bool, dates_only: bool = False):
     if not rows:
         print("✅ Nenhuma licitação para processar.")
         return
 
-    print(f"📋 {len(rows)} licitação(ões) | método={method} | apply={'sim' if apply else 'DRY-RUN'}")
+    mode = 'datas-only' if dates_only else 'completo'
+    print(f"📋 {len(rows)} licitação(ões) | método={method} | modo={mode} | apply={'sim' if apply else 'DRY-RUN'}")
 
     conn = None
     cursor = None
@@ -286,22 +360,51 @@ async def run_repairs(rows: List[dict], method: str, apply: bool, verbose: bool)
     repaired = 0
     failed = 0
 
+    pub_index = None
+    if dates_only and method == 'api':
+        unique_dates = {coerce_date(r.get('publication_date')) for r in rows}
+        unique_dates.discard(None)
+        if unique_dates:
+            print(f"📅 Modo bulk: buscando publicações PNCP para {len(unique_dates)} dia(s)...")
+            try:
+                pub_index = build_publicacao_index(unique_dates)
+                print(f"✅ Índice bulk: {len(pub_index)} contrato(s) — consulta individual só para faltantes")
+            except Exception as exc:
+                print(f"⚠️  Índice bulk falhou ({exc}) — usando consulta individual")
+
     async def process_batch(scraper=None):
         nonlocal repaired, failed
         for row in rows:
             print_row_state('Licitação', row, verbose)
             try:
-                edital = await repair_one(row, scraper, method, verbose)
-                if is_incomplete(edital):
-                    print(f"   ❌ Ainda incompleta após reparo")
+                edital = await repair_one(row, scraper, method, verbose, dates_only=dates_only, pub_index=pub_index)
+                if dates_only:
+                    if is_dates_repair_failed(edital):
+                        print(f"   ❌ Datas ainda não obtidas (PNCP consulta indisponível ou rate limit)")
+                        failed += 1
+                        continue
+                elif is_incomplete(edital):
+                    print(f"   ❌ Ainda incompleta após reparo (sem valor e sem itens)")
                     failed += 1
                     continue
                 if apply:
                     result = upsert_repaired(cursor, conn, edital)
-                    print(f"   ✅ Banco atualizado → id={result[0]} valor={result[1]} items={result[2]} fim={result[3]} arquivos={result[4]}")
+                    msg = f"   ✅ Banco atualizado → id={result[0]} valor={result[1]} items={result[2]} fim={result[3]} arquivos={result[4]}"
+                    if not dates_only and is_partial(edital):
+                        msg += " (parcial: datas/objeto/arquivos pendentes)"
+                    print(msg)
                 else:
-                    print(f"   ✅ [DRY-RUN] Corrigível — use --apply para gravar no banco")
+                    note = ""
+                    if dates_only:
+                        note = ""
+                    elif is_partial(edital):
+                        note = " (parcial)"
+                    print(f"   ✅ [DRY-RUN] Corrigível{note} — use --apply para gravar no banco")
                 repaired += 1
+                if method == 'api' and not dates_only:
+                    time.sleep(float(os.getenv('PNCP_REPAIR_DELAY', '0.25')))
+                elif method == 'api' and dates_only and pub_index is None:
+                    time.sleep(DATES_ONLY_DELAY)
             except Exception as exc:
                 if conn:
                     conn.rollback()
@@ -338,7 +441,9 @@ def resolve_rows(args) -> List[dict]:
             else:
                 print(f"⚠️  id não encontrado: {tid}")
     if not rows and not args.pncp_id and not args.id:
-        rows = [dict(r) for r in fetch_incomplete_tenders(args.days, args.limit)]
+        rows = [dict(r) for r in fetch_incomplete_tenders(args.days, args.limit, dates_only=args.dates_only)]
+    elif args.dates_only and rows:
+        rows = [r for r in rows if not r.get('proposal_end_date')]
     return rows
 
 
@@ -349,6 +454,7 @@ def main():
     parser.add_argument('--pncp-id', action='append', dest='pncp_id', help='PNCP ID específico (pode repetir)')
     parser.add_argument('--id', action='append', dest='id', type=int, help='ID interno tenders (pode repetir)')
     parser.add_argument('--method', choices=['auto', 'api', 'playwright'], default='auto')
+    parser.add_argument('--dates-only', action='store_true', help='Só preenche datas/prazo/objeto (sem itens/arquivos)')
     parser.add_argument('--apply', action='store_true', help='Gravar no banco (sem isso = dry-run)')
     parser.add_argument('--dry-run', action='store_true', help='Alias explícito de não aplicar')
     parser.add_argument('-v', '--verbose', action='store_true')
@@ -360,7 +466,7 @@ def main():
         apply = True
 
     rows = resolve_rows(args)
-    asyncio.run(run_repairs(rows, args.method, apply, args.verbose))
+    asyncio.run(run_repairs(rows, args.method, apply, args.verbose, dates_only=args.dates_only))
 
 
 if __name__ == '__main__':

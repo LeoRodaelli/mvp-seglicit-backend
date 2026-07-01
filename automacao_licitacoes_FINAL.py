@@ -12,7 +12,7 @@ import json
 import os
 import glob
 import sys
-from datetime import datetime
+from datetime import datetime, date
 from pathlib import Path
 import subprocess
 import psycopg2
@@ -25,6 +25,7 @@ load_dotenv(SCRIPT_DIR / ".env")
 from src.services.tender_notification_service import notify_users_of_new_tenders_batch
 from src.utils.tender_enrichment import enrich_edital_scrape_data
 from src.utils.tender_dates import coerce_date, parse_proposal_dates_from_text
+from src.utils.pncp_api_enrichment import apply_publicacao_index, build_publicacao_index
 from src.services.tender_expiration_service import expirar_licitacoes_encerradas
 
 
@@ -246,7 +247,25 @@ class AutomacaoLicitacoes:
             erros = 0
             licitacoes_inseridas = []
 
+            unique_dates = set()
+            for e in editais_validos:
+                d = coerce_date(e.get('publication_date'))
+                if d:
+                    unique_dates.add(d)
+            if not unique_dates:
+                unique_dates.add(date.today())
+
+            pub_index = {}
+            if os.getenv('PNCP_BULK_DATES', 'true').lower() not in ('0', 'false', 'no'):
+                self.log(f"📅 Carregando datas PNCP em lote ({len(unique_dates)} dia(s) de publicação)...")
+                try:
+                    pub_index = build_publicacao_index(unique_dates)
+                    self.log(f"✅ Índice publicação PNCP: {len(pub_index)} contrato(s)")
+                except Exception as exc:
+                    self.log(f"⚠️  Índice publicação falhou (segue com scrape/API): {exc}", "WARNING")
+
             for i, edital in enumerate(editais_validos, 1):
+                apply_publicacao_index(edital, pub_index)
                 edital = enrich_edital_scrape_data(edital)
                 title = edital.get('title', '')
                 try:
@@ -416,7 +435,7 @@ class AutomacaoLicitacoes:
             return False
 
     def executar_reparo_incompletas(self, days: int = None, limit: int = None):
-        """Re-scrape licitações sem valor/itens dos últimos dias (rede de segurança pós-insert)."""
+        """Repara valor/itens e, em seguida, datas pendentes (API bulk + fallback)."""
         if os.getenv('REPAIR_ENABLED', 'true').lower() in ('0', 'false', 'no'):
             self.log("ℹ️  Reparo automático desabilitado (REPAIR_ENABLED=false)")
             return
@@ -428,16 +447,23 @@ class AutomacaoLicitacoes:
             self.log("⚠️  Script de reparo não encontrado — pulando fase", "WARNING")
             return
 
-        cmd = [
-            sys.executable,
-            str(repair_script),
-            '--days', str(days),
-            '--limit', str(limit),
-            '--method', os.getenv('REPAIR_METHOD', 'api'),
-            '--apply',
-        ]
-        self.log(f"🔧 Executando: {' '.join(cmd)}")
+        for phase, extra_args in (
+            ('valor/itens', ['--method', os.getenv('REPAIR_METHOD', 'api')]),
+            ('datas', ['--dates-only', '--method', 'api']),
+        ):
+            phase_limit = limit if phase == 'valor/itens' else int(os.getenv('REPAIR_DATES_LIMIT', '30'))
+            cmd = [
+                sys.executable,
+                str(repair_script),
+                '--days', str(days),
+                '--limit', str(phase_limit),
+                *extra_args,
+                '--apply',
+            ]
+            self.log(f"🔧 Reparo ({phase}): {' '.join(cmd)}")
+            self._run_repair_subprocess(cmd)
 
+    def _run_repair_subprocess(self, cmd):
         try:
             result = subprocess.run(
                 cmd,
@@ -447,12 +473,12 @@ class AutomacaoLicitacoes:
                 timeout=int(os.getenv('REPAIR_TIMEOUT_SECONDS', '1800')),
             )
             if result.stdout:
-                for line in result.stdout.strip().splitlines():
+                for line in result.stdout.strip().splitlines()[-25:]:
                     self.log(line)
             if result.returncode != 0:
                 self.log(f"⚠️  Reparo retornou código {result.returncode}", "WARNING")
                 if result.stderr:
-                    self.log(result.stderr.strip(), "WARNING")
+                    self.log(result.stderr.strip()[-500:], "WARNING")
             else:
                 self.log("✅ Fase de reparo concluída")
         except subprocess.TimeoutExpired:

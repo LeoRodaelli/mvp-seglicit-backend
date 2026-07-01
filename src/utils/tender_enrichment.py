@@ -45,6 +45,9 @@ def enrich_edital_scrape_data(edital):
             if not edital.get('estimated_value'):
                 edital['estimated_value'] = total
 
+    if edital.get('_pncp_api_enriched'):
+        return edital
+
     needs_api = (
         not edital.get('items')
         or edital.get('valor_total_estimado') in (None, '', 0)

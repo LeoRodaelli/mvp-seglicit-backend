@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import logging
+import os
 import re
 import time
 from typing import Any, Dict, List, Optional, Tuple
@@ -18,6 +19,11 @@ logger = logging.getLogger(__name__)
 PNCP_API_BASE = 'https://pncp.gov.br/api/pncp/v1'
 CONSULTA_API_BASE = 'https://pncp.gov.br/api/consulta/v1'
 PNCP_ID_RE = re.compile(r'^(\d{14})-\d+-(\d+)/(\d{4})$')
+CONSULTA_TIMEOUT = int(os.getenv('PNCP_CONSULTA_TIMEOUT', '18'))
+CONSULTA_RETRIES = max(1, int(os.getenv('PNCP_CONSULTA_RETRIES', '3')))
+SKIP_CONSULTA = os.getenv('PNCP_SKIP_CONSULTA', '').lower() in ('1', 'true', 'yes')
+REPAIR_DELAY = float(os.getenv('PNCP_REPAIR_DELAY', '0.25'))
+DATES_ONLY_DELAY = float(os.getenv('PNCP_DATES_DELAY', '3.0'))
 
 _session = requests.Session()
 _session.headers.update({
@@ -39,17 +45,45 @@ def parse_pncp_id(pncp_id: str) -> Optional[Tuple[str, int, int]]:
 
 
 def _get_json(url: str, params: Optional[dict] = None, timeout: int = 45) -> Any:
-    response = _session.get(url, params=params, timeout=timeout)
-    response.raise_for_status()
-    return response.json()
+    last_exc = None
+    for attempt in range(CONSULTA_RETRIES):
+        try:
+            response = _session.get(url, params=params, timeout=timeout)
+            if response.status_code in (429, 503):
+                wait = min(30, 2 ** attempt * 2)
+                logger.debug('PNCP %s — aguardando %ss (tentativa %s)', response.status_code, wait, attempt + 1)
+                time.sleep(wait)
+                continue
+            response.raise_for_status()
+            return response.json()
+        except requests.HTTPError as exc:
+            last_exc = exc
+            status = exc.response.status_code if exc.response is not None else None
+            if status in (429, 503) and attempt + 1 < CONSULTA_RETRIES:
+                time.sleep(min(30, 2 ** attempt * 2))
+                continue
+            raise
+        except Exception as exc:
+            last_exc = exc
+            if attempt + 1 < CONSULTA_RETRIES:
+                time.sleep(0.5)
+                continue
+            raise
+    if last_exc:
+        raise last_exc
+    raise RuntimeError('PNCP request failed without response')
 
 
 def fetch_contract(cnpj: str, ano: int, sequencial: int) -> Optional[Dict]:
-    """Detalhes da contratação (datas, objeto, valor) — API consulta."""
+    """Detalhes da contratação (datas, objeto, valor) — API consulta (pode estar lenta)."""
+    if SKIP_CONSULTA:
+        return None
+
     url = f'{CONSULTA_API_BASE}/orgaos/{cnpj}/compras/{ano}/{sequencial}'
-    for attempt in range(2):
+    last_exc = None
+    for attempt in range(CONSULTA_RETRIES):
         try:
-            data = _get_json(url, timeout=60 if attempt else 45)
+            data = _get_json(url, timeout=CONSULTA_TIMEOUT)
             if isinstance(data, dict) and (
                 data.get('dataAberturaProposta') is not None
                 or data.get('objetoCompra')
@@ -59,8 +93,14 @@ def fetch_contract(cnpj: str, ano: int, sequencial: int) -> Optional[Dict]:
             if isinstance(data, dict) and not data.get('message'):
                 return data
         except Exception as exc:
-            logger.warning('PNCP consulta contrato %s/%s/%s (tentativa %s): %s', cnpj, ano, sequencial, attempt + 1, exc)
-            time.sleep(0.5)
+            last_exc = exc
+            if attempt + 1 < CONSULTA_RETRIES:
+                time.sleep(0.4)
+    if last_exc:
+        logger.info(
+            'PNCP consulta indisponível %s/%s/%s (%s) — itens/arquivos seguem normalmente',
+            cnpj, ano, sequencial, last_exc,
+        )
     return None
 
 
@@ -71,7 +111,9 @@ def fetch_contract_via_publicacao(pncp_id: str, publication_date=None) -> Option
         return None
 
     url = f'{CONSULTA_API_BASE}/contratacoes/publicacao'
-    for day_offset in (0, -1, 1):
+    pub_timeout = min(CONSULTA_TIMEOUT, 12)
+    consecutive_failures = 0
+    for day_offset in (0, -1, 1, -2, 2):
         target = pub + timedelta(days=day_offset)
         params = {
             'dataInicial': target.isoformat(),
@@ -80,7 +122,8 @@ def fetch_contract_via_publicacao(pncp_id: str, publication_date=None) -> Option
             'tamanhoPagina': 100,
         }
         try:
-            payload = _get_json(url, params, timeout=60)
+            payload = _get_json(url, params, timeout=pub_timeout)
+            consecutive_failures = 0
             rows = payload.get('data') if isinstance(payload, dict) else payload
             if not rows:
                 continue
@@ -89,9 +132,122 @@ def fetch_contract_via_publicacao(pncp_id: str, publication_date=None) -> Option
                 if ctrl == pncp_id.strip():
                     return row
         except Exception as exc:
-            logger.warning('PNCP publicacao %s (%s): %s', pncp_id, target, exc)
-            time.sleep(0.3)
+            consecutive_failures += 1
+            logger.debug('PNCP publicacao %s (%s): %s', pncp_id, target, exc)
+            if '429' in str(exc) or '503' in str(exc):
+                time.sleep(min(30, 2 ** consecutive_failures * 2))
+            if consecutive_failures >= 3:
+                logger.info(
+                    'PNCP publicacao abortada para %s após %s falhas consecutivas',
+                    pncp_id, consecutive_failures,
+                )
+                break
+            time.sleep(0.15)
     return None
+
+
+def _pncp_id_from_row(row: Dict) -> str:
+    return (row.get('numeroControlePNCP') or row.get('numeroControlePncp') or '').strip()
+
+
+def fetch_publicacao_page(target: date, page: int = 1, page_size: int = 100) -> List[Dict]:
+    """Uma página da listagem de publicações do dia (até 100 contratos com datas)."""
+    url = f'{CONSULTA_API_BASE}/contratacoes/publicacao'
+    params = {
+        'dataInicial': target.isoformat(),
+        'dataFinal': target.isoformat(),
+        'pagina': page,
+        'tamanhoPagina': page_size,
+    }
+    payload = _get_json(url, params, timeout=min(CONSULTA_TIMEOUT, 25))
+    rows = payload.get('data') if isinstance(payload, dict) else payload
+    return rows or []
+
+
+def fetch_all_publicacao_for_date(target: date) -> List[Dict]:
+    """Todas as páginas de publicação de um dia."""
+    all_rows: List[Dict] = []
+    for page in range(1, 51):
+        try:
+            batch = fetch_publicacao_page(target, page=page)
+        except Exception as exc:
+            logger.warning('PNCP publicacao bulk %s pág %s: %s', target, page, exc)
+            break
+        if not batch:
+            break
+        all_rows.extend(batch)
+        if len(batch) < 100:
+            break
+        time.sleep(0.35)
+    return all_rows
+
+
+def build_publicacao_index(
+    publication_dates,
+    *,
+    extra_day_offsets: Tuple[int, ...] = (-1, 1),
+) -> Dict[str, Dict]:
+    """
+    Mapa pncp_id → contratação via API publicacao (1 chamada/página por dia).
+    Muito mais eficiente que consulta individual por edital.
+    """
+    index: Dict[str, Dict] = {}
+    fetched_days: set = set()
+
+    for raw in publication_dates:
+        pub = coerce_date(raw)
+        if not pub:
+            continue
+        days_to_try = [pub]
+        for offset in extra_day_offsets:
+            days_to_try.append(pub + timedelta(days=offset))
+
+        for target in days_to_try:
+            if target in fetched_days:
+                continue
+            fetched_days.add(target)
+            rows = fetch_all_publicacao_for_date(target)
+            for row in rows:
+                pid = _pncp_id_from_row(row)
+                if pid and pid not in index:
+                    index[pid] = row
+            if rows:
+                logger.info('PNCP publicacao bulk %s → %s contrato(s)', target, len(rows))
+            time.sleep(0.6)
+
+    return index
+
+
+def apply_publicacao_index(edital: Dict, index: Dict[str, Dict]) -> bool:
+    """Preenche datas/objeto a partir do índice bulk. Retorna True se obteve data fim."""
+    pncp_id = (edital.get('pncp_id') or '').strip()
+    row = index.get(pncp_id)
+    if not row:
+        return False
+    _apply_contract_fields(edital, row, force=False)
+    return bool(edital.get('proposal_end_date'))
+
+
+def enrich_edital_dates_bulk(edital: Dict, index: Dict[str, Dict]) -> Dict:
+    """Tenta índice bulk primeiro; consulta individual só se necessário."""
+    if apply_publicacao_index(edital, index):
+        edital['_pncp_api_status'] = 'ok_bulk'
+        edital['_pncp_api_enriched'] = True
+        edital['_pncp_api_has_dates'] = True
+        return edital
+    return enrich_edital_from_pncp_api(edital, dates_only=True)
+
+
+def _needs_contract_fields(edital: Dict, force: bool) -> bool:
+    if force:
+        return True
+    if not edital.get('proposal_end_date'):
+        return True
+    if not edital.get('objeto'):
+        return True
+    if edital.get('valor_total_estimado') in (None, '', 0):
+        return True
+    return False
 
 
 def fetch_items(cnpj: str, ano: int, sequencial: int) -> List[Dict]:
@@ -238,14 +394,19 @@ def _apply_contract_fields(edital: Dict, contract: Dict, force: bool) -> None:
         edital['state_code'] = unit['ufSigla']
 
 
-def enrich_edital_from_pncp_api(edital: Dict, *, force: bool = False) -> Dict:
+def enrich_edital_from_pncp_api(edital: Dict, *, force: bool = False, dates_only: bool = False) -> Dict:
     """
     Preenche via API PNCP: itens, valor, datas de proposta, prazo, objeto e arquivos.
+    Com dates_only=True, busca só datas/objeto (sem itens/arquivos).
     """
     if not edital:
         return edital
 
-    if not _needs_enrichment(edital, force):
+    if dates_only:
+        if edital.get('proposal_end_date') and not force:
+            edital['_pncp_api_status'] = 'skipped_has_dates'
+            return edital
+    elif not _needs_enrichment(edital, force):
         edital['_pncp_api_status'] = 'skipped_already_complete'
         return edital
 
@@ -257,16 +418,35 @@ def enrich_edital_from_pncp_api(edital: Dict, *, force: bool = False) -> Dict:
 
     cnpj, ano, sequencial = parsed
 
+    need_items = not dates_only and (force or not edital.get('items'))
+    need_files = not dates_only and (force or not edital.get('downloaded_files'))
+    need_contract = dates_only or _needs_contract_fields(edital, force)
+
     try:
-        contract = fetch_contract(cnpj, ano, sequencial)
-        if not contract or not contract.get('dataEncerramentoProposta'):
+        raw_items = fetch_items(cnpj, ano, sequencial) if need_items else []
+        raw_files = fetch_arquivos(cnpj, ano, sequencial) if need_files else []
+
+        contract = None
+        if need_contract:
             pub_contract = fetch_contract_via_publicacao(pncp_id, edital.get('publication_date'))
             if pub_contract:
-                contract = {**(contract or {}), **pub_contract}
-        raw_items = fetch_items(cnpj, ano, sequencial)
-        raw_files = fetch_arquivos(cnpj, ano, sequencial)
+                contract = pub_contract
+            if not contract or not contract.get('dataEncerramentoProposta'):
+                direct = fetch_contract(cnpj, ano, sequencial)
+                if direct:
+                    contract = {**(contract or {}), **direct}
     except Exception as exc:
         edital['_pncp_api_status'] = f'error:{exc}'
+        return edital
+
+    if dates_only:
+        _apply_contract_fields(edital, contract or {}, force=False)
+        if edital.get('proposal_end_date'):
+            edital['_pncp_api_status'] = 'ok'
+        else:
+            edital['_pncp_api_status'] = 'partial_no_dates'
+        edital['_pncp_api_enriched'] = True
+        edital['_pncp_api_has_dates'] = bool(edital.get('proposal_end_date'))
         return edital
 
     mapped_items = [map_api_item(raw, i) for i, raw in enumerate(raw_items)]
@@ -301,9 +481,13 @@ def enrich_edital_from_pncp_api(edital: Dict, *, force: bool = False) -> Dict:
         if not edital.get('estimated_value'):
             edital['estimated_value'] = float(valor)
 
-    edital['_pncp_api_status'] = 'ok'
+    if need_contract and not edital.get('proposal_end_date'):
+        edital['_pncp_api_status'] = 'partial_no_dates'
+    else:
+        edital['_pncp_api_status'] = 'ok'
     edital['_pncp_api_items'] = len(mapped_items)
     edital['_pncp_api_files'] = len(mapped_files)
     edital['_pncp_api_valor'] = valor
     edital['_pncp_api_has_dates'] = bool(edital.get('proposal_end_date'))
+    edital['_pncp_api_enriched'] = True
     return edital
