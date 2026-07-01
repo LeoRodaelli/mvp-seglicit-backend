@@ -433,6 +433,8 @@ class AutomacaoLicitacoes:
             str(repair_script),
             '--days', str(days),
             '--limit', str(limit),
+            '--method', os.getenv('REPAIR_METHOD', 'api'),
+            '--apply',
         ]
         self.log(f"🔧 Executando: {' '.join(cmd)}")
 

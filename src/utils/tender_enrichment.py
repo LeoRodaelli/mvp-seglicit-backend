@@ -1,5 +1,7 @@
 """Helpers para enriquecer licitações com valor derivado de itens."""
 
+from src.utils.pncp_api_enrichment import enrich_edital_from_pncp_api
+
 
 def sum_items_total(items):
     if not items:
@@ -32,7 +34,7 @@ def resolve_tender_value(valor_total_estimado, estimated_value, items):
 
 
 def enrich_edital_scrape_data(edital):
-    """Preenche valor ausente a partir da soma dos itens antes de persistir."""
+    """Preenche valor/itens ausentes via soma local e API PNCP antes de persistir."""
     if not edital:
         return edital
     items = edital.get('items') or []
@@ -42,4 +44,12 @@ def enrich_edital_scrape_data(edital):
             edital['valor_total_estimado'] = total
             if not edital.get('estimated_value'):
                 edital['estimated_value'] = total
+
+    needs_api = (
+        not edital.get('items')
+        or edital.get('valor_total_estimado') in (None, '', 0)
+    )
+    if needs_api and edital.get('pncp_id'):
+        enrich_edital_from_pncp_api(edital)
+
     return edital
