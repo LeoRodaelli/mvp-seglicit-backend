@@ -103,6 +103,12 @@ def fetch_incomplete_tenders(days: int, limit: int):
             OR items_json IS NULL
             OR items_count IS NULL
             OR items_count = 0
+            OR proposal_end_date IS NULL
+            OR objeto IS NULL
+            OR objeto = ''
+            OR downloaded_files_json IS NULL
+            OR downloads_count IS NULL
+            OR downloads_count = 0
           )
         ORDER BY created_at DESC
         LIMIT %s
@@ -117,7 +123,11 @@ def fetch_incomplete_tenders(days: int, limit: int):
 def is_incomplete(edital: dict) -> bool:
     items = edital.get('items') or []
     valor = edital.get('valor_total_estimado')
-    return (valor is None or valor == 0) and len(items) == 0
+    missing_core = (valor is None or valor == 0) and len(items) == 0
+    missing_dates = not edital.get('proposal_end_date')
+    missing_files = not edital.get('downloaded_files')
+    missing_objeto = not edital.get('objeto')
+    return missing_core or missing_dates or missing_files or missing_objeto
 
 
 def print_row_state(label: str, row: dict, verbose: bool):
@@ -140,9 +150,12 @@ def print_row_state(label: str, row: dict, verbose: bool):
 
 def print_enriched_result(edital: dict, verbose: bool):
     items = edital.get('items') or []
+    files = edital.get('downloaded_files') or []
     valor = edital.get('valor_total_estimado')
     api_status = edital.get('_pncp_api_status', 'n/a')
-    print(f"   Resultado → valor: {valor or 'NULL'}  |  itens: {len(items)}  |  API: {api_status}")
+    print(f"   Resultado → valor: {valor or 'NULL'}  |  itens: {len(items)}  |  arquivos: {len(files)}  |  API: {api_status}")
+    print(f"   Datas → início: {edital.get('proposal_start_date') or 'NULL'}  |  fim: {edital.get('proposal_end_date') or 'NULL'}")
+    print(f"   Prazo: {edital.get('prazo') or 'NULL'}")
     if verbose and items:
         for i, item in enumerate(items[:5], 1):
             desc = (item.get('descricao') or '')[:55]
@@ -218,6 +231,8 @@ def upsert_repaired(cursor, conn, edital):
             items_count = GREATEST(COALESCE(items_count, 0), %s),
             downloaded_files_json = CASE WHEN %s > 0 THEN %s ELSE downloaded_files_json END,
             downloads_count = GREATEST(COALESCE(downloads_count, 0), %s),
+            objeto = COALESCE(NULLIF(%s, ''), objeto),
+            modality = COALESCE(NULLIF(%s, ''), modality),
             detailed_description = COALESCE(NULLIF(%s, ''), detailed_description),
             prazo = COALESCE(NULLIF(%s, ''), prazo),
             proposal_start_date = COALESCE(%s, proposal_start_date),
@@ -225,7 +240,7 @@ def upsert_repaired(cursor, conn, edital):
             detail_url = COALESCE(NULLIF(%s, ''), detail_url),
             data_source = %s
         WHERE pncp_id = %s
-        RETURNING id, valor_total_estimado, items_count
+        RETURNING id, valor_total_estimado, items_count, proposal_end_date, downloads_count
         """,
         (
             valor,
@@ -236,6 +251,8 @@ def upsert_repaired(cursor, conn, edital):
             len(files),
             files_json,
             len(files),
+            edital.get('objeto') or '',
+            edital.get('modality') or '',
             edital.get('detailed_description') or '',
             edital.get('prazo') or '',
             proposal_start,
@@ -281,7 +298,7 @@ async def run_repairs(rows: List[dict], method: str, apply: bool, verbose: bool)
                     continue
                 if apply:
                     result = upsert_repaired(cursor, conn, edital)
-                    print(f"   ✅ Banco atualizado → id={result[0]} valor={result[1]} items={result[2]}")
+                    print(f"   ✅ Banco atualizado → id={result[0]} valor={result[1]} items={result[2]} fim={result[3]} arquivos={result[4]}")
                 else:
                     print(f"   ✅ [DRY-RUN] Corrigível — use --apply para gravar no banco")
                 repaired += 1

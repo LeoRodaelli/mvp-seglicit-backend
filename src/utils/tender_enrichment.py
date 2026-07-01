@@ -48,6 +48,9 @@ def enrich_edital_scrape_data(edital):
     needs_api = (
         not edital.get('items')
         or edital.get('valor_total_estimado') in (None, '', 0)
+        or not edital.get('proposal_end_date')
+        or not edital.get('objeto')
+        or not edital.get('downloaded_files')
     )
     if needs_api and edital.get('pncp_id'):
         enrich_edital_from_pncp_api(edital)

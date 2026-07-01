@@ -73,6 +73,34 @@ def coerce_date(value) -> Optional[date]:
     return None
 
 
+def format_proposal_prazo(proposal_start, proposal_end) -> Optional[str]:
+    """Texto legível do período de propostas."""
+    start = coerce_date(proposal_start)
+    end = coerce_date(proposal_end)
+    if start and end:
+        return f'Propostas: {start.strftime("%d/%m/%Y")} a {end.strftime("%d/%m/%Y")}'
+    if end:
+        return f'Propostas até {end.strftime("%d/%m/%Y")}'
+    if start:
+        return f'Propostas a partir de {start.strftime("%d/%m/%Y")}'
+    return None
+
+
+def parse_api_datetime(value) -> Optional[date]:
+    """Converte datetime ISO da API PNCP em date."""
+    if not value:
+        return None
+    if isinstance(value, datetime):
+        return value.date()
+    if isinstance(value, date):
+        return value
+    raw = str(value).strip()
+    try:
+        return datetime.fromisoformat(raw.replace('Z', '+00:00')).date()
+    except ValueError:
+        return coerce_date(raw)
+
+
 def tender_is_open(
     proposal_end_date,
     publication_date=None,
