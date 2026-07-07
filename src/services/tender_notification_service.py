@@ -96,7 +96,9 @@ def _load_active_subscribers(cursor):
             u.id, u.full_name, u.email, u.zaia_webhook_url,
             s.selected_states, s.selected_areas, s.plan_name
         FROM users u
-        INNER JOIN subscriptions s ON s.user_id = u.id AND s.status = 'active'
+        INNER JOIN subscriptions s ON s.user_id = u.id
+            AND s.status = 'active'
+            AND (s.current_period_end IS NULL OR s.current_period_end >= CURRENT_DATE)
         WHERE u.is_active = true
           AND u.email IS NOT NULL
           AND u.email != ''

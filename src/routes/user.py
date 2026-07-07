@@ -619,9 +619,11 @@ def get_user_subscription():
     conn = get_db_connection()
     cursor = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
     cursor.execute("""
-        SELECT id, plan_id, plan_name, selected_states, selected_areas, status, created_at
+        SELECT id, plan_id, plan_name, selected_states, selected_areas, status,
+               current_period_end, billing_type, created_at
         FROM subscriptions
         WHERE user_id = %s AND status = 'active'
+          AND (current_period_end IS NULL OR current_period_end >= CURRENT_DATE)
         ORDER BY created_at DESC
         LIMIT 1
     """, (user_id,))
@@ -643,6 +645,8 @@ def get_user_subscription():
                 sub[field] = []
     if sub['created_at']:
         sub['created_at'] = sub['created_at'].isoformat()
+    if sub.get('current_period_end'):
+        sub['current_period_end'] = sub['current_period_end'].isoformat()
 
     return jsonify({'success': True, 'subscription': sub})
 

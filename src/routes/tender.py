@@ -667,6 +667,7 @@ def _load_subscription_filters(user_id):
             SELECT selected_states, selected_areas
             FROM subscriptions
             WHERE user_id = %s AND status = 'active'
+              AND (current_period_end IS NULL OR current_period_end >= CURRENT_DATE)
             ORDER BY created_at DESC
             LIMIT 1
         """, (user_id,))

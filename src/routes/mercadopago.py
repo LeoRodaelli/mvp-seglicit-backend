@@ -18,6 +18,13 @@ import bcrypt
 import hmac
 import hashlib
 
+from src.services.subscription_billing import (
+    activate_subscription_from_reference,
+    fetch_authorized_payment,
+    process_authorized_payment_notification,
+    update_subscription_by_preapproval_status,
+)
+
 load_dotenv()
 
 # Configure logging
@@ -343,6 +350,237 @@ def create_preference():
         }), 500
 
 
+def _parse_checkout_payload(data):
+    if not data or 'plan' not in data or 'customer' not in data:
+        return None, 'Dados incompletos'
+
+    plan = data['plan']
+    customer = data['customer']
+    payload = {
+        'plan': plan,
+        'customer': customer,
+        'extra_areas': data.get('extra_areas', 0),
+        'extra_areas_price': data.get('extra_areas_price', 0),
+        'extra_states': data.get('extra_states', 0),
+        'extra_states_price': data.get('extra_states_price', 0),
+        'total': data.get('total', plan['price']),
+        'selected_states': data.get('selected_states', []),
+        'selected_areas': data.get('selected_areas', []),
+    }
+    return payload, None
+
+
+def _save_pending_payment(reference_id, payload, external_id=None, billing_type='one_time'):
+    plan = payload['plan']
+    customer = payload['customer']
+
+    senha_hash = None
+    if customer.get('senha'):
+        senha_hash = bcrypt.hashpw(
+            customer['senha'].encode('utf-8'),
+            bcrypt.gensalt(),
+        ).decode('utf-8')
+
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute("""
+        INSERT INTO payments (
+            reference_id, preference_id, status,
+            plan_id, plan_name, plan_price,
+            customer_name, customer_email, customer_cpf, customer_phone,
+            customer_empresa, customer_cnpj, customer_senha_hash,
+            extra_states, extra_states_price,
+            extra_areas, extra_areas_price, total_amount,
+            selected_states, selected_areas,
+            mp_preapproval_id, billing_type,
+            created_at
+        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, NOW())
+    """, (
+        reference_id,
+        external_id,
+        'pending',
+        plan['id'],
+        plan['name'],
+        plan['price'],
+        customer['name'],
+        customer['email'],
+        customer['cpf'],
+        customer['phone'],
+        customer.get('empresa'),
+        customer.get('cnpj'),
+        senha_hash,
+        payload['extra_states'],
+        payload['extra_states_price'],
+        payload['extra_areas'],
+        payload['extra_areas_price'],
+        payload['total'],
+        json.dumps(payload['selected_states']),
+        json.dumps(payload['selected_areas']),
+        external_id if billing_type == 'subscription' else None,
+        billing_type,
+    ))
+    conn.commit()
+    cursor.close()
+    conn.close()
+
+
+@mercadopago_bp.route('/mercadopago/create-subscription', methods=['POST'])
+def create_subscription():
+    """Cria assinatura recorrente mensal no Mercado Pago (preapproval)."""
+    try:
+        data = request.get_json()
+        payload, error = _parse_checkout_payload(data)
+        if error:
+            return jsonify({'success': False, 'error': error}), 400
+
+        plan = payload['plan']
+        customer = payload['customer']
+        total = payload['total']
+        reference_id = f"SEG-{datetime.now().strftime('%Y%m%d%H%M%S')}"
+
+        frontend_url = os.getenv('FRONTEND_URL', 'http://localhost:3000')
+        backend_url = os.getenv('BACKEND_URL', 'http://localhost:5000')
+
+        preapproval_data = {
+            'reason': f"Seglicit - {plan['name']}",
+            'external_reference': reference_id,
+            'payer_email': customer['email'],
+            'back_url': f"{frontend_url}/payment/success",
+            'notification_url': f"{backend_url}/api/mercadopago/webhook",
+            'auto_recurring': {
+                'frequency': 1,
+                'frequency_type': 'months',
+                'transaction_amount': float(total),
+                'currency_id': 'BRL',
+            },
+        }
+
+        logger.info('Criando assinatura MP ref=%s total=R$ %s', reference_id, total)
+        preapproval_response = sdk.preapproval().create(preapproval_data)
+
+        if preapproval_response.get('status') not in [200, 201]:
+            error_message = preapproval_response.get('response', {}).get('message', 'Erro desconhecido')
+            logger.error('Erro MP preapproval: %s', error_message)
+            return jsonify({
+                'success': False,
+                'error': f'Erro do Mercado Pago: {error_message}',
+                'details': preapproval_response,
+            }), 400
+
+        preapproval = preapproval_response.get('response') or {}
+        preapproval_id = preapproval.get('id')
+        init_point = preapproval.get('init_point') or preapproval.get('sandbox_init_point')
+
+        if not preapproval_id or not init_point:
+            return jsonify({
+                'success': False,
+                'error': 'Resposta inválida do Mercado Pago',
+                'details': preapproval_response,
+            }), 500
+
+        try:
+            _save_pending_payment(reference_id, payload, external_id=preapproval_id, billing_type='subscription')
+        except Exception as db_err:
+            logger.error('Erro ao salvar assinatura pendente: %s', db_err)
+            logger.error(traceback.format_exc())
+
+        return jsonify({
+            'success': True,
+            'preapproval_id': preapproval_id,
+            'init_point': init_point,
+            'reference_id': reference_id,
+        }), 200
+
+    except Exception as e:
+        logger.error('Erro ao criar assinatura: %s', e)
+        logger.error(traceback.format_exc())
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+
+def _handle_payment_notification(payment_id):
+    payment_info = sdk.payment().get(payment_id)
+    if payment_info['status'] != 200:
+        logger.error('Erro ao consultar pagamento: %s', payment_info)
+        return jsonify({'success': False, 'error': 'Payment not found'}), 404
+
+    payment = payment_info['response']
+    reference_id = payment.get('external_reference')
+    if not reference_id:
+        return jsonify({'success': False, 'error': 'No reference'}), 400
+
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        UPDATE payments
+        SET status = %s,
+            payment_id = %s,
+            payment_data = %s,
+            updated_at = NOW()
+        WHERE reference_id = %s
+    """, (
+        payment['status'],
+        str(payment_id),
+        json.dumps(payment),
+        reference_id,
+    ))
+
+    cursor.execute(
+        "SELECT billing_type FROM payments WHERE reference_id = %s",
+        (reference_id,),
+    )
+    billing_row = cursor.fetchone()
+    billing_type = billing_row[0] if billing_row else 'one_time'
+
+    if billing_type == 'subscription':
+        conn.commit()
+        cursor.close()
+        conn.close()
+        logger.info('Pagamento de assinatura registrado ref=%s (renovação via authorized_payment)', reference_id)
+        return jsonify({'success': True}), 200
+
+    if payment['status'] == 'approved':
+        activate_subscription_from_reference(cursor, reference_id, mp_payment_id=payment_id)
+        conn.commit()
+    else:
+        conn.commit()
+
+    cursor.close()
+    conn.close()
+    return jsonify({'success': True}), 200
+
+
+def _handle_preapproval_notification(preapproval_id):
+    preapproval_info = sdk.preapproval().get(preapproval_id)
+    if preapproval_info.get('status') != 200:
+        logger.error('Erro ao consultar preapproval: %s', preapproval_info)
+        return jsonify({'success': False, 'error': 'Preapproval not found'}), 404
+
+    preapproval = preapproval_info.get('response') or {}
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    update_subscription_by_preapproval_status(cursor, preapproval)
+    conn.commit()
+    cursor.close()
+    conn.close()
+    return jsonify({'success': True}), 200
+
+
+def _handle_authorized_payment_notification(auth_payment_id):
+    access_token = os.getenv('MERCADOPAGO_ACCESS_TOKEN')
+    authorized_payment = fetch_authorized_payment(auth_payment_id, access_token)
+    if not authorized_payment:
+        return jsonify({'success': False, 'error': 'Authorized payment not found'}), 404
+
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    process_authorized_payment_notification(cursor, authorized_payment)
+    conn.commit()
+    cursor.close()
+    conn.close()
+    return jsonify({'success': True}), 200
+
+
 @mercadopago_bp.route('/mercadopago/webhook', methods=['POST'])
 def webhook():
     """
@@ -369,251 +607,22 @@ def webhook():
         logger.info("Body:")
         logger.info(json.dumps(data, indent=2))
 
-        # LOG 4: Tipo de notificação
         notification_type = data.get('type')
-        logger.info(f"Tipo de notificação: {notification_type}")
+        action = data.get('action')
+        resource_id = data.get('data', {}).get('id')
+        logger.info('Tipo=%s action=%s id=%s', notification_type, action, resource_id)
 
-        # Processar apenas notificações de pagamento
-        if notification_type == 'payment':
-            payment_id = data.get('data', {}).get('id')
+        if notification_type == 'payment' and resource_id:
+            return _handle_payment_notification(resource_id)
 
-            # LOG 5: Payment ID recebido
-            logger.info(f"Payment ID: {payment_id}")
+        if notification_type == 'subscription_preapproval' and resource_id:
+            return _handle_preapproval_notification(resource_id)
 
-            if not payment_id:
-                logger.error("❌ Payment ID não encontrado no webhook")
-                return jsonify({'success': False, 'error': 'Payment ID missing'}), 400
+        if notification_type == 'subscription_authorized_payment' and resource_id:
+            return _handle_authorized_payment_notification(resource_id)
 
-            # LOG 6: Consultando pagamento no MP
-            logger.info(f"Consultando pagamento {payment_id} no Mercado Pago...")
-
-            sdk = mercadopago.SDK(os.getenv('MERCADOPAGO_ACCESS_TOKEN'))
-            payment_info = sdk.payment().get(payment_id)
-
-            # LOG 7: Resposta do MP
-            logger.info("Resposta do Mercado Pago:")
-            logger.info(json.dumps(payment_info, indent=2))
-
-            if payment_info['status'] == 200:
-                payment = payment_info['response']
-
-                # LOG 8: Dados do pagamento
-                logger.info(f"Status do pagamento: {payment['status']}")
-                logger.info(f"Valor: R$ {payment['transaction_amount']}")
-                logger.info(f"Referência: {payment.get('external_reference')}")
-
-                # Atualizar banco de dados
-                reference_id = payment.get('external_reference')
-
-                if reference_id:
-                    # LOG 9: Atualizando banco
-                    logger.info(f"Atualizando banco para referência: {reference_id}")
-
-                    conn = get_db_connection()
-                    cursor = conn.cursor()
-
-                    cursor.execute("""
-                        UPDATE payments
-                        SET status = %s,
-                            payment_id = %s,
-                            payment_data = %s,
-                            updated_at = NOW()
-                        WHERE reference_id = %s
-                    """, (
-                        payment['status'],
-                        str(payment_id),
-                        json.dumps(payment),
-                        reference_id
-                    ))
-
-                    updated_rows = cursor.rowcount
-
-                    # LOG 10: Resultado da atualização
-                    logger.info(f"Linhas atualizadas: {updated_rows}")
-
-                    # Se pagamento aprovado, criar/atualizar assinatura
-                    if payment['status'] == 'approved':
-                        logger.info("✅ Pagamento APROVADO! Criando assinatura...")
-
-                        # Buscar dados do pagamento
-                        cursor.execute("""
-                            SELECT customer_email, plan_id, plan_name,
-                                   selected_states, selected_areas,
-                                   extra_states, extra_states_price,
-                                   extra_areas, extra_areas_price,
-                                   customer_name
-                            FROM payments
-                            WHERE reference_id = %s
-                        """, (reference_id,))
-
-                        payment_data = cursor.fetchone()
-
-                        if payment_data:
-                            # LOG 11: Dados para criar assinatura
-                            logger.info(f"Dados do pagamento: {payment_data}")
-                            logger.info(f"Payment encontrado: {payment_data[0]}")
-                            logger.info(f"Estados extras: {payment_data[5]} (R$ {payment_data[6]})")  # ✅ ADICIONAR
-                            logger.info(f"Áreas extras: {payment_data[7]} (R$ {payment_data[8]})")
-
-                            # Buscar user_id pelo email
-                            cursor.execute("""
-                                SELECT id FROM users WHERE email = %s
-                            """, (payment_data[0],))
-
-                            user_result = cursor.fetchone()
-                            user_id = user_result[0] if user_result else None
-
-                            # LOG 12: User ID encontrado
-                            logger.info(f"User ID: {user_id}")
-
-                            # ✨ CORRIGIDO: Se usuário não existe, criar automaticamente
-                            if not user_id:
-                                logger.info(f"⚠️ Usuário não encontrado. Criando usuário para: {payment_data[0]}")
-
-                                # ✅ CORREÇÃO 1: Buscar TODOS os dados do cliente (incluindo senha)
-                                cursor.execute("""
-                                    SELECT customer_name, customer_cpf, customer_phone,
-                                           customer_empresa, customer_cnpj, customer_senha_hash
-                                    FROM payments
-                                    WHERE reference_id = %s
-                                """, (reference_id,))
-
-                                customer_data = cursor.fetchone()
-
-                                if customer_data:
-                                    customer_name = customer_data[0]
-                                    customer_cpf = customer_data[1]
-                                    customer_phone = customer_data[2]
-                                    customer_empresa = customer_data[3]  # ✅ NOVO
-                                    customer_cnpj = customer_data[4]  # ✅ NOVO
-                                    customer_senha_hash = customer_data[5]  # ✅ NOVO
-
-                                    # ✅ CORREÇÃO 2: Gerar username a partir do email
-                                    email = payment_data[0]
-                                    username = email.split('@')[0]
-
-                                    # Verificar se username já existe
-                                    cursor.execute("SELECT COUNT(*) FROM users WHERE username = %s", (username,))
-                                    count = cursor.fetchone()[0]
-                                    if count > 0:
-                                        username = f"{username}_{count + 1}"
-
-                                    logger.info(f"   Username gerado: {username}")
-
-                                    # ✅ CORREÇÃO 3: Se senha não existe, gerar temporária
-                                    if not customer_senha_hash:
-                                        import secrets
-                                        import bcrypt
-
-                                        temp_password = secrets.token_urlsafe(12)
-                                        customer_senha_hash = bcrypt.hashpw(
-                                            temp_password.encode('utf-8'),
-                                            bcrypt.gensalt()
-                                        ).decode('utf-8')
-                                        logger.warning(f"⚠️ Senha não encontrada. Gerada senha temporária.")
-                                        logger.warning(f"   Usuário deve redefinir senha no primeiro acesso.")
-
-                                    # ✅ CORREÇÃO 4: Criar usuário COM TODOS OS CAMPOS OBRIGATÓRIOS
-                                    cursor.execute("""
-                                        INSERT INTO users (
-                                            username, email, password_hash, full_name, 
-                                            phone, company_name, cnpj_cpf,
-                                            created_at, updated_at
-                                        ) VALUES (%s, %s, %s, %s, %s, %s, %s, NOW(), NOW())
-                                        RETURNING id
-                                    """, (
-                                        username,  # ✅ NOVO - OBRIGATÓRIO
-                                        email,
-                                        customer_senha_hash,  # ✅ NOVO - OBRIGATÓRIO
-                                        customer_name,
-                                        customer_phone,
-                                        customer_empresa,  # ✅ NOVO
-                                        customer_cnpj if customer_cnpj else customer_cpf  # ✅ CNPJ ou CPF
-                                    ))
-
-                                    user_id = cursor.fetchone()[0]
-                                    logger.info(f"✅ Usuário criado com ID: {user_id}")
-                                    logger.info(f"   Username: {username}")
-                                    logger.info(f"   Email: {email}")
-                                    logger.info(f"   Nome: {customer_name}")
-                                    if customer_empresa:
-                                        logger.info(f"   Empresa: {customer_empresa}")
-                                    if customer_cnpj:
-                                        logger.info(f"   CNPJ: {customer_cnpj}")
-
-                                else:
-                                    logger.error(f"❌ Não foi possível obter dados do cliente")
-
-                            if user_id:
-                                # Criar ou atualizar assinatura
-                                cursor.execute("""
-                                    INSERT INTO subscriptions (
-                                        user_id, plan_id, plan_name, status,
-                                        selected_states, selected_areas,
-                                        payment_reference, start_date, created_at
-                                    ) VALUES (%s, %s, %s, %s, %s, %s, %s, NOW(), NOW())
-                                    ON CONFLICT (user_id) 
-                                    DO UPDATE SET
-                                        plan_id = EXCLUDED.plan_id,
-                                        plan_name = EXCLUDED.plan_name,
-                                        status = EXCLUDED.status,
-                                        selected_states = EXCLUDED.selected_states,
-                                        selected_areas = EXCLUDED.selected_areas,
-                                        payment_reference = EXCLUDED.payment_reference,
-                                        updated_at = NOW()
-                                """, (
-                                    user_id,
-                                    payment_data[1],  # plan_id
-                                    payment_data[2],  # plan_name
-                                    'active',
-                                    json.dumps(payment_data[3]) if isinstance(payment_data[3], list) else payment_data[
-                                        3],  # selected_states
-                                    json.dumps(payment_data[4]) if isinstance(payment_data[4], list) else payment_data[
-                                        4],  # selected_areas
-                                    reference_id
-                                ))
-
-                                # LOG 13: Assinatura criada
-                                logger.info("✅ Assinatura criada/atualizada com sucesso!")
-
-                                # Enviar email de confirmação em background (não bloqueia o webhook)
-                                try:
-                                    import threading as _threading
-                                    from src.services.email_service import send_payment_confirmation
-                                    import json as _json
-                                    _states = _json.loads(payment_data[3]) if isinstance(payment_data[3], str) else (payment_data[3] or [])
-                                    _areas = _json.loads(payment_data[4]) if isinstance(payment_data[4], str) else (payment_data[4] or [])
-                                    _email_args = (payment_data[0], payment_data[9], payment_data[2], _states, _areas)
-                                    _t = _threading.Thread(target=lambda: send_payment_confirmation(*_email_args), daemon=True)
-                                    _t.start()
-                                    logger.info("📧 Email de confirmação agendado em background")
-                                except Exception as email_err:
-                                    logger.error(f"❌ Erro ao agendar email de confirmação: {email_err}")
-                            else:
-                                logger.warning(f"⚠️ Usuário não encontrado para email: {payment_data[0]}")
-                        else:
-                            logger.warning(f"⚠️ Dados do pagamento não encontrados para ref: {reference_id}")
-
-                    conn.commit()
-                    cursor.close()
-                    conn.close()
-
-                    # LOG 14: Sucesso final
-                    logger.info("=" * 60)
-                    logger.info("✅ WEBHOOK PROCESSADO COM SUCESSO!")
-                    logger.info("=" * 60)
-
-                    return jsonify({'success': True}), 200
-                else:
-                    logger.error("❌ Referência externa não encontrada no pagamento")
-                    return jsonify({'success': False, 'error': 'No reference'}), 400
-            else:
-                logger.error(f"❌ Erro ao consultar pagamento: {payment_info}")
-                return jsonify({'success': False, 'error': 'Payment not found'}), 404
-        else:
-            # LOG 15: Tipo de notificação ignorado
-            logger.info(f"ℹ️ Tipo de notificação '{notification_type}' ignorado")
-            return jsonify({'success': True, 'message': 'Ignored'}), 200
+        logger.info("Tipo de notificação '%s' ignorado", notification_type)
+        return jsonify({'success': True, 'message': 'Ignored'}), 200
 
     except Exception as e:
         # LOG 16: Erro geral
