@@ -610,6 +610,19 @@ def get_user_stats():
             'error': 'Erro interno do servidor'
         }), 500
 
+@user_bp.route('/user/validate-email', methods=['POST'])
+def validate_email():
+    """Valida formato e domínio do email para checkout/assinatura MP."""
+    try:
+        data = request.get_json() or {}
+        email = data.get('email', '')
+        from src.services.email_validation import validate_checkout_email
+        result = validate_checkout_email(email)
+        return jsonify({'success': True, **result}), 200
+    except Exception as e:
+        logger.error('Erro ao validar email: %s', e)
+        return jsonify({'success': False, 'valid': False, 'message': 'Erro ao validar email'}), 500
+
 @user_bp.route('/user/subscription', methods=['GET'])
 def get_user_subscription():
     user_id = request.args.get('user_id', type=int)

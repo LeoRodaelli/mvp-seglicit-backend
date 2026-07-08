@@ -25,6 +25,27 @@ from src.services.subscription_billing import (
     update_subscription_by_preapproval_status,
 )
 
+PAYMENT_STATUS_MESSAGES = {
+    'cc_rejected_bad_filled_card_number': 'Número do cartão inválido.',
+    'cc_rejected_bad_filled_date': 'Data de validade incorreta.',
+    'cc_rejected_bad_filled_security_code': 'Código de segurança incorreto.',
+    'cc_rejected_insufficient_amount': 'Saldo ou limite insuficiente no cartão.',
+    'cc_rejected_high_risk': 'Pagamento recusado por segurança. Use o mesmo email do checkout na conta Mercado Pago.',
+    'cc_rejected_call_for_authorize': 'Ligue para o banco para autorizar a compra.',
+    'cc_rejected_card_disabled': 'Cartão desabilitado para compras online.',
+    'cc_rejected_duplicated_payment': 'Pagamento duplicado detectado.',
+    'cc_rejected_other_reason': 'Cartão recusado pelo banco emissor.',
+}
+
+
+def _payment_status_detail_message(status_detail):
+    if not status_detail:
+        return None
+    return PAYMENT_STATUS_MESSAGES.get(
+        status_detail,
+        'Pagamento recusado. Verifique se o email no Mercado Pago é o mesmo do checkout.',
+    )
+
 load_dotenv()
 
 # Configure logging
@@ -444,16 +465,24 @@ def create_subscription():
         preapproval_data = {
             'reason': f"Seglicit - {plan['name']}",
             'external_reference': reference_id,
-            'payer_email': customer['email'],
-            'back_url': f"{frontend_url}/payment/success",
+            'payer_email': customer['email'].strip().lower(),
+            'back_url': f"{frontend_url}/payment/success?external_reference={reference_id}",
             'notification_url': f"{backend_url}/api/mercadopago/webhook",
             'auto_recurring': {
                 'frequency': 1,
                 'frequency_type': 'months',
-                'transaction_amount': float(total),
+                'transaction_amount': round(float(total), 2),
                 'currency_id': 'BRL',
             },
         }
+
+        from src.services.email_validation import validate_checkout_email
+        email_check = validate_checkout_email(customer['email'])
+        if not email_check['valid']:
+            return jsonify({
+                'success': False,
+                'error': email_check['message'],
+            }), 400
 
         logger.info('Criando assinatura MP ref=%s total=R$ %s', reference_id, total)
         preapproval_response = sdk.preapproval().create(preapproval_data)
@@ -469,7 +498,11 @@ def create_subscription():
 
         preapproval = preapproval_response.get('response') or {}
         preapproval_id = preapproval.get('id')
-        init_point = preapproval.get('init_point') or preapproval.get('sandbox_init_point')
+        access_token = os.getenv('MERCADOPAGO_ACCESS_TOKEN', '')
+        use_sandbox = access_token.startswith('TEST-')
+        init_point = (
+            preapproval.get('sandbox_init_point') if use_sandbox else preapproval.get('init_point')
+        ) or preapproval.get('init_point') or preapproval.get('sandbox_init_point')
 
         if not preapproval_id or not init_point:
             return jsonify({
@@ -650,18 +683,20 @@ def get_payment_status(payment_id):
             logger.info(f"Status: {payment['status']}")
             logger.info(f"Valor: R$ {payment['transaction_amount']}")
 
-            return jsonify({
-                'success': True,
-                'payment': {
-                    'id': payment['id'],
-                    'status': payment['status'],
-                    'status_detail': payment.get('status_detail'),
-                    'amount': payment['transaction_amount'],
-                    'reference': payment.get('external_reference'),
-                    'date_created': payment.get('date_created'),
-                    'date_approved': payment.get('date_approved')
-                }
-            }), 200
+        return jsonify({
+            'success': True,
+            'payment': {
+                'id': payment['id'],
+                'status': payment['status'],
+                'status_detail': payment.get('status_detail'),
+                'status_detail_message': _payment_status_detail_message(payment.get('status_detail')),
+                'amount': payment['transaction_amount'],
+                'reference': payment.get('external_reference'),
+                'payer_email': (payment.get('payer') or {}).get('email'),
+                'date_created': payment.get('date_created'),
+                'date_approved': payment.get('date_approved'),
+            }
+        }), 200
         else:
             logger.error(f"Erro ao consultar pagamento: {payment_info}")
             return jsonify({

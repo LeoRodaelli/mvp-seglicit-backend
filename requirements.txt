@@ -15,4 +15,5 @@ python-dotenv==1.0.0
 gunicorn==21.2.0
 mercadopago
 bcrypt
+dnspython==2.7.0
 playwright==1.49.1
