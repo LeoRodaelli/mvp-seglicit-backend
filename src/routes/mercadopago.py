@@ -683,20 +683,20 @@ def get_payment_status(payment_id):
             logger.info(f"Status: {payment['status']}")
             logger.info(f"Valor: R$ {payment['transaction_amount']}")
 
-        return jsonify({
-            'success': True,
-            'payment': {
-                'id': payment['id'],
-                'status': payment['status'],
-                'status_detail': payment.get('status_detail'),
-                'status_detail_message': _payment_status_detail_message(payment.get('status_detail')),
-                'amount': payment['transaction_amount'],
-                'reference': payment.get('external_reference'),
-                'payer_email': (payment.get('payer') or {}).get('email'),
-                'date_created': payment.get('date_created'),
-                'date_approved': payment.get('date_approved'),
-            }
-        }), 200
+            return jsonify({
+                'success': True,
+                'payment': {
+                    'id': payment['id'],
+                    'status': payment['status'],
+                    'status_detail': payment.get('status_detail'),
+                    'status_detail_message': _payment_status_detail_message(payment.get('status_detail')),
+                    'amount': payment['transaction_amount'],
+                    'reference': payment.get('external_reference'),
+                    'payer_email': (payment.get('payer') or {}).get('email'),
+                    'date_created': payment.get('date_created'),
+                    'date_approved': payment.get('date_approved'),
+                }
+            }), 200
         else:
             logger.error(f"Erro ao consultar pagamento: {payment_info}")
             return jsonify({
