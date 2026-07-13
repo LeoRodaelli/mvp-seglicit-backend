@@ -191,6 +191,78 @@ def send_subscription_cancellation(user_email, user_name, plan_name):
     )
 
 
+def send_subscription_expired(user_email, user_name, plan_name):
+    """Avisa que a assinatura expirou por falta de renovação/pagamento."""
+    frontend_url = os.getenv('FRONTEND_URL', 'https://seglicit.com.br')
+    support_email = os.getenv('SUPPORT_EMAIL', 'suporte@seglicit.com.br')
+    safe_name = html_module.escape(user_name or 'Cliente')
+    safe_plan = html_module.escape(plan_name or 'Seglicit')
+    recontratar_url = f'{frontend_url}/?contratar=1#precos'
+
+    html = f"""<!DOCTYPE html>
+<html lang="pt-BR">
+<body style="margin:0;padding:0;background:#f4f4f4;font-family:Arial,sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0">
+    <tr><td align="center" style="padding:30px 0;">
+      <table width="600" cellpadding="0" cellspacing="0" style="background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.1);">
+        <tr>
+          <td style="background:#1e3a5f;padding:24px;text-align:center;">
+            <h1 style="color:#fff;margin:0;font-size:26px;">Seglicit</h1>
+            <p style="color:#a8c4e0;margin:6px 0 0;">Plataforma de Licitações</p>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:32px;">
+            <h2 style="color:#1e3a5f;margin:0 0 16px;">Assinatura expirada</h2>
+            <p style="color:#444;">Olá, <strong>{safe_name}</strong>!</p>
+            <p style="color:#444;">
+              Sua assinatura do plano <strong>{safe_plan}</strong> expirou porque a renovação mensal
+              não foi concluída (pagamento não aprovado ou período encerrado).
+            </p>
+            <table width="100%" cellpadding="0" cellspacing="0" style="background:#fff8e6;border-left:4px solid #e67e22;border-radius:4px;margin:20px 0;">
+              <tr><td style="padding:16px;">
+                <p style="margin:0 0 8px;color:#333;"><strong>O que isso significa:</strong></p>
+                <p style="margin:0 0 6px;color:#555;font-size:14px;">• O acesso à plataforma de licitações foi suspenso</p>
+                <p style="margin:0 0 6px;color:#555;font-size:14px;">• Novas cobranças não serão processadas enquanto não houver um plano ativo</p>
+                <p style="margin:0;color:#555;font-size:14px;">• Seus dados de conta foram mantidos para facilitar uma nova contratação</p>
+              </td></tr>
+            </table>
+            <p style="color:#444;">
+              Para voltar a monitorar licitações, contrate um novo plano ou atualize o meio de pagamento
+              no Mercado Pago e tente novamente:
+            </p>
+            <table width="100%" cellpadding="0" cellspacing="0">
+              <tr><td align="center" style="padding:20px 0;">
+                <a href="{recontratar_url}"
+                   style="background:#1e3a5f;color:#fff;padding:14px 36px;border-radius:6px;text-decoration:none;font-size:16px;font-weight:bold;">
+                  Reativar assinatura
+                </a>
+              </td></tr>
+            </table>
+            <p style="color:#888;font-size:13px;">
+              Se acredita que houve um erro na cobrança, verifique seu cartão no Mercado Pago ou fale conosco:
+              <a href="mailto:{support_email}" style="color:#1e3a5f;">{support_email}</a>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="background:#f9f9f9;padding:16px;text-align:center;border-top:1px solid #eee;">
+            <p style="margin:0;color:#aaa;font-size:12px;">© 2026 Seglicit. Todos os direitos reservados.</p>
+          </td>
+        </tr>
+      </table>
+    </td></tr>
+  </table>
+</body>
+</html>"""
+
+    return send_email(
+        user_email,
+        f"Assinatura expirada — Seglicit ({plan_name or 'Seglicit'})",
+        html,
+    )
+
+
 def send_password_reset(user_email, user_name, reset_token):
     frontend_url = os.getenv('FRONTEND_URL', 'https://seglicit.com.br')
     reset_link = f"{frontend_url}/reset-password?token={reset_token}"

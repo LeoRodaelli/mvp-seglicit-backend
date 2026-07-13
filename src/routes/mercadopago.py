@@ -387,8 +387,22 @@ def _parse_checkout_payload(data):
         'total': data.get('total', plan['price']),
         'selected_states': data.get('selected_states', []),
         'selected_areas': data.get('selected_areas', []),
+        'terms_accepted': bool(data.get('terms_accepted')),
+        'terms_version': (data.get('terms_version') or '').strip(),
     }
     return payload, None
+
+
+CHECKOUT_TERMS_VERSION = '1.0-2026-07'
+
+
+def _validate_terms(payload):
+    if not payload.get('terms_accepted'):
+        return 'É necessário aceitar os Termos de Contratação e a Política de Privacidade (LGPD).'
+    version = payload.get('terms_version') or ''
+    if version != CHECKOUT_TERMS_VERSION:
+        return 'Versão dos termos desatualizada. Atualize a página do checkout e aceite novamente.'
+    return None
 
 
 def _save_pending_payment(reference_id, payload, external_id=None, billing_type='one_time'):
@@ -404,6 +418,13 @@ def _save_pending_payment(reference_id, payload, external_id=None, billing_type=
 
     conn = get_db_connection()
     cursor = conn.cursor()
+
+    terms_record = {
+        'terms_accepted': payload.get('terms_accepted'),
+        'terms_version': payload.get('terms_version'),
+        'terms_accepted_at': datetime.utcnow().isoformat() + 'Z',
+    }
+
     cursor.execute("""
         INSERT INTO payments (
             reference_id, preference_id, status,
@@ -413,9 +434,9 @@ def _save_pending_payment(reference_id, payload, external_id=None, billing_type=
             extra_states, extra_states_price,
             extra_areas, extra_areas_price, total_amount,
             selected_states, selected_areas,
-            mp_preapproval_id, billing_type,
+            mp_preapproval_id, billing_type, payment_data,
             created_at
-        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, NOW())
+        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, NOW())
     """, (
         reference_id,
         external_id,
@@ -439,6 +460,7 @@ def _save_pending_payment(reference_id, payload, external_id=None, billing_type=
         json.dumps(payload['selected_areas']),
         external_id if billing_type == 'subscription' else None,
         billing_type,
+        json.dumps(terms_record),
     ))
     conn.commit()
     cursor.close()
@@ -453,6 +475,10 @@ def create_subscription():
         payload, error = _parse_checkout_payload(data)
         if error:
             return jsonify({'success': False, 'error': error}), 400
+
+        terms_error = _validate_terms(payload)
+        if terms_error:
+            return jsonify({'success': False, 'error': terms_error}), 400
 
         plan = payload['plan']
         customer = payload['customer']

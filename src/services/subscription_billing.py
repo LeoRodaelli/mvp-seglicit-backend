@@ -19,37 +19,51 @@ ACTIVE_SUBSCRIPTION_WHERE = """
 SUBSCRIPTION_PERIOD_DAYS = 30
 
 
-def mark_expired_subscriptions(cursor, user_id=None):
-    """Marca assinaturas ativas cujo período já venceu sem renovação."""
+def mark_expired_subscriptions(cursor, user_id=None, send_notifications=True):
+    """Marca assinaturas vencidas como expired e notifica por e-mail."""
+    user_filter = ''
+    params = []
     if user_id:
-        cursor.execute(
-            """
-            UPDATE subscriptions
-            SET status = 'expired', updated_at = NOW()
-            WHERE user_id = %s
-              AND status = 'active'
-              AND current_period_end IS NOT NULL
-              AND current_period_end < CURRENT_DATE
-            """,
-            (user_id,),
-        )
-    else:
-        cursor.execute(
-            """
-            UPDATE subscriptions
-            SET status = 'expired', updated_at = NOW()
-            WHERE status = 'active'
-              AND current_period_end IS NOT NULL
-              AND current_period_end < CURRENT_DATE
-            """
-        )
-    if cursor.rowcount:
-        logger.info(
-            'Assinaturas expiradas: %s%s',
-            cursor.rowcount,
-            f' (user_id={user_id})' if user_id else '',
-        )
-    return cursor.rowcount
+        user_filter = 'AND s.user_id = %s'
+        params.append(user_id)
+
+    cursor.execute(
+        f"""
+        SELECT s.id, s.user_id, s.plan_name, u.email,
+               COALESCE(u.full_name, u.username) AS display_name
+        FROM subscriptions s
+        INNER JOIN users u ON u.id = s.user_id
+        WHERE s.status = 'active'
+          AND s.current_period_end IS NOT NULL
+          AND s.current_period_end < CURRENT_DATE
+          {user_filter}
+        """,
+        tuple(params),
+    )
+    rows = cursor.fetchall()
+    if not rows:
+        return 0
+
+    sub_ids = [row[0] for row in rows]
+    cursor.execute(
+        """
+        UPDATE subscriptions
+        SET status = 'expired', updated_at = NOW()
+        WHERE id = ANY(%s)
+        """,
+        (sub_ids,),
+    )
+
+    if send_notifications:
+        for _sub_id, _user_id, plan_name, email, display_name in rows:
+            _schedule_expiration_email(email, display_name, plan_name)
+
+    logger.info(
+        'Assinaturas expiradas: %s%s',
+        len(rows),
+        f' (user_id={user_id})' if user_id else '',
+    )
+    return len(rows)
 
 
 def is_subscription_active(row):
@@ -255,6 +269,22 @@ def _schedule_cancellation_email(user_email, user_name, plan_name):
         logger.info('Email de cancelamento agendado para %s', user_email)
     except Exception as exc:
         logger.error('Erro ao agendar email de cancelamento: %s', exc)
+
+
+def _schedule_expiration_email(user_email, user_name, plan_name):
+    try:
+        import threading
+
+        from src.services.email_service import send_subscription_expired
+
+        thread = threading.Thread(
+            target=lambda: send_subscription_expired(user_email, user_name, plan_name),
+            daemon=True,
+        )
+        thread.start()
+        logger.info('Email de expiração agendado para %s', user_email)
+    except Exception as exc:
+        logger.error('Erro ao agendar email de expiração: %s', exc)
 
 
 def activate_subscription_from_reference(cursor, reference_id, mp_preapproval_id=None, mp_payment_id=None, send_email=True):

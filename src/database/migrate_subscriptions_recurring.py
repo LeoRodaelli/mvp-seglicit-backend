@@ -48,6 +48,10 @@ def ensure_columns(cursor):
     """)
     cursor.execute("""
         ALTER TABLE payments
+        ADD COLUMN IF NOT EXISTS payment_data JSONB;
+    """)
+    cursor.execute("""
+        ALTER TABLE payments
         ADD COLUMN IF NOT EXISTS mp_preapproval_id VARCHAR(64);
     """)
     cursor.execute("""
