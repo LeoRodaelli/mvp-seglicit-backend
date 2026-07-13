@@ -19,6 +19,39 @@ ACTIVE_SUBSCRIPTION_WHERE = """
 SUBSCRIPTION_PERIOD_DAYS = 30
 
 
+def mark_expired_subscriptions(cursor, user_id=None):
+    """Marca assinaturas ativas cujo período já venceu sem renovação."""
+    if user_id:
+        cursor.execute(
+            """
+            UPDATE subscriptions
+            SET status = 'expired', updated_at = NOW()
+            WHERE user_id = %s
+              AND status = 'active'
+              AND current_period_end IS NOT NULL
+              AND current_period_end < CURRENT_DATE
+            """,
+            (user_id,),
+        )
+    else:
+        cursor.execute(
+            """
+            UPDATE subscriptions
+            SET status = 'expired', updated_at = NOW()
+            WHERE status = 'active'
+              AND current_period_end IS NOT NULL
+              AND current_period_end < CURRENT_DATE
+            """
+        )
+    if cursor.rowcount:
+        logger.info(
+            'Assinaturas expiradas: %s%s',
+            cursor.rowcount,
+            f' (user_id={user_id})' if user_id else '',
+        )
+    return cursor.rowcount
+
+
 def is_subscription_active(row):
     if not row or row.get('status') != 'active':
         return False

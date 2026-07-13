@@ -663,6 +663,10 @@ def _load_subscription_filters(user_id):
 
     try:
         cursor = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+        from src.services.subscription_billing import mark_expired_subscriptions
+        mark_expired_subscriptions(cursor, user_id)
+        conn.commit()
+
         cursor.execute("""
             SELECT selected_states, selected_areas
             FROM subscriptions

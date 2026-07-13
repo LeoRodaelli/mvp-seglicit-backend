@@ -631,6 +631,11 @@ def get_user_subscription():
 
     conn = get_db_connection()
     cursor = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+
+    from src.services.subscription_billing import mark_expired_subscriptions
+    mark_expired_subscriptions(cursor, user_id)
+    conn.commit()
+
     cursor.execute("""
         SELECT id, plan_id, plan_name, selected_states, selected_areas, status,
                current_period_end, billing_type, created_at
