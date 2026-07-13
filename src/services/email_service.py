@@ -132,7 +132,7 @@ def send_payment_confirmation(customer_email, customer_name, plan_name, selected
 def send_subscription_cancellation(user_email, user_name, plan_name):
     """Confirma cancelamento da assinatura mensal para o usuário."""
     frontend_url = os.getenv('FRONTEND_URL', 'https://seglicit.com.br')
-    support_email = os.getenv('SUPPORT_EMAIL', 'suporte@seglicit.com.br')
+    support_email = os.getenv('SUPPORT_EMAIL', 'seglicit@gmail.com')
     safe_name = html_module.escape(user_name or 'Cliente')
     safe_plan = html_module.escape(plan_name or 'Seglicit')
 
@@ -194,7 +194,7 @@ def send_subscription_cancellation(user_email, user_name, plan_name):
 def send_subscription_expired(user_email, user_name, plan_name):
     """Avisa que a assinatura expirou por falta de renovação/pagamento."""
     frontend_url = os.getenv('FRONTEND_URL', 'https://seglicit.com.br')
-    support_email = os.getenv('SUPPORT_EMAIL', 'suporte@seglicit.com.br')
+    support_email = os.getenv('SUPPORT_EMAIL', 'seglicit@gmail.com')
     safe_name = html_module.escape(user_name or 'Cliente')
     safe_plan = html_module.escape(plan_name or 'Seglicit')
     recontratar_url = f'{frontend_url}/?contratar=1#precos'
