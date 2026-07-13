@@ -381,3 +381,112 @@ def process_authorized_payment_notification(cursor, authorized_payment):
         payment_id,
         external_reference=external_reference,
     )
+
+
+def cancel_mp_preapproval(preapproval_id, sdk=None, access_token=None):
+    """Cancela assinatura recorrente no Mercado Pago."""
+    if not preapproval_id:
+        return True, None
+
+    for status_value in ('cancelled', 'canceled'):
+        if sdk:
+            try:
+                response = sdk.preapproval().update(preapproval_id, {'status': status_value})
+                http_status = response.get('status')
+                if http_status in (200, 201):
+                    logger.info('Preapproval %s cancelado no MP (status=%s)', preapproval_id, status_value)
+                    return True, response.get('response')
+            except Exception as exc:
+                logger.warning('SDK falhou ao cancelar preapproval %s: %s', preapproval_id, exc)
+
+        if access_token:
+            response = requests.put(
+                f'https://api.mercadopago.com/preapproval/{preapproval_id}',
+                headers={
+                    'Authorization': f'Bearer {access_token}',
+                    'Content-Type': 'application/json',
+                },
+                json={'status': status_value},
+                timeout=30,
+            )
+            if response.status_code in (200, 201):
+                logger.info('Preapproval %s cancelado via REST (status=%s)', preapproval_id, status_value)
+                return True, response.json()
+            logger.warning(
+                'REST falhou ao cancelar preapproval %s status=%s body=%s',
+                preapproval_id,
+                status_value,
+                response.text,
+            )
+
+    return False, None
+
+
+def cancel_subscription_for_user(cursor, user_id, sdk=None, access_token=None):
+    """
+    Cancela assinatura ativa do usuário no Mercado Pago e no banco.
+    Retorna dict com success, message e subscription_id.
+    """
+    cursor.execute(
+        """
+        SELECT id, mp_preapproval_id, payment_reference, plan_name, status
+        FROM subscriptions
+        WHERE user_id = %s AND status = 'active'
+        ORDER BY created_at DESC
+        LIMIT 1
+        """,
+        (user_id,),
+    )
+    row = cursor.fetchone()
+    if not row:
+        return {'success': False, 'error': 'Nenhuma assinatura ativa encontrada.'}
+
+    sub_id, mp_preapproval_id, payment_reference, plan_name, _status = row
+
+    if sdk and mp_preapproval_id:
+        mp_ok, _mp_response = cancel_mp_preapproval(
+            mp_preapproval_id,
+            sdk=sdk,
+            access_token=access_token,
+        )
+        if not mp_ok:
+            return {
+                'success': False,
+                'error': (
+                    'Não foi possível cancelar a cobrança no Mercado Pago. '
+                    'Tente novamente ou entre em contato com o suporte.'
+                ),
+            }
+
+    cursor.execute(
+        """
+        UPDATE subscriptions
+        SET status = 'cancelled',
+            current_period_end = LEAST(COALESCE(current_period_end, CURRENT_DATE), CURRENT_DATE),
+            updated_at = NOW()
+        WHERE id = %s
+        """,
+        (sub_id,),
+    )
+
+    if payment_reference:
+        cursor.execute(
+            """
+            UPDATE payments
+            SET status = 'cancelled', updated_at = NOW()
+            WHERE reference_id = %s
+            """,
+            (payment_reference,),
+        )
+
+    logger.info(
+        'Assinatura cancelada user_id=%s sub_id=%s preapproval=%s',
+        user_id,
+        sub_id,
+        mp_preapproval_id,
+    )
+    return {
+        'success': True,
+        'message': f'Assinatura do plano {plan_name or "Seglicit"} cancelada com sucesso.',
+        'subscription_id': sub_id,
+    }

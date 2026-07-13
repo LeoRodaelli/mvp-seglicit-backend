@@ -663,6 +663,47 @@ def get_user_subscription():
 
     return jsonify({'success': True, 'subscription': sub})
 
+
+@user_bp.route('/user/subscription/cancel', methods=['POST'])
+def cancel_user_subscription():
+    """Cancela assinatura mensal ativa (Mercado Pago + banco)."""
+    try:
+        data = request.get_json() or {}
+        user_id = data.get('user_id')
+        if not user_id:
+            return jsonify({'success': False, 'error': 'user_id obrigatório'}), 400
+
+        import mercadopago
+        from src.services.subscription_billing import cancel_subscription_for_user
+
+        access_token = os.getenv('MERCADOPAGO_ACCESS_TOKEN')
+        sdk = mercadopago.SDK(access_token) if access_token else None
+
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        result = cancel_subscription_for_user(
+            cursor,
+            int(user_id),
+            sdk=sdk,
+            access_token=access_token,
+        )
+        if result.get('success'):
+            conn.commit()
+        cursor.close()
+        conn.close()
+
+        if not result.get('success'):
+            return jsonify(result), 400
+
+        return jsonify(result), 200
+    except Exception as e:
+        logger.error('Erro ao cancelar assinatura: %s', e)
+        return jsonify({
+            'success': False,
+            'error': 'Erro interno ao cancelar assinatura.',
+        }), 500
+
+
 @user_bp.route('/test', methods=['GET'])
 def test_user_api():
     """Testa conexão da API de usuários"""
