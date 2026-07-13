@@ -459,6 +459,20 @@ def cancel_subscription_for_user(cursor, user_id, sdk=None, access_token=None):
 
     sub_id, mp_preapproval_id, payment_reference, plan_name, _status = row
 
+    if not mp_preapproval_id and payment_reference:
+        cursor.execute(
+            """
+            SELECT mp_preapproval_id
+            FROM payments
+            WHERE reference_id = %s AND mp_preapproval_id IS NOT NULL
+            LIMIT 1
+            """,
+            (payment_reference,),
+        )
+        payment_preapproval = cursor.fetchone()
+        if payment_preapproval and payment_preapproval[0]:
+            mp_preapproval_id = payment_preapproval[0]
+
     if sdk and mp_preapproval_id:
         mp_ok, _mp_response = cancel_mp_preapproval(
             mp_preapproval_id,
