@@ -129,6 +129,68 @@ def send_payment_confirmation(customer_email, customer_name, plan_name, selected
     )
 
 
+def send_subscription_cancellation(user_email, user_name, plan_name):
+    """Confirma cancelamento da assinatura mensal para o usuário."""
+    frontend_url = os.getenv('FRONTEND_URL', 'https://seglicit.com.br')
+    support_email = os.getenv('SUPPORT_EMAIL', 'suporte@seglicit.com.br')
+    safe_name = html_module.escape(user_name or 'Cliente')
+    safe_plan = html_module.escape(plan_name or 'Seglicit')
+
+    html = f"""<!DOCTYPE html>
+<html lang="pt-BR">
+<body style="margin:0;padding:0;background:#f4f4f4;font-family:Arial,sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0">
+    <tr><td align="center" style="padding:30px 0;">
+      <table width="600" cellpadding="0" cellspacing="0" style="background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.1);">
+        <tr>
+          <td style="background:#1e3a5f;padding:24px;text-align:center;">
+            <h1 style="color:#fff;margin:0;font-size:26px;">Seglicit</h1>
+            <p style="color:#a8c4e0;margin:6px 0 0;">Plataforma de Licitações</p>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:32px;">
+            <h2 style="color:#1e3a5f;margin:0 0 16px;">Assinatura cancelada</h2>
+            <p style="color:#444;">Olá, <strong>{safe_name}</strong>!</p>
+            <p style="color:#444;">Confirmamos o cancelamento da sua assinatura do plano <strong>{safe_plan}</strong>.</p>
+            <table width="100%" cellpadding="0" cellspacing="0" style="background:#fff5f5;border-left:4px solid #c0392b;border-radius:4px;margin:20px 0;">
+              <tr><td style="padding:16px;">
+                <p style="margin:0 0 8px;color:#333;"><strong>O que mudou:</strong></p>
+                <p style="margin:0 0 6px;color:#555;font-size:14px;">• A cobrança mensal foi interrompida no Mercado Pago</p>
+                <p style="margin:0 0 6px;color:#555;font-size:14px;">• O acesso à plataforma de licitações foi encerrado</p>
+                <p style="margin:0;color:#555;font-size:14px;">• Você não receberá novos alertas de licitações</p>
+              </td></tr>
+            </table>
+            <p style="color:#444;">Se quiser voltar a usar o Seglicit, você pode contratar um novo plano a qualquer momento:</p>
+            <table width="100%" cellpadding="0" cellspacing="0">
+              <tr><td align="center" style="padding:20px 0;">
+                <a href="{frontend_url}/#precos"
+                   style="background:#1e3a5f;color:#fff;padding:14px 36px;border-radius:6px;text-decoration:none;font-size:16px;font-weight:bold;">
+                  Ver planos
+                </a>
+              </td></tr>
+            </table>
+            <p style="color:#888;font-size:13px;">Dúvidas? Entre em contato: <a href="mailto:{support_email}" style="color:#1e3a5f;">{support_email}</a></p>
+          </td>
+        </tr>
+        <tr>
+          <td style="background:#f9f9f9;padding:16px;text-align:center;border-top:1px solid #eee;">
+            <p style="margin:0;color:#aaa;font-size:12px;">© 2026 Seglicit. Todos os direitos reservados.</p>
+          </td>
+        </tr>
+      </table>
+    </td></tr>
+  </table>
+</body>
+</html>"""
+
+    return send_email(
+        user_email,
+        f"Assinatura cancelada — Seglicit ({plan_name or 'Seglicit'})",
+        html,
+    )
+
+
 def send_password_reset(user_email, user_name, reset_token):
     frontend_url = os.getenv('FRONTEND_URL', 'https://seglicit.com.br')
     reset_link = f"{frontend_url}/reset-password?token={reset_token}"

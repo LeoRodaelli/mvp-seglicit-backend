@@ -208,6 +208,22 @@ def _schedule_confirmation_email(payment_row):
         logger.error('Erro ao agendar email de confirmação: %s', exc)
 
 
+def _schedule_cancellation_email(user_email, user_name, plan_name):
+    try:
+        import threading
+
+        from src.services.email_service import send_subscription_cancellation
+
+        thread = threading.Thread(
+            target=lambda: send_subscription_cancellation(user_email, user_name, plan_name),
+            daemon=True,
+        )
+        thread.start()
+        logger.info('Email de cancelamento agendado para %s', user_email)
+    except Exception as exc:
+        logger.error('Erro ao agendar email de cancelamento: %s', exc)
+
+
 def activate_subscription_from_reference(cursor, reference_id, mp_preapproval_id=None, mp_payment_id=None, send_email=True):
     payment_row = _get_payment_row(cursor, reference_id)
     if not payment_row:
@@ -478,6 +494,16 @@ def cancel_subscription_for_user(cursor, user_id, sdk=None, access_token=None):
             """,
             (payment_reference,),
         )
+
+    cursor.execute(
+        'SELECT email, full_name, username FROM users WHERE id = %s',
+        (user_id,),
+    )
+    user_row = cursor.fetchone()
+    if user_row:
+        user_email, full_name, username = user_row
+        display_name = full_name or username or 'Cliente'
+        _schedule_cancellation_email(user_email, display_name, plan_name)
 
     logger.info(
         'Assinatura cancelada user_id=%s sub_id=%s preapproval=%s',
