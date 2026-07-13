@@ -51,7 +51,7 @@ O MVP está funcional, com o backend hospedado no Railway e o frontend na Vercel
 - **Dicionário de Keywords:** A busca por área depende do dicionário `KEYWORDS_POR_AREA` no backend. Qualquer alteração nas áreas suportadas exige atualização deste dicionário.
 
 ## Decisões Importantes Já Tomadas
-- **Separação de Agentes IA:** Decidiu-se usar dois agentes Zaia distintos (ID 69739 para vendas, ID 76034 para a plataforma) para resolver problemas de contexto e alucinação.
+- **Separação de Agentes IA:** Decidiu-se usar dois agentes Zaia distintos (ID 69739 para vendas, ID 76166 para a plataforma) para resolver problemas de contexto e alucinação.
 - **Endpoint Simplificado para Zaia:** Criação do endpoint `/api/zaia/buscar` que retorna texto puro formatado para evitar que o LLM se confunda com JSONs complexos.
 - **Dicionário de Keywords no Backend:** A expansão de áreas de atuação para palavras-chave específicas é feita no backend, garantindo buscas mais precisas sem depender da interpretação do LLM.
 

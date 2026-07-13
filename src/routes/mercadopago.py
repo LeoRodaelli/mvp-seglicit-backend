@@ -474,6 +474,9 @@ def create_subscription():
                 'transaction_amount': round(float(total), 2),
                 'currency_id': 'BRL',
             },
+            'payment_methods_allowed': {
+                'payment_types': [{'id': 'credit_card'}],
+            },
         }
 
         from src.services.email_validation import validate_checkout_email
@@ -566,6 +569,15 @@ def _handle_payment_notification(payment_id):
     billing_type = billing_row[0] if billing_row else 'one_time'
 
     if billing_type == 'subscription':
+        if payment['status'] == 'rejected':
+            detail = payment.get('status_detail')
+            logger.error(
+                'Assinatura recusada ref=%s payment_id=%s detail=%s payer_email=%s',
+                reference_id,
+                payment_id,
+                detail,
+                (payment.get('payer') or {}).get('email'),
+            )
         conn.commit()
         cursor.close()
         conn.close()
@@ -664,6 +676,121 @@ def webhook():
         logger.error(traceback.format_exc())
         logger.error("=" * 60)
         return jsonify({'success': False, 'error': str(e)}), 500
+
+
+@mercadopago_bp.route('/mercadopago/checkout-status', methods=['GET'])
+def checkout_status():
+    """Diagnóstico de checkout/assinatura por reference_id ou preference_id."""
+    reference_id = request.args.get('reference_id') or request.args.get('reference')
+    preference_id = request.args.get('preference_id')
+    preapproval_id = request.args.get('preapproval_id')
+
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    row = None
+
+    if reference_id:
+        cursor.execute(
+            """
+            SELECT reference_id, customer_email, status, total_amount, mp_preapproval_id,
+                   preference_id, payment_id, billing_type, created_at
+            FROM payments
+            WHERE reference_id = %s
+            ORDER BY created_at DESC
+            LIMIT 1
+            """,
+            (reference_id,),
+        )
+        row = cursor.fetchone()
+    elif preference_id or preapproval_id:
+        lookup_id = preapproval_id or preference_id
+        cursor.execute(
+            """
+            SELECT reference_id, customer_email, status, total_amount, mp_preapproval_id,
+                   preference_id, payment_id, billing_type, created_at
+            FROM payments
+            WHERE mp_preapproval_id = %s OR preference_id = %s
+            ORDER BY created_at DESC
+            LIMIT 1
+            """,
+            (lookup_id, lookup_id),
+        )
+        row = cursor.fetchone()
+
+    cursor.close()
+    conn.close()
+
+    if not row:
+        return jsonify({'success': False, 'error': 'Registro não encontrado'}), 404
+
+    payment_record = {
+        'reference_id': row[0],
+        'customer_email': row[1],
+        'status': row[2],
+        'total_amount': float(row[3]) if row[3] is not None else None,
+        'mp_preapproval_id': row[4],
+        'preference_id': row[5],
+        'payment_id': row[6],
+        'billing_type': row[7],
+        'created_at': row[8].isoformat() if row[8] else None,
+    }
+
+    mp_preapproval = None
+    mp_payment = None
+    preapproval_lookup_id = payment_record.get('mp_preapproval_id') or preapproval_id
+
+    if preapproval_lookup_id:
+        preapproval_info = sdk.preapproval().get(preapproval_lookup_id)
+        if preapproval_info.get('status') == 200:
+            mp_preapproval = preapproval_info.get('response')
+
+    if payment_record.get('payment_id'):
+        payment_info = sdk.payment().get(payment_record['payment_id'])
+        if payment_info.get('status') == 200:
+            payment = payment_info['response']
+            mp_payment = {
+                'id': payment.get('id'),
+                'status': payment.get('status'),
+                'status_detail': payment.get('status_detail'),
+                'status_detail_message': _payment_status_detail_message(payment.get('status_detail')),
+                'payer_email': (payment.get('payer') or {}).get('email'),
+                'payment_method_id': payment.get('payment_method_id'),
+                'payment_type_id': payment.get('payment_type_id'),
+            }
+
+    tips = []
+    if mp_payment and mp_payment.get('status') == 'rejected':
+        detail = mp_payment.get('status_detail')
+        checkout_email = (payment_record.get('customer_email') or '').lower()
+        payer_email = (mp_payment.get('payer_email') or '').lower()
+        if checkout_email and payer_email and checkout_email != payer_email:
+            tips.append(
+                f'Email divergente: checkout={checkout_email} | mercado_pago={payer_email}. '
+                'Use o mesmo email nos dois lugares.'
+            )
+        if detail == 'cc_rejected_high_risk':
+            tips.append(
+                'Recusado por segurança. Tente no navegador normal (sem anônimo), '
+                'com cartão de crédito habitual e mesmo dispositivo de compras online.'
+            )
+        elif detail == 'cc_rejected_insufficient_amount':
+            tips.append('Limite ou saldo insuficiente no cartão de crédito.')
+        elif detail:
+            tips.append(mp_payment.get('status_detail_message') or detail)
+
+    if mp_preapproval and mp_preapproval.get('status') == 'pending':
+        tips.append(
+            f'Assinatura pendente no MP. Ao pagar, use o email: {payment_record.get("customer_email")}'
+        )
+
+    return jsonify({
+        'success': True,
+        'payment_record': payment_record,
+        'mp_preapproval_status': (mp_preapproval or {}).get('status'),
+        'mp_preapproval_payer_email': (mp_preapproval or {}).get('payer_email'),
+        'mp_payment': mp_payment,
+        'tips': tips,
+    }), 200
 
 
 @mercadopago_bp.route('/mercadopago/payment/<payment_id>', methods=['GET'])
