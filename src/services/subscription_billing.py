@@ -333,6 +333,10 @@ def activate_subscription_from_reference(cursor, reference_id, mp_preapproval_id
     if send_email:
         _schedule_confirmation_email(payment_row)
 
+    from src.services.zaia_api_key_service import ensure_user_zaia_api_key
+
+    ensure_user_zaia_api_key(cursor, user_id)
+
     logger.info('Assinatura ativada para user_id=%s ref=%s', user_id, reference_id)
     return True
 

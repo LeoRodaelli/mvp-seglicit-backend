@@ -628,11 +628,9 @@ def gerar_api_key():
         if not password_match:
             return jsonify({'success': False, 'error': 'Senha incorreta'}), 401
 
-        new_api_key = 'zaia_sk_' + secrets.token_urlsafe(32)
+        from src.services.zaia_api_key_service import regenerate_user_zaia_api_key
 
-        cursor.execute("""
-            UPDATE users SET zaia_api_key = %s, updated_at = %s WHERE id = %s
-        """, (new_api_key, datetime.now(), data['user_id']))
+        new_api_key = regenerate_user_zaia_api_key(cursor, data['user_id'])
 
         conn.commit()
         cursor.close()
@@ -652,6 +650,79 @@ def gerar_api_key():
 # ============================================================
 # ENDPOINT 2: PERFIL E PREFERÊNCIAS (VIA SUBSCRIPTION)
 # ============================================================
+
+@zaia_bp.route('/zaia/chave-integracao', methods=['GET'])
+def get_chave_integracao():
+    """
+    Retorna (ou cria) a API Key Zaia do usuário logado na plataforma.
+    Usada pelo frontend para injetar a chave no widget via custom data.
+
+    Query: user_id (obrigatório)
+    """
+    user_id = request.args.get('user_id', type=int)
+    if not user_id:
+        return jsonify({'success': False, 'error': 'user_id é obrigatório'}), 400
+
+    try:
+        from src.services.zaia_api_key_service import (
+            ensure_user_zaia_api_key,
+            get_active_subscription_row,
+        )
+
+        conn = get_db_connection()
+        if not conn:
+            raise Exception("Erro de conexão com banco")
+
+        cursor = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+        subscription_row = get_active_subscription_row(cursor, user_id)
+
+        if not subscription_row:
+            cursor.close()
+            conn.close()
+            return jsonify({
+                'success': False,
+                'error': 'Usuário sem plano ativo. Assine um plano para usar o assistente.',
+            }), 403
+
+        api_key = ensure_user_zaia_api_key(cursor, user_id)
+        if not api_key:
+            cursor.close()
+            conn.close()
+            return jsonify({'success': False, 'error': 'Usuário não encontrado ou inativo'}), 404
+
+        states = []
+        areas = []
+        try:
+            raw_states = subscription_row.get('selected_states')
+            if raw_states:
+                states = json.loads(raw_states) if isinstance(raw_states, str) else raw_states
+        except Exception:
+            states = []
+        try:
+            raw_areas = subscription_row.get('selected_areas')
+            if raw_areas:
+                areas = json.loads(raw_areas) if isinstance(raw_areas, str) else raw_areas
+        except Exception:
+            areas = []
+
+        conn.commit()
+        cursor.close()
+        conn.close()
+
+        return jsonify({
+            'success': True,
+            'zaia_api_key': api_key,
+            'plano': {
+                'nome': subscription_row.get('plan_name'),
+                'estados': states,
+                'areas': areas,
+            },
+        })
+
+    except Exception as e:
+        logger.error(f"Erro ao obter chave de integração Zaia: {e}")
+        return jsonify({'success': False, 'error': 'Erro interno do servidor'}), 500
+
 
 @zaia_bp.route('/zaia/perfil', methods=['GET'])
 @require_api_key
@@ -737,28 +808,21 @@ def buscar_licitacoes(current_user):
 
         subscription = current_user.get('subscription')
 
-        # Resolver estados
-        if estados_param:
-            estados_lista = [e.strip().upper() for e in estados_param.split(',') if e.strip()]
-            estados_fonte = 'parametro'
-        elif subscription and subscription.get('selected_states'):
-            estados_lista = [e.upper() for e in subscription['selected_states']]
-            estados_fonte = 'subscription'
-        else:
-            estados_lista = []
-            estados_fonte = 'nenhum'
+        from src.utils.plan_filters import resolve_plan_search_scope
 
-        # Resolver áreas e expandir para keywords
-        # Parâmetro via URL usa | como separador (evita conflito com vírgula em nomes)
-        if areas_param:
-            areas_lista = [a.strip() for a in areas_param.split('|') if a.strip()]
-            areas_fonte = 'parametro'
-        elif subscription and subscription.get('selected_areas'):
-            areas_lista = subscription['selected_areas']
-            areas_fonte = 'subscription'
-        else:
-            areas_lista = []
-            areas_fonte = 'nenhum'
+        scope = resolve_plan_search_scope(subscription, estados_param, areas_param)
+        if scope['error']:
+            return jsonify({
+                'success': False,
+                'error': scope['error'],
+                'resumo_texto': scope['error'],
+            })
+
+        estados_lista = scope['estados']
+        areas_lista = scope['areas']
+        estados_fonte = 'plano' if not estados_param else 'plano_intersecao'
+        areas_fonte = 'plano' if not areas_param else 'plano_intersecao'
+        scope_note = scope.get('note')
 
         # Expandir áreas para lista de keywords
         keywords_areas = get_keywords_para_areas(areas_lista) if areas_lista else []
@@ -891,6 +955,9 @@ def buscar_licitacoes(current_user):
                 "Nenhuma licitacao encontrada com os criterios informados. "
                 "Tente ampliar a busca usando palavras-chave mais gerais ou removendo filtros de data."
             )
+
+        if scope_note:
+            resumo_texto = f"{scope_note} {resumo_texto}"
 
         return jsonify({
             'success': True,
@@ -1121,12 +1188,26 @@ def buscar_simples(current_user):
     Endpoint simplificado para o agente Zaia.
     Retorna apenas { "resultado": "texto formatado..." }
     para que o LLM possa exibir diretamente sem confusão.
+    Busca sempre limitada aos estados e áreas do plano ativo do usuário.
     """
     q = _first_query_param('q', 'palavra_chave', 'keywords', 'keyword')
     estados_param = _first_query_param('estados', 'estado', 'uf')
+    areas_param = request.args.get('areas', '').strip()
     data_inicio = _normalize_date_param(
         _first_query_param('data_inicio', 'inicio', 'date_from', 'data_inicio_busca')
     )
+
+    subscription = current_user.get('subscription')
+    from src.utils.plan_filters import resolve_plan_search_scope
+
+    scope = resolve_plan_search_scope(subscription, estados_param, areas_param)
+    if scope['error']:
+        return jsonify({'resultado': scope['error']})
+
+    estados_lista = scope['estados']
+    areas_lista = scope['areas']
+    keywords_areas = get_keywords_para_areas(areas_lista) if areas_lista else []
+    scope_note = scope.get('note')
 
     try:
         conn = get_db_connection()
@@ -1144,12 +1225,21 @@ def buscar_simples(current_user):
             conditions.append("(title ILIKE %s OR objeto ILIKE %s OR organization_name ILIKE %s OR description ILIKE %s)")
             params.extend([f'%{q}%', f'%{q}%', f'%{q}%', f'%{q}%'])
 
-        # Filtro por estados
-        estados_lista = [e.strip().upper() for e in estados_param.split(',') if e.strip()] if estados_param else []
+        # Filtro por estados do plano (interseção com pedido do usuário)
         if estados_lista:
             placeholders = ','.join(['%s'] * len(estados_lista))
             conditions.append(f"state_code IN ({placeholders})")
             params.extend(estados_lista)
+
+        # Filtro por áreas do plano (keywords expandidas)
+        if keywords_areas:
+            kw_conditions = []
+            for kw in keywords_areas:
+                kw_conditions.append(
+                    "(title ILIKE %s OR objeto ILIKE %s OR description ILIKE %s)"
+                )
+                params.extend([f'%{kw}%', f'%{kw}%', f'%{kw}%'])
+            conditions.append(f"({' OR '.join(kw_conditions)})")
 
         # Filtro por data de início
         if data_inicio:
@@ -1184,14 +1274,17 @@ def buscar_simples(current_user):
         cur.close()
         conn.close()
 
+        estados_label = ', '.join(estados_lista)
         if not rows:
             resultado = (
                 f"Nenhuma licitacao encontrada para os criterios: "
-                f"palavra-chave='{q}', estados='{estados_param}', data_inicio='{data_inicio}'. "
+                f"palavra-chave='{q or 'nenhuma'}', estados='{estados_label}', "
+                f"data_inicio='{data_inicio or 'nenhuma'}'. "
+                f"Seu plano {scope['plan_name']} inclui os estados {estados_label}. "
                 "Tente usar palavras-chave mais gerais ou remover o filtro de data."
             )
         else:
-            linhas = [f"Encontrei {len(rows)} licitacao(oes):\n"]
+            linhas = [f"Encontrei {len(rows)} licitacao(oes) (plano {scope['plan_name']}, estados {estados_label}):\n"]
             for i, row in enumerate(rows, 1):
                 titulo = row['title'] or 'Sem titulo'
                 orgao = row['organization_name'] or 'Orgao nao informado'
@@ -1205,6 +1298,9 @@ def buscar_simples(current_user):
                     f"Valor: {valor}; Data: {data_pub}; Link: {link}"
                 )
             resultado = "\n".join(linhas)
+
+        if scope_note:
+            resultado = f"{scope_note}\n\n{resultado}"
 
         return jsonify({'resultado': resultado})
 

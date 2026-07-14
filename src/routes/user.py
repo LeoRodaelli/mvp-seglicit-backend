@@ -264,6 +264,16 @@ def login_user():
             "UPDATE users SET last_login = %s WHERE id = %s",
             (datetime.now(), user['id'])
         )
+
+        zaia_api_key = None
+        from src.services.zaia_api_key_service import (
+            ensure_user_zaia_api_key,
+            get_active_subscription_row,
+        )
+
+        if get_active_subscription_row(cursor, user['id']):
+            zaia_api_key = ensure_user_zaia_api_key(cursor, user['id'])
+
         conn.commit()
 
         cursor.close()
@@ -280,7 +290,8 @@ def login_user():
             'user_type': user['user_type'],
             'email_verified': user['email_verified'],
             'created_at': user['created_at'].isoformat() if user['created_at'] else None,
-            'last_login': datetime.now().isoformat()
+            'last_login': datetime.now().isoformat(),
+            'zaia_api_key': zaia_api_key,
         }
 
         logger.info(f"Login realizado com sucesso: {user['username']} (ID: {user['id']})")
