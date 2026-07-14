@@ -479,34 +479,85 @@ def _sanitize_zaia_param(value):
     return str(value).strip() if value else ''
 
 
+def _parse_user_id_param():
+    """Lê user_id da query, ignorando placeholders Zaia não resolvidos."""
+    raw = _first_query_param('user_id', 'userId', 'usuario_id')
+    if _is_unresolved_zaia_variable(raw):
+        return None
+    try:
+        return int(raw)
+    except (TypeError, ValueError):
+        return None
+
+
+def _authenticate_zaia_platform_user():
+    """
+    Fallback quando @custom.zaiaApiKey não funciona na Zaia:
+    autentica via segredo fixo no header + user_id do widget.
+    """
+    secret_header = (request.headers.get('X-Seglicit-Agent-Secret') or '').strip()
+    env_secret = (os.getenv('ZAIA_PLATFORM_SECRET') or '').strip()
+    if not secret_header or not env_secret or secret_header != env_secret:
+        return None
+
+    user_id = _parse_user_id_param()
+    if not user_id:
+        return None
+
+    conn = get_db_connection()
+    if not conn:
+        return None
+
+    try:
+        cursor = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+        user_dict = _load_user_by_id(user_id, cursor)
+        cursor.close()
+        conn.close()
+        if not user_dict:
+            return None
+        if not user_dict.get('subscription'):
+            return None
+        return user_dict
+    except Exception as e:
+        logger.error(f"Erro na autenticação por plataforma Zaia: {e}")
+        if conn:
+            conn.close()
+        return None
+
+
 def _authenticate_zaia_agent_user():
     """
     Autentica o usuário do agente Zaia.
     Retorna (user_dict, None) ou (None, mensagem_para_resultado).
     """
     api_key = extract_api_key_from_request()
+    if api_key and not _is_unresolved_zaia_variable(api_key):
+        user = get_user_by_api_key(api_key)
+        if user:
+            return user, None
+
+    platform_user = _authenticate_zaia_platform_user()
+    if platform_user:
+        return platform_user, None
+
+    if api_key and _is_unresolved_zaia_variable(api_key):
+        return None, (
+            'A integração Zaia não recebeu a chave do usuário (@custom.zaiaApiKey). '
+            'Use o modo alternativo na ação HTTP: header X-Seglicit-Agent-Secret '
+            'e query user_id=@custom.userId. Abra o chat pela plataforma após o login.'
+        )
+
     if not api_key:
         return None, (
             'Não foi possível autenticar sua sessão no assistente. '
-            'Configure na ação HTTP da Zaia o parâmetro api_key=@custom.zaiaApiKey '
-            '(query string) e abra o chat pela plataforma após o login.'
+            'Configure na Zaia o header X-Seglicit-Agent-Secret e o parâmetro '
+            'user_id=@custom.userId na query string.'
         )
 
-    if _is_unresolved_zaia_variable(api_key):
-        return None, (
-            'A chave API do usuário não foi enviada pelo widget Zaia. '
-            'Na ação HTTP, adicione na query string: api_key = @custom.zaiaApiKey. '
-            'Remova a chave fixa do header e teste abrindo o chat na tela de licitações.'
-        )
-
-    user = get_user_by_api_key(api_key)
-    if not user:
-        return None, (
-            'Sua chave de integração com o assistente é inválida ou expirou. '
-            'Faça logout, login novamente na plataforma e tente outra vez.'
-        )
-
-    return user, None
+    return None, (
+        'Sua chave de integração com o assistente é inválida ou expirou. '
+        'Faça logout, login novamente na plataforma e tente outra vez.'
+    )
 
 
 def _load_user_by_id(user_id, cursor):
@@ -1237,6 +1288,35 @@ def _format_currency(value):
 # Retorna apenas o campo "resultado" com texto puro formatado,
 # sem arrays ou objetos aninhados que confundem o LLM.
 # ============================================================
+
+@zaia_bp.route('/zaia/eco', methods=['GET', 'POST'])
+def zaia_eco():
+    """
+    Diagnóstico: mostra o que a Zaia está enviando na chamada HTTP.
+    Aponte temporariamente a ação do agente para /api/zaia/eco para testar.
+    """
+    api_key = extract_api_key_from_request()
+    masked_key = None
+    if api_key:
+        masked_key = f"{api_key[:14]}..." if len(api_key) > 14 else api_key
+
+    platform_secret = (request.headers.get('X-Seglicit-Agent-Secret') or '').strip()
+    env_secret = (os.getenv('ZAIA_PLATFORM_SECRET') or '').strip()
+    secret_ok = bool(platform_secret and env_secret and platform_secret == env_secret)
+
+    user_id = _parse_user_id_param()
+    resultado = (
+        "Diagnostico Seglicit:\n"
+        f"- api_key recebida: {masked_key or 'nenhuma'}\n"
+        f"- api_key parece variavel Zaia nao resolvida: {_is_unresolved_zaia_variable(api_key)}\n"
+        f"- user_id recebido: {request.args.get('user_id') or request.args.get('userId') or 'nenhum'}\n"
+        f"- user_id numerico valido: {user_id or 'nao'}\n"
+        f"- X-Seglicit-Agent-Secret valido: {secret_ok}\n"
+        f"- query params: {dict(request.args)}\n"
+        "Se api_key ou user_id mostram @custom..., a Zaia nao substituiu a variavel."
+    )
+    return jsonify({'resultado': resultado, 'success': True})
+
 
 @zaia_bp.route('/zaia/buscar', methods=['GET'])
 def buscar_simples():
