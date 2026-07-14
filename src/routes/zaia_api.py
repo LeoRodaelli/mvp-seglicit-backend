@@ -441,7 +441,7 @@ def get_user_subscription(user_id, cursor):
 # ============================================================
 
 def extract_api_key_from_request():
-    """Lê a API Key do header X-API-Key ou Authorization: Bearer."""
+    """Lê a API Key do header, Authorization ou query string (compatível com Zaia)."""
     api_key = (request.headers.get('X-API-Key') or '').strip()
     if api_key:
         return api_key
@@ -449,7 +449,64 @@ def extract_api_key_from_request():
     auth = (request.headers.get('Authorization') or '').strip()
     if auth.lower().startswith('bearer '):
         return auth[7:].strip()
+
+    for param_name in ('api_key', 'zaia_api_key', 'x_api_key'):
+        value = (request.args.get(param_name) or '').strip()
+        if value:
+            return value
+
     return None
+
+
+def _is_unresolved_zaia_variable(value):
+    """Detecta placeholders da Zaia que não foram substituídos."""
+    if not value:
+        return False
+    text = str(value).strip()
+    if not text:
+        return False
+    if text.startswith('@'):
+        return True
+    if '{{' in text or '}}' in text:
+        return True
+    return False
+
+
+def _sanitize_zaia_param(value):
+    """Ignora variáveis Zaia não resolvidas para não quebrar a busca."""
+    if _is_unresolved_zaia_variable(value):
+        return ''
+    return str(value).strip() if value else ''
+
+
+def _authenticate_zaia_agent_user():
+    """
+    Autentica o usuário do agente Zaia.
+    Retorna (user_dict, None) ou (None, mensagem_para_resultado).
+    """
+    api_key = extract_api_key_from_request()
+    if not api_key:
+        return None, (
+            'Não foi possível autenticar sua sessão no assistente. '
+            'Configure na ação HTTP da Zaia o parâmetro api_key=@custom.zaiaApiKey '
+            '(query string) e abra o chat pela plataforma após o login.'
+        )
+
+    if _is_unresolved_zaia_variable(api_key):
+        return None, (
+            'A chave API do usuário não foi enviada pelo widget Zaia. '
+            'Na ação HTTP, adicione na query string: api_key = @custom.zaiaApiKey. '
+            'Remova a chave fixa do header e teste abrindo o chat na tela de licitações.'
+        )
+
+    user = get_user_by_api_key(api_key)
+    if not user:
+        return None, (
+            'Sua chave de integração com o assistente é inválida ou expirou. '
+            'Faça logout, login novamente na plataforma e tente outra vez.'
+        )
+
+    return user, None
 
 
 def _load_user_by_id(user_id, cursor):
@@ -1182,19 +1239,25 @@ def _format_currency(value):
 # ============================================================
 
 @zaia_bp.route('/zaia/buscar', methods=['GET'])
-@require_api_key
-def buscar_simples(current_user):
+def buscar_simples():
     """
     Endpoint simplificado para o agente Zaia.
     Retorna apenas { "resultado": "texto formatado..." }
     para que o LLM possa exibir diretamente sem confusão.
     Busca sempre limitada aos estados e áreas do plano ativo do usuário.
+    Sempre responde HTTP 200 para evitar erro genérico do widget Zaia.
     """
-    q = _first_query_param('q', 'palavra_chave', 'keywords', 'keyword')
-    estados_param = _first_query_param('estados', 'estado', 'uf')
-    areas_param = request.args.get('areas', '').strip()
+    current_user, auth_error = _authenticate_zaia_agent_user()
+    if auth_error:
+        return jsonify({'resultado': auth_error})
+
+    q = _sanitize_zaia_param(_first_query_param('q', 'palavra_chave', 'keywords', 'keyword'))
+    estados_param = _sanitize_zaia_param(_first_query_param('estados', 'estado', 'uf'))
+    areas_param = _sanitize_zaia_param(request.args.get('areas', '').strip())
     data_inicio = _normalize_date_param(
-        _first_query_param('data_inicio', 'inicio', 'date_from', 'data_inicio_busca')
+        _sanitize_zaia_param(
+            _first_query_param('data_inicio', 'inicio', 'date_from', 'data_inicio_busca')
+        )
     )
 
     subscription = current_user.get('subscription')
@@ -1212,7 +1275,7 @@ def buscar_simples(current_user):
     try:
         conn = get_db_connection()
         if not conn:
-            return jsonify({'resultado': 'Erro ao conectar ao banco de dados. Tente novamente.'}), 500
+            return jsonify({'resultado': 'Erro ao conectar ao banco de dados. Tente novamente.'})
 
         cur = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
 
@@ -1306,7 +1369,7 @@ def buscar_simples(current_user):
 
     except Exception as e:
         logger.error(f"Erro no endpoint buscar_simples: {e}")
-        return jsonify({'resultado': f'Erro ao realizar a busca: {str(e)}'}), 500
+        return jsonify({'resultado': f'Erro ao realizar a busca: {str(e)}'})
 
 
 @zaia_bp.route('/zaia/validar-api-key', methods=['GET'])
