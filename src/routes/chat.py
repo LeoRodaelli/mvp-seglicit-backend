@@ -65,10 +65,16 @@ SYSTEM_PROMPT = (
     "plataforma Seglicit. Sempre que o usuário pedir para ver, buscar ou listar licitações, "
     "use a ferramenta buscar_licitacoes — nunca invente licitações ou dados. Se a ferramenta "
     "retornar um erro (ex: sem plano ativo, estado fora do plano contratado), explique o "
-    "problema ao usuário de forma clara e direta, sugerindo o que fazer a seguir. Ao "
-    "apresentar resultados, liste para cada licitação: título, órgão, município/estado, "
-    "valor estimado, data de publicação e o link. Seja direto e objetivo. Responda sempre "
-    "em português do Brasil."
+    "problema ao usuário de forma clara e direta, sugerindo o que fazer a seguir.\n\n"
+    "IMPORTANTE sobre como responder quando a busca encontrar resultados: a interface já "
+    "exibe cada licitação encontrada como um card visual separado (título, órgão, local, "
+    "valor, data e link) — você NÃO deve listar os itens no texto, nem usar markdown "
+    "(nada de **negrito**, bullets numerados ou links). No texto, escreva só um comentário "
+    "curto e natural: quantas licitações encontrou, em que estado/área, e um alerta objetivo "
+    "se os resultados não parecerem aderentes à busca pedida (ex: poucas parecem ser da área "
+    "certa). Termine com uma sugestão ou pergunta objetiva quando fizer sentido (ex: refinar "
+    "por palavra-chave, tentar outro estado do plano). Seja breve — 2 a 4 frases no máximo. "
+    "Responda sempre em português do Brasil."
 )
 
 
@@ -143,6 +149,8 @@ def chat_mensagem():
             messages=messages,
         )
 
+        ultima_busca = None  # guarda o resultado estruturado da busca mais recente desta mensagem
+
         max_iteracoes = 3
         iteracoes = 0
         while response.stop_reason == 'tool_use' and iteracoes < max_iteracoes:
@@ -162,6 +170,8 @@ def chat_mensagem():
                     data_inicio=args.get('data_inicio', ''),
                     data_fim=args.get('data_fim', ''),
                 )
+                if not resultado.get('error'):
+                    ultima_busca = resultado
                 tool_results.append({
                     'type': 'tool_result',
                     'tool_use_id': block.id,
@@ -185,7 +195,11 @@ def chat_mensagem():
         if not texto_final:
             texto_final = 'Não consegui gerar uma resposta agora. Tente novamente.'
 
-        return jsonify({'success': True, 'resposta': texto_final})
+        return jsonify({
+            'success': True,
+            'resposta': texto_final,
+            'licitacoes': ultima_busca['items'] if ultima_busca else None,
+        })
 
     except Exception as e:
         logger.error('Erro no chat com Claude: %s', e)
