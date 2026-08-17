@@ -560,6 +560,54 @@ def _authenticate_zaia_agent_user():
     )
 
 
+def _zaia_enforce_plan_scope():
+    """
+    Limita buscas do agente Zaia aos estados/áreas do plano quando true.
+    Padrão false (modo legado) até a integração @custom.zaiaApiKey estar estável.
+    """
+    raw = (os.getenv('ZAIA_ENFORCE_PLAN') or 'false').strip().lower()
+    return raw in ('1', 'true', 'yes', 'on')
+
+
+def _resolve_zaia_agent_search_filters(subscription, estados_param, areas_param):
+    """Filtros de estados/áreas para /buscar e /licitacoes do agente."""
+    from src.utils.plan_filters import resolve_plan_search_scope
+
+    if _zaia_enforce_plan_scope():
+        scope = resolve_plan_search_scope(subscription, estados_param, areas_param)
+        if scope.get('error'):
+            return {'error': scope['error']}
+        estados_lista = scope['estados']
+        areas_lista = scope['areas']
+        return {
+            'estados': estados_lista,
+            'areas': areas_lista,
+            'keywords_areas': get_keywords_para_areas(areas_lista) if areas_lista else [],
+            'plan_name': scope.get('plan_name'),
+            'scope_note': scope.get('note'),
+            'estados_fonte': 'plano' if not estados_param else 'plano_intersecao',
+            'areas_fonte': 'plano' if not areas_param else 'plano_intersecao',
+        }
+
+    estados_lista = []
+    if estados_param:
+        estados_lista = [e.strip().upper() for e in estados_param.split(',') if e.strip()]
+
+    areas_lista = []
+    if areas_param:
+        areas_lista = [a.strip() for a in areas_param.split('|') if a.strip()]
+
+    return {
+        'estados': estados_lista,
+        'areas': areas_lista,
+        'keywords_areas': get_keywords_para_areas(areas_lista) if areas_lista else [],
+        'plan_name': None,
+        'scope_note': None,
+        'estados_fonte': 'parametro' if estados_param else None,
+        'areas_fonte': 'parametro' if areas_param else None,
+    }
+
+
 def _load_user_by_id(user_id, cursor):
     cursor.execute("""
         SELECT id, username, email, full_name, phone,
@@ -916,24 +964,20 @@ def buscar_licitacoes(current_user):
 
         subscription = current_user.get('subscription')
 
-        from src.utils.plan_filters import resolve_plan_search_scope
-
-        scope = resolve_plan_search_scope(subscription, estados_param, areas_param)
-        if scope['error']:
+        filters = _resolve_zaia_agent_search_filters(subscription, estados_param, areas_param)
+        if filters.get('error'):
             return jsonify({
                 'success': False,
-                'error': scope['error'],
-                'resumo_texto': scope['error'],
+                'error': filters['error'],
+                'resumo_texto': filters['error'],
             })
 
-        estados_lista = scope['estados']
-        areas_lista = scope['areas']
-        estados_fonte = 'plano' if not estados_param else 'plano_intersecao'
-        areas_fonte = 'plano' if not areas_param else 'plano_intersecao'
-        scope_note = scope.get('note')
-
-        # Expandir áreas para lista de keywords
-        keywords_areas = get_keywords_para_areas(areas_lista) if areas_lista else []
+        estados_lista = filters['estados']
+        areas_lista = filters['areas']
+        estados_fonte = filters['estados_fonte']
+        areas_fonte = filters['areas_fonte']
+        scope_note = filters.get('scope_note')
+        keywords_areas = filters['keywords_areas']
 
         conn = get_db_connection()
         if not conn:
@@ -1324,7 +1368,7 @@ def buscar_simples():
     Endpoint simplificado para o agente Zaia.
     Retorna apenas { "resultado": "texto formatado..." }
     para que o LLM possa exibir diretamente sem confusão.
-    Busca sempre limitada aos estados e áreas do plano ativo do usuário.
+    Com ZAIA_ENFORCE_PLAN=true, limita aos estados/áreas do plano; senão usa só os filtros da query.
     Sempre responde HTTP 200 para evitar erro genérico do widget Zaia.
     """
     current_user, auth_error = _authenticate_zaia_agent_user()
@@ -1341,16 +1385,14 @@ def buscar_simples():
     )
 
     subscription = current_user.get('subscription')
-    from src.utils.plan_filters import resolve_plan_search_scope
+    filters = _resolve_zaia_agent_search_filters(subscription, estados_param, areas_param)
+    if filters.get('error'):
+        return jsonify({'resultado': filters['error']})
 
-    scope = resolve_plan_search_scope(subscription, estados_param, areas_param)
-    if scope['error']:
-        return jsonify({'resultado': scope['error']})
-
-    estados_lista = scope['estados']
-    areas_lista = scope['areas']
-    keywords_areas = get_keywords_para_areas(areas_lista) if areas_lista else []
-    scope_note = scope.get('note')
+    estados_lista = filters['estados']
+    keywords_areas = filters['keywords_areas']
+    scope_note = filters.get('scope_note')
+    plan_name = filters.get('plan_name')
 
     try:
         conn = get_db_connection()
@@ -1417,17 +1459,25 @@ def buscar_simples():
         cur.close()
         conn.close()
 
-        estados_label = ', '.join(estados_lista)
+        estados_label = ', '.join(estados_lista) if estados_lista else 'todos os estados'
         if not rows:
             resultado = (
                 f"Nenhuma licitacao encontrada para os criterios: "
                 f"palavra-chave='{q or 'nenhuma'}', estados='{estados_label}', "
                 f"data_inicio='{data_inicio or 'nenhuma'}'. "
-                f"Seu plano {scope['plan_name']} inclui os estados {estados_label}. "
                 "Tente usar palavras-chave mais gerais ou remover o filtro de data."
             )
+            if plan_name and estados_lista:
+                resultado += (
+                    f" (Plano {plan_name}: busca limitada aos estados {estados_label}.)"
+                )
         else:
-            linhas = [f"Encontrei {len(rows)} licitacao(oes) (plano {scope['plan_name']}, estados {estados_label}):\n"]
+            header = f"Encontrei {len(rows)} licitacao(oes)"
+            if plan_name and estados_lista:
+                header += f" (plano {plan_name}, estados {estados_label})"
+            elif estados_lista:
+                header += f" (estados {estados_label})"
+            linhas = [f"{header}:\n"]
             for i, row in enumerate(rows, 1):
                 titulo = row['title'] or 'Sem titulo'
                 orgao = row['organization_name'] or 'Orgao nao informado'

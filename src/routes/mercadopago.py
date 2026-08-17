@@ -743,11 +743,26 @@ def checkout_status():
         )
         row = cursor.fetchone()
 
+    if not row:
+        cursor.close()
+        conn.close()
+        return jsonify({'success': False, 'error': 'Registro não encontrado'}), 404
+
+    subscription_row = None
+    cursor.execute(
+        """
+        SELECT status, plan_name, current_period_end
+        FROM subscriptions
+        WHERE payment_reference = %s
+        ORDER BY created_at DESC
+        LIMIT 1
+        """,
+        (row[0],),
+    )
+    subscription_row = cursor.fetchone()
+
     cursor.close()
     conn.close()
-
-    if not row:
-        return jsonify({'success': False, 'error': 'Registro não encontrado'}), 404
 
     payment_record = {
         'reference_id': row[0],
@@ -809,9 +824,22 @@ def checkout_status():
             f'Assinatura pendente no MP. Ao pagar, use o email: {payment_record.get("customer_email")}'
         )
 
+    subscription_status = subscription_row[0] if subscription_row else None
+    subscription_active = subscription_status == 'active'
+    payment_db_status = payment_record.get('status') or ''
+    platform_ready = subscription_active and payment_db_status in (
+        'approved',
+        'authorized',
+        'active',
+    )
+
     return jsonify({
         'success': True,
         'payment_record': payment_record,
+        'subscription_status': subscription_status,
+        'subscription_plan_name': subscription_row[1] if subscription_row else None,
+        'subscription_active': subscription_active,
+        'platform_ready': platform_ready,
         'mp_preapproval_status': (mp_preapproval or {}).get('status'),
         'mp_preapproval_payer_email': (mp_preapproval or {}).get('payer_email'),
         'mp_payment': mp_payment,

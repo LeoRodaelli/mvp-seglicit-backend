@@ -44,7 +44,9 @@ def mark_expired_subscriptions(cursor, user_id=None, send_notifications=True):
     if not rows:
         return 0
 
-    sub_ids = [row[0] for row in rows]
+    # Chamadores usam RealDictCursor (linhas são dict-like, não tuplas
+    # posicionais) — acessar por chave evita KeyError/valores errados.
+    sub_ids = [row['id'] for row in rows]
     cursor.execute(
         """
         UPDATE subscriptions
@@ -55,8 +57,8 @@ def mark_expired_subscriptions(cursor, user_id=None, send_notifications=True):
     )
 
     if send_notifications:
-        for _sub_id, _user_id, plan_name, email, display_name in rows:
-            _schedule_expiration_email(email, display_name, plan_name)
+        for row in rows:
+            _schedule_expiration_email(row['email'], row['display_name'], row['plan_name'])
 
     logger.info(
         'Assinaturas expiradas: %s%s',
