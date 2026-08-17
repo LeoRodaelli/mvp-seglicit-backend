@@ -17,3 +17,4 @@ mercadopago
 bcrypt
 dnspython==2.7.0
 playwright==1.49.1
+anthropic
