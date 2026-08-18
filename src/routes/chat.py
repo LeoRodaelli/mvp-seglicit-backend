@@ -18,6 +18,20 @@ chat_bp = Blueprint('chat_bp', __name__)
 
 MODEL_ID = 'claude-opus-5'
 MAX_HISTORICO_TURNOS = 12  # limita custo/latência em conversas longas
+MAX_MENSAGEM_CHARS = 2000
+
+LANDING_SYSTEM_PROMPT_BASE = (
+    "Você é o Assistente Seglicit da página inicial do site (visitante ainda não é "
+    "cliente). Ajuda a entender como a plataforma funciona, os planos disponíveis, "
+    "preços e condições, e orienta na escolha do plano ideal para o perfil de cada "
+    "visitante. Use APENAS as informações fornecidas no bloco de dados abaixo — "
+    "nunca invente preços, recursos, prazos ou condições que não estejam lá. Se "
+    "perguntarem algo que os dados não cobrem, oriente a contatar o suporte pelo "
+    "email informado nos dados, ou a experimentar assinar direto pela página de "
+    "planos. Seja acolhedor, direto e ajude a pessoa a decidir. Não use markdown "
+    "(nada de **negrito**, bullets com * ou #, títulos com #) — texto corrido "
+    "normal. Seja breve. Responda sempre em português do Brasil."
+)
 
 BUSCAR_LICITACOES_TOOL = {
     "name": "buscar_licitacoes",
@@ -128,7 +142,7 @@ def chat_mensagem():
         return jsonify({'success': False, 'resposta': auth_error}), 200
 
     data = request.get_json(silent=True) or {}
-    mensagem = (data.get('mensagem') or '').strip()
+    mensagem = (data.get('mensagem') or '').strip()[:MAX_MENSAGEM_CHARS]
     historico = data.get('historico') or []
 
     if not mensagem:
@@ -203,6 +217,65 @@ def chat_mensagem():
 
     except Exception as e:
         logger.error('Erro no chat com Claude: %s', e)
+        return jsonify({
+            'success': False,
+            'resposta': 'Erro ao processar sua mensagem. Tente novamente em instantes.',
+        }), 200
+
+
+@chat_bp.route('/chat/landing', methods=['POST'])
+def chat_landing():
+    """
+    Chat público da landing page — tira dúvidas sobre planos, funcionamento
+    e ajuda na contratação. Não requer autenticação (visitante anônimo,
+    ainda não é cliente). Sem tools — o frontend manda os dados de planos/FAQ
+    atuais em `contexto`, então não há risco de desatualizar preço aqui.
+    """
+    try:
+        import anthropic
+    except ImportError:
+        logger.error('Pacote anthropic não instalado no backend.')
+        return jsonify({'success': False, 'resposta': 'Assistente indisponível no momento.'}), 500
+
+    api_key = os.getenv('ANTHROPIC_API_KEY')
+    if not api_key:
+        logger.error('ANTHROPIC_API_KEY não configurada.')
+        return jsonify({'success': False, 'resposta': 'Assistente indisponível no momento.'}), 500
+
+    data = request.get_json(silent=True) or {}
+    mensagem = (data.get('mensagem') or '').strip()[:MAX_MENSAGEM_CHARS]
+    historico = data.get('historico') or []
+    contexto = data.get('contexto') or {}
+
+    if not mensagem:
+        return jsonify({'success': False, 'resposta': 'Mensagem vazia.'}), 200
+
+    messages = _build_messages_from_historico(historico, mensagem)
+
+    system_prompt = (
+        f"{LANDING_SYSTEM_PROMPT_BASE}\n\n"
+        f"DADOS ATUAIS DA SEGLICIT (fonte da verdade — use só isso):\n"
+        f"{json.dumps(contexto, ensure_ascii=False)}"
+    )
+
+    client = anthropic.Anthropic(api_key=api_key)
+
+    try:
+        response = client.messages.create(
+            model=MODEL_ID,
+            max_tokens=1024,
+            system=system_prompt,
+            messages=messages,
+        )
+
+        texto_final = next((b.text for b in response.content if b.type == 'text'), '')
+        if not texto_final:
+            texto_final = 'Não consegui gerar uma resposta agora. Tente novamente.'
+
+        return jsonify({'success': True, 'resposta': texto_final})
+
+    except Exception as e:
+        logger.error('Erro no chat landing com Claude: %s', e)
         return jsonify({
             'success': False,
             'resposta': 'Erro ao processar sua mensagem. Tente novamente em instantes.',
