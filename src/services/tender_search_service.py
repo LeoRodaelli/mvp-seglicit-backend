@@ -10,11 +10,14 @@ import logging
 
 import psycopg2.extras
 
+from src.utils.insurance_guarantee import requires_seguro_garantia, seguro_garantia_sql_clause
+
 logger = logging.getLogger(__name__)
 
 
 def search_tenders_for_user(current_user, q='', estados_param='', areas_param='',
-                             data_inicio='', data_fim='', limit=10):
+                             data_inicio='', data_fim='', limit=10,
+                             seguro_garantia_only=False):
     """
     Busca licitações publicadas respeitando o plano do usuário (mesma regra
     usada em /api/zaia/buscar: `_resolve_zaia_agent_search_filters`).
@@ -70,9 +73,13 @@ def search_tenders_for_user(current_user, q='', estados_param='', areas_param=''
             conditions.append("publication_date <= %s")
             params.append(data_fim)
 
+        if seguro_garantia_only:
+            conditions.append(seguro_garantia_sql_clause())
+
         where_clause = ' AND '.join(conditions)
         query = f"""
-            SELECT id, title, objeto, organization_name, municipality_name, state_code,
+            SELECT id, title, objeto, description, detailed_description,
+                   organization_name, municipality_name, state_code,
                    COALESCE(valor_total_estimado, estimated_value) AS valor,
                    publication_date, detail_url, source_url
             FROM tenders
@@ -99,6 +106,9 @@ def search_tenders_for_user(current_user, q='', estados_param='', areas_param=''
                 'valor': float(row['valor']) if row['valor'] else None,
                 'data_publicacao': str(row['publication_date'])[:10] if row['publication_date'] else None,
                 'link': row['detail_url'] or row['source_url'] or None,
+                'exige_seguro_garantia': requires_seguro_garantia(
+                    row.get('objeto'), row.get('description'), row.get('detailed_description')
+                ),
             })
 
         return {

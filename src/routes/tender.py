@@ -15,6 +15,10 @@ from src.utils.tender_dates import (
     proposal_close_label,
     open_tender_sql_clause,
 )
+from src.utils.insurance_guarantee import (
+    requires_seguro_garantia,
+    seguro_garantia_sql_clause,
+)
 
 load_dotenv()
 
@@ -132,7 +136,10 @@ def build_tender_dict(row):
         'downloaded_files': downloaded_files,
         'formatted_value': format_brazilian_currency(resolved_value),
         'has_items': len(items) > 0,
-        'has_files': len(downloaded_files) > 0
+        'has_files': len(downloaded_files) > 0,
+        'exige_seguro_garantia': requires_seguro_garantia(
+            row.get('objeto'), row.get('description'), row.get('detailed_description')
+        ),
     }
 
 
@@ -159,6 +166,8 @@ def get_tenders():
       - date_to             : data final do período (YYYY-MM-DD)
       - user_id             : ID do usuário (usado com plan_filter)
       - plan_filter         : 'true' para aplicar estados/áreas da assinatura ativa
+      - exige_seguro_garantia : 'true' pra filtrar só licitações que exigem
+                                seguro-garantia (útil pra seguradoras/corretoras)
     """
     try:
         page = request.args.get('page', 1, type=int)
@@ -175,6 +184,7 @@ def get_tenders():
         apenas_abertas = not incluir_encerradas and apenas_abertas_param != 'false'
         date_from = request.args.get('date_from', '').strip()   # YYYY-MM-DD
         date_to = request.args.get('date_to', '').strip()       # YYYY-MM-DD
+        exige_seguro_garantia = request.args.get('exige_seguro_garantia', '').lower() == 'true'
         user_id = request.args.get('user_id', type=int)
         plan_filter = request.args.get('plan_filter', '').lower() == 'true'
         plan_state_codes = None
@@ -287,6 +297,10 @@ def get_tenders():
             base_query += " AND DATE(publication_date) <= %s"
             params.append(date_to)
 
+        # Filtro por exigência de seguro-garantia (útil pra seguradoras/corretoras)
+        if exige_seguro_garantia:
+            base_query += f" AND {seguro_garantia_sql_clause()}"
+
         # Filtro por áreas do plano (cada área com OR interno; entre áreas também OR)
         if use_plan_area_filter:
             area_clause, area_params = build_plan_filter(None, plan_areas)
@@ -356,6 +370,9 @@ def get_tenders():
             count_query += " AND DATE(publication_date) <= %s"
             count_params.append(date_to)
 
+        if exige_seguro_garantia:
+            count_query += f" AND {seguro_garantia_sql_clause()}"
+
         if use_plan_area_filter:
             area_clause, area_params = build_plan_filter(None, plan_areas)
             if area_clause:
@@ -398,6 +415,7 @@ def get_tenders():
                 'valor_max': valor_max,
                 'apenas_hoje': apenas_hoje,
                 'apenas_abertas': apenas_abertas and not filter_ids,
+                'exige_seguro_garantia': exige_seguro_garantia,
             }
         })
 

@@ -69,6 +69,15 @@ BUSCAR_LICITACOES_TOOL = {
                 "type": "string",
                 "description": "Data máxima de publicação, formato YYYY-MM-DD (opcional).",
             },
+            "seguro_garantia": {
+                "type": "boolean",
+                "description": (
+                    "true para retornar só licitações cujo texto menciona exigência de "
+                    "seguro-garantia como condição do edital. Use quando o usuário (ex: "
+                    "corretora/seguradora) pedir licitações 'que exigem seguro-garantia', "
+                    "'com seguro-garantia' ou similar."
+                ),
+            },
         },
         "required": [],
     },
@@ -88,6 +97,11 @@ SYSTEM_PROMPT = (
     "se os resultados não parecerem aderentes à busca pedida (ex: poucas parecem ser da área "
     "certa). Termine com uma sugestão ou pergunta objetiva quando fizer sentido (ex: refinar "
     "por palavra-chave, tentar outro estado do plano). Seja breve — 2 a 4 frases no máximo. "
+    "Cada licitação retornada tem um campo exige_seguro_garantia — se o usuário perguntar "
+    "especificamente sobre seguro-garantia, use o parâmetro seguro_garantia=true da ferramenta "
+    "em vez de tentar adivinhar pelo texto. Essa checagem é por palavra-chave no resumo salvo, "
+    "não uma leitura do PDF do edital — se o usuário quiser confirmação definitiva, sugira "
+    "abrir o edital completo. "
     "Responda sempre em português do Brasil."
 )
 
@@ -183,6 +197,7 @@ def chat_mensagem():
                     areas_param=args.get('areas', ''),
                     data_inicio=args.get('data_inicio', ''),
                     data_fim=args.get('data_fim', ''),
+                    seguro_garantia_only=bool(args.get('seguro_garantia')),
                 )
                 if not resultado.get('error'):
                     ultima_busca = resultado
