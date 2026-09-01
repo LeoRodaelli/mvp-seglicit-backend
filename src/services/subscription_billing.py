@@ -507,14 +507,53 @@ def cancel_mp_preapproval(preapproval_id, sdk=None, access_token=None):
     return False, None
 
 
+def _find_preapproval_by_reference(reference_id, access_token):
+    """
+    Busca o preapproval diretamente no Mercado Pago pela referência externa.
+    Usado como último recurso quando mp_preapproval_id não está salvo no
+    nosso banco (vínculo perdido) — evita que a assinatura fique "presa"
+    sem conseguirmos cancelar a cobrança recorrente de fato.
+    """
+    if not reference_id or not access_token:
+        return None
+    try:
+        response = requests.get(
+            'https://api.mercadopago.com/preapproval/search',
+            headers={'Authorization': f'Bearer {access_token}'},
+            params={'external_reference': reference_id},
+            timeout=30,
+        )
+        if response.status_code != 200:
+            logger.warning(
+                'Busca de preapproval por referência falhou (status=%s ref=%s)',
+                response.status_code, reference_id,
+            )
+            return None
+        results = response.json().get('results') or []
+        for item in results:
+            if (item.get('status') or '').lower() in ('authorized', 'paused'):
+                return item.get('id')
+        return results[0].get('id') if results else None
+    except Exception as exc:
+        logger.warning('Erro ao buscar preapproval por referência %s: %s', reference_id, exc)
+        return None
+
+
 def cancel_subscription_for_user(cursor, user_id, sdk=None, access_token=None):
     """
     Cancela assinatura ativa do usuário no Mercado Pago e no banco.
     Retorna dict com success, message e subscription_id.
+
+    Importante: uma assinatura de cobrança recorrente (billing_type=
+    'subscription') só é marcada como cancelada no nosso banco DEPOIS de
+    confirmar o cancelamento no Mercado Pago. Antes, se o preapproval_id
+    não fosse encontrado, o cancelamento era pulado silenciosamente e a
+    assinatura já saía marcada como cancelada — o cliente continuava
+    sendo cobrado no Mercado Pago sem ninguém perceber.
     """
     cursor.execute(
         """
-        SELECT id, mp_preapproval_id, payment_reference, plan_name, status
+        SELECT id, mp_preapproval_id, payment_reference, plan_name, status, billing_type
         FROM subscriptions
         WHERE user_id = %s AND status = 'active'
         ORDER BY created_at DESC
@@ -526,7 +565,8 @@ def cancel_subscription_for_user(cursor, user_id, sdk=None, access_token=None):
     if not row:
         return {'success': False, 'error': 'Nenhuma assinatura ativa encontrada.'}
 
-    sub_id, mp_preapproval_id, payment_reference, plan_name, _status = row
+    sub_id, mp_preapproval_id, payment_reference, plan_name, _status, billing_type = row
+    is_recurring = billing_type == 'subscription'
 
     if not mp_preapproval_id and payment_reference:
         cursor.execute(
@@ -542,7 +582,40 @@ def cancel_subscription_for_user(cursor, user_id, sdk=None, access_token=None):
         if payment_preapproval and payment_preapproval[0]:
             mp_preapproval_id = payment_preapproval[0]
 
-    if sdk and mp_preapproval_id:
+    # Último recurso: o vínculo pode ter se perdido só no nosso banco —
+    # busca direto no Mercado Pago pela referência externa antes de desistir.
+    if not mp_preapproval_id and is_recurring:
+        mp_preapproval_id = _find_preapproval_by_reference(payment_reference, access_token)
+
+    if is_recurring:
+        if not access_token:
+            logger.error(
+                'Cancelamento abortado: MERCADOPAGO_ACCESS_TOKEN ausente '
+                '(user_id=%s sub_id=%s) — assinatura NÃO marcada como cancelada.',
+                user_id, sub_id,
+            )
+            return {
+                'success': False,
+                'error': (
+                    'Não foi possível confirmar o cancelamento da cobrança agora. '
+                    'Tente novamente em instantes ou fale com o suporte.'
+                ),
+            }
+        if not mp_preapproval_id:
+            logger.error(
+                'Cancelamento abortado: assinatura recorrente sem preapproval_id '
+                'localizável (user_id=%s sub_id=%s payment_reference=%s) — '
+                'NÃO marcada como cancelada para evitar cobrança contínua sem controle.',
+                user_id, sub_id, payment_reference,
+            )
+            return {
+                'success': False,
+                'error': (
+                    'Não conseguimos localizar sua cobrança recorrente no Mercado Pago '
+                    'para cancelar automaticamente. Por segurança, não marcamos como '
+                    'cancelada — entre em contato com o suporte para cancelarmos manualmente.'
+                ),
+            }
         mp_ok, _mp_response = cancel_mp_preapproval(
             mp_preapproval_id,
             sdk=sdk,
