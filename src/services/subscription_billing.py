@@ -544,12 +544,15 @@ def cancel_subscription_for_user(cursor, user_id, sdk=None, access_token=None):
     Cancela assinatura ativa do usuário no Mercado Pago e no banco.
     Retorna dict com success, message e subscription_id.
 
-    Importante: uma assinatura de cobrança recorrente (billing_type=
-    'subscription') só é marcada como cancelada no nosso banco DEPOIS de
-    confirmar o cancelamento no Mercado Pago. Antes, se o preapproval_id
-    não fosse encontrado, o cancelamento era pulado silenciosamente e a
-    assinatura já saía marcada como cancelada — o cliente continuava
-    sendo cobrado no Mercado Pago sem ninguém perceber.
+    Importante: uma assinatura com QUALQUER vínculo de pagamento no Mercado
+    Pago (payment_reference OU billing_type='subscription' — não confiamos
+    só na coluna billing_type, que pode estar desatualizada em registros
+    antigos) só é marcada como cancelada no nosso banco DEPOIS de confirmar
+    o cancelamento no Mercado Pago. Antes, se o preapproval_id não fosse
+    encontrado (ou o registro tivesse billing_type desatualizado), o
+    cancelamento pulava silenciosamente a chamada ao Mercado Pago e a
+    assinatura já saía marcada como cancelada — o cliente continuava sendo
+    cobrado sem ninguém perceber.
     """
     cursor.execute(
         """
@@ -566,7 +569,11 @@ def cancel_subscription_for_user(cursor, user_id, sdk=None, access_token=None):
         return {'success': False, 'error': 'Nenhuma assinatura ativa encontrada.'}
 
     sub_id, mp_preapproval_id, payment_reference, plan_name, _status, billing_type = row
-    is_recurring = billing_type == 'subscription'
+    # Qualquer sinal de vínculo com o Mercado Pago (referência de pagamento
+    # OU já tinha um preapproval_id salvo OU o billing_type indica) exige
+    # confirmação — nunca confiamos isoladamente em billing_type, que pode
+    # estar desatualizado em registros antigos/editados manualmente.
+    is_recurring = bool(payment_reference) or bool(mp_preapproval_id) or billing_type == 'subscription'
 
     if not mp_preapproval_id and payment_reference:
         cursor.execute(
@@ -586,6 +593,12 @@ def cancel_subscription_for_user(cursor, user_id, sdk=None, access_token=None):
     # busca direto no Mercado Pago pela referência externa antes de desistir.
     if not mp_preapproval_id and is_recurring:
         mp_preapproval_id = _find_preapproval_by_reference(payment_reference, access_token)
+        if mp_preapproval_id:
+            logger.info(
+                'Preapproval %s recuperado via busca no Mercado Pago (user_id=%s sub_id=%s '
+                '— não estava salvo no nosso banco)',
+                mp_preapproval_id, user_id, sub_id,
+            )
 
     if is_recurring:
         if not access_token:
