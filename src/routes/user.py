@@ -680,6 +680,49 @@ def get_user_subscription():
     return jsonify({'success': True, 'subscription': sub})
 
 
+@user_bp.route('/user/last-subscription', methods=['GET'])
+def get_last_subscription():
+    """
+    Busca a assinatura mais recente do usuário, independente do status
+    (ativa, cancelada, expirada). Usada SÓ para sugerir preenchimento de
+    plano/estados/áreas na recontratação — nunca para controle de acesso
+    (isso continua sendo feito por /user/subscription).
+    """
+    user_id = request.args.get('user_id', type=int)
+    if not user_id:
+        return jsonify({'success': False, 'error': 'user_id obrigatório'}), 400
+
+    conn = get_db_connection()
+    if not conn:
+        return jsonify({'success': False, 'error': 'Erro de conexão com banco'}), 500
+
+    cursor = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+    cursor.execute("""
+        SELECT plan_id, plan_name, selected_states, selected_areas, status
+        FROM subscriptions
+        WHERE user_id = %s
+        ORDER BY created_at DESC
+        LIMIT 1
+    """, (user_id,))
+    row = cursor.fetchone()
+    cursor.close()
+    conn.close()
+
+    if not row:
+        return jsonify({'success': True, 'subscription': None})
+
+    sub = dict(row)
+    import json
+    for field in ['selected_states', 'selected_areas']:
+        if isinstance(sub[field], str):
+            try:
+                sub[field] = json.loads(sub[field])
+            except Exception:
+                sub[field] = []
+
+    return jsonify({'success': True, 'subscription': sub})
+
+
 @user_bp.route('/user/subscription/cancel', methods=['POST'])
 def cancel_user_subscription():
     """Cancela assinatura mensal ativa (Mercado Pago + banco)."""
