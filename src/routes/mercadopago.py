@@ -604,10 +604,18 @@ def _handle_payment_notification(payment_id):
                 detail,
                 (payment.get('payer') or {}).get('email'),
             )
+        elif payment['status'] == 'approved':
+            # Não depender só do webhook subscription_authorized_payment pra
+            # ativar — se ele atrasar/falhar/não chegar, a cobrança acontece
+            # no MP mas a assinatura nunca é criada no nosso banco. Ativa já
+            # aqui também; activate_subscription_from_reference é idempotente
+            # (upsert por user_id), então não duplica se o outro webhook
+            # também chamar depois.
+            activate_subscription_from_reference(cursor, reference_id, mp_payment_id=payment_id)
         conn.commit()
         cursor.close()
         conn.close()
-        logger.info('Pagamento de assinatura registrado ref=%s (renovação via authorized_payment)', reference_id)
+        logger.info('Pagamento de assinatura registrado ref=%s', reference_id)
         return jsonify({'success': True}), 200
 
     if payment['status'] == 'approved':
@@ -845,6 +853,57 @@ def checkout_status():
         'mp_payment': mp_payment,
         'tips': tips,
     }), 200
+
+
+@mercadopago_bp.route('/mercadopago/reprocess-subscription', methods=['POST'])
+def reprocess_subscription():
+    """
+    Reativa manualmente uma assinatura a partir de um reference_id (ou
+    payment_id, se não souber o reference_id) — usado quando o pagamento foi
+    aprovado no Mercado Pago mas o webhook que deveria ter ativado a
+    assinatura no nosso banco não chegou ou falhou (ver activate_subscription_from_reference,
+    idempotente e seguro de rodar de novo). Protegido por senha própria.
+    """
+    admin_secret = os.getenv('MERCADOPAGO_RECONCILE_SECRET')
+    if not admin_secret or request.headers.get('X-Admin-Secret') != admin_secret:
+        return jsonify({'success': False, 'error': 'Não autorizado'}), 401
+
+    data = request.get_json() or {}
+    reference_id = (data.get('reference_id') or '').strip()
+    payment_id = (data.get('payment_id') or '').strip()
+
+    if not reference_id and payment_id:
+        payment_info = sdk.payment().get(payment_id)
+        if payment_info.get('status') == 200:
+            reference_id = (payment_info['response'].get('external_reference') or '').strip()
+
+    if not reference_id:
+        return jsonify({
+            'success': False,
+            'error': 'Informe reference_id, ou um payment_id válido com external_reference vinculado.',
+        }), 400
+
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT mp_preapproval_id FROM payments WHERE reference_id = %s", (reference_id,))
+    row = cursor.fetchone()
+    mp_preapproval_id = row[0] if row else None
+
+    ok = activate_subscription_from_reference(
+        cursor,
+        reference_id,
+        mp_preapproval_id=mp_preapproval_id,
+        mp_payment_id=payment_id or None,
+    )
+    conn.commit()
+    cursor.close()
+    conn.close()
+
+    if not ok:
+        return jsonify({'success': False, 'error': f'reference_id {reference_id} não encontrado em payments'}), 404
+
+    return jsonify({'success': True, 'reference_id': reference_id}), 200
 
 
 @mercadopago_bp.route('/mercadopago/payment/<payment_id>', methods=['GET'])

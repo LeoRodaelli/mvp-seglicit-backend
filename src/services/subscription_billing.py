@@ -423,7 +423,12 @@ def update_subscription_by_preapproval_status(cursor, preapproval):
         link_preapproval(cursor, reference_id, preapproval_id, status)
 
     if status == 'authorized':
-        logger.info('Preapproval autorizado: %s (aguardando cobrança)', preapproval_id)
+        # Rede de segurança extra: normalmente é o webhook subscription_authorized_payment
+        # (ou o de payment) que ativa a assinatura, mas se algum deles atrasar/falhar,
+        # ativa aqui também — idempotente (upsert por user_id), seguro rodar de novo.
+        if reference_id:
+            activate_subscription_from_reference(cursor, reference_id, mp_preapproval_id=preapproval_id)
+        logger.info('Preapproval autorizado: %s', preapproval_id)
         return True
 
     if status in ('cancelled', 'canceled', 'paused'):
