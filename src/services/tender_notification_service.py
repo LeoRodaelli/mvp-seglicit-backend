@@ -21,6 +21,7 @@ from src.utils.plan_filters import get_keywords_for_areas, parse_json_list
 logger = logging.getLogger(__name__)
 
 EMAIL_RATE_DELAY = float(os.getenv('EMAIL_RATE_LIMIT_DELAY', '0.25'))
+WHATSAPP_RATE_DELAY = float(os.getenv('WHATSAPP_RATE_LIMIT_DELAY', '0.5'))
 
 
 def get_db_connection():
@@ -47,6 +48,20 @@ def _ensure_notification_table(cursor):
             sent_at TIMESTAMP DEFAULT NOW(),
             UNIQUE(user_id, tender_id)
         )
+    """)
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS tender_whatsapp_notifications (
+            id SERIAL PRIMARY KEY,
+            user_id INTEGER NOT NULL,
+            tender_id INTEGER NOT NULL,
+            sent_at TIMESTAMP DEFAULT NOW(),
+            UNIQUE(user_id, tender_id)
+        )
+    """)
+    # Preferência de opt-in de WhatsApp — coluna pode não existir ainda em
+    # bancos antigos, então garante aqui (idempotente, seguro rodar sempre).
+    cursor.execute("""
+        ALTER TABLE users ADD COLUMN IF NOT EXISTS whatsapp_opt_in BOOLEAN DEFAULT false
     """)
 
 
@@ -93,7 +108,7 @@ def tender_matches_plan(licitacao_dict, states, areas):
 def _load_active_subscribers(cursor):
     cursor.execute("""
         SELECT DISTINCT ON (u.id)
-            u.id, u.full_name, u.email, u.zaia_webhook_url,
+            u.id, u.full_name, u.email, u.phone, u.whatsapp_opt_in, u.zaia_webhook_url,
             s.selected_states, s.selected_areas, s.plan_name
         FROM users u
         INNER JOIN subscriptions s ON s.user_id = u.id
@@ -114,18 +129,18 @@ def _load_active_subscribers(cursor):
     return subscribers
 
 
-def _already_notified(cursor, user_id, tender_id):
+def _already_notified(cursor, user_id, tender_id, table='tender_email_notifications'):
     cursor.execute(
-        "SELECT 1 FROM tender_email_notifications WHERE user_id = %s AND tender_id = %s",
+        f"SELECT 1 FROM {table} WHERE user_id = %s AND tender_id = %s",
         (user_id, tender_id),
     )
     return cursor.fetchone() is not None
 
 
-def _mark_notified(cursor, user_id, tender_id):
+def _mark_notified(cursor, user_id, tender_id, table='tender_email_notifications'):
     cursor.execute(
-        """
-        INSERT INTO tender_email_notifications (user_id, tender_id)
+        f"""
+        INSERT INTO {table} (user_id, tender_id)
         VALUES (%s, %s)
         ON CONFLICT (user_id, tender_id) DO NOTHING
         """,
@@ -203,6 +218,9 @@ def _build_pending_by_user(valid, subscribers, cursor):
 def _process_batch(licitacoes_list):
     """Envia 1 email resumo por usuário + webhooks individuais (se configurados)."""
     from src.services.email_service import send_tenders_digest
+    from src.services.whatsapp_service import send_tenders_whatsapp_alert
+
+    whatsapp_enabled = os.getenv('ENABLE_TENDER_WHATSAPP_NOTIFICATIONS', 'false').lower() in ('1', 'true', 'yes')
 
     valid = [l for l in licitacoes_list if l.get('id')]
     if not valid:
@@ -215,6 +233,8 @@ def _process_batch(licitacoes_list):
 
     emails_sent = 0
     emails_failed = 0
+    whatsapp_sent = 0
+    whatsapp_failed = 0
     tenders_notified = 0
     cursor = None
 
@@ -281,16 +301,41 @@ def _process_batch(licitacoes_list):
                 for licitacao in tenders:
                     _send_webhook(webhook_url, usuario, licitacao)
 
+            # ── WhatsApp (Meta Cloud API) — só se habilitado, usuário optou e há telefone ──
+            if whatsapp_enabled and usuario.get('whatsapp_opt_in') and usuario.get('phone'):
+                whatsapp_pending = [
+                    t for t in tenders
+                    if not _already_notified(cursor, user_id, t['id'], table='tender_whatsapp_notifications')
+                ]
+                if whatsapp_pending:
+                    wa_ok = send_tenders_whatsapp_alert(
+                        phone=usuario['phone'],
+                        user_name=usuario.get('full_name') or 'Cliente',
+                        tenders_count=len(whatsapp_pending),
+                    )
+                    if wa_ok:
+                        for licitacao in whatsapp_pending:
+                            _mark_notified(cursor, user_id, licitacao['id'], table='tender_whatsapp_notifications')
+                        conn.commit()
+                        whatsapp_sent += 1
+                    else:
+                        conn.rollback()
+                        whatsapp_failed += 1
+                    time.sleep(WHATSAPP_RATE_DELAY)
+
         logger.info(
             f"Lote concluído: {emails_sent} resumo(s) enviado(s) "
             f"({tenders_notified} licitação(ões)), "
-            f"{emails_failed} falha(s), {skipped} ignorado(s) (já notificados)"
+            f"{emails_failed} falha(s), {skipped} ignorado(s) (já notificados). "
+            f"WhatsApp: {whatsapp_sent} enviado(s), {whatsapp_failed} falha(s)."
         )
         return {
             'emails_sent': emails_sent,
             'emails_failed': emails_failed,
             'skipped': skipped,
             'tenders_notified': tenders_notified,
+            'whatsapp_sent': whatsapp_sent,
+            'whatsapp_failed': whatsapp_failed,
         }
 
     except Exception as exc:

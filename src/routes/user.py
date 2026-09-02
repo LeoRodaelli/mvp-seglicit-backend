@@ -359,6 +359,66 @@ def get_user_profile(user_id):
             'error': 'Erro interno do servidor'
         }), 500
 
+
+@user_bp.route('/profile/<int:user_id>/whatsapp-preferences', methods=['PUT'])
+def update_whatsapp_preferences(user_id):
+    """
+    Atualiza o opt-in de alertas por WhatsApp do usuário (e, opcionalmente,
+    o telefone — caso o número salvo no checkout esteja errado/desatualizado).
+    """
+    try:
+        data = request.get_json() or {}
+        opt_in = bool(data.get('whatsapp_opt_in'))
+        phone = (data.get('phone') or '').strip()
+        phone_digits = re.sub(r'\D', '', phone) if phone else None
+
+        if opt_in and not phone_digits:
+            # Sem telefone novo informado: exige que já exista um salvo.
+            conn = get_db_connection()
+            if not conn:
+                raise Exception("Erro de conexão com banco")
+            cursor = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+            cursor.execute("SELECT phone FROM users WHERE id = %s", (user_id,))
+            row = cursor.fetchone()
+            if not row or not row.get('phone'):
+                cursor.close()
+                conn.close()
+                return jsonify({
+                    'success': False,
+                    'error': 'Informe um telefone com WhatsApp para ativar os alertas.'
+                }), 400
+            cursor.close()
+            conn.close()
+
+        conn = get_db_connection()
+        if not conn:
+            raise Exception("Erro de conexão com banco")
+
+        cursor = conn.cursor()
+        cursor.execute("ALTER TABLE users ADD COLUMN IF NOT EXISTS whatsapp_opt_in BOOLEAN DEFAULT false")
+        if phone_digits:
+            cursor.execute(
+                "UPDATE users SET whatsapp_opt_in = %s, phone = %s WHERE id = %s",
+                (opt_in, phone_digits, user_id),
+            )
+        else:
+            cursor.execute(
+                "UPDATE users SET whatsapp_opt_in = %s WHERE id = %s",
+                (opt_in, user_id),
+            )
+        conn.commit()
+        cursor.close()
+        conn.close()
+
+        return jsonify({'success': True, 'whatsapp_opt_in': opt_in})
+
+    except Exception as e:
+        logger.error(f"Erro ao atualizar preferência de WhatsApp: {e}")
+        return jsonify({
+            'success': False,
+            'error': 'Erro interno do servidor'
+        }), 500
+
 @user_bp.route('/check-availability', methods=['POST'])
 def check_availability():
     """Verifica disponibilidade de username/email"""
