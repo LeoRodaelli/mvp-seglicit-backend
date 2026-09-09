@@ -11,10 +11,15 @@ Configuração necessária (.env):
   WHATSAPP_TEMPLATE_NAME    - nome do template aprovado (ex: licitacoes_novas_alerta)
   WHATSAPP_TEMPLATE_LANG    - idioma do template (ex: pt_BR)
 
-Template sugerido pra submeter no WhatsApp Manager (categoria "Utility"):
-  "Olá {{1}}! 🔔 Encontramos {{2}} nova(s) licitação(ões) no seu plano
-   Seglicit. Acesse a plataforma para ver os detalhes: {{3}}"
-  (variáveis: 1=nome do usuário, 2=quantidade, 3=link de login)
+Template criado no WhatsApp Manager (categoria "Marketing" — a Meta
+classificou automaticamente como Marketing em vez de Utility por ser um
+convite pra ver conteúdo novo, não confirmação de conta/pedido; como o
+alerta já é opt-in dentro da plataforma, não tem problema em aceitar):
+  Corpo: "Olá {{1}}! 🔔 Encontramos {{2}} nova(s) licitação(ões) no seu
+          plano Seglicit."
+  Rodapé: "Seglicit - Inteligência em Licitações"
+  Botão (URL estática, sem variável): "Ver licitações" -> FRONTEND_URL/login
+  (variáveis do corpo: 1=nome do usuário, 2=quantidade)
 """
 import logging
 import os
@@ -98,8 +103,6 @@ def send_tenders_whatsapp_alert(phone, user_name, tenders_count):
 
     template_name = os.getenv('WHATSAPP_TEMPLATE_NAME', 'licitacoes_novas_alerta')
     template_lang = os.getenv('WHATSAPP_TEMPLATE_LANG', 'pt_BR')
-    frontend_url = os.getenv('FRONTEND_URL', 'https://seglicit.com.br')
-    login_link = f'{frontend_url}/login'
 
     primeiro_nome = (user_name or 'Cliente').strip().split(' ')[0]
 
@@ -108,5 +111,5 @@ def send_tenders_whatsapp_alert(phone, user_name, tenders_count):
         to_phone,
         template_name,
         template_lang,
-        body_params=[primeiro_nome, tenders_count, login_link],
+        body_params=[primeiro_nome, tenders_count],
     )
