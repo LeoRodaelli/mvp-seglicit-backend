@@ -419,6 +419,32 @@ def update_whatsapp_preferences(user_id):
             'error': 'Erro interno do servidor'
         }), 500
 
+
+@user_bp.route('/whatsapp/test-send', methods=['POST'])
+def whatsapp_test_send():
+    """
+    Dispara um envio de teste do template de alerta via WhatsApp, sem
+    depender do ciclo automático de notificação de licitações novas.
+    Protegido por senha própria — só pra validar a integração.
+    """
+    admin_secret = os.getenv('WHATSAPP_TEST_SECRET')
+    if not admin_secret or request.headers.get('X-Admin-Secret') != admin_secret:
+        return jsonify({'success': False, 'error': 'Não autorizado'}), 401
+
+    from src.services.whatsapp_service import send_tenders_whatsapp_alert
+
+    data = request.get_json() or {}
+    phone = (data.get('phone') or '').strip()
+    user_name = (data.get('user_name') or 'Cliente').strip()
+    tenders_count = data.get('tenders_count', 3)
+
+    if not phone:
+        return jsonify({'success': False, 'error': 'phone é obrigatório'}), 400
+
+    ok = send_tenders_whatsapp_alert(phone=phone, user_name=user_name, tenders_count=tenders_count)
+    return jsonify({'success': ok}), (200 if ok else 502)
+
+
 @user_bp.route('/check-availability', methods=['POST'])
 def check_availability():
     """Verifica disponibilidade de username/email"""
