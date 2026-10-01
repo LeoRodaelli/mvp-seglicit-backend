@@ -508,6 +508,78 @@ def get_tender_details(tender_id):
         return jsonify({'success': False, 'error': 'Erro ao buscar detalhes'}), 500
 
 
+@tender_bp.route('/tenders/<int:tender_id>/summarize', methods=['POST'])
+def summarize_tender(tender_id):
+    """
+    Gera (ou retorna do cache) o resumo por IA de uma licitação. Tenta
+    resumir a partir do PDF real do edital quando disponível na lista de
+    arquivos baixados, senão usa o texto curto já salvo (objeto/descrição).
+    Resultado fica cacheado em `tenders.ai_summary` — só gera de novo se
+    `force: true` for passado no corpo da requisição.
+    """
+    try:
+        conn = get_db_connection()
+        if not conn:
+            raise Exception("Erro de conexão com banco")
+
+        cursor = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+        cursor.execute("ALTER TABLE tenders ADD COLUMN IF NOT EXISTS ai_summary TEXT")
+        cursor.execute("ALTER TABLE tenders ADD COLUMN IF NOT EXISTS ai_summary_source VARCHAR(10)")
+        cursor.execute("ALTER TABLE tenders ADD COLUMN IF NOT EXISTS ai_summary_generated_at TIMESTAMP")
+        conn.commit()
+
+        cursor.execute("""
+            SELECT id, title, objeto, description, detailed_description,
+                   downloaded_files_json, ai_summary, ai_summary_source
+            FROM tenders WHERE id = %s
+        """, (tender_id,))
+        tender = cursor.fetchone()
+
+        if not tender:
+            cursor.close()
+            conn.close()
+            return jsonify({'success': False, 'error': 'Licitação não encontrada'}), 404
+
+        force = bool((request.get_json(silent=True) or {}).get('force'))
+
+        if tender.get('ai_summary') and not force:
+            cursor.close()
+            conn.close()
+            return jsonify({
+                'success': True,
+                'summary': tender['ai_summary'],
+                'source': tender.get('ai_summary_source'),
+                'cached': True,
+            })
+
+        from src.services.tender_ai_summary import generate_tender_summary
+        try:
+            summary, source = generate_tender_summary(tender)
+        except Exception as exc:
+            logger.error(f"Erro ao gerar resumo IA da licitação {tender_id}: {exc}")
+            cursor.close()
+            conn.close()
+            return jsonify({
+                'success': False,
+                'error': 'Não foi possível gerar o resumo agora. Tente novamente em instantes.',
+            }), 502
+
+        cursor.execute("""
+            UPDATE tenders
+            SET ai_summary = %s, ai_summary_source = %s, ai_summary_generated_at = NOW()
+            WHERE id = %s
+        """, (summary, source, tender_id))
+        conn.commit()
+        cursor.close()
+        conn.close()
+
+        return jsonify({'success': True, 'summary': summary, 'source': source, 'cached': False})
+
+    except Exception as e:
+        logger.error(f"Erro no endpoint de resumo IA: {e}")
+        return jsonify({'success': False, 'error': 'Erro interno do servidor'}), 500
+
+
 @tender_bp.route('/tenders/<int:tender_id>/download/<filename>', methods=['GET'])
 def download_file(tender_id, filename):
     """Download de arquivo específico"""
