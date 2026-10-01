@@ -126,12 +126,15 @@ def generate_tender_summary(tender):
         )
         source = 'texto'
 
-    response = client.messages.create(
+    # Streaming: entrada pode ser um PDF inteiro (long input) — evita timeout
+    # do lado do cliente/proxy enquanto a Claude processa o documento.
+    with client.messages.stream(
         model=MODEL_ID,
         max_tokens=1024,
         system=SUMMARY_SYSTEM_PROMPT,
         messages=[{'role': 'user', 'content': content}],
-    )
+    ) as stream:
+        response = stream.get_final_message()
 
     summary = ''.join(block.text for block in response.content if block.type == 'text').strip()
     if not summary:
