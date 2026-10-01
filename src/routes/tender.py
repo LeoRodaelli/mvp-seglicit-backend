@@ -1041,6 +1041,130 @@ def backfill_state_codes():
     }), 200
 
 
+def _ensure_admin_task_status_table(cursor):
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS admin_task_status (
+            task_name VARCHAR(100) PRIMARY KEY,
+            status VARCHAR(20),
+            result_json TEXT,
+            updated_at TIMESTAMP DEFAULT NOW()
+        )
+    """)
+
+
+def _run_pncp_api_backfill_in_background(dry_run):
+    """
+    Roda em thread separada — várias chamadas sequenciais à API do PNCP
+    (com retry/backoff) facilmente passam do timeout do proxy do Railway
+    numa requisição síncrona. Resultado fica salvo em admin_task_status
+    pra consultar depois via GET.
+    """
+    import json
+    import time
+
+    from src.utils.pncp_api_enrichment import parse_pncp_id, fetch_contract
+    from src.utils.pncp_text_parsing import extract_local_municipio_uf
+
+    conn = get_db_connection()
+    if not conn:
+        return
+
+    try:
+        cursor = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+        _ensure_admin_task_status_table(cursor)
+        conn.commit()
+
+        cursor.execute("""
+            SELECT id, pncp_id, municipality_name, state_code, description
+            FROM tenders
+            WHERE state_code = 'SP'
+        """)
+        rows = cursor.fetchall()
+
+        checked = 0
+        corrected = 0
+        skipped_no_pncp_id = 0
+        skipped_api_failed = 0
+        sample_corrections = []
+
+        for row in rows:
+            _municipio, uf_from_text = extract_local_municipio_uf(row.get('description') or '')
+            if uf_from_text:
+                continue
+
+            checked += 1
+            parsed = parse_pncp_id(row.get('pncp_id') or '')
+            if not parsed:
+                skipped_no_pncp_id += 1
+                continue
+
+            cnpj, ano, sequencial = parsed
+            try:
+                contract = fetch_contract(cnpj, ano, sequencial)
+            except Exception:
+                contract = None
+
+            if not contract:
+                skipped_api_failed += 1
+                continue
+
+            unidade = contract.get('unidadeOrgao') or {}
+            uf_real = unidade.get('ufSigla')
+
+            if uf_real and uf_real != 'SP':
+                corrected += 1
+                if len(sample_corrections) < 30:
+                    sample_corrections.append({
+                        'id': row['id'],
+                        'municipality_name': row['municipality_name'],
+                        'old_state_code': row['state_code'],
+                        'new_state_code': uf_real,
+                    })
+                if not dry_run:
+                    cursor.execute(
+                        "UPDATE tenders SET state_code = %s WHERE id = %s",
+                        (uf_real, row['id']),
+                    )
+
+            time.sleep(0.3)
+
+        result = {
+            'success': True,
+            'dry_run': dry_run,
+            'checked': checked,
+            'corrected': corrected,
+            'skipped_no_pncp_id': skipped_no_pncp_id,
+            'skipped_api_failed': skipped_api_failed,
+            'sample_corrections': sample_corrections,
+        }
+
+        cursor.execute("""
+            INSERT INTO admin_task_status (task_name, status, result_json, updated_at)
+            VALUES ('backfill_state_codes_via_pncp_api', 'done', %s, NOW())
+            ON CONFLICT (task_name) DO UPDATE SET
+                status = EXCLUDED.status, result_json = EXCLUDED.result_json, updated_at = NOW()
+        """, (json.dumps(result),))
+        conn.commit()
+        cursor.close()
+    except Exception as exc:
+        logger.error(f"Erro no backfill via API do PNCP (background): {exc}")
+        try:
+            cursor = conn.cursor()
+            _ensure_admin_task_status_table(cursor)
+            cursor.execute("""
+                INSERT INTO admin_task_status (task_name, status, result_json, updated_at)
+                VALUES ('backfill_state_codes_via_pncp_api', 'error', %s, NOW())
+                ON CONFLICT (task_name) DO UPDATE SET
+                    status = EXCLUDED.status, result_json = EXCLUDED.result_json, updated_at = NOW()
+            """, (str(exc)[:1000],))
+            conn.commit()
+            cursor.close()
+        except Exception:
+            pass
+    finally:
+        conn.close()
+
+
 @tender_bp.route('/admin/backfill-state-codes-via-pncp-api', methods=['POST'])
 def backfill_state_codes_via_pncp_api():
     """
@@ -1049,93 +1173,67 @@ def backfill_state_codes_via_pncp_api():
     sozinho (ex: descrição truncada em 500 caracteres antes de chegar no
     "Localidade da Unidade: Cidade/UF" real) e consulta a API oficial do
     PNCP pelo pncp_id — fonte autoritativa (unidadeOrgao.ufSigla), não é
-    mais texto raspado. Roda em dry_run por padrão.
+    mais texto raspado. Roda em segundo plano (várias chamadas à API
+    passam do timeout do proxy numa requisição síncrona) — consulte o
+    resultado em GET /admin/backfill-state-codes-via-pncp-api/status.
     """
     admin_secret = os.getenv('TENDERS_BACKFILL_SECRET')
     if not admin_secret or request.headers.get('X-Admin-Secret') != admin_secret:
         return jsonify({'success': False, 'error': 'Não autorizado'}), 401
 
-    from src.utils.pncp_api_enrichment import parse_pncp_id, fetch_contract
-    from src.utils.pncp_text_parsing import extract_local_municipio_uf
-    import time
+    dry_run = bool((request.get_json(silent=True) or {}).get('dry_run', True))
 
-    dry_run = (request.get_json(silent=True) or {}).get('dry_run', True)
+    conn = get_db_connection()
+    if conn:
+        try:
+            cursor = conn.cursor()
+            _ensure_admin_task_status_table(cursor)
+            cursor.execute("""
+                INSERT INTO admin_task_status (task_name, status, result_json, updated_at)
+                VALUES ('backfill_state_codes_via_pncp_api', 'processing', NULL, NOW())
+                ON CONFLICT (task_name) DO UPDATE SET
+                    status = 'processing', result_json = NULL, updated_at = NOW()
+            """)
+            conn.commit()
+            cursor.close()
+        finally:
+            conn.close()
+
+    import threading
+    thread = threading.Thread(target=_run_pncp_api_backfill_in_background, args=(dry_run,), daemon=True)
+    thread.start()
+
+    return jsonify({'success': True, 'status': 'processing'})
+
+
+@tender_bp.route('/admin/backfill-state-codes-via-pncp-api/status', methods=['GET'])
+def backfill_state_codes_via_pncp_api_status():
+    """Consulta o andamento/resultado do backfill via API do PNCP disparado em segundo plano."""
+    admin_secret = os.getenv('TENDERS_BACKFILL_SECRET')
+    if not admin_secret or request.headers.get('X-Admin-Secret') != admin_secret:
+        return jsonify({'success': False, 'error': 'Não autorizado'}), 401
+
+    import json
 
     conn = get_db_connection()
     if not conn:
         return jsonify({'success': False, 'error': 'Erro de conexão com banco'}), 500
 
     cursor = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
-    cursor.execute("""
-        SELECT id, pncp_id, municipality_name, state_code, description
-        FROM tenders
-        WHERE state_code = 'SP'
-    """)
-    rows = cursor.fetchall()
-
-    checked = 0
-    corrected = 0
-    skipped_no_pncp_id = 0
-    skipped_api_failed = 0
-    sample_corrections = []
-
-    for row in rows:
-        # Se o texto já resolve uma UF com confiança, já foi tratado na
-        # primeira passada (ou é SP de verdade) — não precisa de API aqui.
-        _municipio, uf_from_text = extract_local_municipio_uf(row.get('description') or '')
-        if uf_from_text:
-            continue
-
-        checked += 1
-        parsed = parse_pncp_id(row.get('pncp_id') or '')
-        if not parsed:
-            skipped_no_pncp_id += 1
-            continue
-
-        cnpj, ano, sequencial = parsed
-        try:
-            contract = fetch_contract(cnpj, ano, sequencial)
-        except Exception:
-            contract = None
-
-        if not contract:
-            skipped_api_failed += 1
-            continue
-
-        unidade = contract.get('unidadeOrgao') or {}
-        uf_real = unidade.get('ufSigla')
-
-        if uf_real and uf_real != 'SP':
-            corrected += 1
-            if len(sample_corrections) < 30:
-                sample_corrections.append({
-                    'id': row['id'],
-                    'municipality_name': row['municipality_name'],
-                    'old_state_code': row['state_code'],
-                    'new_state_code': uf_real,
-                })
-            if not dry_run:
-                cursor.execute(
-                    "UPDATE tenders SET state_code = %s WHERE id = %s",
-                    (uf_real, row['id']),
-                )
-
-        time.sleep(0.3)
-
-    if not dry_run:
-        conn.commit()
+    _ensure_admin_task_status_table(cursor)
+    conn.commit()
+    cursor.execute(
+        "SELECT status, result_json FROM admin_task_status WHERE task_name = 'backfill_state_codes_via_pncp_api'"
+    )
+    row = cursor.fetchone()
     cursor.close()
     conn.close()
 
-    return jsonify({
-        'success': True,
-        'dry_run': dry_run,
-        'checked': checked,
-        'corrected': corrected,
-        'skipped_no_pncp_id': skipped_no_pncp_id,
-        'skipped_api_failed': skipped_api_failed,
-        'sample_corrections': sample_corrections,
-    }), 200
+    if not row:
+        return jsonify({'success': True, 'status': 'not_started'})
+
+    result = json.loads(row['result_json']) if row.get('result_json') else None
+    return jsonify({'success': True, 'status': row['status'], 'result': result})
 
 
 @tender_bp.route('/test', methods=['GET'])
