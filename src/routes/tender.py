@@ -508,14 +508,62 @@ def get_tender_details(tender_id):
         return jsonify({'success': False, 'error': 'Erro ao buscar detalhes'}), 500
 
 
+def _ensure_ai_summary_columns(cursor):
+    cursor.execute("ALTER TABLE tenders ADD COLUMN IF NOT EXISTS ai_summary TEXT")
+    cursor.execute("ALTER TABLE tenders ADD COLUMN IF NOT EXISTS ai_summary_source VARCHAR(10)")
+    cursor.execute("ALTER TABLE tenders ADD COLUMN IF NOT EXISTS ai_summary_generated_at TIMESTAMP")
+    cursor.execute("ALTER TABLE tenders ADD COLUMN IF NOT EXISTS ai_summary_status VARCHAR(20)")
+    cursor.execute("ALTER TABLE tenders ADD COLUMN IF NOT EXISTS ai_summary_error TEXT")
+
+
+def _run_summary_in_background(tender_id, tender):
+    """Gera o resumo numa thread separada e atualiza o banco ao terminar.
+    Baixar o PDF + Claude processar pode passar do limite do proxy do
+    Railway numa requisição síncrona — por isso roda em segundo plano e o
+    frontend consulta o status via polling."""
+    from src.services.tender_ai_summary import generate_tender_summary
+
+    conn = get_db_connection()
+    if not conn:
+        logger.error(f"Resumo IA {tender_id}: erro de conexão com banco na thread")
+        return
+
+    try:
+        try:
+            summary, source = generate_tender_summary(tender)
+        except Exception as exc:
+            logger.error(f"Erro ao gerar resumo IA da licitação {tender_id}: {exc}")
+            cursor = conn.cursor()
+            cursor.execute("""
+                UPDATE tenders SET ai_summary_status = 'error', ai_summary_error = %s
+                WHERE id = %s
+            """, (str(exc)[:500], tender_id))
+            conn.commit()
+            cursor.close()
+            return
+
+        cursor = conn.cursor()
+        cursor.execute("""
+            UPDATE tenders
+            SET ai_summary = %s, ai_summary_source = %s, ai_summary_generated_at = NOW(),
+                ai_summary_status = 'ready', ai_summary_error = NULL
+            WHERE id = %s
+        """, (summary, source, tender_id))
+        conn.commit()
+        cursor.close()
+    finally:
+        conn.close()
+
+
 @tender_bp.route('/tenders/<int:tender_id>/summarize', methods=['POST'])
 def summarize_tender(tender_id):
     """
-    Gera (ou retorna do cache) o resumo por IA de uma licitação. Tenta
-    resumir a partir do PDF real do edital quando disponível na lista de
-    arquivos baixados, senão usa o texto curto já salvo (objeto/descrição).
-    Resultado fica cacheado em `tenders.ai_summary` — só gera de novo se
-    `force: true` for passado no corpo da requisição.
+    Dispara (ou retorna do cache) o resumo por IA de uma licitação. Roda em
+    segundo plano — responde na hora com status "processing" e o frontend
+    consulta GET /tenders/<id>/summarize-status até ficar pronto. Tenta
+    resumir a partir do PDF real do edital quando disponível, senão usa o
+    texto curto já salvo (objeto/descrição). Resultado fica cacheado em
+    `tenders.ai_summary` — só gera de novo se `force: true` for passado.
     """
     try:
         conn = get_db_connection()
@@ -523,14 +571,12 @@ def summarize_tender(tender_id):
             raise Exception("Erro de conexão com banco")
 
         cursor = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
-        cursor.execute("ALTER TABLE tenders ADD COLUMN IF NOT EXISTS ai_summary TEXT")
-        cursor.execute("ALTER TABLE tenders ADD COLUMN IF NOT EXISTS ai_summary_source VARCHAR(10)")
-        cursor.execute("ALTER TABLE tenders ADD COLUMN IF NOT EXISTS ai_summary_generated_at TIMESTAMP")
+        _ensure_ai_summary_columns(cursor)
         conn.commit()
 
         cursor.execute("""
             SELECT id, title, objeto, description, detailed_description,
-                   downloaded_files_json, ai_summary, ai_summary_source
+                   downloaded_files_json, ai_summary, ai_summary_source, ai_summary_status
             FROM tenders WHERE id = %s
         """, (tender_id,))
         tender = cursor.fetchone()
@@ -547,36 +593,78 @@ def summarize_tender(tender_id):
             conn.close()
             return jsonify({
                 'success': True,
+                'status': 'ready',
                 'summary': tender['ai_summary'],
                 'source': tender.get('ai_summary_source'),
                 'cached': True,
             })
 
-        from src.services.tender_ai_summary import generate_tender_summary
-        try:
-            summary, source = generate_tender_summary(tender)
-        except Exception as exc:
-            logger.error(f"Erro ao gerar resumo IA da licitação {tender_id}: {exc}")
+        if tender.get('ai_summary_status') == 'processing' and not force:
             cursor.close()
             conn.close()
-            return jsonify({
-                'success': False,
-                'error': 'Não foi possível gerar o resumo agora. Tente novamente em instantes.',
-            }), 502
+            return jsonify({'success': True, 'status': 'processing'})
 
-        cursor.execute("""
-            UPDATE tenders
-            SET ai_summary = %s, ai_summary_source = %s, ai_summary_generated_at = NOW()
-            WHERE id = %s
-        """, (summary, source, tender_id))
+        cursor.execute(
+            "UPDATE tenders SET ai_summary_status = 'processing', ai_summary_error = NULL WHERE id = %s",
+            (tender_id,),
+        )
         conn.commit()
         cursor.close()
         conn.close()
 
-        return jsonify({'success': True, 'summary': summary, 'source': source, 'cached': False})
+        import threading
+        thread = threading.Thread(target=_run_summary_in_background, args=(tender_id, dict(tender)), daemon=True)
+        thread.start()
+
+        return jsonify({'success': True, 'status': 'processing'})
 
     except Exception as e:
         logger.error(f"Erro no endpoint de resumo IA: {e}")
+        return jsonify({'success': False, 'error': 'Erro interno do servidor'}), 500
+
+
+@tender_bp.route('/tenders/<int:tender_id>/summarize-status', methods=['GET'])
+def summarize_tender_status(tender_id):
+    """Consulta o andamento do resumo por IA disparado em segundo plano."""
+    try:
+        conn = get_db_connection()
+        if not conn:
+            raise Exception("Erro de conexão com banco")
+
+        cursor = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+        _ensure_ai_summary_columns(cursor)
+        conn.commit()
+
+        cursor.execute("""
+            SELECT ai_summary, ai_summary_source, ai_summary_status, ai_summary_error
+            FROM tenders WHERE id = %s
+        """, (tender_id,))
+        row = cursor.fetchone()
+        cursor.close()
+        conn.close()
+
+        if not row:
+            return jsonify({'success': False, 'error': 'Licitação não encontrada'}), 404
+
+        if row.get('ai_summary'):
+            return jsonify({
+                'success': True,
+                'status': 'ready',
+                'summary': row['ai_summary'],
+                'source': row.get('ai_summary_source'),
+            })
+
+        if row.get('ai_summary_status') == 'error':
+            return jsonify({
+                'success': True,
+                'status': 'error',
+                'error': 'Não foi possível gerar o resumo agora. Tente novamente em instantes.',
+            })
+
+        return jsonify({'success': True, 'status': row.get('ai_summary_status') or 'processing'})
+
+    except Exception as e:
+        logger.error(f"Erro ao consultar status do resumo IA: {e}")
         return jsonify({'success': False, 'error': 'Erro interno do servidor'}), 500
 
 
