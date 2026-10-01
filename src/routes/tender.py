@@ -808,6 +808,78 @@ def get_stats():
         }), 500
 
 
+@tender_bp.route('/admin/backfill-state-codes', methods=['POST'])
+def backfill_state_codes():
+    """
+    Corrige tenders com state_code='SP' salvo errado por um bug antigo do
+    scraper (fallback indevido pra 'SP' sempre que a extração do "Local:
+    Cidade/UF" falhava — ver src/utils/pncp_text_parsing.py). Reprocessa
+    a partir do texto já salvo em `description`.
+
+    Por padrão roda em modo dry_run (só reporta o que seria corrigido,
+    não grava nada) — passe {"dry_run": false} pra aplicar de verdade.
+    Protegido por senha própria.
+    """
+    admin_secret = os.getenv('TENDERS_BACKFILL_SECRET')
+    if not admin_secret or request.headers.get('X-Admin-Secret') != admin_secret:
+        return jsonify({'success': False, 'error': 'Não autorizado'}), 401
+
+    from src.utils.pncp_text_parsing import extract_local_municipio_uf
+
+    dry_run = (request.get_json(silent=True) or {}).get('dry_run', True)
+
+    conn = get_db_connection()
+    if not conn:
+        return jsonify({'success': False, 'error': 'Erro de conexão com banco'}), 500
+
+    cursor = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+    cursor.execute("""
+        SELECT id, municipality_name, state_code, description
+        FROM tenders
+        WHERE state_code = 'SP' AND description ILIKE %s
+    """, ('%Local:%',))
+    rows = cursor.fetchall()
+
+    checked = 0
+    corrected = 0
+    ambiguous = 0
+    sample_corrections = []
+
+    for row in rows:
+        checked += 1
+        _municipio, uf = extract_local_municipio_uf(row.get('description') or '')
+        if uf and uf != 'SP':
+            corrected += 1
+            if len(sample_corrections) < 20:
+                sample_corrections.append({
+                    'id': row['id'],
+                    'municipality_name': row['municipality_name'],
+                    'old_state_code': row['state_code'],
+                    'new_state_code': uf,
+                })
+            if not dry_run:
+                cursor.execute(
+                    "UPDATE tenders SET state_code = %s WHERE id = %s",
+                    (uf, row['id']),
+                )
+        elif not uf:
+            ambiguous += 1
+
+    if not dry_run:
+        conn.commit()
+    cursor.close()
+    conn.close()
+
+    return jsonify({
+        'success': True,
+        'dry_run': dry_run,
+        'checked': checked,
+        'corrected': corrected,
+        'ambiguous_left_untouched': ambiguous,
+        'sample_corrections': sample_corrections,
+    }), 200
+
+
 @tender_bp.route('/test', methods=['GET'])
 def test_connection():
     """Test usando psycopg2 diretamente"""
