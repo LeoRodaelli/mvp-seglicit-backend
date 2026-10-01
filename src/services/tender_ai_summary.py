@@ -128,16 +128,22 @@ def generate_tender_summary(tender):
 
     # Streaming: entrada pode ser um PDF inteiro (long input) — evita timeout
     # do lado do cliente/proxy enquanto a Claude processa o documento.
+    # effort "low": é só um resumo, não precisa de raciocínio profundo — mais
+    # rápido e mais barato. max_tokens generoso: o raciocínio (sempre ligado
+    # no Opus 5.5, não dá pra desligar) consome parte do limite antes de
+    # escrever a resposta — com um limite baixo, PDFs mais complexos geravam
+    # resposta vazia (todo o limite gasto só "pensando").
     with client.messages.stream(
         model=MODEL_ID,
-        max_tokens=1024,
+        max_tokens=8192,
         system=SUMMARY_SYSTEM_PROMPT,
+        output_config={'effort': 'low'},
         messages=[{'role': 'user', 'content': content}],
     ) as stream:
         response = stream.get_final_message()
 
     summary = ''.join(block.text for block in response.content if block.type == 'text').strip()
     if not summary:
-        raise RuntimeError('Claude retornou resposta vazia')
+        raise RuntimeError(f'Claude retornou resposta vazia (stop_reason={response.stop_reason})')
 
     return summary, source
