@@ -1346,37 +1346,25 @@ class PNCPScraperItemsOnly:
     def safe_extract_municipality(self, text: str) -> Optional[str]:
         """Extrai município de forma segura"""
         try:
-            if 'Local:' in text:
-                parts = text.split('Local:')
-                if len(parts) > 1:
-                    local_part = parts[1].split('\n')[0].strip()
-                    if '/' in local_part:
-                        local_part = local_part.split('/')[0].strip()
-                    return local_part[:100] if local_part else None
-            return None
-        except:
+            from src.utils.pncp_text_parsing import extract_local_municipio_uf
+            municipio, _ = extract_local_municipio_uf(text)
+            return municipio[:100] if municipio else None
+        except Exception:
             return None
 
     def safe_extract_state_code(self, text: str) -> str:
-        """Extrai código do estado (UF) de forma segura"""
+        """
+        Extrai código do estado (UF) de forma segura. Retorna '' (nunca um
+        estado "chutado") quando não for possível validar com confiança —
+        um state_code errado faz a licitação aparecer pro assinante do
+        estado errado, então é pior que ficar em branco.
+        """
         try:
-            if 'Local:' in text:
-                parts = text.split('Local:')
-                if len(parts) > 1:
-                    local_part = parts[1].split('\n')[0].strip()
-                    # Formato esperado: "Cidade/UF" ou "Cidade - UF"
-                    if '/' in local_part:
-                        uf = local_part.split('/')[-1].strip()
-                        # Validar se é uma UF válida (2 letras maiúsculas)
-                        if len(uf) == 2 and uf.isupper():
-                            return uf
-                    elif '-' in local_part:
-                        uf = local_part.split('-')[-1].strip()
-                        if len(uf) == 2 and uf.isupper():
-                            return uf
-            return 'SP'  # Fallback para SP se não conseguir extrair
-        except:
-            return 'SP'
+            from src.utils.pncp_text_parsing import extract_local_municipio_uf
+            _, uf = extract_local_municipio_uf(text)
+            return uf or ''
+        except Exception:
+            return ''
 
     def safe_extract_modality(self, text: str) -> str:
         """Extrai modalidade de forma segura"""
