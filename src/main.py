@@ -19,6 +19,7 @@ from src.routes.tender import tender_bp
 from src.routes.api_ultimas_licitacoes import licitacoes_realtime_bp
 from src.routes.zaia_api import zaia_bp
 from src.routes.chat import chat_bp
+from src.routes.pipeline import pipeline_bp
 import os
 from dotenv import load_dotenv
 
@@ -43,6 +44,7 @@ app.register_blueprint(mercadopago_bp, url_prefix='/api')
 app.register_blueprint(licitacoes_realtime_bp, url_prefix='/api')
 app.register_blueprint(zaia_bp, url_prefix='/api')
 app.register_blueprint(chat_bp, url_prefix='/api')
+app.register_blueprint(pipeline_bp, url_prefix='/api')
 
 load_dotenv()
 
