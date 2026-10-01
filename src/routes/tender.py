@@ -969,31 +969,36 @@ def get_stats():
         }), 500
 
 
-@tender_bp.route('/dashboard', methods=['GET'])
-def get_dashboard():
-    """Retorna dados agregados (resumo, série por semana, por estado e por área)
-    para o dashboard/analytics da conta, filtrados pelo plano do usuário."""
-    try:
-        user_id = request.args.get('user_id', type=int)
+def _dashboard_task_name(user_id):
+    return f"dashboard_user_{user_id}" if user_id else "dashboard_global"
 
+
+def _run_dashboard_in_background(task_name, user_id):
+    """
+    Monta o dashboard (resumo + série por semana + por estado + por área).
+    Roda em thread separada: são várias queries sequenciais (1 por área),
+    e mesmo sendo rápidas no banco, a soma facilmente passa do timeout do
+    proxy do Railway numa requisição síncrona — mesmo padrão já usado no
+    resumo por IA e no backfill de state_code. Resultado fica em
+    admin_task_status, consultado via GET /dashboard/status.
+    """
+    import json
+
+    conn = get_db_connection()
+    if not conn:
+        return
+
+    try:
         plan_states, plan_areas = (None, None)
         if user_id:
             plan_states, plan_areas = _load_subscription_filters(user_id)
 
-        state_clause, state_params = build_plan_filter(plan_states, None)
         full_clause, full_params = build_plan_filter(plan_states, plan_areas)
-        scoped = bool(state_clause or full_clause)
-
-        state_where = f" WHERE {state_clause}" if state_clause else ""
+        scoped = bool(full_clause)
         full_where = f" WHERE {full_clause}" if full_clause else ""
-
-        conn = get_db_connection()
-        if not conn:
-            raise Exception("Erro de conexão com banco")
 
         cursor = conn.cursor()
 
-        # --- Resumo geral (respeita estados + áreas do plano) ---
         cursor.execute(f"SELECT COUNT(*) FROM tenders{full_where}", full_params)
         total_tenders = cursor.fetchone()[0]
 
@@ -1009,7 +1014,6 @@ def get_dashboard():
         cursor.execute(f"SELECT COALESCE(SUM(estimated_value), 0) FROM tenders{value_where}", full_params)
         total_value = cursor.fetchone()[0]
 
-        # --- Licitações novas por semana (últimas 12 semanas, por data de publicação) ---
         week_where = full_where + (" AND" if full_where else " WHERE") + " publication_date IS NOT NULL"
         cursor.execute(f"""
             SELECT DATE_TRUNC('week', publication_date)::date AS week_start, COUNT(*)
@@ -1021,7 +1025,6 @@ def get_dashboard():
         by_week = [{'week_start': str(row[0]), 'count': row[1]} for row in cursor.fetchall()]
         by_week.reverse()
 
-        # --- Distribuição por estado (top 10, respeita estados + áreas do plano) ---
         cursor.execute(f"""
             SELECT state_code, COUNT(*)
             FROM tenders{states_where}
@@ -1031,21 +1034,16 @@ def get_dashboard():
         """, full_params)
         by_state = [{'state_code': row[0], 'count': row[1]} for row in cursor.fetchall()]
 
-        # --- Distribuição por área (só estados do plano aplicados; área é a dimensão do gráfico) ---
         areas_to_check = plan_areas if plan_areas else list(KEYWORDS_POR_AREA.keys())
         by_area = []
         for area in areas_to_check:
             area_clause, area_params = build_plan_filter(plan_states, [area])
             area_where = f" WHERE {area_clause}" if area_clause else ""
-            params = area_params
-            cursor.execute(f"SELECT COUNT(*) FROM tenders{area_where}", params)
+            cursor.execute(f"SELECT COUNT(*) FROM tenders{area_where}", area_params)
             count = cursor.fetchone()[0]
             if count:
                 by_area.append({'area': area, 'count': count})
         by_area.sort(key=lambda x: x['count'], reverse=True)
-
-        cursor.close()
-        conn.close()
 
         dashboard = {
             'total_tenders': total_tenders,
@@ -1062,19 +1060,93 @@ def get_dashboard():
             'by_area': by_area,
         }
 
-        return jsonify({'success': True, 'dashboard': dashboard})
+        _ensure_admin_task_status_table(cursor)
+        cursor.execute("""
+            INSERT INTO admin_task_status (task_name, status, result_json, updated_at)
+            VALUES (%s, 'done', %s, NOW())
+            ON CONFLICT (task_name) DO UPDATE SET
+                status = EXCLUDED.status, result_json = EXCLUDED.result_json, updated_at = NOW()
+        """, (task_name, json.dumps(dashboard)))
+        conn.commit()
+        cursor.close()
 
-    except Exception as e:
-        logger.error(f"Erro ao buscar dashboard: {e}")
-        return jsonify({
-            'success': False,
-            'error': str(e),
-            'dashboard': {
-                'total_tenders': 0, 'total_cities': 0, 'total_states': 0,
-                'total_value': 0.0, 'formatted_value': "R$ 0,00", 'scoped': False,
-                'by_week': [], 'by_state': [], 'by_area': [],
-            }
-        }), 500
+    except Exception as exc:
+        logger.error(f"Erro ao montar dashboard: {exc}")
+        try:
+            cursor = conn.cursor()
+            _ensure_admin_task_status_table(cursor)
+            cursor.execute("""
+                INSERT INTO admin_task_status (task_name, status, result_json, updated_at)
+                VALUES (%s, 'error', %s, NOW())
+                ON CONFLICT (task_name) DO UPDATE SET
+                    status = EXCLUDED.status, result_json = EXCLUDED.result_json, updated_at = NOW()
+            """, (task_name, json.dumps({'error': str(exc)[:500]})))
+            conn.commit()
+            cursor.close()
+        except Exception:
+            pass
+    finally:
+        conn.close()
+
+
+@tender_bp.route('/dashboard', methods=['POST'])
+def start_dashboard():
+    """Dispara em segundo plano o cálculo do dashboard/analytics da conta.
+    Consulte o resultado em GET /dashboard/status."""
+    user_id = request.args.get('user_id', type=int)
+    task_name = _dashboard_task_name(user_id)
+
+    conn = get_db_connection()
+    if conn:
+        try:
+            cursor = conn.cursor()
+            _ensure_admin_task_status_table(cursor)
+            cursor.execute("""
+                INSERT INTO admin_task_status (task_name, status, result_json, updated_at)
+                VALUES (%s, 'processing', NULL, NOW())
+                ON CONFLICT (task_name) DO UPDATE SET
+                    status = 'processing', result_json = NULL, updated_at = NOW()
+            """, (task_name,))
+            conn.commit()
+            cursor.close()
+        finally:
+            conn.close()
+
+    import threading
+    thread = threading.Thread(target=_run_dashboard_in_background, args=(task_name, user_id), daemon=True)
+    thread.start()
+
+    return jsonify({'success': True, 'status': 'processing'})
+
+
+@tender_bp.route('/dashboard/status', methods=['GET'])
+def dashboard_status():
+    """Consulta o andamento/resultado do dashboard calculado em segundo plano."""
+    user_id = request.args.get('user_id', type=int)
+    task_name = _dashboard_task_name(user_id)
+
+    import json
+
+    conn = get_db_connection()
+    if not conn:
+        return jsonify({'success': False, 'error': 'Erro de conexão com banco'}), 500
+
+    cursor = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+    _ensure_admin_task_status_table(cursor)
+    conn.commit()
+    cursor.execute("SELECT status, result_json FROM admin_task_status WHERE task_name = %s", (task_name,))
+    row = cursor.fetchone()
+    cursor.close()
+    conn.close()
+
+    if not row:
+        return jsonify({'success': True, 'status': 'not_started'})
+
+    result = json.loads(row['result_json']) if row.get('result_json') else None
+    if row['status'] == 'error':
+        return jsonify({'success': True, 'status': 'error', 'error': (result or {}).get('error')})
+
+    return jsonify({'success': True, 'status': row['status'], 'dashboard': result})
 
 
 @tender_bp.route('/admin/backfill-state-codes', methods=['POST'])
