@@ -836,8 +836,9 @@ def backfill_state_codes():
     cursor.execute("""
         SELECT id, municipality_name, state_code, description
         FROM tenders
-        WHERE state_code = 'SP' AND description ILIKE %s
-    """, ('%Local:%',))
+        WHERE state_code = 'SP'
+          AND (description ILIKE %s OR description ILIKE %s)
+    """, ('%Local:%', '%Localidade da Unidade:%'))
     rows = cursor.fetchall()
 
     checked = 0

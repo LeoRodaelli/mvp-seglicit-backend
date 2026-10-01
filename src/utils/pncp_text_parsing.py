@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 """
 Extração de município/UF do texto bruto dos cards do PNCP (formato
-"Local: Cidade/UF" ou "Local: Cidade - UF").
+"Cidade/UF" ou "Cidade - UF", atrás de um rótulo como "Localidade da
+Unidade:" ou "Local:").
 
 Usado tanto pelo scraper (pncp_scraper_items_only.py) quanto pelo backfill
-de correção de state_code (src/routes/admin.py) — uma única fonte de
+de correção de state_code (src/routes/tender.py) — uma única fonte de
 verdade pra essa extração, pra nunca mais divergir entre os dois.
 
 IMPORTANTE: nunca "chuta" um estado default quando não consegue extrair
@@ -21,23 +22,17 @@ UFS_VALIDAS = {
     'SP', 'SE', 'TO',
 }
 
+# Ordem importa: o layout atual do PNCP usa "Localidade da Unidade:" — vem
+# primeiro. "Local:" fica como fallback pra layouts antigos/variantes.
+ROTULOS_LOCALIDADE = [
+    'Localidade da Unidade:',
+    'Local:',
+]
 
-def extract_local_municipio_uf(text):
-    """
-    Extrai (municipio, uf) do texto do card do PNCP.
 
-    uf vem None quando não for possível validar com segurança — o chamador
-    deve tratar isso como "estado desconhecido" (não assumir nenhum
-    default), não como erro silencioso.
-    """
-    if not text or 'Local:' not in text:
-        return None, None
-
-    try:
-        local_part = text.split('Local:', 1)[1].split('\n', 1)[0].strip()
-    except Exception:
-        return None, None
-
+def _parse_cidade_uf(local_part):
+    """Recebe o texto já isolado depois do rótulo e separa cidade/UF."""
+    local_part = (local_part or '').strip()
     if not local_part:
         return None, None
 
@@ -64,3 +59,38 @@ def extract_local_municipio_uf(text):
     # Separador encontrado mas o que veio depois não é uma UF válida
     # (ex: texto incompleto, cortado) — não arrisca.
     return local_part, None
+
+
+def extract_local_municipio_uf(text):
+    """
+    Extrai (municipio, uf) do texto do card do PNCP, tentando os rótulos
+    conhecidos em ordem.
+
+    uf vem None quando não for possível validar com segurança — o chamador
+    deve tratar isso como "estado desconhecido" (não assumir nenhum
+    default), não como erro silencioso.
+    """
+    if not text:
+        return None, None
+
+    for rotulo in ROTULOS_LOCALIDADE:
+        if rotulo not in text:
+            continue
+        try:
+            local_part = text.split(rotulo, 1)[1].split('\n', 1)[0]
+        except Exception:
+            continue
+        municipio, uf = _parse_cidade_uf(local_part)
+        if uf:
+            return municipio, uf
+        # Rótulo encontrado mas não deu pra validar a UF — tenta o
+        # próximo rótulo antes de desistir (pode haver mais de um campo
+        # de localidade no mesmo card).
+        if municipio and not uf:
+            fallback = (municipio, uf)
+            continue
+
+    try:
+        return fallback
+    except NameError:
+        return None, None
