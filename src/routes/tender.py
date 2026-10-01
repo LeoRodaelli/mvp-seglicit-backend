@@ -1041,6 +1041,103 @@ def backfill_state_codes():
     }), 200
 
 
+@tender_bp.route('/admin/backfill-state-codes-via-pncp-api', methods=['POST'])
+def backfill_state_codes_via_pncp_api():
+    """
+    Segunda passada do backfill de state_code: pega as licitações com
+    state_code='SP' que o texto salvo (description) não conseguiu resolver
+    sozinho (ex: descrição truncada em 500 caracteres antes de chegar no
+    "Localidade da Unidade: Cidade/UF" real) e consulta a API oficial do
+    PNCP pelo pncp_id — fonte autoritativa (unidadeOrgao.ufSigla), não é
+    mais texto raspado. Roda em dry_run por padrão.
+    """
+    admin_secret = os.getenv('TENDERS_BACKFILL_SECRET')
+    if not admin_secret or request.headers.get('X-Admin-Secret') != admin_secret:
+        return jsonify({'success': False, 'error': 'Não autorizado'}), 401
+
+    from src.utils.pncp_api_enrichment import parse_pncp_id, fetch_contract
+    from src.utils.pncp_text_parsing import extract_local_municipio_uf
+    import time
+
+    dry_run = (request.get_json(silent=True) or {}).get('dry_run', True)
+
+    conn = get_db_connection()
+    if not conn:
+        return jsonify({'success': False, 'error': 'Erro de conexão com banco'}), 500
+
+    cursor = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+    cursor.execute("""
+        SELECT id, pncp_id, municipality_name, state_code, description
+        FROM tenders
+        WHERE state_code = 'SP'
+    """)
+    rows = cursor.fetchall()
+
+    checked = 0
+    corrected = 0
+    skipped_no_pncp_id = 0
+    skipped_api_failed = 0
+    sample_corrections = []
+
+    for row in rows:
+        # Se o texto já resolve uma UF com confiança, já foi tratado na
+        # primeira passada (ou é SP de verdade) — não precisa de API aqui.
+        _municipio, uf_from_text = extract_local_municipio_uf(row.get('description') or '')
+        if uf_from_text:
+            continue
+
+        checked += 1
+        parsed = parse_pncp_id(row.get('pncp_id') or '')
+        if not parsed:
+            skipped_no_pncp_id += 1
+            continue
+
+        cnpj, ano, sequencial = parsed
+        try:
+            contract = fetch_contract(cnpj, ano, sequencial)
+        except Exception:
+            contract = None
+
+        if not contract:
+            skipped_api_failed += 1
+            continue
+
+        unidade = contract.get('unidadeOrgao') or {}
+        uf_real = unidade.get('ufSigla')
+
+        if uf_real and uf_real != 'SP':
+            corrected += 1
+            if len(sample_corrections) < 30:
+                sample_corrections.append({
+                    'id': row['id'],
+                    'municipality_name': row['municipality_name'],
+                    'old_state_code': row['state_code'],
+                    'new_state_code': uf_real,
+                })
+            if not dry_run:
+                cursor.execute(
+                    "UPDATE tenders SET state_code = %s WHERE id = %s",
+                    (uf_real, row['id']),
+                )
+
+        time.sleep(0.3)
+
+    if not dry_run:
+        conn.commit()
+    cursor.close()
+    conn.close()
+
+    return jsonify({
+        'success': True,
+        'dry_run': dry_run,
+        'checked': checked,
+        'corrected': corrected,
+        'skipped_no_pncp_id': skipped_no_pncp_id,
+        'skipped_api_failed': skipped_api_failed,
+        'sample_corrections': sample_corrections,
+    }), 200
+
+
 @tender_bp.route('/test', methods=['GET'])
 def test_connection():
     """Test usando psycopg2 diretamente"""

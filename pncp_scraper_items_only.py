@@ -1296,7 +1296,10 @@ class PNCPScraperItemsOnly:
             'id': f"PNCP-ITEMS-ONLY-{datetime.now().strftime('%Y%m%d')}-{index:03d}",
             'pncp_id': pncp_id,
             'title': title or f"Edital #{index+1}",
-            'description': card_text[:500] + "..." if len(card_text) > 500 else card_text,
+            # Limite generoso (era 500) — um corte curto demais já cortou
+            # "Localidade da Unidade: Cidade/UF" no meio em alguns casos,
+            # perdendo a UF real pra sempre (não dá pra recuperar depois).
+            'description': card_text[:2500] + "..." if len(card_text) > 2500 else card_text,
             'organization_name': organization,
             'municipality_name': municipality,
             'state_code': state_code,
