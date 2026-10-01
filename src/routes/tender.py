@@ -19,6 +19,7 @@ from src.utils.insurance_guarantee import (
     requires_seguro_garantia,
     seguro_garantia_sql_clause,
 )
+from src.routes.zaia_api import KEYWORDS_POR_AREA
 
 load_dotenv()
 
@@ -964,6 +965,114 @@ def get_stats():
                 'total_tenders': 0, 'total_cities': 0, 'total_items': 0,
                 'total_files': 0, 'total_states': 0, 'total_value': 0.0,
                 'formatted_value': "R$ 0,00", 'scoped': False,
+            }
+        }), 500
+
+
+@tender_bp.route('/dashboard', methods=['GET'])
+def get_dashboard():
+    """Retorna dados agregados (resumo, série por semana, por estado e por área)
+    para o dashboard/analytics da conta, filtrados pelo plano do usuário."""
+    try:
+        user_id = request.args.get('user_id', type=int)
+
+        plan_states, plan_areas = (None, None)
+        if user_id:
+            plan_states, plan_areas = _load_subscription_filters(user_id)
+
+        state_clause, state_params = build_plan_filter(plan_states, None)
+        full_clause, full_params = build_plan_filter(plan_states, plan_areas)
+        scoped = bool(state_clause or full_clause)
+
+        state_where = f" WHERE {state_clause}" if state_clause else ""
+        full_where = f" WHERE {full_clause}" if full_clause else ""
+
+        conn = get_db_connection()
+        if not conn:
+            raise Exception("Erro de conexão com banco")
+
+        cursor = conn.cursor()
+
+        # --- Resumo geral (respeita estados + áreas do plano) ---
+        cursor.execute(f"SELECT COUNT(*) FROM tenders{full_where}", full_params)
+        total_tenders = cursor.fetchone()[0]
+
+        cities_where = full_where + (" AND" if full_where else " WHERE") + " municipality_name IS NOT NULL"
+        cursor.execute(f"SELECT COUNT(DISTINCT municipality_name) FROM tenders{cities_where}", full_params)
+        total_cities = cursor.fetchone()[0]
+
+        states_where = full_where + (" AND" if full_where else " WHERE") + " state_code IS NOT NULL"
+        cursor.execute(f"SELECT COUNT(DISTINCT state_code) FROM tenders{states_where}", full_params)
+        total_states = cursor.fetchone()[0]
+
+        value_where = full_where + (" AND" if full_where else " WHERE") + " estimated_value IS NOT NULL"
+        cursor.execute(f"SELECT COALESCE(SUM(estimated_value), 0) FROM tenders{value_where}", full_params)
+        total_value = cursor.fetchone()[0]
+
+        # --- Licitações novas por semana (últimas 12 semanas, por data de publicação) ---
+        week_where = full_where + (" AND" if full_where else " WHERE") + " publication_date IS NOT NULL"
+        cursor.execute(f"""
+            SELECT DATE_TRUNC('week', publication_date)::date AS week_start, COUNT(*)
+            FROM tenders{week_where}
+            GROUP BY week_start
+            ORDER BY week_start DESC
+            LIMIT 12
+        """, full_params)
+        by_week = [{'week_start': str(row[0]), 'count': row[1]} for row in cursor.fetchall()]
+        by_week.reverse()
+
+        # --- Distribuição por estado (top 10, respeita estados + áreas do plano) ---
+        cursor.execute(f"""
+            SELECT state_code, COUNT(*)
+            FROM tenders{states_where}
+            GROUP BY state_code
+            ORDER BY COUNT(*) DESC
+            LIMIT 10
+        """, full_params)
+        by_state = [{'state_code': row[0], 'count': row[1]} for row in cursor.fetchall()]
+
+        # --- Distribuição por área (só estados do plano aplicados; área é a dimensão do gráfico) ---
+        areas_to_check = plan_areas if plan_areas else list(KEYWORDS_POR_AREA.keys())
+        by_area = []
+        for area in areas_to_check:
+            area_clause, area_params = build_plan_filter(plan_states, [area])
+            area_where = f" WHERE {area_clause}" if area_clause else ""
+            params = area_params
+            cursor.execute(f"SELECT COUNT(*) FROM tenders{area_where}", params)
+            count = cursor.fetchone()[0]
+            if count:
+                by_area.append({'area': area, 'count': count})
+        by_area.sort(key=lambda x: x['count'], reverse=True)
+
+        cursor.close()
+        conn.close()
+
+        dashboard = {
+            'total_tenders': total_tenders,
+            'total_cities': total_cities,
+            'total_states': total_states,
+            'total_value': float(total_value) if total_value else 0.0,
+            'formatted_value': (
+                f"R$ {float(total_value):,.2f}".replace(',', 'X').replace('.', ',').replace('X', '.')
+                if total_value else "R$ 0,00"
+            ),
+            'scoped': scoped,
+            'by_week': by_week,
+            'by_state': by_state,
+            'by_area': by_area,
+        }
+
+        return jsonify({'success': True, 'dashboard': dashboard})
+
+    except Exception as e:
+        logger.error(f"Erro ao buscar dashboard: {e}")
+        return jsonify({
+            'success': False,
+            'error': str(e),
+            'dashboard': {
+                'total_tenders': 0, 'total_cities': 0, 'total_states': 0,
+                'total_value': 0.0, 'formatted_value': "R$ 0,00", 'scoped': False,
+                'by_week': [], 'by_state': [], 'by_area': [],
             }
         }), 500
 
